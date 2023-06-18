@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+
       - name: Install dependencies with pip
         run: pip install --no-warn-script-location --user -r requirements.txt 
 
@@ -53,14 +56,11 @@ jobs:
       - name: Install dependencies with pip
         run: pip install --no-warn-script-location --user -r requirements.txt
 
-      # - name: Download conf.doc
-      #   run: wget https://raw.githubusercontent.com/fishros/ros2_documentation/config/conf.py -O conf.py && sed -i 's/ROS_DISTRO/humble/g' conf.py 
-
       - name: Build the doctree doc
-        run: sphinx-build -b gettext source/ build/gettext  -c .
+        run: sphinx-build -b gettext ./ _build/gettext  -c .
 
       - name: Build the po doc
-        run: sphinx-intl update -p build/gettext -l zh -w 10000 && mv locales source/
+        run: sphinx-intl update -p _build/gettext -l zh -w 10000
 
       # - name: Create Version Code
       #   run: echo "{\"repository\":\"ros2_documentation\",\"branch\":\"humble\",\"url\":\"https://github.com/fishros/ros2_documentation.git\"}"  > .verson.yml
