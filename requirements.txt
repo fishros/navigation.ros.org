@@ -7,4 +7,4 @@ sphinx_rtd_theme
 sphinx-autobuild
 sphinx==3.5.0
 sphinxcontrib-plantuml
-sphinx-intl==2.1.0
+sphinx-intl
