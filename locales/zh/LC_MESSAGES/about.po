@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../about/index.rst:4
+msgid "About and Contact"
+msgstr ""
+
+#: ../../about/index.rst:13
+msgid "About"
+msgstr ""
+
+#: ../../about/index.rst:15
+msgid "Navigation is a community effort to lower the barrier of entry of mobile robotics technology for all. This project is one of the flagship projects along with MoveIt that acts as an applications entry point and frameworks for ROS. Navigation in ROS 2 builds on the wild success of the original Navigation Stack (Nav Stack) in ROS (1). This project has been used by researchers, educators, and industry for over 10 years. There are very few projects that have lasted as long or were as successful as ROS (1) Navigation. We would like to thank David Lu!! and Mike Ferguson for their tireless over the span of a decade to keep the Nav Stack alive and well. Without their hard work, this project would not have been able to happen. If you're interested in a comparison between ROS 1 Navigation and ROS 2 Navigation, see :ref:`ros1_comparison`. For a list of robots using Navigation2, see :ref:`robots`."
+msgstr ""
+
+#: ../../about/index.rst:25
+msgid "Aslas, as time moves on, so must we. ROS (1) had a great run and those of us that build projects using it will remember it fondly(ish). With change comes possibilities. Navigation2 builds on the success but redesigns the framework to be more flexible and the feedback gathered over 10 years."
+msgstr ""
+
+#: ../../about/index.rst:30
+msgid "We strive to create an open community and encourage new ROS users and experts alike to collaborate. However, that can't happen without your issues, pull requests, and support. Navigation, like all open-source projects, is kept going by a dedicated group of developers, maintainers, users, and collaborators. We would like to thank here our current and past contributors and maintainers."
+msgstr ""
+
+#: ../../about/index.rst:35
+msgid "If you or your organization are interested in sponsoring Navigation or any work around it, please reach out to the current project lead."
+msgstr ""
+
+#: ../../about/index.rst:37
+msgid "Our current leadership team includes:"
+msgstr ""
+
+#: ../../about/index.rst:40 ../../about/index.rst:60 ../../about/related_projects.rst:9
+msgid "Name"
+msgstr ""
+
+#: ../../about/index.rst:40 ../../about/index.rst:60
+msgid "Organization"
+msgstr ""
+
+#: ../../about/index.rst:40 ../../about/index.rst:60
+msgid "GitHub ID"
+msgstr ""
+
+#: ../../about/index.rst:40
+msgid "Current Role"
+msgstr ""
+
+#: ../../about/index.rst:42 ../../about/related_projects.rst:11 ../../about/related_projects.rst:13 ../../about/related_projects.rst:16 ../../about/related_projects.rst:19 ../../about/related_projects.rst:27
+msgid "Steve Macenski"
+msgstr ""
+
+#: ../../about/index.rst:42 ../../about/index.rst:48
+msgid "Samsung Research"
+msgstr ""
+
+#: ../../about/index.rst:42
+msgid "SteveMacenski_"
+msgstr ""
+
+#: ../../about/index.rst:42
+msgid "Project Lead"
+msgstr ""
+
+#: ../../about/index.rst:44
+msgid "Ruffin White"
+msgstr ""
+
+#: ../../about/index.rst:44
+msgid "UC San Diego"
+msgstr ""
+
+#: ../../about/index.rst:44
+msgid "ruffsl_"
+msgstr ""
+
+#: ../../about/index.rst:44
+msgid "CI Wizard"
+msgstr ""
+
+#: ../../about/index.rst:46
+msgid "Joshua Wallace"
+msgstr ""
+
+#: ../../about/index.rst:46
+msgid "Locus Robotics"
+msgstr ""
+
+#: ../../about/index.rst:46
+msgid "JoshuaWallace_"
+msgstr ""
+
+#: ../../about/index.rst:46
+msgid "Main Contributor"
+msgstr ""
+
+#: ../../about/index.rst:48
+msgid "Alexey Merzlyakov"
+msgstr ""
+
+#: ../../about/index.rst:48
+msgid "AlexeyMerzlyakov_"
+msgstr ""
+
+#: ../../about/index.rst:48 ../../about/index.rst:66 ../../about/related_projects.rst:9
+msgid "Maintainer"
+msgstr ""
+
+#: ../../about/index.rst:57
+msgid "Our former leadership team includes:"
+msgstr ""
+
+#: ../../about/index.rst:60
+msgid "Role"
+msgstr ""
+
+#: ../../about/index.rst:62
+msgid "Matt Hansen"
+msgstr ""
+
+#: ../../about/index.rst:62 ../../about/index.rst:64 ../../about/index.rst:66
+msgid "Intel Corporation"
+msgstr ""
+
+#: ../../about/index.rst:62
+msgid "mkhansen_"
+msgstr ""
+
+#: ../../about/index.rst:62
+msgid "Former Project Lead"
+msgstr ""
+
+#: ../../about/index.rst:64
+msgid "Brian Wilcox"
+msgstr ""
+
+#: ../../about/index.rst:64
+msgid "bpwilcox_"
+msgstr ""
+
+#: ../../about/index.rst:64
+msgid "Former Maintainer"
+msgstr ""
+
+#: ../../about/index.rst:66
+msgid "Carl Delsey"
+msgstr ""
+
+#: ../../about/index.rst:66
+msgid "crdelsey_"
+msgstr ""
+
+#: ../../about/index.rst:74
+msgid "Contact"
+msgstr ""
+
+#: ../../about/index.rst:76
+msgid "If you are interested in contacting someone about Navigation, ROS 2, or related projects, please email the project leader. We intentionally make our emails easy to find. If your inquiry relates to bugs or open-source feature requests, consider posting a ticket on our GitHub project. If your inquiry relates to configuration support or private feature development, reach out and we may be able to connect you with independent consultants or contractors that know this project well."
+msgstr ""
+
+#: ../../about/index.rst:82
+msgid "Check out the Navigation 2 Slack_ community."
+msgstr ""
+
+#: ../../about/related_projects.rst:4
+msgid "Related Projects"
+msgstr ""
+
+#: ../../about/related_projects.rst:6
+msgid "This is a community maintained list of related repositories and projects to Navigation2."
+msgstr ""
+
+#: ../../about/related_projects.rst:9
+msgid "Description"
+msgstr ""
+
+#: ../../about/related_projects.rst:11
+msgid "`Navigation2`_"
+msgstr ""
+
+#: ../../about/related_projects.rst:11
+msgid "Main ROS 2 Navigation Stack"
+msgstr ""
+
+#: ../../about/related_projects.rst:13
+msgid "`navigation.ros.org`_"
+msgstr ""
+
+#: ../../about/related_projects.rst:13
+msgid "Official documentation website source code"
+msgstr ""
+
+#: ../../about/related_projects.rst:16
+msgid "`navigation2_tutorials`_"
+msgstr ""
+
+#: ../../about/related_projects.rst:16
+msgid "Source code and examples used in the documentation tutorials"
+msgstr ""
+
+#: ../../about/related_projects.rst:19
+msgid "`navigation2_dynamic`_"
+msgstr ""
+
+#: ../../about/related_projects.rst:19
+msgid "Tools, algorithms, and capabilities for working with dynamic obstacles in ROS 2"
+msgstr ""
+
+#: ../../about/related_projects.rst:23
+msgid "`robot_localization`_"
+msgstr ""
+
+#: ../../about/related_projects.rst:23
+msgid "Tom Moore"
+msgstr ""
+
+#: ../../about/related_projects.rst:23
+msgid "State estimation software for ROS 2 used for odometry fusion and GPS transformations"
+msgstr ""
+
+#: ../../about/related_projects.rst:27
+msgid "`slam_toolbox`_"
+msgstr ""
+
+#: ../../about/related_projects.rst:27
+msgid "Default 2D SLAM library"
+msgstr ""
+
+#: ../../about/robots.rst:4
+msgid "Robots Using"
+msgstr ""
+
+#: ../../about/robots.rst:6
+msgid "It's always helpful (and fun!) to have a list of robots using or ship with our work. Below is a very early list of robots we have encountered using our software as examples."
+msgstr ""
+
+#: ../../about/robots.rst:9
+msgid "Click on the images below for a link to the drivers or navigation configurations."
+msgstr ""
+
+#: ../../about/robots.rst:15
+msgid "|dex|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Dexory"
+msgstr ""
+
+#: ../../about/robots.rst:15
+msgid "|poly|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Polymath Robotics"
+msgstr ""
+
+#: ../../about/robots.rst:15
+msgid "|ses|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Seasony"
+msgstr ""
+
+#: ../../about/robots.rst:17
+msgid "|ang|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Angsa"
+msgstr ""
+
+#: ../../about/robots.rst:17
+msgid "|fire|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Firefly Automatix"
+msgstr ""
+
+#: ../../about/robots.rst:17
+msgid "|mpo_700|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Neobotix MPO-700"
+msgstr ""
+
+#: ../../about/robots.rst:19
+msgid "|rosie|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Rosie"
+msgstr ""
+
+#: ../../about/robots.rst:19
+msgid "|karl|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Karelics"
+msgstr ""
+
+#: ../../about/robots.rst:19
+msgid "|birds|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Birds Eye"
+msgstr ""
+
+#: ../../about/robots.rst:21
+msgid "|pxl|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Pixel"
+msgstr ""
+
+#: ../../about/robots.rst:21
+msgid "|brisa|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Brisa"
+msgstr ""
+
+#: ../../about/robots.rst:21
+msgid "|tri|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Olympics2020"
+msgstr ""
+
+#: ../../about/robots.rst:23
+msgid "|wyca|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Wyca Robotics"
+msgstr ""
+
+#: ../../about/robots.rst:23
+msgid "|elroy|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "ElroyAir"
+msgstr ""
+
+#: ../../about/robots.rst:23
+msgid "|data|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Datavision Software"
+msgstr ""
+
+#: ../../about/robots.rst:25
+msgid "|ubr1|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "UBR-1"
+msgstr ""
+
+#: ../../about/robots.rst:25
+msgid "|Tiago|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Tiago Robot"
+msgstr ""
+
+#: ../../about/robots.rst:25
+msgid "|tb2|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Turtlebot2"
+msgstr ""
+
+#: ../../about/robots.rst:27
+msgid "|rover|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Rover Robotics"
+msgstr ""
+
+#: ../../about/robots.rst:27
+msgid "|yunji|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Yunji Robot"
+msgstr ""
+
+#: ../../about/robots.rst:27
+msgid "|kar2|"
+msgstr ""
+
+#: ../../about/robots.rst:29
+msgid "|tb4|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Turtlebot4"
+msgstr ""
+
+#: ../../about/robots.rst:29
+msgid "|tb3|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Turtlebot3"
+msgstr ""
+
+#: ../../about/robots.rst:29
+msgid "|RB1|"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Robotnik Rb1 base"
+msgstr ""
+
+#: ../../about/robots.rst
+msgid "Coming Soon"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:4
+msgid "ROS to ROS 2 Navigation"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:6
+msgid "``move_base`` has been split into multiple components. Rather than a single monolithic state machine, navigation 2 makes use of action servers and ROS 2's low-latency, reliable communication to separate ideas. A behavior tree is used to orchestrate these tasks. This allows Navigation2 to have highly configurable navigation behavior without programming by rearranging tasks in a behavior tree xml file."
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:12
+msgid "The *nav2_bt_navigator* replaces ``move_base`` at the top level, with an *Action* interface to complete a navigation task with a tree-based action model. It uses *Behavior Trees* to make it possible to have more complex state machines and to add in behaviors as additional *Action Servers*. These behavior trees are configurable XMLs and we provide several starting examples."
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:16
+msgid "The planning, behaviors, smoother, and controller servers are also action servers that the BT navigator can call to compute. All 4 servers can host many plugins of many algorithms each and individually called from the navigation behavior tree for specific behaviors. These servers are called from the BT navigator through their action servers to compute a result or complete a task. The state is maintained by the BT navigator behavior tree."
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:21
+msgid "All these changes make it possible to replace any of these nodes at launch/run time with any other algorithm that implements that same interface. See each package README.md for more details."
+msgstr ""
+
+msgid "Move Base -> Navigation2 Overview"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:29
+msgid "Note: ``nav2_simple_navigator`` no longer exists, it has been replaced by ``nav2_bt_navigator``."
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:31
+msgid "**In Summary:**"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:33
+msgid "Ported packages:"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:35
+msgid "amcl: Ported to nav2_amcl"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:36
+msgid "map_server: Ported to nav2_map_server"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:37
+msgid "nav2_planner: Replaces global_planner, hosts ``N`` planner plugins"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:38
+msgid "nav2_controller: Replaces local_planner, hosts ``N`` controller plugins"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:39
+msgid "Navfn: Ported to nav2_navfn_planner"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:40
+msgid "DWB: Replaces DWA and ported to ROS 2 under nav2_dwb_controller metapackage"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:41
+msgid "nav_core: Ported as nav2_core with updates to interfaces"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:42
+msgid "costmap_2d: Ported as nav2_costmap_2d"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:44
+msgid "New packages:"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:46
+msgid "nav2_bt_navigator: replaces ``move_base`` state machine"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:47
+msgid "nav2_lifecycle_manager: Handles the server program lifecycles"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:48
+msgid "nav2_waypoint_follower: Can take in many waypoints to execute a complex task through"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:49
+msgid "nav2_system_tests: A set of integration tests for CI and basic tutorials in simulation"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:50
+msgid "nav2_rviz_plugins: An rviz plugin to control the Navigation2 servers, command, cancel, and navigation with"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:51
+msgid "navigation2_behavior_trees: wrappers for the behavior tree library to call ROS action servers"
+msgstr ""
+
+#: ../../about/ros1_comparison.rst:53
+msgid "among many others."
+msgstr ""
+

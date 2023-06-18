@@ -1,0 +1,985 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../plugins/index.rst:4
+msgid "Navigation Plugins"
+msgstr ""
+
+#: ../../plugins/index.rst:6
+msgid "There are a number of plugin interfaces for users to create their own custom applications or algorithms with. Namely, the costmap layer, planner, controller, behavior tree, and behavior plugins. A list of all known plugins are listed here below for ROS 2 Navigation. If you know of a plugin, or you have created a new plugin, please consider submitting a pull request with that information."
+msgstr ""
+
+#: ../../plugins/index.rst:11
+msgid "This file can be found and editted under ``sphinx_docs/plugins/index.rst``. For tutorials on creating your own plugins, please see :ref:`writing_new_costmap2d_plugin`, :ref:`writing_new_nbt_plugin`, :ref:`writing_new_nav2controller_plugin`, :ref:`writing_new_nav2planner_plugin`, :ref:`writing_new_behavior_plugin`, or :ref:`writing_new_nav2navigator_plugin`."
+msgstr ""
+
+#: ../../plugins/index.rst:15
+msgid "Behavior-Tree Navigators"
+msgstr ""
+
+#: ../../plugins/index.rst:18 ../../plugins/index.rst:35 ../../plugins/index.rst:83 ../../plugins/index.rst:103 ../../plugins/index.rst:136 ../../plugins/index.rst:186 ../../plugins/index.rst:216 ../../plugins/index.rst:256 ../../plugins/index.rst:281 ../../plugins/index.rst:301
+msgid "Plugin Name"
+msgstr ""
+
+#: ../../plugins/index.rst:18 ../../plugins/index.rst:35 ../../plugins/index.rst:83 ../../plugins/index.rst:103 ../../plugins/index.rst:136 ../../plugins/index.rst:186 ../../plugins/index.rst:216 ../../plugins/index.rst:256 ../../plugins/index.rst:281 ../../plugins/index.rst:301 ../../plugins/index.rst:322 ../../plugins/index.rst:428 ../../plugins/index.rst:518 ../../plugins/index.rst:549
+msgid "Creator"
+msgstr ""
+
+#: ../../plugins/index.rst:18 ../../plugins/index.rst:35 ../../plugins/index.rst:83 ../../plugins/index.rst:103 ../../plugins/index.rst:136 ../../plugins/index.rst:186 ../../plugins/index.rst:216 ../../plugins/index.rst:256 ../../plugins/index.rst:281 ../../plugins/index.rst:301 ../../plugins/index.rst:322 ../../plugins/index.rst:428 ../../plugins/index.rst:518 ../../plugins/index.rst:549
+msgid "Description"
+msgstr ""
+
+#: ../../plugins/index.rst:20
+msgid "`NavigateToPoseNavigator`_"
+msgstr ""
+
+#: ../../plugins/index.rst:20 ../../plugins/index.rst:23 ../../plugins/index.rst:57 ../../plugins/index.rst:61 ../../plugins/index.rst:113 ../../plugins/index.rst:121 ../../plugins/index.rst:143 ../../plugins/index.rst:152 ../../plugins/index.rst:158 ../../plugins/index.rst:188 ../../plugins/index.rst:200 ../../plugins/index.rst:222 ../../plugins/index.rst:232 ../../plugins/index.rst:268 ../../plugins/index.rst:350 ../../plugins/index.rst:372 ../../plugins/index.rst:376 ../../plugins/index.rst:380 ../../plugins/index.rst:447 ../../plugins/index.rst:532
+msgid "Steve Macenski"
+msgstr ""
+
+#: ../../plugins/index.rst:20
+msgid "Point-to-point navigation via a behavior tree action server"
+msgstr ""
+
+#: ../../plugins/index.rst:23
+msgid "`NavigateThroughPosesNavigator`_"
+msgstr ""
+
+#: ../../plugins/index.rst:23
+msgid "Point-through-points navigation via a behavior tree action server"
+msgstr ""
+
+#: ../../plugins/index.rst:32
+msgid "Costmap Layers"
+msgstr ""
+
+#: ../../plugins/index.rst:37
+msgid "`Voxel Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:37 ../../plugins/index.rst:46 ../../plugins/index.rst:50 ../../plugins/index.rst:53 ../../plugins/index.rst:218
+msgid "Eitan Marder-Eppstein"
+msgstr ""
+
+#: ../../plugins/index.rst:37
+msgid "Maintains persistant 3D voxel layer using depth and laser sensor readings and raycasting to clear free space"
+msgstr ""
+
+#: ../../plugins/index.rst:42
+msgid "`Range Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:42
+msgid "David Lu"
+msgstr ""
+
+#: ../../plugins/index.rst:42
+msgid "Uses a probabalistic model to put data from sensors that publish range msgs on the costmap"
+msgstr ""
+
+#: ../../plugins/index.rst:46
+msgid "`Static Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:46
+msgid "Gets static ``map`` and loads occupancy information into costmap"
+msgstr ""
+
+#: ../../plugins/index.rst:50
+msgid "`Inflation Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:50
+msgid "Inflates lethal obstacles in costmap with exponential decay"
+msgstr ""
+
+#: ../../plugins/index.rst:53
+msgid "`Obstacle Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:53
+msgid "Maintains persistent 2D costmap from 2D laser scans with raycasting to clear free space"
+msgstr ""
+
+#: ../../plugins/index.rst:57
+msgid "`Spatio-Temporal Voxel Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:57
+msgid "Maintains temporal 3D sparse volumetric voxel grid with decay through sensor models"
+msgstr ""
+
+#: ../../plugins/index.rst:61
+msgid "`Non-Persistent Voxel Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:61
+msgid "Maintains 3D occupancy grid consisting only of the most sets of measurements"
+msgstr ""
+
+#: ../../plugins/index.rst:65
+msgid "`Denoise Layer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:65
+msgid "Andrey Ryzhikov"
+msgstr ""
+
+#: ../../plugins/index.rst:65
+msgid "Filters noise-induced standalone obstacles or small obstacles groups"
+msgstr ""
+
+#: ../../plugins/index.rst:80
+msgid "Costmap Filters"
+msgstr ""
+
+#: ../../plugins/index.rst:85
+msgid "`Keepout Filter`_"
+msgstr ""
+
+#: ../../plugins/index.rst:85 ../../plugins/index.rst:88 ../../plugins/index.rst:91
+msgid "Alexey Merzlyakov"
+msgstr ""
+
+#: ../../plugins/index.rst:85
+msgid "Maintains keep-out/safety zones and preferred lanes for moving"
+msgstr ""
+
+#: ../../plugins/index.rst:88
+msgid "`Speed Filter`_"
+msgstr ""
+
+#: ../../plugins/index.rst:88
+msgid "Limits maximum velocity of robot in speed restriction areas"
+msgstr ""
+
+#: ../../plugins/index.rst:91
+msgid "`Binary Filter`_"
+msgstr ""
+
+#: ../../plugins/index.rst:91
+msgid "Enables binary (boolean) mask behavior to trigger actions."
+msgstr ""
+
+#: ../../plugins/index.rst:100
+msgid "Controllers"
+msgstr ""
+
+#: ../../plugins/index.rst:103 ../../plugins/index.rst:136
+msgid "Drivetrain support"
+msgstr ""
+
+#: ../../plugins/index.rst:105
+msgid "`DWB Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:105 ../../plugins/index.rst:283 ../../plugins/index.rst:288 ../../plugins/index.rst:303
+msgid "David Lu!!"
+msgstr ""
+
+#: ../../plugins/index.rst:105
+msgid "A highly configurable  DWA implementation with plugin interfaces"
+msgstr ""
+
+#: ../../plugins/index.rst:105 ../../plugins/index.rst:138 ../../plugins/index.rst:152
+msgid "Differential, Omnidirectional, Legged"
+msgstr ""
+
+#: ../../plugins/index.rst:109
+msgid "`TEB Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:109
+msgid "Christoph Rösmann"
+msgstr ""
+
+#: ../../plugins/index.rst:109
+msgid "A MPC-like controller suitable for ackermann, differential, and holonomic robots."
+msgstr ""
+
+#: ../../plugins/index.rst:109
+msgid "**Ackermann**, Legged, Omnidirectional, Differential"
+msgstr ""
+
+#: ../../plugins/index.rst:113
+msgid "`Regulated Pure Pursuit`_"
+msgstr ""
+
+#: ../../plugins/index.rst:113
+msgid "A service / industrial robot variation on the pure pursuit algorithm with adaptive features."
+msgstr ""
+
+#: ../../plugins/index.rst:113
+msgid "**Ackermann**, Legged, Differential"
+msgstr ""
+
+#: ../../plugins/index.rst:117
+msgid "`MPPI Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:117
+msgid "Steve Macenski Aleksei Budyakov"
+msgstr ""
+
+#: ../../plugins/index.rst:117
+msgid "A predictive MPC controller with modular & custom cost functions that can accomplish many tasks."
+msgstr ""
+
+#: ../../plugins/index.rst:117
+msgid "Differential, Omni, **Ackermann**"
+msgstr ""
+
+#: ../../plugins/index.rst:121
+msgid "`Rotation Shim Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:121
+msgid "A \"shim\" controller to rotate to path heading before passing to main controller for  tracking."
+msgstr ""
+
+#: ../../plugins/index.rst:121
+msgid "Differential, Omni, model rotate in place"
+msgstr ""
+
+#: ../../plugins/index.rst:133
+msgid "Planners"
+msgstr ""
+
+#: ../../plugins/index.rst:138
+msgid "`NavFn Planner`_"
+msgstr ""
+
+#: ../../plugins/index.rst:138
+msgid "Eitan Marder-Eppstein & Kurt Konolige"
+msgstr ""
+
+#: ../../plugins/index.rst:138
+msgid "A navigation function using A* or Dijkstras expansion, assumes 2D holonomic particle"
+msgstr ""
+
+#: ../../plugins/index.rst:149
+msgid "`SmacPlannerHybrid`_"
+msgstr ""
+
+#: ../../plugins/index.rst:144
+msgid "(formerly `SmacPlanner`)"
+msgstr ""
+
+#: ../../plugins/index.rst:143
+msgid "A SE2 Hybrid-A* implementation using either Dubin or Reeds-shepp motion models with smoother and multi-resolution query. Cars, car-like, and ackermann vehicles. Kinematically feasible."
+msgstr ""
+
+#: ../../plugins/index.rst:143
+msgid "**Ackermann**, Differential, Omnidirectional, Legged"
+msgstr ""
+
+#: ../../plugins/index.rst:152
+msgid "`SmacPlanner2D`_"
+msgstr ""
+
+#: ../../plugins/index.rst:152
+msgid "A 2D A* implementation Using either 4 or 8 connected neighborhoods with smoother and multi-resolution query"
+msgstr ""
+
+#: ../../plugins/index.rst:158
+msgid "`SmacPlannerLattice`_"
+msgstr ""
+
+#: ../../plugins/index.rst:158
+msgid "An implementation of State Lattice Planner using pre-generated minimum control sets for kinematically feasible planning with any type of vehicle imaginable. Includes generator script for Ackermann, diff, omni, and legged robots."
+msgstr ""
+
+#: ../../plugins/index.rst:158
+msgid "Differential, Omnidirectional, Ackermann, Legged, Arbitrary / Custom"
+msgstr ""
+
+#: ../../plugins/index.rst:168
+msgid "`ThetaStarPlanner`_"
+msgstr ""
+
+#: ../../plugins/index.rst:168
+msgid "Anshumaan Singh"
+msgstr ""
+
+#: ../../plugins/index.rst:168
+msgid "An implementaion of Theta* using either 4 or 8 connected neighborhoods, assumes the robot as a 2D holonomic particle"
+msgstr ""
+
+#: ../../plugins/index.rst:168
+msgid "Differential, Omnidirectional"
+msgstr ""
+
+#: ../../plugins/index.rst:183
+msgid "Smoothers"
+msgstr ""
+
+#: ../../plugins/index.rst:188
+msgid "`Simple Smoother`_"
+msgstr ""
+
+#: ../../plugins/index.rst:188
+msgid "A simple path smoother for infeasible (e.g. 2D) planners"
+msgstr ""
+
+#: ../../plugins/index.rst:192
+msgid "`Constrained Smoother`_"
+msgstr ""
+
+#: ../../plugins/index.rst:192
+msgid "Matej Vargovcik & Steve Macenski"
+msgstr ""
+
+#: ../../plugins/index.rst:192
+msgid "A path smoother using a constraints problem solver to optimize various criteria such as smoothness or distance from obstacles, maintaining minimum turning radius"
+msgstr ""
+
+#: ../../plugins/index.rst:200
+msgid "`Savitzky-Golay Smoother`_"
+msgstr ""
+
+#: ../../plugins/index.rst:200
+msgid "A path smoother using a Savitzky-Golay filter to smooth the path via digital signal processing to remove noise from the path."
+msgstr ""
+
+#: ../../plugins/index.rst:213
+msgid "Behaviors"
+msgstr ""
+
+#: ../../plugins/index.rst:218
+msgid "`Clear Costmap`_"
+msgstr ""
+
+#: ../../plugins/index.rst:218
+msgid "A service to clear the given costmap in case of incorrect perception or robot is stuck"
+msgstr ""
+
+#: ../../plugins/index.rst:222
+msgid "`Spin`_"
+msgstr ""
+
+#: ../../plugins/index.rst:222
+msgid "Rotate behavior of configurable angles to clear out free space and nudge robot out of potential local failures"
+msgstr ""
+
+#: ../../plugins/index.rst:227
+msgid "`Back Up`_"
+msgstr ""
+
+#: ../../plugins/index.rst:227
+msgid "Brian Wilcox"
+msgstr ""
+
+#: ../../plugins/index.rst:227
+msgid "Back up behavior of configurable distance to back out of a situation where the robot is stuck"
+msgstr ""
+
+#: ../../plugins/index.rst:232
+msgid "`Wait`_"
+msgstr ""
+
+#: ../../plugins/index.rst:232
+msgid "Wait behavior with configurable time to wait in case of time based obstacle like human traffic or getting more sensor data"
+msgstr ""
+
+#: ../../plugins/index.rst:237
+msgid "`Drive On Heading`_"
+msgstr ""
+
+#: ../../plugins/index.rst:237 ../../plugins/index.rst:240 ../../plugins/index.rst:326 ../../plugins/index.rst:328 ../../plugins/index.rst:392 ../../plugins/index.rst:394 ../../plugins/index.rst:436 ../../plugins/index.rst:466 ../../plugins/index.rst:472 ../../plugins/index.rst:477 ../../plugins/index.rst:481 ../../plugins/index.rst:486 ../../plugins/index.rst:491
+msgid "Joshua Wallace"
+msgstr ""
+
+#: ../../plugins/index.rst:237
+msgid "Drive on heading behavior with configurable distance to drive"
+msgstr ""
+
+#: ../../plugins/index.rst:240
+msgid "`Assisted Teleop`_"
+msgstr ""
+
+#: ../../plugins/index.rst:240
+msgid "AssistedTeleop behavior that scales teleop commands to prevent collisions."
+msgstr ""
+
+#: ../../plugins/index.rst:253
+msgid "Waypoint Task Executors"
+msgstr ""
+
+#: ../../plugins/index.rst:258
+msgid "`WaitAtWaypoint`_"
+msgstr ""
+
+#: ../../plugins/index.rst:258 ../../plugins/index.rst:263
+msgid "Fetullah Atas"
+msgstr ""
+
+#: ../../plugins/index.rst:258
+msgid "A plugin to execute a wait behavior  on waypoint arrivals."
+msgstr ""
+
+#: ../../plugins/index.rst:263
+msgid "`PhotoAtWaypoint`_"
+msgstr ""
+
+#: ../../plugins/index.rst:263
+msgid "A plugin to take and save photos to specified directory on waypoint arrivals."
+msgstr ""
+
+#: ../../plugins/index.rst:268
+msgid "`InputAtWaypoint`_"
+msgstr ""
+
+#: ../../plugins/index.rst:268
+msgid "A plugin to wait for user input before moving onto the next waypoint."
+msgstr ""
+
+#: ../../plugins/index.rst:278
+msgid "Goal Checkers"
+msgstr ""
+
+#: ../../plugins/index.rst:283
+msgid "`SimpleGoalChecker`_"
+msgstr ""
+
+#: ../../plugins/index.rst:283
+msgid "A plugin check whether robot is within translational distance and rotational distance of goal."
+msgstr ""
+
+#: ../../plugins/index.rst:288
+msgid "`StoppedGoalChecker`_"
+msgstr ""
+
+#: ../../plugins/index.rst:288
+msgid "A plugin check whether robot is within translational distance , rotational distance of goal, and velocity threshold."
+msgstr ""
+
+#: ../../plugins/index.rst:298
+msgid "Progress Checkers"
+msgstr ""
+
+#: ../../plugins/index.rst:303
+msgid "`SimpleProgressChecker`_"
+msgstr ""
+
+#: ../../plugins/index.rst:303
+msgid "A plugin to check whether the robot was able to move a minimum distance in a given time to make progress towards a goal"
+msgstr ""
+
+#: ../../plugins/index.rst:308
+msgid "`PoseProgressChecker`_"
+msgstr ""
+
+#: ../../plugins/index.rst:308 ../../plugins/index.rst:332 ../../plugins/index.rst:334
+msgid "Guillaume Doisy"
+msgstr ""
+
+#: ../../plugins/index.rst:308
+msgid "A plugin to check whether the robot was able to move a minimum distance or angle in a given time to make progress towards a goal"
+msgstr ""
+
+#: ../../plugins/index.rst:319
+msgid "Behavior Tree Nodes"
+msgstr ""
+
+#: ../../plugins/index.rst:322
+msgid "Action Plugin Name"
+msgstr ""
+
+#: ../../plugins/index.rst:324
+msgid "`Back Up Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:324 ../../plugins/index.rst:336 ../../plugins/index.rst:340 ../../plugins/index.rst:342 ../../plugins/index.rst:443 ../../plugins/index.rst:520
+msgid "Michael Jeronimo"
+msgstr ""
+
+#: ../../plugins/index.rst:324
+msgid "Calls backup behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:326
+msgid "`Drive On Heading Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:326
+msgid "Calls drive on heading behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:328
+msgid "`Assisted Teleop Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:328
+msgid "Calls assisted teleop behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:330
+msgid "`Clear Entire Costmap Service`_"
+msgstr ""
+
+#: ../../plugins/index.rst:330 ../../plugins/index.rst:346 ../../plugins/index.rst:348 ../../plugins/index.rst:430 ../../plugins/index.rst:440 ../../plugins/index.rst:551 ../../plugins/index.rst:555
+msgid "Carl Delsey"
+msgstr ""
+
+#: ../../plugins/index.rst:330
+msgid "Calls clear entire costmap service"
+msgstr ""
+
+#: ../../plugins/index.rst:332
+msgid "`Clear Costmap Except Region Service`_"
+msgstr ""
+
+#: ../../plugins/index.rst:332
+msgid "Calls clear costmap except region service"
+msgstr ""
+
+#: ../../plugins/index.rst:334
+msgid "`Clear Costmap Around Robot Service`_"
+msgstr ""
+
+#: ../../plugins/index.rst:334
+msgid "Calls clear costmap around robot service"
+msgstr ""
+
+#: ../../plugins/index.rst:336
+msgid "`Compute Path to Pose Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:336
+msgid "Calls Nav2 planner server"
+msgstr ""
+
+#: ../../plugins/index.rst:338
+msgid "`Smooth Path Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:338 ../../plugins/index.rst:354
+msgid "Matej Vargovcik"
+msgstr ""
+
+#: ../../plugins/index.rst:338
+msgid "Calls Nav2 smoother server"
+msgstr ""
+
+#: ../../plugins/index.rst:340
+msgid "`Follow Path Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:340
+msgid "Calls Nav2 controller server"
+msgstr ""
+
+#: ../../plugins/index.rst:342
+msgid "`Navigate to Pose Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:342
+msgid "BT Node for other BehaviorTree.CPP BTs to call Navigation2 as a subtree action"
+msgstr ""
+
+#: ../../plugins/index.rst:346
+msgid "`Reinitalize Global Localization Service`_"
+msgstr ""
+
+#: ../../plugins/index.rst:346
+msgid "Reinitialize AMCL to a new pose"
+msgstr ""
+
+#: ../../plugins/index.rst:348
+msgid "`Spin Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:348
+msgid "Calls spin behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:350
+msgid "`Wait Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:350
+msgid "Calls wait behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:352
+msgid "`Truncate Path`_"
+msgstr ""
+
+#: ../../plugins/index.rst:352 ../../plugins/index.rst:529
+msgid "Francisco Martín"
+msgstr ""
+
+#: ../../plugins/index.rst:352
+msgid "Modifies a path making it shorter"
+msgstr ""
+
+#: ../../plugins/index.rst:354
+msgid "`Truncate Path Local`_"
+msgstr ""
+
+#: ../../plugins/index.rst:354
+msgid "Extracts a path section around robot"
+msgstr ""
+
+#: ../../plugins/index.rst:356
+msgid "`Planner Selector`_"
+msgstr ""
+
+#: ../../plugins/index.rst:356 ../../plugins/index.rst:360 ../../plugins/index.rst:364
+msgid "Pablo Iñigo Blasco"
+msgstr ""
+
+#: ../../plugins/index.rst:356
+msgid "Selects the global planner based on a topic input, otherwises uses a default planner id"
+msgstr ""
+
+#: ../../plugins/index.rst:360
+msgid "`Controller Selector`_"
+msgstr ""
+
+#: ../../plugins/index.rst:360
+msgid "Selects the controller based on a topic input, otherwises uses a default controller id"
+msgstr ""
+
+#: ../../plugins/index.rst:364
+msgid "`Goal Checker Selector`_"
+msgstr ""
+
+#: ../../plugins/index.rst:364
+msgid "Selects the goal checker based on a topic input, otherwises uses a default goal checker id"
+msgstr ""
+
+#: ../../plugins/index.rst:368
+msgid "`Smoother Selector`_"
+msgstr ""
+
+#: ../../plugins/index.rst:368
+msgid "Owen Hooper"
+msgstr ""
+
+#: ../../plugins/index.rst:368
+msgid "Selects the smoother based on a topic input, otherwises uses a default smoother id"
+msgstr ""
+
+#: ../../plugins/index.rst:372
+msgid "`Navigate Through Poses`_"
+msgstr ""
+
+#: ../../plugins/index.rst:372
+msgid "BT Node for other BehaviorTree.CPP BTs to call Nav2's NavThroughPoses action"
+msgstr ""
+
+#: ../../plugins/index.rst:376
+msgid "`Remove Passed Goals`_"
+msgstr ""
+
+#: ../../plugins/index.rst:376
+msgid "Removes goal poses passed or within a tolerance for culling old viapoints from path re-planning"
+msgstr ""
+
+#: ../../plugins/index.rst:380
+msgid "`Compute Path Through Poses`_"
+msgstr ""
+
+#: ../../plugins/index.rst:380
+msgid "Computes a path through a set of poses rather than a single end goal pose using the planner plugin specified"
+msgstr ""
+
+#: ../../plugins/index.rst:384
+msgid "`Cancel Control Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:384 ../../plugins/index.rst:386 ../../plugins/index.rst:388 ../../plugins/index.rst:390 ../../plugins/index.rst:535
+msgid "Pradheep Padmanabhan"
+msgstr ""
+
+#: ../../plugins/index.rst:384
+msgid "Cancels Nav2 controller server"
+msgstr ""
+
+#: ../../plugins/index.rst:386
+msgid "`Cancel BackUp Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:386
+msgid "Cancels backup behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:388
+msgid "`Cancel Spin Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:388
+msgid "Cancels spin behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:390
+msgid "`Cancel Wait Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:390
+msgid "Cancels wait behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:392
+msgid "`Cancel Drive on Heading Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:392
+msgid "Cancels drive on heading behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:394
+msgid "`Cancel Assisted Teleop Action`_"
+msgstr ""
+
+#: ../../plugins/index.rst:394
+msgid "Cancels assisted teleop behavior action"
+msgstr ""
+
+#: ../../plugins/index.rst:428
+msgid "Condition Plugin Name"
+msgstr ""
+
+#: ../../plugins/index.rst:430
+msgid "`Goal Reached Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:430
+msgid "Checks if goal is reached within tol."
+msgstr ""
+
+#: ../../plugins/index.rst:433
+msgid "`Goal Updated Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:433
+msgid "Aitor Miguel Blanco"
+msgstr ""
+
+#: ../../plugins/index.rst:433
+msgid "Checks if goal is preempted."
+msgstr ""
+
+#: ../../plugins/index.rst:436
+msgid "`Globally Updated Goal Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:436
+msgid "Checks if goal is preempted in the global BT context"
+msgstr ""
+
+#: ../../plugins/index.rst:440
+msgid "`Initial Pose received Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:440
+msgid "Checks if initial pose has been set"
+msgstr ""
+
+#: ../../plugins/index.rst:443
+msgid "`Is Stuck Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:443
+msgid "Checks if robot is making progress or stuck"
+msgstr ""
+
+#: ../../plugins/index.rst:447
+msgid "`Transform Available Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:447
+msgid "Checks if a TF transformation is available. When succeeds returns success for subsequent calls."
+msgstr ""
+
+#: ../../plugins/index.rst:454
+msgid "`Distance Traveled Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:454 ../../plugins/index.rst:458 ../../plugins/index.rst:462 ../../plugins/index.rst:523 ../../plugins/index.rst:526
+msgid "Sarthak Mittal"
+msgstr ""
+
+#: ../../plugins/index.rst:454
+msgid "Checks is robot has traveled a given distance."
+msgstr ""
+
+#: ../../plugins/index.rst:458
+msgid "`Time Expired Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:458
+msgid "Checks if a given time period has passed."
+msgstr ""
+
+#: ../../plugins/index.rst:462
+msgid "`Is Battery Low Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:462
+msgid "Checks if battery percentage is below a specified value."
+msgstr ""
+
+#: ../../plugins/index.rst:466
+msgid "`Is Path Valid Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:466
+msgid "Checks if a path is valid by making sure there are no LETHAL obstacles along the path."
+msgstr ""
+
+#: ../../plugins/index.rst:472
+msgid "`Path Expiring Timer`_"
+msgstr ""
+
+#: ../../plugins/index.rst:472
+msgid "Checks if the timer has expired. The timer is reset if the path gets updated."
+msgstr ""
+
+#: ../../plugins/index.rst:477
+msgid "`Are Error Codes Present`_"
+msgstr ""
+
+#: ../../plugins/index.rst:477
+msgid "Checks if the specified error codes are present."
+msgstr ""
+
+#: ../../plugins/index.rst:481
+msgid "`Would A Controller Recovery Help`_"
+msgstr ""
+
+#: ../../plugins/index.rst:481
+msgid "Checks if a controller recovery could help clear the controller server error code."
+msgstr ""
+
+#: ../../plugins/index.rst:486
+msgid "`Would A Planner Recovery Help`_"
+msgstr ""
+
+#: ../../plugins/index.rst:486
+msgid "Checks if a planner recovery could help clear the planner server error code."
+msgstr ""
+
+#: ../../plugins/index.rst:491
+msgid "`Would A Smoother Recovery Help`_"
+msgstr ""
+
+#: ../../plugins/index.rst:491
+msgid "Checks if a Smoother recovery could help clear the smoother server error code."
+msgstr ""
+
+#: ../../plugins/index.rst:496
+msgid "`Is Battery Charging Condition`_"
+msgstr ""
+
+#: ../../plugins/index.rst:496
+msgid "Alberto Tudela"
+msgstr ""
+
+#: ../../plugins/index.rst:496
+msgid "Checks if the battery is charging."
+msgstr ""
+
+#: ../../plugins/index.rst:518
+msgid "Decorator Plugin Name"
+msgstr ""
+
+#: ../../plugins/index.rst:520
+msgid "`Rate Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:520
+msgid "Throttles child node to a given rate"
+msgstr ""
+
+#: ../../plugins/index.rst:523
+msgid "`Distance Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:523
+msgid "Ticks child node based on the distance traveled by the robot"
+msgstr ""
+
+#: ../../plugins/index.rst:526
+msgid "`Speed Controller`_"
+msgstr ""
+
+#: ../../plugins/index.rst:526
+msgid "Throttles child node to a rate based on current robot speed."
+msgstr ""
+
+#: ../../plugins/index.rst:529
+msgid "`Goal Updater`_"
+msgstr ""
+
+#: ../../plugins/index.rst:529
+msgid "Updates the goal received via topic subscription."
+msgstr ""
+
+#: ../../plugins/index.rst:532
+msgid "`Single Trigger`_"
+msgstr ""
+
+#: ../../plugins/index.rst:532
+msgid "Triggers nodes/subtrees below only a single time per BT run."
+msgstr ""
+
+#: ../../plugins/index.rst:535
+msgid "`PathLongerOnApproach`_"
+msgstr ""
+
+#: ../../plugins/index.rst:535
+msgid "Triggers child nodes if the new global path is significantly larger than the old global path on approach to the goal"
+msgstr ""
+
+#: ../../plugins/index.rst:549
+msgid "Control Plugin Name"
+msgstr ""
+
+#: ../../plugins/index.rst:551
+msgid "`Pipeline Sequence`_"
+msgstr ""
+
+#: ../../plugins/index.rst:551
+msgid "A variant of a sequence node that will re-tick previous children even if another child is running"
+msgstr ""
+
+#: ../../plugins/index.rst:555
+msgid "`Recovery`_"
+msgstr ""
+
+#: ../../plugins/index.rst:555
+msgid "Node must contain 2 children and returns success if first succeeds. If first fails, the second will be ticked. If successful, it will retry the first and then return its value"
+msgstr ""
+
+#: ../../plugins/index.rst:562
+msgid "`Round Robin`_"
+msgstr ""
+
+#: ../../plugins/index.rst:562
+msgid "Mohammad Haghighipanah"
+msgstr ""
+
+#: ../../plugins/index.rst:562
+msgid "Will tick ``i`` th child until a result and move on to ``i+1``"
+msgstr ""
+

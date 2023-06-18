@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../roadmap/roadmap.rst:4
+msgid "Roadmaps"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:6
+msgid "This is the list of major issues and features the Nav2 maintainers are committing for completion for various ROS 2 releases. This is *not* an exhaustive list of planned features or what changes may be found in the new distribution. It represents only the items of direct commitment to give insight into commitments for REP-2005 repositories in the `ROS 2 Roadmap <https://docs.ros.org/en/rolling/Roadmap.html>`_. For a full list of important completed changes in the project, see the Migration Guides :ref:`migration`."
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:12
+msgid "Iron Roadmap"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
+msgid "Plugin Name"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
+msgid "Size"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:17
+msgid "`Pluginize Navigators`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:17 ../../roadmap/roadmap.rst:61
+msgid "Medium  (DONE)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:21
+msgid "`MPPI Controller`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:21
+msgid "Very Large (DONE)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:26
+msgid "`Route Graph Planner`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:26
+msgid "Large (in progress)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:30
+#, python-format
+msgid "90% unit test coverage"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:30 ../../roadmap/roadmap.rst:74
+msgid "Small  (DONE)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:33
+msgid "`Velocity Smoother`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:33 ../../roadmap/roadmap.rst:70 ../../roadmap/roadmap.rst:81 ../../roadmap/roadmap.rst:85 ../../roadmap/roadmap.rst:93
+msgid "Medium (DONE)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:35
+msgid "ROS Time Respect Across Stack"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:35
+msgid "Medium (in progress)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:39
+msgid "`Fuse Migration`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:39
+msgid "Medium"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:43
+msgid "`Ignition Migration`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:43
+msgid "Large"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:56
+msgid "Humble Roadmap"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:61
+msgid "`Nav2 1 Node Per Server`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:65
+msgid "`Smac Lattice Planner`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:65
+msgid "Large (DONE)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:70
+msgid "`Safety Collision Nodes`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:74
+msgid "`Fix Min Range Bug`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:77
+msgid "`Move Development from Master to Rolling`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:77 ../../roadmap/roadmap.rst:89
+msgid "Small (DONE)"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:81
+msgid "Push Test Coverage to 88\\%"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:85
+msgid "`Complete First Time Guide`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:89
+msgid "`Rotation Shim Controller`_"
+msgstr ""
+
+#: ../../roadmap/roadmap.rst:93
+msgid "`Dynamic Composition`_"
+msgstr ""
+

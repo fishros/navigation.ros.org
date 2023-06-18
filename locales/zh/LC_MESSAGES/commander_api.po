@@ -1,0 +1,516 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../commander_api/index.rst:4
+msgid "Simple Commander API"
+msgstr ""
+
+#: ../../commander_api/index.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../commander_api/index.rst:9
+msgid "The goal of the Nav2 Simple (Python3) Commander is to provide a \"navigation as a library\" capability to Python3 users. We provide an API that handles all the ROS 2 and Action Server tasks for you such that you can focus on building an application leveraging the capabilities of Nav2 (after you've configured it to your liking with your plugins of choice). `We also provide you with demos and examples of API usage <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_ to build common basic capabilities in autonomous mobile robotics in the ``nav2_simple_commander`` package."
+msgstr ""
+
+#: ../../commander_api/index.rst:11
+msgid "A simple demonstration is shown below. Note: ``goToPose()``, ``goThroughPoses()``, ``followWaypoints()`` and similar are **non-blocking** such that you can receive and process feedback in a single-threaded application. As such while waiting for a task to be completed, the ``while not nav.isTaskComplete()`` design is necessary to poll for changes in the navigation completion, and if not complete some tasks of interest to your application (like processing feedback, doing something with the data the robot is collecting, or checking for faults)."
+msgstr ""
+
+#: ../../commander_api/index.rst:13
+msgid "You may use this simple commander preempt commands of the same type (e.g. you can preempt a ``goToPose()`` with another ``goToPose()``) but you must explicitly cancel a current command and issue a new one if switching between ``goToPose()``, ``goThroughPoses()``, or ``followWaypoints()``."
+msgstr ""
+
+#: ../../commander_api/index.rst:53
+msgid "Commander API"
+msgstr ""
+
+#: ../../commander_api/index.rst:55
+msgid "The methods provided by the basic navigator are shown below, with inputs and expected returns. If a server fails, it may throw an exception or return a `None` object, so please be sure to properly wrap your navigation calls in try/catch and check returns for `None` type."
+msgstr ""
+
+#: ../../commander_api/index.rst:59
+msgid "Robot Navigator Method"
+msgstr ""
+
+#: ../../commander_api/index.rst:59 ../../commander_api/index.rst:140 ../../commander_api/index.rst:186
+msgid "Description"
+msgstr ""
+
+#: ../../commander_api/index.rst:61
+msgid "setInitialPose(initial_pose)"
+msgstr ""
+
+#: ../../commander_api/index.rst:61
+msgid "Sets the initial pose (``PoseStamped``) of the robot to localization."
+msgstr ""
+
+#: ../../commander_api/index.rst:63
+msgid "goThroughPoses(poses, behavior_tree='')"
+msgstr ""
+
+#: ../../commander_api/index.rst:63
+msgid "Requests the robot to drive through a set of poses (list of ``PoseStamped``)."
+msgstr ""
+
+#: ../../commander_api/index.rst:66
+msgid "goToPose(pose, behavior_tree='')"
+msgstr ""
+
+#: ../../commander_api/index.rst:66
+msgid "Requests the robot to drive to a pose (``PoseStamped``)."
+msgstr ""
+
+#: ../../commander_api/index.rst:68
+msgid "followWaypoints(poses)"
+msgstr ""
+
+#: ../../commander_api/index.rst:68
+msgid "Requests the robot to follow a set of waypoints (list of ``PoseStamped``). This will execute the chosen ``TaskExecutor`` plugin at each pose."
+msgstr ""
+
+#: ../../commander_api/index.rst:71
+msgid "followPath(path, controller_id='', goal_checker_id='')"
+msgstr ""
+
+#: ../../commander_api/index.rst:71
+msgid "Requests the robot to follow a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``."
+msgstr ""
+
+#: ../../commander_api/index.rst:74
+msgid "spin(spin_dist=1.57, time_allowance=10)"
+msgstr ""
+
+#: ../../commander_api/index.rst:74
+msgid "Requests the robot to performs an in-place rotation by a given angle."
+msgstr ""
+
+#: ../../commander_api/index.rst:77
+msgid "backup(backup_dist=0.15, backup_speed=0.025, time_allowance=10)"
+msgstr ""
+
+#: ../../commander_api/index.rst:77
+msgid "Requests the robot to back up by a given distance."
+msgstr ""
+
+#: ../../commander_api/index.rst:80
+msgid "assistedTeleop(time_allowance=30)"
+msgstr ""
+
+#: ../../commander_api/index.rst:80
+msgid "Requests the robot to run the assisted teleop action."
+msgstr ""
+
+#: ../../commander_api/index.rst:82
+msgid "cancelTask()"
+msgstr ""
+
+#: ../../commander_api/index.rst:82
+msgid "Cancel an ongoing task, including route tasks."
+msgstr ""
+
+#: ../../commander_api/index.rst:84
+msgid "isTaskComplete(trackingRoute=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:84
+msgid "Checks if task is complete yet, times out at ``100ms``. Returns ``True`` if completed and ``False`` if still going. If checking a route tracking task, set default argument to ``True``."
+msgstr ""
+
+#: ../../commander_api/index.rst:88
+msgid "getFeedback(trackingRoute=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:88
+msgid "Gets feedback from task, returns action server feedback msg. If getting feedback on a tracking task, set default argument to ``True``."
+msgstr ""
+
+#: ../../commander_api/index.rst:91
+msgid "getResult()"
+msgstr ""
+
+#: ../../commander_api/index.rst:91
+msgid "Gets final result of task, to be called after ``isTaskComplete`` returns ``True``. Returns action server result msg."
+msgstr ""
+
+#: ../../commander_api/index.rst:94
+msgid "getPath(start, goal, planner_id='', use_start=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:94
+msgid "Gets a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``."
+msgstr ""
+
+#: ../../commander_api/index.rst:97
+msgid "getPathThroughPoses(start, goals, planner_id='', use_start=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:97
+msgid "Gets a path through a starting to a set of goals, a list of ``PoseStamped``, ``nav_msgs/Path``."
+msgstr ""
+
+#: ../../commander_api/index.rst:100
+msgid "getRoute(start, goal, use_start=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:100
+msgid "Gets a sparse route and dense path from start to goal, where start and goal may be of type ``PoseStamped`` or ``int`` for known NodeIDs."
+msgstr ""
+
+#: ../../commander_api/index.rst:103
+msgid "getandTrackRoute(start, goal, use_start=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:103
+msgid "Gets and tracks a sparse route and dense path from start to goal, where start & goal may be of type ``PoseStamped`` or ``int`` for known NodeIDs."
+msgstr ""
+
+#: ../../commander_api/index.rst:106
+msgid "smoothPath(path, smoother_id='', max_duration=2.0, check_for_collision=False)"
+msgstr ""
+
+#: ../../commander_api/index.rst:106
+msgid "Smooths a given path of type ``nav_msgs/Path``."
+msgstr ""
+
+#: ../../commander_api/index.rst:110
+msgid "changeMap(map_filepath)"
+msgstr ""
+
+#: ../../commander_api/index.rst:110
+msgid "Requests a change from the current map to `map_filepath`'s yaml."
+msgstr ""
+
+#: ../../commander_api/index.rst:112
+msgid "clearAllCostmaps()"
+msgstr ""
+
+#: ../../commander_api/index.rst:112
+msgid "Clears both the global and local costmaps."
+msgstr ""
+
+#: ../../commander_api/index.rst:114
+msgid "clearLocalCostmap()"
+msgstr ""
+
+#: ../../commander_api/index.rst:114
+msgid "Clears the local costmap."
+msgstr ""
+
+#: ../../commander_api/index.rst:116
+msgid "clearGlobalCostmap()"
+msgstr ""
+
+#: ../../commander_api/index.rst:116
+msgid "Clears the global costmap."
+msgstr ""
+
+#: ../../commander_api/index.rst:118
+msgid "getGlobalCostmap()"
+msgstr ""
+
+#: ../../commander_api/index.rst:118
+msgid "Returns the global costmap, ``nav2_msgs/Costmap``."
+msgstr ""
+
+#: ../../commander_api/index.rst:120
+msgid "getLocalCostmap()"
+msgstr ""
+
+#: ../../commander_api/index.rst:120
+msgid "Returns the local costmap, ``nav2_msgs/Costmap``."
+msgstr ""
+
+#: ../../commander_api/index.rst:122
+msgid "waitUntilNav2Active( navigator='bt_navigator', localizer='amcl')"
+msgstr ""
+
+#: ../../commander_api/index.rst:122
+msgid "Blocks until Nav2 is completely online and lifecycle nodes are in the active state. To be used in conjunction with autostart or external lifecycle bringup. Custom navigator and localizer nodes can be specified"
+msgstr ""
+
+#: ../../commander_api/index.rst:126
+msgid "lifecycleStartup()"
+msgstr ""
+
+#: ../../commander_api/index.rst:126
+msgid "Sends a request to all lifecycle management servers to bring them into the active state, to be used if autostart is ``False`` and you want this program to control Nav2's lifecycle."
+msgstr ""
+
+#: ../../commander_api/index.rst:130
+msgid "lifecycleShutdown()"
+msgstr ""
+
+#: ../../commander_api/index.rst:130
+msgid "Sends a request to all lifecycle management servers to shut them down."
+msgstr ""
+
+#: ../../commander_api/index.rst:132
+msgid "destroyNode()"
+msgstr ""
+
+#: ../../commander_api/index.rst:132
+msgid "Releases the resources used by the object."
+msgstr ""
+
+#: ../../commander_api/index.rst:136
+msgid "Costmap API"
+msgstr ""
+
+#: ../../commander_api/index.rst:137
+msgid "This is a Python3 API for costmap 2d messages from the stack. It provides the basic conversion, get/set, and handling semantics found in the costmap 2d C++ API."
+msgstr ""
+
+#: ../../commander_api/index.rst:140
+msgid "Costmap Method"
+msgstr ""
+
+#: ../../commander_api/index.rst:142
+msgid "getSizeInCellsX()"
+msgstr ""
+
+#: ../../commander_api/index.rst:142
+msgid "Get map width in cells."
+msgstr ""
+
+#: ../../commander_api/index.rst:144
+msgid "getSizeInCellsY()"
+msgstr ""
+
+#: ../../commander_api/index.rst:144
+msgid "Get map height in cells."
+msgstr ""
+
+#: ../../commander_api/index.rst:146
+msgid "getSizeInMetersX()"
+msgstr ""
+
+#: ../../commander_api/index.rst:146
+msgid "Get x axis map size in meters."
+msgstr ""
+
+#: ../../commander_api/index.rst:148
+msgid "getSizeInMetersY()"
+msgstr ""
+
+#: ../../commander_api/index.rst:148
+msgid "Get y axis map size in meters."
+msgstr ""
+
+#: ../../commander_api/index.rst:150
+msgid "getOriginX()"
+msgstr ""
+
+#: ../../commander_api/index.rst:150
+msgid "Get the origin x axis of the map [m]."
+msgstr ""
+
+#: ../../commander_api/index.rst:152
+msgid "getOriginY()"
+msgstr ""
+
+#: ../../commander_api/index.rst:152
+msgid "Get the origin y axis of the map [m]."
+msgstr ""
+
+#: ../../commander_api/index.rst:154
+msgid "getResolution()"
+msgstr ""
+
+#: ../../commander_api/index.rst:154
+msgid "Get map resolution [m/cell]."
+msgstr ""
+
+#: ../../commander_api/index.rst:156
+msgid "getGlobalFrameID()"
+msgstr ""
+
+#: ../../commander_api/index.rst:156
+msgid "Get global frame_id."
+msgstr ""
+
+#: ../../commander_api/index.rst:158
+msgid "getCostmapTimestamp()"
+msgstr ""
+
+#: ../../commander_api/index.rst:158
+msgid "Get costmap timestamp."
+msgstr ""
+
+#: ../../commander_api/index.rst:160
+msgid "getCostXY(mx, my)"
+msgstr ""
+
+#: ../../commander_api/index.rst:160
+msgid "Get the cost (``np.uint8``) of a cell in the costmap using mx (``int``) , my (``int``) of Map Coordinate."
+msgstr ""
+
+#: ../../commander_api/index.rst:163
+msgid "getCostIdx(index)"
+msgstr ""
+
+#: ../../commander_api/index.rst:163
+msgid "Get the cost (``np.uint8``) of a cell in the costmap using index (``int``)"
+msgstr ""
+
+#: ../../commander_api/index.rst:165
+msgid "setCost(mx, my, cost)"
+msgstr ""
+
+#: ../../commander_api/index.rst:165
+msgid "Set the cost (``np.uint8``) of a cell in the costmap using mx (``int``) , my (``int``) of Map Coordinate."
+msgstr ""
+
+#: ../../commander_api/index.rst:168
+msgid "mapToWorld(mx, my)"
+msgstr ""
+
+#: ../../commander_api/index.rst:168
+msgid "Get the wx (``float``) [m], wy (``float``) [m] of world coordinate XY using mx (``int``), my (``int``) of map coordinate XY"
+msgstr ""
+
+#: ../../commander_api/index.rst:171 ../../commander_api/index.rst:193
+msgid "worldToMapValidated(wx, wy)"
+msgstr ""
+
+#: ../../commander_api/index.rst:171
+msgid "Get the mx (``int``), my (``int``) of map coordinate XY using wx (``float``) [m], wy (``float``) [m] of world coordinate XY. If wx wy coordinates are invalid, (None,None) is returned."
+msgstr ""
+
+#: ../../commander_api/index.rst:175
+msgid "getIndex(mx, my)"
+msgstr ""
+
+#: ../../commander_api/index.rst:175
+msgid "Get the index (``int``) of the cell using mx (``int``), my (``int``) of map coordinate XY"
+msgstr ""
+
+#: ../../commander_api/index.rst:180
+msgid "Footprint Collision Checker API"
+msgstr ""
+
+#: ../../commander_api/index.rst:181
+msgid "This is a Python3 API for a Footprint Collision Checker. It provides the needed methods to manipulate the coordinates and calculate the cost of a Footprint in a given map."
+msgstr ""
+
+#: ../../commander_api/index.rst:186
+msgid "Footprint Collision Checker Method"
+msgstr ""
+
+#: ../../commander_api/index.rst:188
+msgid "footprintCost(footprint)"
+msgstr ""
+
+#: ../../commander_api/index.rst:188
+msgid "Checks the footprint (``Polygon``) for collision at its implicit provided coordinate pose."
+msgstr ""
+
+#: ../../commander_api/index.rst:190
+msgid "lineCost(x0, x1, y0, y1, step_size=0.5)"
+msgstr ""
+
+#: ../../commander_api/index.rst:190
+msgid "Iterate over all the points along a line and check for collision. The line is defined by x0, y0, x1, y1, step_size (``int``) or (``float``)."
+msgstr ""
+
+#: ../../commander_api/index.rst:193
+msgid "Get the mx (``int``), my (``int``) of map coordinate XY using wx (``float``) [m], wy (``float``) [m] of world coordinate XY. If wx wy coordinates are invalid, (None,None) is returned. Returns None if costmap is not defined yet through  (``setCostmap(costmap)``)."
+msgstr ""
+
+#: ../../commander_api/index.rst:198
+msgid "pointCost(x, y)"
+msgstr ""
+
+#: ../../commander_api/index.rst:198
+msgid "Get the cost of a point in the costmap using map coordinates XY. (``int``)"
+msgstr ""
+
+#: ../../commander_api/index.rst:200
+msgid "setCostmap(costmap)"
+msgstr ""
+
+#: ../../commander_api/index.rst:200
+msgid "Specify which costmap to use with the footprint collision checker. (``PyCostmap2D``)"
+msgstr ""
+
+#: ../../commander_api/index.rst:202
+msgid "footprintCostAtPose(x, y, theta, footprint)"
+msgstr ""
+
+#: ../../commander_api/index.rst:202
+msgid "Get the cost of a footprint at a specific Pose in map coordinates. x, y, theta (``float``) footprint (``Polygon``)."
+msgstr ""
+
+#: ../../commander_api/index.rst:207
+msgid "Examples and Demos"
+msgstr ""
+
+#: ../../commander_api/index.rst:209
+msgid "All of these can be found in the `package <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_."
+msgstr ""
+
+msgid "Alternative text"
+msgstr ""
+
+#: ../../commander_api/index.rst:216
+msgid "The ``nav2_simple_commander`` has a few examples to highlight the API functions available to you as a user:"
+msgstr ""
+
+#: ../../commander_api/index.rst:218
+msgid "``example_nav_to_pose.py`` - Demonstrates the navigate to pose capabilities of the navigator, as well as a number of auxiliary methods."
+msgstr ""
+
+#: ../../commander_api/index.rst:219
+msgid "``example_nav_through_poses.py`` - Demonstrates the navigate through poses capabilities of the navigator, as well as a number of auxiliary methods."
+msgstr ""
+
+#: ../../commander_api/index.rst:220
+msgid "``example_waypoint_follower.py`` - Demonstrates the waypoint following capabilities of the navigator, as well as a number of auxiliary methods."
+msgstr ""
+
+#: ../../commander_api/index.rst:221
+msgid "``example_follow_path.py`` - Demonstrates the path following capabilities of the navigator, as well as a number of auxiliary methods like path smoothing."
+msgstr ""
+
+#: ../../commander_api/index.rst:222
+msgid "``example_assisted_teleop.py`` - Demonstrates the assisted teleop capabilities of the navigator."
+msgstr ""
+
+#: ../../commander_api/index.rst:223
+msgid "``example_route.py`` - Demonstrates the Route server capabilities of the navigator."
+msgstr ""
+
+#: ../../commander_api/index.rst:225
+msgid "The ``nav2_simple_commander`` has a few demonstrations to highlight a couple of simple autonomy applications you can build using the API:"
+msgstr ""
+
+#: ../../commander_api/index.rst:227
+msgid "``demo_security.py`` - A simple security robot application, showing how to have a robot follow a security route using Navigate Through Poses to do a patrol route, indefinitely."
+msgstr ""
+
+#: ../../commander_api/index.rst:228
+msgid "``demo_picking.py`` - A simple item picking application, showing how to have a robot drive to a specific shelf in a warehouse to either pick an item or have a person place an item into a basket and deliver it to a destination for shipping using Navigate To Pose."
+msgstr ""
+
+#: ../../commander_api/index.rst:229
+msgid "``demo_inspection.py`` - A simple shelf inspection application, showing how to use the Waypoint Follower and task executors to take pictures, RFID scans, etc of shelves to analyze the current shelf statuses and locate items in the warehouse."
+msgstr ""
+

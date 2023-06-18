@@ -1,0 +1,1106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:4
+msgid "Writing a New Behavior Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:6
+msgid "`Overview`_"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:7
+msgid "`Requirements`_"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:8
+msgid "`Tutorial Steps`_"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:11 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:11 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:16 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:17 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:16 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:11
+msgid "Overview"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:13
+msgid "This tutorial shows how to create you own Behavior Plugin. The Behavior Plugins live in the behavior server. Unlike the planner and controller servers, each behavior will host its own unique action server. The planners and controllers have the same API as they accomplish the same task. However, recoveries can be used to do a wide variety of tasks, so each behavior can have its own unique action message definition and server. This allows for massive flexibility in the behavior server enabling any behavior action imaginable that doesn't need to have other reuse."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:21 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:17 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:23 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:28 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:21 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:20
+msgid "Requirements"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:23 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:19 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:30 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:23 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:22
+msgid "ROS 2 (binary or build-from-source)"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:24 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:20 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:31 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:24 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:23
+msgid "Nav2 (Including dependencies)"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:25 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:21 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:32 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:25 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:24
+msgid "Gazebo"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:26 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:22 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:33 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:26 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:25
+msgid "Turtlebot3"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:29 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:25 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:28 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:36 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:29 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:28
+msgid "Tutorial Steps"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:32
+msgid "1- Creating a new Behavior Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:34
+msgid "We will create a simple send sms behavior. It will use Twilio to send a message via SMS to a remote operations center. The code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as ``nav2_sms_behavior``. This package can be a considered as a reference for writing Behavior Plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:39
+msgid "Our example plugin implements the plugin class of ``nav2_core::Behavior``. However, we have a nice wrapper for actions in ``nav2_behaviors``, so we use the ``nav2_behaviors::TimedBehavior`` base class for this application instead. This wrapper class derives from the ``nav2_core`` class so it can be used as a plugin, but handles the vast majority of ROS 2 action server boiler plate required."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:43
+msgid "The base class from ``nav2_core`` provides 4 pure virtual methods to implement a Behavior Plugin. The plugin will be used by the behavior server to host the plugins, but each plugin will provide their own unique action server interface. Let's learn more about the methods needed to write a Behavior Plugin **if you did not use the ``nav2_behaviors`` wrapper**."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:48 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:42 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:42
+msgid "**Virtual method**"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:48 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:42 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:42
+msgid "**Method description**"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:48 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:42 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:42
+msgid "**Requires override?**"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:47
+msgid "configure()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:50
+msgid "Method is called at when server enters on_configure state. Ideally this method should perform declarations of ROS parameters and initialization of behavior's member variables. This method takes 4 input parameters: shared pointer to parent node, behavior name, tf buffer pointer and shared pointer to a collision checker."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:74 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:78 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:55 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:55 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:62 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:76 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:67 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:70 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:76 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:58 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:61 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:44 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:62 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:67 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:70 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:76 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:79
+msgid "Yes"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:51
+msgid "activate()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:56
+msgid "Method is called when behavior server enters on_activate state. Ideally this method should implement operations which are neccessary before the behavior goes to an active state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:55
+msgid "deactivate()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:60
+msgid "Method is called when behavior server enters on_deactivate state. Ideally this method should implement operations which are neccessary before behavior goes to an inactive state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:58 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:59
+msgid "cleanup()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:86
+msgid "Method is called when behavior server goes to on_cleanup state. Ideally this method should clean up resources which are created for the behavior."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:68
+msgid "For the ``nav2_behaviors`` wrapper, which provides the ROS 2 action interface and boilerplate, we have 4 virtual methods to implement. This tutorial uses this wrapper so these are the main elements we will address."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:74
+msgid "onRun()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:74
+msgid "Method is called immediately when a new behavior action request is received. Gives the action goal to process and should start behavior initialization / process."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:78
+msgid "onCycleUpdate()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:78
+msgid "Method is called at the behavior update rate and should complete any necessary updates. An example for spinning is computing the command velocity for the current cycle, publishing it and checking for completion."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:82
+msgid "onConfigure()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:82
+msgid "Method is called when behavior server enters on_configure state. Ideally this method should implement operations which are neccessary before behavior goes to a configured state (get parameters, etc)."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:82 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:86 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:59 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:63 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:68 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:71 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:74 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:74 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:47 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:55 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:59
+msgid "No"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:86
+msgid "onCleanup()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:90
+msgid "For this tutorial, we will be using methods ``onRun()``, ``onCycleUpdate()``, and ``onConfigure()`` to create the SMS behavior. ``onConfigure()`` will be skipped for brevity, but only declares parameters."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:93
+msgid "In recoveries, ``onRun()`` method must set any initial state and kick off the behavior. For the case of our call for help behavior, we can trivially compute all of our needs in this method."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:118
+msgid "We receive an action goal, ``command``, which we want to process. ``command`` contains a field ``message`` that contains the message we want to communicate to our mothership. This is the \"call for help\" message that we want to send via SMS to our brothers in arms in the operations center."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:122
+msgid "We use the service Twilio to complete this task. Please `create an account <https://www.twilio.com/>`_ and get all the relavent information needed for creating the service (e.g. ``account_sid``, ``auth_token``, and a phone number). You can set these values as parameters in your configuration files corresponding to the ``onConfigure()`` parameter declarations."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:126
+msgid "We use the ``_twilio`` object to send our message with your account information from the configuration file. We send the message and log to screen whether or not the message was sent successfully or not. We return a ``FAILED`` or ``SUCCEEDED`` depending on this value to be returned to the action client."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:130
+msgid "``onCycleUpdate()`` is trivially simple as a result of our short-running behavior. If the behavior was instead longer running like spinning, navigating to a safe area, or getting out of a bad spot and waiting for help, then this function would be checking for timeouts or computing control values. For our example, we simply return success because we already completed our mission in ``onRun()``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:141
+msgid "The remaining methods are not used and are not mandatory to override them."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:144
+msgid "2- Exporting the Behavior Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:146
+msgid "Now that we have created our custom behavior, we need to export our Behavior Plugin so that it would be visible to the behavior server. Plugins are loaded at runtime and if they are not visible, then our behavior server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:148
+msgid "Coming to our tutorial, class ``nav2_sms_bahavior::SendSms`` is loaded dynamically as ``nav2_core::Behavior`` which is our base class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:150
+msgid "To export the behavior, we need to provide two lines"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:157 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:150
+msgid "Note that it requires pluginlib to export out plugin's class. Pluginlib would provide as macro ``PLUGINLIB_EXPORT_CLASS`` which does all the work of exporting."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:159
+msgid "It is good practice to place these lines at the end of the file but technically, you can also write at the top."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:161
+msgid "Next step would be to create plugin's description file in the root directory of the package. For example, ``behavior_plugin.xml`` file in our tutorial package. This file contains following information"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:163 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:282
+msgid "``library path``: Plugin's library name and it's location."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:164 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:219 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:157 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:283
+msgid "``class name``: Name of the class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:165 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:220 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:158 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:284
+msgid "``class type``: Type of class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:166 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:221 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:159 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:285
+msgid "``base class``: Name of the base class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:167 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:222 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:160 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:286
+msgid "``description``: Description of the plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:177 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:170
+msgid "Next step would be to export plugin using ``CMakeLists.txt`` by using cmake function ``pluginlib_export_plugin_description_file()``. This function installs plugin description file to ``share`` directory and sets ament indexes to make it discoverable."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:183 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:176
+msgid "Plugin description file should also be added to ``package.xml``"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:192 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:185
+msgid "Compile and it should be registered. Next, we'll use this plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:196 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:188
+msgid "3- Pass the plugin name through params file"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:198 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:190
+msgid "To enable the plugin, we need to modify the ``nav2_params.yaml`` file as below to replace following params"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:225 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:208
+msgid "with"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:260
+msgid "In the above snippet, you can observe that we add the SMS behavior under the ``send_sms`` ROS 2 action server name. We also tell the behavior server that the ``send_sms`` is of type ``SendSms`` and give it our parameters for your Twilio account."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:264
+msgid "4- Run Behavior Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:266
+msgid "Run Turtlebot3 simulation with enabled Nav2. Detailed instruction how to make it are written at :ref:`getting_started`. Below is shortcut command for that:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:272
+msgid "In a new terminal run:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:4
+msgid "Writing a New Behavior Tree Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:13
+msgid "This tutorial shows how to create your own behavior tree (BT) plugin. The BT plugins are used as nodes in the behavior tree XML processed by the BT Navigator for navigation logic."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:28
+msgid "1- Creating a new BT Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:30
+msgid "We will create a simple BT plugin node to perform an action on another server. For this example, we're going to analyze the simplest behavior tree action node in the ``nav2_behavior_tree`` package, the ``wait`` node. Beyond this example of an action BT node, you can also create custom decorator, condition, and control nodes. Each node type has a unique role in the behavior tree to perform actions like planning, control the flow of the BT, check the status of a condition, or modify the output of other BT nodes."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:35
+msgid "The code in this tutorial can be found in `nav2_behavior_tree <https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree>`_ package as the ``wait_action`` node. This action node can be considered as a reference for writing other action node plugins."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:38
+msgid "Our example plugin inherits from the base class ``nav2_behavior_tree::BtActionNode``. The base class is a wrapper on the BehaviorTree.CPP ``BT::ActionNodeBase`` that simplifies BT action nodes that utilize ROS 2 action clients. An ``BTActionNode`` is both a BT action and uses ROS 2 action network interfaces for calling a remote server to do some work."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:42
+msgid "When working with other types of BT nodes (e.g. decorator, control, condition) use the corresponding BT node, ``BT::DecoratorNode``, ``BT::ControlNode``, or ``BT::ConditionNode``. For BT action nodes that do *not* utilize ROS 2 action interfaces, use the ``BT::ActionNodeBase`` base class itself."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:45
+msgid "The ``BTActionNode`` class provides 5 virtual methods to use, in addition to the information provided in the constructor. Let's learn more about the methods needed to write a BT action plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:49
+msgid "**method**"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:49
+msgid "**Required?**"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:51
+msgid "Constructor"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:51
+msgid "Constructor to indicate the corresponding XML tag name to that matches the plugin, the name of the action server to call using the plugin, and any BehaviorTree.CPP special configurations required."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:55
+msgid "providedPorts()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:55
+msgid "A function to define the input and output ports a BT node may have. These are analogous to parameters that are defined in the BT XML by hardcoded values or by the value of output ports of other nodes."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:59
+msgid "on_tick()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:59
+msgid "Method is called when this BT node is ticked by the behavior tree while executing. This should be used to get dynamic updates like new blackboard values, input ports, or parameters. May also reset state for the action."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:63
+msgid "on_wait_for_result()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:63
+msgid "Method is called when the behavior tree node is waiting for a result from the ROS 2 action server it called. This could be used to check for updates to preempt the current task, check for a timeout, or anything to compute while waiting for the action to complete."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:68
+msgid "on_success()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:68
+msgid "Method is called when the ROS 2 action server returns a successful result. Returns the value the BT node will report back to the tree."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:71
+msgid "on_aborted()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:71
+msgid "Method is called when the ROS 2 action server returns an aborted result. Returns the value the BT node will report back to the tree."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:74
+msgid "on_cancelled()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:74
+msgid "MMethod is called when the ROS 2 action server returns a cancelled result. Returns the value the BT node will report back to the tree."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:78
+msgid "For this tutorial, we will only be using the ``on_tick()`` method."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:80
+msgid "In the constructor, we need to get any non-variable parameters that apply to the behavior tree node. In this example, we need to get the value of the duration to sleep from the input port of the behavior tree XML."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:103
+msgid "Here, we give the input of the ``xml_tag_name``, which tells the BT node plugin the string in the XML that corresponds to this node. This will be seen later when we register this BT node as a plugin. It also takes in the string name of the action server that it will call to execute some behavior. Finally, a set of configurations that we can safely ignore for the purposes of most node plugins."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:108
+msgid "We then call the ``BTActionNode`` constructor. As can be seen, it's templated by the ROS 2 action type, so we give it the ``nav2_msgs::action::Wait`` action message type and forward our other inputs. The ``BTActionNode`` has the ``tick()`` method, which is called directly by the behavior tree when this node is called from the tree. ``on_tick()`` is then called before sending the action client goal."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:112
+msgid "In the body of the constructor, we get the input port ``getInput`` of the parameter ``wait_duration``, which can be configured independently for every instance of the ``wait`` node in the tree. It is set in the ``duration`` parameter and inserted into the ``goal_``. The ``goal_`` class variable is the goal that the ROS 2 action client will send to the action server. So in this example, we set the duration to the time we want to wait by so that the action server knows the specifics of our request."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:117
+msgid "The ``providedPorts()`` method gives us the opportunity to define input or output ports. Ports can be thought of as parameters that the behavior tree node has access to from the behavior tree itself. For our example, there is only a single input port, the ``wait_duration`` which can be set in the BT XML for each instance of the ``wait`` recovery. We set the type, ``int``, the default ``1``, the name ``wait_duration``, and a description of the port ``Wait time``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:133
+msgid "The ``on_tick()`` method is called when the behavior tree ticks a specific node. For the wait BT node, we simply want to notify a counter on the blackboard that an action plugin that corresponds to a recovery was ticked. This is useful to keep metrics about the number of recoveries executed during a specific navigation run. You could also log or update the ``goal_`` waiting duration if that is a variable input."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:145
+msgid "The remaining methods are not used and are not mandatory to override them. Only some BT node plugins will require overriding ``on_wait_for_result()`` to check for preemption or check a timeout. The success, aborted, and cancelled methods will default to ``SUCCESS``, ``FAILURE``, ``SUCCESS`` respectively, if not overridden."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:150 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:137
+msgid "2- Exporting the planner plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:152
+msgid "Now that we have created our custom BT node, we need to export our plugin so that it would be visible to the behavior tree when it loads a custom BT XML. Plugins are loaded at runtime, and if they are not visible, then our BT Navigator server won't be able to load them or use them. In BehaviorTree.CPP, exporting and loading plugins is handled by the ``BT_REGISTER_NODES`` macro."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:169
+msgid "In this macro, we must create a ``NodeBuilder`` so that our custom action node can have a non-default constructor signature (for the action and xml names). This lambda will return a unique pointer to the behavior tree node we have created. Fill in the constructor with the relevant information, giving it the ``name`` and ``config`` given in the function arguments. Then define the ROS 2 action server's name that this BT node will call, in this case, it's the ``Wait`` action."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:174
+msgid "We finally give the builder to a factory to register. ``Wait`` given to the factory is the name in the behavior tree XML file that corresponds to this BT node plugin. An example can be seen below, where the ``Wait`` BT XML node specifies a non-variable input port ``wait_duration`` of 5 seconds."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:183
+msgid "3- Add plugin library name to config"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:185
+msgid "In order for the BT Navigator node to discover the plugin we've just registered, we need to list the plugin library name under the bt_navigator node in the configuration YAML file. Configuration should look similar to the one shown below. Take note of nav2_wait_action_bt_node listed under plugin_lib_names."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:201
+msgid "4- Run Your Custom plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:203
+msgid "Now you can use a behavior tree with your custom BT node. For example, the ``navigate_w_replanning_and_recovery.xml`` file is shown below."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:206
+msgid "Select this BT XML file in your specific navigation request in ``NavigateToPose`` or as the default behavior tree in the BT Navigator's configuration yaml file."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:4
+msgid "Writing a New Costmap2D Plugin"
+msgstr ""
+
+msgid "Animated gif with gradient demo"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:18
+msgid "This tutorial shows how to create your own simple `plugin <http://wiki.ros.org/pluginlib>`_ for Costmap2D."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:20
+msgid "Before starting the tutorial, please check this `video <https://vimeo.com/106994708>`_ which contains information about Costmap2D layers design and plugins basic operational principals."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:25
+msgid "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:31
+msgid "1- Write a new Costmap2D plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:33
+msgid "For a demonstration, this example will create a costmap plugin that puts repeating cost gradients in the costmap. The annotated code for this tutorial can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_gradient_costmap_plugin`` ROS 2-package. Please refer to it when making your own layer plugin for Costmap2D."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:37
+msgid "The plugin class ``nav2_gradient_costmap_plugin::GradientLayer`` is inherited from basic class ``nav2_costmap_2d::Layer``:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:46
+msgid "The basic class provides the set of virtual methods API for working with costmap layers in a plugin. These methods are called at runtime by ``LayeredCostmap``. The list of methods, their description, and necessity to have these methods in plugin's code is presented in the table below:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:51
+msgid "onInitialize()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:51
+msgid "Method is called at the end of plugin initialization. There is usually declarations of ROS parameters. This is where any required initialization should occur."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:55
+msgid "updateBounds()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:55
+msgid "Method is called to ask the plugin: which area of costmap layer it needs to update. The method has 3 input parameters: robot position and orientation, and 4 output parameters: pointers to window bounds. These bounds are used for performance reasons: to update the area inside the window where new info is available, avoiding updates of the whole costmap on every iteration."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:62
+msgid "updateCosts()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:62
+msgid "Method is called each time when costmap re-calculation is required. It updates the costmap layer only within its bounds window. The method has 4 input parameters: calculation window bounds, and 1 output parameter: reference to a resulting costmap ``master_grid``. The ``Layer`` class provides the plugin with an internal costmap, ``costmap_``, for updates. The ``master_grid`` should be updated with values within the window bounds using one of the following update methods: ``updateWithAddition()``, ``updateWithMax()``, ``updateWithOverwrite()`` or ``updateWithTrueOverwrite()``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:72
+msgid "matchSize()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:72
+msgid "Method is called each time when map size was changed."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:74
+msgid "onFootprintChanged()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:74
+msgid "Method is called each time when footprint was changed."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:76
+msgid "reset()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:76
+msgid "It may have any code to be executed during costmap reset."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:79
+msgid "In our example these methods have the following functionality:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:81
+msgid "``GradientLayer::onInitialize()`` contains declaration of a ROS parameter with its default value:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:88
+msgid "and sets ``need_recalculation_`` bounds recalculation indicator:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:94
+msgid "``GradientLayer::updateBounds()`` re-calculates window bounds if ``need_recalculation_`` is ``true`` and updates them regardless of ``need_recalculation_`` value."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:96
+msgid "``GradientLayer::updateCosts()`` - in this method the gradient is writing directly to the resulting costmap ``master_grid`` without merging with previous layers. This is equal to working with internal ``costmap_`` and then calling ``updateWithTrueOverwrite()`` method. Here is the gradient making algorithm for master costmap:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:118
+msgid "where the ``GRADIENT_SIZE`` is the size of each gradient period in map cells, ``GRADIENT_FACTOR`` - decrement of costmap's value per each step:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:122
+msgid "These parameters are defined in plugin's header file."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:124
+msgid "``GradientLayer::onFootprintChanged()`` just resets ``need_recalculation_`` value."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:126
+msgid "``GradientLayer::reset()`` method is dummy: it is not used in this example plugin. It remains there since pure virtual function ``reset()`` in parent ``Layer`` class required to be overridden."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:129
+msgid "2- Export and make GradientLayer plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:131
+msgid "The written plugin will be loaded at runtime as its basic parent class and then will be called by plugin handling modules (for costmap2d by ``LayeredCostmap``). Pluginlib opens a given plugin in run-time and provides methods from exported classes to be callable. The mechanism of class exporting tells pluginlib which basic class should be used during these calls. This allows to extend an application by plugins without knowing application source code or recompiling it."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:133
+msgid "In our example the ``nav2_gradient_costmap_plugin::GradientLayer`` plugin's class should be dynamically loaded as a ``nav2_costmap_2d::Layer`` basic class. For this the plugin should be registered as follows:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:135
+msgid "Plugin's class should be registered with a basic type of loaded class. For this there is a special macro ``PLUGINLIB_EXPORT_CLASS`` should be added to any source-file composing the plugin library:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:142
+msgid "This part is usually placed at the end of cpp-file where the plugin class was written (in our example ``gradient_layer.cpp``). It is good practice to place these lines at the end of the file, but technically, you can also place at the top."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:144
+msgid "Plugin's inormation should be stored to plugin description file. This is done by using separate XML (in our example ``gradient_plugins.xml``) in the plugin's package. This file contains information about:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:146
+msgid "``path``: Path and name of library where plugin is placed."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:147
+msgid "``name``: Plugin type referenced in ``plugin_types`` parameter (see next section for more details). It could be whatever you want."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:148
+msgid "``type``: Plugin class with namespace taken from the source code."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:149
+msgid "``basic_class_type``: Basic parent class from which plugin class was derived."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:150
+msgid "``description``: Plugin description in a text form."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:160
+msgid "The export of plugin is performed by including ``pluginlib_export_plugin_description_file()`` cmake-function into ``CMakeLists.txt``. This function installs plugin description file into ``share`` directory and sets ament indexes for plugin description XML to be discoverable as a plugin of selected type:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:166
+msgid "Plugin description file is also should be added to ``package.xml``. ``costmap_2d`` is the package of the interface definition, for our case ``Layer``, and requires a path to the xml file:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:175
+msgid "After everything is done put the plugin package into ``src`` directory of a certain ROS 2-workspace, build the plugin package (``colcon build --packages-select nav2_gradient_costmap_plugin --symlink-install``) and source ``setup.bash`` file when it necessary."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:177
+msgid "Now the plugin is ready to use."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:180
+msgid "3- Enable the plugin in Costmap2D"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:182
+msgid "At the next step it is required to tell Costmap2D about new plugin. For that the plugin should be added to ``plugin_names`` and ``plugin_types`` lists in ``nav2_params.yaml`` optionally for ``local_costmap``/``global_costmap`` in order to be enabled in run-time for Controller/Planner Server. ``plugin_names`` list contains the names of plugin objects. These names could be anything you want. ``plugin_types`` contains types of listed in ``plugin_names`` objects. These types should correspond to ``name`` field of plugin class specified in plugin description XML-file."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:186 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:194
+msgid "For Galactic or later, ``plugin_names`` and ``plugin_types`` have been replaced with a single ``plugins`` string vector for plugin names. The types are now defined in the ``plugin_name`` namespace in the ``plugin:`` field (e.g. ``plugin: MyPlugin::Plugin``). Inline comments in the code blocks will help guide you through this."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:188
+msgid "For example:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:213
+msgid "YAML-file may also contain the list of parameters (if any) for each plugin, identified by plugins object name."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:215
+msgid "NOTE: there could be many simultaneously loaded plugin objects of one type. For this, ``plugin_names`` list should contain different plugins names whether the ``plugin_types`` will remain the same types. For example:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:221
+msgid "In this case each plugin object will be handled by its own parameters tree in a YAML-file, like:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:235
+msgid "4- Run GradientLayer plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:237
+msgid "Run Turtlebot3 simulation with enabled Nav2. Detailed instructions how to make it are written at :ref:`getting_started`. Below is shortcut command for that:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:243
+msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on map as it was described in :ref:`getting_started`. Robot will be localized on map and the result should be as presented at picture below. There, the gradient costmap can be seen. There are also 2 noticeable things: dynamically updated by ``GradientLayer::updateCosts()`` costmap within its bounds and global path curved by gradient:"
+msgstr ""
+
+msgid "Image of gradient costmap used"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:4
+msgid "Writing a New Controller Plugin"
+msgstr ""
+
+msgid "Animated gif of pure pursuit controller demo"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:19
+msgid "This tutorial shows how to create your own controller `plugin <https://index.ros.org/p/pluginlib/>`_."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:21
+msgid "In this tutorial, we will be implementing the pure pursuit path tracking algorithm based on this `paper <https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf>`_. It is recommended you go through it."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:24
+msgid "Note: This tutorial is based on a previously existing simplified version of the Regulated Pure Pursuit controller now in the Nav2 stack. You can find the source code matching this tutorial `here <https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller>`_."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:39
+msgid "1- Create a new Controller Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:41
+msgid "We will be implementing the pure pursuit controller. The annotated code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_pure_pursuit_controller``. This package can be considered as a reference for writing your own controller plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:44
+msgid "Our example plugin class ``nav2_pure_pursuit_controller::PurePursuitController`` inherits from the base class ``nav2_core::Controller``. The base class provides a set of virtual methods to implement a controller plugin. These methods are called at runtime by the controller server to compute velocity commands. The list of methods, their descriptions, and necessity are presented in the table below:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:51
+msgid "Method is called when controller server enters on_configure state. Ideally this method should perform declarations of ROS parameters and initialization of controller's member variables. This method takes 4 input params: weak pointer to parent node, controller name, tf buffer pointer and shared pointer to costmap."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:56
+msgid "Method is called when controller server enters on_activate state. Ideally this method should implement operations which are neccessary before controller goes to an active state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:60
+msgid "Method is called when controller server enters on_deactivate state. Ideally this method should implement operations which are neccessary before controller goes to an inactive state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:64
+msgid "Method is called when controller server goes to on_cleanup state. Ideally this method should clean up resources which are created for the controller."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:67
+msgid "setPlan()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:67
+msgid "Method is called when the global plan is updated. Ideally this method should perform operations that transform the global plan and store it."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:70
+msgid "computeVelocityCommands()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:70
+msgid "Method is called when a new velocity command is demanded by the controller server in-order for the robot to follow the global path. This method returns a `geometry_msgs\\:\\:msg\\:\\:TwistStamped` which represents the velocity command for the robot to drive.  This method passes 2 parameters: reference to the current robot pose and its current velocity."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:76
+msgid "setSpeedLimit()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:76
+msgid "Method is called when it is required to limit the maximum linear speed of the robot. Speed limit could be expressed in absolute value (m/s) or in percentage from maximum robot speed. Note that typically, maximum rotational speed is being limited proportionally to the change of maximum linear speed, in order to keep current robot behavior untouched."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:83
+msgid "In this tutorial, we will use the methods ``PurePursuitController::configure``, ``PurePursuitController::setPlan`` and ``PurePursuitController::computeVelocityCommands``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:86
+msgid "In controllers, ``configure()`` method must set member variables from ROS parameters and perform any initialization required."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:125
+msgid "Here, ``plugin_name_ + \".desired_linear_vel\"`` is fetching the ROS parameter ``desired_linear_vel`` which is specific to our controller. Nav2 allows loading of multiple plugins, and to keep things organized, each plugin is mapped to some ID/name. Now, if we want to retrieve the parameters for that specific plugin, we use ``<mapped_name_of_plugin>.<name_of_parameter>`` as done in the above snippet. For example, our example controller is mapped to the name ``FollowPath`` and to retrieve the ``desired_linear_vel`` parameter, which is specific to \"FollowPath”, we used ``FollowPath.desired_linear_vel``. In other words, ``FollowPath`` is used as a namespace for plugin-specific parameters. We will see more on this when we discuss the parameters file (or params file)."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:132
+msgid "The passed-in arguments are stored in member variables so that they can be used at a later stage if needed."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:134
+msgid "In ``setPlan()`` method, we receive the updated global path for the robot to follow. In our example, we transform the received global path into the frame of the robot and then store this transformed global path for later use."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:145
+msgid "The computation for the desired velocity happens in the ``computeVelocityCommands()`` method. It is used to calculate the desired velocity command given the current velocity and pose. The third argument - is a pointer to the ``nav2_core::GoalChecker``, that checks whether a goal has been reached. In our example, this won't be used. In the case of pure pursuit, the algorithm computes velocity commands such that the robot tries to follow the global path as closely as possible. This algorithm assumes a constant linear velocity and computes the angular velocity based on the curvature of the global path."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:194
+msgid "The remaining methods are not used, but it's mandatory to override them. As per the rules, we did override all but left them empty."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:197
+msgid "2- Exporting the controller plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:199
+msgid "Now that we have created our custom controller, we need to export our controller plugin so that it will be visible to the controller server. Plugins are loaded at runtime, and if they are not visible, then our controller server won't be able to load them. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:203
+msgid "Coming back to our tutorial, class ``nav2_pure_pursuit_controller::PurePursuitController`` is loaded dynamically as ``nav2_core::Controller`` which is our base class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:205 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:269
+msgid "To export the controller, we need to provide two lines"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:212 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:276
+msgid "Note that it requires pluginlib to export out the plugin's class. Pluginlib would provide as macro ``PLUGINLIB_EXPORT_CLASS``, which does all the work of exporting."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:214 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:152 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:278
+msgid "It is good practice to place these lines at the end of the file, but technically, you can also write at the top."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:216
+msgid "The next step would be to create the plugin's description file in the root directory of the package. For example, ``pure_pursuit_controller_plugin.xml`` file in our tutorial package. This file contains the following information"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:218 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:156
+msgid "``library path``: Plugin's library name and its location."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:234 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:298
+msgid "Next step would be to export plugin using ``CMakeLists.txt`` by using CMake function ``pluginlib_export_plugin_description_file()``. This function installs the plugin description file to ``share`` directory and sets ament indexes to make it discoverable."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:240 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:304
+msgid "The plugin description file should also be added to ``package.xml``"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:249 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:313
+msgid "Compile, and it should be registered. Next, we'll use this plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:252 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:316
+msgid "3- Pass the plugin name through the params file"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:254 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:318
+msgid "To enable the plugin, we need to modify the ``nav2_params.yaml`` file as below"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:270
+msgid "In the above snippet, you can observe the mapping of our ``nav2_pure_pursuit_controller/PurePursuitController`` controller to its id ``FollowPath``. To pass plugin-specific parameters we have used ``<plugin_id>.<plugin_specific_parameter>``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:274
+msgid "4- Run Pure Pursuit Controller plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:276 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:346
+msgid "Run Turtlebot3 simulation with enabled Nav2. Detailed instructions on how to make it run are written at :ref:`getting_started`. Below is a shortcut command for that:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:282
+msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on the map as it was described in :ref:`getting_started`. The robot will localize on the map and then click on the \"Nav2 goal\" and click on the pose where you want your robot to navigate to. After that controller will make the robot follow the global path."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:4
+msgid "Writing a New Planner Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:18
+msgid "This tutorial shows how to create your own planner plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:32
+msgid "1- Creating a new Planner Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:34
+msgid "We will create a simple straight-line planner. The annotated code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_straightline_planner``. This package can be considered as a reference for writing planner plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:38
+msgid "Our example plugin inherits from the base class ``nav2_core::GlobalPlanner``. The base class provides 5 pure virtual methods to implement a planner plugin. The plugin will be used by the planner server to compute trajectories. Let's learn more about the methods needed to write a planner plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44
+msgid "Method is called at when planner server enters on_configure state. Ideally this methods should perform declarations of ROS parameters and initialization of planner's member variables. This method takes 4 input params: shared pointer to parent node, planner name, tf buffer pointer and shared pointer to costmap."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50
+msgid "Method is called when planner server enters on_activate state. Ideally this method should implement operations which are neccessary before planner goes to an active state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54
+msgid "Method is called when planner server enters on_deactivate state. Ideally this method should implement operations which are neccessary before planner goes to an inactive state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:58
+msgid "Method is called when planner server goes to on_cleanup state. Ideally this method should clean up resoures which are created for the planner."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:61
+msgid "createPlan()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:61
+msgid "Method is called when planner server demands a global plan for specified start and goal pose. This method returns `nav_msgs\\:\\:msg\\:\\:Path` carrying global plan. This method takes 2 input parmas: start pose and goal pose."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:66
+msgid "For this tutorial, we will be using methods ``StraightLine::configure()`` and ``StraightLine::createPlan()`` to create straight-line planner."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:68
+msgid "In planners, ``configure()`` method must set member variables from ROS parameters and any initialization required,"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:82
+msgid "Here, ``name_ + \".interpolation_resolution\"`` is fetching the ROS parameters ``interpolation_resolution`` which is specific to our planner. Nav2 allows the loading of multiple plugins, and to keep things organized, each plugin is mapped to some ID/name. Now if we want to retrieve the parameters for that specific plugin, we use ``<mapped_name_of_plugin>.<name_of_parameter>`` as done in the above snippet. For example, our example planner is mapped to the name \"GridBased\" and to retrieve the ``interpolation_resolution`` parameter which is specific to \"GridBased\", we used ``Gridbased.interpolation_resolution``. In other words, ``GridBased`` is used as a namespace for plugin-specific parameters. We will see more on this when we discuss the parameters file (or params file)."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:84
+msgid "In ``createPlan()`` method, we need to create a path from the given start to goal poses. The ``StraightLine::createPlan()`` is called using start pose and goal pose to solve the global path planning problem. Upon succeeding, it converts the path to the ``nav_msgs::msg::Path`` and returns to the planner server. Below annotation shows the implementation of this method."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:134
+msgid "The remaining methods are not used but it's mandatory to override them. As per the rules, we did override all but left them blank."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:139
+msgid "Now that we have created our custom planner, we need to export our planner plugin so that it will be visible to the planner server. Plugins are loaded at runtime and if they are not visible, then our planner server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:141
+msgid "Coming back to our tutorial, class ``nav2_straightline_planner::StraightLine`` is loaded dynamically as ``nav2_core::GlobalPlanner`` which is our base class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:143
+msgid "To export the planner, we need to provide two lines"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:154
+msgid "Next step would be to create plugin's description file in the root directory of the package. For example, ``global_planner_plugin.xml`` file in our tutorial package. This file contains the following information"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:220
+msgid "In the above snippet, you can observe the mapping of our ``nav2_straightline_planner/StraightLine`` planner to its id ``GridBased``. To pass plugin-specific parameters, we have used ``<plugin_id>.<plugin_specific_parameter>``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:223
+msgid "4- Run StraightLine plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:225
+msgid "Run Turtlebot3 simulation with enabled navigation2. Detailed instruction how to make it are written at :ref:`getting_started`. Below is shortcut command for that:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:231
+msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point to the location on map as it was described in :ref:`getting_started`. Robot will localize on the map and then click on \"Navigation2 goal\" and click on the pose where you want your planner to consider a goal pose. After that planner will plan the path and robot will start moving towards the goal."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:4
+msgid "Writing a New Navigator Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:13
+msgid "This tutorial shows how to create your own behavior-tree navigator `plugin <https://index.ros.org/p/pluginlib/>`_ based on the ``nav2_core::BehaviorTreeNavigator`` base class."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:15
+msgid "In this tutorial, we will be reviewing the ``Navigate to Pose`` behavior-tree navigator plugin, which is the foundational navigator of Nav2 and complimentary behavior to ROS 1 Navigation. This completes point-to-point navigation. This tutorial will be reviewing the code and structure as of ROS 2 Iron. While small variations may be made over time, this should be sufficient to get started writing your own navigator if you choose as we do not expect major API changes on this system."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:17
+msgid "It may be beneficial to write your own Navigator if you have a custom action message definition you'd like to use with Navigation rather than the provided ``NavigateToPose`` or ``NavigateThroughPoses`` interfaces (e.g. doing complete coverage or containing additional constraint information). The role of the Navigators are to extract information from requests to pass to the behavior tree / blackboard, populate feedback and responses, and maintain the state of the behavior tree if relevant. The behavior tree XML will define the actual navigation logic used."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:31
+msgid "1- Create a new Navigator Plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:33
+msgid "We will be implementing pure point-to-point navigation behavior. The code in this tutorial can be found in `Nav2's BT Navigator package <https://github.com/ros-planning/navigation2/nav2_bt_navigator>`_ as the ``NavigateToPoseNavigator``. This package can be considered as a reference for writing your own plugin."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:35
+msgid "Our example plugin class ``nav2_bt_navigator::NavigateToPoseNavigator`` inherits from the base class ``nav2_core::BehaviorTreeNavigator``. The base class provides a set of virtual methods to implement a navigator plugin. These methods are called at runtime by the BT Navigator server or as a response to ROS 2 actions to process a navigation request."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:37
+msgid "Note that this class has itself a base class of ``NavigatorBase``. This class is to provide a non-templated base-class for use in loading the plugins into vectors for storage and calls for basic state transition in the lifecycle node. Its members (e.g. ``on_XYZ``) are implemented for you in ``BehaviorTreeNavigator`` and marked as ``final`` so they are not possible to be overrided by the user. The API that you will be implementing for your navigator are the virtual methods within ``BehaviorTreeNavigator``, not ``NavigatorBase``. These ``on_XYZ`` APIs are implemented in necessary functions in ``BehaviorTreeNavigator`` to handle boilerplate logic regarding the behavior tree and action server to minimize code duplication across the navigator implementations (e.g. ``on_configure`` will create the action server, register callbacks, populate the blackboard with some necessary basic information, and then call a user-defined ``configure`` function for any additional user-specific needs)."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:39
+msgid "The list of methods, their descriptions, and necessity are presented in the table below:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:44
+msgid "getDefaultBTFilepath()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:44
+msgid "Method is called on initialization to retrieve the default BT filepath to use for navigation. This may be done via parameters, hardcoded logic, sentinal files, etc."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:47
+msgid "Method is called when BT navigator server enters on_configure state. This method should implement operations which are neccessary before navigator goes to an active state, such as getting parameters, setting up the blackboard, etc."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:51
+msgid "Method is called when BT navigator server enters on_activate state. This method should implement operations which are neccessary before navigator goes to an active state, such as create clients and subscriptions."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:55
+msgid "Method is called when BT navigator server enters on_deactivate state.  This method should implement operations which are neccessary before navigator goes to an inactive state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:59
+msgid "Method is called when BT navigator server goes to on_cleanup state. This method should clean up resources which are created for the navigator."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:62
+msgid "goalReceived()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:62
+msgid "Method is called when a new goal is received by the action server to process. It may accept or deny this goal with its return signature. If accepted, it may need to load the appropriate parameters from the request (e.g. which BT to use), add request parameters to the blackboard for your applications use, or reset internal state."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:67
+msgid "onLoop()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:67
+msgid "Method is called periodically while the behavior tree is looping to check statuses or more commonly to publish action feedback statuses to the client."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:70
+msgid "onPreempt()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:70
+msgid "Method is called when a new goal is requesting preemption over the existing goal currently being processed. If the new goal is viable, it should make all appropriate updates to the BT and blackboard such that this new request may immediately start being processed without hard cancelation of the initial task (e.g. preemption)."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:76
+msgid "goalCompleted()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:76
+msgid "Method is called when a goal is completed to populate the action result object or do any additional checks required at the end of a task."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:79
+msgid "getName()"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:79
+msgid "Method is called to get the name of this navigator type"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:82
+msgid "In the Navigate to Pose Navigator, ``configure()`` method must determine the blackboard parameter names where the goal and paths are being stored, as these are key values for processing feedback in ``onLoop`` and for the different behavior tree nodes to communicate this information between themselves. Additionally and uniquely to this navigator type, we also create a client to itself and a subscription to the ``goal_pose`` topic such that requests from the default configurations of Rviz2 using the *Goal Pose* tool will be processed."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:117
+msgid "The values of the blackboard IDs are stored alongside the odometry smoother the BT Navigator provides for populating meaningful feedback later. Complimentary to this, the ``cleanup`` method will reset these resources. The activate and deactivate methods are not used in this particular navigator."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:128
+msgid "In the ``getDefaultBTFilepath()``, we use a parameter ``default_nav_to_pose_bt_xml`` to get the default behavior tree XML file to use if none is provided by the navigation request and to initialize the BT Navigator with a behavior tree hot-loaded. If one is not provided in the parameter files, then we grab a known and reasonable default XML file in the ``nav2_bt_navigator`` package:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:152
+msgid "When a goal is received, we need to determine if this goal is valid and should be processed. The ``goalReceived`` method provides you the ``goal`` and a return value if it is being processed or not. This information is sent back to the action server to notify the client. In this case, we want to make sure that the goal's behavior tree is valid or else we cannot proceed. If it is valid, then we can initialize the goal pose onto the blackboard and reset some state in order to cleanly process this new request."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:173
+msgid "Once this goal is completed, we need to populate the Action's result, if required and meaningful. In this navigator's case, it contains no result information when the navigation request was completed successfully, so this method is empty. For other navigator types, you may populate the ``result`` object provided."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:183
+msgid "If however a goal is preempted (e.g. a new action request comes in while an existing request is being processed), the ``onPreempt()`` method is called to determine if the new request is genuine and appropriate to preempt the currently processing goal. For example, it might not be wise to accept a preeemption request if that request is fundamentally different in nature from an existing behavior tree task or when your existing task is of a higher priority."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:211
+msgid "Note that here you can also see the ``initializeGoalPose`` method called. This method will set the goal parameters for this navigator onto the blackboard and reset important state information to cleanly re-use a behavior tree without old state information, as shown below:"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:231
+msgid "The recovery counter and start time are both important feedback terms for a client to understand the state of the current task (e.g. if its failing, having problems, or taking exceptionally long). The setting of the goal on the blackboard is taken by the ``ComputePathToPose`` BT Action node to plan a new route to the goal (and then who's path is communicated to the ``FollowPath`` BT node via the blackboard ID previously set)."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:233
+msgid "The final function implemented is ``onLoop``, which is simplified below for tutorial purposes. While anything can be done in this method, which is called as the BT is looping through the tree, it is common to use this as an opportunity to populate any necessary feedback about the state of the navigation request, robot, or metadata that a client might be interested in."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:261
+msgid "2- Exporting the navigator plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:263
+msgid "Now that we have created our custom navigator, we need to export our plugin so that it would be visible to the BT Navigator server. Plugins are loaded at runtime, and if they are not visible, then our server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:267
+msgid "Coming to our tutorial, class ``nav2_bt_navigator::NavigateToPoseNavigator`` is loaded dynamically as ``nav2_core::NavigatorBase`` which is our base class due to the subtleties previously described."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:280
+msgid "The next step would be to create the plugin's description file in the root directory of the package. For example, ``navigator_plugin.xml`` file in our tutorial package. This file contains the following information"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:340
+msgid "In the above snippet, you can observe the mapping of our ``nav2_bt_navigator/NavigateToPoseNavigator`` plugin to its id ``navigate_to_pose``. To pass plugin-specific parameters we have used ``<plugin_id>.<plugin_specific_parameter>``."
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:344
+msgid "4- Run plugin"
+msgstr ""
+
+#: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:352
+msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on the map as it was described in :ref:`getting_started`. The robot will localize on the map and then click on the \"Nav2 goal\" and click on the pose where you want your robot to navigate to. After that navigator will take over with the behavior tree XML file behavior definition provided to it."
+msgstr ""
+
+#: ../../plugin_tutorials/index.rst:4
+msgid "Plugin Tutorials"
+msgstr ""
+
+#: ../../plugin_tutorials/index.rst:6
+msgid "Navigation2 Tutorials"
+msgstr ""
+

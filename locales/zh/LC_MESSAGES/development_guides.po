@@ -1,0 +1,966 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:4
+msgid "Build Troubleshooting Guide"
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:7
+msgid "Common Nav2 Dependencies Build Failures"
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:9
+msgid "Make sure that .bashrc file has no ROS environment variables in it. Open new terminals and try to build the packages again."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:11
+msgid "Make sure to run rosdep for the correct ROS 2 distribution. ``rosdep install -y -r -q --from-paths src --ignore-src --rosdistro <ros2-distro>``"
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:14
+msgid "Make sure that the ``setup.bash`` is sourced in the ROS 2 installation or ROS 2 main build workspace, if applicable. Check if you can run talker and listener nodes."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:16
+msgid "Make sure that the ``setup.bash`` in ``nav2_depend_ws/install`` is sourced."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:18
+msgid "Check if you have the correct ROS version and distribution. ``printenv | grep -i ROS``"
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:20
+msgid "If you see a bunch of errors on startup about ``map`` or ``odom`` frame not existing, remember to activate drivers (or gazebo for simulation) and set an initial pose in ``map`` frame. Costmap2D will block activation until a full TF tree is available."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:22
+msgid "Make sure you've activated the lifecycle nodes if you're not seeing transforms or servers running."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:24
+msgid "Search `GitHub Issues <https://github.com/ros-planning/navigation2/issues>`_"
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:26
+msgid "Make sure you're using the correct branch for your distribution. There is no cross support from branch for ``DistroA`` in ``DistroB``. The main development branch uses the rolling distribution."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:28
+msgid "Still can't solve it? Let us know about your issue. `Open a ticket <https://github.com/ros-planning/navigation2/issues/new>`_."
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:31
+msgid "Reporting Issue"
+msgstr ""
+
+#: ../../development_guides/build_docs/build_troubleshooting_guide.rst:33
+msgid "If you run into any issues when building Navigation2, you can use the search tool in the issues tab on `GitHub <https://github.com/ros-planning/navigation2/issues>`_ and always feel free to `open a ticket <https://github.com/ros-planning/navigation2/issues/new>`_."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:4
+msgid "Build and Install"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:7
+msgid "Install"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:9
+msgid "Nav2 and its dependencies are released as binaries. You may install it via the following to get the latest stable released version:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:21
+msgid "Build"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:23
+msgid "There are a few ways to build Nav2 using:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:25 ../../development_guides/build_docs/index.rst:43
+msgid "Released Distribution Binaries"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:27
+msgid "Build Nav2 using readily installable binary dependencies"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:29 ../../development_guides/build_docs/index.rst:77
+msgid "Rolling Development Source"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:31
+msgid "Build Nav2 using custom or latest source dependencies"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:33 ../../development_guides/build_docs/index.rst:111
+msgid "Docker Container Images"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:35
+msgid "Build Nav2 using cached images and templated Dockerfiles"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:38
+msgid "For a *repeatable*, *reproducible* and *streamlined* development experience, check the Nav2 documentation on using :ref:`devcontainers`!"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:45
+msgid "To build Nav2, you'll first need to build or install ROS 2 and related development tools, including: ``colcon``, ``rosdep`` and ``vcstool``."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:48
+msgid "For more information on building or installing ROS 2 distros, see the official documentation:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:50
+msgid "`ROS 2 Installation <https://docs.ros.org/en/rolling/Installation.html>`_"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:51
+msgid "`Install development tools and ROS tools <https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Development-Setup.html#install-development-tools-and-ros-tools>`_"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:53
+msgid "Once your environment is setup, clone the repo, install all dependencies, and build the workspace:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:56
+msgid "The branch naming schema for Nav2 is organized by ROS distro, while the default branch for Rolling is ``main``."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:69 ../../development_guides/build_docs/index.rst:103
+msgid "You can then ``source ~/nav2_ws/install/setup.bash`` to get ready for demonstrations!"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:72
+msgid "For more examples on building Nav2 from released distribution binaries, checkout `distro.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile>`_."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:79
+msgid "Building Nav2 using rolling development source is similar to building Nav2 from released distribution binaries, where instead you build dependencies from source using the main development branches for all ROS based packages."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:82
+msgid "For more information on building ROS 2 from source, see the official documentation:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:84
+msgid "`ROS 2 Building from source <https://docs.ros.org/en/rolling/Installation.html#building-from-source>`_"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:86
+msgid "Once your environment is setup, clone the repo, import all dependencies, and build the workspace:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:89
+msgid "Be sure to check that all dependencies you need are included and uncommented in the ``.repos`` file."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:106
+msgid "For more examples on building Nav2 from rolling development source, checkout `source.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile>`_."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:113
+msgid "Building Nav2 using Docker container images provides a repeatable and reproducible environment to automate and self document the entire setup process. Instead of manually invoking the development tools as documented above, you can leverage the project's Dockerfiles to build and install Nav2 for various distributions."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:116
+msgid "For more information on installing Docker or leaning about Dockerfiles, see the official documentation:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:118
+msgid "`Docker Engine <https://docs.docker.com/engine/install>`_"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:119
+msgid "`Dockerfile reference <https://docs.docker.com/engine/reference/builder>`_"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:121
+msgid "Once your system is setup, you can build the Nav2 Dockerfile from the root of the repo:"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:133
+msgid "The `docker build <https://docs.docker.com/engine/reference/commandline/build/>`_ command above creates a tagged image using the `Dockerfile` from the context specified using the path to the repo, where build-time variables are set using additional arguments, e.g. passing a set of `colcon mixins <https://github.com/colcon/colcon-mixin-repository>`_ to configure the workspace build. Check the ``ARG`` directives in the `Dockerfile` to discover all build-time variables available. The command also specifies an `external cache source <https://docs.docker.com/engine/reference/commandline/build/#cache-from>`_ to pull the latest cached image from Nav2's `Container Registry <https://github.com/ros-planning/navigation2/pkgs/container/navigation2>`_ to speed up the build process."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:136
+msgid "The images cached from above are used for Nav2 CI, but can also be used with Nav2 :ref:`devcontainers`!"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:141
+msgid "Generate Doxygen"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:143
+msgid "Run ``doxygen`` in the root of the Nav2 repository. It will generate a ``/doc/*`` directory containing the documentation. The documentation entrypoint in a browser is index.html."
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:150
+msgid "Help"
+msgstr ""
+
+#: ../../development_guides/build_docs/index.rst:152
+msgid ":ref:`build-troubleshooting-guide`"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:2
+msgid "Dev Container Guide"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:4
+msgid "In this guide, we'll walk through the process of creating and using dev containers for the project. While included subsections will provide greater detail on the various aspects of the process, complete comprehension of the entire guide is not required to get started, but is recommended for those interested in how dev containers work, or how to customize and optimize them for their own personal workflows."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:6
+msgid "Creating Dev Containers"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:8
+msgid "Before creating a dev container, you'll want to choose the exact configuration to use. By default the `.devcontainer/devcontainer.json` configuration is selected, however you can also choose any other `devcontainer.json` file in the `.devcontainer/` directory, where such configurations can be nested to provide greater customization: either by targeting different stages within different Dockerfiles, overriding any merged metadata or default properties, or inclusion of additional extensions and alternate commands."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:11
+msgid "The specification, reference, and schema for the `devcontainer.json` config file format can be found here:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:12
+msgid "[Specification](https://containers.dev/implementors/spec)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:13
+msgid "Development Container Specification"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:14
+msgid "[Reference](https://containers.dev/implementors/json_reference)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:15
+msgid "Metadata and properties reference"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:16
+msgid "[Schema](https://containers.dev/implementors/json_schema)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:17
+msgid "JSON schema for `devcontainer.json`"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:20
+msgid "Building the image"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:22
+msgid "When first creating Dev Containers, any supporting tool or service used will download and build the docker images needed to run the container. This includes pulling any parent images the project's Dockerfile builds `FROM`, as well as any tags or layers declared via `cacheFrom`, as specified in the chosen `devcontainer.json` config file. This can take a while, but only needs to be done once, or at least not again until such layers are updated and pushed to the image registry."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:24
+msgid "Specifically, for this project, the default `devcontainer.json` file targets the `dever` stage within the project's root Dockerfile, the stage that also includes handy tools for developing the project, such as bash auto completion. This stage is in turn built `FROM` the `builder` stage, the stage that only includes the dependencies needed for building the project, as reused by the project's CI. For example, the `dever` stage modifies `/etc/bash.bashrc` to automatically source `install/setup.bash` from the underlay workspace, ensuring all VS Code extensions are loaded with the correct environment, while avoiding any race conditions during installation and startup."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:26
+msgid "To speed up the initial build, images layers from this `builder` stage are cached by pulling the same image tag used by the project's CI, hosted from the image registry. This ensures your local dev container replicates our CI environment as close as possible, while benefiting from any cached work preemptively performed by the CI. Yet, this still allows you to customize the project's Dockerfile and rebuild the container, without needing to update CI images to reflect your local modifications."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:29
+msgid "More details on the project's CI and related docker image registry can be found here:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:31
+msgid "[Chronicles of Caching and Containerising CI for Nav2](https://vimeo.com/649647161/5b0c278e6c)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:32
+msgid "Video presentation from ROS World 2021 - Ruffin White"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:35
+msgid "Once the base image from the target stage is built, the supporting tool or service may then add additional layers to the image, such as installing additional [features](https://containers.dev/features) or customizations. For VS Code, this also includes some fancy file caching for any extensions to install later. Once this custom image is built, it is then used to start the dev container."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:37
+msgid "Starting the container"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:39
+msgid "When first creating Dev Containers, any supporting tool or service will invoke a sequence of commands specified in the chosen `devcontainer.json` config file. This can take a while, but only needs to be done once, or at least not again until the container is rebuilt, triggered by either updating the Dockerfile, base image, or `.devcontainer/` config."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:41
+msgid "Specifically, for this project, the default `devcontainer.json` config executes the `onCreateCommand` to initially colcon cache, clean, and build the overlay workspace for the project. This ensures the workspace is precompiled and ready to use, while also ensuring any changes to the project's source code are reflected in the container. This is useful for:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:43
+msgid "IntelliSense"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:44
+msgid "Enables VS Code extensions to parse auto generated code"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:45
+msgid "Applicable for ROS package defining messages and services files"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:46
+msgid "Necessary for code modeling, navigation, and syntax highlighting"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:47 ../../development_guides/devcontainer_docs/devcontainer_guide.md:72
+msgid "Caching"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:48
+msgid "Enables Codespace Prebuilds to cache the workspace artifacts"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:49
+msgid "Applicable for reducing startup time when spawning new Codespaces"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:50
+msgid "Necessary for limiting costs from CPU and storage usage"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:52
+msgid "While the colcon workspace is being built, VS Code will simultaneously install any specified extensions and settings. Next the `updateContentCommand` is executed, which reruns whenever the container is started or restarted. Specifically, for this project, this command re-cleans and re-builds the same colcon workspace as before, but only for invalidated packages detected by colcon cache using the lockfiles initialized during the `onCreateCommand`. This caching behavior also replicates the project's CI workflow. This is useful for:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:54
+msgid "Branching"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:55
+msgid "Enables caching of workspace artifacts when switching between branches"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:56
+msgid "Applicable for reviewing pull requests without rebuilding entire container"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:57
+msgid "Necessary for reducing startup time when spawning new Codespaces"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:60
+msgid "More documentation about these additional colcon verb extensions can be found here:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:62
+msgid "[colcon-cache](https://github.com/ruffsl/colcon-cache)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:63
+msgid "A colcon extension to cache the processing of packages"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:64
+msgid "[colcon-clean](https://github.com/colcon/colcon-clean)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:65
+msgid "A colcon extension to clean package workspaces"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:68
+msgid "Finally, the `postCreateCommand` is executed, which also reruns whenever the container is started or restarted. Specifically, for this project, this command makes a last few tweaks to the user's environment to improve the development experience."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:70
+msgid "To speed up subsequent startups, volumes that are mounted to the container store a persistent ccache and colcon workspace, while the environment is set to enable [ccache](https://ccache.dev/) via [colcon mixins](https://github.com/colcon/colcon-mixin-repository). These volumes are labeled using the [`devcontainerId`](https://containers.dev/implementors/json_reference/#variables-in-devcontainerjson) variable, which uniquely identify the dev container on a Docker host, allowing us to refer to a common identifier that is unique to the dev container, while remaining stable across rebuilds. This is useful for:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:73
+msgid "Enables colcon workspaces and ccache to persist between container rebuilds"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:74
+msgid "Applicable for avoiding re-compilation when modifying dev container config files"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:75
+msgid "Necessary for quickly customizing image or features without rebuilding from scratch"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:78
+msgid "While these volumes are uniquely named, you could rename them locally to further organize or segment works-in-progress. E.g. appending branch names to the volume name to quickly switch between pull requests and cached colcon workspaces."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:81
+msgid "Additionally, the container can be granted [privileged](https://docs.docker.com/engine/reference/commandline/run/#privileged) and non-default [Linux capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities), connected using the [host](https://docs.docker.com/network/host/) network mode and [IPC](https://docs.docker.com/engine/reference/run/#ipc-settings---ipc) and [PID](https://docs.docker.com/engine/reference/run/#pid-settings---pid) spaces, with a relaxed [security configuration](https://docs.docker.com/engine/reference/run/#security-configuration) and seccomp confinement for native debugging and external connectivity. This is useful for:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:83
+msgid "Hybrid development"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:84
+msgid "Enables connecting ROS nodes external to the container"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:85
+msgid "Applicable for debugging or visualizing distributed systems"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:86
+msgid "Necessary for DDS discovery and shared memory transport"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:87
+msgid "Device connectivity"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:88
+msgid "Enables hardware forwarding from host machine to container"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:89
+msgid "Applicable for ROS package using sensors and actuators"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:90
+msgid "Necessary for some GPU drivers and USB devices"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:93
+msgid "Such `runArgs` in the `devcontainer.json` config can be enabled or customized, either expanded or or narrowed in scope, to better suit your desired development environment. The default configuration merely comments out these parameters, to limit unintended side effects or cross talk between containers, but can be uncommented to accommodate the widest range of development use cases."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:97
+msgid "More details on using DDS, debuggers, or devices with Docker containers can be found here:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:99
+msgid "[How to Communicate Across Docker Containers Using the Host Driver](https://community.rti.com/kb/how-use-rti-connext-dds-communicate-across-docker-containers-using-host-driver)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:100
+msgid "Using the `host` network driver to access all network interfaces of the host machine from the Docker container"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:101
+msgid "[Communicate between two Docker containers using DDS and shared memory](https://community.rti.com/kb/communicate-between-two-docker-containers-using-rti-connext-dds-and-shared-memory)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:102
+msgid "Enabling containers to communicate with one another and with the host machine using interprocess communication (IPC)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:103
+msgid "[Debugging programs running inside Docker containers, in production](https://nvartolomei.com/debugging-programs-running-inside-docker-containers--in-production/)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:104
+msgid "Using tools like strace, perf, gdb when debugging programs running inside containers"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:107
+msgid "Using Dev Containers"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:109
+msgid "Once the dev container has been created and setup completed, VS Code will open a new workspace directly from the project's root directory, which itself is mounted within the source directory in the overlay colcon workspace. From here you can build, test, and debug the project as you normally would, with the added benefit of having the project's dependencies, intellisense, linters, and other extensions pre-configured and ready to use. Simply open a new terminal (Crtl+Shift+`), cd to the root of the colcon workspace, and run the usual colcon commands."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:112
+msgid "You can incorporate the same scripts used by the `devcontainer.json` config file to further automate your local development workflow."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:115
+msgid "Terminals"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:117
+msgid "If you prefer using an alternate terminal emulator, rather than the built-in VS Code terminal, you can open a separate shell session by simply using the Dev Container CLI or directly using the Docker CLI via the `exec` subcommands."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:119
+msgid "[Dev Container CLI](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:120
+msgid "`devcontainer exec --workspace-folder $NAV2_WS/src/navigation2 bash`"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:121
+msgid "[docker exec ](https://docs.docker.com/engine/reference/commandline/exec/)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:123
+msgid "`docker exec -it <container-id> bash`"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:126
+msgid "Shell sessions spawned directly via `docker exec` do not set the same environment that `devcontainer exec` does using `userEnvProbe`. Additional environment variables include `REMOTE_CONTAINERS_IPC`, `REMOTE_CONTAINERS_SOCKETS` and are used by vscode, ssh and X11."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:131
+msgid "The environment provided by `userEnvProbe` can be sourced manually. E.g. for the default `loginInteractiveShell` probe:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:140
+msgid "Lifecycle"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:142
+msgid "While using the dev container, try and keep in mind the lifecycle of the container itself. Specifically, containers are ephemeral, meaning they are normally destroyed and recreated whenever the dev environment is rebuilt or updated. Subsequently, a best practice is to avoid storing any persistent data within the container, and instead utilize the project's source directory, or a separate mounted volume. When altering the development environment inside the container, try to remember to codify your changes into the Dockerfile, or the `devcontainer.json` config file, so that they can be easily reproduced and shared with others."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:145
+msgid "This is particularly important when the host machine is inherently ephemeral as well, as the case may be when using cloud based environments such as Codespaces, so be sure to commit and push local changes to a remote repository:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:147
+msgid "[The codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/the-codespace-lifecycle)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:148
+msgid "Maintain your data throughout the entire codespace lifecycle"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:151
+msgid "Rebuilding"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:153
+msgid "From time to time, you may need to rebuild the dev container, either because the base image, or `.devcontainer/` config was updated, or simply out of wanting a new fresh development environment. To do so, simply open the Command Palette (Ctrl+Shift+P) and select the `Remote-Containers: Rebuild Container` command."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:156
+msgid "Rebuilding the container will destroy any changes made to the container itself, such as installing additional packages, or modifying the environment. However, the project's source directory, and any mounted volumes, will remain unaffected."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:159
+msgid "For example, you may need to rebuild the dev container when:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:161
+msgid "Pulling newer images from a container registry"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:162
+msgid "specifically, image tags built `FROM` in the Dockerfile"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:163
+msgid "or tags listed under `cacheFrom` in `devcontainer.json`"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:164
+msgid "periodically done manually to ensure local environment reflects CI"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:165
+msgid "Updating the dev container configuration"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:166
+msgid "specifically when modifying dependent stages in the `Dockerfile`"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:167
+msgid "or when modifying `./devcontainer` files and commands"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:168
+msgid "where build cache reuse correlates with severity of changes made"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:170
+msgid "When necessary, you can also rebuild the container from scratch, e.i. without caching from docker, by selecting the `Remote-Containers: Rebuild Container Without Cache` command. This instead omits the `--cache-from` flag from the `docker buildx` command, while also adding the `--no-cache` and `--pull` flags to prevent caching from any existing image layers, using only the latest images from a container registry."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:173
+msgid "Rebuilding the container without cache may likely pull newer images from a container registry or install newer packages, as is common when developing for ROS 2 Rolling. You may then want to clean your overlay volume to avoid ABI incompatibilities or stale artifacts."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:176
+msgid "Rebuilding without caching may be necessary when:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:178
+msgid "Needing to update the base image"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:179
+msgid "specifically if dev container configurations remain unmodified"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:180
+msgid "to forcefully rerun a `RUN` directive in the Dockerfile"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:181
+msgid "such as unchanged `apt upgrade` or `rosdep update` commands"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:183
+msgid "Specifically, for this project, volumes remain unaffected by this rebuilding process: i.e. those used to mount the ccache directory or colcon workspace. While volume management is left to the user's discretion, other projects may of course handle this differently, so be sure to check the `./devcontainer` configuration to inspect how various container resources may be managed."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:186
+msgid "Docker volume management can be done via the Docker CLI, or the VS Code Docker extension:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:188
+msgid "[Docker Volume CLI](https://docs.docker.com/engine/reference/commandline/volume)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:189
+msgid "Manage volumes using subcommands to create, inspect, list, remove, or prune volumes"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:190
+msgid "[VS Code Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/devcontainer_guide.md:191
+msgid "Makes it easy to create, manage, and debug containerized applications"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:2
+msgid "Dev Containers"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:4
+msgid "You can use dev containers to build the project if you prefer a streamlined setup experience. This means you can use the same tools and dependencies as the rest of the team, including our Continuous Integration (CI) workflows, without worrying about installing dependencies on your host machine. Additionally, using Dev Containers makes it simple to switch between local or remote development environments, such as GitHub Codespaces."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:7
+msgid "More info on Dev Containers can be found here:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:9
+msgid "[Development Containers](https://containers.dev/)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:10
+msgid "An open specification for enriching containers with development specific content and settings"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:11
+msgid "[Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:12
+msgid "Learn how to use Visual Studio Code to develop inside a Docker container"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:13
+msgid "[GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:14
+msgid "A development environment hosted in the cloud"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:24
+msgid "What, Why, How?"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:26
+msgid "Lets briefly explain what dev containers are, why you should use them, and how they work."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:29
+msgid "Here we'll assume the use of VS Code, but still applies to alternative tools and services, including  other CLIs, IDEs, etc. such as:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:31
+msgid "[Dev Container CLI](https://github.com/devcontainers/cli)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:32
+msgid "A reference implementation for the open specification"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:33
+msgid "[JetBrains Space | Develop in Dev Environment](https://www.jetbrains.com/help/space/develop-in-a-dev-environment.html)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:34
+msgid "Using Dev Containers with JetBrain based products"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:35
+msgid "[Supporting tools](https://containers.dev/supporting)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:36
+msgid "List of tools and services supporting the development container specification"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:39
+msgid "What is a Dev Container?"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:41
+msgid "A dev container is a Docker container that has all the tools and dependencies you need to develop the project. It runs in a self-contained environment and is isolated from other containers and your host machine. This lets you reliably develop for the project anywhere, notably for linux distributions targeted by ROS, regardless of your host machine's operating system."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:43
+msgid "Why use a Dev Container?"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:45
+msgid "A dev container provides a common and consistent development environment. It ensures that everyone on the team is using the same tools and dependencies. It also makes it easy to switch between projects because each project can use a different container. This is especially useful if you work on multiple projects that use different versions of the same tools and dependencies, such as different versions of ROS."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:47
+msgid "How do Dev Containers work?"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:49
+msgid "When you open the project in VS Code, VS Code checks for the dev container configuration nested within the `.devcontainer` folder under the project's root directory. If it finds one, it can prompt you to reopen the project in a container. If you choose to do so, it launches the container, connects to it, and mounts your project folder inside the container. You can then use VS Code in the container just as you would locally. While setting up the container, VS Code can also attempt to passthrough useful aspects of your local environment, such as git user configurations, X11 sockets, and more."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:51
+msgid "This is quite similar to earlier tools used to customize and run docker containers for development:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:53
+msgid "[rocker | ROS + Docker](https://github.com/osrf/rocker)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:54
+msgid "A tool to run docker containers with overlays and convenient options for things like GUIs etc."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:55
+msgid "Developed by [Open Robotics](https://www.openrobotics.org/)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:56
+msgid "[ADE Development Environment](https://ade-cli.readthedocs.io/en/latest/)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:57
+msgid "A modular Docker-based tool to ensure developers have a common, consistent development environment"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:58
+msgid "Developed by [Apex.AI](https://www.apex.ai/)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:60
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:62
+msgid "To use dev containers, you'll need the following:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:64
+msgid "[Docker Engine](https://docs.docker.com/engine/install/) installed and running on the host machine"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:65
+msgid "[Visual Studio Code](https://code.visualstudio.com/) installed on any remote machine"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:66
+msgid "[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:69
+msgid "Alternatively, you could use GitHub Codespaces directly from the project repo, or any other remote host machine:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:71
+msgid "[Creating a codespace for a repository](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository?tool=webui)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:72
+msgid "How to create a codespace for repository via GitHub CLI, VS Code, or Web browser"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:73
+msgid "[Develop on a remote Docker host](https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:74
+msgid "How to connect VS Code to a remote Docker host using SSH tunnels or TCP sockets"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:77
+msgid "Getting started"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:79
+msgid "Getting started using dev containers is as simple as opening the project in VS Code by either: following the notification prompt to reopen the project in a container, or explicitly opening the command palette (Crtl+Shift+P) and selecting `Remote-Containers: Reopen in Container`. This will create a new container, install any extensions specified in the project's default `.devcontainer/devcontainer.json` config file, and mount the project's root directory as the workspace folder. Once the container is created, VS Code will connect to it and you can start developing."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:82
+msgid "Clicking the `Starting Dev Container (show log)` notification in VS Code allows you to observe in live time how the sausage is made, while typing `Dev Containers: Show Log` into the command palette will list all the available commands to review and revisit these log files later."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:85
+msgid "While waiting for the initial setup, feel free to stretch your legs, grab a coffee, or continue to read the following guides to learn more about creating and using dev containers, or how to visualize and leverage graphical user interfaces from a headless development environment."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:87
+msgid "**[](devcontainer_guide.md)**"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:88
+msgid "How to develop Nav2 using dev containers and supporting tools"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:90
+msgid "Security"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:93
+msgid "Ensure you trust the authors and contents of workspaces before launching derived dev containers."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:96
+msgid "A word of caution when using dev containers: they are powerful tools, but can be a security concern, as the capability of arbitrary code execution facilitated by IDE extensions to enable such automation and convenience remains inherently dual use. Before launching a dev container, ensure you trust the workspaces and authors. For example, when reviewing a pull request, verify patches remain benign and do not introduce any malicious code. Although such vigilance is merited whenever compiling and running patched code, using containers with either elevated privileges or filesystem access renders this diligence even more prudent."
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:99
+msgid "More info on trusting workspaces and extensions in general can be found here:"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:101
+msgid "[Workspace Trust](https://code.visualstudio.com/docs/editor/workspace-trust)"
+msgstr ""
+
+#: ../../development_guides/devcontainer_docs/index.md:102
+msgid "VS Code user guid on trusting and configure workspaces"
+msgstr ""
+
+#: ../../development_guides/index.rst:4
+msgid "Development Guides"
+msgstr ""
+
+#: ../../development_guides/index.rst:6
+msgid "This section includes guides for developing Nav2, e.g. how to build from source, how to use dev containers, and how to get involved."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:4 ../../development_guides/involvement_docs/index.rst:16
+msgid "Getting Involved"
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:6
+msgid "As an open-source project, we welcome and encourage the community to submit patches directly to the |LPN|.  In our collaborative open source environment, standards and methods for submitting changes help reduce the chaos that can result from an active development community."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:11
+msgid "This document explains how to participate in project conversations, log and track bugs and enhancement requests, and submit patches to the project so your patch will be accepted quickly in the codebase."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:18
+msgid "If you're interested in getting involved in Navigation 2, first of all, welcome! We encourage everyone to get involved from students, to junior developers, to senior developers, and executives. There's something to do for everyone from bug fixes, to feature development, new algorithms, and refactoring."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:22
+#, python-format
+msgid "All ROS 2 TSC Working Groups have their meetings on the `working group calendar <https://calendar.google.com/calendar/embed?src=agf3kajirket8khktupm9go748%40group.calendar.google.com>`_. Here, you can find the date and time of the Navigation2 working group meeting. Make sure you're checking in your local timezone. From this calendar, you can add yourself to the event so it will appear on your google calendar and get the event link to the call through Google Hangouts. We encourage everyone interested to come to the meeting to introduce yourself, your project, and see what everyone is working on."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:27
+msgid "Further, `ROS Discourse <https://discourse.ros.org/>`_ is a good place to follow larger discussions happening in the community and announcements. This is **not** the correct place to post questions or ask for assistance. Please visit `ROS Answers <https://answers.ros.org/>`_ for Q&A."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:29
+msgid "Lastly, we have a `Community Slack <https://join.slack.com/t/navigation2/shared_invite/zt-uj428p0x-jKx8U7OzK1IOWp5TnDS2rA>`_ where we chat in real-time about topics in public channels or sidebar maintainers on individual projects via PMs. If you're interested in contributing to Nav2, this is a great place to join!"
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:31
+msgid "If you're looking to contribute code or bugs, please see the Process section below."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:33
+msgid "Over time, for developers that have an interest and have shown technical competence in an area of the stack, we elevate developers to a maintainers status. That allows push rights to our protected branches, first-reviewers rights, and getting your name on :ref:`about`. There currently is not a clear process for getting to be a maintainer, but if you've been involved and contributing over a duration of several months, you may be a good candidate and should email the project lead listed on :ref:`about`."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:38
+msgid "Process"
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:40
+msgid "After you've introduced yourself in a working group meeting (recommended, not required), you're ready to get started! We recommend a typical open-source project flow and value detail and transparency. If you commit to something and need to pull back, say so. We all know priorities change and appreciate the heads up so that task can go into the open queue of tasks."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:45
+msgid "The process is simple and is as follow:"
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:47
+msgid "Create a ticket for any issues or features you'd like to see. You are not required to fix / implement patches required, but it would be helpful. Reporting bugs is also a valuable contribution."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:49
+msgid "If this ticket, or another existing ticket, is something you would like to work on, comment in the ticket claiming ownership over it. It would be helpful at this time if you declared a strategy and a timeline for planning purposes of other folks working around you. Over time, update the ticket with progress of key markers and engage in any constructive feedback maintainers or other users may have."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:51
+msgid "Once you've completed the task you set out to complete, submit a PR! Please fill out the PR template in complete to ensure that we have a full understanding of your work. At that point, 1-2 reviewers will take a look at your work and give it some feedback to be merged into the codebase. For trivial changes, a single maintainer may merge it after review if they're happy with it, up to their discretion. Any substantial changes should be approved by at least 1 maintainer and 1 other community member."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:53
+msgid "Note: We take code quality seriously and strive for high-quality and consistent code. We make use of the linting and static analysis tools provided in ROS 2 (``ament_cpplint``, ``ament_uncrustify``, ``ament_cppcheck``, etc). All PRs are built in CI with the appropriate ROS distributions and run through a set of unit and system level tests including static analysis. You can see the results of these tests in the pull request. It is expected for feature development for tests to cover this work to be added. If any documentation must be updated due to your changes, that should be included in your pull request."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:61
+msgid "Licensing"
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:63
+msgid "Licensing is very important to open source projects. It helps ensure the software continues to be available under the terms that the author desired."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:67
+msgid "Because much of the source code is ported from other ROS 1 projects, each package has it's own license. Contributions should be made under the predominant license of that package. Entirely new packages should be made available under the `Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0>`_."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:72
+msgid "A license tells you what rights you have as a developer, as provided by the copyright holder. It is important that the contributor fully understands the licensing rights and agrees to them. Sometimes the copyright holder isn't the contributor, such as when the contributor is doing work on behalf of a company."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:78
+msgid "If for some reason Apache 2.0 or BSD licenses are not appropriate for your work, please get in contact with a project maintainer and discuss your concerns or requirements. We may consider special exceptions for exceptional work, within reason (we will not accept any licenses that makes it unsuitable for commercial use)."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:84
+msgid "Developer Certification of Origin (DCO)"
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:86
+msgid "To make a good faith effort to ensure licensing criteria are met, |LPN| encourages the Developer Certificate of Origin (DCO) process to be followed."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:90
+msgid "The DCO is an attestation attached to every contribution made by a developer. In the commit message of the contribution, (described more fully later in this document), the developer simply adds a ``Signed-off-by`` statement and thereby agrees to the DCO."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:95
+msgid "In practice, its easier to just ``git commit -s -m \"commit messsage.\"``. Where ``-s`` adds this automatically. If you forgot to add this to a commit, it is easy to append via: ``git commit --amend -s``."
+msgstr ""
+
+#: ../../development_guides/involvement_docs/index.rst:99
+msgid "When a developer submits a patch, it is a commitment that the contributor has the right to submit the patch per the license.  The DCO agreement is shown below and at http://developercertificate.org/."
+msgstr ""
+

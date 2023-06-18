@@ -1,0 +1,672 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020
+# This file is distributed under the same license as the Navigation 2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Navigation 2 latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 21:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../behavior_trees/index.rst:4
+msgid "Nav2 Behavior Trees"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:18
+msgid "Nav2 is an incredibly reconfigurable project. It allows users to set many different plugin types, across behavior trees, core algorithms, status checkers, and more! This section highlights some of the example behavior tree xml files provided by default in the project to do interesting tasks. It should be noted that these can be modified for your specific application, or used as a guide to building your own application-specific behavior tree. These are some exemplary examples of how you can reconfigure your navigation behavior significantly by using behavior trees. Other behavior trees are provided by Nav2 in the ``nav2_bt_navigator`` package, but this section highlights the important ones."
+msgstr ""
+
+#: ../../behavior_trees/index.rst:24
+msgid "A **very** basic, but functional, navigator can be seen below."
+msgstr ""
+
+#: ../../behavior_trees/index.rst:39
+msgid "This behavior tree will simply plan a new path to ``goal`` every 1 meter (set by ``DistanceController``) using ``ComputePathToPose``. If a new path is computed on the ``path`` blackboard variable, ``FollowPath`` will take this ``path`` and follow it using the server's default algorithm."
+msgstr ""
+
+#: ../../behavior_trees/index.rst:42
+msgid "This tree contains:"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:44
+msgid "No recovery methods"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:45
+msgid "No retries on failure"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:46
+msgid "No selected planner or controller algorithms"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:47
+msgid "No nodes to contextually change settings for optimal performance"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:48
+msgid "No integration with automatic door, elevator, or other APIs"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:49
+msgid "No user provided custom BT nodes"
+msgstr ""
+
+#: ../../behavior_trees/index.rst:50
+msgid "No subtrees for other behaviors like docking, following, etc."
+msgstr ""
+
+#: ../../behavior_trees/index.rst:52
+msgid "All of this, and more, can be set and configured for your customized navigation logic in Nav2."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:4
+msgid "Detailed Behavior Tree Walkthrough"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:6
+msgid "`Overview`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:7
+msgid "`Prerequisites`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:8
+msgid "`Navigate To Pose With Replanning and Recovery`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:9
+msgid "`Navigation Subtree`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:10
+msgid "`Recovery Subtree`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:13
+msgid "Overview"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:15
+msgid "This document serves as a reference guide to the main behavior tree (BT) used in Nav2."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:17
+msgid "There are many example behavior trees provided in ``nav2_bt_navigator/behavior_trees``, but these sometimes have to be re-configured based on the application of the robot. The following document will walk through the current main default BT ``navigate_to_pose_w_replanning_and_recovery.xml`` in great detail."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:23
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:25
+msgid "Become familiar with the concept of a behavior tree before continuing with this walkthrough"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:27
+msgid "Read the short explanation in `navigation concepts <../../concepts/index.html>`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:29
+msgid "Read the general tutorial and guide (not Nav2 specific) on the `BehaviorTree CPP V3 <https://www.behaviortree.dev/>`_ website. Specifically, the \"Learn the Basics\" section on the BehaviorTree CPP V3 website explains the basic generic nodes that will be used that this guide will build upon."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:31
+msgid "Become familiar with the custom `Nav2 specific BT nodes <nav2_specific_nodes.html>`_"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:34
+msgid "Navigate To Pose With Replanning and Recovery"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:36
+msgid "The following section will describe in detail the concept of the main and default BT currently used in Nav2, ``navigate_to_pose_w_replanning_and_recovery.xml``. This behavior tree replans the global path periodically at 1 Hz and it also has recovery actions."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:46
+msgid "BTs are primarily defined in XML. The tree shown above is represented in XML as follows."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:88
+msgid "This is likely still a bit overwhelming, but this tree can be broken into two smaller subtrees that we can focus on one at a time. These smaller subtrees are the children of the top-most ``RecoveryNode``. From this point forward the ``NavigateWithReplanning`` subtree will be referred to as the ``Navigation`` subtree, and the ``RecoveryFallback`` subtree will be known as the ``Recovery`` subtree. This can be represented in the following way:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:99
+msgid "The ``Navigation`` subtree mainly involves actual navigation behavior:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:101
+msgid "calculating a path"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:103
+msgid "following a path"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:105
+msgid "contextual recovery behaviors for each of the above primary navigation behaviors"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:107
+msgid "The ``Recovery`` subtree includes behaviors for system level failures or items that were not easily dealt with internally."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:109
+msgid "The overall BT will (hopefully) spend most of its time in the ``Navigation`` subtree. If either of the two main behaviors in the ``Navigation`` subtree fail (path calculation or path following), contextual recoveries will be attempted."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:112
+msgid "If the contextual recoveries were still not enough, the ``Navigation`` subtree will return ``FAILURE``. The system will move on to the ``Recovery`` subtree to attempt to clear any system level navigation failures."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:115
+msgid "This happens until the ``number_of_retries`` for the parent ``RecoveryNode`` is exceeded (which by default is 6)."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:122
+msgid "Navigation Subtree"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:124
+msgid "Now that we have gone over the control flow between the ``Navigation`` subtree and the ``Recovery`` subtree, let's focus on the Navigation subtree."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:133
+msgid "The XML of this subtree is as follows:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:156
+msgid "This subtree has two primary actions ``ComputePathToPose`` and ``FollowPath``. If either of these two actions fail, they will attempt to clear the failure contextually. The crux of the tree can be represented with only one parent and two children nodes like this:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:167
+msgid "The parent ``PipelineSequence`` node allows the ``ComputePathToPose`` to be ticked, and once that succeeds, ``FollowPath`` to be ticked. While the ``FollowPath`` subtree is being ticked, the ``ComputePathToPose`` subtree will be ticked as well. This allows for the path to be recomputed as the robot moves around."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:170
+msgid "Both the ``ComputePathToPose`` and the ``FollowPath`` follow the same general structure."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:172
+msgid "Do the action"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:174
+msgid "If the action fails, try to see if we can contextually recover"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:176
+msgid "The below is the ``ComputePathToPose`` subtree:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:185
+msgid "The parent ``RecoveryNode`` controls the flow between the action, and the contextual recovery subtree. The contextual recoveries for both ``ComputePathToPose`` and ``FollowPath`` involve checking if the goal has been updated, and involves clearing the relevant costmap."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:188
+msgid "Consider changing the ``number_of_retries`` parameter in the parent ``RecoveryNode`` control node if your application can tolerate more attempts at contextual recoveries before moving on to system-level recoveries."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:190
+msgid "The only differences in the BT subtree of ``ComputePathToPose`` and ``FollowPath`` are outlined below:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:194
+msgid "The action node in the subtree:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:193
+msgid "The ``ComputePathToPose`` subtree centers around the ``ComputePathToPose`` action."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:194
+msgid "The ``FollowPath`` subtree centers around the ``FollowPath`` action."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:199
+msgid "The ``RateController`` that decorates the ``ComputePathToPose`` subtree"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:197
+msgid "The ``RateController`` decorates the ``ComputePathToPose`` subtree to keep planning at the specified frequency. The default frequency for this BT is 1 hz. This is done to prevent the BT from flooding the planning server with too many useless requests at the tree update rate (100Hz). Consider changing this frequency to something higher or lower depending on the application and the computational cost of calculating the path. There are other decorators that can be used instead of the ``RateController``. Consider using the ``SpeedController`` or ``DistanceController`` decorators if appropriate."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:203
+msgid "The costmap that is being cleared within the contextual recovery:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:202
+msgid "The ``ComputePathToPose`` subtree clears the global costmap. The global costmap is the relevant costmap in the context of the planner"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:203
+msgid "The ``FollowPath`` subtree clears the local costmap. The local costmap is the relevant costmap in the context of the controller"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:206
+msgid "Recovery Subtree"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:208
+msgid "The ``Recovery`` subtree is the second big \"half\" of the Nav2 default ``navigate_to_pose_w_replanning_and_recovery.xml`` tree. In short, this subtree is triggered when the ``Navigation`` subtree returns ``FAILURE`` and controls the recoveries at the system level (in the case the contextual recoveries in the ``Navigation`` subtree were not sufficient)."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:218
+msgid "And the XML snippet:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:235
+msgid "The top most parent, ``ReactiveFallback`` controls the flow between the rest of the system wide recoveries, and asynchronously checks if a new goal has been received. If at any point the goal gets updated, this subtree will halt all children and return ``SUCCESS``. This allows for quick reactions to new goals and preempt currently executing recoveries. This should look familiar to the contextual recovery portions of the ``Navigation`` subtree. This is a common BT pattern to handle the situation \"Unless 'this condition' happens, Do action A\"."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:239
+msgid "These condition nodes can be extremely powerful and are typically paired with ``ReactiveFallback``. It can be easy to imagine wrapping this whole ``navigate_to_pose_w_replanning_and_recovery`` tree in a ``ReactiveFallback`` with a ``isBatteryLow`` condition -- meaning the ``navigate_to_pose_w_replanning_and_recovery`` tree will execute *unless* the battery becomes low (and then entire a different subtree for docking to recharge)."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:242
+msgid "If the goal is never updated, the behavior tree will go on to the ``RoundRobin`` node. These are the default four system-level recoveries in the BT are:"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:244
+msgid "A sequence that clears both costmaps (local, and global)"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:246
+msgid "``Spin`` action"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:248
+msgid "``Wait`` action"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:250
+msgid "``BackUp`` action"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:252
+msgid "Upon ``SUCCESS`` of any of the four children of the parent ``RoundRobin``, the robot will attempt to renavigate in the ``Navigation`` subtree. If this renavigation was not successful, the next child of the ``RoundRobin`` will be ticked."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:255
+msgid "For example, let's say the robot is stuck and the ``Navigation`` subtree returns ``FAILURE``: (for the sake of this example, let's assume that the goal is never updated)."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:258
+msgid "The Costmap clearing sequence in the ``Recovery`` subtree is attempted, and returns ``SUCCESS``. The robot now moves to ``Navigation`` subtree again"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:260
+msgid "Let's assume that clearing both costmaps was not sufficient, and the ``Navigation`` subtree returns ``FAILURE`` once again. The robot now ticks the ``Recovery`` subtree"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:262
+msgid "In the ``Recovery`` subtree, the ``Spin`` action will be ticked. If this returns ``SUCCESS``, then the robot will return to the main ``Navigation`` subtree *BUT* let's assume that the ``Spin`` action returns ``FAILURE``. In this case, the tree will *remain* in the ``Recovery`` subtree"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:264
+msgid "Let's say the next action, ``Wait`` returns ``SUCCESS``. The robot will then move on to the ``Navigation`` subtree"
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:266
+msgid "Assume  the ``Navigation`` subtree returns ``FAILURE`` (clearing the costmaps, attempting a spin, and waiting were *still* not sufficient to recover the system. The robot will move onto the ``Recovery`` subtree and attempt the ``BackUp`` action. Let's say that the robot attempts the ``BackUp`` action and was able to successfully complete the action. The ``BackUp`` action node returns ``SUCCESS`` and so now we move on to the Navigation subtree again."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:268
+msgid "In this hypothetical scenario, let's assume that the ``BackUp`` action allowed the robot to successfully navigate in the ``Navigation`` subtree, and the robot reaches the goal. In this case, the overall BT will still return ``SUCCESS``."
+msgstr ""
+
+#: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:270
+msgid "If the ``BackUp`` action was not sufficient enough to allow the robot to become un-stuck, the above logic will go on indefinitely until the ``number_of_retries`` in the parent of the ``Navigate`` subtree and ``Recovery`` subtree is exceeded, or if all the system-wide recoveries in the ``Recovery`` subtree return ``FAILURE`` (this is unlikely, and likely points to some other system failure)."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:4
+msgid "Introduction To Nav2 Specific Nodes"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:8
+msgid "Vocabulary can be a large point of confusion here when first starting out."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:7
+msgid "A ``Node`` when discussing BTs is entirely different than a ``Node`` in the ROS 2 context"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:9
+msgid "An ``ActionNode`` in the context of BTs is not necessarily connected to an Action Server in the ROS 2 context (but often it is)"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:11
+msgid "There are quite a few custom Nav2 BT nodes that are provided to be used in the Nav2 specific fashion. Some commonly used Nav2 nodes will be described below. The full list of custom BT nodes can be found in the `nav2_behavior_tree plugins folder <https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins>`_. The `configuration guide <../../configuration/packages/configuring-bt-xml.html>`_ can also be quite useful."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:16
+msgid "Action Nodes"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:18
+msgid "ComputePathToPose - ComputePathToPose Action Server Client (Planner Interface)"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:20
+msgid "FollowPath - FollowPath Action Server Client (Controller Interface)"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:22
+msgid "Spin, Wait, Backup - Behaviors Action Server Client"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:24
+msgid "ClearCostmapService - ClearCostmapService Server Clients"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:26
+msgid "Upon completion, these action nodes will return ``SUCCESS`` if the action server believes the action has been completed correctly, ``RUNNING`` when still running, and will return ``FAILURE`` otherwise. Note that in the above list, the `ClearCostmapService` action node is *not* an action server client, but a service client."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:30
+msgid "Condition Nodes"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:32
+msgid "GoalUpdated - Checks if the goal on the goal topic has been updated"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:34
+msgid "GoalReached - Checks if the goal has been reached"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:36
+msgid "InitialPoseReceived - Checks to see if a pose on the ``intial_pose`` topic has been received"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:38
+msgid "isBatteryLow - Checks to see if the battery is low by listening on the battery topic"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:40
+msgid "The above list of condition nodes can be used to probe particular aspects of the system. Typically they will return ``SUCCESS`` if the condition is true and ``FAILURE`` otherwise. The key condition that is used in the default Nav2 BT is ``GoalUpdated`` which is checked asynchronously within particular subtrees. This condition node allows for the behavior described as \"If the goal has been updated, then we must replan\". Condition nodes are typically paired with ReactiveFallback nodes."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:45
+msgid "Decorator Nodes"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:47
+msgid "Distance Controller - Will tick children nodes every time the robot has traveled a certain distance"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:49
+msgid "Rate Controller - Controls the ticking of its child node at a constant frequency. The tick rate is an exposed port"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:51
+msgid "Goal Updater - Will update the goal of children nodes via ports on the BT"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:53
+msgid "Single Trigger - Will only tick its child node once, and will return ``FAILURE`` for all subsequent ticks"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:55
+msgid "Speed Controller - Controls the ticking of its child node at a rate proportional to the robot's speed"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:58
+msgid "Control: PipelineSequence"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:59
+msgid "The ``PipelineSequence`` control node re-ticks previous children when a child returns ``RUNNING``. This node is similar to the ``Sequence`` node, with the additional property that the children prior to the \"current\" are re-ticked, (resembling the flow of water in a pipe). If at any point a child returns ``FAILURE``, all children will be halted and the parent node will also return ``FAILURE``. Upon ``SUCCESS`` of the **last node** in the sequence, this node will halt and return ``SUCCESS``."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:63
+msgid "To explain this further, here is an example BT that uses PipelineSequence."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:84
+msgid "``Action_A``, ``Action_B``, and ``Action_C`` are all ``IDLE``."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:85
+msgid "When the parent PipelineSequence is first ticked, let's assume ``Action_A`` returns ``RUNNING``. The parent node will now return ``RUNNING`` and no other nodes are ticked."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:94
+msgid "Now, let's assume ``Action_A`` returns ``SUCCESS``, ``Action_B`` will now get ticked and will return ``RUNNING``. ``Action_C`` has not yet been ticked so will return ``IDLE``."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:103
+msgid "``Action_A`` gets ticked again and returns ``RUNNING``, and ``Action_B`` gets re-ticked and returns ``SUCCESS`` and therefore the BT goes on to tick ``Action_C`` for the first time. Let's assume ``Action_C`` returns ``RUNNING``. The retick-ing of ``Action_A`` is what makes PipelineSequence useful."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:112
+msgid "All actions in the sequence will be re-ticked. Let's assume ``Action_A`` still returns ``RUNNING``, where as ``Action_B`` returns ``SUCCESS`` again, and ``Action_C`` now returns ``SUCCESS`` on this tick. The sequence is now complete, and therefore ``Action_A`` is halted, even though it was still ``RUNNING``."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:121
+msgid "Recall that if ``Action_A``, ``Action_B``, or ``Action_C`` returned ``FAILURE`` at any point of time, the parent would have returned ``FAILURE`` and halted any children as well."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:123
+msgid "For additional details regarding the ``PipelineSequence`` please see the `PipelineSequence configuration guide <../../configuration/packages/bt-plugins/controls/PipelineSequence.html>`_."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:126
+msgid "Control: Recovery"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:127
+msgid "The Recovery control node has only two children and returns ``SUCCESS`` if and only if the first child returns ``SUCCESS``. If the first child returns ``FAILURE``, the second child will be ticked. This loop will continue until either:"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:130
+msgid "The first child returns ``SUCCESS`` (which results in ``SUCCESS`` of the parent node)"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:132
+msgid "The second child returns ``FAILURE`` (which results in ``FAILURE`` of the parent node)"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:134
+msgid "The ``number_of_retries`` input parameter is violated"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:136
+msgid "This node is usually used to link together an action, and a recovery action as the name suggests. The first action will typically be the \"main\" behavior, and the second action will be something to be done in case of ``FAILURE`` of the main behavior. Often, the ticking of the second child action will promote the chance the first action will succeed."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:157
+msgid "In the above example, let's assume ``ComputePathToPose`` fails. ``ClearLocalCostmap`` will be ticked in response, and return ``SUCCESS``. Now that we have cleared the costmap, let's say the robot is correctly able to compute the path and ``ComputePathToPose`` now returns ``SUCCESS``. Then, the parent RecoveryNode will also return ``SUCCESS`` and the BT will be complete."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:160
+msgid "For additional details regarding the ``RecoveryNode`` please see the `RecoveryNode configuration guide <../../configuration/packages/bt-plugins/controls/RecoveryNode.html>`_."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:163
+msgid "Control: RoundRobin"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:164
+msgid "The RoundRobin control node ticks its children in a round robin fashion until a child returns ``SUCCESS``, in which the parent node will also return ``SUCCESS``. If all children return ``FAILURE`` so will the parent RoundRobin."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:167
+msgid "Here is an example BT we will use to walk through the concept."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:188
+msgid "All the nodes start at ``IDLE``"
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:197
+msgid "2. Upon tick of the parent node, the first child (``Action_A``) is ticked. Let's assume on tick the child returns ``RUNNING``. In this case, no other children are ticked and the parent node returns ``RUNNING`` as well."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:207
+msgid "3. Upon the next tick, let's assume that ``Action_A`` returns ``FAILURE``. This means that ``Action_B`` will get ticked next, and ``Action_C`` remains unticked. Let's assume ``Action_B`` returns ``RUNNING`` this time. That means the parent RoundRobin node will also return ``RUNNING``."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:218
+msgid "4. Upon this next tick,  let's assume that ``Action_B`` returns ``SUCCESS``. The parent RoundRobin will now halt all children and return ``SUCCESS``. The parent node retains this state information, and will tick ``Action_C`` upon the next tick rather than start from ``Action_A`` like Step 2 did."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:228
+msgid "On this tick, let's assume ``Action_C`` returns ``RUNNING``, and so does the parent RoundRobin. No other nodes are ticked."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:238
+msgid "On this last tick, let's assume ``Action_C`` returns ``FAILURE``. The parent will circle and tick ``Action_A`` again. ``Action_A`` returns ``RUNNING`` and so will the parent RoundRobin node. This pattern will continue indefinitely unless all children return ``FAILURE``."
+msgstr ""
+
+#: ../../behavior_trees/overview/nav2_specific_nodes.rst:247
+msgid "For additional details regarding the ``RecoveryNode`` please see the `RoundRobin configuration guide <../../configuration/packages/bt-plugins/controls/RoundRobin.html>`_."
+msgstr ""
+
+#: ../../behavior_trees/trees/follow_point.rst:4
+msgid "Follow Dynamic Point"
+msgstr ""
+
+#: ../../behavior_trees/trees/follow_point.rst:7
+msgid "This behavior tree implements a navigation behavior from a starting point, attempting to follow a dynamic point over time. This \"dynamic point\" could be a person, another robot, a virtual carrot, anything. The only requirement is that the pose you'd like to follow is published to the topic outlined in the ``GoalUpdater`` BT node."
+msgstr ""
+
+#: ../../behavior_trees/trees/follow_point.rst:11
+msgid "In this tree, we replan at 1 hz just as we did in :ref:`behavior_tree_nav_to_pose` using the ``ComputePathToPose`` node. However, this time when we replan, we update the ``goal`` based on the newest information in on the updated goal topic. After we plan a path to this dynamic point, we use the ``TruncatePath`` node to remove path points from the end of the path near the dynamic point. This behavior tree node is useful so that the robot always remains at least ``distance`` away from the obstacle, even if it stops. It also smooths out any off path behavior involved with trying to path plan towards a probably occupied space in the costmap."
+msgstr ""
+
+#: ../../behavior_trees/trees/follow_point.rst:17
+msgid "After the new path to the dynamic point is computed and truncated, it is again passed to the controller via the ``FollowPath`` node. However, note that it is under a ``KeepRunningUntilFailure`` decorator node ensuring the controller continues to execute until a failure mode. This behavior tree will execute infinitely in time until the navigation request is preempted or cancelled."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:4
+msgid "Navigate Through Poses"
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:6
+msgid "This behavior tree implements a navigation behavior from a starting point, through many intermediary hard pose constraints, to a final goal in freespace. It contains both use of custom behaviors for recovery in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:10
+msgid "The ``ComputePathThroughPoses`` and ``FollowPath`` BT nodes both also specify their algorithms to utilize. By convention we name these by the style of algorithms that they are (e.g. not ``DWB`` but rather ``FollowPath``) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:13 ../../behavior_trees/trees/nav_to_pose_recovery.rst:14 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:14
+msgid "In this behavior tree, we attempt to retry the entire navigation task 6 times before returning to the caller that the task has failed. This allows the navigation system ample opportunity to try to recovery from failure conditions or wait for transient issues to pass, such as crowding from people or a temporary sensor failure."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:16
+msgid "In nominal execution, this will replan the path at every 3 seconds and pass that path onto the controller, similar to the behavior tree in :ref:`behavior_trees`. The planner though is now ``ComputePathThroughPoses`` taking a vector, ``goals``, rather than a single pose ``goal`` to plan to. The ``RemovePassedGoals`` node is used to cull out ``goals`` that the robot has passed on its path. In this case, it is set to remove a pose from the poses when the robot is within ``0.5`` of the goal and it is the next goal in the list. This is implemented such that replanning can be computed after the robot has passed by some of the intermediary poses and not continue to try to replan through them in the future. This time, if the planner fails, it will trigger contextually aware recoveries in its subtree, clearing the global costmap. Additional recoveries can be added here for additional context-specific recoveries, such as trying another algorithm."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:24 ../../behavior_trees/trees/nav_to_pose_recovery.rst:21
+msgid "Similarly, the controller has similar logic. If it fails, it also attempts a costmap clearing of the local costmap impacting the controller. It is worth noting the ``GoalUpdated`` node in the reactive fallback. This allows us to exit recovery conditions when a new goal has been passed to the navigation system through a preemption. This ensures that the navigation system will be very responsive immediately when a new goal is issued, even when the last goal was in an attempted recovery."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:29
+msgid "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree also has the ``GoalUpdated`` BT node it ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will tick the costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_through_poses_recovery.rst:36 ../../behavior_trees/trees/nav_to_pose_recovery.rst:33 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:29
+msgid "While this behavior tree does not make use of it, the ``PlannerSelector``, ``ControllerSelector``, and ``GoalCheckerSelector`` behavior tree nodes can also be helpful. Rather than hardcoding the algorithm to use (``GridBased`` and ``FollowPath``), these behavior tree nodes will allow a user to dynamically change the algorithm used in the navigation system via a ROS topic. It may be instead advisable to create different subtree contexts using condition nodes with specified algorithms in their most useful and unique situations. However, the selector nodes can be a useful way to change algorithms from an external application rather than via internal behavior tree control flow logic. It is better to implement changes through behavior tree methods, but we understand that many professional users have external applications to dynamically change settings of their navigators."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:2
+msgid "Navigate To Pose and Pause Near Goal-Obstacle"
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:4
+msgid "As a prerequisite, we encourage the users to go through the `Behavior Tree documentation <https://behaviortree.github.io/BehaviorTree.CPP/>`_, which explains about different behaviors nodes used in these trees such as ``ReactiveSequence``, ``SequenceStar`` and ``RetryUntilSucessfull``."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:6
+msgid "This behavior tree is a soft extension to the :ref:`behavior_tree_nav_to_pose`. Apart from the functionalities of :ref:`behavior_tree_nav_to_pose`, this behavior tree allows the robot to efficiently handle an obstacle (e.g. forklift, person, or other temporary obstacles) close to the goal by pausing the robot's navigation and wait for a user-specified time to check if the obstacle has cleared. If the obstacle has moved during the waiting time, the robot will continue to the goal taking the shorter path. If the obstacle has not moved during the waiting time or the waiting time expires, then the robot will use the longer path around to reach the final goal location. Ultimately, for a given task, this behavior tree aids in solving the problem of long cycle time, which is caused because of the long path generated due to the temporary obstacles present close to the goal location."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:11
+msgid "The behavior tree is depicted in the image below. From the image, it can be noted that there is an additional branch in the Navigation Subtree known as ``MonitorAndFollowPath``. This branch is created with the intention for the users to perform any kind of monitoring behavior that their robot should exhibit. In this particular BT, the monitoring branch is exclusively utilized by ``PathLongerOnApproach`` BT node for checking if the global planner has decided to plan a significantly longer path for the robot on approaching the user-specified goal proximity. If there is no significantly longer path, the monitor node goes into the ``FollowPath`` recovery node, which then generates the necessary control commands."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:18
+msgid "Once there is a significantly longer path, the child node for the ``PathLongerOnApproach`` node ticks. The child node is a ``RetryUntilSuccesfull`` decorator node, which inturns have a ``SequenceStar`` node as its child. Firstly, the ``SequenceStar`` node cancels the controller server by ticking the ``CancelControl`` node. The cancellation of the controller server halts the further navigation of the robot. Next, the ``SequenceStar`` node ticks the ``Wait`` node, which enables the robot to wait for the given user-specified time. Here we need to note that, the ``MonitorAndFollowPath`` is a ``ReactiveSequence`` node, therefore the ``PathLongerOnApproach`` node needs to return SUCCESS, before the ``FollowPath`` node can be ticked once again."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:24
+msgid "In the below GIF, it can be seen that the robot is approaching the goal location, but it found an obstacle in the goal proximity, because of which the global planner, plans a longer path around. This is the point where the ``PathLongerOnApproach`` ticks and ticks its children, consequently cancelling the ``controller_server`` and waiting to see if the obstacle clears up. In the below scenario, the obstacles do not clear, causing the robot to take the longer path."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:30
+msgid "Alternatively, if the obstacles are cleared, then there is a shorter path generated by the global planner. Now, the ``PathLongerOnApproach`` returns SUCCESS, that cause the ``FollowPath`` to continue with the robot navigation."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:35
+msgid "Apart from the above scenarios, we also need to note that, the robot will take the longer path to the goal location if the obstacle does not clear up in the given user-specific wait time."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:37
+msgid "In conclusion, this particular BT would serve, both as an example and ready-to-use BT for an organizational specific application, that wishes to optimize its process cycle time."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:82
+msgid "A complete demo of this BT can be seen in the video below:"
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_recovery.rst:4
+msgid "Navigate To Pose"
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_recovery.rst:6
+msgid "This behavior tree implements a significantly more mature version of the behavior tree on :ref:`behavior_trees`. It navigates from a starting point to a single point goal in freespace. It contains both use of custom recovery behaviors in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_recovery.rst:11 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:11
+msgid "The ``ComputePathToPose`` and ``FollowPath`` BT nodes both also specify their algorithms to utilize. By convention we name these by the style of algorithms that they are (e.g. not ``DWB`` but rather ``FollowPath``) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_recovery.rst:17
+msgid "In nominal execution, this will replan the path at every second and pass that path onto the controller, similar to the behavior tree in :ref:`behavior_trees`. However, this time, if the planner fails, it will trigger contextually aware recovery behaviors in its subtree, clearing the global costmap. Additional recovery behaviors can be added here for additional context-specific recoveries, such as trying another algorithm."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_recovery.rst:26
+msgid "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree also has the ``GoalUpdated`` BT node it ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will the recoveries: costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:4
+msgid "Navigate To Pose With Consistent Replanning And If Path Becomes Invalid"
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:6
+msgid "This behavior tree implements a significantly more mature version of the behavior tree on :ref:`behavior_trees`. It navigates from a starting point to a single point goal in freespace. It contains both use of custom recoveries in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:17
+msgid "In nominal execution, replanning can be triggered by an a invalid previous path, a new goal or if a new path has not been created for 10 seconds. If the planner or controller fails, it will trigger contextually aware recoveries in its subtree. Currently, the recoveries will clear the global costmap if the planner fails and clear the local costmap if the controller fails. Additional context-specific recoveries can be added to these subtrees."
+msgstr ""
+
+#: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:22
+msgid "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree has the ``GoalUpdated`` BT node which ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will attempt the following recoveries: costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
+msgstr ""
+
+#: ../../behavior_trees/trees/odometry_calibration.rst:4
+msgid "Odometry Calibration"
+msgstr ""
+
+#: ../../behavior_trees/trees/odometry_calibration.rst:6
+msgid "This behavior tree drives the robot in a CCW square three times using the DriveOnHeading and Spin behaviors. The robot will traverse each side of the square at 0.2 (m/s) for 2 meters before making a 90 degree turn. This is a primitive experiment to measure odometric accuracy and can be used and repeated to tune parameters related to odometry to improve quality."
+msgstr ""
+
+msgid "Alternative text"
+msgstr ""
+
