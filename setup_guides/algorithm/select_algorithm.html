@@ -542,7 +542,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html">NavFn Planner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html">NavFn规划器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html#parameters">Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-navfn.html#example">示例</a></li>
 </ul>
@@ -550,7 +550,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html">Smac Planner</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-smac-planner.html#provided-plugins">Provided Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-2d.html">Smac 2D Planner</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-hybrid.html">Smac Hybrid-A* Planner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-hybrid.html">Smac混合A*规划器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
@@ -715,7 +715,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">机器人足迹与半径</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">就地旋转行为</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">规划器插件选择</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#controller-plugin-selection">Controller Plugin Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#controller-plugin-selection">控制器插件选择</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#caching-obstacle-heuristic-in-smac-planners">Caching Obstacle Heuristic in Smac Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#nav2-launch-options">Nav2 Launch Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#other-pages-we-d-love-to-offer">Other Pages We'd Love To Offer</a></li>
@@ -979,17 +979,17 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>NavFn Planner</p></td>
+<tr class="row-even"><td><p>NavFn规划器</p></td>
 <td rowspan="3"><p>圆形差分，圆形全向</p></td>
 </tr>
-<tr class="row-odd"><td><p>Smac Planner 2D</p></td>
+<tr class="row-odd"><td><p>Smac 2D规划器</p></td>
 </tr>
 <tr class="row-even"><td><p>Theta Star Planner</p></td>
 </tr>
-<tr class="row-odd"><td><p>Smac Hybrid-A* Planner</p></td>
-<td><p>Non-circular or Circular Ackermann, Non-circular or Circular Legged</p></td>
+<tr class="row-odd"><td><p>Smac混合A*规划器</p></td>
+<td><p>非圆形或圆形阿克曼，非圆形或圆形腿式</p></td>
 </tr>
-<tr class="row-even"><td><p>Smac Lattice Planner</p></td>
+<tr class="row-even"><td><p>Smac格栅规划器</p></td>
 <td><p>Non-circular Differential, Non-circular Omnidirectional</p></td>
 </tr>
 </tbody>
@@ -1024,19 +1024,19 @@
 <thead>
 <tr class="row-odd"><th class="head"><p>插件名称</p></th>
 <th class="head"><p>支持的机器人类型</p></th>
-<th class="head"><p>Task</p></th>
+<th class="head"><p>任务</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>DWB controller</p></td>
+<tr class="row-even"><td><p>DWB控制器</p></td>
 <td><p>差动、全向</p></td>
-<td rowspan="2"><p>Dynamic obstacle avoidance</p></td>
+<td rowspan="2"><p>动态障碍物避免</p></td>
 </tr>
 <tr class="row-odd"><td><p>TEB Controller</p></td>
-<td><p>Differential, Omnidirectional, Ackermann, Legged</p></td>
+<td><p>差动、全向、阿克曼、腿式</p></td>
 </tr>
 <tr class="row-even"><td><p>RPP controller</p></td>
-<td><p>Differential, Ackermann, Legged</p></td>
+<td><p>差动、阿克曼、腿式</p></td>
 <td><p>Exact path following</p></td>
 </tr>
 </tbody>
