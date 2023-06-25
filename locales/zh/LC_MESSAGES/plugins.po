@@ -697,7 +697,7 @@ msgstr "调用机器人周围清除代价地图的服务"
 
 #: ../../plugins/index.rst:336
 msgid "`Compute Path to Pose Action`_"
-msgstr "`Compute Path to Pose Action`_"
+msgstr "“计算路径到位姿行为”_"
 
 
 #: ../../plugins/index.rst:336
@@ -707,7 +707,7 @@ msgstr "调用Nav2规划器服务器"
 
 #: ../../plugins/index.rst:338
 msgid "`Smooth Path Action`_"
-msgstr "`Smooth Path Action`_"
+msgstr "“平滑路径行为”_"
 
 
 #: ../../plugins/index.rst:338 ../../plugins/index.rst:354
@@ -717,7 +717,7 @@ msgstr "Matej Vargovcik"
 
 #: ../../plugins/index.rst:338
 msgid "Calls Nav2 smoother server"
-msgstr "Calls Nav2 smoother server"
+msgstr "调用Nav2平滑器服务器"
 
 
 #: ../../plugins/index.rst:340
@@ -727,7 +727,7 @@ msgstr "`跟随路径操作`_"
 
 #: ../../plugins/index.rst:340
 msgid "Calls Nav2 controller server"
-msgstr "Calls Nav2 controller server"
+msgstr "调用Nav2控制器服务器"
 
 
 #: ../../plugins/index.rst:342
@@ -737,7 +737,7 @@ msgstr "`导航至姿态操作`_"
 
 #: ../../plugins/index.rst:342
 msgid "BT Node for other BehaviorTree.CPP BTs to call Navigation2 as a subtree action"
-msgstr "BT Node for other BehaviorTree.CPP BTs to call Navigation2 as a subtree action"
+msgstr "BT节点，供其他BehaviorTree.CPP BT以子树动作的形式调用Navigation2"
 
 
 #: ../../plugins/index.rst:346
@@ -747,7 +747,7 @@ msgstr "`重新初始化全局定位服务`_"
 
 #: ../../plugins/index.rst:346
 msgid "Reinitialize AMCL to a new pose"
-msgstr "Reinitialize AMCL to a new pose"
+msgstr "将AMCL重新初始化为新的姿态"
 
 
 #: ../../plugins/index.rst:348
@@ -757,7 +757,7 @@ msgstr "`旋转操作`_"
 
 #: ../../plugins/index.rst:348
 msgid "Calls spin behavior action"
-msgstr "Calls spin behavior action"
+msgstr "调用旋转行为动作"
 
 
 #: ../../plugins/index.rst:350
