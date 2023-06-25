@@ -157,7 +157,7 @@ msgstr "该项目中有四个动作服务器，包括规划器、行为器、平
 
 #: ../../concepts/index.rst:110
 msgid "These action servers are used to host a map of algorithm plugins to complete various tasks. They also host the environmental representation used by the algorithm plugins to compute their outputs."
-msgstr "These action servers are used to host a map of algorithm plugins to complete various tasks. They also host the environmental representation used by the algorithm plugins to compute their outputs."
+msgstr "这些动作服务器用于托管算法插件的映射，以完成各种任务。它们还托管算法插件使用的环境表示，用于计算它们的输出。"
 
 
 #: ../../concepts/index.rst:113
@@ -167,7 +167,7 @@ msgstr "规划器、平滑器和控制器服务器将在运行时配置算法的
 
 #: ../../concepts/index.rst:118
 msgid "These three servers then expose an action interface corresponding to their task. When the behavior tree ticks the corresponding BT node, it will call the action server to process its task. The action server callback inside the server will call the chosen algorithm by its name (e.g. ``FollowPath``) that maps to a specific algorithm. This allows a user to abstract the algorithm used in the behavior tree to classes of algorithms. For instance, you can have ``N`` plugin controllers to follow paths, dock with charger, avoid dynamic obstacles, or interface with a tool. Having all of these plugins in the same server allows the user to make use of a single environmental representation object, which is costly to duplicate."
-msgstr "These three servers then expose an action interface corresponding to their task. When the behavior tree ticks the corresponding BT node, it will call the action server to process its task. The action server callback inside the server will call the chosen algorithm by its name (e.g. ``FollowPath``) that maps to a specific algorithm. This allows a user to abstract the algorithm used in the behavior tree to classes of algorithms. For instance, you can have ``N`` plugin controllers to follow paths, dock with charger, avoid dynamic obstacles, or interface with a tool. Having all of these plugins in the same server allows the user to make use of a single environmental representation object, which is costly to duplicate."
+msgstr "这三个服务器会公开与其任务相对应的动作接口。当行为树触发相应的行为树节点时，它将调用动作服务器来处理其任务。服务器内的动作服务器回调将根据其名称（例如 ``FollowPath``）调用所选择的算法，该名称映射到特定的算法。这使用户可以将行为树中使用的算法抽象为算法类。例如，您可以拥有 ``N`` 个插件控制器来跟踪路径、对接充电器、避免动态障碍物或与工具进行接口交互。将所有这些插件放在同一个服务器上使用户能够使用单个环境表示对象，这样做会很昂贵。"
 
 
 #: ../../concepts/index.rst:125
@@ -177,7 +177,7 @@ msgstr "对于行为服务器，每个行为也有自己的名称，然而，每
 
 #: ../../concepts/index.rst:130
 msgid "Alternatively, since the BT nodes are trivial plugins calling an action, new BT nodes can be created to call other action servers with other action types. It is advisable to use the provided servers if possible at all times. If, due to the plugin or action interfaces, a new server is needed, that can be sustained with the framework. The new server should use the new type and plugin interface, similar to the provided servers. A new BT node plugin will need to be created to call the new action server -- however no forking or modification is required in the Nav2 repo itself by making extensive use of servers and plugins."
-msgstr "Alternatively, since the BT nodes are trivial plugins calling an action, new BT nodes can be created to call other action servers with other action types. It is advisable to use the provided servers if possible at all times. If, due to the plugin or action interfaces, a new server is needed, that can be sustained with the framework. The new server should use the new type and plugin interface, similar to the provided servers. A new BT node plugin will need to be created to call the new action server -- however no forking or modification is required in the Nav2 repo itself by making extensive use of servers and plugins."
+msgstr "另外，由于行为树节点是调用动作的简单插件，因此可以创建新的行为树节点来调用其他具有不同动作类型的动作服务器。建议尽可能使用提供的服务器。如果由于插件或动作接口的原因需要新服务器，则可以使用该框架来支持。新服务器应该使用新类型和插件接口，类似于提供的服务器。需要创建新的行为树节点插件来调用新的动作服务器-然而，通过广泛使用服务器和插件，不需要对Nav2 repo本身进行分叉或修改。"
 
 
 #: ../../concepts/index.rst:136
@@ -192,27 +192,27 @@ msgstr "规划器"
 
 #: ../../concepts/index.rst:141
 msgid "The task of a planner is to compute a path to complete some objective function. The path can also be known as a route, depending on the nomenclature and algorithm selected. Two canonical examples are computing a plan to a goal (e.g. from current position to a goal) or complete coverage (e.g. plan to cover all free space). The planner will have access to a global environmental representation and sensor data buffered into it. Planners can be written to:"
-msgstr "The task of a planner is to compute a path to complete some objective function. The path can also be known as a route, depending on the nomenclature and algorithm selected. Two canonical examples are computing a plan to a goal (e.g. from current position to a goal) or complete coverage (e.g. plan to cover all free space). The planner will have access to a global environmental representation and sensor data buffered into it. Planners can be written to:"
+msgstr "规划器的任务是计算完成某个目标函数的路径。路径也可以根据术语和所选算法称为路线。两个典型的例子是计算到目标的路径（例如从当前位置到目标）或完成覆盖（例如规划以覆盖所有自由空间）。规划器将可以访问全局环境表示以及缓冲到其中的传感器数据。规划器可以编写为："
 
 
 #: ../../concepts/index.rst:147
 msgid "Compute shortest path"
-msgstr "Compute shortest path"
+msgstr "计算最短路径"
 
 
 #: ../../concepts/index.rst:148
 msgid "Compute complete coverage path"
-msgstr "Compute complete coverage path"
+msgstr "计算完整覆盖路径"
 
 
 #: ../../concepts/index.rst:149
 msgid "Compute paths along sparse or predefined routes"
-msgstr "Compute paths along sparse or predefined routes"
+msgstr "计算稀疏或预定义路径上的路径"
 
 
 #: ../../concepts/index.rst:151
 msgid "The general task in Nav2 for the planner is to compute a valid, and potentially optimal, path from the current pose to a goal pose. However, many classes of plans and routes exist which are supported."
-msgstr "The general task in Nav2 for the planner is to compute a valid, and potentially optimal, path from the current pose to a goal pose. However, many classes of plans and routes exist which are supported."
+msgstr "Nav2中规划器的一般任务是从当前位姿到目标位姿计算有效且可能最优的路径。然而，支持许多类别的计划和路径存在。"
 
 
 #: ../../concepts/index.rst:155
@@ -222,32 +222,32 @@ msgstr "控制器"
 
 #: ../../concepts/index.rst:157
 msgid "Controllers, also known as local planners in ROS 1, are the way we follow the globally computed path or complete a local task. The controller will have access to a local environment representation to attempt to compute feasible control efforts for the base to follow. Many controller will project the robot forward in space and compute a locally feasible path at each update iteration. Controllers can be written to:"
-msgstr "Controllers, also known as local planners in ROS 1, are the way we follow the globally computed path or complete a local task. The controller will have access to a local environment representation to attempt to compute feasible control efforts for the base to follow. Many controller will project the robot forward in space and compute a locally feasible path at each update iteration. Controllers can be written to:"
+msgstr "控制器，在ROS 1中也被称为局部规划器，是我们遵循全局计算路径或完成局部任务的方式。控制器将能够访问局部环境表示，以尝试计算用于底盘跟随的可行控制力。许多控制器会将机器人在空间中向前推进，并在"
 
 
 #: ../../concepts/index.rst:162
 msgid "Follow a path"
-msgstr "Follow a path"
+msgstr "沿路径前进"
 
 
 #: ../../concepts/index.rst:163
 msgid "Dock with a charging station using detectors in the odometric frame"
-msgstr "Dock with a charging station using detectors in the odometric frame"
+msgstr "使用测距仪在里程计框架中与充电站对接"
 
 
 #: ../../concepts/index.rst:164
 msgid "Board an elevator"
-msgstr "Board an elevator"
+msgstr "进入电梯"
 
 
 #: ../../concepts/index.rst:165
 msgid "Interface with a tool"
-msgstr "Interface with a tool"
+msgstr "与工具进行接口连接"
 
 
 #: ../../concepts/index.rst:167
 msgid "The general task in Nav2 for a controller is to compute a valid control effort to follow the global plan. However, many classes of controllers and local planners exist. It is the goal of this project that all controller algorithms can be plugins in this server for common research and industrial tasks."
-msgstr "The general task in Nav2 for a controller is to compute a valid control effort to follow the global plan. However, many classes of controllers and local planners exist. It is the goal of this project that all controller algorithms can be plugins in this server for common research and industrial tasks."
+msgstr "Nav2控制器的一般任务是计算有效的控制力以跟随全局计划。然而，存在许多类别的控制器和局部规划器。该项目的目标是使所有控制器算法能够作为此服务器中的常见研究和工业任务的插件。"
 
 
 #: ../../concepts/index.rst:172
@@ -257,22 +257,22 @@ msgstr "行为"
 
 #: ../../concepts/index.rst:174
 msgid "Recovery behaviors are a mainstay of fault-tolerant systems. The goal of recoveries are to deal with unknown or failure conditions of the system and autonomously handle them. Examples may include faults in the perception system resulting in the environmental representation being full of fake obstacles. The clear costmap recovery would then be triggered to allow the robot to move."
-msgstr "Recovery behaviors are a mainstay of fault-tolerant systems. The goal of recoveries are to deal with unknown or failure conditions of the system and autonomously handle them. Examples may include faults in the perception system resulting in the environmental representation being full of fake obstacles. The clear costmap recovery would then be triggered to allow the robot to move."
+msgstr "恢复行为是容错系统的重要组成部分。恢复的目标是处理系统的未知或故障条件，并自主处理它们。例如，可能会出现感知系统故障导致环境表示充满虚假障碍物的情况。然后会触发清除代价地图恢复以允许机器人移动。"
 
 
 #: ../../concepts/index.rst:179
 msgid "Another example would be if the robot was stuck due to dynamic obstacles or poor control. Backing up or spinning in place, if permissible, allow the robot to move from a poor location into free space it may navigate successfully."
-msgstr "Another example would be if the robot was stuck due to dynamic obstacles or poor control. Backing up or spinning in place, if permissible, allow the robot to move from a poor location into free space it may navigate successfully."
+msgstr "另一个例子是，如果机器人由于动态障碍物或控制不良而被卡住。如果允许的话，倒退或原地旋转可以使机器人从糟糕的位置移动到可以成功导航的自由空间。"
 
 
 #: ../../concepts/index.rst:182
 msgid "Finally, in the case of a total failure, a recovery may be implemented to call an operator's attention for help. This can be done via email, SMS, Slack, Matrix, etc."
-msgstr "Finally, in the case of a total failure, a recovery may be implemented to call an operator's attention for help. This can be done via email, SMS, Slack, Matrix, etc."
+msgstr "最后，在发生总故障的情况下，可以实施恢复操作来请求操作员的帮助。这可以通过电子邮件、短信、Slack、Matrix等方式完成。"
 
 
 #: ../../concepts/index.rst:185
 msgid "It is important to note that the behavior server can hold any behavior to share access to expensive resources like costmaps or TF buffers, not just recovery behaviors. Each may have its own API."
-msgstr "It is important to note that the behavior server can hold any behavior to share access to expensive resources like costmaps or TF buffers, not just recovery behaviors. Each may have its own API."
+msgstr "重要的是要注意，行为服务器可以保存任何行为，以共享对昂贵资源（如代价地图或TF缓冲区）的访问，不仅仅是恢复行为。每个行为可能都有自己的API。"
 
 
 #: ../../concepts/index.rst:188
@@ -282,7 +282,7 @@ msgstr "平滑器"
 
 #: ../../concepts/index.rst:190
 msgid "As criteria for optimality of the path searched by a planner are usually reduced compared to reality, additional path refinement is often beneficial. Smoothers have been introduced for this purpose, typically responsible for reducing path raggedness and smoothing abrupt rotations, but also for increasing distance from obstacles and high-cost areas as the smoothers have access to a global environmental representation."
-msgstr "As criteria for optimality of the path searched by a planner are usually reduced compared to reality, additional path refinement is often beneficial. Smoothers have been introduced for this purpose, typically responsible for reducing path raggedness and smoothing abrupt rotations, but also for increasing distance from obstacles and high-cost areas as the smoothers have access to a global environmental representation."
+msgstr "通常，与规划器搜索的路径的最佳性标准相比，路径的额外细化通常是有益的。为此引入了平滑器，通常负责减少路径的不平整和平滑突然的旋转，同时增加与障碍物和高代价区域的距离，因为平滑器可以访问全局环境表示。"
 
 
 #: ../../concepts/index.rst:194
@@ -292,7 +292,7 @@ msgstr "Use of a separate smoother over one that is included as part of a planne
 
 #: ../../concepts/index.rst:196
 msgid "The general task in Nav2 for a smoother is to receive a path and return its improved version. However, for different input paths, criteria of the improvements and methods of acquiring them exist, creating space for a multitude of smoothers that can be registered in this server."
-msgstr "The general task in Nav2 for a smoother is to receive a path and return its improved version. However, for different input paths, criteria of the improvements and methods of acquiring them exist, creating space for a multitude of smoothers that can be registered in this server."
+msgstr "Nav2中平滑器的一般任务是接收路径并返回其改进版本。然而，对于不同的输入路径，改进的标准和获取方法也存在，因此可以在该服务器中注册多种平滑器。"
 
 
 #: ../../concepts/index.rst:200
@@ -302,7 +302,7 @@ msgstr "Waypoint Following"
 
 #: ../../concepts/index.rst:202
 msgid "Waypoint following is a basic feature of a navigation system. It tells our system how to use navigation to get to multiple destinations."
-msgstr "Waypoint following is a basic feature of a navigation system. It tells our system how to use navigation to get to multiple destinations."
+msgstr "路径点跟踪是导航系统的基本功能之一。它告诉我们的系统如何使用导航来到达多个目的地。"
 
 
 #: ../../concepts/index.rst:204
