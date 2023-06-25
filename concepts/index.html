@@ -975,78 +975,50 @@
 <div class="section" id="planner-controller-smoother-and-recovery-servers">
 <h3>规划器、控制器、平滑器和恢复服务器<a class="headerlink" href="#planner-controller-smoother-and-recovery-servers" title="永久链接至标题"></a></h3>
 <p>该项目中有四个动作服务器，包括规划器、行为器、平滑器和控制器服务器。</p>
-<p>These action servers are used to host a map of algorithm plugins to complete various tasks.
-They also host the environmental representation used by the algorithm plugins to compute their outputs.</p>
+<p>这些动作服务器用于托管算法插件的映射，以完成各种任务。它们还托管算法插件使用的环境表示，用于计算它们的输出。</p>
 <p>规划器、平滑器和控制器服务器将在运行时配置算法的名称（别名）和类型。这些类型是已注册的插件库名称，而名称则是任务的别名。一个例子是使用名称 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的DWB控制器，因为它遵循一个参考路径。在这种情况下，所有DWB的参数将放置在该命名空间中，例如 <code class="docutils literal notranslate"><span class="pre">FollowPath.&lt;param&gt;</span></code>。</p>
-<p>These three servers then expose an action interface corresponding to their task.
-When the behavior tree ticks the corresponding BT node, it will call the action server to process its task.
-The action server callback inside the server will call the chosen algorithm by its name (e.g. <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>) that maps to a specific algorithm.
-This allows a user to abstract the algorithm used in the behavior tree to classes of algorithms.
-For instance, you can have <code class="docutils literal notranslate"><span class="pre">N</span></code> plugin controllers to follow paths, dock with charger, avoid dynamic obstacles, or interface with a tool.
-Having all of these plugins in the same server allows the user to make use of a single environmental representation object, which is costly to duplicate.</p>
+<p>这三个服务器会公开与其任务相对应的动作接口。当行为树触发相应的行为树节点时，它将调用动作服务器来处理其任务。服务器内的动作服务器回调将根据其名称（例如 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>）调用所选择的算法，该名称映射到特定的算法。这使用户可以将行为树中使用的算法抽象为算法类。例如，您可以拥有 <code class="docutils literal notranslate"><span class="pre">N</span></code> 个插件控制器来跟踪路径、对接充电器、避免动态障碍物或与工具进行接口交互。将所有这些插件放在同一个服务器上使用户能够使用单个环境表示对象，这样做会很昂贵。</p>
 <p>对于行为服务器，每个行为也有自己的名称，然而，每个插件还会公开自己的特殊动作服务器。这是因为可能会创建各种各样的行为动作，无法共享单个简单的接口。行为服务器还包含一个用于接收控制器服务器的本地代价地图的代价地图订阅者，以计算其任务。我们这样做是为了避免多个代价地图实例的重复计算，这会消耗大量计算资源。</p>
-<p>Alternatively, since the BT nodes are trivial plugins calling an action, new BT nodes can be created to call other action servers with other action types.
-It is advisable to use the provided servers if possible at all times.
-If, due to the plugin or action interfaces, a new server is needed, that can be sustained with the framework.
-The new server should use the new type and plugin interface, similar to the provided servers.
-A new BT node plugin will need to be created to call the new action server -- however no forking or modification is required in the Nav2 repo itself by making extensive use of servers and plugins.</p>
+<p>另外，由于行为树节点是调用动作的简单插件，因此可以创建新的行为树节点来调用其他具有不同动作类型的动作服务器。建议尽可能使用提供的服务器。如果由于插件或动作接口的原因需要新服务器，则可以使用该框架来支持。新服务器应该使用新类型和插件接口，类似于提供的服务器。需要创建新的行为树节点插件来调用新的动作服务器-然而，通过广泛使用服务器和插件，不需要对Nav2 repo本身进行分叉或修改。</p>
 <p>如果您发现需要一个新的插件库定义或动作类型的接口，请提交工单，看看我们能否在同一接口中进行修复。</p>
 </div>
 <div class="section" id="planners">
 <h3>规划器<a class="headerlink" href="#planners" title="永久链接至标题"></a></h3>
-<p>The task of a planner is to compute a path to complete some objective function.
-The path can also be known as a route, depending on the nomenclature and algorithm selected.
-Two canonical examples are computing a plan to a goal (e.g. from current position to a goal) or complete coverage (e.g. plan to cover all free space).
-The planner will have access to a global environmental representation and sensor data buffered into it.
-Planners can be written to:</p>
+<p>规划器的任务是计算完成某个目标函数的路径。路径也可以根据术语和所选算法称为路线。两个典型的例子是计算到目标的路径（例如从当前位置到目标）或完成覆盖（例如规划以覆盖所有自由空间）。规划器将可以访问全局环境表示以及缓冲到其中的传感器数据。规划器可以编写为：</p>
 <ul class="simple">
-<li><p>Compute shortest path</p></li>
-<li><p>Compute complete coverage path</p></li>
-<li><p>Compute paths along sparse or predefined routes</p></li>
+<li><p>计算最短路径</p></li>
+<li><p>计算完整覆盖路径</p></li>
+<li><p>计算稀疏或预定义路径上的路径</p></li>
 </ul>
-<p>The general task in Nav2 for the planner is to compute a valid, and potentially optimal, path from the current pose to a goal pose.
-However, many classes of plans and routes exist which are supported.</p>
+<p>Nav2中规划器的一般任务是从当前位姿到目标位姿计算有效且可能最优的路径。然而，支持许多类别的计划和路径存在。</p>
 </div>
 <div class="section" id="controllers">
 <h3>控制器<a class="headerlink" href="#controllers" title="永久链接至标题"></a></h3>
-<p>Controllers, also known as local planners in ROS 1, are the way we follow the globally computed path or complete a local task.
-The controller will have access to a local environment representation to attempt to compute feasible control efforts for the base to follow.
-Many controller will project the robot forward in space and compute a locally feasible path at each update iteration.
-Controllers can be written to:</p>
+<p>控制器，在ROS 1中也被称为局部规划器，是我们遵循全局计算路径或完成局部任务的方式。控制器将能够访问局部环境表示，以尝试计算用于底盘跟随的可行控制力。许多控制器会将机器人在空间中向前推进，并在</p>
 <ul class="simple">
-<li><p>Follow a path</p></li>
-<li><p>Dock with a charging station using detectors in the odometric frame</p></li>
-<li><p>Board an elevator</p></li>
-<li><p>Interface with a tool</p></li>
+<li><p>沿路径前进</p></li>
+<li><p>使用测距仪在里程计框架中与充电站对接</p></li>
+<li><p>进入电梯</p></li>
+<li><p>与工具进行接口连接</p></li>
 </ul>
-<p>The general task in Nav2 for a controller is to compute a valid control effort to follow the global plan.
-However, many classes of controllers and local planners exist.
-It is the goal of this project that all controller algorithms can be plugins in this server for common research and industrial tasks.</p>
+<p>Nav2控制器的一般任务是计算有效的控制力以跟随全局计划。然而，存在许多类别的控制器和局部规划器。该项目的目标是使所有控制器算法能够作为此服务器中的常见研究和工业任务的插件。</p>
 </div>
 <div class="section" id="behaviors">
 <h3>行为<a class="headerlink" href="#behaviors" title="永久链接至标题"></a></h3>
-<p>Recovery behaviors are a mainstay of fault-tolerant systems.
-The goal of recoveries are to deal with unknown or failure conditions of the system and autonomously handle them.
-Examples may include faults in the perception system resulting in the environmental representation being full of fake obstacles.
-The clear costmap recovery would then be triggered to allow the robot to move.</p>
-<p>Another example would be if the robot was stuck due to dynamic obstacles or poor control.
-Backing up or spinning in place, if permissible, allow the robot to move from a poor location into free space it may navigate successfully.</p>
-<p>Finally, in the case of a total failure, a recovery may be implemented to call an operator's attention for help.
-This can be done via email, SMS, Slack, Matrix, etc.</p>
-<p>It is important to note that the behavior server can hold any behavior to share access to expensive resources like costmaps or TF buffers, not just recovery behaviors. Each may have its own API.</p>
+<p>恢复行为是容错系统的重要组成部分。恢复的目标是处理系统的未知或故障条件，并自主处理它们。例如，可能会出现感知系统故障导致环境表示充满虚假障碍物的情况。然后会触发清除代价地图恢复以允许机器人移动。</p>
+<p>另一个例子是，如果机器人由于动态障碍物或控制不良而被卡住。如果允许的话，倒退或原地旋转可以使机器人从糟糕的位置移动到可以成功导航的自由空间。</p>
+<p>最后，在发生总故障的情况下，可以实施恢复操作来请求操作员的帮助。这可以通过电子邮件、短信、Slack、Matrix等方式完成。</p>
+<p>重要的是要注意，行为服务器可以保存任何行为，以共享对昂贵资源（如代价地图或TF缓冲区）的访问，不仅仅是恢复行为。每个行为可能都有自己的API。</p>
 </div>
 <div class="section" id="smoothers">
 <h3>平滑器<a class="headerlink" href="#smoothers" title="永久链接至标题"></a></h3>
-<p>As criteria for optimality of the path searched by a planner are usually reduced compared to reality, additional path refinement is often beneficial.
-Smoothers have been introduced for this purpose, typically responsible for reducing path raggedness and smoothing abrupt rotations,
-but also for increasing distance from obstacles and high-cost areas as the smoothers have access to a global environmental representation.</p>
+<p>通常，与规划器搜索的路径的最佳性标准相比，路径的额外细化通常是有益的。为此引入了平滑器，通常负责减少路径的不平整和平滑突然的旋转，同时增加与障碍物和高代价区域的距离，因为平滑器可以访问全局环境表示。</p>
 <p>Use of a separate smoother over one that is included as part of a planner is advantageous when combining different planners with different smoothers or when a specific control over smoothing is required, e.g. smoothing only a specific part of the path.</p>
-<p>The general task in Nav2 for a smoother is to receive a path and return its improved version.
-However, for different input paths, criteria of the improvements and methods of acquiring them exist, creating space for a multitude of smoothers that can be registered in this server.</p>
+<p>Nav2中平滑器的一般任务是接收路径并返回其改进版本。然而，对于不同的输入路径，改进的标准和获取方法也存在，因此可以在该服务器中注册多种平滑器。</p>
 </div>
 <div class="section" id="waypoint-following">
 <h3>Waypoint Following<a class="headerlink" href="#waypoint-following" title="永久链接至标题"></a></h3>
-<p>Waypoint following is a basic feature of a navigation system. It tells our system how to use navigation to get to multiple destinations.</p>
+<p>路径点跟踪是导航系统的基本功能之一。它告诉我们的系统如何使用导航来到达多个目的地。</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> contains a waypoint following program with a plugin interface for specific task executors.
 This is useful if you need to go to a given location and complete a specific task like take a picture, pick up a box, or wait for user input.
 It is a nice demo application for how to use Nav2 in a sample application.</p>
