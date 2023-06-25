@@ -690,7 +690,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#features">特点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#polygons-parameters">多边形参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#observation-sources-parameters">Observation sources parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#observation-sources-parameters">观测源参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
@@ -1336,7 +1336,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.slowdown_ratio</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code> 的减速比</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1356,7 +1356,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.linear_limit</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code> 的线性限制</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1376,7 +1376,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.angular_limit</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code> 的角度限制</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1392,11 +1392,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Robot angular speed limit. Applicable for <code class="docutils literal notranslate"><span class="pre">limit</span></code> action type.</p>
+<dt>描述：</dt><dd><p>机器人角速度限制。适用于“限制”动作类型。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.time_before_collision</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code> 的碰撞前时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1412,11 +1412,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Time before collision in seconds. Maximum simulation time used in collision prediction. Higher values mean lower performance. Applicable for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
+<dt>描述：</dt><dd><p>碰撞前的时间，以秒为单位。用于碰撞预测的最大仿真时间。较大的值意味着较低的性能。适用于“接近”动作类型。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.simulation_time_step</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code> 的模拟时间步长</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1432,11 +1432,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Time iteration step for robot movement simulation during collision prediction. Lower values mean lower prediction accuracy but better performance. Applicable for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
+<dt>描述：</dt><dd><p>用于碰撞预测期间机器人移动仿真的时间迭代步长。较小的值意味着较低的预测准确性但更好的性能。适用于“接近”动作类型。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.visualize</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code> 的可视化</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1452,7 +1452,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Whether to publish the polygon in a separate topic.</p>
+<dt>描述：</dt><dd><p>是否将多边形发布到单独的主题中。</p>
 </dd>
 </dl>
 </dd>
@@ -1467,22 +1467,22 @@
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>&lt;polygon_name&gt;</p></td>
+<td><p>&lt;多边形名称&gt;</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Topic name to publish a polygon to. Used only if <code class="docutils literal notranslate"><span class="pre">visualize</span></code> is true.</p>
+<dt>描述：</dt><dd><p>发布多边形的主题名称。仅在``visualize``为true时使用。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="observation-sources-parameters">
-<h3>Observation sources parameters<a class="headerlink" href="#observation-sources-parameters" title="永久链接至标题"></a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;source</span> <span class="pre">name&gt;</span></code> is the corresponding data source name ID selected for this type.</p>
+<h3>观测源参数<a class="headerlink" href="#observation-sources-parameters" title="永久链接至标题"></a></h3>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>&lt;source name&gt;``是为此类型选择的相应数据源名称ID。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;source</span> <span class="pre">name&gt;</span></code>.type</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;源名称&gt;</span></code>.type</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
