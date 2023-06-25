@@ -1026,7 +1026,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Count of randomly sampled candidate trajectories from current optimal control sequence in a given iteration. 1000 &#64; 50 Hz or 2000 &#64; 30 Hz seems to produce good results.</p>
+<dt>描述</dt><dd><p>在给定迭代中，从当前最优控制序列中随机抽样的候选轨迹数量。以每秒50次的频率进行1000次或以每秒30次的频率进行2000次似乎能产生良好的结果。</p>
 </dd>
 </dl>
 </dd>
@@ -1046,7 +1046,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of time steps (points) in candidate trajectories</p>
+<dt>描述</dt><dd><p>候选轨迹中的时间步数（点数）</p>
 </dd>
 </dl>
 </dd>
@@ -1066,7 +1066,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Length of each time step's <code class="docutils literal notranslate"><span class="pre">dt</span></code> timestep, in seconds. <code class="docutils literal notranslate"><span class="pre">time_steps</span> <span class="pre">*</span> <span class="pre">model_dt</span></code> is the prediction horizon.</p>
+<dt>描述</dt><dd><p>每个时间步长``dt``的长度，以秒为单位。<a href="#id1"><span class="problematic" id="id2">``</span></a>time_steps * model_dt``是预测的时间范围。</p>
 </dd>
 </dl>
 </dd>
@@ -1086,7 +1086,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Sampling standard deviation for Vx</p>
+<dt>描述</dt><dd><p>Vx的采样标准差</p>
 </dd>
 </dl>
 </dd>
@@ -1106,7 +1106,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Sampling standard deviation for Vy</p>
+<dt>描述</dt><dd><p>Vy的采样标准差</p>
 </dd>
 </dl>
 </dd>
@@ -1126,7 +1126,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Sampling standard deviation for Wz (angular velocity)</p>
+<dt>描述</dt><dd><p>Wz（角速度）的采样标准差</p>
 </dd>
 </dl>
 </dd>
@@ -1146,7 +1146,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Target maximum forward velocity (m/s).</p>
+<dt>描述</dt><dd><p>目标最大前向速度（米/秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1166,7 +1166,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Target maximum lateral velocity, if using <code class="docutils literal notranslate"><span class="pre">Omni</span></code> motion model (m/s).</p>
+<dt>描述</dt><dd><p>如果使用``Omni``运动模型，则为目标最大横向速度（米/秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1186,7 +1186,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum reverse velocity (m/s).</p>
+<dt>描述</dt><dd><p>最大反向速度（米/秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1226,7 +1226,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Selectiveness of trajectories by their costs (The closer this value to 0, the &quot;more&quot; we take in consideration controls with less cost), 0 mean use control with best cost, huge value will lead to just taking mean of all trajectories without cost consideration.</p>
+<dt>描述</dt><dd><p>通过其成本选择轨迹的选择性（该值越接近0，我们越考虑成本较低的控制），0表示使用具有最佳成本的控制，较大的值将导致只考虑所有轨迹的平均成本。</p>
 </dd>
 </dl>
 </dd>
