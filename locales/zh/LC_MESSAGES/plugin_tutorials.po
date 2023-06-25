@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:4
 msgid "Writing a New Behavior Plugin"
-msgstr "Writing a New Behavior Plugin"
+msgstr "编写新的行为插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:6
@@ -32,7 +32,7 @@ msgstr "`概述`_"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:7
 msgid "`Requirements`_"
-msgstr "`Requirements`_"
+msgstr "`要求`_"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:8
