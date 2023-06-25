@@ -577,7 +577,7 @@ msgstr "`InputAtWaypoint <https://github.com/ros-planning/navigation2/pull/2049>
 
 #: ../../migration/Foxy.rst:141 ../../migration/Humble.rst:98
 msgid "Costmap Filters"
-msgstr "Costmap Filters"
+msgstr "代价地图过滤器"
 
 
 #: ../../migration/Foxy.rst:143

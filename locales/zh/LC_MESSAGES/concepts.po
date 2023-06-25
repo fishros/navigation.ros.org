@@ -437,7 +437,7 @@ msgstr "Costmap layers can be created to detect and track obstacles in the scene
 
 #: ../../concepts/index.rst:295
 msgid "Costmap Filters"
-msgstr "Costmap Filters"
+msgstr "代价地图过滤器"
 
 
 #: ../../concepts/index.rst:297
