@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Model Predictive Path Integral Controller &mdash; Navigation 2 1.0.0 文档</title>
+  <title>模型预测路径积分控制器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -609,8 +609,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-regulated-pp.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Model Predictive Path Integral Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mppi-parameters">MPPI Parameters</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">模型预测路径积分控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mppi-parameters">MPPI 参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#trajectory-visualization">Trajectory Visualization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#path-handler">Path Handler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ackermann-motion-model">Ackermann Motion Model</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Model Predictive Path Integral Controller</li>
+      <li>模型预测路径积分控制器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,22 +939,18 @@
            <div itemprop="articleBody">
              
   <div class="section" id="model-predictive-path-integral-controller">
-<span id="configuring-mppic"></span><h1>Model Predictive Path Integral Controller<a class="headerlink" href="#model-predictive-path-integral-controller" title="永久链接至标题"></a></h1>
+<span id="configuring-mppic"></span><h1>模型预测路径积分控制器<a class="headerlink" href="#model-predictive-path-integral-controller" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_mppi_controller">在Github上的源代码</a></p>
-<a class="reference internal image-reference" href="../../_images/mppi_demo.gif"><img alt="MPPI on Turtlebot3 demo" class="align-center" src="../../_images/mppi_demo.gif" style="width: 600px;" /></a>
-<p>The MPPI Controller implements a <a class="reference external" href="https://ieeexplore.ieee.org/document/7487277">Model Predictive Path Integral Controller</a>.
-The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes.</p>
-<p>It works currently with Differential, Omnidirectional, and Ackermann robots.
-This controller is measured to run at 50+ Hz on a modest Intel processor (4th gen i5).</p>
-<p>The MPPI algorithm is an MPC variant that finds a control velocity for the robot using an iterative approach. Using the previous time step's best control solution and the robot's current state, a set of randomly sampled perturbations from a Gaussian distribution are applied. These noised controls are forward simulated to generate a set of trajectories within the robot's motion model.
-Next, these trajectories are scored using a set of plugin-based critic functions to find the best trajectory in the batch. The output scores are used to set the best control with a soft max function.
-This process is then repeated a number of times and returns a converged solution. This solution is then used as the basis of the next time step's initial control.</p>
-<p>A powerful result of this work is the ability to utilize objective functions which are not require to be convex nor differentiable, providing greater designer flexibility in behavior.</p>
+<a class="reference internal image-reference" href="../../_images/mppi_demo.gif"><img alt="Turtlebot3上的MPPI演示" class="align-center" src="../../_images/mppi_demo.gif" style="width: 600px;" /></a>
+<p>MPPI控制器实现了一个`模型预测路径积分控制器 &lt;<a class="reference external" href="https://ieeexplore.ieee.org/document/7487277">https://ieeexplore.ieee.org/document/7487277</a>&gt;`_。新的Nav2 MPPI控制器是一个预测控制器，是TEB和纯路径跟踪MPC控制器的继任者。它使用基于采样的方法来选择最优轨迹，在连续迭代之间进行优化。它包含了基于插件的目标函数，用于自定义和扩展各种行为和行为属性。</p>
+<p>目前适用于差分、全向和Ackermann机器人。该控制器在一台性能适中的Intel处理器（第四代i5）上以50+赫兹运行。</p>
+<p>MPPI算法是一种MPC变体，它使用迭代方法为机器人找到控制速度。利用上一个时间步的最佳控制解和机器人的当前状态，从高斯分布中随机采样一组扰动控制。这些带噪声的控制被正向模拟，生成机器人运动模型内的一组轨迹。然后，使用一组基于插件的评价函数对这些轨迹进行评分，以找到批次中的最佳轨迹。输出的评分用于通过软最大函数设置最佳控制。然后，重复此过程多次，直到获得收敛解。将此解作为下一个时间步的初始控制的基础。</p>
+<p>这项工作的一个强大结果是能够利用不需要是凸的、也不需要是可微分的目标函数，为设计者在行为上提供更大的灵活性。</p>
 <p>请参阅软件包的“README”以获取更完整的信息。</p>
 <div class="section" id="mppi-parameters">
-<h2>MPPI Parameters<a class="headerlink" href="#mppi-parameters" title="永久链接至标题"></a></h2>
+<h2>MPPI 参数<a class="headerlink" href="#mppi-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">motion_model</dt>
+<dt class="field-odd">运动模型</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -970,11 +966,11 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The desired motion model to use for trajectory planning. Options are <code class="docutils literal notranslate"><span class="pre">DiffDrive</span></code>, <code class="docutils literal notranslate"><span class="pre">Omni</span></code>, or <code class="docutils literal notranslate"><span class="pre">Ackermann</span></code>. Differential drive robots may use forward/reverse and angular velocities; Omni add in lateral motion; and Ackermann adds minimum curvature constraints.</p>
+<dt>描述</dt><dd><p>用于轨迹规划的期望运动模型。选项包括``DiffDrive``（差分驱动）、<a href="#id1"><span class="problematic" id="id2">``</span></a>Omni``（全向）或``Ackermann``（阿克曼）。差分驱动机器人可以使用前进/后退和角速度；全向机器人添加了横向运动；而阿克曼则添加了最小曲率约束。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">critics</dt>
+<dt class="field-even">批评家</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -984,13 +980,13 @@ This process is then repeated a number of times and returns a converged solution
 <tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>string vector</p></td>
+<tr class="row-even"><td><p>字符串向量</p></td>
 <td><p>N/A</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>A vector of critic plugin functions to use, without <code class="docutils literal notranslate"><span class="pre">mppi::critic::</span></code> namespace which will be automatically added on loading.</p>
+<dt>描述</dt><dd><p>要使用的批评家插件函数向量，无需 <code class="docutils literal notranslate"><span class="pre">mppi::critic::</span></code> 命名空间，在加载时会自动添加。</p>
 </dd>
 </dl>
 </dd>
@@ -1010,7 +1006,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Iteration count in the MPPI algorithm. Recommended to remain as 1 and instead prefer larger batch sizes.</p>
+<dt>描述</dt><dd><p>MPPI 算法中的迭代次数。建议保持为 1，并选择更大的批次大小。</p>
 </dd>
 </dl>
 </dd>
@@ -1034,7 +1030,7 @@ This process is then repeated a number of times and returns a converged solution
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">time_steps</dt>
+<dt class="field-odd">时间步数</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />

@@ -609,8 +609,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-regulated-pp.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-mppic.html">Model Predictive Path Integral Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-mppic.html#mppi-parameters">MPPI Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-mppic.html">模型预测路径积分控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-mppic.html#mppi-parameters">MPPI 参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="configuring-mppic.html#trajectory-visualization">Trajectory Visualization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuring-mppic.html#path-handler">Path Handler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuring-mppic.html#ackermann-motion-model">Ackermann Motion Model</a></li>
@@ -1117,7 +1117,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic to publish costmap filter information to.</p>
+<dt>描述</dt><dd><p>用于发布代价地图过滤器信息的主题。</p>
 </dd>
 </dl>
 </dd>
@@ -1141,7 +1141,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">base</dt>
+<dt class="field-even">基础</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1161,7 +1161,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">multiplier</dt>
+<dt class="field-odd">倍增器</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1177,8 +1177,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Multiplier of <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask value -&gt; filter space value linear conversion which is being proceeded as:
-<code class="docutils literal notranslate"><span class="pre">filter_space_value</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code></p>
+<dt>描述</dt><dd><p><code class="docutils literal notranslate"><span class="pre">OccupancyGrid``掩码值的乘数-&gt;过滤空间值的线性转换，处理方式为：``filter_space_value</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code></p>
 </dd>
 </dl>
 </dd>
