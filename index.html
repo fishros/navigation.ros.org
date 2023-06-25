@@ -954,24 +954,20 @@
 <p>Nav2是ROS导航栈的专业支持精神继承者。该项目旨在找到一种安全的方式，使移动机器人能够在多种环境和机器人运动学类别中完成复杂任务。它不仅可以从A点移动到B点，还可以有中间姿态，并代表其他类型的任务，如物体跟踪等。Nav2是一个经过生产级和高质量验证的导航框架，得到全球50多家公司的信任。</p>
 <p>它提供感知、规划、控制、定位、可视化等功能，用于构建高度可靠的自主系统。这将通过传感器数据完成环境建模，动态路径规划，计算电机速度，避开障碍物，表示语义区域和对象，并构建更高层次的机器人行为。要了解有关此项目的更多信息，例如相关项目、使用的机器人、ROS1比较和维护者，请参阅：<a class="reference internal" href="about/index.html#about"><span class="std std-ref">About and Contact</span></a>。要了解有关导航和ROS概念的更多信息，请参阅：<a class="reference internal" href="concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a>。</p>
 <p>Nav2使用行为树通过协调许多独立的模块化服务器来创建定制和智能的导航行为。任务服务器可用于计算路径、控制力量、恢复或任何其他与导航相关的任务。这些独立的服务器通过ROS接口（如动作服务器或服务）与行为树（BT）进行通信。机器人可以利用多个不同的行为树来执行许多类型的独特任务。</p>
-<p>The diagram below will give you a good first-look at the structure of Nav2.
-Note: It is possible to have multiple plugins for controllers, planners,
-and recoveries in each of their servers with matching BT plugins. This can be used to
-create contextual navigation behaviors.
-If you would like to see a comparison between this project and ROS (1) Navigation, see <a class="reference internal" href="about/ros1_comparison.html#ros1-comparison"><span class="std std-ref">ROS to ROS 2 Navigation</span></a>.</p>
+<p>下面的图表将让你初步了解Nav2的结构。注意：每个服务器都可以有多个控制器、规划器和恢复插件，这些插件可以与BT插件相匹配。这可以用于创建上下文导航行为。如果你想看一下这个项目和ROS（1）导航之间的比较，请参阅：<a class="reference internal" href="about/ros1_comparison.html#ros1-comparison"><span class="std std-ref">ROS to ROS 2 Navigation</span></a>。</p>
 <p>Nav2的预期输入包括符合REP-105的TF变换、如果使用静态代价地图层则为地图源、BT XML文件和任何相关的传感器数据源。然后，它将为全向或非全向机器人的电机提供有效的速度命令。我们目前支持所有主要的机器人类型：全向、差动驱动、腿部和阿克曼（类似汽车）基本类型！我们通过SE2碰撞检查支持具有圆形和任意形状的机器人的独特功能。</p>
-<p>It has tools to:</p>
+<p>它具有以下工具：</p>
 <ul class="simple">
 <li><p>加载、提供和存储地图（地图服务器）</p></li>
-<li><p>Localize the robot on the map (AMCL)</p></li>
+<li><p>在地图上对机器人进行定位（AMCL）</p></li>
 <li><p>规划绕过障碍物的从A到B的路径（Nav2规划器）</p></li>
-<li><p>Control the robot as it follows the path (Nav2 Controller)</p></li>
+<li><p>控制机器人沿着路径移动（Nav2控制器）</p></li>
 <li><p>使路径规划更连续和可行（Nav2平滑器）</p></li>
-<li><p>Convert sensor data into a costmap representation of the world (Nav2 Costmap 2D)</p></li>
+<li><p>将传感器数据转换为世界的代价地图表示（Nav2代价地图2D）</p></li>
 <li><p>使用行为树构建复杂的机器人行为（Nav2行为树和BT导航器）</p></li>
-<li><p>Compute recovery behaviors in case of failure (Nav2 Recoveries)</p></li>
+<li><p>在发生故障时计算恢复行为（Nav2恢复）</p></li>
 <li><p>按顺序跟随航点（Nav2航点跟随器）</p></li>
-<li><p>Manage the lifecycle and watchdog for the servers (Nav2 Lifecycle Manager)</p></li>
+<li><p>管理服务器的生命周期和看门狗（Nav2生命周期管理器）</p></li>
 <li><p>Plugins to enable your own custom algorithms and behaviors (Nav2 Core)</p></li>
 <li><p>Monitor raw sensor data for imminent collision or dangerous situation (Collision Monitor)</p></li>
 <li><p>Python3 API to interact with Nav2 in a pythonic manner (Simple Commander)</p></li>
