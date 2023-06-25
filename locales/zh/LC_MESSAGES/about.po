@@ -92,7 +92,7 @@ msgstr "SteveMacenski_"
 
 #: ../../about/index.rst:42
 msgid "Project Lead"
-msgstr "Project Lead"
+msgstr "项目负责人"
 
 
 #: ../../about/index.rst:44
@@ -102,7 +102,7 @@ msgstr "Ruffin White"
 
 #: ../../about/index.rst:44
 msgid "UC San Diego"
-msgstr "UC San Diego"
+msgstr "加州大学圣地亚哥分校"
 
 
 #: ../../about/index.rst:44
@@ -112,7 +112,7 @@ msgstr "ruffsl_"
 
 #: ../../about/index.rst:44
 msgid "CI Wizard"
-msgstr "CI Wizard"
+msgstr "CI向导"
 
 
 #: ../../about/index.rst:46
@@ -132,7 +132,7 @@ msgstr "JoshuaWallace_"
 
 #: ../../about/index.rst:46
 msgid "Main Contributor"
-msgstr "Main Contributor"
+msgstr "主要贡献者"
 
 
 #: ../../about/index.rst:48
@@ -147,17 +147,17 @@ msgstr "AlexeyMerzlyakov_"
 
 #: ../../about/index.rst:48 ../../about/index.rst:66 ../../about/related_projects.rst:9
 msgid "Maintainer"
-msgstr "Maintainer"
+msgstr "维护者"
 
 
 #: ../../about/index.rst:57
 msgid "Our former leadership team includes:"
-msgstr "Our former leadership team includes:"
+msgstr "我们的前领导团队包括："
 
 
 #: ../../about/index.rst:60
 msgid "Role"
-msgstr "Role"
+msgstr "角色"
 
 
 #: ../../about/index.rst:62
@@ -167,7 +167,7 @@ msgstr "Matt Hansen"
 
 #: ../../about/index.rst:62 ../../about/index.rst:64 ../../about/index.rst:66
 msgid "Intel Corporation"
-msgstr "Intel Corporation"
+msgstr "英特尔公司"
 
 
 #: ../../about/index.rst:62
@@ -177,7 +177,7 @@ msgstr "mkhansen_"
 
 #: ../../about/index.rst:62
 msgid "Former Project Lead"
-msgstr "Former Project Lead"
+msgstr "前项目负责人"
 
 
 #: ../../about/index.rst:64
@@ -192,7 +192,7 @@ msgstr "bpwilcox_"
 
 #: ../../about/index.rst:64
 msgid "Former Maintainer"
-msgstr "Former Maintainer"
+msgstr "前维护者"
 
 
 #: ../../about/index.rst:66
@@ -212,7 +212,7 @@ msgstr "Contact"
 
 #: ../../about/index.rst:76
 msgid "If you are interested in contacting someone about Navigation, ROS 2, or related projects, please email the project leader. We intentionally make our emails easy to find. If your inquiry relates to bugs or open-source feature requests, consider posting a ticket on our GitHub project. If your inquiry relates to configuration support or private feature development, reach out and we may be able to connect you with independent consultants or contractors that know this project well."
-msgstr "If you are interested in contacting someone about Navigation, ROS 2, or related projects, please email the project leader. We intentionally make our emails easy to find. If your inquiry relates to bugs or open-source feature requests, consider posting a ticket on our GitHub project. If your inquiry relates to configuration support or private feature development, reach out and we may be able to connect you with independent consultants or contractors that know this project well."
+msgstr "如果您对导航、ROS 2或相关项目有兴趣，请给项目负责人发送电子邮件。我们故意使我们的电子邮件易于找到。如果您的问题涉及错误或开源功能请求，请考虑在我们的GitHub项目上发布工单。如果您的问题涉及配置支持或私有功能开发，请联系我们，我们可能能够为您提供熟悉该项目的独立顾问或承包商。"
 
 
 #: ../../about/index.rst:82
@@ -222,7 +222,7 @@ msgstr "Check out the Navigation 2 Slack_ community."
 
 #: ../../about/related_projects.rst:4
 msgid "Related Projects"
-msgstr "Related Projects"
+msgstr "相关项目"
 
 
 #: ../../about/related_projects.rst:6
