@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Writing a New Controller Plugin" href="writing_new_nav2controller_plugin.html" />
+    <link rel="next" title="编写新的控制器插件" href="writing_new_nav2controller_plugin.html" />
     <link rel="prev" title="编写新的Costmap2D插件" href="writing_new_costmap2d_plugin.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -367,8 +367,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1-编写一个新的Costmap2D插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#export-and-make-gradientlayer-plugin">2- 导出并制作 GradientLayer 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- 在Costmap2D中启用插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- 运行GradientLayer插件</a></li>
 </ul>
 </li>
 </ul>
@@ -385,7 +385,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2controller_plugin.html">Writing a New Controller Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2controller_plugin.html">编写新的控制器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -1132,7 +1132,7 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 <p>要启用该插件，我们需要修改``nav2_params.yaml``文件，如下所示，以替换以下参数</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>For Galactic or later, <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> and <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> have been replaced with a single <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string vector for plugin names. The types are now defined in the <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> namespace in the <code class="docutils literal notranslate"><span class="pre">plugin:</span></code> field (e.g. <code class="docutils literal notranslate"><span class="pre">plugin:</span> <span class="pre">MyPlugin::Plugin</span></code>). Inline comments in the code blocks will help guide you through this.</p>
+<p>对于Galactic或更新版本，<code class="docutils literal notranslate"><span class="pre">plugin_names``和``plugin_types``已经被单个``plugins``字符串向量替代，用于插件名称。现在，类型在``plugin_name``命名空间中的``plugin:``字段中定义（例如：``plugin:</span> <span class="pre">MyPlugin::Plugin</span></code>）。代码块中的内联注释将帮助指导您完成此操作。</p>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>planner_server:
   ros__parameters:

@@ -367,8 +367,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#write-a-new-costmap2d-plugin">1-编写一个新的Costmap2D插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#export-and-make-gradientlayer-plugin">2- 导出并制作 GradientLayer 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-the-plugin-in-costmap2d">3- 在Costmap2D中启用插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-gradientlayer-plugin">4- 运行GradientLayer插件</a></li>
 </ul>
 </li>
 </ul>
@@ -385,7 +385,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2controller_plugin.html">Writing a New Controller Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2controller_plugin.html">编写新的控制器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -1065,11 +1065,11 @@ PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path and name of library where plugin is placed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>：插件所在库的路径和名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: 在 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 参数中引用的插件类型（有关更多详细信息，请参见下一节）。它可以是任何你想要的。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: Plugin class with namespace taken from the source code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>：插件类，其命名空间来自源代码。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">basic_class_type</span></code>: 插件类所派生的基本父类。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Plugin description in a text form.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>：以文本形式的插件描述。</p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;nav2_gradient_costmap_plugin_core&quot;</span><span class="nt">&gt;</span>
@@ -1079,28 +1079,28 @@ PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap
 <span class="nt">&lt;/library&gt;</span>
 </pre></div>
 </div>
-<p>The export of plugin is performed by including <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code> cmake-function into <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>. This function installs plugin description file into <code class="docutils literal notranslate"><span class="pre">share</span></code> directory and sets ament indexes for plugin description XML to be discoverable as a plugin of selected type:</p>
+<p>通过将``pluginlib_export_plugin_description_file()`` cmake函数包含在``CMakeLists.txt``中来执行插件的导出。此函数将插件描述文件安装到``share``目录中，并为插件描述XML设置ament索引，以便可以将其发现为所选类型的插件：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_costmap_2d gradient_layer.xml)
 </pre></div>
 </div>
-<p>Plugin description file is also should be added to <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>. <code class="docutils literal notranslate"><span class="pre">costmap_2d</span></code> is the package of the interface definition, for our case <code class="docutils literal notranslate"><span class="pre">Layer</span></code>, and requires a path to the xml file:</p>
+<p>插件描述文件还应添加到 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> 中。<code class="docutils literal notranslate"><span class="pre">costmap_2d</span></code> 是接口定义的包，在我们的案例中为 <code class="docutils literal notranslate"><span class="pre">Layer</span></code>，需要提供指向 XML 文件的路径：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;export&gt;
   &lt;costmap_2d plugin=&quot;${prefix}/gradient_layer.xml&quot; /&gt;
   ...
 &lt;/export&gt;
 </pre></div>
 </div>
-<p>After everything is done put the plugin package into <code class="docutils literal notranslate"><span class="pre">src</span></code> directory of a certain ROS 2-workspace, build the plugin package (<code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">nav2_gradient_costmap_plugin</span> <span class="pre">--symlink-install</span></code>) and source <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> file when it necessary.</p>
-<p>Now the plugin is ready to use.</p>
+<p>完成所有步骤后，将插件包放入特定ROS 2工作空间的``src``目录中，构建插件包（<code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">nav2_gradient_costmap_plugin</span> <span class="pre">--symlink-install</span></code>），并在必要时源化``setup.bash``文件。</p>
+<p>现在插件已经准备好使用了。</p>
 </div>
 <div class="section" id="enable-the-plugin-in-costmap2d">
-<h3>3- Enable the plugin in Costmap2D<a class="headerlink" href="#enable-the-plugin-in-costmap2d" title="永久链接至标题"></a></h3>
-<p>At the next step it is required to tell Costmap2D about new plugin. For that the plugin should be added to <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> and <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> lists in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> optionally for <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code>/<code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> in order to be enabled in run-time for Controller/Planner Server. <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> list contains the names of plugin objects. These names could be anything you want. <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> contains types of listed in <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> objects. These types should correspond to <code class="docutils literal notranslate"><span class="pre">name</span></code> field of plugin class specified in plugin description XML-file.</p>
+<h3>3- 在Costmap2D中启用插件<a class="headerlink" href="#enable-the-plugin-in-costmap2d" title="永久链接至标题"></a></h3>
+<p>下一步需要告知 Costmap2D 新插件的存在。为此，插件应可选地添加到 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 的 <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code>/<code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> 的 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 列表中，以便在 Controller/Planner 服务器的运行时启用。<code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 列表包含插件对象的名称，这些名称可以任意指定。<code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 包含在 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 中列出的对象的类型，这些类型应与插件描述 XML 文件中指定的插件类的 <code class="docutils literal notranslate"><span class="pre">name</span></code> 字段对应。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>For Galactic or later, <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> and <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> have been replaced with a single <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string vector for plugin names. The types are now defined in the <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> namespace in the <code class="docutils literal notranslate"><span class="pre">plugin:</span></code> field (e.g. <code class="docutils literal notranslate"><span class="pre">plugin:</span> <span class="pre">MyPlugin::Plugin</span></code>). Inline comments in the code blocks will help guide you through this.</p>
+<p>对于Galactic或更新版本，<code class="docutils literal notranslate"><span class="pre">plugin_names``和``plugin_types``已经被单个``plugins``字符串向量替代，用于插件名称。现在，类型在``plugin_name``命名空间中的``plugin:``字段中定义（例如：``plugin:</span> <span class="pre">MyPlugin::Plugin</span></code>）。代码块中的内联注释将帮助指导您完成此操作。</p>
 </div>
-<p>For example:</p>
+<p>例如：</p>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- a/nav2_bringup/bringup/params/nav2_params.yaml</span>
 <span class="gi">+++ b/nav2_bringup/bringup/params/nav2_params.yaml</span>
 <span class="gu">@@ -124,8 +124,8 @@ local_costmap:</span>
@@ -1123,12 +1123,12 @@ PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap
 <span class="w"> </span>      obstacle_layer:
 </pre></div>
 </div>
-<p>YAML-file may also contain the list of parameters (if any) for each plugin, identified by plugins object name.</p>
-<p>NOTE: there could be many simultaneously loaded plugin objects of one type. For this, <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> list should contain different plugins names whether the <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> will remain the same types. For example:</p>
+<p>YAML文件还可以包含每个插件的参数列表（如果有）。这些参数由插件对象名称进行标识。</p>
+<p>注意：一种类型的插件可能同时加载多个对象。因此，“plugin_names”列表应包含不同的插件名称，而“plugin_types”将保持相同的类型。例如：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>plugins: [&quot;obstacle_layer&quot;, &quot;gradient_layer_1&quot;, &quot;gradient_layer_2&quot;]
 </pre></div>
 </div>
-<p>In this case each plugin object will be handled by its own parameters tree in a YAML-file, like:</p>
+<p>在这种情况下，每个插件对象将在YAML文件中通过自己的参数树进行处理，例如：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>gradient_layer_1:
   plugin: nav2_gradient_costmap_plugin/GradientLayer
   enabled: True
@@ -1141,12 +1141,12 @@ gradient_layer_2:
 </div>
 </div>
 <div class="section" id="run-gradientlayer-plugin">
-<h3>4- Run GradientLayer plugin<a class="headerlink" href="#run-gradientlayer-plugin" title="永久链接至标题"></a></h3>
-<p>Run Turtlebot3 simulation with enabled Nav2. Detailed instructions how to make it are written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Below is shortcut command for that:</p>
+<h3>4- 运行GradientLayer插件<a class="headerlink" href="#run-gradientlayer-plugin" title="永久链接至标题"></a></h3>
+<p>使用启用了Nav2的Turtlebot3仿真运行。如何进行设置的详细说明请参阅:ref:<cite>getting_started</cite>。以下是快捷命令：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>
 </div>
-<p>Then goto RViz and click on the &quot;2D Pose Estimate&quot; button at the top and point the location on map as it was described in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Robot will be localized on map and the result should be as presented at picture below. There, the gradient costmap can be seen. There are also 2 noticeable things: dynamically updated by <code class="docutils literal notranslate"><span class="pre">GradientLayer::updateCosts()</span></code> costmap within its bounds and global path curved by gradient:</p>
+<p>然后转到RViz，并单击顶部的“2D姿势估计”按钮，根据:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>getting_started`中所述，在地图上指向位置。机器人将在地图上进行定位，结果应如下图所示。在那里，可以看到梯度代价图。还有两个明显的特点：由``GradientLayer::updateCosts()``在其边界内动态更新的代价图和由梯度曲线化的全局路径：</p>
 <a class="reference internal image-reference" href="../../_images/gradient_layer_run.png"><img alt="Image of gradient costmap used" class="align-center" src="../../_images/gradient_layer_run.png" style="width: 700px;" /></a>
 </div>
 </div>

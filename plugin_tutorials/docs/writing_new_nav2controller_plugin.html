@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing a New Controller Plugin &mdash; Navigation 2 1.0.0 文档</title>
+  <title>编写新的控制器插件 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -367,8 +367,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1-编写一个新的Costmap2D插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#export-and-make-gradientlayer-plugin">2- 导出并制作 GradientLayer 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- 在Costmap2D中启用插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- 运行GradientLayer插件</a></li>
 </ul>
 </li>
 </ul>
@@ -385,7 +385,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Writing a New Controller Plugin</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编写新的控制器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Plugin Tutorials</a> &raquo;</li>
-      <li>Writing a New Controller Plugin</li>
+      <li>编写新的控制器插件</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="writing-a-new-controller-plugin">
-<span id="writing-new-nav2controller-plugin"></span><h1>Writing a New Controller Plugin<a class="headerlink" href="#writing-a-new-controller-plugin" title="永久链接至标题"></a></h1>
+<span id="writing-new-nav2controller-plugin"></span><h1>编写新的控制器插件<a class="headerlink" href="#writing-a-new-controller-plugin" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -948,11 +948,10 @@
 <a class="reference internal image-reference" href="../../_images/nav2_pure_pursuit_gif.gif"><img alt="Animated gif of pure pursuit controller demo" class="align-center" src="../../_images/nav2_pure_pursuit_gif.gif" style="width: 640px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial shows how to create your own controller <a class="reference external" href="https://index.ros.org/p/pluginlib/">plugin</a>.</p>
+<p>本教程介绍如何创建自己的控制器插件 <a class="reference external" href="https://index.ros.org/p/pluginlib/">plugin</a>。</p>
 <p>In this tutorial, we will be implementing the pure pursuit path tracking algorithm based on this <a class="reference external" href="https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf">paper</a>.
 It is recommended you go through it.</p>
-<p>Note: This tutorial is based on a previously existing simplified version of the Regulated Pure Pursuit controller now in the Nav2 stack.
-You can find the source code matching this tutorial <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller">here</a>.</p>
+<p>注意：本教程基于现有的简化版本的Regulated Pure Pursuit控制器，该控制器现已包含在Nav2堆栈中。您可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller">这里</a> 找到与本教程相匹配的源代码。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
@@ -967,8 +966,7 @@ You can find the source code matching this tutorial <a class="reference external
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="create-a-new-controller-plugin">
 <h3>1- Create a new Controller Plugin<a class="headerlink" href="#create-a-new-controller-plugin" title="永久链接至标题"></a></h3>
-<p>We will be implementing the pure pursuit controller. The annotated code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> repository
-as the <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller</span></code>. This package can be considered as a reference for writing your own controller plugin.</p>
+<p>我们将实现纯追踪控制器。本教程中的带注释代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> 存储库的``nav2_pure_pursuit_controller``中找到。该软件包可被视为编写自己的控制器插件的参考。</p>
 <p>Our example plugin class <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller::PurePursuitController</span></code> inherits from the base class <code class="docutils literal notranslate"><span class="pre">nav2_core::Controller</span></code>. The base class provides a
 set of virtual methods to implement a controller plugin. These methods are called at runtime by the controller server to compute velocity commands.
 The list of methods, their descriptions, and necessity are presented in the table below:</p>
