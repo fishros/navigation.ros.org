@@ -1147,7 +1147,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Timeout, after which zero-velocity ceases to be published. It could be used for other overrode systems outside Nav2 are trying to bring the robot out of a state close to a collision, or to allow a standing robot to go into sleep mode.</p>
+<dt>描述：</dt><dd><p>超时时间，超过此时间，零速度将停止发布。它可以用于在Nav2之外的其他被覆盖系统试图将机器人从接近碰撞状态中解救出来，或者允许一个静止的机器人进入睡眠模式。</p>
 </dd>
 </dl>
 </dd>
@@ -1167,7 +1167,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>List of zones (stop/slowdown/limit bounding boxes, footprint, approach circle, etc...). Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>区域列表（停止/减速/限制边界框，足迹，接近圆等）。如果未进行专门设置，将导致错误。</p>
 </dd>
 </dl>
 </dd>
@@ -1187,14 +1187,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>List of data sources (laser scanners, pointclouds, etc...). Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>数据源列表（激光扫描仪，点云等）。如果未进行专门设置，将导致错误。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="section" id="polygons-parameters">
 <h3>多边形参数<a class="headerlink" href="#polygons-parameters" title="永久链接至标题"></a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;polygon</span> <span class="pre">name&gt;</span></code> is the corresponding polygon name ID selected for this type.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;polygon</span> <span class="pre">name&gt;</span></code> 是为此类型选择的相应多边形名称ID。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.type</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1212,7 +1212,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Type of polygon shape. Available values are <code class="docutils literal notranslate"><span class="pre">polygon</span></code>, <code class="docutils literal notranslate"><span class="pre">circle</span></code>. Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>多边形形状的类型。可用的值为 <code class="docutils literal notranslate"><span class="pre">polygon</span></code> ， <code class="docutils literal notranslate"><span class="pre">circle</span></code>。如果未进行专门设置，将导致错误。</p>
 </dd>
 </dl>
 </dd>
@@ -1232,7 +1232,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Polygon vertexes, listed in <code class="docutils literal notranslate"><span class="pre">{p1.x,</span> <span class="pre">p1.y,</span> <span class="pre">p2.x,</span> <span class="pre">p2.y,</span> <span class="pre">p3.x,</span> <span class="pre">p3.y,</span> <span class="pre">...}</span></code> format (e.g. <code class="docutils literal notranslate"><span class="pre">{0.5,</span> <span class="pre">0.25,</span> <span class="pre">0.5,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">0.25}</span></code> for the square in the front). Used for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type. Minimum 3 points for a triangle polygon. If not specified, the collision monitor will use dynamic polygon subscription to <code class="docutils literal notranslate"><span class="pre">polygon_sub_topic</span></code> for points in the <code class="docutils literal notranslate"><span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit</span></code> action types, or footprint subscriber to <code class="docutils literal notranslate"><span class="pre">footprint_topic</span></code> for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
+<dt>描述：</dt><dd><p>多边形的顶点，以 <code class="docutils literal notranslate"><span class="pre">{p1.x,</span> <span class="pre">p1.y,</span> <span class="pre">p2.x,</span> <span class="pre">p2.y,</span> <span class="pre">p3.x,</span> <span class="pre">p3.y,</span> <span class="pre">...}</span></code> 的格式列出（例如，正方形的格式为 <code class="docutils literal notranslate"><span class="pre">{0.5,</span> <span class="pre">0.25,</span> <span class="pre">0.5,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">0.25}</span></code>）。用于``polygon``类型。三角形多边形至少需要3个顶点。如果未指定，则碰撞监视器将使用动态多边形订阅``polygon_sub_topic``中的顶点，用于``stop``/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<a href="#id1"><span class="problematic" id="id2">``</span></a>limit``操作类型，或者使用足迹订阅器``footprint_topic``中的顶点，用于``approach``操作类型。</p>
 </dd>
 </dl>
 </dd>
@@ -1252,7 +1252,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Topic to listen the polygon points from. Applicable only for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type and <code class="docutils literal notranslate"><span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit</span></code> action types. Causes an error, if not specified <strong>and</strong> points are also not specified. If both <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">polygon_sub_topic</span></code> are specified, the static <code class="docutils literal notranslate"><span class="pre">points</span></code> takes priority.</p>
+<dt>描述：</dt><dd><p>从中接收多边形顶点的主题。仅适用于``polygon``类型和``stop``/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit``操作类型。如果未指定**且**顶点也未指定，将导致错误。如果同时指定了``points``和``polygon_sub_topic</span></code>，则静态``points``优先级较高。</p>
 </dd>
 </dl>
 </dd>
@@ -1272,7 +1272,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Topic to listen the robot footprint from. Applicable only for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type and <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type. If both <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">footprint_topic</span></code> are specified, the static <code class="docutils literal notranslate"><span class="pre">points</span></code> takes priority.</p>
+<dt>描述：</dt><dd><p>从中接收机器人足迹的主题。仅适用于``polygon``类型和``approach``操作类型。如果同时指定了``points``和``footprint_topic``，则静态``points``优先级较高。</p>
 </dd>
 </dl>
 </dd>
@@ -1292,7 +1292,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Circle radius. Used for <code class="docutils literal notranslate"><span class="pre">circle</span></code> type. Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>圆的半径。用于``circle``类型。如果未指定，将导致错误。</p>
 </dd>
 </dl>
 </dd>
@@ -1312,7 +1312,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Zone behavior model. Available values are <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">slowdown</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code>, <code class="docutils literal notranslate"><span class="pre">approach</span></code>. Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>区域行为模型。可用的值为``stop``、<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>、<code class="docutils literal notranslate"><span class="pre">limit</span></code>、<code class="docutils literal notranslate"><span class="pre">approach</span></code>。如果未指定，将导致错误。</p>
 </dd>
 </dl>
 </dd>
@@ -1332,7 +1332,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Minimum number of data readings within a zone to trigger the action. Former <code class="docutils literal notranslate"><span class="pre">max_points</span></code> parameter for Humble, that meant the maximum number of data readings within a zone to not trigger the action). <code class="docutils literal notranslate"><span class="pre">min_points</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">max_points</span> <span class="pre">+</span> <span class="pre">1</span></code> value.</p>
+<dt>描述：</dt><dd><p>在区域内触发动作所需的最少数据读数。之前的``max_points``参数是指在区域内不触发动作所需的最大数据读数。<a href="#id1"><span class="problematic" id="id2">``</span></a>min_points``等于``max_points + 1``的值。</p>
 </dd>
 </dl>
 </dd>
@@ -1352,7 +1352,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Robot slowdown (share of its actual speed). Applicable for <code class="docutils literal notranslate"><span class="pre">slowdown</span></code> action type.</p>
+<dt>描述：</dt><dd><p>机器人减速（相对于其实际速度的比例）。适用于``slowdown``动作类型。</p>
 </dd>
 </dl>
 </dd>
@@ -1372,7 +1372,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Robot linear speed limit. Applicable for <code class="docutils literal notranslate"><span class="pre">limit</span></code> action type.</p>
+<dt>描述：</dt><dd><p>机器人线速度限制。适用于``limit``动作类型。</p>
 </dd>
 </dl>
 </dd>
