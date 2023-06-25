@@ -1372,7 +1372,7 @@ msgstr "经过的时间以秒为单位返回成功。"
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:4
 msgid "TransformAvailable"
-msgstr "TransformAvailable"
+msgstr "可转换"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:6
@@ -1382,7 +1382,7 @@ msgstr "检查是否存在TF变换。如果找不到，则返回失败。一旦�
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst
 msgid "child"
-msgstr "child"
+msgstr "子节点"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:16 ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:27 ../../configuration/packages/configuring-collision-monitor.rst:100 ../../configuration/packages/configuring-costmaps.rst:109 ../../configuration/packages/costmap-plugins/obstacle.rst:70 ../../configuration/packages/costmap-plugins/obstacle.rst:81 ../../configuration/packages/costmap-plugins/static.rst:57 ../../configuration/packages/costmap-plugins/voxel.rst:136 ../../configuration/packages/costmap-plugins/voxel.rst:147 ../../configuration/packages/smac/configuring-smac-lattice.rst:168
@@ -1392,7 +1392,7 @@ msgstr "\"\""
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:20
 msgid "Child frame for transform."
-msgstr "Child frame for transform."
+msgstr "转换的子帧"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst
@@ -1402,42 +1402,42 @@ msgstr "父节点"
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:31
 msgid "Parent frame for transform."
-msgstr "Parent frame for transform."
+msgstr "转换的父帧"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst:4
 msgid "WouldAControllerRecoveryHelp"
-msgstr "WouldAControllerRecoveryHelp"
+msgstr "是否需要控制器恢复帮助"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst:6
 msgid "Checks if the active controller server error code is UNKNOWN, PATIENCE_EXCEEDED, FAILED_TO_MAKE_PROGRESS, or NO_VALID_CONTROL."
-msgstr "Checks if the active controller server error code is UNKNOWN, PATIENCE_EXCEEDED, FAILED_TO_MAKE_PROGRESS, or NO_VALID_CONTROL."
+msgstr "检查活动控制器服务器错误代码是否为UNKNOWN、PATIENCE_EXCEEDED、FAILED_TO_MAKE_PROGRESS或NO_VALID_CONTROL。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst:11 ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst:11 ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst:11
 msgid "Input Port"
-msgstr "Input Port"
+msgstr "输入端口"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst:22
 msgid "The active error code to compare against. This should match the controller server error code."
-msgstr "The active error code to compare against. This should match the controller server error code."
+msgstr "要进行比较的活动错误代码。这应该与控制器服务器错误代码相匹配。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst:4
 msgid "WouldAPlannerRecoveryHelp"
-msgstr "WouldAPlannerRecoveryHelp"
+msgstr "是否需要规划器恢复帮助"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst:6
 msgid "Checks if the active controller server error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT."
-msgstr "Checks if the active controller server error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT."
+msgstr "检查活动控制器服务器错误代码是否为UNKNOWN、NO_VALID_CONTROL或TIMEOUT。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst:22
 msgid "The active error code to compare against. This should match the planner server error code."
-msgstr "The active error code to compare against. This should match the planner server error code."
+msgstr "要进行比较的活动错误代码。这应该与规划器服务器的错误代码相匹配。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst:4
@@ -1447,32 +1447,32 @@ msgstr "WouldASmootherRecoveryHelp"
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst:6
 msgid "Checks if the active controller server error code is UNKNOWN, TIMEOUT, FAILED_TO_SMOOTH_PATH, or SMOOTHED_PATH_IN_COLLISION."
-msgstr "Checks if the active controller server error code is UNKNOWN, TIMEOUT, FAILED_TO_SMOOTH_PATH, or SMOOTHED_PATH_IN_COLLISION."
+msgstr "检查活动控制器服务器的错误代码是否为UNKNOWN、TIMEOUT、FAILED_TO_SMOOTH_PATH或SMOOTHED_PATH_IN_COLLISION。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst:22
 msgid "The active error code to compare against. This should match the smoother server error code."
-msgstr "The active error code to compare against. This should match the smoother server error code."
+msgstr "用于比较的活动错误代码。这应该与更顺畅的服务器错误代码相匹配。"
 
 
 #: ../../configuration/packages/bt-plugins/controls/PipelineSequence.rst:4
 msgid "PipelineSequence"
-msgstr "PipelineSequence"
+msgstr "管道序列"
 
 
 #: ../../configuration/packages/bt-plugins/controls/PipelineSequence.rst:6
 msgid "Ticks the first child till it succeeds, then ticks the first and second children till the second one succeeds. It then ticks the first, second, and third children until the third succeeds, and so on, and so on. If at any time a child returns RUNNING, that doesn't change the behavior. If at any time a child returns FAILURE, that stops all children and returns FAILURE overall."
-msgstr "Ticks the first child till it succeeds, then ticks the first and second children till the second one succeeds. It then ticks the first, second, and third children until the third succeeds, and so on, and so on. If at any time a child returns RUNNING, that doesn't change the behavior. If at any time a child returns FAILURE, that stops all children and returns FAILURE overall."
+msgstr "首先对第一个子节点进行执行，直到成功，然后对第一个和第二个子节点进行执行，直到第二个成功。然后对第一个、第二个和第三个子节点进行执行，直到第三个成功，依此类推。如果任何时候一个子节点返回RUNNING，不会改变行为。如果任何时候一个子节点返回FAILURE，将停止所有子节点的执行并返回总体的FAILURE。"
 
 
 #: ../../configuration/packages/bt-plugins/controls/RecoveryNode.rst:4
 msgid "RecoveryNode"
-msgstr "RecoveryNode"
+msgstr "恢复节点"
 
 
 #: ../../configuration/packages/bt-plugins/controls/RecoveryNode.rst:6
 msgid "The RecoveryNode is a control flow node with two children. It returns SUCCESS if and only if the first child returns SUCCESS. The second child will be executed only if the first child returns FAILURE. If the second child SUCCEEDS, then the first child will be executed again. The user can specify how many times the recovery actions should be taken before returning FAILURE. In nav2, the RecoveryNode is included in Behavior Trees to implement recovery actions upon failures."
-msgstr "The RecoveryNode is a control flow node with two children. It returns SUCCESS if and only if the first child returns SUCCESS. The second child will be executed only if the first child returns FAILURE. If the second child SUCCEEDS, then the first child will be executed again. The user can specify how many times the recovery actions should be taken before returning FAILURE. In nav2, the RecoveryNode is included in Behavior Trees to implement recovery actions upon failures."
+msgstr "RecoveryNode是一个控制流节点，有两个子节点。仅当第一个子节点返回SUCCESS时，它才返回SUCCESS。只有在第一个子节点返回FAILURE时，才会执行第二个子节点。如果第二个子节点执行成功，则会再次执行第一个子节点。用户可以指定在返回FAILURE之前需要执行多少次恢复操作。在nav2中，RecoveryNode被包含在行为树中，用于在发生故障时实施恢复操作。"
 
 
 #: ../../configuration/packages/bt-plugins/controls/RecoveryNode.rst
