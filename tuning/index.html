@@ -435,7 +435,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">配置指南</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../configuration/packages/configuring-bt-navigator.html">Behavior-Tree Navigator</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-bt-navigator.html#parameters">Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-bt-navigator.html#example">示例</a></li>
@@ -718,7 +718,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#controller-plugin-selection">控制器插件选择</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#caching-obstacle-heuristic-in-smac-planners">在 Smac 规划器中缓存障碍物启发式函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nav2-launch-options">Nav2 启动选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-pages-we-d-love-to-offer">Other Pages We'd Love To Offer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-pages-we-d-love-to-offer">其他我们愿意提供的页面</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../behavior_trees/index.html">Nav2行为树</a><ul>
@@ -939,7 +939,7 @@
              
   <div class="section" id="tuning-guide">
 <span id="tuning"></span><h1>调优指南<a class="headerlink" href="#tuning-guide" title="永久链接至标题"></a></h1>
-<p>本指南旨在帮助用户调整其导航系统。虽然 <a class="reference internal" href="../configuration/index.html#configuration"><span class="std std-ref">Configuration Guide</span></a> 包含了Nav2的所有参数列表，但对于如何使用其中最重要的参数进行调优，它并没有提供太多的指导。本指南的目的是在第一次设置之后提供更多关于如何设置系统的建议，您可以在 <a class="reference internal" href="../setup_guides/index.html#setup-guides"><span class="std std-ref">First-Time Robot Setup Guide</span></a> 中找到第一次设置的相关信息。这并不意味着涵盖了所有参数（因此，请查阅感兴趣的软件包的配置指南），但会提供一些有用的提示和技巧。</p>
+<p>本指南旨在帮助用户调整其导航系统。虽然 <a class="reference internal" href="../configuration/index.html#configuration"><span class="std std-ref">配置指南</span></a> 包含了Nav2的所有参数列表，但对于如何使用其中最重要的参数进行调优，它并没有提供太多的指导。本指南的目的是在第一次设置之后提供更多关于如何设置系统的建议，您可以在 <a class="reference internal" href="../setup_guides/index.html#setup-guides"><span class="std std-ref">First-Time Robot Setup Guide</span></a> 中找到第一次设置的相关信息。这并不意味着涵盖了所有参数（因此，请查阅感兴趣的软件包的配置指南），但会提供一些有用的提示和技巧。</p>
 <p>这个调优指南是一个持续进行中的工作。如果你发现有一些你缺失的见解，请随时提交一个工单或拉取请求，分享你想要分享的智慧。这是一个由Nav2用户和维护人员慷慨支持的开放部分。请考虑回馈。</p>
 <div class="section" id="inflation-potential-fields">
 <h2>膨胀潜力场<a class="headerlink" href="#inflation-potential-fields" title="永久链接至标题"></a></h2>
@@ -1066,28 +1066,28 @@
 <p>在 <a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_brin</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">slam</span></code>：是否使用AMCL或SLAM Toolbox进行定位和/或建图。默认值为``false``，即使用AMCL。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code> : The filepath to the map to use for navigation. Defaults to <code class="docutils literal notranslate"><span class="pre">map.yaml</span></code> in the package's <code class="docutils literal notranslate"><span class="pre">maps/</span></code> directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code> ：导航使用的地图文件路径。默认为包中``maps/<a href="#id1"><span class="problematic" id="id2">``</span></a>目录下的``map.yaml``文件。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">world</span></code>：仿真中使用的世界文件的文件路径。默认为包中的``worlds/<a href="#id1"><span class="problematic" id="id2">``</span></a>目录。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">params_file</span></code> : The main navigation configuration file. Defaults to <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> in the package's <code class="docutils literal notranslate"><span class="pre">params/</span></code> directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params_file</span></code> ：主导航配置文件。默认为包中``params/<a href="#id1"><span class="problematic" id="id2">``</span></a>目录下的``nav2_params.yaml``文件。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">autostart</span></code>：是否自动启动导航系统的生命周期管理系统。默认值为``true``，即在创建时将其上移至Nav2堆栈的激活状态，准备好使用。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_composition</span></code> : Whether to launch each Nav2 server into individual processes or in a single composed node, to leverage savings in CPU and memory. Default <code class="docutils literal notranslate"><span class="pre">true</span></code> to use single process Nav2.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_composition</span></code> ：是否将每个Nav2服务器启动为单独的进程或单个组合节点，以节省CPU和内存。默认为``true``，使用单进程Nav2。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">use_respawn</span></code>：是否允许服务器崩溃时自动重启。当与生命周期管理器一起配置时，如果已经激活并因崩溃而停机，管理器将重新启动系统。只适用于非组合启动，因为所有节点在同一个进程/容器中。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_sim_time</span></code> : Whether to set all the nodes to use simulation time, needed in simulation. Default <code class="docutils literal notranslate"><span class="pre">true</span></code> for simulation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rviz_config_file</span></code> : The filepath to the rviz configuration file to use. Defaults to the <code class="docutils literal notranslate"><span class="pre">rviz/</span></code> directory's file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_simulator</span></code> : Whether or not to start the Gazebo simulator with the Nav2 stack. Defaults to <code class="docutils literal notranslate"><span class="pre">true</span></code> to launch Gazebo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_robot_state_pub</span></code> : Whether or not to start the robot state publisher to publish the robot's URDF transformations to TF2. Defaults to <code class="docutils literal notranslate"><span class="pre">true</span></code> to publish the robot's TF2 transformations.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_rviz</span></code> : Whether or not to launch rviz for visualization. Defaults to <code class="docutils literal notranslate"><span class="pre">true</span></code> to show rviz.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">headless</span></code> : Whether or not to launch the Gazebo front-end alongside the background Gazebo simulation. Defaults to <code class="docutils literal notranslate"><span class="pre">true</span></code> to display the Gazebo window.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">namespace</span></code> : The namespace to launch robots into, if need be.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_namespace</span></code> : Whether or not to launch robots into this namespace. Default <code class="docutils literal notranslate"><span class="pre">false</span></code> and uses global namespace for single robot.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robot_name</span></code> : The name of the robot to launch.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">robot_sdf</span></code> : The filepath to the robot's gazebo configuration file containing the Gazebo plugins and setup to simulate the robot system.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x_pose</span></code>, <code class="docutils literal notranslate"><span class="pre">y_pose</span></code>, <code class="docutils literal notranslate"><span class="pre">z_pose</span></code>, <code class="docutils literal notranslate"><span class="pre">roll</span></code>, <code class="docutils literal notranslate"><span class="pre">pitch</span></code>, <code class="docutils literal notranslate"><span class="pre">yaw</span></code> : Parameters to set the initial position of the robot in the simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_sim_time</span></code> ：是否将所有节点设置为使用仿真时间，在仿真中需要。默认为``true``，用于仿真。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rviz_config_file</span></code> ：要使用的rviz配置文件的文件路径。默认为``rviz/<a href="#id1"><span class="problematic" id="id2">``</span></a>目录下的文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_simulator</span></code> ：是否启动Gazebo仿真器与Nav2堆栈。默认为``true``，启动Gazebo。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_robot_state_pub</span></code> ：是否启动机器人状态发布器，将机器人的URDF转换发布到TF2中。默认为``true``，以发布机器人的TF2转换。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_rviz</span></code> ：是否启动rviz进行可视化。默认为``true``，显示rviz。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headless</span></code> ：是否在后台Gazebo仿真的同时启动Gazebo前端。默认为``true``，显示Gazebo窗口。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">namespace</span></code> ：如果需要，将机器人启动到的命名空间。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_namespace</span></code> ：是否将机器人启动到此命名空间。默认为``false``，对于单个机器人，使用全局命名空间。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">robot_name</span></code> ：要启动的机器人的名称。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">robot_sdf</span></code> ：机器人的Gazebo配置文件的文件路径，包含Gazebo插件和设置以模拟机器人系统。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x_pose</span></code>，<code class="docutils literal notranslate"><span class="pre">y_pose</span></code>，<code class="docutils literal notranslate"><span class="pre">z_pose</span></code>，<code class="docutils literal notranslate"><span class="pre">roll</span></code>，<code class="docutils literal notranslate"><span class="pre">pitch</span></code>，<code class="docutils literal notranslate"><span class="pre">yaw</span></code> ：用于设置机器人在仿真中的初始位置的参数。</p></li>
 </ul>
 </div>
 <div class="section" id="other-pages-we-d-love-to-offer">
-<h2>Other Pages We'd Love To Offer<a class="headerlink" href="#other-pages-we-d-love-to-offer" title="永久链接至标题"></a></h2>
-<p>If you are willing to chip in, some ideas are in <a class="reference external" href="https://github.com/ros-planning/navigation.ros.org/issues/204">https://github.com/ros-planning/navigation.ros.org/issues/204</a>, but we'd be open to anything you think would be insightful!</p>
+<h2>其他我们愿意提供的页面<a class="headerlink" href="#other-pages-we-d-love-to-offer" title="永久链接至标题"></a></h2>
+<p>如果你愿意贡献一些想法，可以参考 <a class="reference external" href="https://github.com/ros-planning/navigation.ros.org/issues/204">https://github.com/ros-planning/navigation.ros.org/issues/204</a>，但我们对你认为有洞察力的任何想法都持开放态度！</p>
 </div>
 </div>
 
