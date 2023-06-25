@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tuning Guide &mdash; Navigation 2 1.0.0 文档</title>
+  <title>调优指南 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -360,7 +360,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../plugin_tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugin_tutorials/index.html">插件教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_costmap2d_plugin.html">编写新的Costmap2D插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#requirements">要求</a></li>
@@ -426,9 +426,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#create-a-new-navigator-plugin">1- 创建新的导航器插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#exporting-the-navigator-plugin">2- Exporting the navigator plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#exporting-the-navigator-plugin">2- 导出导航器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#run-plugin">4- Run plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#run-plugin">4- 运行插件</a></li>
 </ul>
 </li>
 </ul>
@@ -710,7 +710,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tuning Guide</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">调优指南</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#inflation-potential-fields">Inflation Potential Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#robot-footprint-vs-radius">Robot Footprint vs Radius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rotate-in-place-behavior">Rotate in Place Behavior</a></li>
@@ -928,7 +928,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tuning Guide</li>
+      <li>调优指南</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -938,7 +938,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="tuning-guide">
-<span id="tuning"></span><h1>Tuning Guide<a class="headerlink" href="#tuning-guide" title="永久链接至标题"></a></h1>
+<span id="tuning"></span><h1>调优指南<a class="headerlink" href="#tuning-guide" title="永久链接至标题"></a></h1>
 <p>This guide is meant to assist users in tuning their navigation system. While <a class="reference internal" href="../configuration/index.html#configuration"><span class="std std-ref">Configuration Guide</span></a> is the home of the list of parameters for all of Nav2, it doesn't contain much <em>color</em> for how to tune a system using the most important of them. The aim of this guide is to give more advice in how to setup your system beyond a first time setup, which you can find at <a class="reference internal" href="../setup_guides/index.html#setup-guides"><span class="std std-ref">First-Time Robot Setup Guide</span></a>. This will by no means cover all of the parameters (so please, do review the configuration guides for the packages of interest), but will give some helpful hints and tips.</p>
 <p>This tuning guide is a perpetual work in progress. If you see some insights you have missing, please feel free to file a ticket or pull request with the wisdom you would like to share. This is an open section supported by the generosity of Nav2 users and maintainers. Please consider paying it forward.</p>
 <div class="section" id="inflation-potential-fields">
