@@ -3157,7 +3157,7 @@ msgstr "\"scan\""
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:348
 msgid "Type of polygon shape. Could be ``scan``, ``pointcloud`` or ``range``."
-msgstr "Type of polygon shape. Could be ``scan``, ``pointcloud`` or ``range``."
+msgstr "多边形形状的类型。可以是``scan``，``pointcloud``或``range``。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3167,7 +3167,7 @@ msgstr "``<source name>``.topic"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:359
 msgid "Topic to listen the source data from."
-msgstr "Topic to listen the source data from."
+msgstr "要监听源数据的主题。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3177,7 +3177,7 @@ msgstr "``<source name>``.min_height"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:370
 msgid "Minimum height the PointCloud projection to 2D space started from. Applicable for ``pointcloud`` type."
-msgstr "Minimum height the PointCloud projection to 2D space started from. Applicable for ``pointcloud`` type."
+msgstr "将PointCloud投影到2D空间的起始最小高度。适用于``pointcloud``类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3187,7 +3187,7 @@ msgstr "``<source name>``.max_height"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:381
 msgid "Maximum height the PointCloud projection to 2D space ended with. Applicable for ``pointcloud`` type."
-msgstr "Maximum height the PointCloud projection to 2D space ended with. Applicable for ``pointcloud`` type."
+msgstr "将PointCloud投影到2D空间的结束最大高度。适用于``pointcloud``类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3197,42 +3197,42 @@ msgstr "``<source name>``.obstacles_angle"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:388
 msgid "PI / 180 (1 degree)"
-msgstr "PI / 180 (1 degree)"
+msgstr "PI / 180（1度）"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:392
 msgid "Angle increment (in radians) between nearby obstacle points at the range arc. Two outermost points from the field of view are not taken into account (they will always exist regardless of this value). Applicable for ``range`` type."
-msgstr "Angle increment (in radians) between nearby obstacle points at the range arc. Two outermost points from the field of view are not taken into account (they will always exist regardless of this value). Applicable for ``range`` type."
+msgstr "在距离弧线上的附近障碍点之间的角度增量（以弧度表示）。不考虑视野范围内的两个最外层点（无论该值如何，它们总是存在）。适用于“range”类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:398
 msgid "Here is an example of configuration YAML for the Collision Monitor. For more information how to bring-up your own Collision Monitor node, please refer to the :ref:`collision_monitor_tutorial` tutorial."
-msgstr "Here is an example of configuration YAML for the Collision Monitor. For more information how to bring-up your own Collision Monitor node, please refer to the :ref:`collision_monitor_tutorial` tutorial."
+msgstr "下面是Collision Monitor的配置YAML示例。要了解如何启动自己的Collision Monitor节点的更多信息，请参考:ref:`collision_monitor_tutorial`教程。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:4
 msgid "Constrained smoother"
-msgstr "Constrained smoother"
+msgstr "约束平滑器"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:12
 msgid "A smoother plugin for nav2_smoother based on the original deprecated smoother in nav2_smac_planner and put into operational state by `RoboTech Vision`_. Suitable for applications which need planned global path to be pushed away from obstacles and/or for Reeds-Shepp motion models."
-msgstr "A smoother plugin for nav2_smoother based on the original deprecated smoother in nav2_smac_planner and put into operational state by `RoboTech Vision`_. Suitable for applications which need planned global path to be pushed away from obstacles and/or for Reeds-Shepp motion models."
+msgstr "基于nav2_smac_planner中原始弃用的平滑器，并由`RoboTech Vision`_使其处于可操作状态的nav2_smoother插件。适用于需要将全局规划路径远离障碍物和/或使用Reeds-Shepp运动模型的应用程序。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:17
 msgid "Important note: Constrained smoother uses a rather heavy optimization algorithm and thus is suggested to be used on a periodically truncated path. `TruncatePathLocal BT Node`_ can be used for achieving a proper path length and DistanceController BT Node can be used for achieving periodicity."
-msgstr "Important note: Constrained smoother uses a rather heavy optimization algorithm and thus is suggested to be used on a periodically truncated path. `TruncatePathLocal BT Node`_ can be used for achieving a proper path length and DistanceController BT Node can be used for achieving periodicity."
+msgstr "重要提示：约束平滑器使用一种相当复杂的优化算法，因此建议在定期截断的路径上使用。可以使用“TruncatePathLocal BT Node”来实现适当的路径长度，并可以使用“DistanceController BT Node”来实现周期性。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:20
 msgid "Following image depicts how Constrained Smoother can improve quality of an input path (cyan, generated by an outdated version of Smac Planner, intentionally not configured optimally to highlight the power of the smoother), increasing its smoothness and distance from obstacles. Resulting path is marked by green color. Note: last few path poses are not smoothed since TruncatePathLocal is used on this path."
-msgstr "Following image depicts how Constrained Smoother can improve quality of an input path (cyan, generated by an outdated version of Smac Planner, intentionally not configured optimally to highlight the power of the smoother), increasing its smoothness and distance from obstacles. Resulting path is marked by green color. Note: last few path poses are not smoothed since TruncatePathLocal is used on this path."
+msgstr "以下图像描述了如何通过使用约束平滑器改善输入路径（青色，由旧版本的Smac Planner生成，意图上未经过优化配置以突出平滑器的优势），增加其平滑度并远离障碍物。生成的路径以绿色标记。注意：由于在此路径上使用了TruncatePathLocal，最后几个路径姿势未进行平滑处理。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:29 ../../configuration/packages/configuring-smoother-server.rst:14
 msgid "Smoother Server Parameters"
-msgstr "Smoother Server Parameters"
+msgstr "平滑器服务器参数"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3247,7 +3247,7 @@ msgstr "true"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:40
 msgid "Whether to detect forward/reverse direction and cusps. Should be set to false for paths without orientations assigned"
-msgstr "Whether to detect forward/reverse direction and cusps. Should be set to false for paths without orientations assigned"
+msgstr "是否检测正向/反向方向和拐点。对于未分配方向的路径，应设置为false。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3257,42 +3257,42 @@ msgstr "path_downsampling_factor"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:51
 msgid "Every n-th node of the path is taken for optimization. Useful for speed-up"
-msgstr "Every n-th node of the path is taken for optimization. Useful for speed-up"
+msgstr "对路径的每第n个节点进行优化。用于加速。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
 msgid "path_upsampling_factor"
-msgstr "path_upsampling_factor"
+msgstr "路径上采样因子"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:62
 msgid "Upsampling factor for refining. 0 - path remains downsampled (see ``path_downsampling_factor``), 1 - path is upsampled back to original granularity using cubic bezier, 2... - more upsampling"
-msgstr "Upsampling factor for refining. 0 - path remains downsampled (see ``path_downsampling_factor``), 1 - path is upsampled back to original granularity using cubic bezier, 2... - more upsampling"
+msgstr "用于细化的上采样因子。0 - 路径保持下采样（参见“path_downsampling_factor”），1 - 使用三次贝塞尔曲线将路径上采样回原始粒度，2... - 更多的上采样。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
 msgid "keep_start_orientation"
-msgstr "keep_start_orientation"
+msgstr "保持起始方向"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:73
 msgid "Whether to prevent the start orientation from being smoothed"
-msgstr "Whether to prevent the start orientation from being smoothed"
+msgstr "是否防止起始方向被平滑处理。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
 msgid "keep_goal_orientation"
-msgstr "keep_goal_orientation"
+msgstr "保持目标方向"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:84
 msgid "Whether to prevent the goal orientation from being smoothed"
-msgstr "Whether to prevent the goal orientation from being smoothed"
+msgstr "是否防止目标方向被平滑处理。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
 msgid "minimum_turning_radius"
-msgstr "minimum_turning_radius"
+msgstr "最小转弯半径"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:95
@@ -3302,7 +3302,7 @@ msgstr "Minimum turning radius the robot can perform. Can be set to 0.0 (or w_cu
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
 msgid "w_curve"
-msgstr "w_curve"
+msgstr "曲线权重"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:102
@@ -3312,7 +3312,7 @@ msgstr "30.0"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:106
 msgid "Weight to enforce minimum_turning_radius"
-msgstr "Weight to enforce minimum_turning_radius"
+msgstr "强制最小转弯半径的权重"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3322,7 +3322,7 @@ msgstr "w_dist"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:117
 msgid "Weight to bind path to original as optional replacement for cost weight"
-msgstr "Weight to bind path to original as optional replacement for cost weight"
+msgstr "将路径与原始路径绑定的权重，作为成本权重的可选替代"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst ../../configuration/packages/configuring-simple-smoother.rst
