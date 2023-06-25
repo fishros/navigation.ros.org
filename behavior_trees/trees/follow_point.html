@@ -739,9 +739,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview/detailed_behavior_tree_walkthrough.html#recovery-subtree">恢复子树</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">Navigate To Pose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">Navigate Through Poses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">Navigate To Pose and Pause Near Goal-Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">导航到姿势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">导航到姿态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">跟随动态点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">Odometry Calibration</a></li>
@@ -941,11 +941,7 @@
   <div class="section" id="follow-dynamic-point">
 <span id="behavior-tree-follow-point"></span><h1>跟随动态点<a class="headerlink" href="#follow-dynamic-point" title="永久链接至标题"></a></h1>
 <p>该行为树实现了从起始点开始的导航行为，试图随时间追踪一个动态点。这个“动态点”可以是一个人、另一个机器人、一个虚拟胡萝卜，或者其他任何东西。唯一的要求是你希望跟随的姿态被发布到 <code class="docutils literal notranslate"><span class="pre">GoalUpdater</span></code> BT 节点中指定的主题中。</p>
-<p>In this tree, we replan at 1 hz just as we did in <a class="reference internal" href="nav_to_pose_recovery.html#behavior-tree-nav-to-pose"><span class="std std-ref">Navigate To Pose</span></a> using the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> node.
-However, this time when we replan, we update the <code class="docutils literal notranslate"><span class="pre">goal</span></code> based on the newest information in on the updated goal topic.
-After we plan a path to this dynamic point, we use the <code class="docutils literal notranslate"><span class="pre">TruncatePath</span></code> node to remove path points from the end of the path near the dynamic point.
-This behavior tree node is useful so that the robot always remains at least <code class="docutils literal notranslate"><span class="pre">distance</span></code> away from the obstacle, even if it stops.
-It also smooths out any off path behavior involved with trying to path plan towards a probably occupied space in the costmap.</p>
+<p>在这棵树中，我们像在 <a class="reference internal" href="nav_to_pose_recovery.html#behavior-tree-nav-to-pose"><span class="std std-ref">导航到姿势</span></a> 中一样，以1 Hz的频率进行重新规划，使用``ComputePathToPose``节点。然而，这一次在重新规划时，我们根据更新后的目标主题中的最新信息更新``goal``。在规划到这个动态点的路径后，我们使用``TruncatePath``节点从靠近动态点的路径末端删除路径点。这个行为树节点非常有用，因为它可以让机器人始终与障碍物保持至少``distance``的距离，即使它停下来。它还可以平滑处理与尝试在代价地图中的可能占用空间上进行路径规划的任何偏离路径的行为。</p>
 <p>在计算和截取到动态点的新路径后，它会再次通过 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 节点传递给控制器。然而，请注意它位于一个 <code class="docutils literal notranslate"><span class="pre">KeepRunningUntilFailure</span></code> 修饰节点下，确保控制器继续执行直到出现故障模式。该行为树将无限时间执行，直到导航请求被抢占或取消。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>

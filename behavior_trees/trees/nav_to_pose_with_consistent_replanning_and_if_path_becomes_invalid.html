@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="跟随动态点" href="follow_point.html" />
-    <link rel="prev" title="Navigate To Pose and Pause Near Goal-Obstacle" href="nav_to_pose_and_pause_near_goal_obstacle.html" />
+    <link rel="prev" title="导航到姿势并在目标障碍物附近暂停" href="nav_to_pose_and_pause_near_goal_obstacle.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -739,9 +739,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview/detailed_behavior_tree_walkthrough.html#recovery-subtree">恢复子树</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">Navigate To Pose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">Navigate Through Poses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">Navigate To Pose and Pause Near Goal-Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">导航到姿势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">导航到姿态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="follow_point.html">跟随动态点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">Odometry Calibration</a></li>
@@ -944,8 +944,7 @@
 It navigates from a starting point to a single point goal in freespace.
 It contains both use of custom recoveries in specific sub-contexts as well as a global recovery subtree for system-level failures.
 It also provides the opportunity for users to retry tasks multiple times before returning a failed state.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> BT nodes both also specify their algorithms to utilize.
-By convention we name these by the style of algorithms that they are (e.g. not <code class="docutils literal notranslate"><span class="pre">DWB</span></code> but rather <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的BT节点也指定了它们要使用的算法。按照惯例，我们按算法的风格命名它们（例如，不是 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 而是 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>），这样行为树或应用程序开发人员就不需要关注技术细节。他们只想使用一个路径跟踪控制器。</p>
 <p>在这个行为树中，我们尝试在返回任务失败之前重试整个导航任务 6 次。这使得导航系统有充分的机会尝试从故障条件中恢复或等待瞬时问题解决，例如人员拥挤或临时传感器故障。</p>
 <p>In nominal execution, replanning can be triggered by an a invalid previous path, a new goal or if a new path has not been created for 10 seconds.
 If the planner or controller fails, it will trigger contextually aware recoveries in its subtree.
@@ -957,7 +956,7 @@ This subtree has the <code class="docutils literal notranslate"><span class="pre
 Next, the recovery subtree will attempt the following recoveries: costmap clearing operations, spinning, waiting, and backing up.
 After each of the recoveries in the subtree, the main navigation subtree will be reattempted.
 If it continues to fail, the next recovery in the recovery subtree is ticked.</p>
-<p>While this behavior tree does not make use of it, the <code class="docutils literal notranslate"><span class="pre">PlannerSelector</span></code>, <code class="docutils literal notranslate"><span class="pre">ControllerSelector</span></code>, and <code class="docutils literal notranslate"><span class="pre">GoalCheckerSelector</span></code> behavior tree nodes can also be helpful. Rather than hardcoding the algorithm to use (<code class="docutils literal notranslate"><span class="pre">GridBased</span></code> and <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>), these behavior tree nodes will allow a user to dynamically change the algorithm used in the navigation system via a ROS topic. It may be instead advisable to create different subtree contexts using condition nodes with specified algorithms in their most useful and unique situations. However, the selector nodes can be a useful way to change algorithms from an external application rather than via internal behavior tree control flow logic. It is better to implement changes through behavior tree methods, but we understand that many professional users have external applications to dynamically change settings of their navigators.</p>
+<p>虽然此行为树没有使用，但是``PlannerSelector``、<code class="docutils literal notranslate"><span class="pre">ControllerSelector``和``GoalCheckerSelector``行为树节点也可能很有帮助。与硬编码要使用的算法（``GridBased``和``FollowPath</span></code>）不同，这些行为树节点将允许用户通过ROS主题动态更改导航系统中使用的算法。相反，可能更明智的做法是使用条件节点在最有用和独特的情况下创建具有指定算法的不同子树上下文。然而，选择节点可以是一种有用的方式，通过外部应用程序而不是通过内部行为树控制流逻辑来更改算法。最好通过行为树方法来实现更改，但我们理解许多专业用户有外部应用程序以动态更改其导航器的设置。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;RecoveryNode</span><span class="w"> </span><span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>
