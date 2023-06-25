@@ -1022,7 +1022,7 @@ msgstr "output_path"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:45 ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:111
 msgid "The resulting truncated path."
-msgstr "The resulting truncated path."
+msgstr "截断后的路径。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:4
@@ -1032,7 +1032,7 @@ msgstr "TruncatePathLocal"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:6
 msgid "A custom control node, which modifies a path making it shorter. It removes parts of the path which are more distant than specified forward/backward distance around robot"
-msgstr "A custom control node, which modifies a path making it shorter. It removes parts of the path which are more distant than specified forward/backward distance around robot"
+msgstr "一个自定义控制节点，用于将路径缩短。它会移除路径中距离机器人指定的前向/后向距离更远的部分。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
@@ -1052,7 +1052,7 @@ msgstr "向前修剪的距离。"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
 msgid "distance_backward"
-msgstr "distance_backward"
+msgstr "distance_backward（后向距离）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:38 ../../configuration/packages/configuring-lifecycle.rst:45 ../../configuration/packages/configuring-mppic.rst:316
@@ -1062,7 +1062,7 @@ msgstr "4.0"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:42
 msgid "The trimming distance in backward direction."
-msgstr "The trimming distance in backward direction."
+msgstr "向后修剪的距离。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
@@ -1072,7 +1072,7 @@ msgstr "robot_frame"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:53
 msgid "Robot base frame id."
-msgstr "Robot base frame id."
+msgstr "机器人基准帧 ID。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst ../../configuration/packages/bt-plugins/conditions/GoalReached.rst ../../configuration/packages/configuring-amcl.rst ../../configuration/packages/configuring-behavior-server.rst ../../configuration/packages/configuring-bt-navigator.rst ../../configuration/packages/configuring-collision-monitor.rst ../../configuration/packages/configuring-costmaps.rst ../../configuration/packages/configuring-mppic.rst ../../configuration/packages/configuring-regulated-pp.rst ../../configuration/packages/configuring-smoother-server.rst
@@ -1087,12 +1087,12 @@ msgstr "0.2"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:64
 msgid "Robot pose lookup tolerance."
-msgstr "Robot pose lookup tolerance."
+msgstr "机器人姿态查找容差。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
 msgid "pose"
-msgstr "pose"
+msgstr "姿势"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:71 ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:30 ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:41
@@ -1102,7 +1102,7 @@ msgstr "geometry_msgs/PoseStamped"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:75
 msgid "Manually specified pose to be used alternatively to current robot pose."
-msgstr "Manually specified pose to be used alternatively to current robot pose."
+msgstr "手动指定的姿势，可用作当前机器人姿势的替代。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
@@ -1117,7 +1117,7 @@ msgstr "0.0"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:86
 msgid "Weight of angular distance relative to positional distance when finding which path pose is closest to robot. Not applicable on paths without orientations assigned."
-msgstr "Weight of angular distance relative to positional distance when finding which path pose is closest to robot. Not applicable on paths without orientations assigned."
+msgstr "在确定最接近机器人的路径姿态时，角度距离相对于位置距离的权重。不适用于没有指定方向的路径。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst ../../configuration/packages/configuring-mppic.rst ../../configuration/packages/configuring-regulated-pp.rst
@@ -1132,7 +1132,7 @@ msgstr "infinity"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:97
 msgid "Maximum forward integrated distance along the path (starting from the last detected pose) to bound the search for the closest pose to the robot. When set to infinity (default), whole path is searched every time."
-msgstr "Maximum forward integrated distance along the path (starting from the last detected pose) to bound the search for the closest pose to the robot. When set to infinity (default), whole path is searched every time."
+msgstr "沿路径的最大前向积分距离（从最后检测到的姿势开始），以限制搜索最接近机器人的姿势。当设置为无穷大（默认值）时，每次都会搜索整个路径。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst:4
@@ -1142,7 +1142,7 @@ msgstr "Wait"
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst:6
 msgid "Invokes the Wait ROS 2 action server, which is implemented by the nav2_behaviors_ module. This action is used in nav2 Behavior Trees as a recovery behavior."
-msgstr "Invokes the Wait ROS 2 action server, which is implemented by the nav2_behaviors_ module. This action is used in nav2 Behavior Trees as a recovery behavior."
+msgstr "调用 Wait ROS 2 动作服务器，该服务器由 nav2_behaviors_ 模块实现。此动作在 nav2 行为树中用作恢复行为。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst
@@ -1152,7 +1152,7 @@ msgstr "wait_duration"
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst:23
 msgid "Wait time (s)."
-msgstr "Wait time (s)."
+msgstr "等待时间（秒）。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:4
