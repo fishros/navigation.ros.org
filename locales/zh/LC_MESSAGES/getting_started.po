@@ -19,118 +19,147 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
+
 #: ../../getting_started/index.rst:4
 msgid "Getting Started"
-msgstr ""
+msgstr "Getting Started"
+
 
 #: ../../getting_started/index.rst:6
 msgid "This document will take you through the process of installing the |PN| binaries and navigating a simulated Turtlebot 3 in the Gazebo simulator."
-msgstr ""
+msgstr "本文档将引导您完成安装|PN|二进制文件并在Gazebo仿真器中操作模拟的Turtlebot 3的过程。"
+
 
 #: ../../getting_started/index.rst:11
 msgid "See the :ref:`build-instructions` for other situations such as building from source or working with other types of robots."
-msgstr ""
+msgstr "See the :ref:`build-instructions` for other situations such as building from source or working with other types of robots."
+
 
 #: ../../getting_started/index.rst:16
 msgid "This is a simplified version of the Turtlebot 3 instructions. We highly recommend you follow the `official Turtlebot 3 manual`_ if you intend to continue working with this robot beyond the minimal example provided here."
-msgstr ""
+msgstr "这是Turtlebot 3说明书的简化版本。如果您打算在此提供的最小示例之外继续使用该机器人，我们强烈建议您遵循`官方的Turtlebot 3手册`_。"
+
 
 #: ../../getting_started/index.rst:21
 msgid "Installation"
-msgstr ""
+msgstr "安装"
+
 
 #: ../../getting_started/index.rst:23
 msgid "Install the `ROS 2 binary packages`_ as described in the official docs"
-msgstr ""
+msgstr "按照官方文档中的描述，安装`ROS 2二进制包`_"
+
 
 #: ../../getting_started/index.rst:24
 msgid "Install the |PN| packages using your operating system's package manager:"
-msgstr ""
+msgstr "使用您操作系统的软件包管理器安装|PN|软件包："
+
 
 #: ../../getting_started/index.rst:31
 msgid "Install the Turtlebot 3 packages (Humble and older):"
-msgstr ""
+msgstr "安装Turtlebot 3软件包（Humble和更早版本）："
+
 
 #: ../../getting_started/index.rst:38
 msgid "Running the Example"
-msgstr ""
+msgstr "Running the Example"
+
 
 #: ../../getting_started/index.rst:40
 msgid "Start a terminal in your GUI"
-msgstr ""
+msgstr "Start a terminal in your GUI"
+
 
 #: ../../getting_started/index.rst:41
 msgid "Set key environment variables:"
-msgstr ""
+msgstr "Set key environment variables:"
+
 
 #: ../../getting_started/index.rst:49
 msgid "In the same terminal, run:"
-msgstr ""
+msgstr "In the same terminal, run:"
+
 
 #: ../../getting_started/index.rst:57
 msgid "For ``ROS 2 Dashing Diademata`` or earlier, use ``nav2_simulation_launch.py``. However, it is recommended to use the most recent `ROS 2 LTS distribution <https://ros.org/reps/rep-2000.html>`_  for improved stablity and feature completeness."
-msgstr ""
+msgstr "For ``ROS 2 Dashing Diademata`` or earlier, use ``nav2_simulation_launch.py``. However, it is recommended to use the most recent `ROS 2 LTS distribution <https://ros.org/reps/rep-2000.html>`_  for improved stablity and feature completeness."
+
 
 #: ../../getting_started/index.rst:63
 msgid "``headless`` defaults to true; if not set to false, gzclient (the 3d view) is not started."
-msgstr ""
+msgstr "``headless`` defaults to true; if not set to false, gzclient (the 3d view) is not started."
+
 
 #: ../../getting_started/index.rst:65
 msgid "This launch file will launch Nav2 with the AMCL localizer in the ``turtlebot3_world`` world. It will also launch the robot state publisher to provide transforms, a Gazebo instance with the Turtlebot3 URDF, and RVIZ."
-msgstr ""
+msgstr "This launch file will launch Nav2 with the AMCL localizer in the ``turtlebot3_world`` world. It will also launch the robot state publisher to provide transforms, a Gazebo instance with the Turtlebot3 URDF, and RVIZ."
+
 
 #: ../../getting_started/index.rst:70
 msgid "If everything has started correctly, you will see the RViz and Gazebo GUIs like this:"
-msgstr ""
+msgstr "If everything has started correctly, you will see the RViz and Gazebo GUIs like this:"
+
 
 #: ../../getting_started/index.rst:78
 msgid "If not autostarting, click the \"Startup\" button in the bottom left corner of RViz. This will cause |PN| to change to the Active state. It should change appearance to show the map."
-msgstr ""
+msgstr "If not autostarting, click the \"Startup\" button in the bottom left corner of RViz. This will cause |PN| to change to the Active state. It should change appearance to show the map."
+
 
 #: ../../getting_started/index.rst
 msgid "Initial appearance of RViz transitioning to the Active state"
-msgstr ""
+msgstr "Initial appearance of RViz transitioning to the Active state"
+
 
 #: ../../getting_started/index.rst:88
 msgid "Navigating"
-msgstr ""
+msgstr "Navigating"
+
 
 #: ../../getting_started/index.rst:90
 msgid "After starting, the robot initially has no idea where it is. By default, |PN| waits for you to give it an approximate starting position. Take a look at where the robot is in the Gazebo world, and find that spot on the map. Set the initial pose by clicking the \"2D Pose Estimate\" button in RViz, and then down clicking on the map in that location. You set the orientation by dragging forward from the down click."
-msgstr ""
+msgstr "After starting, the robot initially has no idea where it is. By default, |PN| waits for you to give it an approximate starting position. Take a look at where the robot is in the Gazebo world, and find that spot on the map. Set the initial pose by clicking the \"2D Pose Estimate\" button in RViz, and then down clicking on the map in that location. You set the orientation by dragging forward from the down click."
+
 
 #: ../../getting_started/index.rst:97
 msgid "If you are using the defaults so far, the robot should look roughly like this."
-msgstr ""
+msgstr "If you are using the defaults so far, the robot should look roughly like this."
+
 
 #: ../../getting_started/index.rst
 msgid "Approximate starting location of Turtlebot"
-msgstr ""
+msgstr "Approximate starting location of Turtlebot"
+
 
 #: ../../getting_started/index.rst:104
 msgid "If you don't get the location exactly right, that's fine. |PN| will refine the position as it navigates. You can also, click the \"2D Pose Estimate\" button and try again, if you prefer."
-msgstr ""
+msgstr "If you don't get the location exactly right, that's fine. |PN| will refine the position as it navigates. You can also, click the \"2D Pose Estimate\" button and try again, if you prefer."
+
 
 #: ../../getting_started/index.rst:108
 msgid "Once you've set the initial pose, the transform tree will be complete and |PN| will be fully active and ready to go. You should see the robot and particle cloud now."
-msgstr ""
+msgstr "Once you've set the initial pose, the transform tree will be complete and |PN| will be fully active and ready to go. You should see the robot and particle cloud now."
+
 
 #: ../../getting_started/index.rst
 msgid "|PN| is ready. Transforms and Costmap show in RViz."
-msgstr ""
+msgstr "|PN| is ready. Transforms and Costmap show in RViz."
+
 
 #: ../../getting_started/index.rst:117
 msgid "Next, click the \"Navigaton2 Goal\" button and choose a destination. This will call the BT navigator to go to that goal through an action server. You can pause (cancel) or reset the action through the Nav2 rviz plugin shown."
-msgstr ""
+msgstr "Next, click the \"Navigaton2 Goal\" button and choose a destination. This will call the BT navigator to go to that goal through an action server. You can pause (cancel) or reset the action through the Nav2 rviz plugin shown."
+
 
 #: ../../getting_started/index.rst
 msgid "Setting the goal pose in RViz."
-msgstr ""
+msgstr "Setting the goal pose in RViz."
+
 
 #: ../../getting_started/index.rst:126
 msgid "Now watch the robot go!"
-msgstr ""
+msgstr "Now watch the robot go!"
+
 
 msgid "Navigation2 with Turtlebot 3 Demo"
-msgstr ""
+msgstr "Navigation2 with Turtlebot 3 Demo"
 

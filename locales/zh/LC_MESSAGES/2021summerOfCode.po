@@ -19,680 +19,843 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
+
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:7
 msgid "Projects for 2021 Summer Student Program"
-msgstr ""
+msgstr "Projects for 2021 Summer Student Program"
+
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:9
 msgid "The `Summer 2021 Student Program <https://summer.iscas.ac.cn/help/en/student/>`_ is upon us! See below for the list of project proposals for students to review and apply for. This is by no means the only list of potential projects, please check our issue tracker or propose another if there's something you think you're well suited for that would be useful for Nav2."
-msgstr ""
+msgstr "The `Summer 2021 Student Program <https://summer.iscas.ac.cn/help/en/student/>`_ is upon us! See below for the list of project proposals for students to review and apply for. This is by no means the only list of potential projects, please check our issue tracker or propose another if there's something you think you're well suited for that would be useful for Nav2."
+
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:13
 msgid "If you have any questions, wish to ask questions, or generally reach out, you are encouraged to do so! We have a community Slack at `navigation2.slack.com <https://navigation2.slack.com>`_. If you are unable to access it due to not being able to sign up, please send an email to the mentor in the details below and they can manually add you."
-msgstr ""
+msgstr "If you have any questions, wish to ask questions, or generally reach out, you are encouraged to do so! We have a community Slack at `navigation2.slack.com <https://navigation2.slack.com>`_. If you are unable to access it due to not being able to sign up, please send an email to the mentor in the details below and they can manually add you."
+
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:17
 msgid "Additionally, we have ROS community Discourse. If you post on `this discourse page <https://discourse.ros.org>`_ regarding Nav2, a maintainer will respond. We have the sub-topic Navigation Stack that may be used `here <https://discourse.ros.org/c/navigation/44>`_. It is preferred you post in this sub-topic."
-msgstr ""
+msgstr "Additionally, we have ROS community Discourse. If you post on `this discourse page <https://discourse.ros.org>`_ regarding Nav2, a maintainer will respond. We have the sub-topic Navigation Stack that may be used `here <https://discourse.ros.org/c/navigation/44>`_. It is preferred you post in this sub-topic."
+
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:22
 msgid "For general ROS questions, please use `ROS Answers <https://answers.ros.org/>`_."
-msgstr ""
+msgstr "For general ROS questions, please use `ROS Answers <https://answers.ros.org/>`_."
+
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:24
 msgid "Have fun and we look forward to working with you this summer!"
-msgstr ""
+msgstr "Have fun and we look forward to working with you this summer!"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:5
 msgid "3. Assisted Teleop"
-msgstr ""
+msgstr "3. Assisted Teleop"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:7 ../../2021summerOfCode/projects/create_configuration_assistant.rst:8 ../../2021summerOfCode/projects/create_plugins.rst:10 ../../2021summerOfCode/projects/dynamic.rst:8 ../../2021summerOfCode/projects/localization.rst:9 ../../2021summerOfCode/projects/multithreading.rst:7 ../../2021summerOfCode/projects/navigation_rebranding.rst:9 ../../2021summerOfCode/projects/safety_node.rst:7 ../../2021summerOfCode/projects/semantics.rst:7 ../../2021summerOfCode/projects/spinners.rst:8 ../../2021summerOfCode/projects/testing.rst:8 ../../2021summerOfCode/projects/twist_n_config.rst:8
 msgid "**Task description**"
-msgstr ""
+msgstr "**Task description**"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:9
 msgid "In mobile robot and autonomous vehicle navigation, there are situations where a human driver is required to intervene to get the vehicle out of a sticky situation. This can be both as a backup in case of autonomy failure as well as the primary function of the robot (e.g. telepresence robots)."
-msgstr ""
+msgstr "In mobile robot and autonomous vehicle navigation, there are situations where a human driver is required to intervene to get the vehicle out of a sticky situation. This can be both as a backup in case of autonomy failure as well as the primary function of the robot (e.g. telepresence robots)."
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:11
 msgid "This project's aim is to create an assisted teleop feature in Nav2 by means of a new behavior tree configuration file (the file that defines the flow of information for the navigation task) and potentially new plugins. This feature should make sure to use the local costmap and/or sensor data in order to avoid obstacles and take position and/or velocity commands to attempt to follow."
-msgstr ""
+msgstr "This project's aim is to create an assisted teleop feature in Nav2 by means of a new behavior tree configuration file (the file that defines the flow of information for the navigation task) and potentially new plugins. This feature should make sure to use the local costmap and/or sensor data in order to avoid obstacles and take position and/or velocity commands to attempt to follow."
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:13
 msgid "An example application of this is a telepresence robot, where a human driver is driving the robot through a space to visit in an office building or hospital. Another example would be an autonomous delivery robot stuck requiring a human driver to navigate it back into an open space for the robot to continue its task."
-msgstr ""
+msgstr "An example application of this is a telepresence robot, where a human driver is driving the robot through a space to visit in an office building or hospital. Another example would be an autonomous delivery robot stuck requiring a human driver to navigate it back into an open space for the robot to continue its task."
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:15
 msgid "This will be an excellent chance to make a substantial new feature in the Nav2 system to be used by hundreds of robots in the future. This project could also be a good candidate for a ROSCon talk in future events."
-msgstr ""
+msgstr "This will be an excellent chance to make a substantial new feature in the Nav2 system to be used by hundreds of robots in the future. This project could also be a good candidate for a ROSCon talk in future events."
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:17 ../../2021summerOfCode/projects/multithreading.rst:24 ../../2021summerOfCode/projects/navigation_rebranding.rst:15 ../../2021summerOfCode/projects/safety_node.rst:21 ../../2021summerOfCode/projects/spinners.rst:20 ../../2021summerOfCode/projects/testing.rst:12 ../../2021summerOfCode/projects/twist_n_config.rst:24
 msgid "**Project difficulty: Medium**"
-msgstr ""
+msgstr "**Project difficulty: Medium**"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:19 ../../2021summerOfCode/projects/create_configuration_assistant.rst:28 ../../2021summerOfCode/projects/create_plugins.rst:22 ../../2021summerOfCode/projects/dynamic.rst:20 ../../2021summerOfCode/projects/grid_maps.rst:18 ../../2021summerOfCode/projects/localization.rst:24 ../../2021summerOfCode/projects/multithreading.rst:26 ../../2021summerOfCode/projects/navigation_rebranding.rst:17 ../../2021summerOfCode/projects/safety_node.rst:23 ../../2021summerOfCode/projects/semantics.rst:15 ../../2021summerOfCode/projects/spinners.rst:22 ../../2021summerOfCode/projects/testing.rst:14 ../../2021summerOfCode/projects/twist_n_config.rst:26
 msgid "**Project community mentor: Steve Macenski** `@SteveMacenski <https://github.com/SteveMacenski>`_"
-msgstr ""
+msgstr "**Project community mentor: Steve Macenski** `@SteveMacenski <https://github.com/SteveMacenski>`_"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:21 ../../2021summerOfCode/projects/create_configuration_assistant.rst:30 ../../2021summerOfCode/projects/create_plugins.rst:24 ../../2021summerOfCode/projects/dynamic.rst:22 ../../2021summerOfCode/projects/grid_maps.rst:20 ../../2021summerOfCode/projects/localization.rst:26 ../../2021summerOfCode/projects/multithreading.rst:28 ../../2021summerOfCode/projects/navigation_rebranding.rst:19 ../../2021summerOfCode/projects/safety_node.rst:25 ../../2021summerOfCode/projects/semantics.rst:17 ../../2021summerOfCode/projects/spinners.rst:24 ../../2021summerOfCode/projects/testing.rst:16 ../../2021summerOfCode/projects/twist_n_config.rst:28
 msgid "**Mentor contact details: [See link above, link in GitHub profile description]**"
-msgstr ""
+msgstr "**Mentor contact details: [See link above, link in GitHub profile description]**"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:23
 msgid "**Project output requirements** - Integrations of an assisted teleop feature in Nav2 as either a set of plugins and/or a behavior tree configuration - Robot can successfully navigate a space by a user teleop without collision - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box"
-msgstr ""
+msgstr "**Project output requirements** - Integrations of an assisted teleop feature in Nav2 as either a set of plugins and/or a behavior tree configuration - Robot can successfully navigate a space by a user teleop without collision - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:28 ../../2021summerOfCode/projects/create_configuration_assistant.rst:39 ../../2021summerOfCode/projects/create_plugins.rst:31 ../../2021summerOfCode/projects/dynamic.rst:29 ../../2021summerOfCode/projects/grid_maps.rst:29 ../../2021summerOfCode/projects/localization.rst:34 ../../2021summerOfCode/projects/multithreading.rst:35 ../../2021summerOfCode/projects/navigation_rebranding.rst:27 ../../2021summerOfCode/projects/safety_node.rst:32 ../../2021summerOfCode/projects/semantics.rst:25 ../../2021summerOfCode/projects/spinners.rst:31 ../../2021summerOfCode/projects/testing.rst:24 ../../2021summerOfCode/projects/twist_n_config.rst:35
 msgid "**Skills required**"
-msgstr ""
+msgstr "**Skills required**"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:30
 msgid "C++, XML, ROS"
-msgstr ""
+msgstr "C++, XML, ROS"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:31 ../../2021summerOfCode/projects/dynamic.rst:32 ../../2021summerOfCode/projects/multithreading.rst:38 ../../2021summerOfCode/projects/safety_node.rst:35
 msgid "Mobile robot navigation experience"
-msgstr ""
+msgstr "Mobile robot navigation experience"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:32
 msgid "Recommended: Gazebo simulation, ROS navigation, Behavior trees"
-msgstr ""
+msgstr "Recommended: Gazebo simulation, ROS navigation, Behavior trees"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:34 ../../2021summerOfCode/projects/create_configuration_assistant.rst:46 ../../2021summerOfCode/projects/create_plugins.rst:39 ../../2021summerOfCode/projects/dynamic.rst:36 ../../2021summerOfCode/projects/grid_maps.rst:36 ../../2021summerOfCode/projects/localization.rst:41 ../../2021summerOfCode/projects/multithreading.rst:42 ../../2021summerOfCode/projects/navigation_rebranding.rst:33 ../../2021summerOfCode/projects/safety_node.rst:39 ../../2021summerOfCode/projects/semantics.rst:32 ../../2021summerOfCode/projects/spinners.rst:35 ../../2021summerOfCode/projects/testing.rst:30 ../../2021summerOfCode/projects/twist_n_config.rst:40
 msgid "**List of relevant open source software repositories and refs**"
-msgstr ""
+msgstr "**List of relevant open source software repositories and refs**"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:36 ../../2021summerOfCode/projects/create_plugins.rst:41 ../../2021summerOfCode/projects/dynamic.rst:39 ../../2021summerOfCode/projects/grid_maps.rst:38 ../../2021summerOfCode/projects/localization.rst:43 ../../2021summerOfCode/projects/multithreading.rst:44 ../../2021summerOfCode/projects/safety_node.rst:41 ../../2021summerOfCode/projects/semantics.rst:34 ../../2021summerOfCode/projects/spinners.rst:37 ../../2021summerOfCode/projects/testing.rst:32 ../../2021summerOfCode/projects/twist_n_config.rst:42
 msgid "`ROS <https://www.ros.org/>`_"
-msgstr ""
+msgstr "`ROS <https://www.ros.org/>`_"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:37 ../../2021summerOfCode/projects/create_configuration_assistant.rst:49 ../../2021summerOfCode/projects/create_plugins.rst:42 ../../2021summerOfCode/projects/dynamic.rst:40 ../../2021summerOfCode/projects/grid_maps.rst:39 ../../2021summerOfCode/projects/localization.rst:44 ../../2021summerOfCode/projects/multithreading.rst:45 ../../2021summerOfCode/projects/safety_node.rst:42 ../../2021summerOfCode/projects/semantics.rst:35 ../../2021summerOfCode/projects/spinners.rst:38 ../../2021summerOfCode/projects/testing.rst:33 ../../2021summerOfCode/projects/twist_n_config.rst:43
 msgid "`Gazebo Simulator <http://gazebosim.org/>`_"
-msgstr ""
+msgstr "`Gazebo Simulator <http://gazebosim.org/>`_"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:38
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/2226>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/2226>`_"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:39 ../../2021summerOfCode/projects/dynamic.rst:42 ../../2021summerOfCode/projects/grid_maps.rst:42 ../../2021summerOfCode/projects/localization.rst:46 ../../2021summerOfCode/projects/multithreading.rst:47 ../../2021summerOfCode/projects/navigation_rebranding.rst:36 ../../2021summerOfCode/projects/safety_node.rst:44 ../../2021summerOfCode/projects/semantics.rst:38 ../../2021summerOfCode/projects/spinners.rst:41 ../../2021summerOfCode/projects/testing.rst:34 ../../2021summerOfCode/projects/twist_n_config.rst:46
 msgid "`Navigation2 <https://navigation.ros.org/>`_"
-msgstr ""
+msgstr "`Navigation2 <https://navigation.ros.org/>`_"
+
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:41 ../../2021summerOfCode/projects/create_configuration_assistant.rst:52 ../../2021summerOfCode/projects/create_plugins.rst:46 ../../2021summerOfCode/projects/dynamic.rst:45 ../../2021summerOfCode/projects/grid_maps.rst:44 ../../2021summerOfCode/projects/localization.rst:48 ../../2021summerOfCode/projects/multithreading.rst:49 ../../2021summerOfCode/projects/navigation_rebranding.rst:38 ../../2021summerOfCode/projects/safety_node.rst:46 ../../2021summerOfCode/projects/semantics.rst:40 ../../2021summerOfCode/projects/spinners.rst:44 ../../2021summerOfCode/projects/testing.rst:37 ../../2021summerOfCode/projects/twist_n_config.rst:49
 msgid "**Licensing** - All contributions will be under the Apache 2.0 license. - No other CLA's are required."
-msgstr ""
+msgstr "**Licensing** - All contributions will be under the Apache 2.0 license. - No other CLA's are required."
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:6
 msgid "1. Create a Configuration Assistant (Analog to MoveIt)"
-msgstr ""
+msgstr "1. Create a Configuration Assistant (Analog to MoveIt)"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:10
 msgid "`Moveit <https://moveit.ros.org/>`_ has long has a QT `configuration assistant <http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html>`_. This setup assistent helps the user configure their UDRF and needs to setup MoveIt configuration files."
-msgstr ""
+msgstr "`Moveit <https://moveit.ros.org/>`_ has long has a QT `configuration assistant <http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html>`_. This setup assistent helps the user configure their UDRF and needs to setup MoveIt configuration files."
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:12
 msgid "A configuration assistant could be extremely beneficial to Navigation2 users as a way to minimize friction. We should provide a gui tool to cover the following configurations:"
-msgstr ""
+msgstr "A configuration assistant could be extremely beneficial to Navigation2 users as a way to minimize friction. We should provide a gui tool to cover the following configurations:"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:14
 msgid "the broad strokes with the costmap, with a visualizer to show the user what it will look like"
-msgstr ""
+msgstr "the broad strokes with the costmap, with a visualizer to show the user what it will look like"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:15
 msgid "Select configurable costmap layers"
-msgstr ""
+msgstr "Select configurable costmap layers"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:16
 msgid "Select recovery behavior parameters"
-msgstr ""
+msgstr "Select recovery behavior parameters"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:17
 msgid "URDF, footprint, and frame selection to make sure the options comply with standards, planner, and controller"
-msgstr ""
+msgstr "URDF, footprint, and frame selection to make sure the options comply with standards, planner, and controller"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:18
 msgid "Set minimum and maximum speed and other kinematic parameters"
-msgstr ""
+msgstr "Set minimum and maximum speed and other kinematic parameters"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:19
 msgid "Select from a dropdown of possible planners and controllers"
-msgstr ""
+msgstr "Select from a dropdown of possible planners and controllers"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:20
 msgid "Helpful notes throughout the prompts to aid in selecting appropriate parameters"
-msgstr ""
+msgstr "Helpful notes throughout the prompts to aid in selecting appropriate parameters"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:21
 msgid "Selecting at behavior tree"
-msgstr ""
+msgstr "Selecting at behavior tree"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:22
 msgid "@steve please add more specific options"
-msgstr ""
+msgstr "@steve please add more specific options"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:24
 msgid "After the items are configured, there should be a preview to see how the parameters effect the robot."
-msgstr ""
+msgstr "After the items are configured, there should be a preview to see how the parameters effect the robot."
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:26 ../../2021summerOfCode/projects/create_plugins.rst:20 ../../2021summerOfCode/projects/dynamic.rst:18 ../../2021summerOfCode/projects/grid_maps.rst:16 ../../2021summerOfCode/projects/localization.rst:22
 msgid "**Project difficulty: High**"
-msgstr ""
+msgstr "**Project difficulty: High**"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:32
 msgid "**Contact information for the cooperating mentor (optional):  juzhenatpku@gmail.com**"
-msgstr ""
+msgstr "**Contact information for the cooperating mentor (optional):  juzhenatpku@gmail.com**"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:34 ../../2021summerOfCode/projects/create_plugins.rst:26 ../../2021summerOfCode/projects/grid_maps.rst:22 ../../2021summerOfCode/projects/testing.rst:18
 msgid "**Project output requirements**"
-msgstr ""
+msgstr "**Project output requirements**"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:36
 msgid "A QT based GUI configuration assistant that support the parameters listed above"
-msgstr ""
+msgstr "A QT based GUI configuration assistant that support the parameters listed above"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:37
 msgid "A preview panel to display the parameters' effection on the robot"
-msgstr ""
+msgstr "A preview panel to display the parameters' effection on the robot"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:41
 msgid "C++, Python3, QT framework"
-msgstr ""
+msgstr "C++, Python3, QT framework"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:42
 msgid "JSON/XML parsing"
-msgstr ""
+msgstr "JSON/XML parsing"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:43
 msgid "3D programming (maybe needed in the preview)"
-msgstr ""
+msgstr "3D programming (maybe needed in the preview)"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:44
 msgid "Recommended: Gazebo simulation, ROS, and Navigation experience"
-msgstr ""
+msgstr "Recommended: Gazebo simulation, ROS, and Navigation experience"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:48
 msgid "`QT <https://www.qt.io/>`_"
-msgstr ""
+msgstr "`QT <https://www.qt.io/>`_"
+
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:50
 msgid "`Original github issue page <https://github.com/ros-planning/navigation2/issues/1721>`_"
-msgstr ""
+msgstr "`Original github issue page <https://github.com/ros-planning/navigation2/issues/1721>`_"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:8
 msgid "2. Create New Planner and Controller Plugins"
-msgstr ""
+msgstr "2. Create New Planner and Controller Plugins"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:12
 msgid "The ROS 2 Navigation Stack has a number of plugin interfaces to help users create or select specific plugins for planning, control, and behaviors for their applications. Two specific areas that the Nav2 stack could use more algorithm plugins for is for path planning (referred to as a planner plugin) and local trajectory generation (referred to as controller plugins). A simple tutorial for creating a `planner plugin can be found here. <https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html>`_ Currently, we have one planner, NavFn which implements an A* and Dijkstra's planner. It also has two controllers, DWB and TEB which implement a DWA and timed elastic-band optimization techniques. There is also a Hybrid-A* and OMPL planner in development."
-msgstr ""
+msgstr "The ROS 2 Navigation Stack has a number of plugin interfaces to help users create or select specific plugins for planning, control, and behaviors for their applications. Two specific areas that the Nav2 stack could use more algorithm plugins for is for path planning (referred to as a planner plugin) and local trajectory generation (referred to as controller plugins). A simple tutorial for creating a `planner plugin can be found here. <https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html>`_ Currently, we have one planner, NavFn which implements an A* and Dijkstra's planner. It also has two controllers, DWB and TEB which implement a DWA and timed elastic-band optimization techniques. There is also a Hybrid-A* and OMPL planner in development."
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:14
 msgid "Your task will be to create a high-quality implementation of one of the following algorithms for the Nav2 plugin interfaces. Alternative algorithms may also be considered upon approval, please ask @steve in the application phase. Please select only one to discuss."
-msgstr ""
+msgstr "Your task will be to create a high-quality implementation of one of the following algorithms for the Nav2 plugin interfaces. Alternative algorithms may also be considered upon approval, please ask @steve in the application phase. Please select only one to discuss."
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:16
 msgid "Planner Plugin Options: D* or variant, Vornoi planner, Navigation graph route planner, State Lattice planner, kinodynamic planner, and any planning method given a set of dynamic and static obstacles."
-msgstr ""
+msgstr "Planner Plugin Options: D* or variant, Vornoi planner, Navigation graph route planner, State Lattice planner, kinodynamic planner, and any planning method given a set of dynamic and static obstacles."
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:17
 msgid "Controller Plugin Options: CiLQR, iLQR, MPC, Splines, path following or dynamic obstacle following controllers."
-msgstr ""
+msgstr "Controller Plugin Options: CiLQR, iLQR, MPC, Splines, path following or dynamic obstacle following controllers."
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:18
 msgid "Additional options: helping in completing the OMPL or Hybrid-A* planner."
-msgstr ""
+msgstr "Additional options: helping in completing the OMPL or Hybrid-A* planner."
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:28
 msgid "A functional planner or controller plugin for the Nav2 stack"
-msgstr ""
+msgstr "A functional planner or controller plugin for the Nav2 stack"
 
-#: ../../2021summerOfCode/projects/create_plugins.rst:29
+
 #, python-format
 msgid "Plugin should be optimized for run-time performance with 50% or greater test coverage"
-msgstr ""
+msgstr "Plugin should be optimized for run-time performance with 50% or greater test coverage"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:33
 msgid "C++"
-msgstr ""
+msgstr "C++"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:34
 msgid "Path planning or motion planning"
-msgstr ""
+msgstr "Path planning or motion planning"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:35
 msgid "Algorithm optimization"
-msgstr ""
+msgstr "Algorithm optimization"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:36
 msgid "ROS / Pluginlib"
-msgstr ""
+msgstr "ROS / Pluginlib"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:37 ../../2021summerOfCode/projects/grid_maps.rst:34 ../../2021summerOfCode/projects/localization.rst:39
 msgid "Recommended: Gazebo simulation and Navigation experience"
-msgstr ""
+msgstr "Recommended: Gazebo simulation and Navigation experience"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:43
 msgid "`Github issue page <https://github.com/ros-planning/navigation2/issues/1710>`_"
-msgstr ""
+msgstr "`Github issue page <https://github.com/ros-planning/navigation2/issues/1710>`_"
+
 
 #: ../../2021summerOfCode/projects/create_plugins.rst:44
 msgid "`Nav2 <https://navigation.ros.org/>`_"
-msgstr ""
+msgstr "`Nav2 <https://navigation.ros.org/>`_"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:6
 msgid "1. Navigation Dynamic Obstacle Integration"
-msgstr ""
+msgstr "1. Navigation Dynamic Obstacle Integration"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:10
 msgid "The Navigation Stack has long provided robust navigation in a wide range of environments. Controllers have been developed to operate effectively in the presence of dynamic obstacles without explicitly modeling the characteristics of dynamic obstacles. However, as the field has progressed and we see more and more robots using ROS deployed in human-filled spaces, more consideration must be taken with respect to dynamic obstacles such as people, carts, animals, and vehicles."
-msgstr ""
+msgstr "The Navigation Stack has long provided robust navigation in a wide range of environments. Controllers have been developed to operate effectively in the presence of dynamic obstacles without explicitly modeling the characteristics of dynamic obstacles. However, as the field has progressed and we see more and more robots using ROS deployed in human-filled spaces, more consideration must be taken with respect to dynamic obstacles such as people, carts, animals, and vehicles."
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:12
 msgid "Your task will be to create integrations with existing machine learning tools that create dynamic obstacle information (ComplexYolo, Yolo3D, etc) and tie them into the navigation stack for use. It is not in the scope for you to retrain or otherwise become an expert in 3D machine learning, but some basic knowledge will be helpful. We already have a starting point in the project links below that needs to be driven to completion. This includes completing the on-going work to integrate yolact edge into this work to replace detectron2 and benchmark these capabilities on GPUs to verify sufficient run-time performance, as well as other tangental feature development."
-msgstr ""
+msgstr "Your task will be to create integrations with existing machine learning tools that create dynamic obstacle information (ComplexYolo, Yolo3D, etc) and tie them into the navigation stack for use. It is not in the scope for you to retrain or otherwise become an expert in 3D machine learning, but some basic knowledge will be helpful. We already have a starting point in the project links below that needs to be driven to completion. This includes completing the on-going work to integrate yolact edge into this work to replace detectron2 and benchmark these capabilities on GPUs to verify sufficient run-time performance, as well as other tangental feature development."
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:14
 msgid "This task will involve identifying a few techniques that produce position and velocity information about dynamic obstacles that can run on a mobile robot (using high-power Intel CPU, Nvidia Jetson SoC, external GPUs, etc) and get them running with ROS and Navigation. Next, you will help create a new costmap layer to use this information to mark the dynamic obstacle in the costmap to ensure a robot does not collide with a future trajectory of an obstacle."
-msgstr ""
+msgstr "This task will involve identifying a few techniques that produce position and velocity information about dynamic obstacles that can run on a mobile robot (using high-power Intel CPU, Nvidia Jetson SoC, external GPUs, etc) and get them running with ROS and Navigation. Next, you will help create a new costmap layer to use this information to mark the dynamic obstacle in the costmap to ensure a robot does not collide with a future trajectory of an obstacle."
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:16
 msgid "If time permits, you may also work to also integrate this dynamic information into a path planner and/or controller to help in direct motion consideration. This will likely be in collaboration with another community member."
-msgstr ""
+msgstr "If time permits, you may also work to also integrate this dynamic information into a path planner and/or controller to help in direct motion consideration. This will likely be in collaboration with another community member."
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:24
 msgid "**Project output requirements** - Integrations of 1 method of dynamic obstacle detection in ROS 2, using machine learning - Test these capabilities on real data or a live robot to demonstrate functionality - 85% test coverage or higher"
-msgstr ""
+msgstr "**Project output requirements** - Integrations of 1 method of dynamic obstacle detection in ROS 2, using machine learning - Test these capabilities on real data or a live robot to demonstrate functionality - 85% test coverage or higher"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:31
 msgid "C++, Python, ROS"
-msgstr ""
+msgstr "C++, Python, ROS"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:33 ../../2021summerOfCode/projects/safety_node.rst:36
 msgid "Geometry and statistics"
-msgstr ""
+msgstr "Geometry and statistics"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:34
 msgid "Recommended: Gazebo simulation, machine learning, ROS navigation"
-msgstr ""
+msgstr "Recommended: Gazebo simulation, machine learning, ROS navigation"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:38
 msgid "`Starting project <https://github.com/ros-planning/navigation2_dynamic/>`_"
-msgstr ""
+msgstr "`Starting project <https://github.com/ros-planning/navigation2_dynamic/>`_"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:41
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/1617>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/1617>`_"
+
 
 #: ../../2021summerOfCode/projects/dynamic.rst:43 ../../2021summerOfCode/projects/spinners.rst:42 ../../2021summerOfCode/projects/twist_n_config.rst:47
 msgid "`Some related works <https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf>`_"
-msgstr ""
+msgstr "`Some related works <https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf>`_"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:9
 msgid "3. Port Grid Maps to ROS 2 and Environmental Model"
-msgstr ""
+msgstr "3. Port Grid Maps to ROS 2 and Environmental Model"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:11
 msgid "**Task description** Grid Maps was created by ETH Zurich and later transferred to ANYbotics. It is a universal grid map library for mobile robotic mapping that can be used as the basis of environmental models and various forms of grid maps available in ROS 1. This library is one of the top downloaded ROS packages. Your task will be to work with the community and the mentor to port grid_maps metapackage from ROS 1 to ROS 2 and help develop the next generation environment model in ROS 2 to replace costmap_2d."
-msgstr ""
+msgstr "**Task description** Grid Maps was created by ETH Zurich and later transferred to ANYbotics. It is a universal grid map library for mobile robotic mapping that can be used as the basis of environmental models and various forms of grid maps available in ROS 1. This library is one of the top downloaded ROS packages. Your task will be to work with the community and the mentor to port grid_maps metapackage from ROS 1 to ROS 2 and help develop the next generation environment model in ROS 2 to replace costmap_2d."
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:14
 msgid "This will involve porting code from ROS 1 to ROS 2, analyzing uses of the environmental model to define an abstract interface to allow replacement of costmap_2d with grid_map, and building up the basic grid-operations for costmaps. It is not expected to complete the full new model with sensor processing over the course of the summer. If completed early, you may be able to help design a gradient model to complement your implemented costmap model using grid_maps. This will allow robots to select a gradient or a costmap model on startup."
-msgstr ""
+msgstr "This will involve porting code from ROS 1 to ROS 2, analyzing uses of the environmental model to define an abstract interface to allow replacement of costmap_2d with grid_map, and building up the basic grid-operations for costmaps. It is not expected to complete the full new model with sensor processing over the course of the summer. If completed early, you may be able to help design a gradient model to complement your implemented costmap model using grid_maps. This will allow robots to select a gradient or a costmap model on startup."
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:24
 msgid "Grid Maps ported to ROS 2 and merged into the main ROS 2 branch"
-msgstr ""
+msgstr "Grid Maps ported to ROS 2 and merged into the main ROS 2 branch"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:25
 msgid "Defined plugin interfaces to replace costmap 2D with grid maps"
-msgstr ""
+msgstr "Defined plugin interfaces to replace costmap 2D with grid maps"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:26
 msgid "Implementing low-level operations on top of grid_maps to replace the base costmap_2d object."
-msgstr ""
+msgstr "Implementing low-level operations on top of grid_maps to replace the base costmap_2d object."
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:27
 msgid "You will not be expected to reimplement the full sensor processing mechanics of costmap_2d."
-msgstr ""
+msgstr "You will not be expected to reimplement the full sensor processing mechanics of costmap_2d."
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:31
 msgid "C++ and Git"
-msgstr ""
+msgstr "C++ and Git"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:32
 msgid "ROS recommended ROS 2, but you can pick it up before starting"
-msgstr ""
+msgstr "ROS recommended ROS 2, but you can pick it up before starting"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:33
 msgid "Coordinate transformations and basic geometry"
-msgstr ""
+msgstr "Coordinate transformations and basic geometry"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:40
 msgid "`Original github issue 1 <https://github.com/ros-planning/navigation2/issues/1278>`_"
-msgstr ""
+msgstr "`Original github issue 1 <https://github.com/ros-planning/navigation2/issues/1278>`_"
+
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:41
 msgid "`Original github issue 2 <https://github.com/ros-planning/navigation2/issues/1517>`_"
-msgstr ""
+msgstr "`Original github issue 2 <https://github.com/ros-planning/navigation2/issues/1517>`_"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:7
 msgid "6. 2D/3D Localization Improvements"
-msgstr ""
+msgstr "6. 2D/3D Localization Improvements"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:11
 msgid "The Navigation2 stack uses AMCL as its primary localization engine. Over the last 10 years, essentially no updates to AMCL has been made. This is due to the code base for this implementation of an Adaptive Monte Carlo Localizer is written in embedded C, not well structured, and very sensitive to changes. A-MCL implementations have been a hallmark of localization for over a decade but this particular implementation should be deprecated."
-msgstr ""
+msgstr "The Navigation2 stack uses AMCL as its primary localization engine. Over the last 10 years, essentially no updates to AMCL has been made. This is due to the code base for this implementation of an Adaptive Monte Carlo Localizer is written in embedded C, not well structured, and very sensitive to changes. A-MCL implementations have been a hallmark of localization for over a decade but this particular implementation should be deprecated."
+
 
 #: ../../2021summerOfCode/projects/localization.rst:13
 msgid "Your target involves designing and creating a new localization engine for the Nav2 stack. The requirements of this are: - Support 2D laser scanners - Support 3D laser scanners, where 2D case could potentially be a simplified case - Accurately track the localization of a robot in a given occupancy grid"
-msgstr ""
+msgstr "Your target involves designing and creating a new localization engine for the Nav2 stack. The requirements of this are: - Support 2D laser scanners - Support 3D laser scanners, where 2D case could potentially be a simplified case - Accurately track the localization of a robot in a given occupancy grid"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:18
 msgid "The reason that specific method is left open-ended is to allow for creativity, novelty, or reimplementation of a what you feel is best. We have, however, analyzed other MCL variants as being good options. This may include reimplementing an A-MCL that is designed to be modified with modular components and support sampling from a 3D lidar. Another option is a NDT-MCL using NDT 2D/3D scan matching. Other options may be proposed and discussed with mentors during the application phase. The task involves 3D as well since there is no standard 3D localizer in ROS 2 yet and more and more robust 3D SLAM libraries have emerged over the last 2 years."
-msgstr ""
+msgstr "The reason that specific method is left open-ended is to allow for creativity, novelty, or reimplementation of a what you feel is best. We have, however, analyzed other MCL variants as being good options. This may include reimplementing an A-MCL that is designed to be modified with modular components and support sampling from a 3D lidar. Another option is a NDT-MCL using NDT 2D/3D scan matching. Other options may be proposed and discussed with mentors during the application phase. The task involves 3D as well since there is no standard 3D localizer in ROS 2 yet and more and more robust 3D SLAM libraries have emerged over the last 2 years."
+
 
 #: ../../2021summerOfCode/projects/localization.rst:20
 msgid "An optional but recommended feature of this work would be to also accept the inputs from multiple laser scanners. However it is not strictly required."
-msgstr ""
+msgstr "An optional but recommended feature of this work would be to also accept the inputs from multiple laser scanners. However it is not strictly required."
 
-#: ../../2021summerOfCode/projects/localization.rst:28
+
 #, python-format
 msgid "**Project output requirements** - 2D and 3D localization system based on laser scanners - 65% or higher test coverage - Designed with modular components that can be reliably modified over time"
-msgstr ""
+msgstr "**Project output requirements** - 2D and 3D localization system based on laser scanners - 65% or higher test coverage - Designed with modular components that can be reliably modified over time"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:36
 msgid "C/C++"
-msgstr ""
+msgstr "C/C++"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:37
 msgid "Localization, particle filter, or SLAM techniques"
-msgstr ""
+msgstr "Localization, particle filter, or SLAM techniques"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:38
 msgid "Ability to read and implement academic works"
-msgstr ""
+msgstr "Ability to read and implement academic works"
+
 
 #: ../../2021summerOfCode/projects/localization.rst:45
 msgid "`Original Github Issue <https://github.com/ros-planning/navigation2/issues/1391>`_"
-msgstr ""
+msgstr "`Original Github Issue <https://github.com/ros-planning/navigation2/issues/1391>`_"
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:5
 msgid "4. Navigation MultiThreading"
-msgstr ""
+msgstr "4. Navigation MultiThreading"
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:9
 msgid "The aim of this project is the significantly improve the run-time performance of Nav2 making sure to leverage the full capabilities of multi-processor core CPUs. We seek to identify areas in the Nav2 stack that could leverage multi-threading or parallel processing to speed up computations and improve overall user performance on a broad range of compute platforms."
-msgstr ""
+msgstr "The aim of this project is the significantly improve the run-time performance of Nav2 making sure to leverage the full capabilities of multi-processor core CPUs. We seek to identify areas in the Nav2 stack that could leverage multi-threading or parallel processing to speed up computations and improve overall user performance on a broad range of compute platforms."
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:11
 msgid "Some examples include: - AMCL particle cloud updates - Costmap layer updates - Costmap sensor data population - Controller critic evalulation - Collision checking - Voxel grid ray casting - and more."
-msgstr ""
+msgstr "Some examples include: - AMCL particle cloud updates - Costmap layer updates - Costmap sensor data population - Controller critic evalulation - Collision checking - Voxel grid ray casting - and more."
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:20
 msgid "We are seeking a student interested in learning about multi-threading and parallel processing, ideally with some exposure to these concepts and libraries already, to analyze potential areas for parallel computing. Then, select the top candidates and implement them with parallel processing and benchmark the improvements to the Nav2 stack they provide."
-msgstr ""
+msgstr "We are seeking a student interested in learning about multi-threading and parallel processing, ideally with some exposure to these concepts and libraries already, to analyze potential areas for parallel computing. Then, select the top candidates and implement them with parallel processing and benchmark the improvements to the Nav2 stack they provide."
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:22
 msgid "This will be an excellent chance to apply (or obtain) C++ parallel computing skills while also learning a great deal about how to build mobile robot navigation systems -- both very valuable skillsets."
-msgstr ""
+msgstr "This will be an excellent chance to apply (or obtain) C++ parallel computing skills while also learning a great deal about how to build mobile robot navigation systems -- both very valuable skillsets."
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:30
 msgid "**Project output requirements** - Analysis of potential areas in the Nav2 stack that can benefit from parallel processing - Integrations of 3-5 areas in the Nav2 stack that non-trivially improves run-time performance of the stack using multithreading - Benchmark performance improvements"
-msgstr ""
+msgstr "**Project output requirements** - Analysis of potential areas in the Nav2 stack that can benefit from parallel processing - Integrations of 3-5 areas in the Nav2 stack that non-trivially improves run-time performance of the stack using multithreading - Benchmark performance improvements"
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:37 ../../2021summerOfCode/projects/safety_node.rst:34 ../../2021summerOfCode/projects/spinners.rst:33
 msgid "C++, ROS"
-msgstr ""
+msgstr "C++, ROS"
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:39
 msgid "Working knowledge (or ability to quickly obtain) on one or more of: TBB, OpenMP, OpenCL, Cuda, and similar"
-msgstr ""
+msgstr "Working knowledge (or ability to quickly obtain) on one or more of: TBB, OpenMP, OpenCL, Cuda, and similar"
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:40 ../../2021summerOfCode/projects/safety_node.rst:37 ../../2021summerOfCode/projects/semantics.rst:30
 msgid "Recommended: Gazebo simulation, ROS navigation"
-msgstr ""
+msgstr "Recommended: Gazebo simulation, ROS navigation"
+
 
 #: ../../2021summerOfCode/projects/multithreading.rst:46
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/2042>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/2042>`_"
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:7
 msgid "5. Navigation Branding and Website"
-msgstr ""
+msgstr "5. Navigation Branding and Website"
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:11
 msgid "Navigation2 has made significant strides to be the best navigation system in the world. Over time, the original navigation stack in ROS has gained a reputation, fair or unfair, of being relatively limited in the types of tasks it can accomplish that are no longer true in ROS 2 Navigation2."
-msgstr ""
+msgstr "Navigation2 has made significant strides to be the best navigation system in the world. Over time, the original navigation stack in ROS has gained a reputation, fair or unfair, of being relatively limited in the types of tasks it can accomplish that are no longer true in ROS 2 Navigation2."
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:13
 msgid "As such, we would like to initiate a re-branding effort to help differentiate it from its foundings. `MoveIt <https://moveit.ros.org/>`_ has a high-quality landing page with consistent graphics, color schemes, logos, and a catchy name. Your task will be to create a logo, color scheme, and work with maintainers to develop a new name to use in creating a new website for Navigation2. The `existing website <https://navigation.ros.org/>`_ is a Read The Docs design with just the technical tutorials and details. We would like the new Navigation2 website to be analog to the MoveIt website and allow for future expansions such as a blog and pages highlighting demos and robots using the framework."
-msgstr ""
+msgstr "As such, we would like to initiate a re-branding effort to help differentiate it from its foundings. `MoveIt <https://moveit.ros.org/>`_ has a high-quality landing page with consistent graphics, color schemes, logos, and a catchy name. Your task will be to create a logo, color scheme, and work with maintainers to develop a new name to use in creating a new website for Navigation2. The `existing website <https://navigation.ros.org/>`_ is a Read The Docs design with just the technical tutorials and details. We would like the new Navigation2 website to be analog to the MoveIt website and allow for future expansions such as a blog and pages highlighting demos and robots using the framework."
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:21
 msgid "**Project output requirements** - Work with maintainers to come up with a new name, logo, and color scheme - Develop a new landing package using these elements and developed graphics - Migrate the existing website to the new one - Add a blog feature and document the structure and editing process for future developers"
-msgstr ""
+msgstr "**Project output requirements** - Work with maintainers to come up with a new name, logo, and color scheme - Develop a new landing package using these elements and developed graphics - Migrate the existing website to the new one - Add a blog feature and document the structure and editing process for future developers"
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:29
 msgid "Design and graphics packages"
-msgstr ""
+msgstr "Design and graphics packages"
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:30
 msgid "Web technologies"
-msgstr ""
+msgstr "Web technologies"
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:31
 msgid "Creative thinking"
-msgstr ""
+msgstr "Creative thinking"
+
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:35
 msgid "`Github issue <https://github.com/ros-planning/navigation2/issues/1485>`_"
-msgstr ""
+msgstr "`Github issue <https://github.com/ros-planning/navigation2/issues/1485>`_"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:5
 msgid "5. Navigation Safety Node"
-msgstr ""
+msgstr "5. Navigation Safety Node"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:9
 msgid "The aim of this project is to create a safety watchdog node to ensure the robot is acting properly and not about to collide with an obstacle. Typical safety-rated lidars will contain \"safety zones\" whereas if any sensor points are located in a box around the lidar, then the lidar will send a signal to the robot to stop due to a potential collision. However, less and less people are using safety-rated lidars as consumer available lidars are dropping in cost and 3D lidars are seeing more use in mobile robotics."
-msgstr ""
+msgstr "The aim of this project is to create a safety watchdog node to ensure the robot is acting properly and not about to collide with an obstacle. Typical safety-rated lidars will contain \"safety zones\" whereas if any sensor points are located in a box around the lidar, then the lidar will send a signal to the robot to stop due to a potential collision. However, less and less people are using safety-rated lidars as consumer available lidars are dropping in cost and 3D lidars are seeing more use in mobile robotics."
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:11
 msgid "Your project will be to re-create this logic at the Navigation level. While this wouldn't be \"safety certified\", this is a significant functional improvement on safety that could potentially safe real people from real injuries in the real-world. The project will be to create a node that sits below the navigation stack but above the robot controller to do the following:"
-msgstr ""
+msgstr "Your project will be to re-create this logic at the Navigation level. While this wouldn't be \"safety certified\", this is a significant functional improvement on safety that could potentially safe real people from real injuries in the real-world. The project will be to create a node that sits below the navigation stack but above the robot controller to do the following:"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:13
 msgid "Take in the current command velocity from navigation and the most recent laser or RGBD scan"
-msgstr ""
+msgstr "Take in the current command velocity from navigation and the most recent laser or RGBD scan"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:14
 msgid "Projecting the velocity forward in time ``N`` seconds, check if that velocity will result in a collision with any sensor measurements"
-msgstr ""
+msgstr "Projecting the velocity forward in time ``N`` seconds, check if that velocity will result in a collision with any sensor measurements"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:15
 msgid "If not, allow the velocity command through to the base"
-msgstr ""
+msgstr "If not, allow the velocity command through to the base"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:16
 msgid "If it does collide, scale back the velocity such that the robot will always be at minimum ``N`` seconds from a collision"
-msgstr ""
+msgstr "If it does collide, scale back the velocity such that the robot will always be at minimum ``N`` seconds from a collision"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:17
 msgid "Optionally if a flag is set, if ``M`` or more points are in defined bounding boxes around the robot, send only ``0`` commands to enact an emergency stop."
-msgstr ""
+msgstr "Optionally if a flag is set, if ``M`` or more points are in defined bounding boxes around the robot, send only ``0`` commands to enact an emergency stop."
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:19
 msgid "This will be an excellent chance to make mobile robots and Nav2 users significantly safer and run at higher speeds in their production or research environments. It goes a long way for functional safety for those not using safety-rated lidars which contain similar features."
-msgstr ""
+msgstr "This will be an excellent chance to make mobile robots and Nav2 users significantly safer and run at higher speeds in their production or research environments. It goes a long way for functional safety for those not using safety-rated lidars which contain similar features."
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:27
 msgid "**Project output requirements** - Creation of a ROS 2 node that will prevent robot collision based on lidar and/or RGBD data - Node should be able to run at lidar data speed (40hz+) and adjust velocity commands accordingly - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box"
-msgstr ""
+msgstr "**Project output requirements** - Creation of a ROS 2 node that will prevent robot collision based on lidar and/or RGBD data - Node should be able to run at lidar data speed (40hz+) and adjust velocity commands accordingly - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box"
+
 
 #: ../../2021summerOfCode/projects/safety_node.rst:43
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/1899>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/1899>`_"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:5
 msgid "6. Semantic Integration"
-msgstr ""
+msgstr "6. Semantic Integration"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:9
 msgid "This project is to create a semantics library and integrate it into the Nav2 system. The major aim is to enable a generic semantic representation format that navigation (and potentially other ROS projects) may use for representing their environment, objects within it, or points of interest."
-msgstr ""
+msgstr "This project is to create a semantics library and integrate it into the Nav2 system. The major aim is to enable a generic semantic representation format that navigation (and potentially other ROS projects) may use for representing their environment, objects within it, or points of interest."
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:11
 msgid "After creating the generic representation, your project will be to create demonstrations within Nav2 using this capability including a route planning server to replace the planner server in situations where you have a pre-defined set of potential locales (non-free space planning) and another demonstration of your choice."
-msgstr ""
+msgstr "After creating the generic representation, your project will be to create demonstrations within Nav2 using this capability including a route planning server to replace the planner server in situations where you have a pre-defined set of potential locales (non-free space planning) and another demonstration of your choice."
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:13
 msgid "**Project difficulty: Hard**"
-msgstr ""
+msgstr "**Project difficulty: Hard**"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:19
 msgid "**Project output requirements** - Generic semantics standard added to Nav2 documentation - Generic semantics ROS 2 library that implements the standard and makes it easy for applications to get, retreive, or analyze semantic data for custom purposes - A route server to enable navigation-graph and/or route following capabilities - 1 more demonstration using the semantics library of your choice (could be costmap layer with different rules in different rooms or with different objects, a multi-story building demo using semantic info to allow a robot to plan and execute multi-story trajectories, etc)"
-msgstr ""
+msgstr "**Project output requirements** - Generic semantics standard added to Nav2 documentation - Generic semantics ROS 2 library that implements the standard and makes it easy for applications to get, retreive, or analyze semantic data for custom purposes - A route server to enable navigation-graph and/or route following capabilities - 1 more demonstration using the semantics library of your choice (could be costmap layer with different rules in different rooms or with different objects, a multi-story building demo using semantic info to allow a robot to plan and execute multi-story trajectories, etc)"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:27
 msgid "C++, Python, ROS 2"
-msgstr ""
+msgstr "C++, Python, ROS 2"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:28
 msgid "Mobile robot navigation or manipulation experience"
-msgstr ""
+msgstr "Mobile robot navigation or manipulation experience"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:29
 msgid "Perception, semantic information motivation, or similar."
-msgstr ""
+msgstr "Perception, semantic information motivation, or similar."
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:36
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/1595>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/1595>`_"
+
 
 #: ../../2021summerOfCode/projects/semantics.rst:37
 msgid "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/2229>`_"
-msgstr ""
+msgstr "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/2229>`_"
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:6
 msgid "7. Reduce ROS 2 Nodes and Determinism"
-msgstr ""
+msgstr "7. Reduce ROS 2 Nodes and Determinism"
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:10
 msgid "This project is admittedly abstract to explain to someone unfamiliar with the inner-details of ROS 2 and its layers. If you're interested in working on this, you will become one of the few that truly understand the inner workings of it and be a very marketable skill. We do not expect anyone applying for this project to have that knowledge beforehand and we will help you learn the necessary items."
-msgstr ""
+msgstr "This project is admittedly abstract to explain to someone unfamiliar with the inner-details of ROS 2 and its layers. If you're interested in working on this, you will become one of the few that truly understand the inner workings of it and be a very marketable skill. We do not expect anyone applying for this project to have that knowledge beforehand and we will help you learn the necessary items."
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:12
 msgid "ROS 2 architecturally was changed before Foxy in order to ensure that any single process containing multiple ROS 2 node objects will share the same DDS participant on the network. This is important due to the overhead that each additional DDS participant has on the system."
-msgstr ""
+msgstr "ROS 2 architecturally was changed before Foxy in order to ensure that any single process containing multiple ROS 2 node objects will share the same DDS participant on the network. This is important due to the overhead that each additional DDS participant has on the system."
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:14
 msgid "In order for nav2 to leverage this the best, we need to adjust our usage of ROS 2 nodes and executors to further minimize the number of node objects in existance. In the early days of ROS 2 when Nav2 was being built, we were required to have many nodes in a single server in order to handle action requests and other callbacks. Now, we can make use of multi-threaded spinners, callback groups, and individual executors for specific tasks."
-msgstr ""
+msgstr "In order for nav2 to leverage this the best, we need to adjust our usage of ROS 2 nodes and executors to further minimize the number of node objects in existance. In the early days of ROS 2 when Nav2 was being built, we were required to have many nodes in a single server in order to handle action requests and other callbacks. Now, we can make use of multi-threaded spinners, callback groups, and individual executors for specific tasks."
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:16
 msgid "This project will involve identifying all of the Node objects in the stack (control+F makes this easy) and work with mentors to ensure by the end of the summer each server contains only a single node. Additionally, the behavior tree plugins should be updated to leverage callback groups to ensure that any single BT node spinning to check if any new messages are on its callback will **only** trigger its own callback by the same mechanisms."
-msgstr ""
+msgstr "This project will involve identifying all of the Node objects in the stack (control+F makes this easy) and work with mentors to ensure by the end of the summer each server contains only a single node. Additionally, the behavior tree plugins should be updated to leverage callback groups to ensure that any single BT node spinning to check if any new messages are on its callback will **only** trigger its own callback by the same mechanisms."
 
-#: ../../2021summerOfCode/projects/spinners.rst:18
+
 #, python-format
 msgid "More details about this project can be supplied if interested, but the tickets linked below also provide more context. Trust me to say this is a very achievable goal over the course of the summer and will also let you look under the hood of both Nav2 and rclcpp, giving you valuable insight future in your career (and put you in the top 10% of ROS 2 developers that know it to this degree)."
-msgstr ""
+msgstr "More details about this project can be supplied if interested, but the tickets linked below also provide more context. Trust me to say this is a very achievable goal over the course of the summer and will also let you look under the hood of both Nav2 and rclcpp, giving you valuable insight future in your career (and put you in the top 10% of ROS 2 developers that know it to this degree)."
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:26
 msgid "**Project output requirements** - Remove excess ROS 2 nodes from stack and replace with executors and multi-threaded executors - Replace Behavior Tree node spinners with local executors to ensure deterministic execution & processing only callback groups of the current BT node - If time allots, create a single ``main()`` function Nav2 executable composing all Nav2 processes and benchmarking improvements in performance"
-msgstr ""
+msgstr "**Project output requirements** - Remove excess ROS 2 nodes from stack and replace with executors and multi-threaded executors - Replace Behavior Tree node spinners with local executors to ensure deterministic execution & processing only callback groups of the current BT node - If time allots, create a single ``main()`` function Nav2 executable composing all Nav2 processes and benchmarking improvements in performance"
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:39
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/2251>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/2251>`_"
+
 
 #: ../../2021summerOfCode/projects/spinners.rst:40
 msgid "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/816>`_"
-msgstr ""
+msgstr "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/816>`_"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:6
 msgid "2. Advanced Navigation Testing Framework"
-msgstr ""
+msgstr "2. Advanced Navigation Testing Framework"
 
-#: ../../2021summerOfCode/projects/testing.rst:10
+
 #, python-format
 msgid "The ROS 2 Navigation Stack has had a focus on testing and reliability as a characteristic change from ROS 1 to ROS 2. We currently have a test coverage rate of 85% and do full system simulations in Continuous Integration (CI) to test the entire navigation system with a real robot completing real navigation tasks. Your task will be to increase the testing coverage rate to 90% (or +5% from your starting) and improve on the existing system tests to represent a more realistic environment. You will then work to make sure of that environment to actively block the robot from completing its task to simulate worst-case conditions."
-msgstr ""
+msgstr "The ROS 2 Navigation Stack has had a focus on testing and reliability as a characteristic change from ROS 1 to ROS 2. We currently have a test coverage rate of 85% and do full system simulations in Continuous Integration (CI) to test the entire navigation system with a real robot completing real navigation tasks. Your task will be to increase the testing coverage rate to 90% (or +5% from your starting) and improve on the existing system tests to represent a more realistic environment. You will then work to make sure of that environment to actively block the robot from completing its task to simulate worst-case conditions."
 
-#: ../../2021summerOfCode/projects/testing.rst:20
+
 #, python-format
 msgid "Test line coverage of 90% or higher on the repository as reported by codecov (currently 85%)"
-msgstr ""
+msgstr "Test line coverage of 90% or higher on the repository as reported by codecov (currently 85%)"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:21
 msgid "An improved simulation environment for a more realistic mobile robotics application"
-msgstr ""
+msgstr "An improved simulation environment for a more realistic mobile robotics application"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:22
 msgid "Updated system tests to take advantage of that environment to fault or un-ideal cases of the stack"
-msgstr ""
+msgstr "Updated system tests to take advantage of that environment to fault or un-ideal cases of the stack"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:26
 msgid "C++, Python3, gtest"
-msgstr ""
+msgstr "C++, Python3, gtest"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:27
 msgid "Gazebo, recommended experience with Gazebo plugins"
-msgstr ""
+msgstr "Gazebo, recommended experience with Gazebo plugins"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:28
 msgid "Recommended: Navigation experience"
-msgstr ""
+msgstr "Recommended: Navigation experience"
+
 
 #: ../../2021summerOfCode/projects/testing.rst:35
 msgid "`Navigation2 Repo System Tests <https://github.com/ros-planning/navigation2/tree/main/nav2_system_tests>`_"
-msgstr ""
+msgstr "`Navigation2 Repo System Tests <https://github.com/ros-planning/navigation2/tree/main/nav2_system_tests>`_"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:6
 msgid "8. Convert Twist to TwistStamped in Ecosystem and Run-Time Configuration"
-msgstr ""
+msgstr "8. Convert Twist to TwistStamped in Ecosystem and Run-Time Configuration"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:10
 msgid "This project is comprised of 2 smaller projects that can be easily worked on in parallel."
-msgstr ""
+msgstr "This project is comprised of 2 smaller projects that can be easily worked on in parallel."
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:12
 msgid "Subproject A: Convert Twist to TwistStamped in Ecosystem"
-msgstr ""
+msgstr "Subproject A: Convert Twist to TwistStamped in Ecosystem"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:14
 msgid "The aim of this project is to identify places in the ROS 2 ecosystem that make use of ``Twist`` in the context of ``cmd_vel`` coming out of Navigation. This includes things like Nav2, ROS 2 Control, Gazebo ROS Plugins, Yuk's Velocity Filter, major robot drivers, etc. A set of previously identified places is shown in the ticket linked below."
-msgstr ""
+msgstr "The aim of this project is to identify places in the ROS 2 ecosystem that make use of ``Twist`` in the context of ``cmd_vel`` coming out of Navigation. This includes things like Nav2, ROS 2 Control, Gazebo ROS Plugins, Yuk's Velocity Filter, major robot drivers, etc. A set of previously identified places is shown in the ticket linked below."
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:16
 msgid "Once you've created a list of places in the ecosystem where it is used, your project will be to submit PRs on their ROS 2 branches to change the interface to make use of a ``TwistStamped`` instead of a ``Twist``."
-msgstr ""
+msgstr "Once you've created a list of places in the ecosystem where it is used, your project will be to submit PRs on their ROS 2 branches to change the interface to make use of a ``TwistStamped`` instead of a ``Twist``."
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:19
 msgid "Subproject B: Run-time Reconfiguration of Parameters"
-msgstr ""
+msgstr "Subproject B: Run-time Reconfiguration of Parameters"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:21
 msgid "In the meantime while you're waiting for PRs to be merged or blocked by reviews on converting all of the ecosystems ``cmd_vel`` use of ``Twist`` to ``TwistStamped``, your project will be to enable run-time reconfiguration of the major parameters in Nav2. In ROS 2 this is done via the parameter change event callbacks. See tickets below for a list of plugins or servers needing dynamically reconfigurable parameter support added."
-msgstr ""
+msgstr "In the meantime while you're waiting for PRs to be merged or blocked by reviews on converting all of the ecosystems ``cmd_vel`` use of ``Twist`` to ``TwistStamped``, your project will be to enable run-time reconfiguration of the major parameters in Nav2. In ROS 2 this is done via the parameter change event callbacks. See tickets below for a list of plugins or servers needing dynamically reconfigurable parameter support added."
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:30
 msgid "**Project output requirements** - Convert all the major ecosystem projects into TwistStamped - Enable run-time reconfiguration of the remaining plugins and servers in Nav2 missing - Ensure that reconfiguration is thread-safe by using locks, atomic variables, or callback groups"
-msgstr ""
+msgstr "**Project output requirements** - Convert all the major ecosystem projects into TwistStamped - Enable run-time reconfiguration of the remaining plugins and servers in Nav2 missing - Ensure that reconfiguration is thread-safe by using locks, atomic variables, or callback groups"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:37
 msgid "C++, Python3"
-msgstr ""
+msgstr "C++, Python3"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:38
 msgid "ROS 2"
-msgstr ""
+msgstr "ROS 2"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:44
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/956>`_"
-msgstr ""
+msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/956>`_"
+
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:45
 msgid "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/1594>`_"
-msgstr ""
+msgstr "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/1594>`_"
 

@@ -19,136 +19,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
+
 #: ../../roadmap/roadmap.rst:4
 msgid "Roadmaps"
-msgstr ""
+msgstr "Roadmaps"
+
 
 #: ../../roadmap/roadmap.rst:6
 msgid "This is the list of major issues and features the Nav2 maintainers are committing for completion for various ROS 2 releases. This is *not* an exhaustive list of planned features or what changes may be found in the new distribution. It represents only the items of direct commitment to give insight into commitments for REP-2005 repositories in the `ROS 2 Roadmap <https://docs.ros.org/en/rolling/Roadmap.html>`_. For a full list of important completed changes in the project, see the Migration Guides :ref:`migration`."
-msgstr ""
+msgstr "This is the list of major issues and features the Nav2 maintainers are committing for completion for various ROS 2 releases. This is *not* an exhaustive list of planned features or what changes may be found in the new distribution. It represents only the items of direct commitment to give insight into commitments for REP-2005 repositories in the `ROS 2 Roadmap <https://docs.ros.org/en/rolling/Roadmap.html>`_. For a full list of important completed changes in the project, see the Migration Guides :ref:`migration`."
+
 
 #: ../../roadmap/roadmap.rst:12
 msgid "Iron Roadmap"
-msgstr ""
+msgstr "Iron Roadmap"
+
 
 #: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
 msgid "Plugin Name"
-msgstr ""
+msgstr "Plugin Name"
+
 
 #: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
 msgid "Size"
-msgstr ""
+msgstr "Size"
+
 
 #: ../../roadmap/roadmap.rst:17
 msgid "`Pluginize Navigators`_"
-msgstr ""
+msgstr "`Pluginize Navigators`_"
+
 
 #: ../../roadmap/roadmap.rst:17 ../../roadmap/roadmap.rst:61
 msgid "Medium  (DONE)"
-msgstr ""
+msgstr "Medium  (DONE)"
+
 
 #: ../../roadmap/roadmap.rst:21
 msgid "`MPPI Controller`_"
-msgstr ""
+msgstr "`MPPI Controller`_"
+
 
 #: ../../roadmap/roadmap.rst:21
 msgid "Very Large (DONE)"
-msgstr ""
+msgstr "Very Large (DONE)"
+
 
 #: ../../roadmap/roadmap.rst:26
 msgid "`Route Graph Planner`_"
-msgstr ""
+msgstr "`Route Graph Planner`_"
+
 
 #: ../../roadmap/roadmap.rst:26
 msgid "Large (in progress)"
-msgstr ""
+msgstr "Large (in progress)"
 
-#: ../../roadmap/roadmap.rst:30
+
 #, python-format
 msgid "90% unit test coverage"
-msgstr ""
+msgstr "90% unit test coverage"
+
 
 #: ../../roadmap/roadmap.rst:30 ../../roadmap/roadmap.rst:74
 msgid "Small  (DONE)"
-msgstr ""
+msgstr "Small  (DONE)"
+
 
 #: ../../roadmap/roadmap.rst:33
 msgid "`Velocity Smoother`_"
-msgstr ""
+msgstr "`Velocity Smoother`_"
+
 
 #: ../../roadmap/roadmap.rst:33 ../../roadmap/roadmap.rst:70 ../../roadmap/roadmap.rst:81 ../../roadmap/roadmap.rst:85 ../../roadmap/roadmap.rst:93
 msgid "Medium (DONE)"
-msgstr ""
+msgstr "Medium (DONE)"
+
 
 #: ../../roadmap/roadmap.rst:35
 msgid "ROS Time Respect Across Stack"
-msgstr ""
+msgstr "ROS Time Respect Across Stack"
+
 
 #: ../../roadmap/roadmap.rst:35
 msgid "Medium (in progress)"
-msgstr ""
+msgstr "Medium (in progress)"
+
 
 #: ../../roadmap/roadmap.rst:39
 msgid "`Fuse Migration`_"
-msgstr ""
+msgstr "`Fuse Migration`_"
+
 
 #: ../../roadmap/roadmap.rst:39
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
+
 
 #: ../../roadmap/roadmap.rst:43
 msgid "`Ignition Migration`_"
-msgstr ""
+msgstr "`Ignition Migration`_"
+
 
 #: ../../roadmap/roadmap.rst:43
 msgid "Large"
-msgstr ""
+msgstr "Large"
+
 
 #: ../../roadmap/roadmap.rst:56
 msgid "Humble Roadmap"
-msgstr ""
+msgstr "Humble Roadmap"
+
 
 #: ../../roadmap/roadmap.rst:61
 msgid "`Nav2 1 Node Per Server`_"
-msgstr ""
+msgstr "`Nav2 1 Node Per Server`_"
+
 
 #: ../../roadmap/roadmap.rst:65
 msgid "`Smac Lattice Planner`_"
-msgstr ""
+msgstr "`Smac Lattice Planner`_"
+
 
 #: ../../roadmap/roadmap.rst:65
 msgid "Large (DONE)"
-msgstr ""
+msgstr "Large (DONE)"
+
 
 #: ../../roadmap/roadmap.rst:70
 msgid "`Safety Collision Nodes`_"
-msgstr ""
+msgstr "`Safety Collision Nodes`_"
+
 
 #: ../../roadmap/roadmap.rst:74
 msgid "`Fix Min Range Bug`_"
-msgstr ""
+msgstr "`Fix Min Range Bug`_"
+
 
 #: ../../roadmap/roadmap.rst:77
 msgid "`Move Development from Master to Rolling`_"
-msgstr ""
+msgstr "`Move Development from Master to Rolling`_"
+
 
 #: ../../roadmap/roadmap.rst:77 ../../roadmap/roadmap.rst:89
 msgid "Small (DONE)"
-msgstr ""
+msgstr "Small (DONE)"
+
 
 #: ../../roadmap/roadmap.rst:81
 msgid "Push Test Coverage to 88\\%"
-msgstr ""
+msgstr "Push Test Coverage to 88\\%"
+
 
 #: ../../roadmap/roadmap.rst:85
 msgid "`Complete First Time Guide`_"
-msgstr ""
+msgstr "`Complete First Time Guide`_"
+
 
 #: ../../roadmap/roadmap.rst:89
 msgid "`Rotation Shim Controller`_"
-msgstr ""
+msgstr "`Rotation Shim Controller`_"
+
 
 #: ../../roadmap/roadmap.rst:93
 msgid "`Dynamic Composition`_"
-msgstr ""
+msgstr "`Dynamic Composition`_"
 

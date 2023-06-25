@@ -19,134 +19,167 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
+
 #: ../../index.rst:5
 msgid "|LPN|"
-msgstr ""
+msgstr "|LPN|"
+
 
 #: ../../index.rst:19
 msgid "Our Sponsors"
-msgstr ""
+msgstr "Our Sponsors"
+
 
 #: ../../index.rst:27
 msgid "Overview"
-msgstr ""
+msgstr "Overview"
+
 
 #: ../../index.rst:29
 msgid "Nav2 is the professionally supported spiritual successor of the ROS Navigation Stack. This project seeks to find a safe way to have a mobile robot move to complete complex tasks through many types of environments and classes of robot kinematics. Not only can it move from Point A to Point B, but it can have intermediary poses, and represent other types of tasks like object following and more. Nav2 is a production-grade and high-quality navigation framework trusted by 50+ companies worldwide."
-msgstr ""
+msgstr "Nav2 is the professionally supported spiritual successor of the ROS Navigation Stack. This project seeks to find a safe way to have a mobile robot move to complete complex tasks through many types of environments and classes of robot kinematics. Not only can it move from Point A to Point B, but it can have intermediary poses, and represent other types of tasks like object following and more. Nav2 is a production-grade and high-quality navigation framework trusted by 50+ companies worldwide."
+
 
 #: ../../index.rst:34
 msgid "It provides perception, planning, control, localization, visualization, and much more to build highly reliable autonomous systems. This will complete environmental modeling from sensor data, dynamic path planning, compute velocities for motors, avoid obstacles, represent semantic regions and objects, and structure higher-level robot behaviors. To learn more about this project, such as related projects, robots using, ROS1 comparison, and maintainers, see :ref:`about`. To learn more about navigation and ROS concepts, see :ref:`concepts`."
-msgstr ""
+msgstr "It provides perception, planning, control, localization, visualization, and much more to build highly reliable autonomous systems. This will complete environmental modeling from sensor data, dynamic path planning, compute velocities for motors, avoid obstacles, represent semantic regions and objects, and structure higher-level robot behaviors. To learn more about this project, such as related projects, robots using, ROS1 comparison, and maintainers, see :ref:`about`. To learn more about navigation and ROS concepts, see :ref:`concepts`."
+
 
 #: ../../index.rst:39
 msgid "Nav2 uses behavior trees to create customized and intelligent navigation behavior via orchestrating many independent modular servers. A task server can be used to compute a path, control effort, recovery, or any other navigation related task. These separate servers communicate with the behavior tree (BT) over a ROS interface such as an action server or service. A robot may utilize potentially many different behavior trees to allow a robot to perform many types of unique tasks."
-msgstr ""
+msgstr "Nav2 uses behavior trees to create customized and intelligent navigation behavior via orchestrating many independent modular servers. A task server can be used to compute a path, control effort, recovery, or any other navigation related task. These separate servers communicate with the behavior tree (BT) over a ROS interface such as an action server or service. A robot may utilize potentially many different behavior trees to allow a robot to perform many types of unique tasks."
+
 
 #: ../../index.rst:45
 msgid "The diagram below will give you a good first-look at the structure of Nav2. Note: It is possible to have multiple plugins for controllers, planners, and recoveries in each of their servers with matching BT plugins. This can be used to create contextual navigation behaviors. If you would like to see a comparison between this project and ROS (1) Navigation, see :ref:`ros1_comparison`."
-msgstr ""
+msgstr "The diagram below will give you a good first-look at the structure of Nav2. Note: It is possible to have multiple plugins for controllers, planners, and recoveries in each of their servers with matching BT plugins. This can be used to create contextual navigation behaviors. If you would like to see a comparison between this project and ROS (1) Navigation, see :ref:`ros1_comparison`."
+
 
 #: ../../index.rst:51
 msgid "The expected inputs to Nav2 are TF transformations conforming to REP-105, a map source if utilizing the Static Costmap Layer, a BT XML file, and any relevant sensor data sources. It will then provide valid velocity commands for the motors of a holonomic or non-holonomic robot to follow. We currently support all of the major robot types: holonomic, differential-drive, legged, and ackermann (car-like) base types! We support them uniquely with both circular and arbitrarily-shaped robots for SE2 collision checking."
-msgstr ""
+msgstr "The expected inputs to Nav2 are TF transformations conforming to REP-105, a map source if utilizing the Static Costmap Layer, a BT XML file, and any relevant sensor data sources. It will then provide valid velocity commands for the motors of a holonomic or non-holonomic robot to follow. We currently support all of the major robot types: holonomic, differential-drive, legged, and ackermann (car-like) base types! We support them uniquely with both circular and arbitrarily-shaped robots for SE2 collision checking."
+
 
 #: ../../index.rst:59
 msgid "It has tools to:"
-msgstr ""
+msgstr "It has tools to:"
+
 
 #: ../../index.rst:61
 msgid "Load, serve, and store maps (Map Server)"
-msgstr ""
+msgstr "Load, serve, and store maps (Map Server)"
+
 
 #: ../../index.rst:62
 msgid "Localize the robot on the map (AMCL)"
-msgstr ""
+msgstr "Localize the robot on the map (AMCL)"
+
 
 #: ../../index.rst:63
 msgid "Plan a path from A to B around obstacles (Nav2 Planner)"
-msgstr ""
+msgstr "Plan a path from A to B around obstacles (Nav2 Planner)"
+
 
 #: ../../index.rst:64
 msgid "Control the robot as it follows the path (Nav2 Controller)"
-msgstr ""
+msgstr "Control the robot as it follows the path (Nav2 Controller)"
+
 
 #: ../../index.rst:65
 msgid "Smooth path plans to be more continuous and feasible (Nav2 Smoother)"
-msgstr ""
+msgstr "Smooth path plans to be more continuous and feasible (Nav2 Smoother)"
+
 
 #: ../../index.rst:66
 msgid "Convert sensor data into a costmap representation of the world (Nav2 Costmap 2D)"
-msgstr ""
+msgstr "Convert sensor data into a costmap representation of the world (Nav2 Costmap 2D)"
+
 
 #: ../../index.rst:67
 msgid "Build complicated robot behaviors using behavior trees (Nav2 Behavior Trees and BT Navigator)"
-msgstr ""
+msgstr "Build complicated robot behaviors using behavior trees (Nav2 Behavior Trees and BT Navigator)"
+
 
 #: ../../index.rst:68
 msgid "Compute recovery behaviors in case of failure (Nav2 Recoveries)"
-msgstr ""
+msgstr "Compute recovery behaviors in case of failure (Nav2 Recoveries)"
+
 
 #: ../../index.rst:69
 msgid "Follow sequential waypoints (Nav2 Waypoint Follower)"
-msgstr ""
+msgstr "Follow sequential waypoints (Nav2 Waypoint Follower)"
+
 
 #: ../../index.rst:70
 msgid "Manage the lifecycle and watchdog for the servers (Nav2 Lifecycle Manager)"
-msgstr ""
+msgstr "Manage the lifecycle and watchdog for the servers (Nav2 Lifecycle Manager)"
+
 
 #: ../../index.rst:71
 msgid "Plugins to enable your own custom algorithms and behaviors (Nav2 Core)"
-msgstr ""
+msgstr "Plugins to enable your own custom algorithms and behaviors (Nav2 Core)"
+
 
 #: ../../index.rst:72
 msgid "Monitor raw sensor data for imminent collision or dangerous situation (Collision Monitor)"
-msgstr ""
+msgstr "Monitor raw sensor data for imminent collision or dangerous situation (Collision Monitor)"
+
 
 #: ../../index.rst:73
 msgid "Python3 API to interact with Nav2 in a pythonic manner (Simple Commander)"
-msgstr ""
+msgstr "Python3 API to interact with Nav2 in a pythonic manner (Simple Commander)"
+
 
 #: ../../index.rst:74
 msgid "A smoother on output velocities to guarantee dynamic feasibility of commands (Velocity Smoother)"
-msgstr ""
+msgstr "A smoother on output velocities to guarantee dynamic feasibility of commands (Velocity Smoother)"
+
 
 msgid "Navigation2 Block Diagram"
-msgstr ""
+msgstr "Navigation2 Block Diagram"
+
 
 #: ../../index.rst:81
 msgid "We also provide a set of starting plugins to get you going. A list of all plugins can be found on :ref:`plugins` - but they include algorithms for the spanning cross section of common behaviors and robot platform types."
-msgstr ""
+msgstr "We also provide a set of starting plugins to get you going. A list of all plugins can be found on :ref:`plugins` - but they include algorithms for the spanning cross section of common behaviors and robot platform types."
+
 
 #: ../../index.rst:85
 msgid "Citations"
-msgstr ""
+msgstr "Citations"
+
 
 #: ../../index.rst:87
 msgid "If you use the navigation framework, an algorithm from this repository, or ideas from it please cite this work in your papers!"
-msgstr ""
+msgstr "If you use the navigation framework, an algorithm from this repository, or ideas from it please cite this work in your papers!"
+
 
 #: ../../index.rst:91
 msgid "S. Macenski, F. Martín, R. White, J. Clavero. `The Marathon 2: A Navigation System <https://arxiv.org/abs/2003.00368/>`_. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020."
-msgstr ""
+msgstr "S. Macenski, F. Martín, R. White, J. Clavero. `The Marathon 2: A Navigation System <https://arxiv.org/abs/2003.00368/>`_. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020."
+
 
 #: ../../index.rst:95
 msgid "IROS 2020 talk on Nav2 Marathon Experiments:"
-msgstr ""
+msgstr "IROS 2020 talk on Nav2 Marathon Experiments:"
+
 
 #: ../../index.rst:114
 msgid "If you use our work on VSLAM and formal comparisons for service robot needs, please cite the paper:"
-msgstr ""
+msgstr "If you use our work on VSLAM and formal comparisons for service robot needs, please cite the paper:"
+
 
 #: ../../index.rst:116
 msgid "A. Merzlyakov, S. Macenski. `A Comparison of Modern General-Purpose Visual SLAM Approaches <https://arxiv.org/abs/2107.07589>`_. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021."
-msgstr ""
+msgstr "A. Merzlyakov, S. Macenski. `A Comparison of Modern General-Purpose Visual SLAM Approaches <https://arxiv.org/abs/2107.07589>`_. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021."
+
 
 #: ../../index.rst:131
 msgid "Example"
-msgstr ""
+msgstr "Example"
+
 
 #: ../../index.rst:133
 msgid "Below is an example of the TB3 navigating in a small lounge."
-msgstr ""
+msgstr "Below is an example of the TB3 navigating in a small lounge."
 
