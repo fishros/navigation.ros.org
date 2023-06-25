@@ -1602,7 +1602,7 @@ msgstr "RateController"
 
 #: ../../configuration/packages/bt-plugins/decorators/RateController.rst:6
 msgid "A node that throttles the tick rate for its child. The tick rate can be supplied to the node as a parameter. The node returns RUNNING when it is not ticking its child. Currently, in the navigation stack, the ``RateController`` is used to adjust the rate at which the ``ComputePathToPose`` and ``GoalReached`` nodes are ticked."
-msgstr "A node that throttles the tick rate for its child. The tick rate can be supplied to the node as a parameter. The node returns RUNNING when it is not ticking its child. Currently, in the navigation stack, the ``RateController`` is used to adjust the rate at which the ``ComputePathToPose`` and ``GoalReached`` nodes are ticked."
+msgstr "限制其子节点的时钟速率的节点。时钟速率可以作为参数提供给节点。当它不对其子节点进行时钟滴答时，节点返回运行中状态。目前，在导航堆栈中，``RateController`` 用于调整对 ``ComputePathToPose`` 和 ``GoalReached`` 节点进行时钟滴答的速率。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/RateController.rst
@@ -1612,32 +1612,32 @@ msgstr "赫兹"
 
 #: ../../configuration/packages/bt-plugins/decorators/RateController.rst:24
 msgid "Rate to throttle an action or a group of actions."
-msgstr "Rate to throttle an action or a group of actions."
+msgstr "限制操作或一组操作的速率。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SingleTrigger.rst:4
 msgid "SingleTrigger"
-msgstr "SingleTrigger"
+msgstr "SingleTrigger 单触发器"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SingleTrigger.rst:6
 msgid "This node triggers its child only once and returns FAILURE for every succeeding tick."
-msgstr "This node triggers its child only once and returns FAILURE for every succeeding tick."
+msgstr "此节点仅触发其子节点一次，并在每次后续时钟滴答时返回失败。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:4
 msgid "SpeedController"
-msgstr "SpeedController"
+msgstr "SpeedController 速度控制器"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:6
 msgid "A node that controls the tick rate for its child based on current robot speed. The maximum and minimum replanning rates can be supplied to the node as parameters along with maximum and minimum speed. The node returns RUNNING when it is not ticking its child. Currently, in the navigation stack, the ``SpeedController`` is used to adjust the rate at which the ``ComputePathToPose`` and ``GoalReached`` nodes are ticked."
-msgstr "A node that controls the tick rate for its child based on current robot speed. The maximum and minimum replanning rates can be supplied to the node as parameters along with maximum and minimum speed. The node returns RUNNING when it is not ticking its child. Currently, in the navigation stack, the ``SpeedController`` is used to adjust the rate at which the ``ComputePathToPose`` and ``GoalReached`` nodes are ticked."
+msgstr "根据当前机器人速度控制其子节点的时钟速率。最大和最小重新规划速率可以作为参数提供给节点，同时还可以提供最大和最小速度。当它不对其子节点进行时钟滴答时，节点返回运行中状态。目前，在导航堆栈中，``SpeedController`` 用于调整对 ``ComputePathToPose`` 和 ``GoalReached`` 节点进行时钟滴答的速率。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst
 msgid "min_rate"
-msgstr "min_rate"
+msgstr "min_rate 最小频率"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:19 ../../configuration/packages/configuring-amcl.rst:141 ../../configuration/packages/configuring-behavior-server.rst:79 ../../configuration/packages/configuring-behavior-server.rst:268 ../../configuration/packages/configuring-bt-navigator.rst:115 ../../configuration/packages/configuring-collision-monitor.rst:111 ../../configuration/packages/configuring-collision-monitor.rst:304 ../../configuration/packages/configuring-costmaps.rst:153 ../../configuration/packages/configuring-costmaps.rst:175 ../../configuration/packages/configuring-mppic.rst:264 ../../configuration/packages/configuring-regulated-pp.rst:96 ../../configuration/packages/configuring-smoother-server.rst:43 ../../configuration/packages/configuring-velocity-smoother.rst:133 ../../configuration/packages/costmap-plugins/binary_filter.rst:42 ../../configuration/packages/costmap-plugins/keepout_filter.rst:39 ../../configuration/packages/costmap-plugins/speed_filter.rst:66 ../../configuration/packages/dwb-params/controller.rst:115 ../../configuration/packages/dwb-params/visualization.rst:82 ../../configuration/packages/trajectory_critics/prefer_forward.rst:32
@@ -1647,42 +1647,42 @@ msgstr "0.1"
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:23
 msgid "The minimum rate at which child node can be ticked (hz)."
-msgstr "The minimum rate at which child node can be ticked (hz)."
+msgstr "The minimum rate at which child node can be ticked (hz). 子节点可以进行刻度的最小频率（赫兹）。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst
 msgid "max_rate"
-msgstr "max_rate"
+msgstr "最大速率"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:34
 msgid "The maximum rate at which child node can be ticked (hz)."
-msgstr "The maximum rate at which child node can be ticked (hz)."
+msgstr "The maximum rate at which child node can be ticked (hz). 子节点可以进行刻度的最大频率（赫兹）。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst
 msgid "min_speed"
-msgstr "min_speed"
+msgstr "最小速度"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:45
 msgid "The minimum robot speed below which the child node is ticked at minimum rate (m/s)."
-msgstr "The minimum robot speed below which the child node is ticked at minimum rate (m/s)."
+msgstr "The minimum robot speed below which the child node is ticked at minimum rate (m/s). 低于此速度的机器人速度，子节点以最小频率进行刻度（米/秒）。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst
 msgid "max_speed"
-msgstr "max_speed"
+msgstr "最大速度"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:56
 msgid "The maximum robot speed above which the child node is ticked at maximum rate (m/s)."
-msgstr "The maximum robot speed above which the child node is ticked at maximum rate (m/s)."
+msgstr "The maximum robot speed above which the child node is ticked at maximum rate (m/s). 高于此速度的机器人速度，子节点以最大频率进行刻度（米/秒）。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst
 msgid "filter_duration"
-msgstr "filter_duration"
+msgstr "滤波时长"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:63 ../../configuration/packages/configuring-amcl.rst:108 ../../configuration/packages/configuring-costmaps.rst:208 ../../configuration/packages/configuring-mppic.rst:181 ../../configuration/packages/configuring-regulated-pp.rst:52 ../../configuration/packages/configuring-simple-smoother.rst:77 ../../configuration/packages/smac/configuring-smac-2d.rst:131 ../../configuration/packages/smac/configuring-smac-hybrid.rst:263 ../../configuration/packages/smac/configuring-smac-lattice.rst:234
@@ -1692,7 +1692,7 @@ msgstr "0.3"
 
 #: ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:67
 msgid "Duration (secs) over which robot velocity should be smoothed."
-msgstr "Duration (secs) over which robot velocity should be smoothed."
+msgstr "机器人速度应该平滑的持续时间（秒）"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:4
@@ -1702,12 +1702,12 @@ msgstr "AMCL"
 
 #: ../../configuration/packages/configuring-amcl.rst:6 ../../configuration/packages/configuring-behavior-server.rst:6 ../../configuration/packages/configuring-bt-navigator.rst:6 ../../configuration/packages/configuring-constrained-smoother.rst:6 ../../configuration/packages/configuring-controller-server.rst:6 ../../configuration/packages/configuring-costmaps.rst:6 ../../configuration/packages/configuring-dwb-controller.rst:6 ../../configuration/packages/configuring-lifecycle.rst:6 ../../configuration/packages/configuring-map-server.rst:6 ../../configuration/packages/configuring-mppic.rst:6 ../../configuration/packages/configuring-navfn.rst:6 ../../configuration/packages/configuring-planner-server.rst:6 ../../configuration/packages/configuring-regulated-pp.rst:6 ../../configuration/packages/configuring-rotation-shim-controller.rst:6 ../../configuration/packages/configuring-savitzky-golay-smoother.rst:6 ../../configuration/packages/configuring-simple-smoother.rst:6 ../../configuration/packages/configuring-smoother-server.rst:6 ../../configuration/packages/configuring-velocity-smoother.rst:6 ../../configuration/packages/configuring-waypoint-follower.rst:6
 msgid "Source code on Github_."
-msgstr "Source code on Github_."
+msgstr "在Github上的源代码_"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:10
 msgid "AMCL implements the server for taking a static map and localizing the robot within it using an Adaptive Monte-Carlo Localizer."
-msgstr "AMCL implements the server for taking a static map and localizing the robot within it using an Adaptive Monte-Carlo Localizer."
+msgstr "AMCL使用自适应蒙特卡罗定位器（Adaptive Monte-Carlo Localizer）实现了基于静态地图对机器人进行定位的服务器。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1717,7 +1717,7 @@ msgstr "alpha1"
 
 #: ../../configuration/packages/configuring-amcl.rst:24
 msgid "Expected process noise in odometry's rotation estimate from rotation."
-msgstr "Expected process noise in odometry's rotation estimate from rotation."
+msgstr "来自旋转的里程计旋转估计的预期过程噪声。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1727,7 +1727,7 @@ msgstr "alpha2"
 
 #: ../../configuration/packages/configuring-amcl.rst:35
 msgid "Expected process noise in odometry's rotation estimate from translation."
-msgstr "Expected process noise in odometry's rotation estimate from translation."
+msgstr "来自平移的里程计旋转估计的预期过程噪声。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1737,7 +1737,7 @@ msgstr "alpha3"
 
 #: ../../configuration/packages/configuring-amcl.rst:46
 msgid "Expected process noise in odometry's translation estimate from translation."
-msgstr "Expected process noise in odometry's translation estimate from translation."
+msgstr "来自平移的里程计平移估计的预期过程噪声。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1747,7 +1747,7 @@ msgstr "alpha4"
 
 #: ../../configuration/packages/configuring-amcl.rst:57
 msgid "Expected process noise in odometry's translation estimate from rotation."
-msgstr "Expected process noise in odometry's translation estimate from rotation."
+msgstr "来自旋转的里程计平移估计的预期过程噪声。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
