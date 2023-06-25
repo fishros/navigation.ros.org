@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Behavior-Tree Navigator &mdash; Navigation 2 1.0.0 文档</title>
+  <title>行为树导航器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -436,7 +436,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">配置指南</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Behavior-Tree Navigator</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">行为树导航器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
@@ -655,9 +655,9 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#behavior-server-parameters">Behavior Server参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#spin-behavior-parameters">旋转行为参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#backup-behavior-parameters">BackUp Behavior Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#driveonheading-behavior-parameters">DriveOnHeading Behavior Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#assistedteleop-behavior-parameters">AssistedTeleop Behavior Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#backup-behavior-parameters">后退行为参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#driveonheading-behavior-parameters">按目标导航行为参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#assistedteleop-behavior-parameters">辅助遥操作行为参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#example">示例</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Behavior-Tree Navigator</li>
+      <li>行为树导航器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,16 +939,14 @@
            <div itemprop="articleBody">
              
   <div class="section" id="behavior-tree-navigator">
-<span id="configuring-bt-navigator"></span><h1>Behavior-Tree Navigator<a class="headerlink" href="#behavior-tree-navigator" title="永久链接至标题"></a></h1>
+<span id="configuring-bt-navigator"></span><h1>行为树导航器<a class="headerlink" href="#behavior-tree-navigator" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_bt_navigator">在Github上的源代码</a></p>
-<p>The BT Navigator (Behavior Tree Navigator) module implements the NavigateToPose task interface.
-It is a Behavior Tree-based implementation of navigation that is intended to allow for flexibility
-in the navigation task and provide a way to easily specify complex robot behaviors, including recovery.</p>
-<p>Consider checking out the <a class="reference internal" href="../../tutorials/docs/using_groot.html#groot-introduction"><span class="std std-ref">Groot - Interacting with Behavior Trees</span></a> tutorial for using Groot to visualize and modify behavior trees.</p>
+<p>BT导航器（行为树导航器）模块实现了NavigateToPose任务接口。它是一种基于行为树的导航实现，旨在允许导航任务的灵活性，并提供一种简便的方式来指定复杂的机器人行为，包括恢复操作。</p>
+<p>考虑查看 <a class="reference internal" href="../../tutorials/docs/using_groot.html#groot-introduction"><span class="std std-ref">Groot - Interacting with Behavior Trees</span></a> 教程，了解如何使用 Groot 可视化和修改行为树。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">navigators</dt>
+<dt class="field-odd">导航器</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -964,8 +962,7 @@ in the navigation task and provide a way to easily specify complex robot behavio
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>New to Iron: Plugins for navigator types implementing the <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code> interface.
-They implement custom action servers with custom interface definitions and use that data to populate and process behavior tree navigation requests. Plugin classes are defined under the same namespace, see examples below. Defaults correspond to the <code class="docutils literal notranslate"><span class="pre">NavigateToPoseNavigator</span></code> and <code class="docutils literal notranslate"><span class="pre">NavigateThroughPosesNavigator</span></code> navigators.</p>
+<dt>描述</dt><dd><p>Iron中的新功能：为实现nav2_core::BehaviorTreeNavigator接口的导航器类型添加插件。它们通过实现具有自定义接口定义的自定义动作服务器，并使用该数据来填充和处理行为树导航请求。插件类在相同的命名空间下定义，参见下面的示例。默认值对应于NavigateToPoseNavigator和NavigateThroughPosesNavigator。</p>
 </dd>
 </dl>
 </dd>
@@ -985,8 +982,7 @@ They implement custom action servers with custom interface definitions and use t
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Path to the default behavior tree XML description for <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code>, see <a class="reference internal" href="configuring-bt-xml.html#configuring-behavior-tree-xml"><span class="std std-ref">Behavior Tree XML Nodes</span></a> for details on this file.
-Used to be <code class="docutils literal notranslate"><span class="pre">default_bt_xml_filename</span></code> pre-Galactic.</p>
+<dt>描述</dt><dd><p>用于NavigateToPose的默认行为树XML描述文件路径，请参阅：ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_behavior_tree_xml`以获取有关此文件的详细信息。在Galactic之前，它被称为default_bt_xml_filename。</p>
 </dd>
 </dl>
 </dd>
@@ -1006,7 +1002,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Path to the default behavior tree XML description for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code>, see <a class="reference internal" href="configuring-bt-xml.html#configuring-behavior-tree-xml"><span class="std std-ref">Behavior Tree XML Nodes</span></a> for details on this file. New to Galactic after <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> was added.</p>
+<dt>描述</dt><dd><p>用于NavigateThroughPoses的默认行为树XML描述文件路径，请参阅：ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_behavior_tree_xml`以获取有关此文件的详细信息。在添加NavigateThroughPoses之后，它是Galactic的新功能。</p>
 </dd>
 </dl>
 </dd>

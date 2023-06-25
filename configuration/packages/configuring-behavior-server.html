@@ -436,7 +436,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">配置指南</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="configuring-bt-navigator.html">Behavior-Tree Navigator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-bt-navigator.html">行为树导航器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-navigator.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-navigator.html#example">示例</a></li>
 </ul>
@@ -655,9 +655,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#behavior-server-parameters">Behavior Server参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spin-behavior-parameters">旋转行为参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#backup-behavior-parameters">BackUp Behavior Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#driveonheading-behavior-parameters">DriveOnHeading Behavior Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assistedteleop-behavior-parameters">AssistedTeleop Behavior Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-behavior-parameters">后退行为参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#driveonheading-behavior-parameters">按目标导航行为参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assistedteleop-behavior-parameters">辅助遥操作行为参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -1253,7 +1253,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum rotational velocity (rad/s).</p>
+<dt>描述</dt><dd><p>最小旋转速度（rad/s）。</p>
 </dd>
 </dl>
 </dd>
@@ -1280,8 +1280,8 @@
 </dl>
 </div>
 <div class="section" id="backup-behavior-parameters">
-<h2>BackUp Behavior Parameters<a class="headerlink" href="#backup-behavior-parameters" title="永久链接至标题"></a></h2>
-<p>Backup distance, speed and time_allowance is given from the action request.</p>
+<h2>后退行为参数<a class="headerlink" href="#backup-behavior-parameters" title="永久链接至标题"></a></h2>
+<p>备份距离、速度和时间允许值是从操作请求中提供的。</p>
 <dl class="field-list">
 <dt class="field-odd">模拟前进时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1306,8 +1306,8 @@
 </dl>
 </div>
 <div class="section" id="driveonheading-behavior-parameters">
-<h2>DriveOnHeading Behavior Parameters<a class="headerlink" href="#driveonheading-behavior-parameters" title="永久链接至标题"></a></h2>
-<p>DriveOnHeading distance, speed and time_allowance is given from the action request.</p>
+<h2>按目标导航行为参数<a class="headerlink" href="#driveonheading-behavior-parameters" title="永久链接至标题"></a></h2>
+<p>按指定方向行驶距离、速度和时间允许值是从操作请求中提供的。</p>
 <dl class="field-list">
 <dt class="field-odd">模拟前进时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1332,10 +1332,10 @@
 </dl>
 </div>
 <div class="section" id="assistedteleop-behavior-parameters">
-<h2>AssistedTeleop Behavior Parameters<a class="headerlink" href="#assistedteleop-behavior-parameters" title="永久链接至标题"></a></h2>
-<p>AssistedTeleop time_allowance is given in the action request</p>
+<h2>辅助遥操作行为参数<a class="headerlink" href="#assistedteleop-behavior-parameters" title="永久链接至标题"></a></h2>
+<p>辅助远程操控中的时间允许值是在操作请求中给定的。</p>
 <dl class="field-list">
-<dt class="field-odd">projection_time</dt>
+<dt class="field-odd">投影时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1355,7 +1355,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">simulation_time_step</dt>
+<dt class="field-even">模拟时间步长</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1371,7 +1371,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time step for projections (s).</p>
+<dt>描述</dt><dd><p>投影的时间步长（秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1391,7 +1391,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic to listen for teleop messages.</p>
+<dt>描述</dt><dd><p>用于监听远程操作消息的主题。</p>
 </dd>
 </dl>
 </dd>
