@@ -611,9 +611,9 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">模型预测路径积分控制器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mppi-parameters">MPPI 参数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#trajectory-visualization">Trajectory Visualization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#path-handler">Path Handler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ackermann-motion-model">Ackermann Motion Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trajectory-visualization">轨迹可视化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#path-handler">路径处理器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ackermann-motion-model">阿克曼运动模型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#constraint-critic">Constraint Critic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#goal-angle-critic">Goal Angle Critic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#goal-critic">Goal Critic</a></li>
@@ -1246,7 +1246,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>A trade-off between smoothness (high) and low energy (low). This is a complex parameter that likely won't need to be changed from the default. See Section 3D-2 in &quot;Information Theoretic Model Predictive Control: Theory and Applications to Autonomous Driving&quot; for detailed information.</p>
+<dt>描述</dt><dd><p>光滑性（高）和能量消耗（低）之间的权衡。这是一个复杂的参数，通常不需要从默认值进行更改。详细信息请参见《信息论模型预测控制：理论与自动驾驶应用》第3D-2节。</p>
 </dd>
 </dl>
 </dd>
@@ -1266,7 +1266,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to publish debuggin trajectories for visualization. This can slow down the controller substantially (e.g. 1000 batches of 56 size every 30hz is alot of data).</p>
+<dt>描述</dt><dd><p>是否发布用于可视化的调试轨迹。这可能会大大减慢控制器的速度（例如，每30hz有1000个大小为56的批次数据）。</p>
 </dd>
 </dl>
 </dd>
@@ -1286,7 +1286,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of attempts to find feasible trajectory on failure for soft-resets before reporting total failure.</p>
+<dt>描述</dt><dd><p>在软重置失败后，尝试寻找可行轨迹的次数，然后报告总体失败。</p>
 </dd>
 </dl>
 </dd>
@@ -1306,15 +1306,15 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Required time of inactivity to reset optimizer  (only in Humble due to backport ABI policies).</p>
+<dt>描述</dt><dd><p>重置优化器所需的不活动时间（仅在Humble中由于后向兼容ABI策略）。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="section" id="trajectory-visualization">
-<h3>Trajectory Visualization<a class="headerlink" href="#trajectory-visualization" title="永久链接至标题"></a></h3>
+<h3>轨迹可视化<a class="headerlink" href="#trajectory-visualization" title="永久链接至标题"></a></h3>
 <dl class="field-list">
-<dt class="field-odd">trajectory_step</dt>
+<dt class="field-odd">轨迹步长</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1330,11 +1330,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The step between trajectories to visualize to downsample candidate trajectory pool.</p>
+<dt>描述</dt><dd><p>要可视化的轨迹之间的步长，以对候选轨迹池进行下采样。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">time_step</dt>
+<dt class="field-even">时间步长</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1350,14 +1350,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The step between points on trajectories to visualize to downsample trajectory density.</p>
+<dt>描述</dt><dd><p>在轨迹上的点之间用于可视化的步长，以降低轨迹密度。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="path-handler">
-<h3>Path Handler<a class="headerlink" href="#path-handler" title="永久链接至标题"></a></h3>
+<h3>路径处理器<a class="headerlink" href="#path-handler" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">transform_tolerance</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1375,7 +1375,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time tolerance for data transformations with TF (s).</p>
+<dt>描述</dt><dd><p>使用TF进行数据转换的时间容差（秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1395,7 +1395,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance ahead of nearest point on path to robot to prune path to (m).</p>
+<dt>描述</dt><dd><p>从路径上最近点到机器人之前的距离，用于修剪路径（米）。</p>
 </dd>
 </dl>
 </dd>
@@ -1410,19 +1410,19 @@
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>双精度</p></td>
-<td><p>Costmap size / 2</p></td>
+<td><p>代价地图尺寸的一半</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Max integrated distance ahead of robot pose to search for nearest path point in case of path looping.</p>
+<dt>描述</dt><dd><p>机器人姿势前方的最大积分距离，在路径循环的情况下，用于搜索最近的路径点。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="ackermann-motion-model">
-<h3>Ackermann Motion Model<a class="headerlink" href="#ackermann-motion-model" title="永久链接至标题"></a></h3>
+<h3>阿克曼运动模型<a class="headerlink" href="#ackermann-motion-model" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">min_turning_r</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1440,7 +1440,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The minimum turning radius possible for the vehicle platform (m).</p>
+<dt>描述</dt><dd><p>车辆平台可能的最小转弯半径（米）。</p>
 </dd>
 </dl>
 </dd>
