@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RecoveryNode &mdash; Navigation 2 1.0.0 文档</title>
+  <title>恢复节点 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -475,7 +475,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/GoalReached.html">目标已达成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../conditions/TransformAvailable.html">TransformAvailable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditions/TransformAvailable.html">可转换</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
@@ -486,16 +486,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../conditions/IsPathValid.html">路径是否有效</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/AreErrorCodesPresent.html">是否存在错误代码</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAControllerRecoveryHelp.html">是否需要控制器恢复帮助</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAPlannerRecoveryHelp.html">是否需要规划器恢复帮助</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="PipelineSequence.html">PipelineSequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineSequence.html">管道序列</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RoundRobin.html">RoundRobin</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">RecoveryNode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">恢复节点</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>RecoveryNode</li>
+      <li>恢复节点</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,13 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="recoverynode">
-<span id="bt-recovery-node-control"></span><h1>RecoveryNode<a class="headerlink" href="#recoverynode" title="永久链接至标题"></a></h1>
-<p>The RecoveryNode is a control flow node with two children.
-It returns SUCCESS if and only if the first child returns SUCCESS.
-The second child will be executed only if the first child returns FAILURE.
-If the second child SUCCEEDS, then the first child will be executed again.
-The user can specify how many times the recovery actions should be taken before returning FAILURE.
-In nav2, the RecoveryNode is included in Behavior Trees to implement recovery actions upon failures.</p>
+<span id="bt-recovery-node-control"></span><h1>恢复节点<a class="headerlink" href="#recoverynode" title="永久链接至标题"></a></h1>
+<p>RecoveryNode是一个控制流节点，有两个子节点。仅当第一个子节点返回SUCCESS时，它才返回SUCCESS。只有在第一个子节点返回FAILURE时，才会执行第二个子节点。如果第二个子节点执行成功，则会再次执行第一个子节点。用户可以指定在返回FAILURE之前需要执行多少次恢复操作。在nav2中，RecoveryNode被包含在行为树中，用于在发生故障时实施恢复操作。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">

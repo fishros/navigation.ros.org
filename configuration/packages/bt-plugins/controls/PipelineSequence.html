@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PipelineSequence &mdash; Navigation 2 1.0.0 文档</title>
+  <title>管道序列 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -475,7 +475,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/GoalReached.html">目标已达成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../conditions/TransformAvailable.html">TransformAvailable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditions/TransformAvailable.html">可转换</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
@@ -486,16 +486,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../conditions/IsPathValid.html">路径是否有效</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/AreErrorCodesPresent.html">是否存在错误代码</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAControllerRecoveryHelp.html">是否需要控制器恢复帮助</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conditions/WouldAPlannerRecoveryHelp.html">是否需要规划器恢复帮助</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../conditions/IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">PipelineSequence</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">管道序列</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RoundRobin.html">RoundRobin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RecoveryNode.html">RecoveryNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RecoveryNode.html">恢复节点</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>PipelineSequence</li>
+      <li>管道序列</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,11 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="pipelinesequence">
-<span id="bt-pipe-line-sequence-control"></span><h1>PipelineSequence<a class="headerlink" href="#pipelinesequence" title="永久链接至标题"></a></h1>
-<p>Ticks the first child till it succeeds, then ticks the first and second children till the second one succeeds.
-It then ticks the first, second, and third children until the third succeeds, and so on, and so on. If at any
-time a child returns RUNNING, that doesn't change the behavior. If at any time a child returns FAILURE, that
-stops all children and returns FAILURE overall.</p>
+<span id="bt-pipe-line-sequence-control"></span><h1>管道序列<a class="headerlink" href="#pipelinesequence" title="永久链接至标题"></a></h1>
+<p>首先对第一个子节点进行执行，直到成功，然后对第一个和第二个子节点进行执行，直到第二个成功。然后对第一个、第二个和第三个子节点进行执行，直到第三个成功，依此类推。如果任何时候一个子节点返回RUNNING，不会改变行为。如果任何时候一个子节点返回FAILURE，将停止所有子节点的执行并返回总体的FAILURE。</p>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;PipelineSequence&gt;</span>

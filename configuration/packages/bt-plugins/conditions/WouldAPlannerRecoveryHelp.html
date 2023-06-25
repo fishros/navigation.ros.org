@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WouldAPlannerRecoveryHelp &mdash; Navigation 2 1.0.0 文档</title>
+  <title>是否需要规划器恢复帮助 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
     <link rel="next" title="WouldASmootherRecoveryHelp" href="WouldASmootherRecoveryHelp.html" />
-    <link rel="prev" title="WouldAControllerRecoveryHelp" href="WouldAControllerRecoveryHelp.html" />
+    <link rel="prev" title="是否需要控制器恢复帮助" href="WouldAControllerRecoveryHelp.html" />
 
 <link rel="stylesheet" href="../../../../_static/tcs_theme.css" type="text/css" />
 
@@ -475,7 +475,7 @@
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="GoalReached.html">目标已达成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TransformAvailable.html">TransformAvailable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TransformAvailable.html">可转换</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
@@ -486,16 +486,16 @@
 <li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">路径是否有效</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AreErrorCodesPresent.html">是否存在错误代码</a></li>
-<li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">WouldAPlannerRecoveryHelp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">是否需要控制器恢复帮助</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">是否需要规划器恢复帮助</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../controls/PipelineSequence.html">PipelineSequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../controls/PipelineSequence.html">管道序列</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../controls/RoundRobin.html">RoundRobin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../controls/RecoveryNode.html">RecoveryNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../controls/RecoveryNode.html">恢复节点</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>WouldAPlannerRecoveryHelp</li>
+      <li>是否需要规划器恢复帮助</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,11 +940,11 @@
            <div itemprop="articleBody">
              
   <div class="section" id="wouldaplannerrecoveryhelp">
-<span id="bt-would-a-planner-recovery-help-condition"></span><h1>WouldAPlannerRecoveryHelp<a class="headerlink" href="#wouldaplannerrecoveryhelp" title="永久链接至标题"></a></h1>
-<p>Checks if the active controller server error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT.</p>
+<span id="bt-would-a-planner-recovery-help-condition"></span><h1>是否需要规划器恢复帮助<a class="headerlink" href="#wouldaplannerrecoveryhelp" title="永久链接至标题"></a></h1>
+<p>检查活动控制器服务器错误代码是否为UNKNOWN、NO_VALID_CONTROL或TIMEOUT。</p>
 <p>如果当前的错误代码匹配，则节点返回“成功”。否则，返回“失败”。</p>
 <div class="section" id="input-port">
-<h2>Input Port<a class="headerlink" href="#input-port" title="永久链接至标题"></a></h2>
+<h2>输入端口<a class="headerlink" href="#input-port" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">错误代码</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The active error code to compare against. This should match the planner server error code.</p>
+<dt>描述</dt><dd><p>要进行比较的活动错误代码。这应该与规划器服务器的错误代码相匹配。</p>
 </dd>
 </dl>
 </dd>
