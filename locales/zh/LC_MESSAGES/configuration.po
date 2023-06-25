@@ -3062,7 +3062,7 @@ msgstr "在区域内触发动作所需的最少数据读数。之前的``max_poi
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<polygon_name>``.slowdown_ratio"
-msgstr "``<polygon_name>``.slowdown_ratio"
+msgstr "``<polygon_name>`` 的减速比"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:264
@@ -3072,7 +3072,7 @@ msgstr "机器人减速（相对于其实际速度的比例）。适用于``slow
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<polygon_name>``.linear_limit"
-msgstr "``<polygon_name>``.linear_limit"
+msgstr "``<polygon_name>`` 的线性限制"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:275
@@ -3082,42 +3082,42 @@ msgstr "机器人线速度限制。适用于``limit``动作类型。"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<polygon_name>``.angular_limit"
-msgstr "``<polygon_name>``.angular_limit"
+msgstr "``<polygon_name>`` 的角度限制"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:286
 msgid "Robot angular speed limit. Applicable for ``limit`` action type."
-msgstr "Robot angular speed limit. Applicable for ``limit`` action type."
+msgstr "机器人角速度限制。适用于“限制”动作类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<polygon_name>``.time_before_collision"
-msgstr "``<polygon_name>``.time_before_collision"
+msgstr "``<polygon_name>`` 的碰撞前时间"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:297
 msgid "Time before collision in seconds. Maximum simulation time used in collision prediction. Higher values mean lower performance. Applicable for ``approach`` action type."
-msgstr "Time before collision in seconds. Maximum simulation time used in collision prediction. Higher values mean lower performance. Applicable for ``approach`` action type."
+msgstr "碰撞前的时间，以秒为单位。用于碰撞预测的最大仿真时间。较大的值意味着较低的性能。适用于“接近”动作类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<polygon_name>``.simulation_time_step"
-msgstr "``<polygon_name>``.simulation_time_step"
+msgstr "``<polygon_name>`` 的模拟时间步长"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:308
 msgid "Time iteration step for robot movement simulation during collision prediction. Lower values mean lower prediction accuracy but better performance. Applicable for ``approach`` action type."
-msgstr "Time iteration step for robot movement simulation during collision prediction. Lower values mean lower prediction accuracy but better performance. Applicable for ``approach`` action type."
+msgstr "用于碰撞预测期间机器人移动仿真的时间迭代步长。较小的值意味着较低的预测准确性但更好的性能。适用于“接近”动作类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<polygon_name>``.visualize"
-msgstr "``<polygon_name>``.visualize"
+msgstr "``<polygon_name>`` 的可视化"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:319
 msgid "Whether to publish the polygon in a separate topic."
-msgstr "Whether to publish the polygon in a separate topic."
+msgstr "是否将多边形发布到单独的主题中。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3127,27 +3127,27 @@ msgstr "``<polygon_name>``.polygon_pub_topic"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:326
 msgid "<polygon_name>"
-msgstr "<polygon_name>"
+msgstr "<多边形名称>"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:330
 msgid "Topic name to publish a polygon to. Used only if ``visualize`` is true."
-msgstr "Topic name to publish a polygon to. Used only if ``visualize`` is true."
+msgstr "发布多边形的主题名称。仅在``visualize``为true时使用。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:335
 msgid "Observation sources parameters"
-msgstr "Observation sources parameters"
+msgstr "观测源参数"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:337
 msgid "``<source name>`` is the corresponding data source name ID selected for this type."
-msgstr "``<source name>`` is the corresponding data source name ID selected for this type."
+msgstr "``<source name>``是为此类型选择的相应数据源名称ID。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "``<source name>``.type"
-msgstr "``<source name>``.type"
+msgstr "``<源名称>``.type"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:344 ../../configuration/packages/configuring-collision-monitor.rst:355
