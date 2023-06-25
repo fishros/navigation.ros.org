@@ -362,7 +362,7 @@ msgstr "“Wait”动作"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:250
 msgid "``BackUp`` action"
-msgstr "``BackUp`` action"
+msgstr "``BackUp``动作"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:252
@@ -372,7 +372,7 @@ msgstr "在父级“RoundRobin”的四个子节点中的任何一个成功后�
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:255
 msgid "For example, let's say the robot is stuck and the ``Navigation`` subtree returns ``FAILURE``: (for the sake of this example, let's assume that the goal is never updated)."
-msgstr "For example, let's say the robot is stuck and the ``Navigation`` subtree returns ``FAILURE``: (for the sake of this example, let's assume that the goal is never updated)."
+msgstr "例如，假设机器人卡住了，``Navigation``子树返回``FAILURE``：（为了举例，假设目标从未更新）。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:258
@@ -382,7 +382,7 @@ msgstr "尝试执行“Recovery”子树中的代价地图清除序列，并返�
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:260
 msgid "Let's assume that clearing both costmaps was not sufficient, and the ``Navigation`` subtree returns ``FAILURE`` once again. The robot now ticks the ``Recovery`` subtree"
-msgstr "Let's assume that clearing both costmaps was not sufficient, and the ``Navigation`` subtree returns ``FAILURE`` once again. The robot now ticks the ``Recovery`` subtree"
+msgstr "假设清除两个代价地图仍然不足，``Navigation``子树再次返回``FAILURE``。机器人现在触发``Recovery``子树。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:262
@@ -392,77 +392,77 @@ msgstr "在“Recovery”子树中，将执行“Spin”动作。如果此动作
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:264
 msgid "Let's say the next action, ``Wait`` returns ``SUCCESS``. The robot will then move on to the ``Navigation`` subtree"
-msgstr "Let's say the next action, ``Wait`` returns ``SUCCESS``. The robot will then move on to the ``Navigation`` subtree"
+msgstr "假设下一个动作，``Wait``返回``SUCCESS``。然后机器人将继续执行``Navigation``子树。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:266
 msgid "Assume  the ``Navigation`` subtree returns ``FAILURE`` (clearing the costmaps, attempting a spin, and waiting were *still* not sufficient to recover the system. The robot will move onto the ``Recovery`` subtree and attempt the ``BackUp`` action. Let's say that the robot attempts the ``BackUp`` action and was able to successfully complete the action. The ``BackUp`` action node returns ``SUCCESS`` and so now we move on to the Navigation subtree again."
-msgstr "Assume  the ``Navigation`` subtree returns ``FAILURE`` (clearing the costmaps, attempting a spin, and waiting were *still* not sufficient to recover the system. The robot will move onto the ``Recovery`` subtree and attempt the ``BackUp`` action. Let's say that the robot attempts the ``BackUp`` action and was able to successfully complete the action. The ``BackUp`` action node returns ``SUCCESS`` and so now we move on to the Navigation subtree again."
+msgstr "假设 ``Navigation`` 子树返回 ``FAILURE`` （清除代价图、尝试旋转和等待仍然无法恢复系统）。机器人将进入 ``Recovery`` 子树并尝试 ``BackUp`` 动作。假设机器人尝试了 ``BackUp`` 动作并成功完成了该动作。``BackUp`` 动作节点返回 ``SUCCESS``，现在我们再次进入 Navigation 子树。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:268
 msgid "In this hypothetical scenario, let's assume that the ``BackUp`` action allowed the robot to successfully navigate in the ``Navigation`` subtree, and the robot reaches the goal. In this case, the overall BT will still return ``SUCCESS``."
-msgstr "In this hypothetical scenario, let's assume that the ``BackUp`` action allowed the robot to successfully navigate in the ``Navigation`` subtree, and the robot reaches the goal. In this case, the overall BT will still return ``SUCCESS``."
+msgstr "在这个假设的场景中，假设``BackUp``动作使得机器人能够在``Navigation``子树中成功导航，并且机器人到达了目标。在这种情况下，整个BT仍然返回``SUCCESS``。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:270
 msgid "If the ``BackUp`` action was not sufficient enough to allow the robot to become un-stuck, the above logic will go on indefinitely until the ``number_of_retries`` in the parent of the ``Navigate`` subtree and ``Recovery`` subtree is exceeded, or if all the system-wide recoveries in the ``Recovery`` subtree return ``FAILURE`` (this is unlikely, and likely points to some other system failure)."
-msgstr "If the ``BackUp`` action was not sufficient enough to allow the robot to become un-stuck, the above logic will go on indefinitely until the ``number_of_retries`` in the parent of the ``Navigate`` subtree and ``Recovery`` subtree is exceeded, or if all the system-wide recoveries in the ``Recovery`` subtree return ``FAILURE`` (this is unlikely, and likely points to some other system failure)."
+msgstr "如果 ``BackUp`` 动作不足以使机器人解困，上述逻辑将无限循环，直到超过``Navigate`` 子树和 ``Recovery`` 子树的父节点中的 ``number_of_retries``，或者如果 ``Recovery`` 子树中的所有系统级恢复都返回 ``FAILURE``（这种情况不太可能，很可能是其他系统故障）。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:4
 msgid "Introduction To Nav2 Specific Nodes"
-msgstr "Introduction To Nav2 Specific Nodes"
+msgstr "导航2特定节点介绍"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:8
 msgid "Vocabulary can be a large point of confusion here when first starting out."
-msgstr "Vocabulary can be a large point of confusion here when first starting out."
+msgstr "在刚开始时，词汇可能是一个令人困惑的重要问题。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:7
 msgid "A ``Node`` when discussing BTs is entirely different than a ``Node`` in the ROS 2 context"
-msgstr "A ``Node`` when discussing BTs is entirely different than a ``Node`` in the ROS 2 context"
+msgstr "在讨论BT时，``Node``与ROS 2上下文中的``Node``完全不同。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:9
 msgid "An ``ActionNode`` in the context of BTs is not necessarily connected to an Action Server in the ROS 2 context (but often it is)"
-msgstr "An ``ActionNode`` in the context of BTs is not necessarily connected to an Action Server in the ROS 2 context (but often it is)"
+msgstr "在BT的上下文中，``ActionNode`` 不一定与ROS 2上下文中的Action服务器连接（但通常会连接）。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:11
 msgid "There are quite a few custom Nav2 BT nodes that are provided to be used in the Nav2 specific fashion. Some commonly used Nav2 nodes will be described below. The full list of custom BT nodes can be found in the `nav2_behavior_tree plugins folder <https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins>`_. The `configuration guide <../../configuration/packages/configuring-bt-xml.html>`_ can also be quite useful."
-msgstr "There are quite a few custom Nav2 BT nodes that are provided to be used in the Nav2 specific fashion. Some commonly used Nav2 nodes will be described below. The full list of custom BT nodes can be found in the `nav2_behavior_tree plugins folder <https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins>`_. The `configuration guide <../../configuration/packages/configuring-bt-xml.html>`_ can also be quite useful."
+msgstr "有许多定制的Nav2 BT节点可用于以Nav2特定方式使用。下面将介绍一些常用的Nav2节点。完整的定制BT节点列表可在 `nav2_behavior_tree插件文件夹 <https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins>`_ 中找到。`配置指南 <../../configuration/packages/configuring-bt-xml.html>`_ 也可能非常有用。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:16
 msgid "Action Nodes"
-msgstr "Action Nodes"
+msgstr "动作节点"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:18
 msgid "ComputePathToPose - ComputePathToPose Action Server Client (Planner Interface)"
-msgstr "ComputePathToPose - ComputePathToPose Action Server Client (Planner Interface)"
+msgstr "ComputePathToPose - 计算到位姿的行为服务器客户端（规划器接口）"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:20
 msgid "FollowPath - FollowPath Action Server Client (Controller Interface)"
-msgstr "FollowPath - FollowPath Action Server Client (Controller Interface)"
+msgstr "FollowPath - FollowPath 动作服务器客户端（控制器接口）"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:22
 msgid "Spin, Wait, Backup - Behaviors Action Server Client"
-msgstr "Spin, Wait, Backup - Behaviors Action Server Client"
+msgstr "Spin, Wait, Backup - 行为服务器客户端"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:24
 msgid "ClearCostmapService - ClearCostmapService Server Clients"
-msgstr "ClearCostmapService - ClearCostmapService Server Clients"
+msgstr "ClearCostmapService - ClearCostmapService 服务器客户端"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:26
 msgid "Upon completion, these action nodes will return ``SUCCESS`` if the action server believes the action has been completed correctly, ``RUNNING`` when still running, and will return ``FAILURE`` otherwise. Note that in the above list, the `ClearCostmapService` action node is *not* an action server client, but a service client."
-msgstr "Upon completion, these action nodes will return ``SUCCESS`` if the action server believes the action has been completed correctly, ``RUNNING`` when still running, and will return ``FAILURE`` otherwise. Note that in the above list, the `ClearCostmapService` action node is *not* an action server client, but a service client."
+msgstr "完成时，这些动作节点将返回 ``SUCCESS``，如果动作服务器认为动作已正确完成，则返回 ``RUNNING``，否则返回 ``FAILURE``。请注意，在上面的列表中，`ClearCostmapService` 动作节点不是动作服务器客户端，而是服务客户端。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:30
@@ -472,7 +472,7 @@ msgstr "Condition Nodes"
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:32
 msgid "GoalUpdated - Checks if the goal on the goal topic has been updated"
-msgstr "GoalUpdated - Checks if the goal on the goal topic has been updated"
+msgstr "GoalUpdated - 检查目标话题上的目标是否已更新"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:34
@@ -482,7 +482,7 @@ msgstr "GoalReached - Checks if the goal has been reached"
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:36
 msgid "InitialPoseReceived - Checks to see if a pose on the ``intial_pose`` topic has been received"
-msgstr "InitialPoseReceived - Checks to see if a pose on the ``intial_pose`` topic has been received"
+msgstr "InitialPoseReceived - 检查是否已收到 ``intial_pose`` 话题上的姿态"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:38
@@ -492,7 +492,7 @@ msgstr "isBatteryLow - Checks to see if the battery is low by listening on the b
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:40
 msgid "The above list of condition nodes can be used to probe particular aspects of the system. Typically they will return ``SUCCESS`` if the condition is true and ``FAILURE`` otherwise. The key condition that is used in the default Nav2 BT is ``GoalUpdated`` which is checked asynchronously within particular subtrees. This condition node allows for the behavior described as \"If the goal has been updated, then we must replan\". Condition nodes are typically paired with ReactiveFallback nodes."
-msgstr "The above list of condition nodes can be used to probe particular aspects of the system. Typically they will return ``SUCCESS`` if the condition is true and ``FAILURE`` otherwise. The key condition that is used in the default Nav2 BT is ``GoalUpdated`` which is checked asynchronously within particular subtrees. This condition node allows for the behavior described as \"If the goal has been updated, then we must replan\". Condition nodes are typically paired with ReactiveFallback nodes."
+msgstr "上述条件节点列表可用于探测系统的特定方面。通常情况下，如果条件为真，则它们将返回 ``SUCCESS``，否则返回 ``FAILURE``。在默认的Nav2 BT中使用的关键条件是 ``GoalUpdated``，它在特定子树中以异步方式进行检查。此条件节点允许描述行为：“如果目标已更新，则我们必须重新规划”。条件节点通常与ReactiveFallback节点配对使用。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:45
