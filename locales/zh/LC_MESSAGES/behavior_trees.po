@@ -572,7 +572,7 @@ msgstr "请注意，如果``Action_A``、``Action_B``或``Action_C``在任何时
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:123
 msgid "For additional details regarding the ``PipelineSequence`` please see the `PipelineSequence configuration guide <../../configuration/packages/bt-plugins/controls/PipelineSequence.html>`_."
-msgstr "For additional details regarding the ``PipelineSequence`` please see the `PipelineSequence configuration guide <../../configuration/packages/bt-plugins/controls/PipelineSequence.html>`_."
+msgstr "有关 ``PipelineSequence`` 的详细信息，请参阅 `PipelineSequence 配置指南 <../../configuration/packages/bt-plugins/controls/PipelineSequence.html>`_。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:126
@@ -582,7 +582,7 @@ msgstr "控制：恢复"
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:127
 msgid "The Recovery control node has only two children and returns ``SUCCESS`` if and only if the first child returns ``SUCCESS``. If the first child returns ``FAILURE``, the second child will be ticked. This loop will continue until either:"
-msgstr "The Recovery control node has only two children and returns ``SUCCESS`` if and only if the first child returns ``SUCCESS``. If the first child returns ``FAILURE``, the second child will be ticked. This loop will continue until either:"
+msgstr "Recovery 控制节点只有两个子节点，仅当第一个子节点返回 ``SUCCESS`` 时它才返回 ``SUCCESS``。如果第一个子节点返回 ``FAILURE``，则会执行第二个子节点。这个循环将继续，直到出现以下情况之一："
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:130
@@ -592,7 +592,7 @@ msgstr "第一个子节点返回``SUCCESS``（导致父节点返回``SUCCESS``�
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:132
 msgid "The second child returns ``FAILURE`` (which results in ``FAILURE`` of the parent node)"
-msgstr "The second child returns ``FAILURE`` (which results in ``FAILURE`` of the parent node)"
+msgstr "第二个子节点返回 ``FAILURE``（导致父节点返回 ``FAILURE``）"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:134
@@ -602,77 +602,77 @@ msgstr "违反了``number_of_retries``输入参数的限制。"
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:136
 msgid "This node is usually used to link together an action, and a recovery action as the name suggests. The first action will typically be the \"main\" behavior, and the second action will be something to be done in case of ``FAILURE`` of the main behavior. Often, the ticking of the second child action will promote the chance the first action will succeed."
-msgstr "This node is usually used to link together an action, and a recovery action as the name suggests. The first action will typically be the \"main\" behavior, and the second action will be something to be done in case of ``FAILURE`` of the main behavior. Often, the ticking of the second child action will promote the chance the first action will succeed."
+msgstr "通常情况下，此节点用于连接一个操作和一个恢复操作，正如其名称所示。第一个操作通常是“主要”行为，第二个操作将在主要行为失败的情况下执行。通常，执行第二个子节点操作会提高第一个操作成功的机会。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:157
 msgid "In the above example, let's assume ``ComputePathToPose`` fails. ``ClearLocalCostmap`` will be ticked in response, and return ``SUCCESS``. Now that we have cleared the costmap, let's say the robot is correctly able to compute the path and ``ComputePathToPose`` now returns ``SUCCESS``. Then, the parent RecoveryNode will also return ``SUCCESS`` and the BT will be complete."
-msgstr "In the above example, let's assume ``ComputePathToPose`` fails. ``ClearLocalCostmap`` will be ticked in response, and return ``SUCCESS``. Now that we have cleared the costmap, let's say the robot is correctly able to compute the path and ``ComputePathToPose`` now returns ``SUCCESS``. Then, the parent RecoveryNode will also return ``SUCCESS`` and the BT will be complete."
+msgstr "在上面的例子中，假设``ComputePathToPose``失败。作为响应，``ClearLocalCostmap``将被激活并返回``SUCCESS``。现在，既然我们已经清除了代价地图，假设机器人能够正确计算路径并且``ComputePathToPose``现在返回``SUCCESS``。然后，父级RecoveryNode也将返回``SUCCESS``，BT将完成。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:160
 msgid "For additional details regarding the ``RecoveryNode`` please see the `RecoveryNode configuration guide <../../configuration/packages/bt-plugins/controls/RecoveryNode.html>`_."
-msgstr "For additional details regarding the ``RecoveryNode`` please see the `RecoveryNode configuration guide <../../configuration/packages/bt-plugins/controls/RecoveryNode.html>`_."
+msgstr "有关 ``RecoveryNode`` 的详细信息，请参阅 `RecoveryNode 配置指南 <../../configuration/packages/bt-plugins/controls/RecoveryNode.html>`_。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:163
 msgid "Control: RoundRobin"
-msgstr "Control: RoundRobin"
+msgstr "控制：RoundRobin"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:164
 msgid "The RoundRobin control node ticks its children in a round robin fashion until a child returns ``SUCCESS``, in which the parent node will also return ``SUCCESS``. If all children return ``FAILURE`` so will the parent RoundRobin."
-msgstr "The RoundRobin control node ticks its children in a round robin fashion until a child returns ``SUCCESS``, in which the parent node will also return ``SUCCESS``. If all children return ``FAILURE`` so will the parent RoundRobin."
+msgstr "RoundRobin 控制节点以循环方式执行其子节点，直到某个子节点返回 ``SUCCESS``，此时父节点也将返回 ``SUCCESS``。如果所有子节点返回 ``FAILURE``，父节点 RoundRobin 也将返回 ``FAILURE``。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:167
 msgid "Here is an example BT we will use to walk through the concept."
-msgstr "Here is an example BT we will use to walk through the concept."
+msgstr "这是一个我们将用来介绍概念的BT示例。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:188
 msgid "All the nodes start at ``IDLE``"
-msgstr "All the nodes start at ``IDLE``"
+msgstr "所有节点都从 ``IDLE`` 状态开始。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:197
 msgid "2. Upon tick of the parent node, the first child (``Action_A``) is ticked. Let's assume on tick the child returns ``RUNNING``. In this case, no other children are ticked and the parent node returns ``RUNNING`` as well."
-msgstr "2. Upon tick of the parent node, the first child (``Action_A``) is ticked. Let's assume on tick the child returns ``RUNNING``. In this case, no other children are ticked and the parent node returns ``RUNNING`` as well."
+msgstr "2. 在父节点进行激活时，第一个子节点（``Action_A``）被激活。假设在激活时，子节点返回``RUNNING``。在这种情况下，没有其他子节点被激活，父节点也返回``RUNNING``。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:207
 msgid "3. Upon the next tick, let's assume that ``Action_A`` returns ``FAILURE``. This means that ``Action_B`` will get ticked next, and ``Action_C`` remains unticked. Let's assume ``Action_B`` returns ``RUNNING`` this time. That means the parent RoundRobin node will also return ``RUNNING``."
-msgstr "3. Upon the next tick, let's assume that ``Action_A`` returns ``FAILURE``. This means that ``Action_B`` will get ticked next, and ``Action_C`` remains unticked. Let's assume ``Action_B`` returns ``RUNNING`` this time. That means the parent RoundRobin node will also return ``RUNNING``."
+msgstr "3. 在下一次时钟周期中，假设 ``Action_A`` 返回 ``FAILURE``。这意味着接下来会执行 ``Action_B``，而 ``Action_C`` 保持未执行。假设这次 ``Action_B`` 返回 ``RUNNING``。这意味着父级 RoundRobin 节点也会返回 ``RUNNING``。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:218
 msgid "4. Upon this next tick,  let's assume that ``Action_B`` returns ``SUCCESS``. The parent RoundRobin will now halt all children and return ``SUCCESS``. The parent node retains this state information, and will tick ``Action_C`` upon the next tick rather than start from ``Action_A`` like Step 2 did."
-msgstr "4. Upon this next tick,  let's assume that ``Action_B`` returns ``SUCCESS``. The parent RoundRobin will now halt all children and return ``SUCCESS``. The parent node retains this state information, and will tick ``Action_C`` upon the next tick rather than start from ``Action_A`` like Step 2 did."
+msgstr "4. 在下一次激活时，假设``Action_B``返回``SUCCESS``。父级RoundRobin将停止所有子节点并返回``SUCCESS``。父节点保留此状态信息，并在下一次激活时激活``Action_C``，而不是像步骤2那样从``Action_A``开始。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:228
 msgid "On this tick, let's assume ``Action_C`` returns ``RUNNING``, and so does the parent RoundRobin. No other nodes are ticked."
-msgstr "On this tick, let's assume ``Action_C`` returns ``RUNNING``, and so does the parent RoundRobin. No other nodes are ticked."
+msgstr "在这个时钟周期中，假设 ``Action_C`` 返回 ``RUNNING``，父级 RoundRobin 也返回 ``RUNNING``。其他节点都未执行。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:238
 msgid "On this last tick, let's assume ``Action_C`` returns ``FAILURE``. The parent will circle and tick ``Action_A`` again. ``Action_A`` returns ``RUNNING`` and so will the parent RoundRobin node. This pattern will continue indefinitely unless all children return ``FAILURE``."
-msgstr "On this last tick, let's assume ``Action_C`` returns ``FAILURE``. The parent will circle and tick ``Action_A`` again. ``Action_A`` returns ``RUNNING`` and so will the parent RoundRobin node. This pattern will continue indefinitely unless all children return ``FAILURE``."
+msgstr "在最后一次激活时，假设``Action_C``返回``FAILURE``。父节点将循环并再次激活``Action_A``。``Action_A``返回``RUNNING``，父级RoundRobin节点也将返回``RUNNING``。除非所有子节点返回``FAILURE``，否则此模式将无限继续。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:247
 msgid "For additional details regarding the ``RecoveryNode`` please see the `RoundRobin configuration guide <../../configuration/packages/bt-plugins/controls/RoundRobin.html>`_."
-msgstr "For additional details regarding the ``RecoveryNode`` please see the `RoundRobin configuration guide <../../configuration/packages/bt-plugins/controls/RoundRobin.html>`_."
+msgstr "有关 ``RecoveryNode`` 的更多详细信息，请参阅 `RoundRobin 配置指南 <../../configuration/packages/bt-plugins/controls/RoundRobin.html>`_。"
 
 
 #: ../../behavior_trees/trees/follow_point.rst:4
 msgid "Follow Dynamic Point"
-msgstr "Follow Dynamic Point"
+msgstr "跟随动态点"
 
 
 #: ../../behavior_trees/trees/follow_point.rst:7
 msgid "This behavior tree implements a navigation behavior from a starting point, attempting to follow a dynamic point over time. This \"dynamic point\" could be a person, another robot, a virtual carrot, anything. The only requirement is that the pose you'd like to follow is published to the topic outlined in the ``GoalUpdater`` BT node."
-msgstr "This behavior tree implements a navigation behavior from a starting point, attempting to follow a dynamic point over time. This \"dynamic point\" could be a person, another robot, a virtual carrot, anything. The only requirement is that the pose you'd like to follow is published to the topic outlined in the ``GoalUpdater`` BT node."
+msgstr "该行为树实现了从起始点开始的导航行为，试图随时间追踪一个动态点。这个“动态点”可以是一个人、另一个机器人、一个虚拟胡萝卜，或者其他任何东西。唯一的要求是你希望跟随的姿态被发布到 ``GoalUpdater`` BT 节点中指定的主题中。"
 
 
 #: ../../behavior_trees/trees/follow_point.rst:11
@@ -682,7 +682,7 @@ msgstr "In this tree, we replan at 1 hz just as we did in :ref:`behavior_tree_na
 
 #: ../../behavior_trees/trees/follow_point.rst:17
 msgid "After the new path to the dynamic point is computed and truncated, it is again passed to the controller via the ``FollowPath`` node. However, note that it is under a ``KeepRunningUntilFailure`` decorator node ensuring the controller continues to execute until a failure mode. This behavior tree will execute infinitely in time until the navigation request is preempted or cancelled."
-msgstr "After the new path to the dynamic point is computed and truncated, it is again passed to the controller via the ``FollowPath`` node. However, note that it is under a ``KeepRunningUntilFailure`` decorator node ensuring the controller continues to execute until a failure mode. This behavior tree will execute infinitely in time until the navigation request is preempted or cancelled."
+msgstr "在计算和截取到动态点的新路径后，它会再次通过 ``FollowPath`` 节点传递给控制器。然而，请注意它位于一个 ``KeepRunningUntilFailure`` 修饰节点下，确保控制器继续执行直到出现故障模式。该行为树将无限时间执行，直到导航请求被抢占或取消。"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:4
@@ -692,7 +692,7 @@ msgstr "Navigate Through Poses"
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:6
 msgid "This behavior tree implements a navigation behavior from a starting point, through many intermediary hard pose constraints, to a final goal in freespace. It contains both use of custom behaviors for recovery in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
-msgstr "This behavior tree implements a navigation behavior from a starting point, through many intermediary hard pose constraints, to a final goal in freespace. It contains both use of custom behaviors for recovery in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
+msgstr "该行为树实现了从起始点到自由空间中最终目标的导航行为，包括许多中间的硬姿态约束。它既包含了在特定子上下文中进行恢复的自定义行为，也包括了用于系统级故障的全局恢复子树。它还提供了在返回失败状态之前，用户尝试多次重试任务的机会。"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:10
@@ -702,7 +702,7 @@ msgstr "The ``ComputePathThroughPoses`` and ``FollowPath`` BT nodes both also sp
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:13 ../../behavior_trees/trees/nav_to_pose_recovery.rst:14 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:14
 msgid "In this behavior tree, we attempt to retry the entire navigation task 6 times before returning to the caller that the task has failed. This allows the navigation system ample opportunity to try to recovery from failure conditions or wait for transient issues to pass, such as crowding from people or a temporary sensor failure."
-msgstr "In this behavior tree, we attempt to retry the entire navigation task 6 times before returning to the caller that the task has failed. This allows the navigation system ample opportunity to try to recovery from failure conditions or wait for transient issues to pass, such as crowding from people or a temporary sensor failure."
+msgstr "在这个行为树中，我们尝试在返回任务失败之前重试整个导航任务 6 次。这使得导航系统有充分的机会尝试从故障条件中恢复或等待瞬时问题解决，例如人员拥挤或临时传感器故障。"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:16
