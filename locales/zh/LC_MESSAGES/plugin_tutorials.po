@@ -596,7 +596,7 @@ msgstr "插件类``nav2_gradient_costmap_plugin::GradientLayer``继承自基类`
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:46
 msgid "The basic class provides the set of virtual methods API for working with costmap layers in a plugin. These methods are called at runtime by ``LayeredCostmap``. The list of methods, their description, and necessity to have these methods in plugin's code is presented in the table below:"
-msgstr "The basic class provides the set of virtual methods API for working with costmap layers in a plugin. These methods are called at runtime by ``LayeredCostmap``. The list of methods, their description, and necessity to have these methods in plugin's code is presented in the table below:"
+msgstr "基本类提供了一组虚拟方法的API，用于在插件中处理代价地图图层。这些方法在运行时由``LayeredCostmap``调用。下表列出了这些方法、它们的描述以及插件代码中必须具备这些方法的必要性："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:51
@@ -606,7 +606,7 @@ msgstr "onInitialize()"
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:51
 msgid "Method is called at the end of plugin initialization. There is usually declarations of ROS parameters. This is where any required initialization should occur."
-msgstr "Method is called at the end of plugin initialization. There is usually declarations of ROS parameters. This is where any required initialization should occur."
+msgstr "该方法在插件初始化结束时被调用。通常会在这里声明ROS参数。任何必要的初始化应该在这里进行。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:55
@@ -616,122 +616,122 @@ msgstr "updateBounds()"
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:55
 msgid "Method is called to ask the plugin: which area of costmap layer it needs to update. The method has 3 input parameters: robot position and orientation, and 4 output parameters: pointers to window bounds. These bounds are used for performance reasons: to update the area inside the window where new info is available, avoiding updates of the whole costmap on every iteration."
-msgstr "Method is called to ask the plugin: which area of costmap layer it needs to update. The method has 3 input parameters: robot position and orientation, and 4 output parameters: pointers to window bounds. These bounds are used for performance reasons: to update the area inside the window where new info is available, avoiding updates of the whole costmap on every iteration."
+msgstr "该方法用于询问插件：它需要更新哪个代价地图图层的区域。该方法有3个输入参数：机器人的位置和方向，以及4个输出参数：窗口边界的指针。出于性能考虑，这些边界用于更新窗口内的区域，其中有新信息可用，避免在每次迭代中更新整个代价地图。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:62
 msgid "updateCosts()"
-msgstr "updateCosts()"
+msgstr "updateCosts（）"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:62
 msgid "Method is called each time when costmap re-calculation is required. It updates the costmap layer only within its bounds window. The method has 4 input parameters: calculation window bounds, and 1 output parameter: reference to a resulting costmap ``master_grid``. The ``Layer`` class provides the plugin with an internal costmap, ``costmap_``, for updates. The ``master_grid`` should be updated with values within the window bounds using one of the following update methods: ``updateWithAddition()``, ``updateWithMax()``, ``updateWithOverwrite()`` or ``updateWithTrueOverwrite()``."
-msgstr "Method is called each time when costmap re-calculation is required. It updates the costmap layer only within its bounds window. The method has 4 input parameters: calculation window bounds, and 1 output parameter: reference to a resulting costmap ``master_grid``. The ``Layer`` class provides the plugin with an internal costmap, ``costmap_``, for updates. The ``master_grid`` should be updated with values within the window bounds using one of the following update methods: ``updateWithAddition()``, ``updateWithMax()``, ``updateWithOverwrite()`` or ``updateWithTrueOverwrite()``."
+msgstr "每当需要重新计算代价地图时，将调用该方法。它仅在其边界窗口内更新代价地图图层。该方法有4个输入参数：计算窗口边界，以及1个输出参数：对结果代价地图``master_grid``的引用。``Layer``类为插件提供了一个用于更新的内部代价地图``costmap_``。应使用以下更新方法之一在窗口边界内更新``master_grid``的值：``updateWithAddition()``, ``updateWithMax()``, ``updateWithOverwrite()``或``updateWithTrueOverwrite()``。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:72
 msgid "matchSize()"
-msgstr "matchSize()"
+msgstr "matchSize（）"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:72
 msgid "Method is called each time when map size was changed."
-msgstr "Method is called each time when map size was changed."
+msgstr "每当地图尺寸发生变化时，将调用该方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:74
 msgid "onFootprintChanged()"
-msgstr "onFootprintChanged()"
+msgstr "onFootprintChanged（）"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:74
 msgid "Method is called each time when footprint was changed."
-msgstr "Method is called each time when footprint was changed."
+msgstr "每当足迹（footprint）发生变化时，将调用该方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:76
 msgid "reset()"
-msgstr "reset()"
+msgstr "reset（）"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:76
 msgid "It may have any code to be executed during costmap reset."
-msgstr "It may have any code to be executed during costmap reset."
+msgstr "在代价地图重置期间可以执行任何代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:79
 msgid "In our example these methods have the following functionality:"
-msgstr "In our example these methods have the following functionality:"
+msgstr "在我们的示例中，这些方法具有以下功能："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:81
 msgid "``GradientLayer::onInitialize()`` contains declaration of a ROS parameter with its default value:"
-msgstr "``GradientLayer::onInitialize()`` contains declaration of a ROS parameter with its default value:"
+msgstr "``GradientLayer::onInitialize()`` 包含了一个带有默认值的 ROS 参数的声明："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:88
 msgid "and sets ``need_recalculation_`` bounds recalculation indicator:"
-msgstr "and sets ``need_recalculation_`` bounds recalculation indicator:"
+msgstr "并设置``need_recalculation_``边界重新计算指示器："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:94
 msgid "``GradientLayer::updateBounds()`` re-calculates window bounds if ``need_recalculation_`` is ``true`` and updates them regardless of ``need_recalculation_`` value."
-msgstr "``GradientLayer::updateBounds()`` re-calculates window bounds if ``need_recalculation_`` is ``true`` and updates them regardless of ``need_recalculation_`` value."
+msgstr "``GradientLayer::updateBounds()`` 如果 ``need_recalculation_`` 为 ``true``，则重新计算窗口边界，并且不论 ``need_recalculation_`` 的值如何，都会更新边界。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:96
 msgid "``GradientLayer::updateCosts()`` - in this method the gradient is writing directly to the resulting costmap ``master_grid`` without merging with previous layers. This is equal to working with internal ``costmap_`` and then calling ``updateWithTrueOverwrite()`` method. Here is the gradient making algorithm for master costmap:"
-msgstr "``GradientLayer::updateCosts()`` - in this method the gradient is writing directly to the resulting costmap ``master_grid`` without merging with previous layers. This is equal to working with internal ``costmap_`` and then calling ``updateWithTrueOverwrite()`` method. Here is the gradient making algorithm for master costmap:"
+msgstr "``GradientLayer::updateCosts（）`` - 在这个方法中，梯度直接写入到结果代价地图``master_grid``，而不与之前的图层合并。这等同于使用内部``costmap_``并调用``updateWithTrueOverwrite（）``方法。以下是主代价地图的梯度生成算法："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:118
 msgid "where the ``GRADIENT_SIZE`` is the size of each gradient period in map cells, ``GRADIENT_FACTOR`` - decrement of costmap's value per each step:"
-msgstr "where the ``GRADIENT_SIZE`` is the size of each gradient period in map cells, ``GRADIENT_FACTOR`` - decrement of costmap's value per each step:"
+msgstr "其中，``GRADIENT_SIZE`` 是地图单元中每个梯度周期的大小，``GRADIENT_FACTOR`` 是每个步骤中代价地图值的递减量："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:122
 msgid "These parameters are defined in plugin's header file."
-msgstr "These parameters are defined in plugin's header file."
+msgstr "这些参数在插件的头文件中定义。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:124
 msgid "``GradientLayer::onFootprintChanged()`` just resets ``need_recalculation_`` value."
-msgstr "``GradientLayer::onFootprintChanged()`` just resets ``need_recalculation_`` value."
+msgstr "``GradientLayer::onFootprintChanged()`` 只是重置了 ``need_recalculation_`` 的值。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:126
 msgid "``GradientLayer::reset()`` method is dummy: it is not used in this example plugin. It remains there since pure virtual function ``reset()`` in parent ``Layer`` class required to be overridden."
-msgstr "``GradientLayer::reset()`` method is dummy: it is not used in this example plugin. It remains there since pure virtual function ``reset()`` in parent ``Layer`` class required to be overridden."
+msgstr "``GradientLayer::reset()`` 方法是虚拟的：在此示例插件中未被使用。它保留在那里是因为父类 ``Layer`` 中的纯虚拟函数 ``reset()`` 要求被覆盖。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:129
 msgid "2- Export and make GradientLayer plugin"
-msgstr "2- Export and make GradientLayer plugin"
+msgstr "2- 导出并制作 GradientLayer 插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:131
 msgid "The written plugin will be loaded at runtime as its basic parent class and then will be called by plugin handling modules (for costmap2d by ``LayeredCostmap``). Pluginlib opens a given plugin in run-time and provides methods from exported classes to be callable. The mechanism of class exporting tells pluginlib which basic class should be used during these calls. This allows to extend an application by plugins without knowing application source code or recompiling it."
-msgstr "The written plugin will be loaded at runtime as its basic parent class and then will be called by plugin handling modules (for costmap2d by ``LayeredCostmap``). Pluginlib opens a given plugin in run-time and provides methods from exported classes to be callable. The mechanism of class exporting tells pluginlib which basic class should be used during these calls. This allows to extend an application by plugins without knowing application source code or recompiling it."
+msgstr "编写的插件将在运行时作为其基本父类加载，然后由插件处理模块调用（对于 costmap2d 是由 ``LayeredCostmap`` 调用）。Pluginlib 在运行时打开给定的插件，并提供从导出类可调用的方法。类导出机制告诉 pluginlib 在这些调用期间应使用哪个基本类。这允许通过插件扩展应用程序，而无需知道应用程序源代码或重新编译它。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:133
 msgid "In our example the ``nav2_gradient_costmap_plugin::GradientLayer`` plugin's class should be dynamically loaded as a ``nav2_costmap_2d::Layer`` basic class. For this the plugin should be registered as follows:"
-msgstr "In our example the ``nav2_gradient_costmap_plugin::GradientLayer`` plugin's class should be dynamically loaded as a ``nav2_costmap_2d::Layer`` basic class. For this the plugin should be registered as follows:"
+msgstr "在我们的示例中，``nav2_gradient_costmap_plugin::GradientLayer`` 插件的类应该作为 ``nav2_costmap_2d::Layer`` 基类进行动态加载。为此，插件应按以下方式注册："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:135
 msgid "Plugin's class should be registered with a basic type of loaded class. For this there is a special macro ``PLUGINLIB_EXPORT_CLASS`` should be added to any source-file composing the plugin library:"
-msgstr "Plugin's class should be registered with a basic type of loaded class. For this there is a special macro ``PLUGINLIB_EXPORT_CLASS`` should be added to any source-file composing the plugin library:"
+msgstr "插件的类应该使用加载类的基本类型进行注册。为此，应该将特殊宏 ``PLUGINLIB_EXPORT_CLASS`` 添加到组成插件库的任何源文件中："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:142
 msgid "This part is usually placed at the end of cpp-file where the plugin class was written (in our example ``gradient_layer.cpp``). It is good practice to place these lines at the end of the file, but technically, you can also place at the top."
-msgstr "This part is usually placed at the end of cpp-file where the plugin class was written (in our example ``gradient_layer.cpp``). It is good practice to place these lines at the end of the file, but technically, you can also place at the top."
+msgstr "这部分通常放在插件类所在的 cpp 文件的末尾（在我们的示例中是 ``gradient_layer.cpp``）。将这些行放在文件末尾是良好的做法，但从技术上讲，也可以放在文件顶部。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:144
 msgid "Plugin's inormation should be stored to plugin description file. This is done by using separate XML (in our example ``gradient_plugins.xml``) in the plugin's package. This file contains information about:"
-msgstr "Plugin's inormation should be stored to plugin description file. This is done by using separate XML (in our example ``gradient_plugins.xml``) in the plugin's package. This file contains information about:"
+msgstr "插件的信息应存储到插件描述文件中。这是通过在插件的软件包中使用单独的 XML（在我们的示例中为 ``gradient_plugins.xml``）来完成的。该文件包含有关以下内容的信息："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:146
@@ -741,7 +741,7 @@ msgstr "``path``: Path and name of library where plugin is placed."
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:147
 msgid "``name``: Plugin type referenced in ``plugin_types`` parameter (see next section for more details). It could be whatever you want."
-msgstr "``name``: Plugin type referenced in ``plugin_types`` parameter (see next section for more details). It could be whatever you want."
+msgstr "``name``: 在 ``plugin_types`` 参数中引用的插件类型（有关更多详细信息，请参见下一节）。它可以是任何你想要的。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:148
@@ -751,7 +751,7 @@ msgstr "``type``: Plugin class with namespace taken from the source code."
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:149
 msgid "``basic_class_type``: Basic parent class from which plugin class was derived."
-msgstr "``basic_class_type``: Basic parent class from which plugin class was derived."
+msgstr "``basic_class_type``: 插件类所派生的基本父类。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:150
