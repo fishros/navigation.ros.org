@@ -467,7 +467,7 @@ msgstr "完成时，这些动作节点将返回 ``SUCCESS``，如果动作服务
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:30
 msgid "Condition Nodes"
-msgstr "Condition Nodes"
+msgstr "条件节点"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:32
@@ -477,7 +477,7 @@ msgstr "GoalUpdated - 检查目标话题上的目标是否已更新"
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:34
 msgid "GoalReached - Checks if the goal has been reached"
-msgstr "GoalReached - Checks if the goal has been reached"
+msgstr "GoalReached - 检查是否已达到目标"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:36
@@ -487,7 +487,7 @@ msgstr "InitialPoseReceived - 检查是否已收到 ``intial_pose`` 话题上的
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:38
 msgid "isBatteryLow - Checks to see if the battery is low by listening on the battery topic"
-msgstr "isBatteryLow - Checks to see if the battery is low by listening on the battery topic"
+msgstr "isBatteryLow - 通过监听电池主题来检查电池是否低"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:40
@@ -497,32 +497,32 @@ msgstr "上述条件节点列表可用于探测系统的特定方面。通常情
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:45
 msgid "Decorator Nodes"
-msgstr "Decorator Nodes"
+msgstr "装饰节点"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:47
 msgid "Distance Controller - Will tick children nodes every time the robot has traveled a certain distance"
-msgstr "Distance Controller - Will tick children nodes every time the robot has traveled a certain distance"
+msgstr "距离控制器 - 每当机器人行驶一定距离时，将对子节点进行触发"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:49
 msgid "Rate Controller - Controls the ticking of its child node at a constant frequency. The tick rate is an exposed port"
-msgstr "Rate Controller - Controls the ticking of its child node at a constant frequency. The tick rate is an exposed port"
+msgstr "Rate Controller - 控制子节点以恒定频率进行刻度。刻度频率是一个公开端口"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:51
 msgid "Goal Updater - Will update the goal of children nodes via ports on the BT"
-msgstr "Goal Updater - Will update the goal of children nodes via ports on the BT"
+msgstr "目标更新器 - 通过行为树上的端口更新子节点的目标"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:53
 msgid "Single Trigger - Will only tick its child node once, and will return ``FAILURE`` for all subsequent ticks"
-msgstr "Single Trigger - Will only tick its child node once, and will return ``FAILURE`` for all subsequent ticks"
+msgstr "Single Trigger - 仅对子节点进行一次刻度，并在所有后续刻度中返回``FAILURE``"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:55
 msgid "Speed Controller - Controls the ticking of its child node at a rate proportional to the robot's speed"
-msgstr "Speed Controller - Controls the ticking of its child node at a rate proportional to the robot's speed"
+msgstr "速度控制器 - 控制其子节点以与机器人速度成比例的频率触发"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:58
@@ -532,42 +532,42 @@ msgstr "Control: PipelineSequence"
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:59
 msgid "The ``PipelineSequence`` control node re-ticks previous children when a child returns ``RUNNING``. This node is similar to the ``Sequence`` node, with the additional property that the children prior to the \"current\" are re-ticked, (resembling the flow of water in a pipe). If at any point a child returns ``FAILURE``, all children will be halted and the parent node will also return ``FAILURE``. Upon ``SUCCESS`` of the **last node** in the sequence, this node will halt and return ``SUCCESS``."
-msgstr "The ``PipelineSequence`` control node re-ticks previous children when a child returns ``RUNNING``. This node is similar to the ``Sequence`` node, with the additional property that the children prior to the \"current\" are re-ticked, (resembling the flow of water in a pipe). If at any point a child returns ``FAILURE``, all children will be halted and the parent node will also return ``FAILURE``. Upon ``SUCCESS`` of the **last node** in the sequence, this node will halt and return ``SUCCESS``."
+msgstr "当子节点返回“运行中”时，“PipelineSequence”控制节点将重新触发之前的子节点。该节点类似于“序列”节点，但其附加属性是在“当前”节点之前的子节点将被重新触发（类似于管道中的水流）。如果任何子节点返回“失败”，所有子节点都将停止运行，父节点也将返回“失败”。当序列中的**最后一个节点**返回“成功”时，该节点将停止运行并返回“成功”。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:63
 msgid "To explain this further, here is an example BT that uses PipelineSequence."
-msgstr "To explain this further, here is an example BT that uses PipelineSequence."
+msgstr "为了进一步解释，这里有一个使用PipelineSequence的示例BT。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:84
 msgid "``Action_A``, ``Action_B``, and ``Action_C`` are all ``IDLE``."
-msgstr "``Action_A``, ``Action_B``, and ``Action_C`` are all ``IDLE``."
+msgstr "``Action_A``、``Action_B``和``Action_C``都处于“空闲”状态。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:85
 msgid "When the parent PipelineSequence is first ticked, let's assume ``Action_A`` returns ``RUNNING``. The parent node will now return ``RUNNING`` and no other nodes are ticked."
-msgstr "When the parent PipelineSequence is first ticked, let's assume ``Action_A`` returns ``RUNNING``. The parent node will now return ``RUNNING`` and no other nodes are ticked."
+msgstr "当父PipelineSequence首次被执行时，假设``Action_A``返回``RUNNING``。父节点现在将返回``RUNNING``，而且不会执行其他节点。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:94
 msgid "Now, let's assume ``Action_A`` returns ``SUCCESS``, ``Action_B`` will now get ticked and will return ``RUNNING``. ``Action_C`` has not yet been ticked so will return ``IDLE``."
-msgstr "Now, let's assume ``Action_A`` returns ``SUCCESS``, ``Action_B`` will now get ticked and will return ``RUNNING``. ``Action_C`` has not yet been ticked so will return ``IDLE``."
+msgstr "现在，让我们假设``Action_A``返回“成功”，然后``Action_B``将被触发并返回“运行中”。``Action_C``尚未被触发，因此返回“空闲”。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:103
 msgid "``Action_A`` gets ticked again and returns ``RUNNING``, and ``Action_B`` gets re-ticked and returns ``SUCCESS`` and therefore the BT goes on to tick ``Action_C`` for the first time. Let's assume ``Action_C`` returns ``RUNNING``. The retick-ing of ``Action_A`` is what makes PipelineSequence useful."
-msgstr "``Action_A`` gets ticked again and returns ``RUNNING``, and ``Action_B`` gets re-ticked and returns ``SUCCESS`` and therefore the BT goes on to tick ``Action_C`` for the first time. Let's assume ``Action_C`` returns ``RUNNING``. The retick-ing of ``Action_A`` is what makes PipelineSequence useful."
+msgstr "``Action_A``再次被执行并返回``RUNNING``，``Action_B``重新被执行并返回``SUCCESS``，因此BT继续执行首次执行``Action_C``。假设``Action_C``返回``RUNNING``。重新执行``Action_A``是使PipelineSequence有用的关键。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:112
 msgid "All actions in the sequence will be re-ticked. Let's assume ``Action_A`` still returns ``RUNNING``, where as ``Action_B`` returns ``SUCCESS`` again, and ``Action_C`` now returns ``SUCCESS`` on this tick. The sequence is now complete, and therefore ``Action_A`` is halted, even though it was still ``RUNNING``."
-msgstr "All actions in the sequence will be re-ticked. Let's assume ``Action_A`` still returns ``RUNNING``, where as ``Action_B`` returns ``SUCCESS`` again, and ``Action_C`` now returns ``SUCCESS`` on this tick. The sequence is now complete, and therefore ``Action_A`` is halted, even though it was still ``RUNNING``."
+msgstr "序列中的所有动作都将被重新触发。假设``Action_A``仍然返回“运行中”，而``Action_B``再次返回“成功”，``Action_C``现在在此触发中返回“成功”。序列现已完成，因此即使``Action_A``仍处于“运行中”，也会停止``Action_A``的运行。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:121
 msgid "Recall that if ``Action_A``, ``Action_B``, or ``Action_C`` returned ``FAILURE`` at any point of time, the parent would have returned ``FAILURE`` and halted any children as well."
-msgstr "Recall that if ``Action_A``, ``Action_B``, or ``Action_C`` returned ``FAILURE`` at any point of time, the parent would have returned ``FAILURE`` and halted any children as well."
+msgstr "请注意，如果``Action_A``、``Action_B``或``Action_C``在任何时候返回``FAILURE``，则父节点也将返回``FAILURE``，并停止执行任何子节点。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:123
@@ -577,7 +577,7 @@ msgstr "For additional details regarding the ``PipelineSequence`` please see the
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:126
 msgid "Control: Recovery"
-msgstr "Control: Recovery"
+msgstr "控制：恢复"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:127
@@ -587,7 +587,7 @@ msgstr "The Recovery control node has only two children and returns ``SUCCESS`` 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:130
 msgid "The first child returns ``SUCCESS`` (which results in ``SUCCESS`` of the parent node)"
-msgstr "The first child returns ``SUCCESS`` (which results in ``SUCCESS`` of the parent node)"
+msgstr "第一个子节点返回``SUCCESS``（导致父节点返回``SUCCESS``）。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:132
@@ -597,7 +597,7 @@ msgstr "The second child returns ``FAILURE`` (which results in ``FAILURE`` of th
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:134
 msgid "The ``number_of_retries`` input parameter is violated"
-msgstr "The ``number_of_retries`` input parameter is violated"
+msgstr "违反了``number_of_retries``输入参数的限制。"
 
 
 #: ../../behavior_trees/overview/nav2_specific_nodes.rst:136
