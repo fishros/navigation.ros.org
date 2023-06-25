@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IsPathValid &mdash; Navigation 2 1.0.0 文档</title>
+  <title>路径是否有效 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="PathExpiringTimer" href="PathExpiringTimer.html" />
-    <link rel="prev" title="IsBatteryLow" href="IsBatteryLow.html" />
+    <link rel="next" title="路径到期计时器" href="PathExpiringTimer.html" />
+    <link rel="prev" title="电池是否低电量" href="IsBatteryLow.html" />
 
 <link rel="stylesheet" href="../../../../_static/tcs_theme.css" type="text/css" />
 
@@ -474,22 +474,22 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">GoalReached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TransformAvailable.html">TransformAvailable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">InitialPoseReceived</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">IsStuck</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">TimeExpired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">IsBatteryLow</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">IsPathValid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">PathExpiringTimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">接收到初始姿势</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">是否卡住</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">时间已过期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">电池是否低电量</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">路径是否有效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AreErrorCodesPresent.html">是否存在错误代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">IsBatteryCharging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>IsPathValid</li>
+      <li>路径是否有效</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,10 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="ispathvalid">
-<span id="bt-is-path-valid-condition"></span><h1>IsPathValid<a class="headerlink" href="#ispathvalid" title="永久链接至标题"></a></h1>
-<p>Checks to see if the global path is valid. If there is a
-obstacle along the path, the condition returns FAILURE, otherwise
-it returns SUCCESS.</p>
+<span id="bt-is-path-valid-condition"></span><h1>路径是否有效<a class="headerlink" href="#ispathvalid" title="永久链接至标题"></a></h1>
+<p>检查全局路径是否有效。如果路径上存在障碍物，则条件返回失败；否则返回成功。</p>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;IsPathValid</span><span class="w"> </span><span class="na">server_timeout=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;{path}&quot;</span><span class="nt">/&gt;</span>

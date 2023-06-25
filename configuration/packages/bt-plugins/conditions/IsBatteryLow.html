@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IsBatteryLow &mdash; Navigation 2 1.0.0 文档</title>
+  <title>电池是否低电量 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="IsPathValid" href="IsPathValid.html" />
-    <link rel="prev" title="TimeExpired" href="TimeExpired.html" />
+    <link rel="next" title="路径是否有效" href="IsPathValid.html" />
+    <link rel="prev" title="时间已过期" href="TimeExpired.html" />
 
 <link rel="stylesheet" href="../../../../_static/tcs_theme.css" type="text/css" />
 
@@ -474,22 +474,22 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">GoalReached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TransformAvailable.html">TransformAvailable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">InitialPoseReceived</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">IsStuck</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">TimeExpired</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">IsBatteryLow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">IsPathValid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">PathExpiringTimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">接收到初始姿势</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">是否卡住</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">时间已过期</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">电池是否低电量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">路径是否有效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AreErrorCodesPresent.html">是否存在错误代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">IsBatteryCharging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>IsBatteryLow</li>
+      <li>电池是否低电量</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,10 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="isbatterylow">
-<span id="bt-is-battery-low-condition"></span><h1>IsBatteryLow<a class="headerlink" href="#isbatterylow" title="永久链接至标题"></a></h1>
-<p>Checks if battery is low by subscribing to a <code class="docutils literal notranslate"><span class="pre">sensor_msgs/BatteryState</span></code> topic and checking if battery percentage/voltage is below a specified minimum value.
-By default percentage (in range 0 to 1) is used to check for low battery. Set the <code class="docutils literal notranslate"><span class="pre">is_voltage</span></code> parameter to <cite>true</cite> to use voltage.
-Returns SUCCESS when battery percentage/voltage is lower than the specified value, FAILURE otherwise.</p>
+<span id="bt-is-battery-low-condition"></span><h1>电池是否低电量<a class="headerlink" href="#isbatterylow" title="永久链接至标题"></a></h1>
+<p>通过订阅 <code class="docutils literal notranslate"><span class="pre">sensor_msgs/BatteryState</span></code> 主题并检查电池百分比/电压是否低于指定的最小值来检查电池是否低电。默认情况下，使用百分比（范围在 0 到 1 之间）来检查低电。将 <code class="docutils literal notranslate"><span class="pre">is_voltage</span></code> 参数设置为 <cite>true</cite> 以使用电压。当电池百分比/电压低于指定值时返回成功，否则返回失败。</p>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;IsBatteryLow</span><span class="w"> </span><span class="na">min_battery=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">battery_topic=</span><span class="s">&quot;/battery_status&quot;</span><span class="w"> </span><span class="na">is_voltage=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>

@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
     <link rel="next" title="DistanceTraveled" href="DistanceTraveled.html" />
-    <link rel="prev" title="GoalReached" href="GoalReached.html" />
+    <link rel="prev" title="目标已达成" href="GoalReached.html" />
 
 <link rel="stylesheet" href="../../../../_static/tcs_theme.css" type="text/css" />
 
@@ -474,22 +474,22 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">GoalReached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">TransformAvailable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">InitialPoseReceived</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">IsStuck</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">TimeExpired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">IsBatteryLow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">IsPathValid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">PathExpiringTimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">接收到初始姿势</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">是否卡住</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">时间已过期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">电池是否低电量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">路径是否有效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AreErrorCodesPresent.html">是否存在错误代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">IsBatteryCharging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
@@ -941,7 +941,7 @@
              
   <div class="section" id="transformavailable">
 <span id="bt-transform-available-condition"></span><h1>TransformAvailable<a class="headerlink" href="#transformavailable" title="永久链接至标题"></a></h1>
-<p>Checks if a TF transform is available. Returns failure if it cannot be found. Once found, it will always return success. Useful for initial condition checks.</p>
+<p>检查是否存在TF变换。如果找不到，则返回失败。一旦找到，将始终返回成功。用于初始条件检查。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -965,7 +965,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">parent</dt>
+<dt class="field-even">父节点</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />

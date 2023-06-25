@@ -474,22 +474,22 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">GoalReached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TransformAvailable.html">TransformAvailable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">InitialPoseReceived</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">IsStuck</a></li>
-<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">TimeExpired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">IsBatteryLow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">IsPathValid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">PathExpiringTimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">接收到初始姿势</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">是否卡住</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TimeExpired.html">时间已过期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">电池是否低电量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">路径是否有效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AreErrorCodesPresent.html">是否存在错误代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">IsBatteryCharging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
@@ -941,8 +941,7 @@
              
   <div class="section" id="goalupdated">
 <span id="goal-updated-condition"></span><h1>GoalUpdated<a class="headerlink" href="#goalupdated" title="永久链接至标题"></a></h1>
-<p>Checks if the global navigation goal has changed in the blackboard.
-Returns failure if the goal is the same, if it changes, it returns success.</p>
+<p>检查全局导航目标是否在黑板中发生变化。如果目标相同，则返回失败；如果发生变化，则返回成功。</p>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;GoalUpdated/&gt;</span>

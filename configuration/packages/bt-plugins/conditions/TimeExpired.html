@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TimeExpired &mdash; Navigation 2 1.0.0 文档</title>
+  <title>时间已过期 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="IsBatteryLow" href="IsBatteryLow.html" />
-    <link rel="prev" title="IsStuck" href="IsStuck.html" />
+    <link rel="next" title="电池是否低电量" href="IsBatteryLow.html" />
+    <link rel="prev" title="是否卡住" href="IsStuck.html" />
 
 <link rel="stylesheet" href="../../../../_static/tcs_theme.css" type="text/css" />
 
@@ -474,22 +474,22 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">GoalReached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TransformAvailable.html">TransformAvailable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceTraveled.html">DistanceTraveled</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdated.html">GoalUpdated</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GloballyUpdatedGoal.html">GloballyUpdatedGoal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">InitialPoseReceived</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">IsStuck</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">TimeExpired</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">IsBatteryLow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">IsPathValid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">PathExpiringTimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InitialPoseReceived.html">接收到初始姿势</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsStuck.html">是否卡住</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">时间已过期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryLow.html">电池是否低电量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsPathValid.html">路径是否有效</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PathExpiringTimer.html">路径到期计时器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AreErrorCodesPresent.html">是否存在错误代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAControllerRecoveryHelp.html">WouldAControllerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldAPlannerRecoveryHelp.html">WouldAPlannerRecoveryHelp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WouldASmootherRecoveryHelp.html">WouldASmootherRecoveryHelp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">IsBatteryCharging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>TimeExpired</li>
+      <li>时间已过期</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,10 +940,10 @@
            <div itemprop="articleBody">
              
   <div class="section" id="timeexpired">
-<span id="bt-time-expired-condition"></span><h1>TimeExpired<a class="headerlink" href="#timeexpired" title="永久链接至标题"></a></h1>
-<p>Node that returns success when a time duration has passed</p>
+<span id="bt-time-expired-condition"></span><h1>时间已过期<a class="headerlink" href="#timeexpired" title="永久链接至标题"></a></h1>
+<p>当经过一段时间后返回成功的节点。</p>
 <dl class="field-list">
-<dt class="field-odd">seconds</dt>
+<dt class="field-odd">秒</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 35%" />
@@ -959,7 +959,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The time passed to return success (s).</p>
+<dt>描述</dt><dd><p>经过的时间以秒为单位返回成功。</p>
 </dd>
 </dl>
 </dd>
