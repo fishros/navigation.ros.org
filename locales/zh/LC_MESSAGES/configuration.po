@@ -2212,7 +2212,7 @@ msgstr "要订阅的地图话题。"
 
 #: ../../configuration/packages/configuring-amcl.rst
 msgid "first_map_only"
-msgstr "first_map_only"
+msgstr "仅第一个地图"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:479
@@ -2222,7 +2222,7 @@ msgstr "允许AMCL在map_topic上接受多个地图。这在使用`map_server`�
 
 #: ../../configuration/packages/configuring-behavior-server.rst:4
 msgid "Behavior Server"
-msgstr "Behavior Server"
+msgstr "行为服务器"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:10
@@ -2232,7 +2232,7 @@ msgstr "Behavior Server实现了处理恢复行为请求和托管实现各种C++
 
 #: ../../configuration/packages/configuring-behavior-server.rst:13
 msgid "Note: the wait recovery behavior has no parameters, the duration to wait is given in the action request. Note: pre-Rolling/Humble this was the Recovery server, not behavior server. Launch files, behaviors and tests were all renamed."
-msgstr "Note: the wait recovery behavior has no parameters, the duration to wait is given in the action request. Note: pre-Rolling/Humble this was the Recovery server, not behavior server. Launch files, behaviors and tests were all renamed."
+msgstr "注意：等待恢复行为没有参数，等待的持续时间在动作请求中给出。注意：在Rolling/Humble之前，这是恢复服务器，而不是行为服务器。启动文件、行为和测试都已重命名。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:17
@@ -2242,7 +2242,7 @@ msgstr "Behavior Server参数"
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "local_costmap_topic"
-msgstr "local_costmap_topic"
+msgstr "局部代价地图主题"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:24
@@ -2252,7 +2252,7 @@ msgstr "\"local_costmap/costmap_raw\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:28
 msgid "Raw costmap topic for collision checking on the local costmap."
-msgstr "Raw costmap topic for collision checking on the local costmap."
+msgstr "用于在局部代价地图上进行碰撞检查的原始代价地图主题。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
@@ -2267,12 +2267,12 @@ msgstr "\"global_costmap/costmap_raw\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:39
 msgid "Raw costmap topic for collision checking on the global costmap."
-msgstr "Raw costmap topic for collision checking on the global costmap."
+msgstr "用于在全局代价地图上进行碰撞检查的原始代价地图主题。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "local_footprint_topic"
-msgstr "local_footprint_topic"
+msgstr "局部轮廓主题"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:46 ../../configuration/packages/configuring-collision-monitor.rst:216
@@ -2282,7 +2282,7 @@ msgstr "\"local_costmap/published_footprint\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:50
 msgid "Topic for footprint in the local costmap frame."
-msgstr "Topic for footprint in the local costmap frame."
+msgstr "在本地代价地图框架中的足迹主题。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
@@ -2297,22 +2297,22 @@ msgstr "\"global_costmap/published_footprint\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:61
 msgid "Topic for footprint in the global costmap frame."
-msgstr "Topic for footprint in the global costmap frame."
+msgstr "全局代价地图框架中的足迹主题。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "cycle_frequency"
-msgstr "cycle_frequency"
+msgstr "循环频率"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:72
 msgid "Frequency to run behavior plugins."
-msgstr "Frequency to run behavior plugins."
+msgstr "运行行为插件的频率。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:83 ../../configuration/packages/configuring-bt-navigator.rst:119 ../../configuration/packages/configuring-costmaps.rst:212 ../../configuration/packages/configuring-smoother-server.rst:47
 msgid "TF transform tolerance."
-msgstr "TF transform tolerance."
+msgstr "TF变换容差。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
@@ -2322,7 +2322,7 @@ msgstr "local_frame"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:94
 msgid "Local reference frame."
-msgstr "Local reference frame."
+msgstr "本地参考框架。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:105
@@ -2332,7 +2332,7 @@ msgstr "Global reference frame."
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "behavior_plugins"
-msgstr "behavior_plugins"
+msgstr "行为插件"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:123 ../../configuration/packages/configuring-bt-navigator.rst:24 ../../configuration/packages/configuring-bt-navigator.rst:61 ../../configuration/packages/configuring-bt-navigator.rst:203 ../../configuration/packages/configuring-collision-monitor.rst:155 ../../configuration/packages/configuring-collision-monitor.rst:167 ../../configuration/packages/configuring-controller-server.rst:32 ../../configuration/packages/configuring-controller-server.rst:57 ../../configuration/packages/configuring-costmaps.rst:263 ../../configuration/packages/configuring-costmaps.rst:292 ../../configuration/packages/configuring-lifecycle.rst:23 ../../configuration/packages/configuring-planner-server.rst:21 ../../configuration/packages/configuring-smoother-server.rst:65 ../../configuration/packages/costmap-plugins/obstacle.rst:59 ../../configuration/packages/costmap-plugins/range.rst:24 ../../configuration/packages/costmap-plugins/voxel.rst:125 ../../configuration/packages/dwb-params/controller.rst:16 ../../configuration/packages/dwb-params/controller.rst:27
