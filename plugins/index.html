@@ -107,7 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#behavior-trees">Behavior Trees</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#navigation-servers">Navigation Servers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planner-controller-smoother-and-recovery-servers">Planner, Controller, Smoother and Recovery Servers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planners">Planners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planners">规划器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#controllers">控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#behaviors">Behaviors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#smoothers">Smoothers</a></li>
@@ -752,7 +752,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#controllers">控制器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#planners">Planners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#planners">规划器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smoothers">Smoothers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#behaviors">Behaviors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#waypoint-task-executors">Waypoint Task Executors</a></li>
@@ -1074,36 +1074,27 @@
 <td><p>一种适用于Ackermann、差分和全向机器人的类MPC控制器。</p></td>
 <td><p><strong>阿克曼</strong>，腿式，全向，差分</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_regulated_pure_pursuit_controller">Regulated Pure Pursuit</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_regulated_pure_pursuit_controller">调节纯追踪</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>A service / industrial robot
-variation on the pure pursuit
-algorithm with adaptive features.</p></td>
-<td><p><strong>Ackermann</strong>, Legged,
-Differential</p></td>
+<td><p>一种具有自适应功能的纯追踪算法的服务/工业机器人变体。</p></td>
+<td><p><strong>Ackermann</strong>，腿式，差动</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_mppi_controller">MPPI Controller</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_mppi_controller">MPPI 控制器</a></p></td>
 <td><p>Steve Macenski
 Aleksei Budyakov</p></td>
-<td><p>A predictive MPC controller with
-modular &amp; custom cost functions
-that can accomplish many tasks.</p></td>
-<td><p>Differential, Omni,
-<strong>Ackermann</strong></p></td>
+<td><p>一种具有模块化和自定义成本函数的预测 MPC 控制器，可完成许多任务。</p></td>
+<td><p>差动，全向，<strong>Ackermann</strong></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_rotation_shim_controller">Rotation Shim Controller</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_rotation_shim_controller">Rotation Shim 控制器</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>A &quot;shim&quot; controller to rotate
-to path heading before passing
-to main controller for  tracking.</p></td>
-<td><p>Differential, Omni,
-model rotate in place</p></td>
+<td><p>一个用于在传递给主控制器进行跟踪之前将其旋转到路径航向的“垫片”控制器。</p></td>
+<td><p>差动、全向、模型原地旋转</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="planners">
-<h2>Planners<a class="headerlink" href="#planners" title="永久链接至标题"></a></h2>
+<h2>规划器<a class="headerlink" href="#planners" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 23%" />
@@ -1119,12 +1110,9 @@ model rotate in place</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_navfn_planner">NavFn Planner</a></p></td>
-<td><p>Eitan Marder-Eppstein &amp; Kurt Konolige</p></td>
-<td><p>A navigation function
-using A* or Dijkstras
-expansion, assumes 2D
-holonomic particle</p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_navfn_planner">NavFn 规划器</a></p></td>
+<td><p>Eitan Marder-Eppstein和Kurt Konolige</p></td>
+<td><p>一种使用 A* 或 Dijkstra 扩展的导航函数，假设为二维全向性粒子。</p></td>
 <td><p>差分，全向，腿式</p></td>
 </tr>
 <tr class="row-odd"><td><dl class="simple">
@@ -1133,14 +1121,7 @@ holonomic particle</p></td>
 </dl>
 </td>
 <td><p>Steve Macenski</p></td>
-<td><p>A SE2 Hybrid-A*
-implementation using either
-Dubin or Reeds-shepp motion
-models with smoother and
-multi-resolution query.
-Cars, car-like, and
-ackermann vehicles.
-Kinematically feasible.</p></td>
+<td><p>一种使用Dubin或Reeds-shepp运动模型的SE2混合A*算法实现，具有更平滑和多分辨率查询。适用于汽车、类似汽车和Ackermann车辆。运动学可行。</p></td>
 <td><p><strong>Ackermann</strong>,
 Differential,
 Omnidirectional,
@@ -1166,11 +1147,7 @@ type of vehicle imaginable.
 Includes generator script for
 Ackermann, diff, omni, and
 legged robots.</p></td>
-<td><p>Differential,
-Omnidirectional,
-Ackermann,
-Legged,
-Arbitrary / Custom</p></td>
+<td><p>差动、全向、Ackermann、腿式、任意/自定义</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_theta_star_planner">ThetaStarPlanner</a></p></td>
 <td><p>Anshumaan Singh</p></td>
@@ -1179,8 +1156,7 @@ using either 4 or 8
 connected neighborhoods,
 assumes the robot as a
 2D holonomic particle</p></td>
-<td><p>Differential,
-Omnidirectional</p></td>
+<td><p>差动、全向</p></td>
 </tr>
 </tbody>
 </table>
