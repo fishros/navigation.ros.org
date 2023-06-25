@@ -941,7 +941,7 @@
              
   <div class="section" id="goalcheckerselector">
 <span id="bt-goal-checker-selector-node"></span><h1>GoalCheckerSelector<a class="headerlink" href="#goalcheckerselector" title="永久链接至标题"></a></h1>
-<p>It is used to select the GoalChecker that will be used by the goal_checker server. It subscribes to the <code class="docutils literal notranslate"><span class="pre">goal_checker_selector</span></code> topic to receive command messages with the name of the GoalChecker to be used. It is commonly used before of the FollowPathAction. The <code class="docutils literal notranslate"><span class="pre">selected_goal_checker</span></code> output port is passed to <code class="docutils literal notranslate"><span class="pre">goal_checker_id</span></code> input port of the FollowPathAction. If none is provided on the topic, the <code class="docutils literal notranslate"><span class="pre">default_goal_checker</span></code> is used.</p>
+<p>用于选择将由goal_checker服务器使用的GoalChecker。它订阅“goal_checker_selector”主题以接收带有要使用的GoalChecker名称的命令消息。通常在FollowPathAction之前使用。将“selected_goal_checker”输出端口传递给FollowPathAction的“goal_checker_id”输入端口。如果主题上没有提供任何内容，则使用“default_goal_checker”。</p>
 <p>任何发布到此主题的发布者都需要配置一些定义为``可靠``和``瞬态局部``的QoS。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The name of the topic used to received select command messages. This is used to support multiple GoalCheckerSelector nodes.</p>
+<dt>描述</dt><dd><p>用于接收选择命令消息的主题名称。这用于支持多个GoalCheckerSelector节点。</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The default value for the selected GoalChecker if no message is received from the input topic.</p>
+<dt>描述</dt><dd><p>如果从输入主题未收到消息，则选定GoalChecker的默认值。</p>
 </dd>
 </dl>
 </dd>
@@ -1007,7 +1007,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The output selected GoalChecker id. This selected_goal_checker string is usually passed to the FollowPath behavior via the goal_checker_id input port.</p>
+<dt>描述</dt><dd><p>输出选定的GoalChecker ID。通常将此selected_goal_checker字符串通过goal_checker_id输入端口传递给FollowPath行为。</p>
 </dd>
 </dl>
 </dd>
