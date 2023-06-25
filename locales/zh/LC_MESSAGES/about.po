@@ -207,7 +207,7 @@ msgstr "crdelsey_"
 
 #: ../../about/index.rst:74
 msgid "Contact"
-msgstr "Contact"
+msgstr "联系方式"
 
 
 #: ../../about/index.rst:76
@@ -217,7 +217,7 @@ msgstr "如果您对导航、ROS 2或相关项目有兴趣，请给项目负责�
 
 #: ../../about/index.rst:82
 msgid "Check out the Navigation 2 Slack_ community."
-msgstr "Check out the Navigation 2 Slack_ community."
+msgstr "加入 Navigation 2 Slack_ 社区。"
 
 
 #: ../../about/related_projects.rst:4
@@ -227,7 +227,7 @@ msgstr "相关项目"
 
 #: ../../about/related_projects.rst:6
 msgid "This is a community maintained list of related repositories and projects to Navigation2."
-msgstr "This is a community maintained list of related repositories and projects to Navigation2."
+msgstr "这是一个由社区维护的与 Navigation2 相关的仓库和项目列表。"
 
 
 #: ../../about/related_projects.rst:9
@@ -242,7 +242,7 @@ msgstr "`Navigation2`_"
 
 #: ../../about/related_projects.rst:11
 msgid "Main ROS 2 Navigation Stack"
-msgstr "Main ROS 2 Navigation Stack"
+msgstr "ROS 2 导航堆栈主要"
 
 
 #: ../../about/related_projects.rst:13
@@ -252,7 +252,7 @@ msgstr "`navigation.ros.org`_"
 
 #: ../../about/related_projects.rst:13
 msgid "Official documentation website source code"
-msgstr "Official documentation website source code"
+msgstr "官方文档网站源代码"
 
 
 #: ../../about/related_projects.rst:16
@@ -262,7 +262,7 @@ msgstr "`navigation2_tutorials`_"
 
 #: ../../about/related_projects.rst:16
 msgid "Source code and examples used in the documentation tutorials"
-msgstr "Source code and examples used in the documentation tutorials"
+msgstr "文档教程中使用的源代码和示例"
 
 
 #: ../../about/related_projects.rst:19
@@ -272,7 +272,7 @@ msgstr "`navigation2_dynamic`_"
 
 #: ../../about/related_projects.rst:19
 msgid "Tools, algorithms, and capabilities for working with dynamic obstacles in ROS 2"
-msgstr "Tools, algorithms, and capabilities for working with dynamic obstacles in ROS 2"
+msgstr "用于在 ROS 2 中处理动态障碍物的工具、算法和功能"
 
 
 #: ../../about/related_projects.rst:23
@@ -287,7 +287,7 @@ msgstr "Tom Moore"
 
 #: ../../about/related_projects.rst:23
 msgid "State estimation software for ROS 2 used for odometry fusion and GPS transformations"
-msgstr "State estimation software for ROS 2 used for odometry fusion and GPS transformations"
+msgstr "用于ROS 2的状态估计软件，用于里程计融合和GPS转换"
 
 
 #: ../../about/related_projects.rst:27
@@ -297,7 +297,7 @@ msgstr "`slam_toolbox`_"
 
 #: ../../about/related_projects.rst:27
 msgid "Default 2D SLAM library"
-msgstr "Default 2D SLAM library"
+msgstr "默认的2D SLAM库"
 
 
 #: ../../about/robots.rst:4
@@ -307,12 +307,12 @@ msgstr "Robots Using"
 
 #: ../../about/robots.rst:6
 msgid "It's always helpful (and fun!) to have a list of robots using or ship with our work. Below is a very early list of robots we have encountered using our software as examples."
-msgstr "It's always helpful (and fun!) to have a list of robots using or ship with our work. Below is a very early list of robots we have encountered using our software as examples."
+msgstr "拥有一个使用或者运行我们工作的机器人列表总是很有帮助（而且有趣！）。以下是我们遇到的使用我们软件作为示例的机器人的早期列表。"
 
 
 #: ../../about/robots.rst:9
 msgid "Click on the images below for a link to the drivers or navigation configurations."
-msgstr "Click on the images below for a link to the drivers or navigation configurations."
+msgstr "点击下方图像获取驱动程序或导航配置的链接。"
 
 
 #: ../../about/robots.rst:15
