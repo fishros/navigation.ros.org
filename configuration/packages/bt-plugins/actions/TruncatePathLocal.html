@@ -941,7 +941,7 @@
              
   <div class="section" id="truncatepathlocal">
 <span id="bt-truncate-path-local"></span><h1>TruncatePathLocal<a class="headerlink" href="#truncatepathlocal" title="永久链接至标题"></a></h1>
-<p>A custom control node, which modifies a path making it shorter. It removes parts of the path which are more distant than specified forward/backward distance around robot</p>
+<p>一个自定义控制节点，用于将路径缩短。它会移除路径中距离机器人指定的前向/后向距离更远的部分。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -985,7 +985,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">distance_backward</dt>
+<dt class="field-odd">distance_backward（后向距离）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 35%" />
@@ -1001,7 +1001,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The trimming distance in backward direction.</p>
+<dt>描述</dt><dd><p>向后修剪的距离。</p>
 </dd>
 </dl>
 </dd>
@@ -1021,7 +1021,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Robot base frame id.</p>
+<dt>描述</dt><dd><p>机器人基准帧 ID。</p>
 </dd>
 </dl>
 </dd>
@@ -1041,11 +1041,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Robot pose lookup tolerance.</p>
+<dt>描述</dt><dd><p>机器人姿态查找容差。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">pose</dt>
+<dt class="field-even">姿势</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 69%" />
@@ -1061,7 +1061,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Manually specified pose to be used alternatively to current robot pose.</p>
+<dt>描述</dt><dd><p>手动指定的姿势，可用作当前机器人姿势的替代。</p>
 </dd>
 </dl>
 </dd>
@@ -1081,7 +1081,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight of angular distance relative to positional distance when finding which path pose is closest to robot. Not applicable on paths without orientations assigned.</p>
+<dt>描述</dt><dd><p>在确定最接近机器人的路径姿态时，角度距离相对于位置距离的权重。不适用于没有指定方向的路径。</p>
 </dd>
 </dl>
 </dd>
@@ -1101,7 +1101,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum forward integrated distance along the path (starting from the last detected pose) to bound the search for the closest pose to the robot. When set to infinity (default), whole path is searched every time.</p>
+<dt>描述</dt><dd><p>沿路径的最大前向积分距离（从最后检测到的姿势开始），以限制搜索最接近机器人的姿势。当设置为无穷大（默认值）时，每次都会搜索整个路径。</p>
 </dd>
 </dl>
 </dd>
@@ -1126,7 +1126,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The resulting truncated path.</p>
+<dt>描述</dt><dd><p>截断后的路径。</p>
 </dd>
 </dl>
 </dd>
