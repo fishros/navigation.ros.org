@@ -501,10 +501,10 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController 速度控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/PathLongerOnApproach.html">PathLongerOnApproach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger 单触发器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#example">示例</a></li>
@@ -940,7 +940,7 @@
              
   <div class="section" id="simple-smoother">
 <span id="configuring-simple-smoother"></span><h1>Simple Smoother<a class="headerlink" href="#simple-smoother" title="永久链接至标题"></a></h1>
-<p>Source code on <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">Github</a>.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">在Github上的源代码</a></p>
 <p>The Simple Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique. It weights the initial path points and the smoothed path points to create a balanced result where the path retains its high level characteristics but reduces oscillations or jagged features.</p>
 <p>It is recommended this is paired ONLY with infeasible (e.g. 2D) planners, since this algorithm will break any kinematically feasible conditions. It is recommended users use the Constrained Smoother plugin instead with feasible plans.</p>
 <div class="section" id="simple-smoother-parameters">

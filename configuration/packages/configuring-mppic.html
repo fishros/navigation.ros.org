@@ -501,10 +501,10 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController 速度控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/PathLongerOnApproach.html">PathLongerOnApproach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger 单触发器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#example">示例</a></li>
@@ -940,7 +940,7 @@
              
   <div class="section" id="model-predictive-path-integral-controller">
 <span id="configuring-mppic"></span><h1>Model Predictive Path Integral Controller<a class="headerlink" href="#model-predictive-path-integral-controller" title="永久链接至标题"></a></h1>
-<p>Source code on <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_mppi_controller">Github</a>.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_mppi_controller">在Github上的源代码</a></p>
 <a class="reference internal image-reference" href="../../_images/mppi_demo.gif"><img alt="MPPI on Turtlebot3 demo" class="align-center" src="../../_images/mppi_demo.gif" style="width: 600px;" /></a>
 <p>The MPPI Controller implements a <a class="reference external" href="https://ieeexplore.ieee.org/document/7487277">Model Predictive Path Integral Controller</a>.
 The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes.</p>

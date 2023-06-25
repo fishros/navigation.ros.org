@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpeedController &mdash; Navigation 2 1.0.0 文档</title>
+  <title>SpeedController 速度控制器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -501,10 +501,10 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">SpeedController</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">SpeedController 速度控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PathLongerOnApproach.html">PathLongerOnApproach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SingleTrigger.html">SingleTrigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SingleTrigger.html">SingleTrigger 单触发器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#example">示例</a></li>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>SpeedController</li>
+      <li>SpeedController 速度控制器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,15 +940,12 @@
            <div itemprop="articleBody">
              
   <div class="section" id="speedcontroller">
-<span id="bt-speed-controller"></span><h1>SpeedController<a class="headerlink" href="#speedcontroller" title="永久链接至标题"></a></h1>
-<p>A node that controls the tick rate for its child based on current robot speed.
-The maximum and minimum replanning rates can be supplied to the node as parameters along with maximum and minimum speed.
-The node returns RUNNING when it is not ticking its child. Currently, in the navigation
-stack, the <code class="docutils literal notranslate"><span class="pre">SpeedController</span></code> is used to adjust the rate at which the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">GoalReached</span></code> nodes are ticked.</p>
+<span id="bt-speed-controller"></span><h1>SpeedController 速度控制器<a class="headerlink" href="#speedcontroller" title="永久链接至标题"></a></h1>
+<p>根据当前机器人速度控制其子节点的时钟速率。最大和最小重新规划速率可以作为参数提供给节点，同时还可以提供最大和最小速度。当它不对其子节点进行时钟滴答时，节点返回运行中状态。目前，在导航堆栈中，<code class="docutils literal notranslate"><span class="pre">SpeedController</span></code> 用于调整对 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">GoalReached</span></code> 节点进行时钟滴答的速率。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">min_rate</dt>
+<dt class="field-odd">min_rate 最小频率</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -964,11 +961,11 @@ stack, the <code class="docutils literal notranslate"><span class="pre">SpeedCon
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The minimum rate at which child node can be ticked (hz).</p>
+<dt>描述</dt><dd><p>The minimum rate at which child node can be ticked (hz). 子节点可以进行刻度的最小频率（赫兹）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">max_rate</dt>
+<dt class="field-even">最大速率</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -984,11 +981,11 @@ stack, the <code class="docutils literal notranslate"><span class="pre">SpeedCon
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The maximum rate at which child node can be ticked (hz).</p>
+<dt>描述</dt><dd><p>The maximum rate at which child node can be ticked (hz). 子节点可以进行刻度的最大频率（赫兹）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">min_speed</dt>
+<dt class="field-odd">最小速度</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1004,11 +1001,11 @@ stack, the <code class="docutils literal notranslate"><span class="pre">SpeedCon
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The minimum robot speed below which the child node is ticked at minimum rate (m/s).</p>
+<dt>描述</dt><dd><p>The minimum robot speed below which the child node is ticked at minimum rate (m/s). 低于此速度的机器人速度，子节点以最小频率进行刻度（米/秒）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">max_speed</dt>
+<dt class="field-even">最大速度</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1024,11 +1021,11 @@ stack, the <code class="docutils literal notranslate"><span class="pre">SpeedCon
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The maximum robot speed above which the child node is ticked at maximum rate (m/s).</p>
+<dt>描述</dt><dd><p>The maximum robot speed above which the child node is ticked at maximum rate (m/s). 高于此速度的机器人速度，子节点以最大频率进行刻度（米/秒）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">filter_duration</dt>
+<dt class="field-odd">滤波时长</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1044,7 +1041,7 @@ stack, the <code class="docutils literal notranslate"><span class="pre">SpeedCon
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Duration (secs) over which robot velocity should be smoothed.</p>
+<dt>描述</dt><dd><p>机器人速度应该平滑的持续时间（秒）</p>
 </dd>
 </dl>
 </dd>

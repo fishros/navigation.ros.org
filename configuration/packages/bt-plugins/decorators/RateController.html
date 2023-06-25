@@ -501,10 +501,10 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SpeedController.html">SpeedController</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SpeedController.html">SpeedController 速度控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PathLongerOnApproach.html">PathLongerOnApproach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SingleTrigger.html">SingleTrigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SingleTrigger.html">SingleTrigger 单触发器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#example">示例</a></li>
@@ -941,11 +941,7 @@
              
   <div class="section" id="ratecontroller">
 <span id="bt-rate-controller"></span><h1>RateController<a class="headerlink" href="#ratecontroller" title="永久链接至标题"></a></h1>
-<p>A node that throttles the tick rate for its child.
-The tick rate can be supplied to the node as a parameter.
-The node returns RUNNING when it is not ticking its child.
-Currently, in the navigation stack, the <code class="docutils literal notranslate"><span class="pre">RateController</span></code> is
-used to adjust the rate at which the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">GoalReached</span></code> nodes are ticked.</p>
+<p>限制其子节点的时钟速率的节点。时钟速率可以作为参数提供给节点。当它不对其子节点进行时钟滴答时，节点返回运行中状态。目前，在导航堆栈中，<code class="docutils literal notranslate"><span class="pre">RateController</span></code> 用于调整对 <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">GoalReached</span></code> 节点进行时钟滴答的速率。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -965,7 +961,7 @@ used to adjust the rate at which the <code class="docutils literal notranslate">
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Rate to throttle an action or a group of actions.</p>
+<dt>描述</dt><dd><p>限制操作或一组操作的速率。</p>
 </dd>
 </dl>
 </dd>

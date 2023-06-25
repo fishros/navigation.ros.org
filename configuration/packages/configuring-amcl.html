@@ -501,10 +501,10 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController 速度控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/PathLongerOnApproach.html">PathLongerOnApproach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger 单触发器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#example">示例</a></li>
@@ -940,8 +940,8 @@
              
   <div class="section" id="amcl">
 <span id="configuring-amcl"></span><h1>AMCL<a class="headerlink" href="#amcl" title="永久链接至标题"></a></h1>
-<p>Source code on <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_amcl">Github</a>.</p>
-<p>AMCL implements the server for taking a static map and localizing the robot within it using an Adaptive Monte-Carlo Localizer.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_amcl">在Github上的源代码</a></p>
+<p>AMCL使用自适应蒙特卡罗定位器（Adaptive Monte-Carlo Localizer）实现了基于静态地图对机器人进行定位的服务器。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -961,7 +961,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Expected process noise in odometry's rotation estimate from rotation.</p>
+<dt>描述</dt><dd><p>来自旋转的里程计旋转估计的预期过程噪声。</p>
 </dd>
 </dl>
 </dd>
@@ -981,7 +981,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Expected process noise in odometry's rotation estimate from translation.</p>
+<dt>描述</dt><dd><p>来自平移的里程计旋转估计的预期过程噪声。</p>
 </dd>
 </dl>
 </dd>
@@ -1001,7 +1001,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Expected process noise in odometry's translation estimate from translation.</p>
+<dt>描述</dt><dd><p>来自平移的里程计平移估计的预期过程噪声。</p>
 </dd>
 </dl>
 </dd>
@@ -1021,7 +1021,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Expected process noise in odometry's translation estimate from rotation.</p>
+<dt>描述</dt><dd><p>来自旋转的里程计平移估计的预期过程噪声。</p>
 </dd>
 </dl>
 </dd>

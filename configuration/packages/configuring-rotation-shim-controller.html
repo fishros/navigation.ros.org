@@ -501,10 +501,10 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController 速度控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/PathLongerOnApproach.html">PathLongerOnApproach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SingleTrigger.html">SingleTrigger 单触发器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#example">示例</a></li>
@@ -940,7 +940,7 @@
              
   <div class="section" id="rotation-shim-controller">
 <span id="configuring-rotation-shim"></span><h1>Rotation Shim Controller<a class="headerlink" href="#rotation-shim-controller" title="永久链接至标题"></a></h1>
-<p>Source code on <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_rotation_shim_controller">Github</a>.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_rotation_shim_controller">在Github上的源代码</a></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> is most suitable for:</p>
 <ul class="simple">
