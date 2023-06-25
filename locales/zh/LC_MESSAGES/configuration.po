@@ -2602,7 +2602,7 @@ msgstr "[\"nav2_compute_path_to_pose_action_bt_node\", \"nav2_follow_path_action
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:85
 msgid "List of behavior tree node shared libraries."
-msgstr "List of behavior tree node shared libraries."
+msgstr "行为树节点共享库的列表。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2612,7 +2612,7 @@ msgstr "bt_loop_duration"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:96
 msgid "Duration (in milliseconds) for each iteration of BT execution."
-msgstr "Duration (in milliseconds) for each iteration of BT execution."
+msgstr "BT执行的每次迭代的持续时间（以毫秒为单位）。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2627,12 +2627,12 @@ msgstr "20"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:107
 msgid "Default timeout value (in milliseconds) while a BT action node is waiting for acknowledgement from an action server. This value will be overwritten for a BT node if the input port \"server_timeout\" is provided."
-msgstr "Default timeout value (in milliseconds) while a BT action node is waiting for acknowledgement from an action server. This value will be overwritten for a BT node if the input port \"server_timeout\" is provided."
+msgstr "BT操作节点等待动作服务器确认的默认超时时间（毫秒）。如果提供了输入端口“server_timeout”，则此值将被覆盖为BT节点的超时时间。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:113
 msgid "Unit"
-msgstr "Unit"
+msgstr "单元"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:137
@@ -2642,7 +2642,7 @@ msgstr "base_link"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:141
 msgid "Path to behavior tree XML description."
-msgstr "Path to behavior tree XML description."
+msgstr "行为树XML描述的路径。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst ../../configuration/packages/configuring-controller-server.rst ../../configuration/packages/configuring-velocity-smoother.rst
@@ -2657,7 +2657,7 @@ msgstr "odom"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:152
 msgid "Topic on which odometry is published"
-msgstr "Topic on which odometry is published"
+msgstr "发布里程计数据的话题"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2672,7 +2672,7 @@ msgstr "\"goal\""
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:163
 msgid "Blackboard variable to use to supply the goal to the behavior tree for ``NavigateToPose``. Should match ports of BT XML file."
-msgstr "Blackboard variable to use to supply the goal to the behavior tree for ``NavigateToPose``. Should match ports of BT XML file."
+msgstr "用于向``NavigateToPose``行为树提供目标的黑板变量。应与BT XML文件的端口匹配。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2687,7 +2687,7 @@ msgstr "\"path\""
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:174
 msgid "Blackboard variable to get the path from the behavior tree for ``NavigateThroughPoses`` feedback. Should match port names of BT XML file."
-msgstr "Blackboard variable to get the path from the behavior tree for ``NavigateThroughPoses`` feedback. Should match port names of BT XML file."
+msgstr "Blackboard变量，用于从行为树获取``NavigateThroughPoses``反馈的路径。应与BT XML文件的端口名称匹配。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2727,7 +2727,7 @@ msgstr "[\"compute_path_error_code\", \"follow_path_error_code\"]"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:208
 msgid "List of of error codes to compare."
-msgstr "List of of error codes to compare."
+msgstr "要进行比较的错误代码列表。"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:4
