@@ -217,7 +217,7 @@ msgstr "动态障碍物避免"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:92
 msgid "TEB Controller"
-msgstr "TEB Controller"
+msgstr "TEB 控制器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:92
@@ -227,7 +227,7 @@ msgstr "差动、全向、阿克曼、腿式"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:94
 msgid "RPP controller"
-msgstr "RPP controller"
+msgstr "RPP 控制器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:94
@@ -237,7 +237,7 @@ msgstr "差动、阿克曼、腿式"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:94
 msgid "Exact path following"
-msgstr "Exact path following"
+msgstr "精确路径跟随"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:97
