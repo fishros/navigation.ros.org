@@ -1142,7 +1142,7 @@ msgstr "You can also refer to the `(SLAM) Navigating While Mapping guide <https:
 
 #: ../../setup_guides/sensors/setup_sensors.rst:311
 msgid "Costmap 2D"
-msgstr "Costmap 2D"
+msgstr "二维代价地图"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:312

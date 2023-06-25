@@ -3647,7 +3647,7 @@ msgstr "下面列出的插件位于 `nav2_controller` 命名空间中。"
 
 #: ../../configuration/packages/configuring-controller-server.rst:187
 msgid "When the :code:`progress_checker_plugins`, :code:`goal_checker_plugin` or :code:`controller_plugins` parameters are not overridden, the following default plugins are loaded:"
-msgstr "When the :code:`progress_checker_plugins`, :code:`goal_checker_plugin` or :code:`controller_plugins` parameters are not overridden, the following default plugins are loaded:"
+msgstr "当未覆盖 :code:`progress_checker_plugins`、 :code:`goal_checker_plugin` 或 :code:`controller_plugins` 参数时，将加载以下默认插件："
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:192
@@ -3682,17 +3682,17 @@ msgstr "\"dwb_core::DWBLocalPlanner\""
 
 #: ../../configuration/packages/configuring-costmaps.rst:4
 msgid "Costmap 2D"
-msgstr "Costmap 2D"
+msgstr "二维代价地图"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:10
 msgid "The Costmap 2D package implements a 2D grid-based costmap for environmental representations and a number of sensor processing plugins. It is used in the planner and controller servers for creating the space to check for collisions or higher cost areas to negotiate around."
-msgstr "The Costmap 2D package implements a 2D grid-based costmap for environmental representations and a number of sensor processing plugins. It is used in the planner and controller servers for creating the space to check for collisions or higher cost areas to negotiate around."
+msgstr "Costmap 2D 包实现了基于二维网格的环境表示的代价地图和一些传感器处理插件。它在规划器和控制器服务器中用于创建用于检测碰撞或更高代价区域的空间以进行协商。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:14
 msgid "Costmap2D ROS Parameters"
-msgstr "Costmap2D ROS Parameters"
+msgstr "二维代价地图 ROS 参数"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3702,7 +3702,7 @@ msgstr "always_send_full_costmap"
 
 #: ../../configuration/packages/configuring-costmaps.rst:25
 msgid "Whether to send full costmap every update, rather than updates."
-msgstr "Whether to send full costmap every update, rather than updates."
+msgstr "是否在每次更新时发送完整的代价地图，而不是增量更新。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3717,12 +3717,12 @@ msgstr "0.01"
 
 #: ../../configuration/packages/configuring-costmaps.rst:36
 msgid "Amount to pad footprint (m)."
-msgstr "Amount to pad footprint (m)."
+msgstr "需要填充的占位符大小（以米为单位）。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "footprint"
-msgstr "footprint"
+msgstr "轮廓"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:43
@@ -3732,12 +3732,12 @@ msgstr "\"[]\""
 
 #: ../../configuration/packages/configuring-costmaps.rst:47
 msgid "Ordered set of footprint points passed in as a string, must be closed set. For example, the following defines a square base with side lengths of 0.2 meters `footprint: \"[ [0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1] ]\"`."
-msgstr "Ordered set of footprint points passed in as a string, must be closed set. For example, the following defines a square base with side lengths of 0.2 meters `footprint: \"[ [0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1] ]\"`."
+msgstr "按照字符串传递的轮廓点的有序集合，必须是闭合集合。例如，以下定义了一个边长为0.2米的正方形底座 `footprint: \"[ [0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1] ]\"`。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "height"
-msgstr "height"
+msgstr "高度"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:65 ../../configuration/packages/configuring-costmaps.rst:76 ../../configuration/packages/configuring-mppic.rst:239 ../../configuration/packages/dwb-params/iterator.rst:27
@@ -3747,42 +3747,42 @@ msgstr "5"
 
 #: ../../configuration/packages/configuring-costmaps.rst:69
 msgid "Height of costmap (m)."
-msgstr "Height of costmap (m)."
+msgstr "代价地图的高度（以米为单位）。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "width"
-msgstr "width"
+msgstr "宽度"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:80
 msgid "Width of costmap (m)."
-msgstr "Width of costmap (m)."
+msgstr "代价地图的宽度（以米为单位）。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "lethal_cost_threshold"
-msgstr "lethal_cost_threshold"
+msgstr "致命成本阈值"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:91
 msgid "Minimum cost of an occupancy grid map to be considered a lethal obstacle."
-msgstr "Minimum cost of an occupancy grid map to be considered a lethal obstacle."
+msgstr "被视为致命障碍物的占位栅格地图的最小代价。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:102
 msgid "Topic of map from map_server or SLAM."
-msgstr "Topic of map from map_server or SLAM."
+msgstr "地图主题，来自地图服务器或SLAM。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:113
 msgid "List of sources of sensors as a string, to be used if not specified in plugin specific configurations. Ex. \"static_layer stvl_layer\""
-msgstr "List of sources of sensors as a string, to be used if not specified in plugin specific configurations. Ex. \"static_layer stvl_layer\""
+msgstr "传感器源的字符串列表，如果在插件特定配置中没有指定，则使用此列表。例如：\"static_layer stvl_layer\""
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "origin_x"
-msgstr "origin_x"
+msgstr "原点x坐标"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:124
@@ -3792,7 +3792,7 @@ msgstr "X origin of the costmap relative to width (m)."
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "origin_y"
-msgstr "origin_y"
+msgstr "原点y坐标"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:135
@@ -3802,7 +3802,7 @@ msgstr "Y origin of the costmap relative to height (m)."
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "publish_frequency"
-msgstr "publish_frequency"
+msgstr "发布频率"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:146
@@ -3812,7 +3812,7 @@ msgstr "Frequency to publish costmap to topic."
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "resolution"
-msgstr "resolution"
+msgstr "分辨率"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:157
