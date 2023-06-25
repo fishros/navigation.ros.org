@@ -108,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#navigation-servers">Navigation Servers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planner-controller-smoother-and-recovery-servers">Planner, Controller, Smoother and Recovery Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planners">Planners</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#controllers">Controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#controllers">控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#behaviors">Behaviors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#smoothers">Smoothers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#waypoint-following">Waypoint Following</a></li>
@@ -751,7 +751,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controllers">控制器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#planners">Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smoothers">Smoothers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#behaviors">Behaviors</a></li>
@@ -998,23 +998,21 @@
 <td><p>Eitan Marder-Eppstein</p></td>
 <td><p>使用指数衰减方式在costmap中膨胀致命障碍物</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/obstacle_layer.cpp">Obstacle Layer</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/obstacle_layer.cpp">障碍物图层</a></p></td>
 <td><p>Eitan Marder-Eppstein</p></td>
 <td><p>通过射线投射将2D激光扫描转化为持久的2D代价地图，用于清除自由空间</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">Spatio-Temporal Voxel Layer</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">时空体素图层</a></p></td>
 <td><p>Steve Macenski</p></td>
 <td><p>通过传感器模型对时间上稀疏的3D体素网格进行衰减维护</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/SteveMacenski/nonpersistent_voxel_layer">Non-Persistent Voxel Layer</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/SteveMacenski/nonpersistent_voxel_layer">非持久性体素图层</a></p></td>
 <td><p>Steve Macenski</p></td>
 <td><p>维护只包含最多测量集的3D占据网格</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ryzhikovas/navigation2/tree/feature-costmap2d-denoise/nav2_costmap_2d/plugins/denoise_layer.cpp">Denoise Layer</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ryzhikovas/navigation2/tree/feature-costmap2d-denoise/nav2_costmap_2d/plugins/denoise_layer.cpp">去噪图层</a></p></td>
 <td><p>Andrey Ryzhikov</p></td>
-<td><p>Filters noise-induced
-standalone obstacles or small
-obstacles groups</p></td>
+<td><p>过滤由噪声引起的孤立障碍物或小障碍物群组</p></td>
 </tr>
 </tbody>
 </table>
@@ -1034,26 +1032,23 @@ obstacles groups</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/costmap_filters/keepout_filter.cpp">Keepout Filter</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/costmap_filters/keepout_filter.cpp">保护过滤器</a></p></td>
 <td><p>Alexey Merzlyakov</p></td>
-<td><p>Maintains keep-out/safety zones
-and preferred lanes for moving</p></td>
+<td><p>维护禁止区域/安全区域和移动的首选车道</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/costmap_filters/speed_filter.cpp">Speed Filter</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/costmap_filters/speed_filter.cpp">速度过滤器</a></p></td>
 <td><p>Alexey Merzlyakov</p></td>
-<td><p>Limits maximum velocity of robot
-in speed restriction areas</p></td>
+<td><p>限制机器人在速度限制区域内的最大速度</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/costmap_filters/binary_filter.cpp">Binary Filter</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/costmap_filters/binary_filter.cpp">二值过滤器</a></p></td>
 <td><p>Alexey Merzlyakov</p></td>
-<td><p>Enables binary (boolean) mask
-behavior to trigger actions.</p></td>
+<td><p>启用二进制（布尔）掩码行为以触发动作。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="controllers">
-<h2>Controllers<a class="headerlink" href="#controllers" title="永久链接至标题"></a></h2>
+<h2>控制器<a class="headerlink" href="#controllers" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 27%" />
@@ -1065,27 +1060,19 @@ behavior to trigger actions.</p></td>
 <tr class="row-odd"><th class="head"><p>插件名称</p></th>
 <th class="head"><p>创建者</p></th>
 <th class="head"><p>描述</p></th>
-<th class="head"><p>Drivetrain support</p></th>
+<th class="head"><p>驱动系统支持</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_dwb_controller">DWB Controller</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_dwb_controller">DWB控制器</a></p></td>
 <td><p>David Lu!!</p></td>
-<td><p>A highly configurable  DWA
-implementation with plugin
-interfaces</p></td>
-<td><p>Differential,
-Omnidirectional,
-Legged</p></td>
+<td><p>一个高度可配置的DWA实现，具有插件接口</p></td>
+<td><p>差分，全向，腿式</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/rst-tu-dortmund/teb_local_planner">TEB Controller</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/rst-tu-dortmund/teb_local_planner">TEB控制器</a></p></td>
 <td><p>Christoph Rösmann</p></td>
-<td><p>A MPC-like controller suitable
-for ackermann, differential, and
-holonomic robots.</p></td>
-<td><p><strong>Ackermann</strong>, Legged,
-Omnidirectional,
-Differential</p></td>
+<td><p>一种适用于Ackermann、差分和全向机器人的类MPC控制器。</p></td>
+<td><p><strong>阿克曼</strong>，腿式，全向，差分</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_regulated_pure_pursuit_controller">Regulated Pure Pursuit</a></p></td>
 <td><p>Steve Macenski</p></td>
@@ -1128,7 +1115,7 @@ model rotate in place</p></td>
 <tr class="row-odd"><th class="head"><p>插件名称</p></th>
 <th class="head"><p>创建者</p></th>
 <th class="head"><p>描述</p></th>
-<th class="head"><p>Drivetrain support</p></th>
+<th class="head"><p>驱动系统支持</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1138,9 +1125,7 @@ model rotate in place</p></td>
 using A* or Dijkstras
 expansion, assumes 2D
 holonomic particle</p></td>
-<td><p>Differential,
-Omnidirectional,
-Legged</p></td>
+<td><p>差分，全向，腿式</p></td>
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">SmacPlannerHybrid</a></dt><dd><p>(formerly <cite>SmacPlanner</cite>)</p>
@@ -1168,9 +1153,7 @@ Using either 4 or 8
 connected neighborhoods
 with smoother and
 multi-resolution query</p></td>
-<td><p>Differential,
-Omnidirectional,
-Legged</p></td>
+<td><p>差分，全向，腿式</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">SmacPlannerLattice</a></p></td>
 <td><p>Steve Macenski</p></td>
