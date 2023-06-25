@@ -652,7 +652,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-behavior-server.html">Behavior Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#behavior-server-parameters">Behavior Server Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#behavior-server-parameters">Behavior Server参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#default-plugins">Default Plugins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#spin-behavior-parameters">Spin Behavior Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#backup-behavior-parameters">BackUp Behavior Parameters</a></li>
@@ -1583,7 +1583,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.</p>
+<dt>描述</dt><dd><p>发布变换时用于后期日期的时间，以表明该变换在未来是有效的。</p>
 </dd>
 </dl>
 </dd>
@@ -1603,7 +1603,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Rotational movement required before performing a filter update.</p>
+<dt>描述</dt><dd><p>在执行滤波器更新之前需要的旋转运动。</p>
 </dd>
 </dl>
 </dd>
@@ -1623,7 +1623,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Translational movement required before performing a filter update.</p>
+<dt>描述</dt><dd><p>在执行滤波器更新之前需要的平移运动。</p>
 </dd>
 </dl>
 </dd>
@@ -1643,7 +1643,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Mixture weight for z_hit part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand..</p>
+<dt>描述</dt><dd><p>模型中z_hit部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个，似然模型使用z_hit和z_rand。</p>
 </dd>
 </dl>
 </dd>
@@ -1663,7 +1663,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Mixture weight for z_max part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.</p>
+<dt>描述</dt><dd><p>模型中z_max部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个权重，似然模型使用z_hit和z_rand。</p>
 </dd>
 </dl>
 </dd>
@@ -1683,7 +1683,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Mixture weight for z_rand part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand..</p>
+<dt>描述</dt><dd><p>模型中z_rand部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个权重，似然模型使用z_hit和z_rand。</p>
 </dd>
 </dl>
 </dd>
@@ -1703,7 +1703,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Mixture weight for z_short part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.</p>
+<dt>描述</dt><dd><p>z_short部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个，似然模型使用z_hit和z_rand。</p>
 </dd>
 </dl>
 </dd>
@@ -1723,7 +1723,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Requires that AMCL is provided an initial pose either via topic or initial_pose* parameter (with parameter set_initial_pose: true) when reset. Otherwise, by default AMCL will use the last known pose to initialize.</p>
+<dt>描述</dt><dd><p>要求在重置时，通过话题或initial_pose*参数（设置参数set_initial_pose为true）向AMCL提供初始姿态。否则，默认情况下，AMCL将使用上次已知的姿态进行初始化。</p>
 </dd>
 </dl>
 </dd>
@@ -1738,12 +1738,12 @@
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>scan</p></td>
+<td><p>扫描</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Laser scan topic to subscribe to.</p>
+<dt>描述</dt><dd><p>要订阅的激光扫描话题。</p>
 </dd>
 </dl>
 </dd>
@@ -1763,7 +1763,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Map topic to subscribe to.</p>
+<dt>描述</dt><dd><p>要订阅的地图话题。</p>
 </dd>
 </dl>
 </dd>
@@ -1783,7 +1783,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Allows AMCL to accept maps more than once on the map_topic. This is especially useful when you're using the <cite>LoadMap</cite> service in <cite>map_server</cite>. Prior to Humble, this is <code class="docutils literal notranslate"><span class="pre">first_map_only_</span></code>.</p>
+<dt>描述</dt><dd><p>允许AMCL在map_topic上接受多个地图。这在使用`map_server`中的`LoadMap`服务时特别有用。在Humble之前，该参数为`first_map_only_`。</p>
 </dd>
 </dl>
 </dd>

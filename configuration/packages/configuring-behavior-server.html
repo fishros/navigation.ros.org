@@ -652,7 +652,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Behavior Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#behavior-server-parameters">Behavior Server Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#behavior-server-parameters">Behavior Server参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#default-plugins">Default Plugins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spin-behavior-parameters">Spin Behavior Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backup-behavior-parameters">BackUp Behavior Parameters</a></li>
@@ -941,12 +941,11 @@
   <div class="section" id="behavior-server">
 <span id="configuring-behavior-server"></span><h1>Behavior Server<a class="headerlink" href="#behavior-server" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors">在Github上的源代码</a></p>
-<p>The Behavior Server implements the server for handling recovery behavior requests and hosting a vector of plugins implementing various C++ behaviors.
-It is also possible to implement independent behavior servers for each custom behavior, but this server will allow multiple behaviors to share resources such as costmaps and TF buffers to lower incremental costs for new behaviors.</p>
+<p>Behavior Server实现了处理恢复行为请求和托管实现各种C++行为的插件向量的服务器。也可以为每个自定义行为实现独立的行为服务器，但此服务器允许多个行为共享资源，如costmaps和TF缓冲区，以降低新行为的增量成本。</p>
 <p>Note: the wait recovery behavior has no parameters, the duration to wait is given in the action request.
 Note: pre-Rolling/Humble this was the Recovery server, not behavior server. Launch files, behaviors and tests were all renamed.</p>
 <div class="section" id="behavior-server-parameters">
-<h2>Behavior Server Parameters<a class="headerlink" href="#behavior-server-parameters" title="永久链接至标题"></a></h2>
+<h2>Behavior Server参数<a class="headerlink" href="#behavior-server-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">local_costmap_topic</dt>
 <dd class="field-odd"><table class="docutils align-default">
