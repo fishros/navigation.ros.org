@@ -178,7 +178,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#mapping-and-localization">Mapping and Localization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap-2d">Costmap 2D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#costmap-2d">二维代价地图</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#configuring-nav2-costmap-2d">Configuring nav2_costmap_2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">Build, Run and Verification</a></li>
 </ul>
@@ -510,8 +510,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-bt-xml.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html">Costmap 2D</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap2d-ros-parameters">Costmap2D ROS Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html">二维代价地图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap2d-ros-parameters">二维代价地图 ROS 参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/static.html">Static Layer Parameters</a></li>
@@ -1190,7 +1190,7 @@ ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<sp
 <p>You can also refer to the <a class="reference external" href="https://navigation.ros.org/tutorials/docs/navigation2_with_slam.html">(SLAM) Navigating While Mapping guide</a> for the tutorial on how to use Nav2 with SLAM. You can verify that <code class="docutils literal notranslate"><span class="pre">slam_toolbox</span></code> and <code class="docutils literal notranslate"><span class="pre">nav2_amcl</span></code> have been correctly setup by visualizing the map and the robot's pose in RViz, similar to what was shown in the previous section.</p>
 </div>
 <div class="section" id="costmap-2d">
-<h2>Costmap 2D<a class="headerlink" href="#costmap-2d" title="永久链接至标题"></a></h2>
+<h2>二维代价地图<a class="headerlink" href="#costmap-2d" title="永久链接至标题"></a></h2>
 <p>The costmap 2D package makes use of the sensor information to provide a representation of the robot's environment in the form of an occupancy grid. The cells in the occupancy grid store cost values between 0-254 which denote a cost to travel through these zones. A cost of 0 means the cell is free while a cost of 254 means that the cell is lethally occupied. Values in between these extremes are used by navigation algorithms to steer your robot away from obstacles as a potential field. Costmaps in Nav2 are implemented through the <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d</span></code> package.</p>
 <p>The costmap implementation consists of multiple layers, each of which has a certain function that contributes to a cell's overall cost. The package consists of the following layers, but are plugin-based to allow customization and new layers to be used as well: static layer, inflation layer, range layer, obstacle layer, and voxel layer. The static layer represents the map section of the costmap, obtained from the messages published to the <code class="docutils literal notranslate"><span class="pre">/map</span></code> topic like those produced by SLAM.  The obstacle layer includes the objects detected by sensors that publish either or both the <code class="docutils literal notranslate"><span class="pre">LaserScan</span></code> and <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> messages. The voxel layer is similar to the obstacle layer such that it can use either or both the <code class="docutils literal notranslate"><span class="pre">LaserScan</span></code> and <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> sensor information but handles 3D data instead. The range layer allows for the inclusion of information provided by sonar and infrared sensors. Lastly, the inflation layer represents the added cost values around lethal obstacles such that our robot avoids navigating into obstacles due to the robot's geometry. In the next subsection of this tutorial, we will have some discussion about the basic configuration of the different layers in <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d</span></code>.</p>
 <p>The layers are integrated into the costmap through a plugin interface and then inflated using a user-specified <a class="reference external" href="http://wiki.ros.org/costmap_2d/hydro/inflation">inflation radius</a>, if the inflation layer is enabled. For a deeper discussion on costmap concepts, you can have a look at the <a class="reference external" href="http://wiki.ros.org/costmap_2d">ROS1 costmap_2D documentation</a>. Note that the <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d</span></code> package is mostly a straightforward ROS2 port of the ROS1 navigation stack version with minor changes required for ROS2 support and some new layer plugins.</p>
