@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../tuning/index.rst:4
 msgid "Tuning Guide"
-msgstr "Tuning Guide"
+msgstr "调优指南"
 
 
 #: ../../tuning/index.rst:6

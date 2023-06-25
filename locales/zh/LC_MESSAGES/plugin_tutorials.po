@@ -1289,77 +1289,77 @@ msgstr "调用该方法以获取此导航器类型的名称。"
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:82
 msgid "In the Navigate to Pose Navigator, ``configure()`` method must determine the blackboard parameter names where the goal and paths are being stored, as these are key values for processing feedback in ``onLoop`` and for the different behavior tree nodes to communicate this information between themselves. Additionally and uniquely to this navigator type, we also create a client to itself and a subscription to the ``goal_pose`` topic such that requests from the default configurations of Rviz2 using the *Goal Pose* tool will be processed."
-msgstr "In the Navigate to Pose Navigator, ``configure()`` method must determine the blackboard parameter names where the goal and paths are being stored, as these are key values for processing feedback in ``onLoop`` and for the different behavior tree nodes to communicate this information between themselves. Additionally and uniquely to this navigator type, we also create a client to itself and a subscription to the ``goal_pose`` topic such that requests from the default configurations of Rviz2 using the *Goal Pose* tool will be processed."
+msgstr "在导航到位点导航器中，``configure()`` 方法必须确定存储目标和路径的黑板参数名称，因为这些是在 ``onLoop`` 中处理反馈的关键值，并且对于不同的行为树节点之间进行信息交流也很重要。此外，对于这种导航器类型，我们还创建一个自身的客户端和一个订阅 ``goal_pose`` 话题的订阅器，以便处理来自 Rviz2 的默认配置（使用 *目标位姿* 工具）的请求。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:117
 msgid "The values of the blackboard IDs are stored alongside the odometry smoother the BT Navigator provides for populating meaningful feedback later. Complimentary to this, the ``cleanup`` method will reset these resources. The activate and deactivate methods are not used in this particular navigator."
-msgstr "The values of the blackboard IDs are stored alongside the odometry smoother the BT Navigator provides for populating meaningful feedback later. Complimentary to this, the ``cleanup`` method will reset these resources. The activate and deactivate methods are not used in this particular navigator."
+msgstr "黑板ID的值与里程平滑器存储在一起，BT导航器提供了填充有意义反馈的功能，以便稍后使用。与此相辅相成的是，``cleanup``方法将重置这些资源。在此特定的导航器中，不使用activate和deactivate方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:128
 msgid "In the ``getDefaultBTFilepath()``, we use a parameter ``default_nav_to_pose_bt_xml`` to get the default behavior tree XML file to use if none is provided by the navigation request and to initialize the BT Navigator with a behavior tree hot-loaded. If one is not provided in the parameter files, then we grab a known and reasonable default XML file in the ``nav2_bt_navigator`` package:"
-msgstr "In the ``getDefaultBTFilepath()``, we use a parameter ``default_nav_to_pose_bt_xml`` to get the default behavior tree XML file to use if none is provided by the navigation request and to initialize the BT Navigator with a behavior tree hot-loaded. If one is not provided in the parameter files, then we grab a known and reasonable default XML file in the ``nav2_bt_navigator`` package:"
+msgstr "在 ``getDefaultBTFilepath()`` 中，我们使用参数 ``default_nav_to_pose_bt_xml`` 来获取默认的行为树 XML 文件，以便在导航请求没有提供文件时使用，并用其初始化 BT 导航器。如果参数文件中没有提供文件，那么我们会在 ``nav2_bt_navigator`` 包中选择一个已知且合理的默认 XML 文件："
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:152
 msgid "When a goal is received, we need to determine if this goal is valid and should be processed. The ``goalReceived`` method provides you the ``goal`` and a return value if it is being processed or not. This information is sent back to the action server to notify the client. In this case, we want to make sure that the goal's behavior tree is valid or else we cannot proceed. If it is valid, then we can initialize the goal pose onto the blackboard and reset some state in order to cleanly process this new request."
-msgstr "When a goal is received, we need to determine if this goal is valid and should be processed. The ``goalReceived`` method provides you the ``goal`` and a return value if it is being processed or not. This information is sent back to the action server to notify the client. In this case, we want to make sure that the goal's behavior tree is valid or else we cannot proceed. If it is valid, then we can initialize the goal pose onto the blackboard and reset some state in order to cleanly process this new request."
+msgstr "当接收到一个目标时，我们需要确定该目标是否有效并且应该被处理。``goalReceived``方法提供了目标和一个返回值，用于确定目标是否正在被处理。这些信息被发送回操作服务器以通知客户端。在这种情况下，我们要确保目标的行为树是有效的，否则我们无法继续。如果有效，我们可以将目标姿态初始化到黑板上，并重置一些状态，以便清洁地处理这个新请求。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:173
 msgid "Once this goal is completed, we need to populate the Action's result, if required and meaningful. In this navigator's case, it contains no result information when the navigation request was completed successfully, so this method is empty. For other navigator types, you may populate the ``result`` object provided."
-msgstr "Once this goal is completed, we need to populate the Action's result, if required and meaningful. In this navigator's case, it contains no result information when the navigation request was completed successfully, so this method is empty. For other navigator types, you may populate the ``result`` object provided."
+msgstr "一旦完成了这个目标，如果需要且有意义，我们需要填充动作的结果。在这个导航器的情况下，当导航请求成功完成时，它不包含任何结果信息，因此该方法为空。对于其他导航器类型，您可以填充提供的 ``result`` 对象。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:183
 msgid "If however a goal is preempted (e.g. a new action request comes in while an existing request is being processed), the ``onPreempt()`` method is called to determine if the new request is genuine and appropriate to preempt the currently processing goal. For example, it might not be wise to accept a preeemption request if that request is fundamentally different in nature from an existing behavior tree task or when your existing task is of a higher priority."
-msgstr "If however a goal is preempted (e.g. a new action request comes in while an existing request is being processed), the ``onPreempt()`` method is called to determine if the new request is genuine and appropriate to preempt the currently processing goal. For example, it might not be wise to accept a preeemption request if that request is fundamentally different in nature from an existing behavior tree task or when your existing task is of a higher priority."
+msgstr "然而，如果一个目标被抢占（例如，在处理现有请求时收到新的请求），``onPreempt()``方法将被调用，以确定新的请求是否真实且适合抢占当前处理的目标。例如，如果该请求在本质上与现有的行为树任务有根本不同，或者当您现有的任务具有较高的优先级时，接受抢占请求可能是不明智的。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:211
 msgid "Note that here you can also see the ``initializeGoalPose`` method called. This method will set the goal parameters for this navigator onto the blackboard and reset important state information to cleanly re-use a behavior tree without old state information, as shown below:"
-msgstr "Note that here you can also see the ``initializeGoalPose`` method called. This method will set the goal parameters for this navigator onto the blackboard and reset important state information to cleanly re-use a behavior tree without old state information, as shown below:"
+msgstr "请注意，在这里您还可以看到调用了 ``initializeGoalPose`` 方法。该方法将将导航器的目标参数设置到黑板上，并重置重要的状态信息，以便在不带有旧状态信息的情况下清洁地重用行为树，如下所示："
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:231
 msgid "The recovery counter and start time are both important feedback terms for a client to understand the state of the current task (e.g. if its failing, having problems, or taking exceptionally long). The setting of the goal on the blackboard is taken by the ``ComputePathToPose`` BT Action node to plan a new route to the goal (and then who's path is communicated to the ``FollowPath`` BT node via the blackboard ID previously set)."
-msgstr "The recovery counter and start time are both important feedback terms for a client to understand the state of the current task (e.g. if its failing, having problems, or taking exceptionally long). The setting of the goal on the blackboard is taken by the ``ComputePathToPose`` BT Action node to plan a new route to the goal (and then who's path is communicated to the ``FollowPath`` BT node via the blackboard ID previously set)."
+msgstr "恢复计数器和启动时间都是客户端了解当前任务状态的重要反馈信息（例如，如果它失败、出现问题或者花费异常长的时间）。将目标设置到黑板上是由``ComputePathToPose``BT动作节点接管的，以规划到目标的新路径（然后将其路径通过之前设置的黑板ID传递给``FollowPath``BT节点）。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:233
 msgid "The final function implemented is ``onLoop``, which is simplified below for tutorial purposes. While anything can be done in this method, which is called as the BT is looping through the tree, it is common to use this as an opportunity to populate any necessary feedback about the state of the navigation request, robot, or metadata that a client might be interested in."
-msgstr "The final function implemented is ``onLoop``, which is simplified below for tutorial purposes. While anything can be done in this method, which is called as the BT is looping through the tree, it is common to use this as an opportunity to populate any necessary feedback about the state of the navigation request, robot, or metadata that a client might be interested in."
+msgstr "最后实现的函数是 ``onLoop``，出于教学目的，下面进行了简化。虽然在此方法中可以执行任何操作，该方法会在BT通过树循环时被调用，通常可以利用此机会填充有关导航请求、机器人或客户端可能感兴趣的元数据的任何必要反馈信息。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:261
 msgid "2- Exporting the navigator plugin"
-msgstr "2- Exporting the navigator plugin"
+msgstr "2- 导出导航器插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:263
 msgid "Now that we have created our custom navigator, we need to export our plugin so that it would be visible to the BT Navigator server. Plugins are loaded at runtime, and if they are not visible, then our server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
-msgstr "Now that we have created our custom navigator, we need to export our plugin so that it would be visible to the BT Navigator server. Plugins are loaded at runtime, and if they are not visible, then our server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr "现在，我们已经创建了自定义的导航器，需要导出我们的插件，以便BT Navigator服务器能够看到它。插件在运行时加载，如果它们不可见，则我们的服务器将无法加载它。在ROS 2中，导出和加载插件由 ``pluginlib`` 处理。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:267
 msgid "Coming to our tutorial, class ``nav2_bt_navigator::NavigateToPoseNavigator`` is loaded dynamically as ``nav2_core::NavigatorBase`` which is our base class due to the subtleties previously described."
-msgstr "Coming to our tutorial, class ``nav2_bt_navigator::NavigateToPoseNavigator`` is loaded dynamically as ``nav2_core::NavigatorBase`` which is our base class due to the subtleties previously described."
+msgstr "接下来我们的教程中，``nav2_bt_navigator::NavigateToPoseNavigator``类以``nav2_core::NavigatorBase``的形式动态加载，这是我们的基类，由于前面描述的细微差别。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:280
 msgid "The next step would be to create the plugin's description file in the root directory of the package. For example, ``navigator_plugin.xml`` file in our tutorial package. This file contains the following information"
-msgstr "The next step would be to create the plugin's description file in the root directory of the package. For example, ``navigator_plugin.xml`` file in our tutorial package. This file contains the following information"
+msgstr "下一步是在软件包的根目录中创建插件的描述文件。例如，在我们的教程软件包中创建 ``navigator_plugin.xml`` 文件。该文件包含以下信息"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:340
 msgid "In the above snippet, you can observe the mapping of our ``nav2_bt_navigator/NavigateToPoseNavigator`` plugin to its id ``navigate_to_pose``. To pass plugin-specific parameters we have used ``<plugin_id>.<plugin_specific_parameter>``."
-msgstr "In the above snippet, you can observe the mapping of our ``nav2_bt_navigator/NavigateToPoseNavigator`` plugin to its id ``navigate_to_pose``. To pass plugin-specific parameters we have used ``<plugin_id>.<plugin_specific_parameter>``."
+msgstr "在上面的片段中，您可以观察到我们的``nav2_bt_navigator/NavigateToPoseNavigator``插件与其id ``navigate_to_pose``之间的映射关系。为了传递插件特定的参数，我们使用了``<plugin_id>.<plugin_specific_parameter>``。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:344
 msgid "4- Run plugin"
-msgstr "4- Run plugin"
+msgstr "4- 运行插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:352
@@ -1369,7 +1369,7 @@ msgstr "Then goto RViz and click on the \"2D Pose Estimate\" button at the top a
 
 #: ../../plugin_tutorials/index.rst:4
 msgid "Plugin Tutorials"
-msgstr "Plugin Tutorials"
+msgstr "插件教程"
 
 
 #: ../../plugin_tutorials/index.rst:6
