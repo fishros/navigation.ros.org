@@ -457,7 +457,7 @@ msgstr "ElroyAir"
 
 #: ../../about/robots.rst:23
 msgid "|data|"
-msgstr "|data|"
+msgstr "|数据|"
 
 
 #: ../../about/robots.rst
@@ -547,17 +547,17 @@ msgstr "|RB1|"
 
 #: ../../about/robots.rst
 msgid "Robotnik Rb1 base"
-msgstr "Robotnik Rb1 base"
+msgstr "Robotnik Rb1 基座"
 
 
 #: ../../about/robots.rst
 msgid "Coming Soon"
-msgstr "Coming Soon"
+msgstr "即将推出"
 
 
 #: ../../about/ros1_comparison.rst:4
 msgid "ROS to ROS 2 Navigation"
-msgstr "ROS to ROS 2 Navigation"
+msgstr "ROS 到 ROS 2 导航"
 
 
 #: ../../about/ros1_comparison.rst:6
@@ -567,7 +567,7 @@ msgstr "``move_base`` has been split into multiple components. Rather than a sin
 
 #: ../../about/ros1_comparison.rst:12
 msgid "The *nav2_bt_navigator* replaces ``move_base`` at the top level, with an *Action* interface to complete a navigation task with a tree-based action model. It uses *Behavior Trees* to make it possible to have more complex state machines and to add in behaviors as additional *Action Servers*. These behavior trees are configurable XMLs and we provide several starting examples."
-msgstr "The *nav2_bt_navigator* replaces ``move_base`` at the top level, with an *Action* interface to complete a navigation task with a tree-based action model. It uses *Behavior Trees* to make it possible to have more complex state machines and to add in behaviors as additional *Action Servers*. These behavior trees are configurable XMLs and we provide several starting examples."
+msgstr "在顶层，*nav2_bt_navigator* 替代了 ``move_base``，使用基于树的动作模型完成导航任务的 *Action* 接口。它使用 *行为树* 来实现更复杂的状态机，并通过添加其他 *Action 服务器* 来添加行为。这些行为树是可配置的 XML，我们提供了一些起始示例。"
 
 
 #: ../../about/ros1_comparison.rst:16
@@ -577,7 +577,7 @@ msgstr "The planning, behaviors, smoother, and controller servers are also actio
 
 #: ../../about/ros1_comparison.rst:21
 msgid "All these changes make it possible to replace any of these nodes at launch/run time with any other algorithm that implements that same interface. See each package README.md for more details."
-msgstr "All these changes make it possible to replace any of these nodes at launch/run time with any other algorithm that implements that same interface. See each package README.md for more details."
+msgstr "所有这些改变使得在启动/运行时能够用实现相同接口的任何其他算法替换这些节点。有关更多详细信息，请参阅每个软件包的 README.md。"
 
 
 msgid "Move Base -> Navigation2 Overview"
@@ -586,7 +586,7 @@ msgstr "Move Base -> Navigation2 Overview"
 
 #: ../../about/ros1_comparison.rst:29
 msgid "Note: ``nav2_simple_navigator`` no longer exists, it has been replaced by ``nav2_bt_navigator``."
-msgstr "Note: ``nav2_simple_navigator`` no longer exists, it has been replaced by ``nav2_bt_navigator``."
+msgstr "注意：``nav2_simple_navigator`` 不再存在，已被 ``nav2_bt_navigator`` 替代。"
 
 
 #: ../../about/ros1_comparison.rst:31
