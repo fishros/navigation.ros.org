@@ -142,7 +142,7 @@ msgstr "Plugin Parameter"
 
 #: ../../migration/Eloquent.rst:37 ../../migration/Eloquent.rst:39 ../../migration/Eloquent.rst:41
 msgid "Controller Server"
-msgstr "Controller Server"
+msgstr "控制器服务器"
 
 
 #: ../../migration/Eloquent.rst:37

@@ -172,7 +172,7 @@ msgstr "An example configuration of the planner server is shown above. The ``pla
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:74
 msgid "Controller Server"
-msgstr "Controller Server"
+msgstr "控制器服务器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:76

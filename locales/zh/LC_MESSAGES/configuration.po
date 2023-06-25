@@ -3402,7 +3402,7 @@ msgstr "从机器人坐标系中获取costmap值的点。格式：[x1, y1, weigh
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:180
 msgid "IMPORTANT: Requires much higher number of optimizer iterations to actually improve the path. Use only if you really need it (highly elongated/asymmetric robots)"
-msgstr "IMPORTANT: Requires much higher number of optimizer iterations to actually improve the path. Use only if you really need it (highly elongated/asymmetric robots)"
+msgstr "重要提示：要实际改善路径，需要更高数量的优化器迭代次数。仅在确实需要时使用（高度拉长/非对称机器人）。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:182
@@ -3422,7 +3422,7 @@ msgstr "100"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:198
 msgid "Maximum number of optimizer iterations"
-msgstr "Maximum number of optimizer iterations"
+msgstr "优化器迭代的最大次数"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3432,7 +3432,7 @@ msgstr "optimizer.debug_optimizer"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:209
 msgid "Whether to print optimizer debug info"
-msgstr "Whether to print optimizer debug info"
+msgstr "是否打印优化器调试信息"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3447,7 +3447,7 @@ msgstr "\"SPARSE_NORMAL_CHOLESKY\""
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:220
 msgid "Linear solver type to be used by optimizer. Valid values are ``SPARSE_NORMAL_CHOLESKY`` and ``DENSE_QR``"
-msgstr "Linear solver type to be used by optimizer. Valid values are ``SPARSE_NORMAL_CHOLESKY`` and ``DENSE_QR``"
+msgstr "优化器使用的线性求解器类型。有效值为``SPARSE_NORMAL_CHOLESKY``和``DENSE_QR``"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3462,7 +3462,7 @@ msgstr "1e-10"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:231
 msgid "Gradient tolerance optimization termination criterion"
-msgstr "Gradient tolerance optimization termination criterion"
+msgstr "梯度容差优化终止条件"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3477,7 +3477,7 @@ msgstr "1e-7"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:242
 msgid "Function tolerance optimization termination criterion"
-msgstr "Function tolerance optimization termination criterion"
+msgstr "函数容差优化终止准则"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3492,22 +3492,22 @@ msgstr "1e-15"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:253
 msgid "Parameter tolerance optimization termination criterion"
-msgstr "Parameter tolerance optimization termination criterion"
+msgstr "参数容忍度优化终止准则"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:4
 msgid "Controller Server"
-msgstr "Controller Server"
+msgstr "控制器服务器"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:10
 msgid "The Controller Server implements the server for handling the controller requests for the stack and host a map of plugin implementations. It will take in path and plugin names for controller, progress checker and goal checker to use and call the appropriate plugins."
-msgstr "The Controller Server implements the server for handling the controller requests for the stack and host a map of plugin implementations. It will take in path and plugin names for controller, progress checker and goal checker to use and call the appropriate plugins."
+msgstr "Controller Server实现了用于处理堆栈的控制器请求的服务器，并承载了插件实现的映射表。它将接收控制器、进度检查器和目标检查器的路径和插件名称，并调用相应的插件。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
 msgid "controller_frequency"
-msgstr "controller_frequency"
+msgstr "控制器频率"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:21 ../../configuration/packages/configuring-mppic.rst:413 ../../configuration/packages/configuring-velocity-smoother.rst:23 ../../configuration/packages/smac/configuring-smac-hybrid.rst:208 ../../configuration/packages/smac/configuring-smac-lattice.rst:179
@@ -3517,7 +3517,7 @@ msgstr "20.0"
 
 #: ../../configuration/packages/configuring-controller-server.rst:25
 msgid "Frequency to run controller (Hz)."
-msgstr "Frequency to run controller (Hz)."
+msgstr "控制器运行的频率（Hz）。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3527,12 +3527,12 @@ msgstr "controller_plugins"
 
 #: ../../configuration/packages/configuring-controller-server.rst:32
 msgid "['FollowPath']"
-msgstr "['FollowPath']"
+msgstr "['跟随路径']"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:36
 msgid "List of mapped names for controller plugins for processing requests and parameters."
-msgstr "List of mapped names for controller plugins for processing requests and parameters."
+msgstr "用于处理请求和参数的控制器插件的映射名称列表。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3547,7 +3547,7 @@ msgstr "[\"progress_checker\"]"
 
 #: ../../configuration/packages/configuring-controller-server.rst:61
 msgid "Mapped name for progress checker plugin for checking progress made by robot. Formerly ``progress_checker_plugin`` for Humble and older with a single string plugin."
-msgstr "Mapped name for progress checker plugin for checking progress made by robot. Formerly ``progress_checker_plugin`` for Humble and older with a single string plugin."
+msgstr "检查机器人进度的进度检查插件的映射名称。以前用于Humble和旧版本的``progress_checker_plugin``，使用单个字符串插件。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:64 ../../configuration/packages/configuring-controller-server.rst:89 ../../configuration/packages/configuring-waypoint-follower.rst:52
@@ -3567,7 +3567,7 @@ msgstr "'goal_checker'"
 
 #: ../../configuration/packages/configuring-controller-server.rst:86
 msgid "Mapped name for goal checker plugin for checking goal is reached."
-msgstr "Mapped name for goal checker plugin for checking goal is reached."
+msgstr "检查目标是否已达到的目标检查插件的映射名称。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
