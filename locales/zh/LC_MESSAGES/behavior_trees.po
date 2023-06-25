@@ -762,7 +762,7 @@ msgstr "或者，如果障碍物被清除，则全局规划器会生成较短的
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:35
 msgid "Apart from the above scenarios, we also need to note that, the robot will take the longer path to the goal location if the obstacle does not clear up in the given user-specific wait time."
-msgstr "Apart from the above scenarios, we also need to note that, the robot will take the longer path to the goal location if the obstacle does not clear up in the given user-specific wait time."
+msgstr "除了上述情况外，我们还需要注意，如果障碍物在给定的用户特定等待时间内没有消除，机器人将选择更长的路径到达目标位置。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:37
@@ -772,7 +772,7 @@ msgstr "总而言之，这个特定的行为树既可以作为示例，也可以
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:82
 msgid "A complete demo of this BT can be seen in the video below:"
-msgstr "A complete demo of this BT can be seen in the video below:"
+msgstr "可以在下面的视频中看到此行为树的完整演示："
 
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:4
@@ -782,7 +782,7 @@ msgstr "导航到姿势"
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:6
 msgid "This behavior tree implements a significantly more mature version of the behavior tree on :ref:`behavior_trees`. It navigates from a starting point to a single point goal in freespace. It contains both use of custom recovery behaviors in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
-msgstr "This behavior tree implements a significantly more mature version of the behavior tree on :ref:`behavior_trees`. It navigates from a starting point to a single point goal in freespace. It contains both use of custom recovery behaviors in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
+msgstr "该行为树在 :ref:`behavior_trees` 上实现了一个更成熟的版本。它可以在自由空间中从起点导航到单一目标点。它包含在特定子上下文中使用自定义恢复行为以及用于系统级故障的全局恢复子树。它还为用户提供了在返回失败状态之前多次重试任务的机会。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:11 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:11
@@ -792,44 +792,44 @@ msgstr "``ComputePathToPose`` 和 ``FollowPath`` 的BT节点也指定了它们�
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:17
 msgid "In nominal execution, this will replan the path at every second and pass that path onto the controller, similar to the behavior tree in :ref:`behavior_trees`. However, this time, if the planner fails, it will trigger contextually aware recovery behaviors in its subtree, clearing the global costmap. Additional recovery behaviors can be added here for additional context-specific recoveries, such as trying another algorithm."
-msgstr "In nominal execution, this will replan the path at every second and pass that path onto the controller, similar to the behavior tree in :ref:`behavior_trees`. However, this time, if the planner fails, it will trigger contextually aware recovery behaviors in its subtree, clearing the global costmap. Additional recovery behaviors can be added here for additional context-specific recoveries, such as trying another algorithm."
+msgstr "在正常执行中，它将每秒重新规划路径并将该路径传递给控制器，类似于 :ref:`behavior_trees` 中的行为树。然而，这次如果规划器失败，它将在其子树中触发具有上下文意识的恢复行为，并清除全局代价地图。可以在此处添加其他上下文特定的恢复行为，例如尝试另一种算法。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:26
 msgid "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree also has the ``GoalUpdated`` BT node it ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will the recoveries: costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
-msgstr "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree also has the ``GoalUpdated`` BT node it ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will the recoveries: costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
+msgstr "如果这些上下文恢复失败，则行为树进入恢复子树。这个子树专门用于解决系统级故障，例如机器人被卡住或处于糟糕位置的问题。该子树还有一个``GoalUpdated``行为树节点，在每次迭代中进行刻度以确保对新目标的响应性。接下来，恢复子树将进行以下恢复操作：清除代价地图、旋转、等待和后退。在子树中的每个恢复操作之后，将重新尝试主导航子树。如果继续失败，则刻度恢复子树中的下一个恢复操作。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:4
 msgid "Navigate To Pose With Consistent Replanning And If Path Becomes Invalid"
-msgstr "Navigate To Pose With Consistent Replanning And If Path Becomes Invalid"
+msgstr "使用一致重新规划和如果路径无效则导航到姿态"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:6
 msgid "This behavior tree implements a significantly more mature version of the behavior tree on :ref:`behavior_trees`. It navigates from a starting point to a single point goal in freespace. It contains both use of custom recoveries in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
-msgstr "This behavior tree implements a significantly more mature version of the behavior tree on :ref:`behavior_trees`. It navigates from a starting point to a single point goal in freespace. It contains both use of custom recoveries in specific sub-contexts as well as a global recovery subtree for system-level failures. It also provides the opportunity for users to retry tasks multiple times before returning a failed state."
+msgstr "这个行为树实现了一个更成熟版本的行为树，可以在：ref:`behavior_trees`中进行导航。它在自由空间中从起点导航到单个目标点。它既包含了在特定子上下文中使用自定义恢复操作，也包含了一个用于系统级故障的全局恢复子树。它还提供了用户在返回失败状态之前多次重试任务的机会。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:17
 msgid "In nominal execution, replanning can be triggered by an a invalid previous path, a new goal or if a new path has not been created for 10 seconds. If the planner or controller fails, it will trigger contextually aware recoveries in its subtree. Currently, the recoveries will clear the global costmap if the planner fails and clear the local costmap if the controller fails. Additional context-specific recoveries can be added to these subtrees."
-msgstr "In nominal execution, replanning can be triggered by an a invalid previous path, a new goal or if a new path has not been created for 10 seconds. If the planner or controller fails, it will trigger contextually aware recoveries in its subtree. Currently, the recoveries will clear the global costmap if the planner fails and clear the local costmap if the controller fails. Additional context-specific recoveries can be added to these subtrees."
+msgstr "在正常执行中，重新规划可以由无效的先前路径、新目标或者如果10秒钟内未创建新路径来触发。如果规划器或者控制器失败，它将在其子树中触发具有上下文意识的恢复行为。目前，如果规划器失败，恢复行为将清除全局代价地图，如果控制器失败，恢复行为将清除局部代价地图。可以在这些子树中添加其他上下文特定的恢复行为。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:22
 msgid "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree has the ``GoalUpdated`` BT node which ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will attempt the following recoveries: costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
-msgstr "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree has the ``GoalUpdated`` BT node which ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will attempt the following recoveries: costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
+msgstr "如果这些上下文恢复失败，则行为树进入恢复子树。这个子树专门用于解决系统级故障，例如机器人被卡住或处于糟糕位置的问题。该子树有一个``GoalUpdated``行为树节点，它在每次迭代中进行刻度，以确保对新目标的响应性。接下来，恢复子树将尝试以下恢复操作：清除代价地图、旋转、等待和后退。在子树中的每个恢复操作之后，将重新尝试主导航子树。如果继续失败，则刻度恢复子树中的下一个恢复操作。"
 
 
 #: ../../behavior_trees/trees/odometry_calibration.rst:4
 msgid "Odometry Calibration"
-msgstr "Odometry Calibration"
+msgstr "里程计校准"
 
 
 #: ../../behavior_trees/trees/odometry_calibration.rst:6
 msgid "This behavior tree drives the robot in a CCW square three times using the DriveOnHeading and Spin behaviors. The robot will traverse each side of the square at 0.2 (m/s) for 2 meters before making a 90 degree turn. This is a primitive experiment to measure odometric accuracy and can be used and repeated to tune parameters related to odometry to improve quality."
-msgstr "This behavior tree drives the robot in a CCW square three times using the DriveOnHeading and Spin behaviors. The robot will traverse each side of the square at 0.2 (m/s) for 2 meters before making a 90 degree turn. This is a primitive experiment to measure odometric accuracy and can be used and repeated to tune parameters related to odometry to improve quality."
+msgstr "这个行为树驱动机器人以逆时针方式绕正方形行驶三次，使用DriveOnHeading和Spin行为。机器人将以0.2（m/s）的速度行驶2米，然后进行90度转弯。这是一个用于测量里程计精度的原始实验，并且可以用于调整与里程计相关的参数以提高质量。"
 
 
 msgid "Alternative text"
-msgstr "Alternative text"
+msgstr "替代文本"
 

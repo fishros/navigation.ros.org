@@ -581,7 +581,7 @@ msgstr "All of these can be found in the `package <https://github.com/ros-planni
 
 
 msgid "Alternative text"
-msgstr "Alternative text"
+msgstr "替代文本"
 
 
 #: ../../commander_api/index.rst:216

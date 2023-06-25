@@ -22,12 +22,12 @@ msgstr ""
 
 #: ../../concepts/index.rst:4
 msgid "Navigation Concepts"
-msgstr "Navigation Concepts"
+msgstr "导航概念"
 
 
 #: ../../concepts/index.rst:6
 msgid "This page is to help familiarize new roboticists to the concepts of mobile robot navigation, in particular, with the concepts required to appreciating and working with this project."
-msgstr "This page is to help familiarize new roboticists to the concepts of mobile robot navigation, in particular, with the concepts required to appreciating and working with this project."
+msgstr "本页面旨在帮助新的机器人学家熟悉移动机器人导航的概念，特别是与理解和使用该项目所需的概念相关的内容。"
 
 
 #: ../../concepts/index.rst:9
@@ -37,17 +37,17 @@ msgstr "ROS 2"
 
 #: ../../concepts/index.rst:11
 msgid "ROS 2 is the core middleware used for Nav2. If you are unfamiliar with this, please visit `the ROS 2 documentation <https://docs.ros.org/en/rolling/>`_ before continuing."
-msgstr "ROS 2 is the core middleware used for Nav2. If you are unfamiliar with this, please visit `the ROS 2 documentation <https://docs.ros.org/en/rolling/>`_ before continuing."
+msgstr "ROS 2是用于Nav2的核心中间件。如果您对此不熟悉，请在继续之前访问 `ROS 2文档 <https://docs.ros.org/en/rolling/>`_。"
 
 
 #: ../../concepts/index.rst:14
 msgid "Action Server"
-msgstr "Action Server"
+msgstr "动作服务器"
 
 
 #: ../../concepts/index.rst:16
 msgid "Just as in ROS, action servers are a common way to control long running tasks like navigation. This stack makes more extensive use of actions, and in some cases, without an easy topic interface. It is more important to understand action servers as a developer in ROS 2. Some simple CLI examples can be found in the `ROS 2 documentation <https://docs.ros.org/en/rolling/Tutorials/Understanding-ROS2-Actions.html>`_."
-msgstr "Just as in ROS, action servers are a common way to control long running tasks like navigation. This stack makes more extensive use of actions, and in some cases, without an easy topic interface. It is more important to understand action servers as a developer in ROS 2. Some simple CLI examples can be found in the `ROS 2 documentation <https://docs.ros.org/en/rolling/Tutorials/Understanding-ROS2-Actions.html>`_."
+msgstr "正如在ROS中一样，操作服务器是控制导航等长时间运行任务的常见方式。该堆栈更广泛地使用了操作，并且在某些情况下没有简单的主题接口。作为ROS 2中的开发人员，理解操作服务器更为重要。一些简单的CLI示例可以在 `ROS 2文档 <https://docs.ros.org/en/rolling/Tutorials/Understanding-ROS2-Actions.html>`_ 中找到。"
 
 
 #: ../../concepts/index.rst:21
@@ -57,7 +57,7 @@ msgstr "Action servers are similar to a canonical service server. A client will 
 
 #: ../../concepts/index.rst:25
 msgid "In this situation, action servers and clients allow us to call a long-running task in another process or thread and return a future to its result. It is permissible at this point to block until the action is complete, however, you may want to occasionally check if the action is complete and continue to process work in the client thread. Since it is long-running, action servers will also provide feedback to their clients. This feedback can be anything and is defined in the ROS ``.action`` along with the request and result types. In the bulldozer example, a request may be an angle, a feedback may be the angle remaining to be moved, and the result is a success or fail boolean with the end angle. In the navigation example, a request may be a position, a feedback may be the time its been navigating for and the distance to the goal, and the result a boolean for success."
-msgstr "In this situation, action servers and clients allow us to call a long-running task in another process or thread and return a future to its result. It is permissible at this point to block until the action is complete, however, you may want to occasionally check if the action is complete and continue to process work in the client thread. Since it is long-running, action servers will also provide feedback to their clients. This feedback can be anything and is defined in the ROS ``.action`` along with the request and result types. In the bulldozer example, a request may be an angle, a feedback may be the angle remaining to be moved, and the result is a success or fail boolean with the end angle. In the navigation example, a request may be a position, a feedback may be the time its been navigating for and the distance to the goal, and the result a boolean for success."
+msgstr "在这种情况下，操作服务器和客户端允许我们在另一个进程或线程中调用长时间运行的任务，并返回其结果的future。在这一点上，阻塞直到操作完成是允许的，但是您可能希望定期检查操作是否完成并继续在客户端线程中处理工作。由于它是长时间运行的，操作服务器还将向其客户端提供反馈。此反馈可以是任何内容，并在ROS ``.action`` 中与请求和结果类型一起定义。在推土机示例中，请求可以是一个角度，反馈可以是剩余要移动的角度，结果是一个成功或失败的布尔值以及最终角度。在导航示例中，请求可以是一个位置，反馈可以是导航所花费的时间和到目标的距离，结果是一个表示成功与否的布尔值。"
 
 
 #: ../../concepts/index.rst:32
@@ -67,7 +67,7 @@ msgstr "Feedback and results can be gathered synchronously by registering callba
 
 #: ../../concepts/index.rst:36
 msgid "Action servers are used in this stack to communicate with the highest level Behavior Tree (BT) navigator through a ``NavigateToPose`` action message. They are also used for the BT navigator to communicate with the subsequent smaller action servers to compute plans, control efforts, and recoveries. Each will have their own unique ``.action`` type in ``nav2_msgs`` for interacting with the servers."
-msgstr "Action servers are used in this stack to communicate with the highest level Behavior Tree (BT) navigator through a ``NavigateToPose`` action message. They are also used for the BT navigator to communicate with the subsequent smaller action servers to compute plans, control efforts, and recoveries. Each will have their own unique ``.action`` type in ``nav2_msgs`` for interacting with the servers."
+msgstr "此堆栈中使用操作服务器通过 ``NavigateToPose`` 操作消息与最高级别的行为树（BT）导航器进行通信。它们还用于BT导航器与后续的较小操作服务器进行计算规划、控制努力和恢复的通信。每个服务器与之交互的 ``.action`` 类型在 ``nav2_msgs`` 中具有自己的独特定义。"
 
 
 #: ../../concepts/index.rst:41
@@ -77,7 +77,7 @@ msgstr "Lifecycle Nodes and Bond"
 
 #: ../../concepts/index.rst:43
 msgid "Lifecycle (or Managed, more correctly) nodes are unique to ROS 2. More information can be `found here <https://design.ros2.org/articles/node_lifecycle.html>`_. They are nodes that contain state machine transitions for bringup and teardown of ROS 2 servers. This helps in deterministic behavior of ROS systems in startup and shutdown. It also helps users structure their programs in reasonable ways for commercial uses and debugging."
-msgstr "Lifecycle (or Managed, more correctly) nodes are unique to ROS 2. More information can be `found here <https://design.ros2.org/articles/node_lifecycle.html>`_. They are nodes that contain state machine transitions for bringup and teardown of ROS 2 servers. This helps in deterministic behavior of ROS systems in startup and shutdown. It also helps users structure their programs in reasonable ways for commercial uses and debugging."
+msgstr "生命周期（或管理）节点是ROS 2中特有的。更多信息可以在 `这里找到 <https://design.ros2.org/articles/node_lifecycle.html>`_。它们是包含用于启动和关闭ROS 2服务器的状态机转换的节点。这有助于确定性地处理ROS系统的启动和关闭行为。它还帮助用户以合理的方式组织他们的程序，以用于商业"
 
 
 #: ../../concepts/index.rst:49
