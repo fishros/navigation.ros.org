@@ -1013,7 +1013,7 @@
 <dl>
 <dt>描述</dt><dd><p>检查机器人进度的进度检查插件的映射名称。以前用于Humble和旧版本的``progress_checker_plugin``，使用单个字符串插件。</p>
 </dd>
-<dt>注意</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
+<dt>注意</dt><dd><p>定义的插件命名空间需要有一个 <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> 参数来定义要在命名空间中加载的插件类型。</p>
 <p>示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1043,7 +1043,7 @@
 <dl>
 <dt>描述</dt><dd><p>检查目标是否已达到的目标检查插件的映射名称。</p>
 </dd>
-<dt>注意</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
+<dt>注意</dt><dd><p>定义的插件命名空间需要有一个 <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> 参数来定义要在命名空间中加载的插件类型。</p>
 <p>示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1071,8 +1071,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
-Odometry values below this threshold (in m/s) will be set to 0.0.</p>
+<dt>描述</dt><dd><p>控制器服务器在将接收到的里程计消息发送给控制器插件之前会过滤速度部分。低于此阈值（以 m/s 为单位）的里程计值将被设置为 0.0。</p>
 </dd>
 </dl>
 </dd>
@@ -1092,8 +1091,7 @@ Odometry values below this threshold (in m/s) will be set to 0.0.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
-Odometry values below this threshold (in m/s) will be set to 0.0. For non-holonomic robots</p>
+<dt>描述</dt><dd><p>控制器服务器在将接收到的里程计消息发送给控制器插件之前会过滤速度部分。低于此阈值（以 m/s 为单位）的里程计值将被设置为 0.0。对于非全向移动机器人</p>
 </dd>
 </dl>
 </dd>
@@ -1113,8 +1111,7 @@ Odometry values below this threshold (in m/s) will be set to 0.0. For non-holono
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
-Odometry values below this threshold (in rad/s) will be set to 0.0.</p>
+<dt>描述</dt><dd><p>控制器服务器在将接收到的里程计消息发送给控制器插件之前会过滤速度部分。低于此阈值（以 rad/s 为单位）的里程计值将被设置为 0.0。</p>
 </dd>
 </dl>
 </dd>
@@ -1134,8 +1131,7 @@ Odometry values below this threshold (in rad/s) will be set to 0.0.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The maximum duration in seconds the called controller plugin can fail (i.e. the <code class="code docutils literal notranslate"><span class="pre">computeVelocityCommands</span></code> function of the plugin throwing an exception) before the <code class="code docutils literal notranslate"><span class="pre">nav2_msgs::action::FollowPath</span></code> action fails.
-Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any positive value for the appropriate timeout.</p>
+<dt>描述</dt><dd><p>被调用的控制器插件在失败之前的最大持续时间（即插件的 <cite>computeVelocityCommands</cite> 函数抛出异常）允许的时间（以秒为单位），否则 <cite>nav2_msgs::action::FollowPath</cite> 动作将失败。将其设置为特殊值 -1.0 可以使其无限制，设置为 0 则禁用，设置为正值可设定适当的超时时间。</p>
 </dd>
 </dl>
 </dd>
@@ -1175,7 +1171,7 @@ Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic to get instantaneous measurement of speed from.</p>
+<dt>描述</dt><dd><p>用于获取瞬时速度测量值的主题。</p>
 </dd>
 </dl>
 </dd>
@@ -1184,7 +1180,7 @@ Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any
 <div class="section" id="provided-plugins">
 <h2>Provided Plugins<a class="headerlink" href="#provided-plugins" title="永久链接至标题"></a></h2>
 <blockquote>
-<div><p>The plugins listed below are inside the <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> namespace.</p>
+<div><p>下面列出的插件位于 <cite>nav2_controller</cite> 命名空间中。</p>
 </div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
