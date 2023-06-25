@@ -4077,7 +4077,7 @@ msgstr "当服务器崩溃或变为无响应状态时，生命周期管理器将
 
 #: ../../configuration/packages/configuring-map-server.rst:4
 msgid "Map Server / Saver"
-msgstr "Map Server / Saver"
+msgstr "地图服务器/保存器"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:10
@@ -4087,7 +4087,7 @@ msgstr "地图服务器实现了用于处理堆栈的地图加载请求的服务
 
 #: ../../configuration/packages/configuring-map-server.rst:14
 msgid "Map Saver Parameters"
-msgstr "Map Saver Parameters"
+msgstr "地图保存器参数"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4097,7 +4097,7 @@ msgstr "save_map_timeout"
 
 #: ../../configuration/packages/configuring-map-server.rst:25
 msgid "Timeout to attempt saving the map (seconds)."
-msgstr "Timeout to attempt saving the map (seconds)."
+msgstr "尝试保存地图的超时时间（秒）。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4107,7 +4107,7 @@ msgstr "free_thresh_default"
 
 #: ../../configuration/packages/configuring-map-server.rst:36
 msgid "Free space maximum probability threshold value for occupancy grid."
-msgstr "Free space maximum probability threshold value for occupancy grid."
+msgstr "占用栅格的空闲空间最大概率阈值。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4122,12 +4122,12 @@ msgstr "0.65"
 
 #: ../../configuration/packages/configuring-map-server.rst:47
 msgid "Occupied space minimum probability threshhold value for occupancy grid."
-msgstr "Occupied space minimum probability threshhold value for occupancy grid."
+msgstr "占用空间的最小概率阈值，用于占用网格。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:50
 msgid "Map Server Parameters"
-msgstr "Map Server Parameters"
+msgstr "地图服务器参数"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4137,12 +4137,12 @@ msgstr "yaml_filename"
 
 #: ../../configuration/packages/configuring-map-server.rst:61
 msgid "Path to map yaml file. Note from Rolling + Iron-Turtle forward: This parameter can set either from the yaml file or using the launch configuration parameter ``map``. If we set it on launch commandline / launch configuration default, we override the yaml default. If you would like the specify your map file in yaml, remove the launch default so it is not overridden in Nav2's default launch files. Before Iron: ``yaml_filename`` must be set in the yaml (even if a bogus value) so that our launch scripts can overwrite it with launch values."
-msgstr "Path to map yaml file. Note from Rolling + Iron-Turtle forward: This parameter can set either from the yaml file or using the launch configuration parameter ``map``. If we set it on launch commandline / launch configuration default, we override the yaml default. If you would like the specify your map file in yaml, remove the launch default so it is not overridden in Nav2's default launch files. Before Iron: ``yaml_filename`` must be set in the yaml (even if a bogus value) so that our launch scripts can overwrite it with launch values."
+msgstr "映射yaml文件的路径。从Rolling + Iron-Turtle开始注意：此参数可以从yaml文件中设置，也可以使用启动配置参数“map”进行设置。如果我们在启动命令行/启动配置默认值中设置它，会覆盖yaml文件中的默认值。如果您想在yaml中指定地图文件，请删除启动默认值，以防止在Nav2的默认启动文件中被覆盖。在Iron之前：必须在yaml中设置“yaml_filename”（即使是虚假值），以便我们的启动脚本可以用启动值覆盖它。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:72
 msgid "Topic to publish loaded map to."
-msgstr "Topic to publish loaded map to."
+msgstr "将加载的地图发布到的话题。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4152,17 +4152,17 @@ msgstr "frame_id"
 
 #: ../../configuration/packages/configuring-map-server.rst:83
 msgid "Frame to publish loaded map in."
-msgstr "Frame to publish loaded map in."
+msgstr "发布加载的地图所在的框架。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:86
 msgid "Costmap Filter Info Server Parameters"
-msgstr "Costmap Filter Info Server Parameters"
+msgstr "Costmap过滤器信息服务器参数"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
 msgid "type"
-msgstr "type"
+msgstr "类型"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:93 ../../configuration/packages/costmap-plugins/voxel.rst:92 ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:30
@@ -4172,27 +4172,27 @@ msgstr "0"
 
 #: ../../configuration/packages/configuring-map-server.rst:97
 msgid "Type of costmap filter used. This is an enum for the type of filter this should be interpreted as. We provide the following pre-defined types:"
-msgstr "Type of costmap filter used. This is an enum for the type of filter this should be interpreted as. We provide the following pre-defined types:"
+msgstr "使用的代价地图过滤器类型。这是一个用于解释应该将其解释为的过滤器类型的枚举。我们提供以下预定义类型："
 
 
 #: ../../configuration/packages/configuring-map-server.rst:99
 msgid "0: keepout zones / preferred lanes filter"
-msgstr "0: keepout zones / preferred lanes filter"
+msgstr "0：限制区域/首选车道过滤器"
 
 
 #, python-format
 msgid "1: speed filter, speed limit is specified in % of maximum speed"
-msgstr "1: speed filter, speed limit is specified in % of maximum speed"
+msgstr "1: 速度过滤器，速度限制以最大速度的百分比表示"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:101
 msgid "2: speed filter, speed limit is specified in absolute value (m/s)"
-msgstr "2: speed filter, speed limit is specified in absolute value (m/s)"
+msgstr "2：速度过滤器，速度限制以绝对值（m/s）指定"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:102
 msgid "3: binary filter"
-msgstr "3: binary filter"
+msgstr "3: 二进制过滤器"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4222,7 +4222,7 @@ msgstr "\"filter_mask\""
 
 #: ../../configuration/packages/configuring-map-server.rst:124
 msgid "Topic to publish filter mask to. The value of this parameter should be in accordance with ``topic_name`` parameter of Map Server tuned to filter mask publishing."
-msgstr "Topic to publish filter mask to. The value of this parameter should be in accordance with ``topic_name`` parameter of Map Server tuned to filter mask publishing."
+msgstr "用于发布过滤器掩码的主题。该参数的值应与Map Server的``topic_name``参数相符，用于调整过滤器掩码的发布。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4232,7 +4232,7 @@ msgstr "base"
 
 #: ../../configuration/packages/configuring-map-server.rst:135
 msgid "Base of ``OccupancyGrid`` mask value -> filter space value linear conversion which is being proceeded as: ``filter_space_value = base + multiplier * mask_value``"
-msgstr "Base of ``OccupancyGrid`` mask value -> filter space value linear conversion which is being proceeded as: ``filter_space_value = base + multiplier * mask_value``"
+msgstr "将``OccupancyGrid``掩码值转换为过滤器空间值的基准 -> 线性转换，处理方式为：``filter_space_value = base + multiplier * mask_value``"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
