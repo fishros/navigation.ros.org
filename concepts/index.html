@@ -123,10 +123,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#environmental-representation">环境表示</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#costmaps-and-layers">代价地图和层</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-forms">Other Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-forms">其他形式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#nav2-academic-overview">Nav2 Academic Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nav2-academic-overview">Nav2学术概述</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../setup_guides/index.html">First-Time Robot Setup Guide</a><ul>
@@ -409,7 +409,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html">Writing a New Behavior Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html">编写新的行为插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#requirements">Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#tutorial-steps">Tutorial Steps</a><ul>
@@ -1045,66 +1045,47 @@
 <div class="section" id="global-positioning-localization-and-slam">
 <h3>全局定位：定位和SLAM<a class="headerlink" href="#global-positioning-localization-and-slam" title="永久链接至标题"></a></h3>
 <p>全局定位系统（GPS、SLAM、动作捕捉）的任务是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> 转换。我们提供了 <code class="docutils literal notranslate"><span class="pre">amcl</span></code>，它是一种基于粒子滤波器的自适应蒙特卡洛定位技术，用于在静态地图中进行定位。我们还提供 SLAM 工具箱作为默认的 SLAM 算法，用于定位和生成静态地图。</p>
-<p>These methods may also produce other output including position topics, maps, or other metadata, but they must provide that transformation to be valid.
-Multiple positioning methods can be fused together using robot localization, discussed more below.</p>
+<p>这些方法也可能产生其他输出，包括位置主题、地图或其他元数据，但它们必须提供该转换才能有效。可以使用机器人定位将多个定位方法融合在一起，下面将对此进行讨论。</p>
 </div>
 <div class="section" id="odometry">
 <h3>里程计<a class="headerlink" href="#odometry" title="永久链接至标题"></a></h3>
-<p>It is the role of the odometry system to provide the <code class="docutils literal notranslate"><span class="pre">odom</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transformation.
-Odometry can come from many sources including LIDAR, RADAR, wheel encoders, VIO, and IMUs.
-The goal of the odometry is to provide a smooth and continuous local frame based on robot motion.
-The global positioning system will update the transformation relative to the global frame to account for the odometric drift.</p>
+<p>里程计系统的作用是提供``odom`` -&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的转换。里程计可以来自许多来源，包括激光雷达、雷达、轮式编码器、VIO和IMU。里程计的目标是基于机器人运动提供平滑连续的局部坐标系。全局定位系统将根据全局坐标系更新转换以考虑里程计漂移。</p>
 <p><a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/">机器人定位</a> 通常用于此融合。它会接收各种类型的 <code class="docutils literal notranslate"><span class="pre">N</span></code> 个传感器，并为 TF 和一个话题提供连续平滑的里程计。一个典型的移动机器人设置可能会以此方式融合来自轮式编码器、IMU 和视觉的里程计信息。</p>
-<p>The smooth output can be used then for dead-reckoning for precise motion and updating the position of the robot accurately between global position updates.</p>
+<p>然后，平滑的输出可用于进行精确运动的死推算和准确更新机器人在全局位置更新之间的位置。</p>
 </div>
 </div>
 <div class="section" id="environmental-representation">
 <h2>环境表示<a class="headerlink" href="#environmental-representation" title="永久链接至标题"></a></h2>
-<p>The environmental representation is the way the robot perceives its environment.
-It also acts as the central localization for various algorithms and data sources to combine their information into a single space.
-This space is then used by the controllers, planners, and recoveries to compute their tasks safely and efficiently.</p>
+<p>环境表示是机器人感知环境的方式。它还充当各种算法和数据源的中央定位，将它们的信息合并到一个单一空间中。然后，控制器、规划器和恢复模块使用该空间安全高效地计算其任务。</p>
 <div class="section" id="costmaps-and-layers">
 <h3>代价地图和层<a class="headerlink" href="#costmaps-and-layers" title="永久链接至标题"></a></h3>
-<p>The current environmental representation is a costmap.
-A costmap is a regular 2D grid of cells containing a cost from unknown, free, occupied, or inflated cost.
-This costmap is then searched to compute a global plan or sampled to compute local control efforts.</p>
-<p>Various costmap layers are implemented as pluginlib plugins to buffer information into the costmap.
-This includes information from LIDAR, RADAR, sonar, depth images, etc.
-It may be wise to process sensor data before inputting it into the costmap layer, but that is up to the developer.</p>
-<p>Costmap layers can be created to detect and track obstacles in the scene for collision avoidance using camera or depth sensors.
-Additionally, layers can be created to algorithmically change the underlying costmap based on some rule or heuristic.
-Finally, they may be used to buffer live data into the 2D or 3D world for binary obstacle marking.</p>
+<p>当前的环境表示是成本地图。成本地图是一个常规的2D单元格网格，其中包含未知、自由、占用或膨胀成本。然后搜索该成本地图以计算全局路径或对其进行采样以计算局部控制力。</p>
+<p>各种成本地图层被实现为pluginlib插件，用于将信息缓冲到成本地图中。其中包括来自激光雷达（LIDAR）、雷达（RADAR）、声纳、深度图像等的信息。在将传感器数据输入到成本地图层之前，对其进行处理可能是明智的，但这取决于开发人员。</p>
+<p>可以创建成本地图层，使用相机或深度传感器在场景中检测和跟踪障碍物，以进行碰撞避免。此外，可以创建层以根据某些规则或启发式算法更改底层成本地图。最后，它们可以用于将实时数据缓冲到2D或3D世界中以进行二值障碍物标记。</p>
 </div>
 <div class="section" id="costmap-filters">
 <h3>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h3>
-<p>Imagine, you're annotating a map file (or any image file) in order to have a specific action occur based on the location in the annotated map. Examples of marking/annotating might be keep out zones to avoid planning inside, or have pixels belong to maximum speeds in marked areas. This annotated map is called &quot;filter mask&quot;. Just like a mask overlaid on a surface, it can or cannot be same size, pose and scale as a main map. The main goal of filter mask - is to provide the ability of marking areas on maps with some additional features or behavioral changes.</p>
-<p>Costmap filters are a costmap layer-based approach of applying spatial-dependent behavioral changes, annotated in filter masks, into the Nav2 stack.
-Costmap filters are implemented as costmap plugins.
-These plugins are called &quot;filters&quot; as they are filtering a costmap by spatial annotations marked on filter masks.
-In order to make a filtered costmap and change a robot's behavior in annotated areas, the filter plugin reads the data coming from the filter mask.
-This data is being linearly transformed into a feature map in a filter space.
-Having this transformed feature map along with a map/costmap, any sensor data and current robot coordinate filters can update the underlying costmap and change the behavior of the robot depending on where it is.
-For example, the following functionality could be made by use of costmap filters:</p>
+<p>想象一下，您正在为地图文件（或任何图像文件）进行注释，以便根据注释地图中的位置执行特定操作。标记/注释的示例可能是禁区以避免在内部进行规划，或使像素属于标记区域中的最大速度。这个标记的地图被称为&quot;过滤蒙版&quot;。就像覆盖在表面上的蒙版一样，它可以与主地图具有相同的大小、姿态和比例，也可以不同。过滤蒙版的主要目标是提供在地图上标记区域以及一些附加功能或行为变化的能力。</p>
+<p>成本地图过滤器是一种基于成本地图层的方法，将空间相关的行为变化（通过过滤器掩码进行注释）应用到Nav2堆栈中。成本地图过滤器被实现为成本地图插件。这些插件被称为&quot;过滤器&quot;，因为它们通过在过滤器掩码上标记的空间注释来过滤成本地图。为了创建一个经过滤波的成本地图并在标注区域内改变机器人的行为，过滤器插件会读取来自过滤器掩码的数据。这些数据被线性转换为过滤空间中的特征图。通过这个转换后的特征图以及地图/成本地图、任何传感器数据和当前机器人坐标过滤器，可以更新底层成本地图并根据机器人所处的位置改变机器人的行为。例如，使用成本地图过滤器可以实现以下功能：</p>
 <ul class="simple">
-<li><p>Keep-out/safety zones where robots will never enter.</p></li>
-<li><p>Speed restriction areas. Maximum speed of robots going inside those areas will be limited.</p></li>
-<li><p>Preferred lanes for robots moving in industrial environments and warehouses.</p></li>
+<li><p>机器人永远不会进入的禁止/安全区域。</p></li>
+<li><p>速度限制区域。进入这些区域的机器人的最大速度将受限制。</p></li>
+<li><p>机器人在工业环境和仓库中移动的优选路径。</p></li>
 </ul>
 </div>
 <div class="section" id="other-forms">
-<h3>Other Forms<a class="headerlink" href="#other-forms" title="永久链接至标题"></a></h3>
-<p>Various other forms of environmental representations exist.
-These include:</p>
+<h3>其他形式<a class="headerlink" href="#other-forms" title="永久链接至标题"></a></h3>
+<p>还存在其他形式的环境表示。这些包括：</p>
 <ul class="simple">
-<li><p>gradient maps, which are similar to costmaps but represent surface gradients to check traversibility over</p></li>
-<li><p>3D costmaps, which represent the space in 3D, but then also requires 3D planning and collision checking</p></li>
-<li><p>Mesh maps, which are similar to gradient maps but with surface meshes at many angles</p></li>
-<li><p>&quot;Vector space&quot;, taking in sensor information and using machine learning to detect individual items and locations to track rather than buffering discrete points.</p></li>
+<li><p>梯度地图，类似于成本地图，但表示表面梯度以检查可通过性</p></li>
+<li><p>3D成本地图，表示三维空间，但也需要进行三维规划和碰撞检查。</p></li>
+<li><p>网格地图，类似于梯度地图，但包含多个角度的表面网格</p></li>
+<li><p>“向量空间”，利用传感器信息并使用机器学习来检测个体物品和位置以进行跟踪，而不是缓冲离散点。</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="nav2-academic-overview">
-<h2>Nav2 Academic Overview<a class="headerlink" href="#nav2-academic-overview" title="永久链接至标题"></a></h2>
+<h2>Nav2学术概述<a class="headerlink" href="#nav2-academic-overview" title="永久链接至标题"></a></h2>
 <h1 align="center">
   <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
     <iframe width="708" height="400" src="https://www.youtube.com/embed/QB7lOKp3ZDQ?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
