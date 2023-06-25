@@ -532,7 +532,7 @@ msgstr "速度"
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:34
 msgid "Speed at which to travel (m/s)."
-msgstr "Speed at which to travel (m/s)."
+msgstr "行进速度（米/秒）。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:81
@@ -552,7 +552,7 @@ msgstr "调用FollowPath ROS 2动作服务器，由加载的控制器插件模�
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:21
 msgid "Takes in a blackboard variable containing the path to follow, eg. \"{path}\"."
-msgstr "Takes in a blackboard variable containing the path to follow, eg. \"{path}\"."
+msgstr "接收一个包含要跟随的路径的黑板变量，例如 \"{path}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst
@@ -562,7 +562,7 @@ msgstr "controller_id"
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:32
 msgid "Mapped name of the controller plugin type to use, e.g. FollowPath."
-msgstr "Mapped name of the controller plugin type to use, e.g. FollowPath."
+msgstr "控制器插件类型的映射名称，例如 FollowPath。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst
@@ -572,12 +572,12 @@ msgstr "goal_checker_id"
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:43
 msgid "Mapped name of the goal checker plugin type to use, e.g. SimpleGoalChecker."
-msgstr "Mapped name of the goal checker plugin type to use, e.g. SimpleGoalChecker."
+msgstr "目标检查器插件类型的映射名称，例如 SimpleGoalChecker。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:81
 msgid "Follow path error code. See ``FollowPath`` action for the enumerated set of error code definitions."
-msgstr "Follow path error code. See ``FollowPath`` action for the enumerated set of error code definitions."
+msgstr "跟踪路径错误代码。参见“FollowPath”动作以获取错误代码定义的枚举集合。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:4
@@ -587,7 +587,7 @@ msgstr "GoalCheckerSelector"
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:6
 msgid "It is used to select the GoalChecker that will be used by the goal_checker server. It subscribes to the ``goal_checker_selector`` topic to receive command messages with the name of the GoalChecker to be used. It is commonly used before of the FollowPathAction. The ``selected_goal_checker`` output port is passed to ``goal_checker_id`` input port of the FollowPathAction. If none is provided on the topic, the ``default_goal_checker`` is used."
-msgstr "It is used to select the GoalChecker that will be used by the goal_checker server. It subscribes to the ``goal_checker_selector`` topic to receive command messages with the name of the GoalChecker to be used. It is commonly used before of the FollowPathAction. The ``selected_goal_checker`` output port is passed to ``goal_checker_id`` input port of the FollowPathAction. If none is provided on the topic, the ``default_goal_checker`` is used."
+msgstr "用于选择将由goal_checker服务器使用的GoalChecker。它订阅“goal_checker_selector”主题以接收带有要使用的GoalChecker名称的命令消息。通常在FollowPathAction之前使用。将“selected_goal_checker”输出端口传递给FollowPathAction的“goal_checker_id”输入端口。如果主题上没有提供任何内容，则使用“default_goal_checker”。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:20
@@ -597,7 +597,7 @@ msgstr "goal_checker_selector"
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:24
 msgid "The name of the topic used to received select command messages. This is used to support multiple GoalCheckerSelector nodes."
-msgstr "The name of the topic used to received select command messages. This is used to support multiple GoalCheckerSelector nodes."
+msgstr "用于接收选择命令消息的主题名称。这用于支持多个GoalCheckerSelector节点。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst
@@ -607,7 +607,7 @@ msgstr "default_goal_checker"
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:35
 msgid "The default value for the selected GoalChecker if no message is received from the input topic."
-msgstr "The default value for the selected GoalChecker if no message is received from the input topic."
+msgstr "如果从输入主题未收到消息，则选定GoalChecker的默认值。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst
@@ -617,7 +617,7 @@ msgstr "selected_goal_checker"
 
 #: ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:50
 msgid "The output selected GoalChecker id. This selected_goal_checker string is usually passed to the FollowPath behavior via the goal_checker_id input port."
-msgstr "The output selected GoalChecker id. This selected_goal_checker string is usually passed to the FollowPath behavior via the goal_checker_id input port."
+msgstr "输出选定的GoalChecker ID。通常将此selected_goal_checker字符串通过goal_checker_id输入端口传递给FollowPath行为。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:4
@@ -627,7 +627,7 @@ msgstr "NavigateThroughPoses"
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:6
 msgid "Invokes the NavigateThroughPoses ROS 2 action server, which is implemented by the bt_navigator_ module."
-msgstr "Invokes the NavigateThroughPoses ROS 2 action server, which is implemented by the bt_navigator_ module."
+msgstr "调用由bt_navigator_模块实现的NavigateThroughPoses ROS 2动作服务器。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst
@@ -642,7 +642,7 @@ msgstr "Behavior tree absolute path. If none is specified, NavigateThroughPoses 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:69 ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:69
 msgid "The lowest error code in the list of the `error_code_names` parameter."
-msgstr "The lowest error code in the list of the `error_code_names` parameter."
+msgstr "`error_code_names` 参数列表中的最低错误码。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:4
@@ -652,7 +652,7 @@ msgstr "NavigateToPose"
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:6
 msgid "Invokes the NavigateToPose ROS 2 action server, which is implemented by the bt_navigator_ module."
-msgstr "Invokes the NavigateToPose ROS 2 action server, which is implemented by the bt_navigator_ module."
+msgstr "调用 bt_navigator_ 模块实现的 NavigateToPose ROS 2 action 服务器。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:18
@@ -662,7 +662,7 @@ msgstr "PoseStamped"
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:22
 msgid "Takes in a blackboard variable containing the goal, eg. \"{goal}\"."
-msgstr "Takes in a blackboard variable containing the goal, eg. \"{goal}\"."
+msgstr "接收包含目标的黑板变量，例如 \"{goal}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:55
