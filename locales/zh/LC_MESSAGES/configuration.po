@@ -287,7 +287,7 @@ msgstr "服务名称，如果由于重新映射而不使用默认的“spin”�
 
 #: ../../configuration/packages/bt-plugins/actions/CancelWait.rst:4
 msgid "CancelWait"
-msgstr "CancelWait"
+msgstr "取消等待"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelWait.rst:6
@@ -297,7 +297,7 @@ msgstr "用于取消作为行为服务器的一部分的等待动作。服务器
 
 #: ../../configuration/packages/bt-plugins/actions/CancelWait.rst:20
 msgid "Service name, if not using default of ``wait`` due to remapping."
-msgstr "Service name, if not using default of ``wait`` due to remapping."
+msgstr "服务名称，如果由于重映射而不使用默认值``wait``。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.rst:5
@@ -307,7 +307,7 @@ msgstr "ClearCostmapAroundRobot"
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.rst:7
 msgid "Action to call a costmap clearing around robot server."
-msgstr "Action to call a costmap clearing around robot server."
+msgstr "调用围绕机器人服务器清除成本地图的操作。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.rst ../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.rst
@@ -322,12 +322,12 @@ msgstr "1"
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.rst:21
 msgid "side size of the square area centered on the robot that will be cleared on the costmap (the rest of the costmap won't)"
-msgstr "side size of the square area centered on the robot that will be cleared on the costmap (the rest of the costmap won't)"
+msgstr "机器人周围的正方形区域的边长，该区域将在代价地图上清除（代价地图的其余部分不清除）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapAroundRobot.rst:32 ../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.rst:32 ../../configuration/packages/bt-plugins/actions/ClearEntireCostmap.rst:21
 msgid "costmap service name responsible for clearing the costmap."
-msgstr "costmap service name responsible for clearing the costmap."
+msgstr "负责清除成本地图的成本地图服务名称。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.rst:5
@@ -337,37 +337,37 @@ msgstr "ClearCostmapExceptRegion"
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.rst:7
 msgid "Action to call a costmap clearing except region server."
-msgstr "Action to call a costmap clearing except region server."
+msgstr "调用除了区域服务器以外的成本地图清除操作。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearCostmapExceptRegion.rst:21
 msgid "side size of the square area centered on the robot that will not be cleared on the costmap (all the rest of the costmap will)"
-msgstr "side size of the square area centered on the robot that will not be cleared on the costmap (all the rest of the costmap will)"
+msgstr "机器人周围的正方形区域的边长，该区域将不会在代价地图上清除（代价地图的其余部分会清除）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearEntireCostmap.rst:5
 msgid "ClearEntireCostmap"
-msgstr "ClearEntireCostmap"
+msgstr "清除整个成本地图"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ClearEntireCostmap.rst:7
 msgid "Action to call a costmap clearing server."
-msgstr "Action to call a costmap clearing server."
+msgstr "调用代价地图清除服务器的动作"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:4
 msgid "ComputePathThroughPoses"
-msgstr "ComputePathThroughPoses"
+msgstr "计算路径通过姿势"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:6
 msgid "Invokes the ComputePathThroughPoses ROS 2 action server, which is implemented by the nav2_planner_ module. The server address can be remapped using the ``server_name`` input port."
-msgstr "Invokes the ComputePathThroughPoses ROS 2 action server, which is implemented by the nav2_planner_ module. The server address can be remapped using the ``server_name`` input port."
+msgstr "调用 ComputePathThroughPoses ROS 2 动作服务器，由 nav2_planner_ 模块实现。服务器地址可以通过“server_name”输入端口重新映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst
 msgid "start"
-msgstr "start"
+msgstr "开始"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:18 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:18 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:29 ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:50 ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:64
@@ -377,12 +377,12 @@ msgstr "geometry_msgs::msg::PoseStamped"
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:22 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:22
 msgid "Start pose. Optional. Only used if not left empty. Takes in a blackboard variable, e.g. \"{start}\"."
-msgstr "Start pose. Optional. Only used if not left empty. Takes in a blackboard variable, e.g. \"{start}\"."
+msgstr "起始姿势。可选。仅在非空时使用。接受黑板变量，例如 \"{start}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst
 msgid "goals"
-msgstr "goals"
+msgstr "目标"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:29 ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:18
@@ -392,22 +392,22 @@ msgstr "vector<geometry_msgs::msg::PoseStamped>"
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:33 ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:22
 msgid "Goal poses. Takes in a blackboard variable, e.g. \"{goals}\"."
-msgstr "Goal poses. Takes in a blackboard variable, e.g. \"{goals}\"."
+msgstr "目标姿态。接收一个黑板变量，例如 \"{goals}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst
 msgid "planner_id"
-msgstr "planner_id"
+msgstr "规划器 ID"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:44 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:44
 msgid "Mapped name to the planner plugin type to use, e.g. GridBased."
-msgstr "Mapped name to the planner plugin type to use, e.g. GridBased."
+msgstr "将名称映射到要使用的规划器插件类型，例如 GridBased。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst ../../configuration/packages/bt-plugins/actions/FollowPath.rst ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst
 msgid "path"
-msgstr "path"
+msgstr "路径"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:77 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:77 ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:16
@@ -417,12 +417,12 @@ msgstr "nav_msgs::msg::Path"
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:81 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:81 ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:20
 msgid "Path created by action server. Takes in a blackboard variable, e.g. \"{path}\"."
-msgstr "Path created by action server. Takes in a blackboard variable, e.g. \"{path}\"."
+msgstr "由动作服务器创建的路径。接受黑板变量，例如 \"{path}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:92
 msgid "Compute path through poses error code. See ``ComputePathThroughPoses`` action message for the enumerated set of error codes."
-msgstr "Compute path through poses error code. See ``ComputePathThroughPoses`` action message for the enumerated set of error codes."
+msgstr "计算通过姿态的路径错误代码。请参阅``ComputePathThroughPoses``动作消息以获取枚举的错误代码集。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:4
@@ -432,7 +432,7 @@ msgstr "ComputePathToPose"
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:6
 msgid "Invokes the ComputePathToPose ROS 2 action server, which is implemented by the nav2_planner_ module. The server address can be remapped using the ``server_name`` input port."
-msgstr "Invokes the ComputePathToPose ROS 2 action server, which is implemented by the nav2_planner_ module. The server address can be remapped using the ``server_name`` input port."
+msgstr "调用 ComputePathToPose ROS 2 动作服务器，该服务器由 nav2_planner_ 模块实现。服务器地址可以通过``server_name``输入端口进行重新映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst ../../configuration/packages/bt-plugins/conditions/GoalReached.rst
@@ -442,7 +442,7 @@ msgstr "goal"
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:33
 msgid "Goal pose. Takes in a blackboard variable, e.g. \"{goal}\"."
-msgstr "Goal pose. Takes in a blackboard variable, e.g. \"{goal}\"."
+msgstr "目标姿态。接收一个黑板变量，例如 \"{goal}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:92
