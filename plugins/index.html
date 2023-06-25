@@ -1474,31 +1474,31 @@ Aleksei Budyakov</p></td>
 <td><p>Sarthak Mittal</p></td>
 <td><p>检查电池百分比是否低于指定值。</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/navigation2/blob/replanning/nav2_behavior_tree/plugins/condition/is_path_valid_condition.cpp">Is Path Valid Condition</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/navigation2/blob/replanning/nav2_behavior_tree/plugins/condition/is_path_valid_condition.cpp">路径是否有效条件</a></p></td>
 <td><p>Joshua Wallace</p></td>
 <td><p>通过确保路径上没有致命障碍物来检查路径是否有效。</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/path_expiring_timer_condition.cpp">Path Expiring Timer</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/path_expiring_timer_condition.cpp">路径到期计时器</a></p></td>
 <td><p>Joshua Wallace</p></td>
 <td><p>检查计时器是否已经过期。如果路径更新，则计时器将被重置。</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/are_error_codes_present_condition.cpp">Are Error Codes Present</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/are_error_codes_present_condition.cpp">是否存在错误代码</a></p></td>
 <td><p>Joshua Wallace</p></td>
 <td><p>检查指定的错误代码是否存在。</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_controller_recovery_help.cpp">Would A Controller Recovery Help</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_controller_recovery_help.cpp">控制器恢复是否有帮助</a></p></td>
 <td><p>Joshua Wallace</p></td>
 <td><p>检查控制器恢复是否有助于清除控制器服务器错误代码。</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_planner_recovery_help.cpp">Would A Planner Recovery Help</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_planner_recovery_help.cpp">规划器恢复是否有帮助</a></p></td>
 <td><p>Joshua Wallace</p></td>
 <td><p>检查规划器恢复是否有助于清除规划器服务器错误代码。</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_smoother_recovery_help.cpp">Would A Smoother Recovery Help</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_smoother_recovery_help.cpp">平滑器恢复是否有帮助</a></p></td>
 <td><p>Joshua Wallace</p></td>
 <td><p>检查平滑器恢复是否有助于清除平滑器服务器错误代码。</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_battery_charging_condition.cpp">Is Battery Charging Condition</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_battery_charging_condition.cpp">电池充电状态</a></p></td>
 <td><p>Alberto Tudela</p></td>
 <td><p>Checks if the battery
 is charging.</p></td>
@@ -1512,7 +1512,7 @@ is charging.</p></td>
 <col style="width: 42%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Decorator Plugin Name</p></th>
+<tr class="row-odd"><th class="head"><p>装饰器插件名称</p></th>
 <th class="head"><p>创建者</p></th>
 <th class="head"><p>描述</p></th>
 </tr>
@@ -1520,28 +1520,23 @@ is charging.</p></td>
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/decorator/rate_controller.cpp">Rate Controller</a></p></td>
 <td><p>Michael Jeronimo</p></td>
-<td><p>Throttles child node to a given
-rate</p></td>
+<td><p>将子节点限制在给定速率下</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/decorator/distance_controller.cpp">Distance Controller</a></p></td>
 <td><p>Sarthak Mittal</p></td>
-<td><p>Ticks child node based on the
-distance traveled by the robot</p></td>
+<td><p>根据机器人行进距离触发子节点</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/decorator/speed_controller.cpp">Speed Controller</a></p></td>
 <td><p>Sarthak Mittal</p></td>
-<td><p>Throttles child node to a rate
-based on current robot speed.</p></td>
+<td><p>将子节点限制在基于当前机器人速度的速率下</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/decorator/goal_updater_node.cpp">Goal Updater</a></p></td>
 <td><p>Francisco Martín</p></td>
-<td><p>Updates the goal received via
-topic subscription.</p></td>
+<td><p>通过主题订阅更新接收到的目标</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/decorator/single_trigger_node.cpp">Single Trigger</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Triggers nodes/subtrees below
-only a single time per BT run.</p></td>
+<td><p>每个BT运行仅触发一次下面的节点/子树</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/decorator/path_longer_on_approach.cpp">PathLongerOnApproach</a></p></td>
 <td><p>Pradheep Padmanabhan</p></td>
