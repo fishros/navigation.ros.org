@@ -387,7 +387,7 @@ msgstr "当使用其他类型的BT节点（例如装饰器、控制器、条件�
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:45
 msgid "The ``BTActionNode`` class provides 5 virtual methods to use, in addition to the information provided in the constructor. Let's learn more about the methods needed to write a BT action plugin."
-msgstr "The ``BTActionNode`` class provides 5 virtual methods to use, in addition to the information provided in the constructor. Let's learn more about the methods needed to write a BT action plugin."
+msgstr "``BTActionNode``类提供了5个虚拟方法供使用，除了构造函数提供的信息之外。让我们更详细地了解编写BT动作插件所需的方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:49
@@ -397,7 +397,7 @@ msgstr "**方法**"
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:49
 msgid "**Required?**"
-msgstr "**Required?**"
+msgstr "**是否必需？**"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:51
@@ -407,77 +407,77 @@ msgstr "构造函数"
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:51
 msgid "Constructor to indicate the corresponding XML tag name to that matches the plugin, the name of the action server to call using the plugin, and any BehaviorTree.CPP special configurations required."
-msgstr "Constructor to indicate the corresponding XML tag name to that matches the plugin, the name of the action server to call using the plugin, and any BehaviorTree.CPP special configurations required."
+msgstr "构造函数用于指示与插件匹配的相应XML标记名称，使用插件调用的动作服务器的名称，以及任何需要的BehaviorTree.CPP特殊配置。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:55
 msgid "providedPorts()"
-msgstr "providedPorts()"
+msgstr "提供的端口()"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:55
 msgid "A function to define the input and output ports a BT node may have. These are analogous to parameters that are defined in the BT XML by hardcoded values or by the value of output ports of other nodes."
-msgstr "A function to define the input and output ports a BT node may have. These are analogous to parameters that are defined in the BT XML by hardcoded values or by the value of output ports of other nodes."
+msgstr "一个函数，用于定义BT节点可能具有的输入和输出端口。这类似于通过硬编码值或其他节点的输出端口的值在BT XML中定义的参数。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:59
 msgid "on_tick()"
-msgstr "on_tick()"
+msgstr "每秒执行()"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:59
 msgid "Method is called when this BT node is ticked by the behavior tree while executing. This should be used to get dynamic updates like new blackboard values, input ports, or parameters. May also reset state for the action."
-msgstr "Method is called when this BT node is ticked by the behavior tree while executing. This should be used to get dynamic updates like new blackboard values, input ports, or parameters. May also reset state for the action."
+msgstr "在执行期间，当行为树对此BT节点进行打勾时调用此方法。这应该用于获取动态更新，如新的黑板值、输入端口或参数。也可以重置动作的状态。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:63
 msgid "on_wait_for_result()"
-msgstr "on_wait_for_result()"
+msgstr "等待结果()"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:63
 msgid "Method is called when the behavior tree node is waiting for a result from the ROS 2 action server it called. This could be used to check for updates to preempt the current task, check for a timeout, or anything to compute while waiting for the action to complete."
-msgstr "Method is called when the behavior tree node is waiting for a result from the ROS 2 action server it called. This could be used to check for updates to preempt the current task, check for a timeout, or anything to compute while waiting for the action to complete."
+msgstr "当行为树节点正在等待ROS 2动作服务器返回结果时调用此方法。这可以用于检查当前任务的更新情况，检查超时或在等待动作完成时进行计算等操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:68
 msgid "on_success()"
-msgstr "on_success()"
+msgstr "成功()"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:68
 msgid "Method is called when the ROS 2 action server returns a successful result. Returns the value the BT node will report back to the tree."
-msgstr "Method is called when the ROS 2 action server returns a successful result. Returns the value the BT node will report back to the tree."
+msgstr "当ROS 2动作服务器返回成功结果时调用此方法。返回BT节点将向树报告的值。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:71
 msgid "on_aborted()"
-msgstr "on_aborted()"
+msgstr "中止()"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:71
 msgid "Method is called when the ROS 2 action server returns an aborted result. Returns the value the BT node will report back to the tree."
-msgstr "Method is called when the ROS 2 action server returns an aborted result. Returns the value the BT node will report back to the tree."
+msgstr "当ROS 2动作服务器返回一个中止的结果时，调用该方法。返回BT节点将向树报告的值。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:74
 msgid "on_cancelled()"
-msgstr "on_cancelled()"
+msgstr "取消()"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:74
 msgid "MMethod is called when the ROS 2 action server returns a cancelled result. Returns the value the BT node will report back to the tree."
-msgstr "MMethod is called when the ROS 2 action server returns a cancelled result. Returns the value the BT node will report back to the tree."
+msgstr "当ROS 2动作服务器返回一个取消的结果时，调用该方法。返回BT节点将向树报告的值。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:78
 msgid "For this tutorial, we will only be using the ``on_tick()`` method."
-msgstr "For this tutorial, we will only be using the ``on_tick()`` method."
+msgstr "在本教程中，我们只会使用``每秒执行()``方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:80
 msgid "In the constructor, we need to get any non-variable parameters that apply to the behavior tree node. In this example, we need to get the value of the duration to sleep from the input port of the behavior tree XML."
-msgstr "In the constructor, we need to get any non-variable parameters that apply to the behavior tree node. In this example, we need to get the value of the duration to sleep from the input port of the behavior tree XML."
+msgstr "在构造函数中，我们需要获取适用于行为树节点的任何非变量参数。在这个示例中，我们需要从行为树XML的输入端口获取睡眠持续时间的值。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:103
@@ -487,7 +487,7 @@ msgstr "Here, we give the input of the ``xml_tag_name``, which tells the BT node
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:108
 msgid "We then call the ``BTActionNode`` constructor. As can be seen, it's templated by the ROS 2 action type, so we give it the ``nav2_msgs::action::Wait`` action message type and forward our other inputs. The ``BTActionNode`` has the ``tick()`` method, which is called directly by the behavior tree when this node is called from the tree. ``on_tick()`` is then called before sending the action client goal."
-msgstr "We then call the ``BTActionNode`` constructor. As can be seen, it's templated by the ROS 2 action type, so we give it the ``nav2_msgs::action::Wait`` action message type and forward our other inputs. The ``BTActionNode`` has the ``tick()`` method, which is called directly by the behavior tree when this node is called from the tree. ``on_tick()`` is then called before sending the action client goal."
+msgstr "然后我们调用``BTActionNode``构造函数。可以看到，它是由ROS 2动作类型进行模板化的，因此我们将其提供给``nav2_msgs::action::Wait``动作消息类型，并转发其他输入。当行为树从树中调用该节点时，``BTActionNode``具有``tick()``方法，该方法直接被调用。然后，在发送动作客户端目标之前调用``on_tick()``。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:112
@@ -497,7 +497,7 @@ msgstr "In the body of the constructor, we get the input port ``getInput`` of th
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:117
 msgid "The ``providedPorts()`` method gives us the opportunity to define input or output ports. Ports can be thought of as parameters that the behavior tree node has access to from the behavior tree itself. For our example, there is only a single input port, the ``wait_duration`` which can be set in the BT XML for each instance of the ``wait`` recovery. We set the type, ``int``, the default ``1``, the name ``wait_duration``, and a description of the port ``Wait time``."
-msgstr "The ``providedPorts()`` method gives us the opportunity to define input or output ports. Ports can be thought of as parameters that the behavior tree node has access to from the behavior tree itself. For our example, there is only a single input port, the ``wait_duration`` which can be set in the BT XML for each instance of the ``wait`` recovery. We set the type, ``int``, the default ``1``, the name ``wait_duration``, and a description of the port ``Wait time``."
+msgstr "``providedPorts()``方法使我们有机会定义输入或输出端口。端口可以被视为行为树节点从行为树本身访问的参数。对于我们的示例，只有一个输入端口，即``wait_duration``，可以在每个``wait``恢复的BT XML中设置。我们设置了类型为``int``，默认值为``1``，名称为``wait_duration``，端口的描述为``等待时间``。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:133
@@ -507,7 +507,7 @@ msgstr "The ``on_tick()`` method is called when the behavior tree ticks a specif
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:145
 msgid "The remaining methods are not used and are not mandatory to override them. Only some BT node plugins will require overriding ``on_wait_for_result()`` to check for preemption or check a timeout. The success, aborted, and cancelled methods will default to ``SUCCESS``, ``FAILURE``, ``SUCCESS`` respectively, if not overridden."
-msgstr "The remaining methods are not used and are not mandatory to override them. Only some BT node plugins will require overriding ``on_wait_for_result()`` to check for preemption or check a timeout. The success, aborted, and cancelled methods will default to ``SUCCESS``, ``FAILURE``, ``SUCCESS`` respectively, if not overridden."
+msgstr "剩下的方法未被使用，也不是强制要求重写它们。只有一些BT节点插件需要重写``on_wait_for_result()``以检查抢占或检查超时。如果未重写，成功、中止和取消方法将分别默认为``SUCCESS``、``FAILURE``、``SUCCESS``。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:150 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:137
@@ -517,7 +517,7 @@ msgstr "2- Exporting the planner plugin"
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:152
 msgid "Now that we have created our custom BT node, we need to export our plugin so that it would be visible to the behavior tree when it loads a custom BT XML. Plugins are loaded at runtime, and if they are not visible, then our BT Navigator server won't be able to load them or use them. In BehaviorTree.CPP, exporting and loading plugins is handled by the ``BT_REGISTER_NODES`` macro."
-msgstr "Now that we have created our custom BT node, we need to export our plugin so that it would be visible to the behavior tree when it loads a custom BT XML. Plugins are loaded at runtime, and if they are not visible, then our BT Navigator server won't be able to load them or use them. In BehaviorTree.CPP, exporting and loading plugins is handled by the ``BT_REGISTER_NODES`` macro."
+msgstr "现在我们已经创建了自定义的BT节点，我们需要导出插件，以便在加载自定义的BT XML时，行为树能够看到它。插件在运行时加载，如果它们不可见，那么我们的BT导航服务器将无法加载或使用它们。在BehaviorTree.CPP中，导出和加载插件由``BT_REGISTER_NODES``宏处理。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:169
