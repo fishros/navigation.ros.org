@@ -4331,7 +4331,7 @@ msgstr "1000"
 
 #: ../../configuration/packages/configuring-mppic.rst:75
 msgid "Count of randomly sampled candidate trajectories from current optimal control sequence in a given iteration. 1000 @ 50 Hz or 2000 @ 30 Hz seems to produce good results."
-msgstr "Count of randomly sampled candidate trajectories from current optimal control sequence in a given iteration. 1000 @ 50 Hz or 2000 @ 30 Hz seems to produce good results."
+msgstr "在给定迭代中，从当前最优控制序列中随机抽样的候选轨迹数量。以每秒50次的频率进行1000次或以每秒30次的频率进行2000次似乎能产生良好的结果。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4346,7 +4346,7 @@ msgstr "56"
 
 #: ../../configuration/packages/configuring-mppic.rst:86
 msgid "Number of time steps (points) in candidate trajectories"
-msgstr "Number of time steps (points) in candidate trajectories"
+msgstr "候选轨迹中的时间步数（点数）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4356,7 +4356,7 @@ msgstr "model_dt"
 
 #: ../../configuration/packages/configuring-mppic.rst:97
 msgid "Length of each time step's ``dt`` timestep, in seconds. ``time_steps * model_dt`` is the prediction horizon."
-msgstr "Length of each time step's ``dt`` timestep, in seconds. ``time_steps * model_dt`` is the prediction horizon."
+msgstr "每个时间步长``dt``的长度，以秒为单位。``time_steps * model_dt``是预测的时间范围。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4366,7 +4366,7 @@ msgstr "vx_std"
 
 #: ../../configuration/packages/configuring-mppic.rst:108
 msgid "Sampling standard deviation for Vx"
-msgstr "Sampling standard deviation for Vx"
+msgstr "Vx的采样标准差"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4376,7 +4376,7 @@ msgstr "vy_std"
 
 #: ../../configuration/packages/configuring-mppic.rst:119
 msgid "Sampling standard deviation for Vy"
-msgstr "Sampling standard deviation for Vy"
+msgstr "Vy的采样标准差"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4386,7 +4386,7 @@ msgstr "wz_std"
 
 #: ../../configuration/packages/configuring-mppic.rst:130
 msgid "Sampling standard deviation for Wz (angular velocity)"
-msgstr "Sampling standard deviation for Wz (angular velocity)"
+msgstr "Wz（角速度）的采样标准差"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4396,7 +4396,7 @@ msgstr "vx_max"
 
 #: ../../configuration/packages/configuring-mppic.rst:141
 msgid "Target maximum forward velocity (m/s)."
-msgstr "Target maximum forward velocity (m/s)."
+msgstr "目标最大前向速度（米/秒）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4406,7 +4406,7 @@ msgstr "vy_max"
 
 #: ../../configuration/packages/configuring-mppic.rst:152
 msgid "Target maximum lateral velocity, if using ``Omni`` motion model (m/s)."
-msgstr "Target maximum lateral velocity, if using ``Omni`` motion model (m/s)."
+msgstr "如果使用``Omni``运动模型，则为目标最大横向速度（米/秒）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4421,7 +4421,7 @@ msgstr "-0.35"
 
 #: ../../configuration/packages/configuring-mppic.rst:163
 msgid "Maximum reverse velocity (m/s)."
-msgstr "Maximum reverse velocity (m/s)."
+msgstr "最大反向速度（米/秒）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4441,7 +4441,7 @@ msgstr "temperature"
 
 #: ../../configuration/packages/configuring-mppic.rst:185
 msgid "Selectiveness of trajectories by their costs (The closer this value to 0, the \"more\" we take in consideration controls with less cost), 0 mean use control with best cost, huge value will lead to just taking mean of all trajectories without cost consideration."
-msgstr "Selectiveness of trajectories by their costs (The closer this value to 0, the \"more\" we take in consideration controls with less cost), 0 mean use control with best cost, huge value will lead to just taking mean of all trajectories without cost consideration."
+msgstr "通过其成本选择轨迹的选择性（该值越接近0，我们越考虑成本较低的控制），0表示使用具有最佳成本的控制，较大的值将导致只考虑所有轨迹的平均成本。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
