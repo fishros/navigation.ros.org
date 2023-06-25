@@ -2702,7 +2702,7 @@ msgstr "\"goals\""
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:185
 msgid "Blackboard variable to use to supply the goals to the behavior tree for ``NavigateThroughPoses``. Should match ports of BT XML file."
-msgstr "Blackboard variable to use to supply the goals to the behavior tree for ``NavigateThroughPoses``. Should match ports of BT XML file."
+msgstr "用于向“NavigateThroughPoses”行为树提供目标的黑板变量。应与BT XML文件的端口匹配。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2712,7 +2712,7 @@ msgstr "use_sim_time"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:196
 msgid "Use time provided by simulation."
-msgstr "Use time provided by simulation."
+msgstr "使用仿真提供的时间。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2732,77 +2732,77 @@ msgstr "要进行比较的错误代码列表。"
 
 #: ../../configuration/packages/configuring-bt-xml.rst:4
 msgid "Behavior Tree XML Nodes"
-msgstr "Behavior Tree XML Nodes"
+msgstr "行为树XML节点"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:6
 msgid "The nav2_behavior_tree_ package provides several navigation-specific nodes that are pre-registered and can be included in Behavior Trees."
-msgstr "The nav2_behavior_tree_ package provides several navigation-specific nodes that are pre-registered and can be included in Behavior Trees."
+msgstr "nav2_behavior_tree_软件包提供了几个与导航相关的节点，这些节点已经预先注册，可以包含在行为树中。"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:10
 msgid "Check this introduction_ to learn how behavior trees work and the difference between actions, conditions, controls and decorators."
-msgstr "Check this introduction_ to learn how behavior trees work and the difference between actions, conditions, controls and decorators."
+msgstr "查看此介绍_以了解行为树的工作原理以及动作、条件、控制和装饰器之间的区别。"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:17
 msgid "Action Plugins"
-msgstr "Action Plugins"
+msgstr "动作插件"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:52
 msgid "Condition Plugins"
-msgstr "Condition Plugins"
+msgstr "条件插件"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:75
 msgid "Control Plugins"
-msgstr "Control Plugins"
+msgstr "控制插件"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:85
 msgid "Decorator Plugins"
-msgstr "Decorator Plugins"
+msgstr "装饰器插件"
 
 
 #: ../../configuration/packages/configuring-bt-xml.rst:100
 msgid "This Behavior Tree replans the global path periodically at 1 Hz and it also has recovery actions."
-msgstr "This Behavior Tree replans the global path periodically at 1 Hz and it also has recovery actions."
+msgstr "该行为树以1 Hz的频率定期重新规划全局路径，并具有恢复动作。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:4
 msgid "Collision Monitor"
-msgstr "Collision Monitor"
+msgstr "碰撞监控"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:6
 msgid "The Collision Monitor is a node providing an additional level of robot safety. It performs several collision avoidance related tasks using incoming data from the sensors, bypassing the costmap and trajectory planners, to monitor for and prevent potential collisions at the emergency-stop level."
-msgstr "The Collision Monitor is a node providing an additional level of robot safety. It performs several collision avoidance related tasks using incoming data from the sensors, bypassing the costmap and trajectory planners, to monitor for and prevent potential collisions at the emergency-stop level."
+msgstr "碰撞监视器是一个提供额外机器人安全级别的节点。它使用传感器的输入数据执行几个与避碰相关的任务，绕过代价地图和轨迹规划器，监视并防止紧急停止级别的潜在碰撞。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:9
 msgid "This is analogous to safety sensor and hardware features; take in laser scans from a real-time certified safety scanner, detect if there is to be an imminent collision in a configurable bounding box, and either emergency-stop the certified robot controller or slow the robot to avoid such collision. However, this node is done at the CPU level with any form of sensor. As such, this does not provide hard real-time safety certifications, but uses the same types of techniques with the same types of data for users that do not have safety-rated laser sensors, safety-rated controllers, or wish to use any type of data input (e.g. pointclouds from depth or stereo or range sensors)."
-msgstr "This is analogous to safety sensor and hardware features; take in laser scans from a real-time certified safety scanner, detect if there is to be an imminent collision in a configurable bounding box, and either emergency-stop the certified robot controller or slow the robot to avoid such collision. However, this node is done at the CPU level with any form of sensor. As such, this does not provide hard real-time safety certifications, but uses the same types of techniques with the same types of data for users that do not have safety-rated laser sensors, safety-rated controllers, or wish to use any type of data input (e.g. pointclouds from depth or stereo or range sensors)."
+msgstr "这类似于安全传感器和硬件功能；从实时认证的安全扫描仪获取激光扫描数据，检测是否存在即将发生的碰撞，并通过紧急停止认证的机器人控制器或减速机器人来避免此类碰撞。但是，此节点是在CPU级别上使用任何形式的传感器完成的。因此，它不提供硬实时的安全认证，但对于没有安全等级激光传感器、安全等级控制器或希望使用任何类型的数据输入（例如深度或立体或距离传感器的点云）的用户，它使用相同类型的技术和数据。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:13
 msgid "This is a useful and integral part of large heavy industrial robots, or robots moving with high velocities, around people or other dynamic agents (e.g. other robots) as a safety mechanism for high-response emergency stopping. The costmaps / trajectory planners will handle most situations, but this is to handle obstacles that virtually appear out of no where (from the robot's perspective) or approach the robot at such high speed it needs to immediately stop to prevent collision."
-msgstr "This is a useful and integral part of large heavy industrial robots, or robots moving with high velocities, around people or other dynamic agents (e.g. other robots) as a safety mechanism for high-response emergency stopping. The costmaps / trajectory planners will handle most situations, but this is to handle obstacles that virtually appear out of no where (from the robot's perspective) or approach the robot at such high speed it needs to immediately stop to prevent collision."
+msgstr "这是大型重型工业机器人或以高速移动的机器人与人员或其他动态实体（例如其他机器人）之间的安全机制的有用且必要的一部分。代价地图/轨迹规划器将处理大多数情况，但该节点用于处理几乎突然出现的障碍物（从机器人的角度来看），或者以如此高的速度接近机器人，以至于需要立即停止以防止碰撞。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:16 ../../configuration/packages/configuring-mppic.rst:28 ../../configuration/packages/configuring-regulated-pp.rst:16 ../../configuration/packages/configuring-rotation-shim-controller.rst:18
 msgid "See the package's ``README`` for more complete information."
-msgstr "See the package's ``README`` for more complete information."
+msgstr "请参阅软件包的“README”以获取更完整的信息。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:19
 msgid "Features"
-msgstr "Features"
+msgstr "特点"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:21
 msgid "The Collision Monitor uses polygons relative the robot's base frame origin to define \"zones\". Data that fall into these zones trigger an operation depending on the model being used. A given instance of the Collision Monitor can have many zones with different models at the same time. When multiple zones trigger at once, the most aggressive one is used (e.g. stop > slow 50% > slow 10%)."
-msgstr "The Collision Monitor uses polygons relative the robot's base frame origin to define \"zones\". Data that fall into these zones trigger an operation depending on the model being used. A given instance of the Collision Monitor can have many zones with different models at the same time. When multiple zones trigger at once, the most aggressive one is used (e.g. stop > slow 50% > slow 10%)."
+msgstr "碰撞监控使用相对于机器人的基本框架原点的多边形来定义“区域”。落入这些区域的数据将触发相应的操作，具体取决于所使用的模型。一个给定的碰撞监控实例可以同时具有多个具有不同模型的区域。当多个区域同时触发时，使用最激进的区域（例如停止 > 减速 50% > 减速 10%）"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:26
@@ -2812,7 +2812,7 @@ msgstr "The following models of safety behaviors are employed by Collision Monit
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:28
 msgid "**Stop model**: Define a zone and a point threshold. If ``min_points`` or more obstacle points appear inside this area, stop the robot until the obstacles will disappear."
-msgstr "**Stop model**: Define a zone and a point threshold. If ``min_points`` or more obstacle points appear inside this area, stop the robot until the obstacles will disappear."
+msgstr "**停止模型**：定义一个区域和一个点阈值。如果在该区域内出现``min_points``或更多的障碍点，则停止机器人直到障碍物消失。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:29
@@ -2822,7 +2822,7 @@ msgstr "**Slowdown model**: Define a zone around the robot and slow the maximum 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:30
 msgid "**Limit model**: Define a zone around the robot and restricts the maximum linear and angular velocities to ``linear_limit`` and ``angular_limit`` values accordingly, if ``min_points`` or more points will appear inside the area."
-msgstr "**Limit model**: Define a zone around the robot and restricts the maximum linear and angular velocities to ``linear_limit`` and ``angular_limit`` values accordingly, if ``min_points`` or more points will appear inside the area."
+msgstr "**限制模型**：定义一个围绕机器人的区域，并将最大线性速度和最大角速度限制为``linear_limit``和``angular_limit``的值，如果在该区域内出现``min_points``或更多点。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:31
@@ -2832,7 +2832,7 @@ msgstr "**Approach model**: Using the current robot speed, estimate the time to 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:33
 msgid "The zones around the robot can take the following shapes:"
-msgstr "The zones around the robot can take the following shapes:"
+msgstr "围绕机器人的区域可以采用以下形状："
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:35
