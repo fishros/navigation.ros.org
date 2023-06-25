@@ -777,7 +777,7 @@ msgstr "机器人基准坐标系。"
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst
 msgid "input_goals"
-msgstr "input_goals"
+msgstr "输入目标"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:54
@@ -787,7 +787,7 @@ msgstr "一个目标向量，用于检查在当前迭代中是否通过了任何
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst
 msgid "output_goals"
-msgstr "output_goals"
+msgstr "输出目标"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:68
@@ -797,7 +797,7 @@ msgstr "一个目标向量，其中的目标在接近机器人时被移除。"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:4
 msgid "SmoothPath"
-msgstr "SmoothPath"
+msgstr "平滑路径"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:6
@@ -807,17 +807,17 @@ msgstr "调用平滑器服务器中的平滑路径操作API，以平滑给定的
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
 msgid "unsmoothed_path"
-msgstr "unsmoothed_path"
+msgstr "未平滑路径"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:20
 msgid "The blackboard variable or hard-coded input path to smooth"
-msgstr "The blackboard variable or hard-coded input path to smooth"
+msgstr "平滑的黑板变量或硬编码的输入路径"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
 msgid "max_smoothing_duration"
-msgstr "max_smoothing_duration"
+msgstr "最大平滑持续时间"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:27 ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:27 ../../configuration/packages/configuring-constrained-smoother.rst:146 ../../configuration/packages/configuring-mppic.rst:341 ../../configuration/packages/costmap-plugins/obstacle.rst:202 ../../configuration/packages/costmap-plugins/voxel.rst:268 ../../configuration/packages/smac/configuring-smac-hybrid.rst:109 ../../configuration/packages/smac/configuring-smac-lattice.rst:91
@@ -827,7 +827,7 @@ msgstr "3.0"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:31
 msgid "Maximum time to smooth for (seconds)"
-msgstr "Maximum time to smooth for (seconds)"
+msgstr "最大平滑时间（秒）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
@@ -837,12 +837,12 @@ msgstr "check_for_collisions"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:38 ../../configuration/packages/bt-plugins/actions/Smooth.rst:85 ../../configuration/packages/bt-plugins/actions/Spin.rst:64 ../../configuration/packages/configuring-amcl.rst:119 ../../configuration/packages/configuring-amcl.rst:196 ../../configuration/packages/configuring-amcl.rst:354 ../../configuration/packages/configuring-amcl.rst:442 ../../configuration/packages/configuring-amcl.rst:475 ../../configuration/packages/configuring-bt-navigator.rst:192 ../../configuration/packages/configuring-collision-monitor.rst:133 ../../configuration/packages/configuring-collision-monitor.rst:315 ../../configuration/packages/configuring-constrained-smoother.rst:36 ../../configuration/packages/configuring-constrained-smoother.rst:69 ../../configuration/packages/configuring-constrained-smoother.rst:80 ../../configuration/packages/configuring-constrained-smoother.rst:205 ../../configuration/packages/configuring-constrained-smoother.rst:227 ../../configuration/packages/configuring-constrained-smoother.rst:238 ../../configuration/packages/configuring-constrained-smoother.rst:249 ../../configuration/packages/configuring-costmaps.rst:21 ../../configuration/packages/configuring-costmaps.rst:186 ../../configuration/packages/configuring-costmaps.rst:197 ../../configuration/packages/configuring-costmaps.rst:219 ../../configuration/packages/configuring-costmaps.rst:252 ../../configuration/packages/configuring-lifecycle.rst:34 ../../configuration/packages/configuring-lifecycle.rst:56 ../../configuration/packages/configuring-mppic.rst:203 ../../configuration/packages/configuring-mppic.rst:446 ../../configuration/packages/configuring-navfn.rst:33 ../../configuration/packages/configuring-navfn.rst:44 ../../configuration/packages/configuring-navfn.rst:55 ../../configuration/packages/configuring-regulated-pp.rst:107 ../../configuration/packages/configuring-regulated-pp.rst:140 ../../configuration/packages/configuring-regulated-pp.rst:162 ../../configuration/packages/configuring-regulated-pp.rst:173 ../../configuration/packages/configuring-regulated-pp.rst:206 ../../configuration/packages/configuring-regulated-pp.rst:228 ../../configuration/packages/configuring-regulated-pp.rst:241 ../../configuration/packages/configuring-regulated-pp.rst:287 ../../configuration/packages/configuring-savitzky-golay-smoother.rst:27 ../../configuration/packages/configuring-simple-smoother.rst:33 ../../configuration/packages/configuring-thetastar.rst:67 ../../configuration/packages/configuring-thetastar.rst:78 ../../configuration/packages/configuring-velocity-smoother.rst:34 ../../configuration/packages/configuring-waypoint-follower.rst:23 ../../configuration/packages/costmap-plugins/binary_filter.rst:20 ../../configuration/packages/costmap-plugins/binary_filter.rst:53 ../../configuration/packages/costmap-plugins/denoise.rst:13 ../../configuration/packages/costmap-plugins/inflation.rst:14 ../../configuration/packages/costmap-plugins/inflation.rst:48 ../../configuration/packages/costmap-plugins/inflation.rst:60 ../../configuration/packages/costmap-plugins/keepout_filter.rst:17 ../../configuration/packages/costmap-plugins/obstacle.rst:15 ../../configuration/packages/costmap-plugins/obstacle.rst:26 ../../configuration/packages/costmap-plugins/obstacle.rst:147 ../../configuration/packages/costmap-plugins/obstacle.rst:158 ../../configuration/packages/costmap-plugins/obstacle.rst:169 ../../configuration/packages/costmap-plugins/range.rst:13 ../../configuration/packages/costmap-plugins/range.rst:92 ../../configuration/packages/costmap-plugins/speed_filter.rst:23 ../../configuration/packages/costmap-plugins/static.rst:13 ../../configuration/packages/costmap-plugins/static.rst:24 ../../configuration/packages/costmap-plugins/static.rst:35 ../../configuration/packages/costmap-plugins/voxel.rst:15 ../../configuration/packages/costmap-plugins/voxel.rst:26 ../../configuration/packages/costmap-plugins/voxel.rst:114 ../../configuration/packages/costmap-plugins/voxel.rst:213 ../../configuration/packages/costmap-plugins/voxel.rst:224 ../../configuration/packages/costmap-plugins/voxel.rst:235 ../../configuration/packages/dwb-params/controller.rst:38 ../../configuration/packages/dwb-params/controller.rst:49 ../../configuration/packages/dwb-params/controller.rst:82 ../../configuration/packages/dwb-params/controller.rst:126 ../../configuration/packages/dwb-params/visualization.rst:16 ../../configuration/packages/dwb-params/visualization.rst:27 ../../configuration/packages/dwb-params/visualization.rst:38 ../../configuration/packages/dwb-params/visualization.rst:49 ../../configuration/packages/dwb-params/visualization.rst:60 ../../configuration/packages/dwb-params/visualization.rst:71 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:27 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:71 ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:40 ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:18 ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:20 ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:18 ../../configuration/packages/smac/configuring-smac-2d.rst:32 ../../configuration/packages/smac/configuring-smac-2d.rst:54 ../../configuration/packages/smac/configuring-smac-2d.rst:109 ../../configuration/packages/smac/configuring-smac-hybrid.rst:21 ../../configuration/packages/smac/configuring-smac-hybrid.rst:43 ../../configuration/packages/smac/configuring-smac-hybrid.rst:219 ../../configuration/packages/smac/configuring-smac-hybrid.rst:230 ../../configuration/packages/smac/configuring-smac-hybrid.rst:241 ../../configuration/packages/smac/configuring-smac-hybrid.rst:296 ../../configuration/packages/smac/configuring-smac-lattice.rst:25 ../../configuration/packages/smac/configuring-smac-lattice.rst:190 ../../configuration/packages/smac/configuring-smac-lattice.rst:201 ../../configuration/packages/smac/configuring-smac-lattice.rst:212 ../../configuration/packages/smac/configuring-smac-lattice.rst:267 ../../configuration/packages/trajectory_critics/base_obstacle.rst:21 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:21
 msgid "bool"
-msgstr "bool"
+msgstr "布尔值"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:42
 msgid "Whether to check the output smoothed path for collisions."
-msgstr "Whether to check the output smoothed path for collisions."
+msgstr "是否检查输出平滑路径是否发生碰撞"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
@@ -852,7 +852,7 @@ msgstr "smoother_id"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:53
 msgid "The smoother plugin ID to use for smoothing in the smoother server"
-msgstr "The smoother plugin ID to use for smoothing in the smoother server"
+msgstr "用于在平滑器服务器中进行平滑的平滑器插件 ID"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
@@ -862,7 +862,7 @@ msgstr "smoothed_path"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:67
 msgid "The output blackboard variable to assign the smoothed path to"
-msgstr "The output blackboard variable to assign the smoothed path to"
+msgstr "将平滑路径分配给的输出黑板变量"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
@@ -872,7 +872,7 @@ msgstr "smoothing_duration"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:78
 msgid "The actual duration used for smoothing"
-msgstr "The actual duration used for smoothing"
+msgstr "用于平滑的实际持续时间"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
@@ -887,7 +887,7 @@ msgstr "Indicates if the smoothing process was completed. Will return ``false`` 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:100
 msgid "Follow smoother error code. See ``SmoothPath`` action for the enumerated set of error code definitions."
-msgstr "Follow smoother error code. See ``SmoothPath`` action for the enumerated set of error code definitions."
+msgstr "跟随平滑器错误代码。请参阅“SmoothPath”动作以获取错误代码定义的枚举集合。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:4
@@ -897,7 +897,7 @@ msgstr "SmootherSelector"
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:6
 msgid "It is used to select the Smoother that will be used by the Smoother server. It subscribes to the ``smoother_selector`` topic to receive command messages with the name of the Smoother to be used. It is commonly used before of the FollowPathAction. If none is provided on the topic, the ``default_smoother`` is used."
-msgstr "It is used to select the Smoother that will be used by the Smoother server. It subscribes to the ``smoother_selector`` topic to receive command messages with the name of the Smoother to be used. It is commonly used before of the FollowPathAction. If none is provided on the topic, the ``default_smoother`` is used."
+msgstr "用于选择由平滑器服务器使用的平滑器。它订阅“smoother_selector”主题，以接收带有要使用的平滑器名称的命令消息。通常在FollowPathAction之前使用。如果主题上没有提供任何内容，则使用“default_smoother”。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:20
@@ -907,7 +907,7 @@ msgstr "smoother_selector"
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:24
 msgid "The name of the topic used to received select command messages. This is used to support multiple SmootherSelector nodes."
-msgstr "The name of the topic used to received select command messages. This is used to support multiple SmootherSelector nodes."
+msgstr "用于接收选择命令消息的主题名称。这用于支持多个SmootherSelector节点。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst
