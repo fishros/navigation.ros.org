@@ -1446,91 +1446,57 @@ Aleksei Budyakov</p></td>
 <td><p>Aitor Miguel Blanco</p></td>
 <td><p>检查目标是否被中断。</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/navigation2/blob/replanning/nav2_behavior_tree/plugins/condition/globally_updated_goal_condition.cpp">Globally Updated Goal Condition</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/navigation2/blob/replanning/nav2_behavior_tree/plugins/condition/globally_updated_goal_condition.cpp">全局更新目标条件</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if goal is
-preempted in the global
-BT context</p></td>
+<td><p>检查全局行为树上的目标是否被抢占</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/initial_pose_received_condition.cpp">Initial Pose received Condition</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/initial_pose_received_condition.cpp">接收初始姿态条件</a></p></td>
 <td><p>卡尔·德尔西</p></td>
-<td><p>Checks if initial pose
-has been set</p></td>
+<td><p>检查初始姿态是否已设置</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_stuck_condition.cpp">Is Stuck Condition</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_stuck_condition.cpp">被卡住条件</a></p></td>
 <td><p>Michael Jeronimo</p></td>
-<td><p>Checks if robot is
-making progress or
-stuck</p></td>
+<td><p>检查机器人是否在前进或卡住</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/transform_available_condition.cpp">Transform Available Condition</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/transform_available_condition.cpp">可用变换条件</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Checks if a TF
-transformation is
-available. When
-succeeds returns
-success for subsequent
-calls.</p></td>
+<td><p>检查是否有 TF 变换可用。成功时返回后续调用的成功。</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/distance_traveled_condition.cpp">Distance Traveled Condition</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/distance_traveled_condition.cpp">已行进距离条件</a></p></td>
 <td><p>Sarthak Mittal</p></td>
-<td><p>Checks is robot has
-traveled a given
-distance.</p></td>
+<td><p>检查机器人是否已行进给定距离。</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/time_expired_condition.cpp">Time Expired Condition</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/time_expired_condition.cpp">时间到期条件</a></p></td>
 <td><p>Sarthak Mittal</p></td>
-<td><p>Checks if a given
-time period has
-passed.</p></td>
+<td><p>检查是否已经过去了给定的时间段。</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_battery_low_condition.cpp">Is Battery Low Condition</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_battery_low_condition.cpp">电池低电量条件</a></p></td>
 <td><p>Sarthak Mittal</p></td>
-<td><p>Checks if battery
-percentage is below
-a specified value.</p></td>
+<td><p>检查电池百分比是否低于指定值。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/navigation2/blob/replanning/nav2_behavior_tree/plugins/condition/is_path_valid_condition.cpp">Is Path Valid Condition</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if a path is
-valid by making sure
-there are no LETHAL
-obstacles along the
-path.</p></td>
+<td><p>通过确保路径上没有致命障碍物来检查路径是否有效。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/path_expiring_timer_condition.cpp">Path Expiring Timer</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if the timer has
-expired. The timer is
-reset if the path gets
-updated.</p></td>
+<td><p>检查计时器是否已经过期。如果路径更新，则计时器将被重置。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/are_error_codes_present_condition.cpp">Are Error Codes Present</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if the specified
-error codes are
-present.</p></td>
+<td><p>检查指定的错误代码是否存在。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_controller_recovery_help.cpp">Would A Controller Recovery Help</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if a controller
-recovery could help
-clear the controller
-server error code.</p></td>
+<td><p>检查控制器恢复是否有助于清除控制器服务器错误代码。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_planner_recovery_help.cpp">Would A Planner Recovery Help</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if a planner
-recovery could help
-clear the planner
-server error code.</p></td>
+<td><p>检查规划器恢复是否有助于清除规划器服务器错误代码。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/would_a_smoother_recovery_help.cpp">Would A Smoother Recovery Help</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Checks if a Smoother
-recovery could help
-clear the smoother
-server error code.</p></td>
+<td><p>检查平滑器恢复是否有助于清除平滑器服务器错误代码。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins/condition/is_battery_charging_condition.cpp">Is Battery Charging Condition</a></p></td>
 <td><p>Alberto Tudela</p></td>
