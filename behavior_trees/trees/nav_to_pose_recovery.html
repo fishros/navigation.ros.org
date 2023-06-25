@@ -728,7 +728,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#decorator-nodes">装饰节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-pipelinesequence">Control: PipelineSequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-recovery">控制：恢复</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-roundrobin">Control: RoundRobin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-roundrobin">控制：RoundRobin</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../overview/detailed_behavior_tree_walkthrough.html">详细的行为树遍历</a><ul>
@@ -743,7 +743,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">Navigate Through Poses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">Navigate To Pose and Pause Near Goal-Obstacle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="follow_point.html">Follow Dynamic Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="follow_point.html">跟随动态点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
@@ -946,8 +946,7 @@ It contains both use of custom recovery behaviors in specific sub-contexts as we
 It also provides the opportunity for users to retry tasks multiple times before returning a failed state.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> BT nodes both also specify their algorithms to utilize.
 By convention we name these by the style of algorithms that they are (e.g. not <code class="docutils literal notranslate"><span class="pre">DWB</span></code> but rather <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller.</p>
-<p>In this behavior tree, we attempt to retry the entire navigation task 6 times before returning to the caller that the task has failed.
-This allows the navigation system ample opportunity to try to recovery from failure conditions or wait for transient issues to pass, such as crowding from people or a temporary sensor failure.</p>
+<p>在这个行为树中，我们尝试在返回任务失败之前重试整个导航任务 6 次。这使得导航系统有充分的机会尝试从故障条件中恢复或等待瞬时问题解决，例如人员拥挤或临时传感器故障。</p>
 <p>In nominal execution, this will replan the path at every second and pass that path onto the controller, similar to the behavior tree in <a class="reference internal" href="../index.html#behavior-trees"><span class="std std-ref">Nav2行为树</span></a>.
 However, this time, if the planner fails, it will trigger contextually aware recovery behaviors in its subtree, clearing the global costmap.
 Additional recovery behaviors can be added here for additional context-specific recoveries, such as trying another algorithm.</p>

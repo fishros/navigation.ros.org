@@ -728,7 +728,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#decorator-nodes">装饰节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#control-pipelinesequence">Control: PipelineSequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#control-recovery">控制：恢复</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#control-roundrobin">Control: RoundRobin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-roundrobin">控制：RoundRobin</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="detailed_behavior_tree_walkthrough.html">详细的行为树遍历</a><ul>
@@ -743,7 +743,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../trees/nav_through_poses_recovery.html">Navigate Through Poses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../trees/nav_to_pose_and_pause_near_goal_obstacle.html">Navigate To Pose and Pause Near Goal-Obstacle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trees/follow_point.html">Follow Dynamic Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trees/follow_point.html">跟随动态点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
@@ -1055,19 +1055,17 @@
 <div class="line"><br /></div>
 </div>
 <p>请注意，如果``Action_A``、<code class="docutils literal notranslate"><span class="pre">Action_B``或``Action_C``在任何时候返回``FAILURE</span></code>，则父节点也将返回``FAILURE``，并停止执行任何子节点。</p>
-<p>For additional details regarding the <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> please see the <a class="reference external" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence configuration guide</a>.</p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> 的详细信息，请参阅 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence 配置指南</a>。</p>
 </div>
 <div class="section" id="control-recovery">
 <h2>控制：恢复<a class="headerlink" href="#control-recovery" title="永久链接至标题"></a></h2>
-<p>The Recovery control node has only two children and returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> if and only if the first child returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
-If the first child returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>, the second child will be ticked. This loop will continue until either:</p>
+<p>Recovery 控制节点只有两个子节点，仅当第一个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> 时它才返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>。如果第一个子节点返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>，则会执行第二个子节点。这个循环将继续，直到出现以下情况之一：</p>
 <ul class="simple">
 <li><p>第一个子节点返回``SUCCESS``（导致父节点返回``SUCCESS``）。</p></li>
-<li><p>The second child returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> (which results in <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> of the parent node)</p></li>
+<li><p>第二个子节点返回 <code class="docutils literal notranslate"><span class="pre">FAILURE``（导致父节点返回</span> <span class="pre">``FAILURE</span></code>）</p></li>
 <li><p>违反了``number_of_retries``输入参数的限制。</p></li>
 </ul>
-<p>This node is usually used to link together an action, and a recovery action as the name suggests. The first action will typically be the &quot;main&quot; behavior,
-and the second action will be something to be done in case of <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> of the main behavior. Often, the ticking of the second child action will promote the chance the first action will succeed.</p>
+<p>通常情况下，此节点用于连接一个操作和一个恢复操作，正如其名称所示。第一个操作通常是“主要”行为，第二个操作将在主要行为失败的情况下执行。通常，执行第二个子节点操作会提高第一个操作成功的机会。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1087,15 +1085,13 @@ and the second action will be something to be done in case of <code class="docut
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>In the above example, let's assume <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> fails. <code class="docutils literal notranslate"><span class="pre">ClearLocalCostmap</span></code> will be ticked in response, and return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
-Now that we have cleared the costmap, let's say the robot is correctly able to compute the path and <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> now returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>. Then, the parent RecoveryNode will also return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> and the BT will be complete.</p>
-<p>For additional details regarding the <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> please see the <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RecoveryNode.html">RecoveryNode configuration guide</a>.</p>
+<p>在上面的例子中，假设``ComputePathToPose``失败。作为响应，<code class="docutils literal notranslate"><span class="pre">ClearLocalCostmap``将被激活并返回``SUCCESS</span></code>。现在，既然我们已经清除了代价地图，假设机器人能够正确计算路径并且``ComputePathToPose``现在返回``SUCCESS``。然后，父级RecoveryNode也将返回``SUCCESS``，BT将完成。</p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的详细信息，请参阅 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RecoveryNode.html">RecoveryNode 配置指南</a>。</p>
 </div>
 <div class="section" id="control-roundrobin">
-<h2>Control: RoundRobin<a class="headerlink" href="#control-roundrobin" title="永久链接至标题"></a></h2>
-<p>The RoundRobin control node ticks its children in a round robin fashion until a child returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>, in which the parent node will also return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
-If all children return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> so will the parent RoundRobin.</p>
-<p>Here is an example BT we will use to walk through the concept.</p>
+<h2>控制：RoundRobin<a class="headerlink" href="#control-roundrobin" title="永久链接至标题"></a></h2>
+<p>RoundRobin 控制节点以循环方式执行其子节点，直到某个子节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>，此时父节点也将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>。如果所有子节点返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>，父节点 RoundRobin 也将返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>。</p>
+<p>这是一个我们将用来介绍概念的BT示例。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1117,7 +1113,7 @@ If all children return <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p>All the nodes start at <code class="docutils literal notranslate"><span class="pre">IDLE</span></code></p></li>
+<li><p>所有节点都从 <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> 状态开始。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1163,7 +1159,7 @@ The parent node retains this state information, and will tick <code class="docut
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>On this tick, let's assume <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>, and so does the parent RoundRobin. No other nodes are ticked.</p></li>
+<li><p>在这个时钟周期中，假设 <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>，父级 RoundRobin 也返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>。其他节点都未执行。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1175,7 +1171,7 @@ The parent node retains this state information, and will tick <code class="docut
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="6">
-<li><p>On this last tick, let's assume <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>. The parent will circle and tick <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> again. <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> and so will the parent RoundRobin node. This pattern will continue indefinitely unless all children return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>.</p></li>
+<li><p>在最后一次激活时，假设``Action_C``返回``FAILURE``。父节点将循环并再次激活``Action_A``。<code class="docutils literal notranslate"><span class="pre">Action_A``返回``RUNNING</span></code>，父级RoundRobin节点也将返回``RUNNING``。除非所有子节点返回``FAILURE``，否则此模式将无限继续。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1186,7 +1182,7 @@ The parent node retains this state information, and will tick <code class="docut
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>For additional details regarding the <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> please see the <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RoundRobin.html">RoundRobin configuration guide</a>.</p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> 的更多详细信息，请参阅 <a class="reference external" href="../../configuration/packages/bt-plugins/controls/RoundRobin.html">RoundRobin 配置指南</a>。</p>
 </div>
 </div>
 

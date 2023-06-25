@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Follow Dynamic Point &mdash; Navigation 2 1.0.0 文档</title>
+  <title>跟随动态点 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -728,7 +728,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#decorator-nodes">装饰节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-pipelinesequence">Control: PipelineSequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-recovery">控制：恢复</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-roundrobin">Control: RoundRobin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/nav2_specific_nodes.html#control-roundrobin">控制：RoundRobin</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../overview/detailed_behavior_tree_walkthrough.html">详细的行为树遍历</a><ul>
@@ -743,7 +743,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">Navigate Through Poses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">Navigate To Pose and Pause Near Goal-Obstacle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Follow Dynamic Point</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">跟随动态点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Nav2行为树</a> &raquo;</li>
-      <li>Follow Dynamic Point</li>
+      <li>跟随动态点</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,18 +939,14 @@
            <div itemprop="articleBody">
              
   <div class="section" id="follow-dynamic-point">
-<span id="behavior-tree-follow-point"></span><h1>Follow Dynamic Point<a class="headerlink" href="#follow-dynamic-point" title="永久链接至标题"></a></h1>
-<p>This behavior tree implements a navigation behavior from a starting point, attempting to follow a dynamic point over time.
-This &quot;dynamic point&quot; could be a person, another robot, a virtual carrot, anything.
-The only requirement is that the pose you'd like to follow is published to the topic outlined in the <code class="docutils literal notranslate"><span class="pre">GoalUpdater</span></code> BT node.</p>
+<span id="behavior-tree-follow-point"></span><h1>跟随动态点<a class="headerlink" href="#follow-dynamic-point" title="永久链接至标题"></a></h1>
+<p>该行为树实现了从起始点开始的导航行为，试图随时间追踪一个动态点。这个“动态点”可以是一个人、另一个机器人、一个虚拟胡萝卜，或者其他任何东西。唯一的要求是你希望跟随的姿态被发布到 <code class="docutils literal notranslate"><span class="pre">GoalUpdater</span></code> BT 节点中指定的主题中。</p>
 <p>In this tree, we replan at 1 hz just as we did in <a class="reference internal" href="nav_to_pose_recovery.html#behavior-tree-nav-to-pose"><span class="std std-ref">Navigate To Pose</span></a> using the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> node.
 However, this time when we replan, we update the <code class="docutils literal notranslate"><span class="pre">goal</span></code> based on the newest information in on the updated goal topic.
 After we plan a path to this dynamic point, we use the <code class="docutils literal notranslate"><span class="pre">TruncatePath</span></code> node to remove path points from the end of the path near the dynamic point.
 This behavior tree node is useful so that the robot always remains at least <code class="docutils literal notranslate"><span class="pre">distance</span></code> away from the obstacle, even if it stops.
 It also smooths out any off path behavior involved with trying to path plan towards a probably occupied space in the costmap.</p>
-<p>After the new path to the dynamic point is computed and truncated, it is again passed to the controller via the <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> node.
-However, note that it is under a <code class="docutils literal notranslate"><span class="pre">KeepRunningUntilFailure</span></code> decorator node ensuring the controller continues to execute until a failure mode.
-This behavior tree will execute infinitely in time until the navigation request is preempted or cancelled.</p>
+<p>在计算和截取到动态点的新路径后，它会再次通过 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 节点传递给控制器。然而，请注意它位于一个 <code class="docutils literal notranslate"><span class="pre">KeepRunningUntilFailure</span></code> 修饰节点下，确保控制器继续执行直到出现故障模式。该行为树将无限时间执行，直到导航请求被抢占或取消。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
