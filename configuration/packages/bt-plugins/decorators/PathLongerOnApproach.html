@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
     <link rel="next" title="SingleTrigger" href="SingleTrigger.html" />
-    <link rel="prev" title="GoalUpdater" href="GoalUpdater.html" />
+    <link rel="prev" title="目标更新器" href="GoalUpdater.html" />
 
 <link rel="stylesheet" href="../../../../_static/tcs_theme.css" type="text/css" />
 
@@ -502,7 +502,7 @@
 <li class="toctree-l4"><a class="reference internal" href="RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DistanceController.html">DistanceController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SpeedController.html">SpeedController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GoalUpdater.html">GoalUpdater</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">PathLongerOnApproach</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SingleTrigger.html">SingleTrigger</a></li>
 </ul>
@@ -941,7 +941,7 @@
              
   <div class="section" id="pathlongeronapproach">
 <span id="bt-path-longer-on-approach"></span><h1>PathLongerOnApproach<a class="headerlink" href="#pathlongeronapproach" title="永久链接至标题"></a></h1>
-<p>This node checks if the newly generated global path is significantly larger than the old global path in the user-defined robot's goal proximity and triggers their corresponding children. This allows users to enact special behaviors before a robot attempts to execute a path significantly longer than the prior path when close to a goal (e.g. going around an dynamic obstacle that may just need a few seconds to move out of the way).</p>
+<p>此节点检查新生成的全局路径是否在用户定义的机器人目标附近显着大于旧的全局路径，并触发相应的子节点。这使得用户能够在机器人尝试执行明显比之前路径长得多的路径之前，对目标附近的路径采取特殊行为（例如，绕过一个可能只需要几秒钟才能移开的动态障碍物）。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -981,7 +981,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Proximity length (m) for the path to be longer on approach.</p>
+<dt>描述</dt><dd><p>接近时路径长度（米），路径需要更长。</p>
 </dd>
 </dl>
 </dd>
@@ -1001,7 +1001,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Length multiplication factor to check if the path is significantly longer.</p>
+<dt>描述</dt><dd><p>长度乘法因子，用于检查路径是否显著较长。</p>
 </dd>
 </dl>
 </dd>

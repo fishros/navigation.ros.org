@@ -502,7 +502,7 @@
 <li class="toctree-l4"><a class="reference internal" href="RateController.html">RateController</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">DistanceController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SpeedController.html">SpeedController</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GoalUpdater.html">GoalUpdater</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GoalUpdater.html">目标更新器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PathLongerOnApproach.html">PathLongerOnApproach</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SingleTrigger.html">SingleTrigger</a></li>
 </ul>
@@ -941,10 +941,7 @@
              
   <div class="section" id="distancecontroller">
 <span id="bt-distance-controller"></span><h1>DistanceController<a class="headerlink" href="#distancecontroller" title="永久链接至标题"></a></h1>
-<p>A node that controls the tick rate for its child based on the distance traveled.
-The distance to be traveled before replanning can be supplied to the node as a parameter.
-The node returns RUNNING when it is not ticking its child. Currently, in the navigation
-stack, the <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code> is used to adjust the rate at which the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">GoalReached</span></code> nodes are ticked.</p>
+<p>控制其子节点根据行进距离进行刷新的节点。可以将行进距离作为参数提供给该节点。当该节点不刷新其子节点时，返回运行中状态。目前，在导航堆栈中，“DistanceController”用于调整对“ComputePathToPose”和“GoalReached”节点进行刷新的频率。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -964,7 +961,7 @@ stack, the <code class="docutils literal notranslate"><span class="pre">Distance
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The distance travelled to trigger an action such as planning a path (m).</p>
+<dt>描述</dt><dd><p>触发行动（如规划路径）所需的行程距离（米）。</p>
 </dd>
 </dl>
 </dd>
