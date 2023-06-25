@@ -1827,7 +1827,7 @@ msgstr "global_frame_id"
 
 #: ../../configuration/packages/configuring-amcl.rst:134
 msgid "The name of the coordinate frame published by the localization system."
-msgstr "The name of the coordinate frame published by the localization system."
+msgstr "由定位系统发布的坐标框架的名称。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1837,7 +1837,7 @@ msgstr "lambda_short"
 
 #: ../../configuration/packages/configuring-amcl.rst:145
 msgid "Exponential decay parameter for z_short part of model."
-msgstr "Exponential decay parameter for z_short part of model."
+msgstr "模型中 z_short 部分的指数衰减参数。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1847,7 +1847,7 @@ msgstr "laser_likelihood_max_dist"
 
 #: ../../configuration/packages/configuring-amcl.rst:156
 msgid "Maximum distance to do obstacle inflation on map, for use in likelihood_field model."
-msgstr "Maximum distance to do obstacle inflation on map, for use in likelihood_field model."
+msgstr "地图上进行障碍物膨胀的最大距离，用于 likelihood_field 模型。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1862,7 +1862,7 @@ msgstr "100.0"
 
 #: ../../configuration/packages/configuring-amcl.rst:167
 msgid "Maximum scan range to be considered, -1.0 will cause the laser's reported maximum range to be used."
-msgstr "Maximum scan range to be considered, -1.0 will cause the laser's reported maximum range to be used."
+msgstr "要考虑的最大扫描范围，-1.0将导致使用激光报告的最大范围。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1877,7 +1877,7 @@ msgstr "-1.0"
 
 #: ../../configuration/packages/configuring-amcl.rst:178
 msgid "Minimum scan range to be considered, -1.0 will cause the laser's reported minimum range to be used."
-msgstr "Minimum scan range to be considered, -1.0 will cause the laser's reported minimum range to be used."
+msgstr "要考虑的最小扫描范围，-1.0 表示使用激光报告的最小范围。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1892,7 +1892,7 @@ msgstr "\"likelihood_field\""
 
 #: ../../configuration/packages/configuring-amcl.rst:189
 msgid "Which model to use, either beam, likelihood_field, or likelihood_field_prob. Same as likelihood_field but incorporates the beamskip feature, if enabled."
-msgstr "Which model to use, either beam, likelihood_field, or likelihood_field_prob. Same as likelihood_field but incorporates the beamskip feature, if enabled."
+msgstr "要使用的模型，可以是beam、likelihood_field或likelihood_field_prob。与likelihood_field相同，但如果启用，则包含beamskip功能。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1902,7 +1902,7 @@ msgstr "set_initial_pose"
 
 #: ../../configuration/packages/configuring-amcl.rst:200
 msgid "Causes AMCL to set initial pose from the initial_pose* parameters instead of waiting for the initial_pose message."
-msgstr "Causes AMCL to set initial pose from the initial_pose* parameters instead of waiting for the initial_pose message."
+msgstr "使AMCL从initial_pose*参数设置初始姿态，而不是等待initial_pose消息。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1922,7 +1922,7 @@ msgstr "{x: 0.0, y: 0.0, z: 0.0, yaw: 0.0}"
 
 #: ../../configuration/packages/configuring-amcl.rst:211
 msgid "X, Y, Z, and yaw coordinates of initial pose (meters and radians) of robot base frame in global frame."
-msgstr "X, Y, Z, and yaw coordinates of initial pose (meters and radians) of robot base frame in global frame."
+msgstr "机器人基座标系在全局坐标系中的初始姿态的X、Y、Z和偏航角坐标（以米和弧度表示）。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1937,7 +1937,7 @@ msgstr "60"
 
 #: ../../configuration/packages/configuring-amcl.rst:222
 msgid "How many evenly-spaced beams in each scan to be used when updating the filter."
-msgstr "How many evenly-spaced beams in each scan to be used when updating the filter."
+msgstr "更新滤波器时每个扫描中要使用的均匀间隔的激光束数量。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1952,7 +1952,7 @@ msgstr "2000"
 
 #: ../../configuration/packages/configuring-amcl.rst:233
 msgid "Maximum allowed number of particles."
-msgstr "Maximum allowed number of particles."
+msgstr "粒子的最大允许数量。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1982,7 +1982,7 @@ msgstr "\"odom\""
 
 #: ../../configuration/packages/configuring-amcl.rst:255 ../../configuration/packages/configuring-collision-monitor.rst:71
 msgid "Which frame to use for odometry."
-msgstr "Which frame to use for odometry."
+msgstr "用于里程计的帧。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
