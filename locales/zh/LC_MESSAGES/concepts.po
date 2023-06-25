@@ -287,7 +287,7 @@ msgstr "通常，与规划器搜索的路径的最佳性标准相比，路径的
 
 #: ../../concepts/index.rst:194
 msgid "Use of a separate smoother over one that is included as part of a planner is advantageous when combining different planners with different smoothers or when a specific control over smoothing is required, e.g. smoothing only a specific part of the path."
-msgstr "Use of a separate smoother over one that is included as part of a planner is advantageous when combining different planners with different smoothers or when a specific control over smoothing is required, e.g. smoothing only a specific part of the path."
+msgstr "在将不同的规划器与不同的平滑器结合或需要对平滑进行特定控制时，使用独立的平滑器而不是作为规划器的一部分的平滑器具有优势，例如仅对路径的特定部分进行平滑。"
 
 
 #: ../../concepts/index.rst:196
@@ -297,7 +297,7 @@ msgstr "Nav2中平滑器的一般任务是接收路径并返回其改进版本�
 
 #: ../../concepts/index.rst:200
 msgid "Waypoint Following"
-msgstr "Waypoint Following"
+msgstr "路径点跟随"
 
 
 #: ../../concepts/index.rst:202
@@ -307,77 +307,77 @@ msgstr "路径点跟踪是导航系统的基本功能之一。它告诉我们的
 
 #: ../../concepts/index.rst:204
 msgid "The ``nav2_waypoint_follower`` contains a waypoint following program with a plugin interface for specific task executors. This is useful if you need to go to a given location and complete a specific task like take a picture, pick up a box, or wait for user input. It is a nice demo application for how to use Nav2 in a sample application."
-msgstr "The ``nav2_waypoint_follower`` contains a waypoint following program with a plugin interface for specific task executors. This is useful if you need to go to a given location and complete a specific task like take a picture, pick up a box, or wait for user input. It is a nice demo application for how to use Nav2 in a sample application."
+msgstr "``nav2_waypoint_follower``包含一个路径点跟随程序，具有特定任务执行器的插件接口。如果您需要前往指定位置并完成特定任务，例如拍照、拾起盒子或等待用户输入，这将非常有用。这是一个演示如何在示例应用中使用Nav2的好的应用程序。"
 
 
 #: ../../concepts/index.rst:208
 msgid "However, it could be used for more than just a sample application. There are 2 schools of thoughts for fleet managers / dispatchers:"
-msgstr "However, it could be used for more than just a sample application. There are 2 schools of thoughts for fleet managers / dispatchers:"
+msgstr "然而，它可以用于不仅仅是一个示例应用程序。对于车队管理人员/调度员来说，有两种思路："
 
 
 #: ../../concepts/index.rst:211
 msgid "Dumb robot; smart centralized dispatcher"
-msgstr "Dumb robot; smart centralized dispatcher"
+msgstr "愚蠢的机器人；智能集中调度程序"
 
 
 #: ../../concepts/index.rst:212
 msgid "Smart robot; dumb centralized dispatcher"
-msgstr "Smart robot; dumb centralized dispatcher"
+msgstr "智能机器人；愚蠢的集中调度员"
 
 
 #: ../../concepts/index.rst:214
 msgid "In the first, the ``nav2_waypoint_follower`` is fully sufficient to create a production-grade on-robot solution. Since the autonomy system / dispatcher is taking into account things like the robot's pose, battery level, current task, and more when assigning tasks, the application on the robot just needs to worry about the task at hand and not the other complexities of the system to complete the requested task. In this situation, you should think of a request to the waypoint follower as 1 unit of work (e.g. 1 pick in a warehouse, 1 security patrole loop, 1 aisle, etc) to do a task and then return to the dispatcher for the next task or request to recharge. In this school of thought, the waypoint following application is just one step above navigation and below the system autonomy application."
-msgstr "In the first, the ``nav2_waypoint_follower`` is fully sufficient to create a production-grade on-robot solution. Since the autonomy system / dispatcher is taking into account things like the robot's pose, battery level, current task, and more when assigning tasks, the application on the robot just needs to worry about the task at hand and not the other complexities of the system to complete the requested task. In this situation, you should think of a request to the waypoint follower as 1 unit of work (e.g. 1 pick in a warehouse, 1 security patrole loop, 1 aisle, etc) to do a task and then return to the dispatcher for the next task or request to recharge. In this school of thought, the waypoint following application is just one step above navigation and below the system autonomy application."
+msgstr "首先，``nav2_waypoint_follower``完全足够创建一个面向生产的机器人解决方案。由于自治系统/调度程序在分配任务时考虑了诸如机器人姿态、电池电量、当前任务等因素，因此机器人上的应用程序只需要关注当前任务而不必担心系统的其他复杂性来完成所请求的任务。在这种情况下，您应该将路径点跟随程序的请求视为一项工作单元（例如在仓库中拣选一个物品，执行一次安全巡逻，遍历一条通道等）来执行任务，然后返回给调度程序以获取下一个任务或充电请求。在这种思路中，路径点跟随应用程序只是导航的上一步，在系统自治应用程序之下。"
 
 
 #: ../../concepts/index.rst:216
 msgid "In the second, the ``nav2_waypoint_follower`` is a nice sample application / proof of concept, but you really need your waypoint following / autonomy system on the robot to carry more weight in making a robust solution. In this case, you should use the ``nav2_behavior_tree`` package to create a custom application-level behavior tree using navigation to complete the task. This can include subtrees like checking for the charge status mid-task for returning to dock or handling more than 1 unit of work in a more complex task. Soon, there will be a ``nav2_bt_waypoint_follower`` (name subject to adjustment) that will allow you to create this application more easily. In this school of thought, the waypoint following application is more closely tied to the system autonomy, or in many cases, is the system autonomy."
-msgstr "In the second, the ``nav2_waypoint_follower`` is a nice sample application / proof of concept, but you really need your waypoint following / autonomy system on the robot to carry more weight in making a robust solution. In this case, you should use the ``nav2_behavior_tree`` package to create a custom application-level behavior tree using navigation to complete the task. This can include subtrees like checking for the charge status mid-task for returning to dock or handling more than 1 unit of work in a more complex task. Soon, there will be a ``nav2_bt_waypoint_follower`` (name subject to adjustment) that will allow you to create this application more easily. In this school of thought, the waypoint following application is more closely tied to the system autonomy, or in many cases, is the system autonomy."
+msgstr "在第二种思路中，``nav2_waypoint_follower`` 是一个很好的示例应用程序/概念验证，但是你真正需要的是机器人上的航路点跟踪/自主系统来更好地解决问题。在这种情况下，你应该使用 ``nav2_behavior_tree`` 包来创建一个使用导航完成任务的自定义应用程序级行为树。这可以包括检查任务进行到一半时的充电状态以返回到码头，或者处理更复杂任务中超过1个工作单元的子树。很快，将会有一个``nav2_bt_waypoint_follower``（名称可能会有所调整），它将使您更容易创建这个应用程序。在这种思路中，航路点跟踪应用程序与系统自主性更为密切相关，或者在许多情况下，就是系统自主性本身。"
 
 
 #: ../../concepts/index.rst:218
 msgid "Neither is better than the other, it highly depends on the tasks your robot(s) are completing, in what type of environment, and with what cloud resources available. Often this distinction is very clear for a given business case."
-msgstr "Neither is better than the other, it highly depends on the tasks your robot(s) are completing, in what type of environment, and with what cloud resources available. Often this distinction is very clear for a given business case."
+msgstr "两者并没有优劣之分，它非常依赖于机器人所完成的任务类型、环境类型以及可用的云资源。对于特定的业务案例，通常这种区别非常明确。"
 
 
 #: ../../concepts/index.rst:221
 msgid "State Estimation"
-msgstr "State Estimation"
+msgstr "状态估计"
 
 
 #: ../../concepts/index.rst:223
 msgid "Within the navigation project, there are 2 major transformations that need to be provided, according to community standards. The ``map`` to ``odom`` transform is provided by a positioning system (localization, mapping, SLAM) and ``odom`` to ``base_link`` by an odometry system."
-msgstr "Within the navigation project, there are 2 major transformations that need to be provided, according to community standards. The ``map`` to ``odom`` transform is provided by a positioning system (localization, mapping, SLAM) and ``odom`` to ``base_link`` by an odometry system."
+msgstr "在导航项目中，根据社区标准需要提供两个主要的转换。``map``到``odom``的转换由定位系统（定位、地图构建、SLAM）提供，``odom``到``base_link``的转换由里程计系统提供。"
 
 
 #: ../../concepts/index.rst:228
 msgid "There is **no** requirement on using a LIDAR on your robot to use the navigation system. There is no requirement to use lidar-based collision avoidance, localization, or SLAM. However, we do provide instructions and support tried and true implementations of these things using lidars. You can be equally as successful using a vision or depth based positioning system and using other sensors for collision avoidance. The only requirement is that you follow the standards below with your choice of implementation."
-msgstr "There is **no** requirement on using a LIDAR on your robot to use the navigation system. There is no requirement to use lidar-based collision avoidance, localization, or SLAM. However, we do provide instructions and support tried and true implementations of these things using lidars. You can be equally as successful using a vision or depth based positioning system and using other sensors for collision avoidance. The only requirement is that you follow the standards below with your choice of implementation."
+msgstr "使用导航系统并不需要在机器人上使用激光雷达。也没有使用基于激光雷达的避障、定位或SLAM的要求。但是，我们提供了使用激光雷达的这些功能的指导和支持。您同样可以使用视觉或基于深度的定位系统，并使用其他传感器进行避障。唯一的要求是您必须按照下面的标准选择实现。"
 
 
 #: ../../concepts/index.rst:234
 msgid "Standards"
-msgstr "Standards"
+msgstr "标准"
 
 
 #: ../../concepts/index.rst:236
 msgid "`REP 105 <https://www.ros.org/reps/rep-0105.html>`_ defines the frames and conventions required for navigation and the larger ROS ecosystem. These conventions should be followed at all times to make use of the rich positioning, odometry, and SLAM projects available in the community."
-msgstr "`REP 105 <https://www.ros.org/reps/rep-0105.html>`_ defines the frames and conventions required for navigation and the larger ROS ecosystem. These conventions should be followed at all times to make use of the rich positioning, odometry, and SLAM projects available in the community."
+msgstr "``REP 105 <https://www.ros.org/reps/rep-0105.html>`` 定义了导航和更大的ROS生态系统所需的坐标系和约定。为了利用社区中丰富的定位、里程计和SLAM项目，应始终遵循这些约定。"
 
 
 #: ../../concepts/index.rst:239
 msgid "In a nutshell, REP-105 says that you must, at minimum, build a TF tree that contains a full ``map`` -> ``odom`` -> ``base_link`` -> ``[sensor frames]`` for your robot. TF2 is the time-variant transformation library in ROS 2 we use to represent and obtain time synchronized transformations. It is the job of the global positioning system (GPS, SLAM, Motion Capture) to, at minimum, provide the ``map`` -> ``odom`` transformation. It is then the role of the odometry system to provide the ``odom`` -> ``base_link`` transformation. The remainder of the transformations relative to ``base_link`` should be static and defined in your `URDF <http://wiki.ros.org/urdf>`_."
-msgstr "In a nutshell, REP-105 says that you must, at minimum, build a TF tree that contains a full ``map`` -> ``odom`` -> ``base_link`` -> ``[sensor frames]`` for your robot. TF2 is the time-variant transformation library in ROS 2 we use to represent and obtain time synchronized transformations. It is the job of the global positioning system (GPS, SLAM, Motion Capture) to, at minimum, provide the ``map`` -> ``odom`` transformation. It is then the role of the odometry system to provide the ``odom`` -> ``base_link`` transformation. The remainder of the transformations relative to ``base_link`` should be static and defined in your `URDF <http://wiki.ros.org/urdf>`_."
+msgstr "简而言之，REP-105 规定你至少需要构建一个包含完整 ``map`` -> ``odom`` -> ``base_link`` -> ``[sensor frames]`` 的 TF 树来表示你的机器人。TF2 是 ROS 2 中用于表示和获取时间同步转换的时变转换库。全局定位系统（GPS、SLAM、动作捕捉）的任务是至少提供 ``map`` -> ``odom`` 转换。然后里程计系统的任务是提供 ``odom`` -> ``base_link`` 转换。相对于 ``base_link`` 的其余转换应该是静态的，并在你的 `URDF <http://wiki.ros.org/urdf>`_ 中定义。"
 
 
 #: ../../concepts/index.rst:246
 msgid "Global Positioning: Localization and SLAM"
-msgstr "Global Positioning: Localization and SLAM"
+msgstr "全局定位：定位和SLAM"
 
 
 #: ../../concepts/index.rst:248
 msgid "It is the job of the global positioning system (GPS, SLAM, Motion Capture) to, at minimum, provide the ``map`` -> ``odom`` transformation. We provide ``amcl`` which is an Adaptive Monte-Carlo Localization technique based on a particle filter for localization in a static map. We also provide SLAM Toolbox as the default SLAM algorithm for use to position and generate a static map."
-msgstr "It is the job of the global positioning system (GPS, SLAM, Motion Capture) to, at minimum, provide the ``map`` -> ``odom`` transformation. We provide ``amcl`` which is an Adaptive Monte-Carlo Localization technique based on a particle filter for localization in a static map. We also provide SLAM Toolbox as the default SLAM algorithm for use to position and generate a static map."
+msgstr "全局定位系统（GPS、SLAM、动作捕捉）的任务是至少提供 ``map`` -> ``odom`` 转换。我们提供了 ``amcl``，它是一种基于粒子滤波器的自适应蒙特卡洛定位技术，用于在静态地图中进行定位。我们还提供 SLAM 工具箱作为默认的 SLAM 算法，用于定位和生成静态地图。"
 
 
 #: ../../concepts/index.rst:252
@@ -387,7 +387,7 @@ msgstr "These methods may also produce other output including position topics, m
 
 #: ../../concepts/index.rst:257
 msgid "Odometry"
-msgstr "Odometry"
+msgstr "里程计"
 
 
 #: ../../concepts/index.rst:259
@@ -397,7 +397,7 @@ msgstr "It is the role of the odometry system to provide the ``odom`` -> ``base_
 
 #: ../../concepts/index.rst:264
 msgid "`Robot Localization <https://github.com/cra-ros-pkg/robot_localization/>`_ is typically used for this fusion. It will take in ``N`` sensors of various types and provide a continuous and smooth odometry to TF and to a topic. A typical mobile robotics setup may have odometry from wheel encoders, IMUs, and vision fused in this manner."
-msgstr "`Robot Localization <https://github.com/cra-ros-pkg/robot_localization/>`_ is typically used for this fusion. It will take in ``N`` sensors of various types and provide a continuous and smooth odometry to TF and to a topic. A typical mobile robotics setup may have odometry from wheel encoders, IMUs, and vision fused in this manner."
+msgstr "`机器人定位 <https://github.com/cra-ros-pkg/robot_localization/>`_ 通常用于此融合。它会接收各种类型的 ``N`` 个传感器，并为 TF 和一个话题提供连续平滑的里程计。一个典型的移动机器人设置可能会以此方式融合来自轮式编码器、IMU 和视觉的里程计信息。"
 
 
 #: ../../concepts/index.rst:268
@@ -407,7 +407,7 @@ msgstr "The smooth output can be used then for dead-reckoning for precise motion
 
 #: ../../concepts/index.rst:273
 msgid "Environmental Representation"
-msgstr "Environmental Representation"
+msgstr "环境表示"
 
 
 #: ../../concepts/index.rst:275
@@ -417,7 +417,7 @@ msgstr "The environmental representation is the way the robot perceives its envi
 
 #: ../../concepts/index.rst:280
 msgid "Costmaps and Layers"
-msgstr "Costmaps and Layers"
+msgstr "代价地图和层"
 
 
 #: ../../concepts/index.rst:282
