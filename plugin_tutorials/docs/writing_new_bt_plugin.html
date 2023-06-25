@@ -361,11 +361,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="writing_new_costmap2d_plugin.html">Writing a New Costmap2D Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_costmap2d_plugin.html">编写新的Costmap2D插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1- Write a new Costmap2D plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1-编写一个新的Costmap2D插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#export-and-make-gradientlayer-plugin">2- Export and make GradientLayer plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
@@ -378,7 +378,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
@@ -402,9 +402,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-plugin-library-name-to-config">3- 将插件库名称添加到配置中</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-your-custom-plugin">4- 运行您的自定义插件</a></li>
 </ul>
 </li>
 </ul>
@@ -1029,15 +1029,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Here, we give the input of the <code class="docutils literal notranslate"><span class="pre">xml_tag_name</span></code>, which tells the BT node plugin the string in the XML that corresponds to this node.
-This will be seen later when we register this BT node as a plugin.
-It also takes in the string name of the action server that it will call to execute some behavior.
-Finally, a set of configurations that we can safely ignore for the purposes of most node plugins.</p>
+<p>在这里，我们提供了``xml_tag_name``的输入，它告诉BT节点插件与此节点对应的XML中的字符串。当我们将此BT节点注册为插件时，稍后会看到它。它还接受要调用以执行某些行为的动作服务器的字符串名称。最后，有一组配置，对于大多数节点插件的目的，我们可以安全地忽略它们。</p>
 <p>然后我们调用``BTActionNode``构造函数。可以看到，它是由ROS 2动作类型进行模板化的，因此我们将其提供给``nav2_msgs::action::Wait``动作消息类型，并转发其他输入。当行为树从树中调用该节点时，<code class="docutils literal notranslate"><span class="pre">BTActionNode``具有``tick()``方法，该方法直接被调用。然后，在发送动作客户端目标之前调用``on_tick()</span></code>。</p>
-<p>In the body of the constructor, we get the input port <code class="docutils literal notranslate"><span class="pre">getInput</span></code> of the parameter <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code>, which can be configured independently for every instance of the <code class="docutils literal notranslate"><span class="pre">wait</span></code> node in the tree.
-It is set in the <code class="docutils literal notranslate"><span class="pre">duration</span></code> parameter and inserted into the <code class="docutils literal notranslate"><span class="pre">goal_</span></code>.
-The <code class="docutils literal notranslate"><span class="pre">goal_</span></code> class variable is the goal that the ROS 2 action client will send to the action server.
-So in this example, we set the duration to the time we want to wait by so that the action server knows the specifics of our request.</p>
+<p>在构造函数的主体中，我们获取参数``wait_duration``的输入端口``getInput``，可以独立配置每个树中``wait``节点的实例。它设置在``duration``参数中，并插入到``goal_``中。<a href="#id1"><span class="problematic" id="id2">``</span></a>goal_``类变量是ROS 2动作客户端将发送到动作服务器的目标。因此，在此示例中，我们设置持续时间为所需等待的时间，以便动作服务器了解我们请求的具体内容。</p>
 <p><code class="docutils literal notranslate"><span class="pre">providedPorts()``方法使我们有机会定义输入或输出端口。端口可以被视为行为树节点从行为树本身访问的参数。对于我们的示例，只有一个输入端口，即``wait_duration</span></code>，可以在每个``wait``恢复的BT XML中设置。我们设置了类型为``int``，默认值为``1``，名称为``wait_duration``，端口的描述为``等待时间``。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span><span class="w"> </span><span class="nf">providedPorts</span><span class="p">()</span>
 <span class="p">{</span>
@@ -1048,10 +1042,7 @@ So in this example, we set the duration to the time we want to wait by so that t
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> method is called when the behavior tree ticks a specific node.
-For the wait BT node, we simply want to notify a counter on the blackboard that an action plugin that corresponds to a recovery was ticked.
-This is useful to keep metrics about the number of recoveries executed during a specific navigation run.
-You could also log or update the <code class="docutils literal notranslate"><span class="pre">goal_</span></code> waiting duration if that is a variable input.</p>
+<p>当行为树对特定节点进行刻度时，将调用``on_tick()``方法。对于等待BT节点，我们只想通知黑板上的一个计数器，即与恢复对应的动作插件已经刻度。这对于在特定导航运行期间执行的恢复次数进行度量非常有用。您还可以记录或更新``goal_``等待持续时间（如果它是可变输入）。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">WaitAction::on_tick</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="n">increment_recovery_count</span><span class="p">();</span>
@@ -1061,7 +1052,7 @@ You could also log or update the <code class="docutils literal notranslate"><spa
 <p>剩下的方法未被使用，也不是强制要求重写它们。只有一些BT节点插件需要重写``on_wait_for_result()``以检查抢占或检查超时。如果未重写，成功、中止和取消方法将分别默认为``SUCCESS``、<code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>、<code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>。</p>
 </div>
 <div class="section" id="exporting-the-planner-plugin">
-<h3>2- Exporting the planner plugin<a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
+<h3>2- 导出规划器插件<a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
 <p>现在我们已经创建了自定义的BT节点，我们需要导出插件，以便在加载自定义的BT XML时，行为树能够看到它。插件在运行时加载，如果它们不可见，那么我们的BT导航服务器将无法加载或使用它们。在BehaviorTree.CPP中，导出和加载插件由``BT_REGISTER_NODES``宏处理。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BT_REGISTER_NODES</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1075,20 +1066,15 @@ You could also log or update the <code class="docutils literal notranslate"><spa
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In this macro, we must create a <code class="docutils literal notranslate"><span class="pre">NodeBuilder</span></code> so that our custom action node can have a non-default constructor signature (for the action and xml names).
-This lambda will return a unique pointer to the behavior tree node we have created.
-Fill in the constructor with the relevant information, giving it the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">config</span></code> given in the function arguments.
-Then define the ROS 2 action server's name that this BT node will call, in this case, it's the <code class="docutils literal notranslate"><span class="pre">Wait</span></code> action.</p>
-<p>We finally give the builder to a factory to register.
-<code class="docutils literal notranslate"><span class="pre">Wait</span></code> given to the factory is the name in the behavior tree XML file that corresponds to this BT node plugin.
-An example can be seen below, where the <code class="docutils literal notranslate"><span class="pre">Wait</span></code> BT XML node specifies a non-variable input port <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> of 5 seconds.</p>
+<p>在此宏中，我们必须创建一个``NodeBuilder``，以便我们的自定义动作节点可以具有非默认的构造函数签名（用于动作和xml名称）。此lambda将返回我们创建的行为树节点的唯一指针。使用函数参数中给定的相关信息填写构造函数。然后定义此BT节点将调用的ROS 2动作服务器的名称，在本例中为``Wait``动作。</p>
+<p>我们最终将构建器交给工厂进行注册。工厂中的“Wait”是与此BT节点插件对应的行为树XML文件中的名称。下面是一个示例，其中“Wait”BT XML节点指定了一个非变量输入端口“wait_duration”，持续时间为5秒。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Wait</span><span class="w"> </span><span class="na">wait_duration=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-plugin-library-name-to-config">
-<h3>3- Add plugin library name to config<a class="headerlink" href="#add-plugin-library-name-to-config" title="永久链接至标题"></a></h3>
-<p>In order for the BT Navigator node to discover the plugin we've just registered, we need to list the plugin library name under the bt_navigator node in the configuration YAML file. Configuration should look similar to the one shown below. Take note of nav2_wait_action_bt_node listed under plugin_lib_names.</p>
+<h3>3- 将插件库名称添加到配置中<a class="headerlink" href="#add-plugin-library-name-to-config" title="永久链接至标题"></a></h3>
+<p>为了使BT Navigator节点能够发现我们刚刚注册的插件，我们需要在配置的YAML文件中的bt_navigator节点下列出插件库的名称。配置应该类似于下面所示的内容。请注意plugin_lib_names下列出的nav2_wait_action_bt_node。</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bt_navigator:
   ros__parameters:
     use_sim_time: True
@@ -1103,10 +1089,9 @@ An example can be seen below, where the <code class="docutils literal notranslat
 </div>
 </div>
 <div class="section" id="run-your-custom-plugin">
-<h3>4- Run Your Custom plugin<a class="headerlink" href="#run-your-custom-plugin" title="永久链接至标题"></a></h3>
-<p>Now you can use a behavior tree with your custom BT node.
-For example, the <code class="docutils literal notranslate"><span class="pre">navigate_w_replanning_and_recovery.xml</span></code> file is shown below.</p>
-<p>Select this BT XML file in your specific navigation request in <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> or as the default behavior tree in the BT Navigator's configuration yaml file.</p>
+<h3>4- 运行您的自定义插件<a class="headerlink" href="#run-your-custom-plugin" title="永久链接至标题"></a></h3>
+<p>现在您可以在自定义BT节点中使用行为树。例如，下面显示了``navigate_w_replanning_and_recovery.xml``文件。</p>
+<p>在``NavigateToPose``中的具体导航请求中选择此BT XML文件，或者将其作为BT导航器配置yaml文件中的默认行为树。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;RecoveryNode</span><span class="w"> </span><span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>

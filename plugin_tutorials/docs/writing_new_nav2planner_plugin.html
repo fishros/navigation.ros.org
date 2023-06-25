@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Writing a New Controller Plugin" href="writing_new_nav2controller_plugin.html" />
-    <link rel="prev" title="Writing a New Costmap2D Plugin" href="writing_new_costmap2d_plugin.html" />
+    <link rel="prev" title="编写新的Costmap2D插件" href="writing_new_costmap2d_plugin.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -361,11 +361,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="writing_new_costmap2d_plugin.html">Writing a New Costmap2D Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_costmap2d_plugin.html">编写新的Costmap2D插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_costmap2d_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1- Write a new Costmap2D plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#write-a-new-costmap2d-plugin">1-编写一个新的Costmap2D插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#export-and-make-gradientlayer-plugin">2- Export and make GradientLayer plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_costmap2d_plugin.html#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
@@ -378,7 +378,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
@@ -402,9 +402,9 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- 将插件库名称添加到配置中</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#run-your-custom-plugin">4- 运行您的自定义插件</a></li>
 </ul>
 </li>
 </ul>
@@ -945,7 +945,7 @@
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
 <li><p><a class="reference internal" href="#tutorial-steps">教程步骤</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/nav2_straightline_gif.gif"><img alt="Animated gif with gradient demo" class="align-center" src="../../_images/nav2_straightline_gif.gif" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/nav2_straightline_gif.gif"><img alt="带有渐变效果的动画GIF演示" class="align-center" src="../../_images/nav2_straightline_gif.gif" style="width: 700px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
 <p>This tutorial shows how to create your own planner plugin.</p>
@@ -1077,7 +1077,7 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 <p>The remaining methods are not used but it's mandatory to override them. As per the rules, we did override all but left them blank.</p>
 </div>
 <div class="section" id="exporting-the-planner-plugin">
-<h3>2- Exporting the planner plugin<a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
+<h3>2- 导出规划器插件<a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
 <p>Now that we have created our custom planner, we need to export our planner plugin so that it will be visible to the planner server. Plugins are loaded at runtime and if they are not visible, then our planner server won't be able to load it. In ROS 2, exporting and loading plugins is handled by <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code>.</p>
 <p>Coming back to our tutorial, class <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner::StraightLine</span></code> is loaded dynamically as <code class="docutils literal notranslate"><span class="pre">nav2_core::GlobalPlanner</span></code> which is our base class.</p>
 <ol class="arabic simple">
