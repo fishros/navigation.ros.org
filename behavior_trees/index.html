@@ -84,7 +84,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../development_guides/devcontainer_docs/index.html#how-do-dev-containers-work">How do Dev Containers work?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../development_guides/devcontainer_docs/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development_guides/devcontainer_docs/index.html#prerequisites">前提条件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../development_guides/devcontainer_docs/index.html#getting-started">Getting started</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../development_guides/devcontainer_docs/index.html#security">Security</a></li>
 </ul>
@@ -731,9 +731,9 @@
 <li class="toctree-l3"><a class="reference internal" href="overview/nav2_specific_nodes.html#control-roundrobin">Control: RoundRobin</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html">Detailed Behavior Tree Walkthrough</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html">详细的行为树遍历</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html#prerequisites">前提条件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html#navigate-to-pose-with-replanning-and-recovery">Navigate To Pose With Replanning and Recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html#navigation-subtree">Navigation Subtree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html#recovery-subtree">Recovery Subtree</a></li>
@@ -942,7 +942,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview/nav2_specific_nodes.html">Introduction To Nav2 Specific Nodes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html">Detailed Behavior Tree Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/detailed_behavior_tree_walkthrough.html">详细的行为树遍历</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trees/nav_to_pose_recovery.html">Navigate To Pose</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trees/nav_through_poses_recovery.html">Navigate Through Poses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trees/nav_to_pose_and_pause_near_goal_obstacle.html">Navigate To Pose and Pause Near Goal-Obstacle</a></li>
@@ -951,11 +951,7 @@
 <li class="toctree-l1"><a class="reference internal" href="trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </div>
-<p>Nav2 is an incredibly reconfigurable project. It allows users to set many different plugin types, across behavior trees, core algorithms, status checkers, and more!
-This section highlights some of the example behavior tree xml files provided by default in the project to do interesting tasks.
-It should be noted that these can be modified for your specific application, or used as a guide to building your own application-specific behavior tree.
-These are some exemplary examples of how you can reconfigure your navigation behavior significantly by using behavior trees.
-Other behavior trees are provided by Nav2 in the <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> package, but this section highlights the important ones.</p>
+<p>Nav2是一个非常可重新配置的项目。它允许用户设置许多不同类型的插件，包括行为树、核心算法、状态检查器等等！本节介绍了项目中默认提供的一些示例行为树xml文件，用于执行有趣的任务。需要注意的是，这些文件可以根据您的特定应用进行修改，或者用作构建自己的应用程序特定行为树的指南。这些是一些示例，展示了如何通过使用行为树来显著重新配置导航行为。Nav2在``nav2_bt_navigator``包中提供了其他行为树，但本节重点介绍了重要的行为树。</p>
 <p>下面是一个**非常**基本但功能完备的导航器示例。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
@@ -969,19 +965,18 @@ Other behavior trees are provided by Nav2 in the <code class="docutils literal n
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>This behavior tree will simply plan a new path to <code class="docutils literal notranslate"><span class="pre">goal</span></code> every 1 meter (set by <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code>) using <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code>.
-If a new path is computed on the <code class="docutils literal notranslate"><span class="pre">path</span></code> blackboard variable, <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> will take this <code class="docutils literal notranslate"><span class="pre">path</span></code> and follow it using the server's default algorithm.</p>
-<p>This tree contains:</p>
+<p>此行为树将使用``ComputePathToPose``，根据``DistanceController``设置的每1米，简单地规划到``goal``的新路径。如果在``path``黑板变量上计算出新路径，则``FollowPath``将获取该``path``并使用服务器的默认算法进行跟随。</p>
+<p>该树包含：</p>
 <ul class="simple">
-<li><p>No recovery methods</p></li>
-<li><p>No retries on failure</p></li>
-<li><p>No selected planner or controller algorithms</p></li>
-<li><p>No nodes to contextually change settings for optimal performance</p></li>
-<li><p>No integration with automatic door, elevator, or other APIs</p></li>
-<li><p>No user provided custom BT nodes</p></li>
-<li><p>No subtrees for other behaviors like docking, following, etc.</p></li>
+<li><p>没有恢复方法。</p></li>
+<li><p>失败时不重试</p></li>
+<li><p>没有选择的规划器或控制器算法。</p></li>
+<li><p>没有上下文中更改设置以获得最佳性能的节点</p></li>
+<li><p>没有与自动门、电梯或其他API的集成。</p></li>
+<li><p>没有用户提供的自定义BT节点</p></li>
+<li><p>没有针对其他行为（如对接、跟随等）的子树。</p></li>
 </ul>
-<p>All of this, and more, can be set and configured for your customized navigation logic in Nav2.</p>
+<p>所有这些以及更多内容都可以在Nav2中设置和配置以定制化导航逻辑。</p>
 </div>
 
 
