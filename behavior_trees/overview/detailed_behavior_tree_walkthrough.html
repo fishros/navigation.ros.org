@@ -734,8 +734,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">详细的行为树遍历</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">前提条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#navigate-to-pose-with-replanning-and-recovery">Navigate To Pose With Replanning and Recovery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#navigation-subtree">Navigation Subtree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigate-to-pose-with-replanning-and-recovery">使用重新规划和恢复导航到姿势</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigation-subtree">导航子树</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#recovery-subtree">Recovery Subtree</a></li>
 </ul>
 </li>
@@ -945,34 +945,30 @@
 <li><p><a class="reference internal" href="#prerequisites">前提条件</a></p></li>
 <li><p><a class="reference internal" href="#navigate-to-pose-with-replanning-and-recovery">带有重新规划和恢复的导航到位点</a></p></li>
 <li><p><a class="reference internal" href="#navigation-subtree">导航子树</a></p></li>
-<li><p><a class="reference internal" href="#recovery-subtree">Recovery Subtree</a></p></li>
+<li><p><a class="reference internal" href="#recovery-subtree">恢复子树</a></p></li>
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
 <p>本文档作为 Nav2 中使用的主要行为树（BT）的参考指南。</p>
-<p>There are many example behavior trees provided in <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator/behavior_trees</span></code>,
-but these sometimes have to be re-configured based on the application of the robot.
-The following document will walk through the current main default BT <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code>
-in great detail.</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator/behavior_trees</span></code> 中提供了许多示例行为树，但有时需要根据机器人的应用重新配置它们。下面的文档将详细介绍当前主要的默认行为树 <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code>。</p>
 </div>
 <div class="section" id="prerequisites">
 <h2>前提条件<a class="headerlink" href="#prerequisites" title="永久链接至标题"></a></h2>
 <ul>
-<li><p>Become familiar with the concept of a behavior tree before continuing with this walkthrough</p>
+<li><p>在继续本指南之前，请熟悉行为树的概念。</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>请阅读 <a class="reference external" href="../../concepts/index.html">导航概念</a> 中的简要说明。</p></li>
-<li><p>Read the general tutorial and guide (not Nav2 specific) on the <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> website. Specifically, the &quot;Learn the Basics&quot; section on the BehaviorTree CPP V3 website explains the basic generic nodes that will be used that this guide will build upon.</p></li>
+<li><p>在 <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> 网站上阅读一般教程和指南（非特定于Nav2）。特别是 BehaviorTree CPP V3 网站上的&quot;学习基础知识&quot;部分解释了此指南将要构建的基本通用节点。</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Become familiar with the custom <a class="reference external" href="nav2_specific_nodes.html">Nav2 specific BT nodes</a></p></li>
+<li><p>熟悉定制的`Nav2特定的行为树节点 &lt;nav2_specific_nodes.html&gt;`_</p></li>
 </ul>
 </div>
 <div class="section" id="navigate-to-pose-with-replanning-and-recovery">
-<h2>Navigate To Pose With Replanning and Recovery<a class="headerlink" href="#navigate-to-pose-with-replanning-and-recovery" title="永久链接至标题"></a></h2>
-<p>The following section will describe in detail the concept of the main and default BT currently used in Nav2, <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code>.
-This behavior tree replans the global path periodically at 1 Hz and it also has recovery actions.</p>
+<h2>使用重新规划和恢复导航到姿势<a class="headerlink" href="#navigate-to-pose-with-replanning-and-recovery" title="永久链接至标题"></a></h2>
+<p>下一部分将详细描述Nav2当前使用的主要和默认行为树的概念，即``navigate_to_pose_w_replanning_and_recovery.xml``。该行为树以1 Hz的频率定期重新规划全局路径，并具有恢复动作。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -982,7 +978,7 @@ This behavior tree replans the global path periodically at 1 Hz and it also has 
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>BTs are primarily defined in XML. The tree shown above is represented in XML as follows.</p>
+<p>行为树主要以 XML 形式定义。上面显示的树在 XML 中表示如下。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;RecoveryNode</span><span class="w"> </span><span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>
@@ -1021,9 +1017,7 @@ This behavior tree replans the global path periodically at 1 Hz and it also has 
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>This is likely still a bit overwhelming, but this tree can be broken into two smaller subtrees that we can focus on one at a time.
-These smaller subtrees are the children of the top-most <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code>. From this point forward the <code class="docutils literal notranslate"><span class="pre">NavigateWithReplanning</span></code> subtree will be referred to as the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree, and the <code class="docutils literal notranslate"><span class="pre">RecoveryFallback</span></code> subtree will be known as the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree.
-This can be represented in the following way:</p>
+<p>这可能还有点令人不知所措，但这棵树可以分成两个较小的子树，我们可以一次关注一个子树。这些较小的子树是最顶层的``RecoveryNode``的子节点。从这一点开始，<a href="#id1"><span class="problematic" id="id2">``</span></a>NavigateWithReplanning``子树将被称为``Navigation``子树，<a href="#id3"><span class="problematic" id="id4">``</span></a>RecoveryFallback``子树将被称为``Recovery``子树。可以用以下方式表示：</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1033,24 +1027,22 @@ This can be represented in the following way:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree mainly involves actual navigation behavior:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树主要涉及实际导航行为：</p>
 <ul class="simple">
-<li><p>calculating a path</p></li>
-<li><p>following a path</p></li>
-<li><p>contextual recovery behaviors for each of the above primary navigation behaviors</p></li>
+<li><p>计算路径</p></li>
+<li><p>按照路径进行</p></li>
+<li><p>针对上述每个主要导航行为的上下文恢复行为</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree includes behaviors for system level failures or items that were not easily dealt with internally.</p>
-<p>The overall BT will (hopefully) spend most of its time in the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree. If either of the two main behaviors in the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree fail
-(path calculation or path following), contextual recoveries will be attempted.</p>
-<p>If the contextual recoveries were still not enough, the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree will return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>.
-The system will move on to the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree to attempt to clear any system level navigation failures.</p>
-<p>This happens until the <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> for the parent <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> is exceeded (which by default is 6).</p>
+<p>“Recovery”子树包括系统级故障或内部难以处理的项目的行为。</p>
+<p>整个行为树（希望如此）大部分时间都在``Navigation``子树中。如果``Navigation``子树中的两个主要行为（路径计算或路径跟踪）中的任何一个失败，将尝试进行上下文恢复。</p>
+<p>如果上下文恢复仍然不足，将返回“FAILURE”给“Navigation”子树。系统将继续执行“Recovery”子树，以尝试清除任何系统级导航故障。</p>
+<p>直到超过父级``RecoveryNode``的``number_of_retries``次数为止（默认为6次）。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;RecoveryNode</span><span class="w"> </span><span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="navigation-subtree">
-<h2>Navigation Subtree<a class="headerlink" href="#navigation-subtree" title="永久链接至标题"></a></h2>
+<h2>导航子树<a class="headerlink" href="#navigation-subtree" title="永久链接至标题"></a></h2>
 <p>Now that we have gone over the control flow between the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree and the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree, let's focus on the Navigation subtree.</p>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1061,7 +1053,7 @@ The system will move on to the <code class="docutils literal notranslate"><span 
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The XML of this subtree is as follows:</p>
+<p>此子树的XML如下所示：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;RateController</span><span class="w"> </span><span class="na">hz=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;RecoveryNode</span><span class="w"> </span><span class="na">number_of_retries=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ComputePathToPose&quot;</span><span class="nt">&gt;</span>
@@ -1094,11 +1086,10 @@ The crux of the tree can be represented with only one parent and two children no
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The parent <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> node allows the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> to be ticked, and once that succeeds, <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> to be ticked.
-While the <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> subtree is being ticked, the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree will be ticked as well. This allows for the path to be recomputed as the robot moves around.</p>
+<p>父“PipelineSequence”节点允许选中“ComputePathToPose”，一旦成功，就选中“FollowPath”。在“FollowPath”子树被选中的同时，“ComputePathToPose”子树也将被选中。这允许在机器人移动时重新计算路径。</p>
 <p>Both the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and the <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> follow the same general structure.</p>
 <ul class="simple">
-<li><p>Do the action</p></li>
+<li><p>执行动作</p></li>
 <li><p>If the action fails, try to see if we can contextually recover</p></li>
 </ul>
 <p>The below is the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree:</p>
