@@ -944,7 +944,7 @@ msgstr "传入的参数被存储在成员变量中，以便在以后的阶段如
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:134
 msgid "In ``setPlan()`` method, we receive the updated global path for the robot to follow. In our example, we transform the received global path into the frame of the robot and then store this transformed global path for later use."
-msgstr "In ``setPlan()`` method, we receive the updated global path for the robot to follow. In our example, we transform the received global path into the frame of the robot and then store this transformed global path for later use."
+msgstr "在``setPlan()``方法中，我们接收到机器人要遵循的更新全局路径。在我们的示例中，我们将接收到的全局路径转换为机器人的坐标系，并将转换后的全局路径存储起来以供以后使用。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:145
@@ -954,7 +954,7 @@ msgstr "期望速度的计算在`computeVelocityCommands()`方法中进行。它
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:194
 msgid "The remaining methods are not used, but it's mandatory to override them. As per the rules, we did override all but left them empty."
-msgstr "The remaining methods are not used, but it's mandatory to override them. As per the rules, we did override all but left them empty."
+msgstr "剩余的方法没有使用，但是必须进行覆盖。根据规则，我们确实进行了覆盖，但是将它们保留为空白。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:197
@@ -964,77 +964,77 @@ msgstr "2- 导出控制器插件"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:199
 msgid "Now that we have created our custom controller, we need to export our controller plugin so that it will be visible to the controller server. Plugins are loaded at runtime, and if they are not visible, then our controller server won't be able to load them. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
-msgstr "Now that we have created our custom controller, we need to export our controller plugin so that it will be visible to the controller server. Plugins are loaded at runtime, and if they are not visible, then our controller server won't be able to load them. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr "现在，我们已经创建了自定义控制器，我们需要导出控制器插件，以便控制器服务器能够看到它们。插件是在运行时加载的，如果它们不可见，那么控制器服务器将无法加载它们。在ROS 2中，导出和加载插件由``pluginlib``处理。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:203
 msgid "Coming back to our tutorial, class ``nav2_pure_pursuit_controller::PurePursuitController`` is loaded dynamically as ``nav2_core::Controller`` which is our base class."
-msgstr "Coming back to our tutorial, class ``nav2_pure_pursuit_controller::PurePursuitController`` is loaded dynamically as ``nav2_core::Controller`` which is our base class."
+msgstr "回到我们的教程，类 ``nav2_pure_pursuit_controller::PurePursuitController`` 动态加载为 ``nav2_core::Controller``，这是我们的基类。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:205 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:269
 msgid "To export the controller, we need to provide two lines"
-msgstr "To export the controller, we need to provide two lines"
+msgstr "要导出控制器，我们需要提供两行代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:212 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:276
 msgid "Note that it requires pluginlib to export out the plugin's class. Pluginlib would provide as macro ``PLUGINLIB_EXPORT_CLASS``, which does all the work of exporting."
-msgstr "Note that it requires pluginlib to export out the plugin's class. Pluginlib would provide as macro ``PLUGINLIB_EXPORT_CLASS``, which does all the work of exporting."
+msgstr "请注意，它需要 pluginlib 来导出插件的类。Pluginlib 将提供宏 ``PLUGINLIB_EXPORT_CLASS``，该宏执行所有导出的工作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:214 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:152 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:278
 msgid "It is good practice to place these lines at the end of the file, but technically, you can also write at the top."
-msgstr "It is good practice to place these lines at the end of the file, but technically, you can also write at the top."
+msgstr "将这些行代码放在文件末尾是一个好的做法，但从技术上讲，你也可以写在文件顶部。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:216
 msgid "The next step would be to create the plugin's description file in the root directory of the package. For example, ``pure_pursuit_controller_plugin.xml`` file in our tutorial package. This file contains the following information"
-msgstr "The next step would be to create the plugin's description file in the root directory of the package. For example, ``pure_pursuit_controller_plugin.xml`` file in our tutorial package. This file contains the following information"
+msgstr "下一步是在软件包的根目录中创建插件的描述文件。例如，在我们的教程软件包中创建一个名为 ``pure_pursuit_controller_plugin.xml`` 的文件。此文件包含以下信息："
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:218 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:156
 msgid "``library path``: Plugin's library name and its location."
-msgstr "``library path``: Plugin's library name and its location."
+msgstr "``library path``：插件的库名称及其位置。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:234 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:298
 msgid "Next step would be to export plugin using ``CMakeLists.txt`` by using CMake function ``pluginlib_export_plugin_description_file()``. This function installs the plugin description file to ``share`` directory and sets ament indexes to make it discoverable."
-msgstr "Next step would be to export plugin using ``CMakeLists.txt`` by using CMake function ``pluginlib_export_plugin_description_file()``. This function installs the plugin description file to ``share`` directory and sets ament indexes to make it discoverable."
+msgstr "下一步是使用 ``CMakeLists.txt`` 导出插件，使用 CMake 函数 ``pluginlib_export_plugin_description_file()``。此函数将插件描述文件安装到 ``share`` 目录，并设置 ament 索引以使其可被发现。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:240 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:304
 msgid "The plugin description file should also be added to ``package.xml``"
-msgstr "The plugin description file should also be added to ``package.xml``"
+msgstr "插件描述文件也应添加到``package.xml``中。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:249 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:313
 msgid "Compile, and it should be registered. Next, we'll use this plugin."
-msgstr "Compile, and it should be registered. Next, we'll use this plugin."
+msgstr "编译后，应该进行注册。接下来，我们将使用此插件。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:252 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:316
 msgid "3- Pass the plugin name through the params file"
-msgstr "3- Pass the plugin name through the params file"
+msgstr "3- 通过参数文件传递插件名称"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:254 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:318
 msgid "To enable the plugin, we need to modify the ``nav2_params.yaml`` file as below"
-msgstr "To enable the plugin, we need to modify the ``nav2_params.yaml`` file as below"
+msgstr "要启用插件，我们需要修改 ``nav2_params.yaml`` 文件如下所示："
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:270
 msgid "In the above snippet, you can observe the mapping of our ``nav2_pure_pursuit_controller/PurePursuitController`` controller to its id ``FollowPath``. To pass plugin-specific parameters we have used ``<plugin_id>.<plugin_specific_parameter>``."
-msgstr "In the above snippet, you can observe the mapping of our ``nav2_pure_pursuit_controller/PurePursuitController`` controller to its id ``FollowPath``. To pass plugin-specific parameters we have used ``<plugin_id>.<plugin_specific_parameter>``."
+msgstr "在上面的代码片段中，您可以观察到我们将 ``nav2_pure_pursuit_controller/PurePursuitController`` 控制器映射到其 ID ``FollowPath``。要传递特定于插件的参数，我们使用了 ``<plugin_id>.<plugin_specific_parameter>``。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:274
 msgid "4- Run Pure Pursuit Controller plugin"
-msgstr "4- Run Pure Pursuit Controller plugin"
+msgstr "4- 运行 Pure Pursuit Controller 插件。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:276 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:346
 msgid "Run Turtlebot3 simulation with enabled Nav2. Detailed instructions on how to make it run are written at :ref:`getting_started`. Below is a shortcut command for that:"
-msgstr "Run Turtlebot3 simulation with enabled Nav2. Detailed instructions on how to make it run are written at :ref:`getting_started`. Below is a shortcut command for that:"
+msgstr "使用启用的 Nav2 运行 Turtlebot3 模拟。有关如何运行的详细说明，请参阅 :ref:`getting_started`。下面是一个快捷命令："
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:282
@@ -1044,7 +1044,7 @@ msgstr "Then goto RViz and click on the \"2D Pose Estimate\" button at the top a
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:4
 msgid "Writing a New Planner Plugin"
-msgstr "Writing a New Planner Plugin"
+msgstr "编写一个新的规划器插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:18
@@ -1054,7 +1054,7 @@ msgstr "This tutorial shows how to create your own planner plugin."
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:32
 msgid "1- Creating a new Planner Plugin"
-msgstr "1- Creating a new Planner Plugin"
+msgstr "1- 创建一个新的规划器插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:34
@@ -1064,7 +1064,7 @@ msgstr "We will create a simple straight-line planner. The annotated code in thi
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:38
 msgid "Our example plugin inherits from the base class ``nav2_core::GlobalPlanner``. The base class provides 5 pure virtual methods to implement a planner plugin. The plugin will be used by the planner server to compute trajectories. Let's learn more about the methods needed to write a planner plugin."
-msgstr "Our example plugin inherits from the base class ``nav2_core::GlobalPlanner``. The base class provides 5 pure virtual methods to implement a planner plugin. The plugin will be used by the planner server to compute trajectories. Let's learn more about the methods needed to write a planner plugin."
+msgstr "我们的示例插件继承自基类 ``nav2_core::GlobalPlanner``。基类提供了 5 个纯虚拟方法来实现规划器插件。该插件将由规划器服务器用于计算轨迹。让我们更多地了解编写规划器插件所需的方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44
@@ -1074,7 +1074,7 @@ msgstr "Method is called at when planner server enters on_configure state. Ideal
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50
 msgid "Method is called when planner server enters on_activate state. Ideally this method should implement operations which are neccessary before planner goes to an active state."
-msgstr "Method is called when planner server enters on_activate state. Ideally this method should implement operations which are neccessary before planner goes to an active state."
+msgstr "当规划器服务器进入 on_activate 状态时调用该方法。理想情况下，此方法应该实现在规划器进入活动状态之前必要的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54
