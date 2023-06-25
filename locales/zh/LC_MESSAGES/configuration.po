@@ -427,7 +427,7 @@ msgstr "计算通过姿态的路径错误代码。请参阅``ComputePathThroughP
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:4
 msgid "ComputePathToPose"
-msgstr "ComputePathToPose"
+msgstr "ComputePathToPose（计算路径到位姿）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:6
@@ -437,7 +437,7 @@ msgstr "调用 ComputePathToPose ROS 2 动作服务器，该服务器由 nav2_pl
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst ../../configuration/packages/bt-plugins/conditions/GoalReached.rst
 msgid "goal"
-msgstr "goal"
+msgstr "goal（目标）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:33
@@ -447,7 +447,7 @@ msgstr "目标姿态。接收一个黑板变量，例如 \"{goal}\"。"
 
 #: ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:92
 msgid "Compute path to pose error code. See ``ComputePathToPose`` action message for the enumerated set of error codes."
-msgstr "Compute path to pose error code. See ``ComputePathToPose`` action message for the enumerated set of error codes."
+msgstr "计算路径到位姿的错误代码。请参考“ComputePathToPose”动作消息中的错误代码枚举集。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:4
@@ -457,17 +457,17 @@ msgstr "ControllerSelector"
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:6
 msgid "It is used to select the Controller that will be used by the Controller server. It subscribes to the ``controller_selector`` topic to receive command messages with the name of the Controller to be used. It is commonly used before of the FollowPathAction. The ``selected_controller`` output port is passed to ``controller_id`` input port of the FollowPathAction. If none is provided on the topic, the ``default_controller`` is used."
-msgstr "It is used to select the Controller that will be used by the Controller server. It subscribes to the ``controller_selector`` topic to receive command messages with the name of the Controller to be used. It is commonly used before of the FollowPathAction. The ``selected_controller`` output port is passed to ``controller_id`` input port of the FollowPathAction. If none is provided on the topic, the ``default_controller`` is used."
+msgstr "用于选择将由控制器服务器使用的控制器。它订阅“controller_selector”主题，接收带有要使用的控制器名称的命令消息。它通常在FollowPathAction之前使用。将“selected_controller”输出端口传递给FollowPathAction的“controller_id”输入端口。如果主题上没有提供任何控制器，则使用“default_controller”。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:8 ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:8 ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:8 ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:8
 msgid "Any publisher to this topic needs to be configured with some QoS defined as ``reliable`` and ``transient local``."
-msgstr "Any publisher to this topic needs to be configured with some QoS defined as ``reliable`` and ``transient local``."
+msgstr "任何发布到此主题的发布者都需要配置一些定义为``可靠``和``瞬态局部``的QoS。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst ../../configuration/packages/configuring-map-server.rst
 msgid "topic_name"
-msgstr "topic_name"
+msgstr "topic_name（主题名称）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:20
@@ -477,7 +477,7 @@ msgstr "controller_selector"
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:24
 msgid "The name of the topic used to received select command messages. This is used to support multiple ControllerSelector nodes."
-msgstr "The name of the topic used to received select command messages. This is used to support multiple ControllerSelector nodes."
+msgstr "用于接收选择命令消息的主题的名称。这用于支持多个ControllerSelector节点。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst
@@ -487,7 +487,7 @@ msgstr "default_controller"
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:35
 msgid "The default value for the selected Controller if no message is received from the input topic."
-msgstr "The default value for the selected Controller if no message is received from the input topic."
+msgstr "如果没有从输入主题接收到消息，则选定的控制器的默认值。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst
@@ -497,7 +497,7 @@ msgstr "selected_controller"
 
 #: ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:50
 msgid "The output selected Controller id. This selected_controller string is usually passed to the FollowPath behavior via the controller_id input port."
-msgstr "The output selected Controller id. This selected_controller string is usually passed to the FollowPath behavior via the controller_id input port."
+msgstr "选择的控制器id。通常，此selected_controller字符串通过controller_id输入端口传递给FollowPath行为。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:4
@@ -507,7 +507,7 @@ msgstr "DriveOnHeading"
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:6
 msgid "Invokes the DriveOnHeading ROS 2 action server, which causes the robot to drive on the current heading by a specific displacement. It performs a linear translation by a given distance. The nav2_behaviors module implements the DriveOnHeading action server."
-msgstr "Invokes the DriveOnHeading ROS 2 action server, which causes the robot to drive on the current heading by a specific displacement. It performs a linear translation by a given distance. The nav2_behaviors module implements the DriveOnHeading action server."
+msgstr "调用DriveOnHeading ROS 2动作服务器，使机器人按照当前航向驱动一定的位移。它通过给定的距离执行线性移动。nav2_behaviors模块实现了DriveOnHeading动作服务器。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst
@@ -522,12 +522,12 @@ msgstr "0.15"
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:23
 msgid "Distance to travel (m)."
-msgstr "Distance to travel (m)."
+msgstr "行驶距离（米）。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst
 msgid "speed"
-msgstr "speed"
+msgstr "速度"
 
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:34
@@ -537,7 +537,7 @@ msgstr "Speed at which to travel (m/s)."
 
 #: ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:81
 msgid "Drive on heading error code. See ``DriveOnHeading`` action message for the enumerated set of error codes."
-msgstr "Drive on heading error code. See ``DriveOnHeading`` action message for the enumerated set of error codes."
+msgstr "按照航向行驶的错误代码。有关错误代码的枚举集，请参阅DriveOnHeading动作消息。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:4
@@ -547,7 +547,7 @@ msgstr "FollowPath"
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:6
 msgid "Invokes the FollowPath ROS 2 action server, which is implemented by the controller plugin modules loaded. The server address can be remapped using the ``server_name`` input port."
-msgstr "Invokes the FollowPath ROS 2 action server, which is implemented by the controller plugin modules loaded. The server address can be remapped using the ``server_name`` input port."
+msgstr "调用FollowPath ROS 2动作服务器，由加载的控制器插件模块实现。服务器地址可以通过server_name输入端口重新映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/FollowPath.rst:21
