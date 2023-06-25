@@ -122,7 +122,7 @@ msgstr "启用自定义算法和行为的插件（Nav2核心）"
 
 #: ../../index.rst:72
 msgid "Monitor raw sensor data for imminent collision or dangerous situation (Collision Monitor)"
-msgstr "Monitor raw sensor data for imminent collision or dangerous situation (Collision Monitor)"
+msgstr "监视原始传感器数据以检测即将发生的碰撞或危险情况（碰撞监视）"
 
 
 #: ../../index.rst:73
@@ -132,7 +132,7 @@ msgstr "以Pythonic方式与Nav2进行交互的Python3 API（简单指挥官）"
 
 #: ../../index.rst:74
 msgid "A smoother on output velocities to guarantee dynamic feasibility of commands (Velocity Smoother)"
-msgstr "A smoother on output velocities to guarantee dynamic feasibility of commands (Velocity Smoother)"
+msgstr "在输出速度上进行平滑处理，以确保命令的动态可行性（速度平滑器）"
 
 
 msgid "Navigation2 Block Diagram"
@@ -141,7 +141,7 @@ msgstr "Navigation2块图"
 
 #: ../../index.rst:81
 msgid "We also provide a set of starting plugins to get you going. A list of all plugins can be found on :ref:`plugins` - but they include algorithms for the spanning cross section of common behaviors and robot platform types."
-msgstr "We also provide a set of starting plugins to get you going. A list of all plugins can be found on :ref:`plugins` - but they include algorithms for the spanning cross section of common behaviors and robot platform types."
+msgstr "我们还提供了一套起始插件，以帮助您入门。可以在 :ref:`plugins` 中找到所有插件的列表-但它们包括针对常见行为和机器人平台类型的算法。"
 
 
 #: ../../index.rst:85
@@ -151,7 +151,7 @@ msgstr "引用文献"
 
 #: ../../index.rst:87
 msgid "If you use the navigation framework, an algorithm from this repository, or ideas from it please cite this work in your papers!"
-msgstr "If you use the navigation framework, an algorithm from this repository, or ideas from it please cite this work in your papers!"
+msgstr "如果您使用导航框架、此存储库中的算法或其中的思想，请在论文中引用这项工作！"
 
 
 #: ../../index.rst:91
@@ -161,7 +161,7 @@ msgstr "S. Macenski, F. Martín, R. White, J. Clavero. `马拉松2号：导航�
 
 #: ../../index.rst:95
 msgid "IROS 2020 talk on Nav2 Marathon Experiments:"
-msgstr "IROS 2020 talk on Nav2 Marathon Experiments:"
+msgstr "关于Nav2 Marathon实验的IROS 2020演讲："
 
 
 #: ../../index.rst:114
@@ -181,5 +181,5 @@ msgstr "示例"
 
 #: ../../index.rst:133
 msgid "Below is an example of the TB3 navigating in a small lounge."
-msgstr "Below is an example of the TB3 navigating in a small lounge."
+msgstr "下面是TB3在一个小休息室中导航的示例。"
 

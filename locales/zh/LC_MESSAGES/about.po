@@ -22,47 +22,47 @@ msgstr ""
 
 #: ../../about/index.rst:4
 msgid "About and Contact"
-msgstr "About and Contact"
+msgstr "关于和联系"
 
 
 #: ../../about/index.rst:13
 msgid "About"
-msgstr "About"
+msgstr "关于"
 
 
 #: ../../about/index.rst:15
 msgid "Navigation is a community effort to lower the barrier of entry of mobile robotics technology for all. This project is one of the flagship projects along with MoveIt that acts as an applications entry point and frameworks for ROS. Navigation in ROS 2 builds on the wild success of the original Navigation Stack (Nav Stack) in ROS (1). This project has been used by researchers, educators, and industry for over 10 years. There are very few projects that have lasted as long or were as successful as ROS (1) Navigation. We would like to thank David Lu!! and Mike Ferguson for their tireless over the span of a decade to keep the Nav Stack alive and well. Without their hard work, this project would not have been able to happen. If you're interested in a comparison between ROS 1 Navigation and ROS 2 Navigation, see :ref:`ros1_comparison`. For a list of robots using Navigation2, see :ref:`robots`."
-msgstr "Navigation is a community effort to lower the barrier of entry of mobile robotics technology for all. This project is one of the flagship projects along with MoveIt that acts as an applications entry point and frameworks for ROS. Navigation in ROS 2 builds on the wild success of the original Navigation Stack (Nav Stack) in ROS (1). This project has been used by researchers, educators, and industry for over 10 years. There are very few projects that have lasted as long or were as successful as ROS (1) Navigation. We would like to thank David Lu!! and Mike Ferguson for their tireless over the span of a decade to keep the Nav Stack alive and well. Without their hard work, this project would not have been able to happen. If you're interested in a comparison between ROS 1 Navigation and ROS 2 Navigation, see :ref:`ros1_comparison`. For a list of robots using Navigation2, see :ref:`robots`."
+msgstr "导航是一个社区努力，旨在为所有人降低移动机器人技术的门槛。这个项目是ROS的旗舰项目之一，与MoveIt一起作为应用程序入口点和ROS框架。ROS 2中的导航建立在ROS（1）中原始导航堆栈（Nav Stack）的巨大成功基础上。这个项目已经被研究人员、教育工作者和工业界使用了10多年。很少有项目像ROS（1）导航那样经久耐用或者取得如此成功。我们要感谢David Lu!!和Mike Ferguson在过去十年中不知疲倦地维护Nav Stack，使其保持活力。没有他们的辛勤工作，这个项目就不可能实现。如果你对ROS 1导航和ROS 2导航之间的比较感兴趣，请参阅：ref:`ros1_comparison`。有关使用Navigation2的机器人列表，请参阅：ref:`robots`。"
 
 
 #: ../../about/index.rst:25
 msgid "Aslas, as time moves on, so must we. ROS (1) had a great run and those of us that build projects using it will remember it fondly(ish). With change comes possibilities. Navigation2 builds on the success but redesigns the framework to be more flexible and the feedback gathered over 10 years."
-msgstr "Aslas, as time moves on, so must we. ROS (1) had a great run and those of us that build projects using it will remember it fondly(ish). With change comes possibilities. Navigation2 builds on the success but redesigns the framework to be more flexible and the feedback gathered over 10 years."
+msgstr "随着时间的推移，我们也必须前进。ROS（1）经历了一段辉煌的岁月，使用它构建项目的人将会怀念它（或多或少）。变革带来了可能性。Navigation2在成功的基础上进行了重新设计，使框架更加灵活，并整合了10年来收集到的反馈意见。"
 
 
 #: ../../about/index.rst:30
 msgid "We strive to create an open community and encourage new ROS users and experts alike to collaborate. However, that can't happen without your issues, pull requests, and support. Navigation, like all open-source projects, is kept going by a dedicated group of developers, maintainers, users, and collaborators. We would like to thank here our current and past contributors and maintainers."
-msgstr "We strive to create an open community and encourage new ROS users and experts alike to collaborate. However, that can't happen without your issues, pull requests, and support. Navigation, like all open-source projects, is kept going by a dedicated group of developers, maintainers, users, and collaborators. We would like to thank here our current and past contributors and maintainers."
+msgstr "我们努力创建一个开放的社区，鼓励新的ROS用户和专家们合作。然而，如果没有您的问题、拉取请求和支持，这是无法实现的。导航和所有开源项目一样，是由一群专注的开发者、维护者、用户和合作者支持的。在此，我们要感谢我们的现任和过去的贡献者和维护者。"
 
 
 #: ../../about/index.rst:35
 msgid "If you or your organization are interested in sponsoring Navigation or any work around it, please reach out to the current project lead."
-msgstr "If you or your organization are interested in sponsoring Navigation or any work around it, please reach out to the current project lead."
+msgstr "如果您或您的组织有兴趣赞助Navigation或其周边工作，请与当前项目负责人联系。"
 
 
 #: ../../about/index.rst:37
 msgid "Our current leadership team includes:"
-msgstr "Our current leadership team includes:"
+msgstr "我们当前的领导团队包括："
 
 
 #: ../../about/index.rst:40 ../../about/index.rst:60 ../../about/related_projects.rst:9
 msgid "Name"
-msgstr "Name"
+msgstr "姓名"
 
 
 #: ../../about/index.rst:40 ../../about/index.rst:60
 msgid "Organization"
-msgstr "Organization"
+msgstr "组织"
 
 
 #: ../../about/index.rst:40 ../../about/index.rst:60
@@ -72,7 +72,7 @@ msgstr "GitHub ID"
 
 #: ../../about/index.rst:40
 msgid "Current Role"
-msgstr "Current Role"
+msgstr "当前角色"
 
 
 #: ../../about/index.rst:42 ../../about/related_projects.rst:11 ../../about/related_projects.rst:13 ../../about/related_projects.rst:16 ../../about/related_projects.rst:19 ../../about/related_projects.rst:27
@@ -82,7 +82,7 @@ msgstr "Steve Macenski"
 
 #: ../../about/index.rst:42 ../../about/index.rst:48
 msgid "Samsung Research"
-msgstr "Samsung Research"
+msgstr "三星研究院"
 
 
 #: ../../about/index.rst:42
