@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
@@ -960,7 +960,7 @@
 </h1><p><a class="reference external" href="https://github.com/BehaviorTree/Groot">Groot</a> is the companion application of the <a class="reference external" href="https://github.com/BehaviorTree/BehaviorTree.CPP">BehaviorTree.CPP</a> library used to create, edit, and visualize behavior trees.
 Behavior Trees are deeply integrated into Nav2, used as the main method of orchestrating task server logic across a complex navigation and autonomy stack.
 Behavior Trees, in short BTs, consist of many nodes completing different tasks and control the flow of logic, similar to a Hierarchical or Finite State Machine, but organized in a tree structure.
-These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Control</cite>, or <cite>Decorator</cite>, and are described in more detail in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a> and <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/BT_basics#types-of-nodes">BehaviorTree.CPP</a>.</p>
+These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Control</cite>, or <cite>Decorator</cite>, and are described in more detail in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a> and <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/BT_basics#types-of-nodes">BehaviorTree.CPP</a>.</p>
 <p><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">Writing a New Behavior Tree Plugin</span></a> offers a well written example of creating a simple <code class="docutils literal notranslate"><span class="pre">Action</span></code> node if creating new BT nodes is of interest. This tutorial will focus solely on launching Groot, visualizing a Behavior Tree, and modifying that tree for a given customization, assuming a library of BT nodes. Luckily, Nav2 provides a robust number of BT nodes for your use out of the box, enumerated in <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a>.</p>
 <p>A BT configuration file in BehaviorTree.CPP is an XML file. This is used to dynamically load the BT node plugins at run-time from the appropriate libraries mapped to their names. The XML format is defined <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/xml_format/">in detail here</a>. Therefore, Groot needs to have a list of nodes it has access to and important metadata about them like their type and ports (or parameters). We refer to this as the &quot;pallet&quot; of nodes later in the tutorial.</p>
 <p>In the video above you can see Groot side-by-side with RVIz and a test platform 100% equipped with ROS-enabled hardware from SIEMENS.

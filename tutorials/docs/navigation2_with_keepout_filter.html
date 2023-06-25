@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
@@ -961,7 +961,7 @@
 <h2>Tutorial Steps<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="prepare-filter-mask">
 <h3>1. Prepare filter mask<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
-<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a>, any Costmap Filter (including Keepout Filter) are reading the data marked in a filter mask file. Filter mask - is the usual Nav2 2D-map distributed through PGM, PNG or BMP raster file with its metadata containing in a YAML file. The following steps help to understand how to make a new filter mask:</p>
+<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>, any Costmap Filter (including Keepout Filter) are reading the data marked in a filter mask file. Filter mask - is the usual Nav2 2D-map distributed through PGM, PNG or BMP raster file with its metadata containing in a YAML file. The following steps help to understand how to make a new filter mask:</p>
 <p>Create a new image with a PGM/PNG/BMP format: copy <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.pgm">turtlebot3_world.pgm</a> main map which will be used in a world simulation from a <code class="docutils literal notranslate"><span class="pre">Nav2</span></code> repository to a new <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> file.</p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> in your favourite raster graphics editor (as an example could be taken GIMP editor). The lightness of each pixel on the mask means an encoded information for the specific costmap filter you are going to use. Color lightness of each pixel belongs to the <code class="docutils literal notranslate"><span class="pre">[0..255]</span></code> range (or <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> in percent scale), where <code class="docutils literal notranslate"><span class="pre">0</span></code> means black color and <code class="docutils literal notranslate"><span class="pre">255</span></code> - white. Another term &quot;darkness&quot; will be understood as the exact opposite of lightness. In other words <code class="docutils literal notranslate"><span class="pre">color_darkness</span> <span class="pre">=</span> <span class="pre">100%</span> <span class="pre">-</span> <span class="pre">color_lightness</span></code>.</p>
 <p>In the GIMP lightness is expressed through color components value (e.g. <code class="docutils literal notranslate"><span class="pre">R</span></code> in percent scale) and might be set by moving <code class="docutils literal notranslate"><span class="pre">L</span></code> slider in color changing tool:</p>

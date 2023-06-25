@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">导航插件</a><ul>
@@ -1052,7 +1052,7 @@ All major image formats such as <code class="docutils literal notranslate"><span
 </div>
 <div class="section" id="costmap-filters">
 <h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
-<p>A new concept interacting with spatial-dependent objects called &quot;Costmap Filters&quot; appeared in Galactic (more information about this concept could be found at <a class="reference internal" href="../concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a> page). Costmap filters are acting as a costmap plugins, applied to a separate costmap above common plugins. In order to make a filtered costmap and change robot's behavior in annotated areas, filter plugin reads the data came from filter mask. Then this data is being linearly transformed into feature map in a filter space. It could be passability of an area, maximum speed limit in m/s, robot desired direction in degrees or anything else. Transformed feature map along with the map/costmap, sensors data and current robot position is used in plugin's algorithms to make required updates in the resulting costmap and robot's behavor.</p>
+<p>A new concept interacting with spatial-dependent objects called &quot;Costmap Filters&quot; appeared in Galactic (more information about this concept could be found at <a class="reference internal" href="../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a> page). Costmap filters are acting as a costmap plugins, applied to a separate costmap above common plugins. In order to make a filtered costmap and change robot's behavior in annotated areas, filter plugin reads the data came from filter mask. Then this data is being linearly transformed into feature map in a filter space. It could be passability of an area, maximum speed limit in m/s, robot desired direction in degrees or anything else. Transformed feature map along with the map/costmap, sensors data and current robot position is used in plugin's algorithms to make required updates in the resulting costmap and robot's behavor.</p>
 <p>Architecturally, costmap filters consists from <code class="docutils literal notranslate"><span class="pre">CostmapFilter</span></code> class which is a basic class incorporating much common of its inherited filter plugins:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code>: keep-out/safety zones filter plugin.</p></li>

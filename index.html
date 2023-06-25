@@ -97,9 +97,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -741,9 +741,9 @@
 <li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="behavior_trees/trees/odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plugins/index.html">导航插件</a><ul>
@@ -952,7 +952,7 @@
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
 <p>Nav2是ROS导航栈的专业支持精神继承者。该项目旨在找到一种安全的方式，使移动机器人能够在多种环境和机器人运动学类别中完成复杂任务。它不仅可以从A点移动到B点，还可以有中间姿态，并代表其他类型的任务，如物体跟踪等。Nav2是一个经过生产级和高质量验证的导航框架，得到全球50多家公司的信任。</p>
-<p>它提供感知、规划、控制、定位、可视化等功能，用于构建高度可靠的自主系统。这将通过传感器数据完成环境建模，动态路径规划，计算电机速度，避开障碍物，表示语义区域和对象，并构建更高层次的机器人行为。要了解有关此项目的更多信息，例如相关项目、使用的机器人、ROS1比较和维护者，请参阅：<a class="reference internal" href="about/index.html#about"><span class="std std-ref">关于和联系</span></a>。要了解有关导航和ROS概念的更多信息，请参阅：<a class="reference internal" href="concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a>。</p>
+<p>它提供感知、规划、控制、定位、可视化等功能，用于构建高度可靠的自主系统。这将通过传感器数据完成环境建模，动态路径规划，计算电机速度，避开障碍物，表示语义区域和对象，并构建更高层次的机器人行为。要了解有关此项目的更多信息，例如相关项目、使用的机器人、ROS1比较和维护者，请参阅：<a class="reference internal" href="about/index.html#about"><span class="std std-ref">关于和联系</span></a>。要了解有关导航和ROS概念的更多信息，请参阅：<a class="reference internal" href="concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>。</p>
 <p>Nav2使用行为树通过协调许多独立的模块化服务器来创建定制和智能的导航行为。任务服务器可用于计算路径、控制力量、恢复或任何其他与导航相关的任务。这些独立的服务器通过ROS接口（如动作服务器或服务）与行为树（BT）进行通信。机器人可以利用多个不同的行为树来执行许多类型的独特任务。</p>
 <p>下面的图表将让你初步了解Nav2的结构。注意：每个服务器都可以有多个控制器、规划器和恢复插件，这些插件可以与BT插件相匹配。这可以用于创建上下文导航行为。如果你想看一下这个项目和ROS（1）导航之间的比较，请参阅：<a class="reference internal" href="about/ros1_comparison.html#ros1-comparison"><span class="std std-ref">ROS 到 ROS 2 导航</span></a>。</p>
 <p>Nav2的预期输入包括符合REP-105的TF变换、如果使用静态代价地图层则为地图源、BT XML文件和任何相关的传感器数据源。然后，它将为全向或非全向机器人的电机提供有效的速度命令。我们目前支持所有主要的机器人类型：全向、差动驱动、腿部和阿克曼（类似汽车）基本类型！我们通过SE2碰撞检查支持具有圆形和任意形状的机器人的独特功能。</p>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navigate To Pose With Consistent Replanning And If Path Becomes Invalid &mdash; Navigation 2 1.0.0 文档</title>
+  <title>使用一致重新规划和如果路径无效则导航到姿态 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Nav2行为树</a> &raquo;</li>
-      <li>Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</li>
+      <li>使用一致重新规划和如果路径无效则导航到姿态</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,23 +939,12 @@
            <div itemprop="articleBody">
              
   <div class="section" id="navigate-to-pose-with-consistent-replanning-and-if-path-becomes-invalid">
-<span id="behavior-tree-nav-to-pose-and-replan-if-path-invalid"></span><h1>Navigate To Pose With Consistent Replanning And If Path Becomes Invalid<a class="headerlink" href="#navigate-to-pose-with-consistent-replanning-and-if-path-becomes-invalid" title="永久链接至标题"></a></h1>
-<p>This behavior tree implements a significantly more mature version of the behavior tree on <a class="reference internal" href="../index.html#behavior-trees"><span class="std std-ref">Nav2行为树</span></a>.
-It navigates from a starting point to a single point goal in freespace.
-It contains both use of custom recoveries in specific sub-contexts as well as a global recovery subtree for system-level failures.
-It also provides the opportunity for users to retry tasks multiple times before returning a failed state.</p>
+<span id="behavior-tree-nav-to-pose-and-replan-if-path-invalid"></span><h1>使用一致重新规划和如果路径无效则导航到姿态<a class="headerlink" href="#navigate-to-pose-with-consistent-replanning-and-if-path-becomes-invalid" title="永久链接至标题"></a></h1>
+<p>这个行为树实现了一个更成熟版本的行为树，可以在：ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>behavior_trees`中进行导航。它在自由空间中从起点导航到单个目标点。它既包含了在特定子上下文中使用自定义恢复操作，也包含了一个用于系统级故障的全局恢复子树。它还提供了用户在返回失败状态之前多次重试任务的机会。</p>
 <p><code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的BT节点也指定了它们要使用的算法。按照惯例，我们按算法的风格命名它们（例如，不是 <code class="docutils literal notranslate"><span class="pre">DWB</span></code> 而是 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>），这样行为树或应用程序开发人员就不需要关注技术细节。他们只想使用一个路径跟踪控制器。</p>
 <p>在这个行为树中，我们尝试在返回任务失败之前重试整个导航任务 6 次。这使得导航系统有充分的机会尝试从故障条件中恢复或等待瞬时问题解决，例如人员拥挤或临时传感器故障。</p>
-<p>In nominal execution, replanning can be triggered by an a invalid previous path, a new goal or if a new path has not been created for 10 seconds.
-If the planner or controller fails, it will trigger contextually aware recoveries in its subtree.
-Currently, the recoveries will clear the global costmap if the planner fails and clear the local costmap if the controller fails.
-Additional context-specific recoveries can be added to these subtrees.</p>
-<p>If these contextual recoveries fail, this behavior tree enters the recovery subtree.
-This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot.
-This subtree has the <code class="docutils literal notranslate"><span class="pre">GoalUpdated</span></code> BT node which ticks every iteration to ensure responsiveness of new goals.
-Next, the recovery subtree will attempt the following recoveries: costmap clearing operations, spinning, waiting, and backing up.
-After each of the recoveries in the subtree, the main navigation subtree will be reattempted.
-If it continues to fail, the next recovery in the recovery subtree is ticked.</p>
+<p>在正常执行中，重新规划可以由无效的先前路径、新目标或者如果10秒钟内未创建新路径来触发。如果规划器或者控制器失败，它将在其子树中触发具有上下文意识的恢复行为。目前，如果规划器失败，恢复行为将清除全局代价地图，如果控制器失败，恢复行为将清除局部代价地图。可以在这些子树中添加其他上下文特定的恢复行为。</p>
+<p>如果这些上下文恢复失败，则行为树进入恢复子树。这个子树专门用于解决系统级故障，例如机器人被卡住或处于糟糕位置的问题。该子树有一个``GoalUpdated``行为树节点，它在每次迭代中进行刻度，以确保对新目标的响应性。接下来，恢复子树将尝试以下恢复操作：清除代价地图、旋转、等待和后退。在子树中的每个恢复操作之后，将重新尝试主导航子树。如果继续失败，则刻度恢复子树中的下一个恢复操作。</p>
 <p>虽然此行为树没有使用，但是``PlannerSelector``、<code class="docutils literal notranslate"><span class="pre">ControllerSelector``和``GoalCheckerSelector``行为树节点也可能很有帮助。与硬编码要使用的算法（``GridBased``和``FollowPath</span></code>）不同，这些行为树节点将允许用户通过ROS主题动态更改导航系统中使用的算法。相反，可能更明智的做法是使用条件节点在最有用和独特的情况下创建具有指定算法的不同子树上下文。然而，选择节点可以是一种有用的方式，通过外部应用程序而不是通过内部行为树控制流逻辑来更改算法。最好通过行为树方法来实现更改，但我们理解许多专业用户有外部应用程序以动态更改其导航器的设置。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>

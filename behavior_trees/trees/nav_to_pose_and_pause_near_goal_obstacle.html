@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Navigate To Pose With Consistent Replanning And If Path Becomes Invalid" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html" />
+    <link rel="next" title="使用一致重新规划和如果路径无效则导航到姿态" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html" />
     <link rel="prev" title="导航到姿态" href="nav_through_poses_recovery.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
@@ -952,7 +952,7 @@
 <img alt="../../_images/nav2_patience_near_goal_and_go_around.gif" src="../../_images/nav2_patience_near_goal_and_go_around.gif" />
 <p>或者，如果障碍物被清除，则全局规划器会生成较短的路径。现在，<code class="docutils literal notranslate"><span class="pre">PathLongerOnApproach</span></code> 返回成功（SUCCESS），导致 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 继续机器人的导航。</p>
 <img alt="../../_images/nav2_patience_near_goal_and_clear_obstacle.gif" src="../../_images/nav2_patience_near_goal_and_clear_obstacle.gif" />
-<p>Apart from the above scenarios, we also need to note that, the robot will take the longer path to the goal location if the obstacle does not clear up in the given user-specific wait time.</p>
+<p>除了上述情况外，我们还需要注意，如果障碍物在给定的用户特定等待时间内没有消除，机器人将选择更长的路径到达目标位置。</p>
 <p>总而言之，这个特定的行为树既可以作为示例，也可以作为组织特定应用的即用行为树，以优化其流程周期时间。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
@@ -996,7 +996,7 @@
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>A complete demo of this BT can be seen in the video below:</p>
+<p>可以在下面的视频中看到此行为树的完整演示：</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7AkZiH2Cf_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 

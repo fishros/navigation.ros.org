@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
@@ -961,7 +961,7 @@
 <h2>Tutorial Steps<a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="prepare-filter-mask">
 <h3>1. Prepare filter mask<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
-<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a>, any Costmap Filter (including Speed Filter) is reading the data marked in a filter mask file. All information about filter masks, their types, detailed structure and how to make a new one is written in a <a class="reference internal" href="navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">Navigating with Keepout Zones</span></a> tutorial at <code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">Prepare</span> <span class="pre">filter</span> <span class="pre">masks</span></code> chapter. The principal of drawing the filter mask for Speed Filter is the same as for Keepout Filter (to annotate a map with the requested zones), except that <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask values have another meaning: these values are encoded speed limits for the areas corresponding to the cell on map.</p>
+<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>, any Costmap Filter (including Speed Filter) is reading the data marked in a filter mask file. All information about filter masks, their types, detailed structure and how to make a new one is written in a <a class="reference internal" href="navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">Navigating with Keepout Zones</span></a> tutorial at <code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">Prepare</span> <span class="pre">filter</span> <span class="pre">masks</span></code> chapter. The principal of drawing the filter mask for Speed Filter is the same as for Keepout Filter (to annotate a map with the requested zones), except that <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask values have another meaning: these values are encoded speed limits for the areas corresponding to the cell on map.</p>
 <p>Let's look, how it is being decoded. As we know, <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values are belonging to the <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> range. For Speed Filter <code class="docutils literal notranslate"><span class="pre">0</span></code> value means no speed limit in the area corresponding zero-cell on mask. Values from <code class="docutils literal notranslate"><span class="pre">[1..100]</span></code> range are being linearly converted into a speed limit value by the following formula:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">speed_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filter_mask_data</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">multiplier</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">base</span><span class="p">;</span>
 </pre></div>

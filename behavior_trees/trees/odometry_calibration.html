@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odometry Calibration &mdash; Navigation 2 1.0.0 文档</title>
+  <title>里程计校准 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -98,9 +98,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">Navigation Concepts</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/index.html">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../concepts/index.html#ros-2">ROS 2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">Action Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#action-server">动作服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../concepts/index.html#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
 </ul>
 </li>
@@ -742,9 +742,9 @@
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_recovery.html">导航到姿势</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_through_poses_recovery.html">导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nav_to_pose_and_pause_near_goal_obstacle.html">导航到姿势并在目标障碍物附近暂停</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">Navigate To Pose With Consistent Replanning And If Path Becomes Invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.html">使用一致重新规划和如果路径无效则导航到姿态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="follow_point.html">跟随动态点</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Odometry Calibration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">里程计校准</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Nav2行为树</a> &raquo;</li>
-      <li>Odometry Calibration</li>
+      <li>里程计校准</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,11 +939,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="odometry-calibration">
-<span id="behavior-tree-odometry-calibration"></span><h1>Odometry Calibration<a class="headerlink" href="#odometry-calibration" title="永久链接至标题"></a></h1>
-<p>This behavior tree drives the robot in a CCW square three times using the DriveOnHeading and Spin behaviors.
-The robot will traverse each side of the square at 0.2 (m/s) for 2 meters before making a 90 degree turn.
-This is a primitive experiment to measure odometric accuracy and can be used and repeated to tune parameters related to odometry to improve quality.</p>
-<a class="reference internal image-reference" href="../../_images/odometry_calibration.gif"><img alt="Alternative text" class="align-center" src="../../_images/odometry_calibration.gif" style="width: 800px;" /></a>
+<span id="behavior-tree-odometry-calibration"></span><h1>里程计校准<a class="headerlink" href="#odometry-calibration" title="永久链接至标题"></a></h1>
+<p>这个行为树驱动机器人以逆时针方式绕正方形行驶三次，使用DriveOnHeading和Spin行为。机器人将以0.2（m/s）的速度行驶2米，然后进行90度转弯。这是一个用于测量里程计精度的原始实验，并且可以用于调整与里程计相关的参数以提高质量。</p>
+<a class="reference internal image-reference" href="../../_images/odometry_calibration.gif"><img alt="替代文本" class="align-center" src="../../_images/odometry_calibration.gif" style="width: 800px;" /></a>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Repeat</span><span class="w"> </span><span class="na">num_cycles=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
