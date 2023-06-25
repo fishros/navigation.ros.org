@@ -662,7 +662,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-smoother-server.html">Smoother Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#smoother-server-parameters">Smoother Server Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#smoother-server-parameters">平滑器服务器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#example">示例</a></li>
 </ul>
 </li>
@@ -676,8 +676,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-constrained-smoother.html">Constrained smoother</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-constrained-smoother.html#smoother-server-parameters">Smoother Server Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-constrained-smoother.html">约束平滑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-constrained-smoother.html#smoother-server-parameters">平滑器服务器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-constrained-smoother.html#example">示例</a></li>
 </ul>
 </li>
@@ -1498,7 +1498,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Type of polygon shape. Could be <code class="docutils literal notranslate"><span class="pre">scan</span></code>, <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> or <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
+<dt>描述：</dt><dd><p>多边形形状的类型。可以是``scan``，<code class="docutils literal notranslate"><span class="pre">pointcloud``或``range</span></code>。</p>
 </dd>
 </dl>
 </dd>
@@ -1518,7 +1518,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Topic to listen the source data from.</p>
+<dt>描述：</dt><dd><p>要监听源数据的主题。</p>
 </dd>
 </dl>
 </dd>
@@ -1538,7 +1538,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Minimum height the PointCloud projection to 2D space started from. Applicable for <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> type.</p>
+<dt>描述：</dt><dd><p>将PointCloud投影到2D空间的起始最小高度。适用于``pointcloud``类型。</p>
 </dd>
 </dl>
 </dd>
@@ -1558,7 +1558,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Maximum height the PointCloud projection to 2D space ended with. Applicable for <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> type.</p>
+<dt>描述：</dt><dd><p>将PointCloud投影到2D空间的结束最大高度。适用于``pointcloud``类型。</p>
 </dd>
 </dl>
 </dd>
@@ -1573,12 +1573,12 @@
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>双精度</p></td>
-<td><p>PI / 180 (1 degree)</p></td>
+<td><p>PI / 180（1度）</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述：</dt><dd><p>Angle increment (in radians) between nearby obstacle points at the range arc. Two outermost points from the field of view are not taken into account (they will always exist regardless of this value). Applicable for <code class="docutils literal notranslate"><span class="pre">range</span></code> type.</p>
+<dt>描述：</dt><dd><p>在距离弧线上的附近障碍点之间的角度增量（以弧度表示）。不考虑视野范围内的两个最外层点（无论该值如何，它们总是存在）。适用于“range”类型。</p>
 </dd>
 </dl>
 </dd>
@@ -1587,8 +1587,7 @@
 </div>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
-<p>Here is an example of configuration YAML for the Collision Monitor.
-For more information how to bring-up your own Collision Monitor node, please refer to the <a class="reference internal" href="../../tutorials/docs/using_collision_monitor.html#collision-monitor-tutorial"><span class="std std-ref">Using Collision Monitor</span></a> tutorial.</p>
+<p>下面是Collision Monitor的配置YAML示例。要了解如何启动自己的Collision Monitor节点的更多信息，请参考:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>collision_monitor_tutorial`教程。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">collision_monitor</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">base_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;base_footprint&quot;</span>
