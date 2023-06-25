@@ -3297,7 +3297,7 @@ msgstr "最小转弯半径"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:95
 msgid "Minimum turning radius the robot can perform. Can be set to 0.0 (or w_curve can be set to 0.0 with the same effect) for diff-drive/holonomic robots"
-msgstr "Minimum turning radius the robot can perform. Can be set to 0.0 (or w_curve can be set to 0.0 with the same effect) for diff-drive/holonomic robots"
+msgstr "机器人能够执行的最小转弯半径。对于差动驱动/全向运动机器人，可以设置为0.0（或者w_curve可以设置为0.0并产生相同的效果）。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3337,7 +3337,7 @@ msgstr "2000000.0"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:128
 msgid "Weight to maximize smoothness of path"
-msgstr "Weight to maximize smoothness of path"
+msgstr "用于最大化路径平滑度的权重"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3352,7 +3352,7 @@ msgstr "0.015"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:139
 msgid "Weight to steer robot away from collision and cost"
-msgstr "Weight to steer robot away from collision and cost"
+msgstr "将机器人远离碰撞和成本的权重"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3362,7 +3362,7 @@ msgstr "w_cost_cusp_multiplier"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:150
 msgid "Option to use higher weight during forward/reverse direction change, helping optimizer to converge or add an extra obstacle avoidance at these problematic segments. Following image depicts improvement of the path with ``w_cost_cusp_multiplier`` (green) compared to one without it (purple). Original path has cyan color."
-msgstr "Option to use higher weight during forward/reverse direction change, helping optimizer to converge or add an extra obstacle avoidance at these problematic segments. Following image depicts improvement of the path with ``w_cost_cusp_multiplier`` (green) compared to one without it (purple). Original path has cyan color."
+msgstr "选择在前进/后退方向变化时使用较高的权重，帮助优化器收敛或在这些有问题的段落上增加额外的避障。下面的图片显示了使用``w_cost_cusp_multiplier``（绿色）相比没有使用它的情况下（紫色）路径的改善。原始路径的颜色为青色。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3377,7 +3377,7 @@ msgstr "2.5"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:167
 msgid "Length of the section around cusp in which nodes use ``w_cost_cusp_multiplier`` (w_cost rises gradually inside the zone towards the cusp point, whose costmap weight eqals w_cost*w_cost_cusp_multiplier)"
-msgstr "Length of the section around cusp in which nodes use ``w_cost_cusp_multiplier`` (w_cost rises gradually inside the zone towards the cusp point, whose costmap weight eqals w_cost*w_cost_cusp_multiplier)"
+msgstr "cusp区域周围的部分长度，在此区域内的节点使用``w_cost_cusp_multiplier``（w_cost在区域内逐渐上升，直至达到拐点，其costmap权重等于w_cost*w_cost_cusp_multiplier）"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
@@ -3387,7 +3387,7 @@ msgstr "cost_check_points"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:174
 msgid "array of double"
-msgstr "array of double"
+msgstr "double数组"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:174
@@ -3397,7 +3397,7 @@ msgstr "[]"
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:178
 msgid "Points in robot frame to grab costmap values from. Format: [x1, y1, weight1, x2, y2, weight2, ...]."
-msgstr "Points in robot frame to grab costmap values from. Format: [x1, y1, weight1, x2, y2, weight2, ...]."
+msgstr "从机器人坐标系中获取costmap值的点。格式：[x1, y1, weight1, x2, y2, weight2, ...]。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:180
@@ -3407,7 +3407,7 @@ msgstr "IMPORTANT: Requires much higher number of optimizer iterations to actual
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst:182
 msgid "Following image depicts how two cost check points can be used to improve cost awareness of a rectangular robot."
-msgstr "Following image depicts how two cost check points can be used to improve cost awareness of a rectangular robot."
+msgstr "下图描述了如何使用两个cost检查点来提高对矩形机器人的成本感知。"
 
 
 #: ../../configuration/packages/configuring-constrained-smoother.rst
