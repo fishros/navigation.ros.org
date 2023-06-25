@@ -52,7 +52,7 @@ msgstr "Nav2使用行为树通过协调许多独立的模块化服务器来创�
 
 #: ../../index.rst:45
 msgid "The diagram below will give you a good first-look at the structure of Nav2. Note: It is possible to have multiple plugins for controllers, planners, and recoveries in each of their servers with matching BT plugins. This can be used to create contextual navigation behaviors. If you would like to see a comparison between this project and ROS (1) Navigation, see :ref:`ros1_comparison`."
-msgstr "The diagram below will give you a good first-look at the structure of Nav2. Note: It is possible to have multiple plugins for controllers, planners, and recoveries in each of their servers with matching BT plugins. This can be used to create contextual navigation behaviors. If you would like to see a comparison between this project and ROS (1) Navigation, see :ref:`ros1_comparison`."
+msgstr "下面的图表将让你初步了解Nav2的结构。注意：每个服务器都可以有多个控制器、规划器和恢复插件，这些插件可以与BT插件相匹配。这可以用于创建上下文导航行为。如果你想看一下这个项目和ROS（1）导航之间的比较，请参阅：:ref:`ros1_comparison`。"
 
 
 #: ../../index.rst:51
@@ -62,7 +62,7 @@ msgstr "Nav2的预期输入包括符合REP-105的TF变换、如果使用静态�
 
 #: ../../index.rst:59
 msgid "It has tools to:"
-msgstr "It has tools to:"
+msgstr "它具有以下工具："
 
 
 #: ../../index.rst:61
@@ -72,7 +72,7 @@ msgstr "加载、提供和存储地图（地图服务器）"
 
 #: ../../index.rst:62
 msgid "Localize the robot on the map (AMCL)"
-msgstr "Localize the robot on the map (AMCL)"
+msgstr "在地图上对机器人进行定位（AMCL）"
 
 
 #: ../../index.rst:63
@@ -82,7 +82,7 @@ msgstr "规划绕过障碍物的从A到B的路径（Nav2规划器）"
 
 #: ../../index.rst:64
 msgid "Control the robot as it follows the path (Nav2 Controller)"
-msgstr "Control the robot as it follows the path (Nav2 Controller)"
+msgstr "控制机器人沿着路径移动（Nav2控制器）"
 
 
 #: ../../index.rst:65
@@ -92,7 +92,7 @@ msgstr "使路径规划更连续和可行（Nav2平滑器）"
 
 #: ../../index.rst:66
 msgid "Convert sensor data into a costmap representation of the world (Nav2 Costmap 2D)"
-msgstr "Convert sensor data into a costmap representation of the world (Nav2 Costmap 2D)"
+msgstr "将传感器数据转换为世界的代价地图表示（Nav2代价地图2D）"
 
 
 #: ../../index.rst:67
@@ -102,7 +102,7 @@ msgstr "使用行为树构建复杂的机器人行为（Nav2行为树和BT导航
 
 #: ../../index.rst:68
 msgid "Compute recovery behaviors in case of failure (Nav2 Recoveries)"
-msgstr "Compute recovery behaviors in case of failure (Nav2 Recoveries)"
+msgstr "在发生故障时计算恢复行为（Nav2恢复）"
 
 
 #: ../../index.rst:69
@@ -112,7 +112,7 @@ msgstr "按顺序跟随航点（Nav2航点跟随器）"
 
 #: ../../index.rst:70
 msgid "Manage the lifecycle and watchdog for the servers (Nav2 Lifecycle Manager)"
-msgstr "Manage the lifecycle and watchdog for the servers (Nav2 Lifecycle Manager)"
+msgstr "管理服务器的生命周期和看门狗（Nav2生命周期管理器）"
 
 
 #: ../../index.rst:71
