@@ -242,7 +242,7 @@ msgstr "DWB controller"
 
 #: ../../tuning/index.rst:89 ../../tuning/index.rst:95
 msgid "Differential, Omnidirectional"
-msgstr "Differential, Omnidirectional"
+msgstr "差动、全向"
 
 
 #: ../../tuning/index.rst:89 ../../tuning/index.rst:91

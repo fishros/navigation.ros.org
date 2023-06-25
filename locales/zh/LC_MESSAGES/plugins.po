@@ -272,22 +272,22 @@ msgstr "**阿克曼**，腿式，全向，差分"
 
 #: ../../plugins/index.rst:113
 msgid "`Regulated Pure Pursuit`_"
-msgstr "`Regulated Pure Pursuit`_"
+msgstr "`调节纯追踪`_"
 
 
 #: ../../plugins/index.rst:113
 msgid "A service / industrial robot variation on the pure pursuit algorithm with adaptive features."
-msgstr "A service / industrial robot variation on the pure pursuit algorithm with adaptive features."
+msgstr "一种具有自适应功能的纯追踪算法的服务/工业机器人变体。"
 
 
 #: ../../plugins/index.rst:113
 msgid "**Ackermann**, Legged, Differential"
-msgstr "**Ackermann**, Legged, Differential"
+msgstr "**Ackermann**，腿式，差动"
 
 
 #: ../../plugins/index.rst:117
 msgid "`MPPI Controller`_"
-msgstr "`MPPI Controller`_"
+msgstr "`MPPI 控制器`_"
 
 
 #: ../../plugins/index.rst:117
@@ -297,47 +297,47 @@ msgstr "Steve Macenski Aleksei Budyakov"
 
 #: ../../plugins/index.rst:117
 msgid "A predictive MPC controller with modular & custom cost functions that can accomplish many tasks."
-msgstr "A predictive MPC controller with modular & custom cost functions that can accomplish many tasks."
+msgstr "一种具有模块化和自定义成本函数的预测 MPC 控制器，可完成许多任务。"
 
 
 #: ../../plugins/index.rst:117
 msgid "Differential, Omni, **Ackermann**"
-msgstr "Differential, Omni, **Ackermann**"
+msgstr "差动，全向，**Ackermann**"
 
 
 #: ../../plugins/index.rst:121
 msgid "`Rotation Shim Controller`_"
-msgstr "`Rotation Shim Controller`_"
+msgstr "`Rotation Shim 控制器`_"
 
 
 #: ../../plugins/index.rst:121
 msgid "A \"shim\" controller to rotate to path heading before passing to main controller for  tracking."
-msgstr "A \"shim\" controller to rotate to path heading before passing to main controller for  tracking."
+msgstr "一个用于在传递给主控制器进行跟踪之前将其旋转到路径航向的“垫片”控制器。"
 
 
 #: ../../plugins/index.rst:121
 msgid "Differential, Omni, model rotate in place"
-msgstr "Differential, Omni, model rotate in place"
+msgstr "差动、全向、模型原地旋转"
 
 
 #: ../../plugins/index.rst:133
 msgid "Planners"
-msgstr "Planners"
+msgstr "规划器"
 
 
 #: ../../plugins/index.rst:138
 msgid "`NavFn Planner`_"
-msgstr "`NavFn Planner`_"
+msgstr "`NavFn 规划器`_"
 
 
 #: ../../plugins/index.rst:138
 msgid "Eitan Marder-Eppstein & Kurt Konolige"
-msgstr "Eitan Marder-Eppstein & Kurt Konolige"
+msgstr "Eitan Marder-Eppstein和Kurt Konolige"
 
 
 #: ../../plugins/index.rst:138
 msgid "A navigation function using A* or Dijkstras expansion, assumes 2D holonomic particle"
-msgstr "A navigation function using A* or Dijkstras expansion, assumes 2D holonomic particle"
+msgstr "一种使用 A* 或 Dijkstra 扩展的导航函数，假设为二维全向性粒子。"
 
 
 #: ../../plugins/index.rst:149
@@ -352,7 +352,7 @@ msgstr "(formerly `SmacPlanner`)"
 
 #: ../../plugins/index.rst:143
 msgid "A SE2 Hybrid-A* implementation using either Dubin or Reeds-shepp motion models with smoother and multi-resolution query. Cars, car-like, and ackermann vehicles. Kinematically feasible."
-msgstr "A SE2 Hybrid-A* implementation using either Dubin or Reeds-shepp motion models with smoother and multi-resolution query. Cars, car-like, and ackermann vehicles. Kinematically feasible."
+msgstr "一种使用Dubin或Reeds-shepp运动模型的SE2混合A*算法实现，具有更平滑和多分辨率查询。适用于汽车、类似汽车和Ackermann车辆。运动学可行。"
 
 
 #: ../../plugins/index.rst:143
@@ -382,7 +382,7 @@ msgstr "An implementation of State Lattice Planner using pre-generated minimum c
 
 #: ../../plugins/index.rst:158
 msgid "Differential, Omnidirectional, Ackermann, Legged, Arbitrary / Custom"
-msgstr "Differential, Omnidirectional, Ackermann, Legged, Arbitrary / Custom"
+msgstr "差动、全向、Ackermann、腿式、任意/自定义"
 
 
 #: ../../plugins/index.rst:168
@@ -402,7 +402,7 @@ msgstr "An implementaion of Theta* using either 4 or 8 connected neighborhoods, 
 
 #: ../../plugins/index.rst:168
 msgid "Differential, Omnidirectional"
-msgstr "Differential, Omnidirectional"
+msgstr "差动、全向"
 
 
 #: ../../plugins/index.rst:183

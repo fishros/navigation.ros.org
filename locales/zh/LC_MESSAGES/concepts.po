@@ -187,7 +187,7 @@ msgstr "If you find that you require a new interface to the pluginlib definition
 
 #: ../../concepts/index.rst:139
 msgid "Planners"
-msgstr "Planners"
+msgstr "规划器"
 
 
 #: ../../concepts/index.rst:141

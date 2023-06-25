@@ -57,7 +57,7 @@ msgstr "Medium  (DONE)"
 
 #: ../../roadmap/roadmap.rst:21
 msgid "`MPPI Controller`_"
-msgstr "`MPPI Controller`_"
+msgstr "`MPPI 控制器`_"
 
 
 #: ../../roadmap/roadmap.rst:21
@@ -177,7 +177,7 @@ msgstr "`Complete First Time Guide`_"
 
 #: ../../roadmap/roadmap.rst:89
 msgid "`Rotation Shim Controller`_"
-msgstr "`Rotation Shim Controller`_"
+msgstr "`Rotation Shim 控制器`_"
 
 
 #: ../../roadmap/roadmap.rst:93

@@ -207,7 +207,7 @@ msgstr "DWB controller"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:90
 msgid "Differential, Omnidirectional"
-msgstr "Differential, Omnidirectional"
+msgstr "差动、全向"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:90
