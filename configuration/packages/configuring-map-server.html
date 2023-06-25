@@ -513,7 +513,7 @@
 <li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">二维代价地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap2d-ros-parameters">二维代价地图 ROS 参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">默认插件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">插件参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/inflation.html">Inflation Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/obstacle.html">Obstacle Layer Parameters</a></li>
@@ -531,7 +531,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-lifecycle.html">Lifecycle Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-lifecycle.html">生命周期管理器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-lifecycle.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-lifecycle.html#example">示例</a></li>
 </ul>
@@ -575,20 +575,20 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-dwb-controller.html">DWB Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#controller">Controller</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dwb-params/controller.html">DWB Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-dwb-controller.html">DWB控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#controller">控制器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dwb-params/controller.html">DWB控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/iterator.html">XYTheta Iterator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/kinematic.html">Kinematic Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/visualization.html">Publisher</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#plugins">Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#plugins">插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#trajectory-critics">Trajectory Critics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#trajectory-critics">轨迹评论家</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/base_obstacle.html">BaseObstacleCritic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/goal_align.html">GoalAlignCritic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/goal_dist.html">GoalDistCritic</a></li>
@@ -941,8 +941,7 @@
   <div class="section" id="map-server-saver">
 <span id="configuring-map-server"></span><h1>Map Server / Saver<a class="headerlink" href="#map-server-saver" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server">在Github上的源代码</a></p>
-<p>The Map Server implements the server for handling the map load requests for the stack and host a map topic.
-It also implements a map saver server which will run in the background and save maps based on service requests. There exists a map saver CLI similar to ROS 1 as well for a single map save.</p>
+<p>地图服务器实现了用于处理堆栈的地图加载请求的服务器，并托管一个地图主题。它还实现了一个地图保存器服务器，该服务器将在后台运行，并根据服务请求保存地图。还存在一个类似于 ROS 1 的地图保存器 CLI，可用于单个地图保存。</p>
 <div class="section" id="map-saver-parameters">
 <h2>Map Saver Parameters<a class="headerlink" href="#map-saver-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">

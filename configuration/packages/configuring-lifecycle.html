@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lifecycle Manager &mdash; Navigation 2 1.0.0 文档</title>
+  <title>生命周期管理器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -513,7 +513,7 @@
 <li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">二维代价地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap2d-ros-parameters">二维代价地图 ROS 参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">默认插件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">插件参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/inflation.html">Inflation Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/obstacle.html">Obstacle Layer Parameters</a></li>
@@ -531,7 +531,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lifecycle Manager</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">生命周期管理器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
@@ -575,20 +575,20 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-dwb-controller.html">DWB Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#controller">Controller</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dwb-params/controller.html">DWB Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-dwb-controller.html">DWB控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#controller">控制器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dwb-params/controller.html">DWB控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/iterator.html">XYTheta Iterator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/kinematic.html">Kinematic Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/visualization.html">Publisher</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#plugins">Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#plugins">插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#trajectory-critics">Trajectory Critics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#trajectory-critics">轨迹评论家</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/base_obstacle.html">BaseObstacleCritic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/goal_align.html">GoalAlignCritic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/goal_dist.html">GoalDistCritic</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Lifecycle Manager</li>
+      <li>生命周期管理器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,16 +939,13 @@
            <div itemprop="articleBody">
              
   <div class="section" id="lifecycle-manager">
-<span id="configuring-lifecycle-manager"></span><h1>Lifecycle Manager<a class="headerlink" href="#lifecycle-manager" title="永久链接至标题"></a></h1>
+<span id="configuring-lifecycle-manager"></span><h1>生命周期管理器<a class="headerlink" href="#lifecycle-manager" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_lifecycle_manager">在Github上的源代码</a></p>
-<p>The Lifecycle Manager module implements the method for handling the lifecycle transition states for the stack in a deterministic way.
-It will take in a set of ordered nodes to transition one-by-one into the configurating and activate states to run the stack.
-It will then bring down the stack into the finalized state in the opposite order.
-It will also create bond connections with the servers to ensure they are still up and transition down all nodes if any are non-responsive or crashed.</p>
+<p>生命周期管理器模块以确定性方式实现了处理堆栈生命周期转换状态的方法。它将接收一组有序节点，逐个将它们转换为配置和激活状态以运行堆栈。然后，它将按相反的顺序将堆栈降低到最终状态。它还将与服务器建立连接，以确保它们仍然运行，并在任何非响应或崩溃的节点时降低所有节点。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">node_names</dt>
+<dt class="field-odd">节点名称</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 67%" />
@@ -964,11 +961,11 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Ordered list of node names to bringup through lifecycle transition.</p>
+<dt>描述</dt><dd><p>通过生命周期转换引导节点名称的有序列表。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">autostart</dt>
+<dt class="field-even">自动启动</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -984,11 +981,11 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to transition nodes to active state on startup.</p>
+<dt>描述</dt><dd><p>是否在启动时将节点转换为活动状态。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">bond_timeout</dt>
+<dt class="field-odd">绑定超时</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1004,11 +1001,11 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Timeout to transition down all lifecycle nodes of this manager if a server is non-responsive, in seconds. Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to deactivate. Recommended to be always larger than 0.3s for all-local node discovery. Note: if a server cleanly exits the manager will immediately be notified.</p>
+<dt>描述</dt><dd><p>如果服务器无响应，此管理器将超时关闭所有生命周期节点的时间（以秒为单位）。设置为``0``以停用。建议始终大于0.3秒，以用于所有本地节点发现。注意：如果服务器正常退出，管理器将立即收到通知。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">attempt_respawn_reconnection</dt>
+<dt class="field-even">尝试重新连接重生</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1024,7 +1021,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to try to reconnect to servers that go down, presumably because respawn is set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to re-create crashed nodes. While default to <code class="docutils literal notranslate"><span class="pre">true</span></code>, reconnections will not be made unless respawn is set to true in your launch files or your watchdog systems will bring up the server externally.</p>
+<dt>描述</dt><dd><p>是否尝试重新连接到关闭的服务器，假设是因为重新创建崩溃的节点而将其重新生成。默认为``true``，但只有在启动文件中将 respawn 设置为 true，或者监控系统将在外部启动服务器时，才会进行重新连接。</p>
 </dd>
 </dl>
 </dd>
@@ -1044,7 +1041,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>When a server crashes or becomes non-responsive, the lifecycle manager will bring down all nodes for safety. This is the duration of which the lifecycle manager will attempt to reconnect with the failed server(s) during to recover and re-activate the system. If this passes, it will stop attempts and will require a manual re-activation once the problem is manually resolved. Units: seconds.</p>
+<dt>描述</dt><dd><p>当服务器崩溃或变为无响应状态时，生命周期管理器将关闭所有节点以确保安全。这是生命周期管理器尝试与故障服务器重新连接以恢复并重新激活系统的持续时间。如果超过此时间，将停止尝试，并需要在手动解决问题后手动重新激活。单位：秒。</p>
 </dd>
 </dl>
 </dd>

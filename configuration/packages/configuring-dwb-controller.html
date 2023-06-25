@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DWB Controller &mdash; Navigation 2 1.0.0 文档</title>
+  <title>DWB控制器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="DWB Controller" href="dwb-params/controller.html" />
+    <link rel="next" title="DWB控制器" href="dwb-params/controller.html" />
     <link rel="prev" title="StoppedGoalChecker" href="nav2_controller-plugins/stopped_goal_checker.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -513,7 +513,7 @@
 <li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">二维代价地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap2d-ros-parameters">二维代价地图 ROS 参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">默认插件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">插件参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/inflation.html">Inflation Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/obstacle.html">Obstacle Layer Parameters</a></li>
@@ -531,7 +531,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-lifecycle.html">Lifecycle Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-lifecycle.html">生命周期管理器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-lifecycle.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-lifecycle.html#example">示例</a></li>
 </ul>
@@ -575,20 +575,20 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">DWB Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#controller">Controller</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dwb-params/controller.html">DWB Controller</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DWB控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#controller">控制器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dwb-params/controller.html">DWB控制器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/iterator.html">XYTheta Iterator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/kinematic.html">Kinematic Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-params/visualization.html">Publisher</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#plugins">Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#plugins">插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#trajectory-critics">Trajectory Critics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trajectory-critics">轨迹评论家</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/base_obstacle.html">BaseObstacleCritic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/goal_align.html">GoalAlignCritic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trajectory_critics/goal_dist.html">GoalDistCritic</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>DWB Controller</li>
+      <li>DWB控制器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,14 +939,14 @@
            <div itemprop="articleBody">
              
   <div class="section" id="dwb-controller">
-<span id="configuring-dwb-controller"></span><h1>DWB Controller<a class="headerlink" href="#dwb-controller" title="永久链接至标题"></a></h1>
+<span id="configuring-dwb-controller"></span><h1>DWB控制器<a class="headerlink" href="#dwb-controller" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_dwb_controller">在Github上的源代码</a></p>
 <p>DWB 控制器是默认控制器。它是 <a class="reference external" href="https://github.com/locusrobotics/robot_navigation/tree/master/dwb_local_planner">David Lu 的控制器</a> 的一个分支，经过了 ROS 2 的修改。</p>
 <div class="section" id="controller">
-<h2>Controller<a class="headerlink" href="#controller" title="永久链接至标题"></a></h2>
+<h2>控制器<a class="headerlink" href="#controller" title="永久链接至标题"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dwb-params/controller.html">DWB Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dwb-params/controller.html">DWB控制器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dwb-params/iterator.html">XYTheta Iterator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dwb-params/kinematic.html">Kinematic Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dwb-params/visualization.html">Publisher</a></li>
@@ -954,8 +954,8 @@
 </div>
 </div>
 <div class="section" id="plugins">
-<h2>Plugins<a class="headerlink" href="#plugins" title="永久链接至标题"></a></h2>
-<p>The plugins listed below are inside the <code class="docutils literal notranslate"><span class="pre">dwb_plugins</span></code> namespace.</p>
+<h2>插件<a class="headerlink" href="#plugins" title="永久链接至标题"></a></h2>
+<p>以下插件位于``dwb_plugins``命名空间中。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator</a></li>
@@ -964,8 +964,8 @@
 </div>
 </div>
 <div class="section" id="trajectory-critics">
-<h2>Trajectory Critics<a class="headerlink" href="#trajectory-critics" title="永久链接至标题"></a></h2>
-<p>The trajectory critics listed below are inside the <code class="docutils literal notranslate"><span class="pre">dwb_critics</span></code> namespace.</p>
+<h2>轨迹评论家<a class="headerlink" href="#trajectory-critics" title="永久链接至标题"></a></h2>
+<p>以下轨迹批评者位于``dwb_critics``命名空间中。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="trajectory_critics/base_obstacle.html">BaseObstacleCritic</a></li>
