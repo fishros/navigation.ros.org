@@ -711,10 +711,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../tuning/index.html">调优指南</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#inflation-potential-fields">Inflation Potential Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">Robot Footprint vs Radius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">Rotate in Place Behavior</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">Planner Plugin Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#inflation-potential-fields">膨胀潜力场</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">机器人足迹与半径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">就地旋转行为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">规划器插件选择</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#controller-plugin-selection">Controller Plugin Selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#caching-obstacle-heuristic-in-smac-planners">Caching Obstacle Heuristic in Smac Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#nav2-launch-options">Nav2 Launch Options</a></li>
@@ -959,7 +959,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> is most suitable for:</p>
 <ul class="simple">
-<li><p>Robots that can rotate in place, such as differential and omnidirectional robots.</p></li>
+<li><p>能够原地旋转的机器人，如差分驱动和全向驱动机器人。</p></li>
 <li><p>Preference to rotate in place when starting to track a new path that is at a significantly different heading than the robot's current heading -- or when tuning your controller for its task makes tight rotations difficult.</p></li>
 <li><p>Using planners that are non-kinematically feasible, such as NavFn, Theta*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation since their paths are guaranteed drivable by physical constraints).</p></li>
 </ul>

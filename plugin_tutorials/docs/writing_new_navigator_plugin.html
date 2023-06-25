@@ -711,10 +711,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../tuning/index.html">调优指南</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#inflation-potential-fields">Inflation Potential Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">Robot Footprint vs Radius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">Rotate in Place Behavior</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">Planner Plugin Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#inflation-potential-fields">膨胀潜力场</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#robot-footprint-vs-radius">机器人足迹与半径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#rotate-in-place-behavior">就地旋转行为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#planner-plugin-selection">规划器插件选择</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#controller-plugin-selection">Controller Plugin Selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#caching-obstacle-heuristic-in-smac-planners">Caching Obstacle Heuristic in Smac Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tuning/index.html#nav2-launch-options">Nav2 Launch Options</a></li>
@@ -1262,9 +1262,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>
-<p>Then goto RViz and click on the &quot;2D Pose Estimate&quot; button at the top and point the location on the map as it was described in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>.
-The robot will localize on the map and then click on the &quot;Nav2 goal&quot; and click on the pose where you want your robot to navigate to.
-After that navigator will take over with the behavior tree XML file behavior definition provided to it.</p>
+<p>然后打开RViz，在顶部点击“2D Pose Estimate”按钮，并在地图上指定位置，就像在 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> 中描述的那样。机器人将在地图上进行定位，然后点击“Nav2 goal”，并点击您希望机器人导航到的姿势。之后导航器将使用提供的行为树XML文件行为定义接管控制。</p>
 </div>
 </div>
 </div>
