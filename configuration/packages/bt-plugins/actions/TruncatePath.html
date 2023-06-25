@@ -941,11 +941,11 @@
              
   <div class="section" id="truncatepath">
 <span id="bt-truncate-path"></span><h1>TruncatePath<a class="headerlink" href="#truncatepath" title="永久链接至标题"></a></h1>
-<p>A custom control node, which modifies a path making it shorter. It removes parts of the path closer than a distance to the goal pose. The resulting last pose of the path orientates the robot to the original goal pose.</p>
+<p>自定义控制节点，修改路径使其更短。它移除路径中距离目标位姿一定距离以内的部分。路径的最终位姿将使机器人朝向原始目标位姿。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">input_path</dt>
+<dt class="field-odd">输入路径</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 65%" />
@@ -961,11 +961,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The original path to be truncated.</p>
+<dt>描述</dt><dd><p>要截断的原始路径。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">distance</dt>
+<dt class="field-even">距离</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 35%" />
@@ -981,14 +981,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The distance to the original goal for truncating the path.</p>
+<dt>描述</dt><dd><p>截断路径的原始目标距离。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="ouput-ports">
-<h2>Ouput Ports<a class="headerlink" href="#ouput-ports" title="永久链接至标题"></a></h2>
+<h2>输出端口<a class="headerlink" href="#ouput-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">output_path</dt>
 <dd class="field-odd"><table class="docutils align-default">
