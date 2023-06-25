@@ -2947,7 +2947,7 @@ msgstr "停止发布超时"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:148
 msgid "Timeout, after which zero-velocity ceases to be published. It could be used for other overrode systems outside Nav2 are trying to bring the robot out of a state close to a collision, or to allow a standing robot to go into sleep mode."
-msgstr "Timeout, after which zero-velocity ceases to be published. It could be used for other overrode systems outside Nav2 are trying to bring the robot out of a state close to a collision, or to allow a standing robot to go into sleep mode."
+msgstr "超时时间，超过此时间，零速度将停止发布。它可以用于在Nav2之外的其他被覆盖系统试图将机器人从接近碰撞状态中解救出来，或者允许一个静止的机器人进入睡眠模式。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -2957,7 +2957,7 @@ msgstr "多边形"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:159
 msgid "List of zones (stop/slowdown/limit bounding boxes, footprint, approach circle, etc...). Causes an error, if not specialized."
-msgstr "List of zones (stop/slowdown/limit bounding boxes, footprint, approach circle, etc...). Causes an error, if not specialized."
+msgstr "区域列表（停止/减速/限制边界框，足迹，接近圆等）。如果未进行专门设置，将导致错误。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst ../../configuration/packages/configuring-costmaps.rst
@@ -2967,7 +2967,7 @@ msgstr "观测源"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:171
 msgid "List of data sources (laser scanners, pointclouds, etc...). Causes an error, if not specialized."
-msgstr "List of data sources (laser scanners, pointclouds, etc...). Causes an error, if not specialized."
+msgstr "数据源列表（激光扫描仪，点云等）。如果未进行专门设置，将导致错误。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:174
@@ -2977,7 +2977,7 @@ msgstr "多边形参数"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:176
 msgid "``<polygon name>`` is the corresponding polygon name ID selected for this type."
-msgstr "``<polygon name>`` is the corresponding polygon name ID selected for this type."
+msgstr "``<polygon name>`` 是为此类型选择的相应多边形名称ID。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -2987,7 +2987,7 @@ msgstr "``<polygon_name>``.type"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:187
 msgid "Type of polygon shape. Available values are ``polygon``, ``circle``. Causes an error, if not specialized."
-msgstr "Type of polygon shape. Available values are ``polygon``, ``circle``. Causes an error, if not specialized."
+msgstr "多边形形状的类型。可用的值为 ``polygon`` ， ``circle``。如果未进行专门设置，将导致错误。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3002,7 +3002,7 @@ msgstr "vector<double>"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:198
 msgid "Polygon vertexes, listed in ``{p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, ...}`` format (e.g. ``{0.5, 0.25, 0.5, -0.25, 0.0, -0.25, 0.0, 0.25}`` for the square in the front). Used for ``polygon`` type. Minimum 3 points for a triangle polygon. If not specified, the collision monitor will use dynamic polygon subscription to ``polygon_sub_topic`` for points in the ``stop``/``slowdown``/``limit`` action types, or footprint subscriber to ``footprint_topic`` for ``approach`` action type."
-msgstr "Polygon vertexes, listed in ``{p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, ...}`` format (e.g. ``{0.5, 0.25, 0.5, -0.25, 0.0, -0.25, 0.0, 0.25}`` for the square in the front). Used for ``polygon`` type. Minimum 3 points for a triangle polygon. If not specified, the collision monitor will use dynamic polygon subscription to ``polygon_sub_topic`` for points in the ``stop``/``slowdown``/``limit`` action types, or footprint subscriber to ``footprint_topic`` for ``approach`` action type."
+msgstr "多边形的顶点，以 ``{p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, ...}`` 的格式列出（例如，正方形的格式为 ``{0.5, 0.25, 0.5, -0.25, 0.0, -0.25, 0.0, 0.25}``）。用于``polygon``类型。三角形多边形至少需要3个顶点。如果未指定，则碰撞监视器将使用动态多边形订阅``polygon_sub_topic``中的顶点，用于``stop``/``slowdown``/``limit``操作类型，或者使用足迹订阅器``footprint_topic``中的顶点，用于``approach``操作类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3012,7 +3012,7 @@ msgstr "``<polygon_name>``.polygon_sub_topic"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:209
 msgid "Topic to listen the polygon points from. Applicable only for ``polygon`` type and ``stop``/``slowdown``/``limit`` action types. Causes an error, if not specified **and** points are also not specified. If both ``points`` and ``polygon_sub_topic`` are specified, the static ``points`` takes priority."
-msgstr "Topic to listen the polygon points from. Applicable only for ``polygon`` type and ``stop``/``slowdown``/``limit`` action types. Causes an error, if not specified **and** points are also not specified. If both ``points`` and ``polygon_sub_topic`` are specified, the static ``points`` takes priority."
+msgstr "从中接收多边形顶点的主题。仅适用于``polygon``类型和``stop``/``slowdown``/``limit``操作类型。如果未指定**且**顶点也未指定，将导致错误。如果同时指定了``points``和``polygon_sub_topic``，则静态``points``优先级较高。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3022,7 +3022,7 @@ msgstr "``<polygon_name>``.footprint_topic"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:220
 msgid "Topic to listen the robot footprint from. Applicable only for ``polygon`` type and ``approach`` action type. If both ``points`` and ``footprint_topic`` are specified, the static ``points`` takes priority."
-msgstr "Topic to listen the robot footprint from. Applicable only for ``polygon`` type and ``approach`` action type. If both ``points`` and ``footprint_topic`` are specified, the static ``points`` takes priority."
+msgstr "从中接收机器人足迹的主题。仅适用于``polygon``类型和``approach``操作类型。如果同时指定了``points``和``footprint_topic``，则静态``points``优先级较高。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3032,7 +3032,7 @@ msgstr "``<polygon_name>``.radius"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:231
 msgid "Circle radius. Used for ``circle`` type. Causes an error, if not specialized."
-msgstr "Circle radius. Used for ``circle`` type. Causes an error, if not specialized."
+msgstr "圆的半径。用于``circle``类型。如果未指定，将导致错误。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3042,7 +3042,7 @@ msgstr "``<polygon_name>``.action_type"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:242
 msgid "Zone behavior model. Available values are ``stop``, ``slowdown``, ``limit``, ``approach``. Causes an error, if not specialized."
-msgstr "Zone behavior model. Available values are ``stop``, ``slowdown``, ``limit``, ``approach``. Causes an error, if not specialized."
+msgstr "区域行为模型。可用的值为``stop``、``slowdown``、``limit``、``approach``。如果未指定，将导致错误。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3057,7 +3057,7 @@ msgstr "4"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:253
 msgid "Minimum number of data readings within a zone to trigger the action. Former ``max_points`` parameter for Humble, that meant the maximum number of data readings within a zone to not trigger the action). ``min_points`` is equal to ``max_points + 1`` value."
-msgstr "Minimum number of data readings within a zone to trigger the action. Former ``max_points`` parameter for Humble, that meant the maximum number of data readings within a zone to not trigger the action). ``min_points`` is equal to ``max_points + 1`` value."
+msgstr "在区域内触发动作所需的最少数据读数。之前的``max_points``参数是指在区域内不触发动作所需的最大数据读数。``min_points``等于``max_points + 1``的值。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3067,7 +3067,7 @@ msgstr "``<polygon_name>``.slowdown_ratio"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:264
 msgid "Robot slowdown (share of its actual speed). Applicable for ``slowdown`` action type."
-msgstr "Robot slowdown (share of its actual speed). Applicable for ``slowdown`` action type."
+msgstr "机器人减速（相对于其实际速度的比例）。适用于``slowdown``动作类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -3077,7 +3077,7 @@ msgstr "``<polygon_name>``.linear_limit"
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:275
 msgid "Robot linear speed limit. Applicable for ``limit`` action type."
-msgstr "Robot linear speed limit. Applicable for ``limit`` action type."
+msgstr "机器人线速度限制。适用于``limit``动作类型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
