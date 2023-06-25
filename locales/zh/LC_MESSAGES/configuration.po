@@ -2102,7 +2102,7 @@ msgstr "将其设置为false可防止amcl发布全局坐标系和里程计坐标
 
 #: ../../configuration/packages/configuring-amcl.rst:369 ../../configuration/packages/configuring-collision-monitor.rst:115
 msgid "Time with which to post-date the transform that is published, to indicate that this transform is valid into the future."
-msgstr "Time with which to post-date the transform that is published, to indicate that this transform is valid into the future."
+msgstr "发布变换时用于后期日期的时间，以表明该变换在未来是有效的。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2112,7 +2112,7 @@ msgstr "update_min_a"
 
 #: ../../configuration/packages/configuring-amcl.rst:380
 msgid "Rotational movement required before performing a filter update."
-msgstr "Rotational movement required before performing a filter update."
+msgstr "在执行滤波器更新之前需要的旋转运动。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2122,7 +2122,7 @@ msgstr "update_min_d"
 
 #: ../../configuration/packages/configuring-amcl.rst:391
 msgid "Translational movement required before performing a filter update."
-msgstr "Translational movement required before performing a filter update."
+msgstr "在执行滤波器更新之前需要的平移运动。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2132,7 +2132,7 @@ msgstr "z_hit"
 
 #: ../../configuration/packages/configuring-amcl.rst:402
 msgid "Mixture weight for z_hit part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.."
-msgstr "Mixture weight for z_hit part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.."
+msgstr "模型中z_hit部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个，似然模型使用z_hit和z_rand。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2142,7 +2142,7 @@ msgstr "z_max"
 
 #: ../../configuration/packages/configuring-amcl.rst:413
 msgid "Mixture weight for z_max part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand."
-msgstr "Mixture weight for z_max part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand."
+msgstr "模型中z_max部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个权重，似然模型使用z_hit和z_rand。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2152,7 +2152,7 @@ msgstr "z_rand"
 
 #: ../../configuration/packages/configuring-amcl.rst:424
 msgid "Mixture weight for z_rand part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.."
-msgstr "Mixture weight for z_rand part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.."
+msgstr "模型中z_rand部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个权重，似然模型使用z_hit和z_rand。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2167,7 +2167,7 @@ msgstr "0.005"
 
 #: ../../configuration/packages/configuring-amcl.rst:435
 msgid "Mixture weight for z_short part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand."
-msgstr "Mixture weight for z_short part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand."
+msgstr "z_short部分的混合权重，所有使用的z权重之和必须为1。Beam使用全部4个，似然模型使用z_hit和z_rand。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2177,7 +2177,7 @@ msgstr "always_reset_initial_pose"
 
 #: ../../configuration/packages/configuring-amcl.rst:446
 msgid "Requires that AMCL is provided an initial pose either via topic or initial_pose* parameter (with parameter set_initial_pose: true) when reset. Otherwise, by default AMCL will use the last known pose to initialize."
-msgstr "Requires that AMCL is provided an initial pose either via topic or initial_pose* parameter (with parameter set_initial_pose: true) when reset. Otherwise, by default AMCL will use the last known pose to initialize."
+msgstr "要求在重置时，通过话题或initial_pose*参数（设置参数set_initial_pose为true）向AMCL提供初始姿态。否则，默认情况下，AMCL将使用上次已知的姿态进行初始化。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2187,12 +2187,12 @@ msgstr "scan_topic"
 
 #: ../../configuration/packages/configuring-amcl.rst:453
 msgid "scan"
-msgstr "scan"
+msgstr "扫描"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:457
 msgid "Laser scan topic to subscribe to."
-msgstr "Laser scan topic to subscribe to."
+msgstr "要订阅的激光扫描话题。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst ../../configuration/packages/configuring-costmaps.rst
@@ -2207,7 +2207,7 @@ msgstr "map"
 
 #: ../../configuration/packages/configuring-amcl.rst:468
 msgid "Map topic to subscribe to."
-msgstr "Map topic to subscribe to."
+msgstr "要订阅的地图话题。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2217,7 +2217,7 @@ msgstr "first_map_only"
 
 #: ../../configuration/packages/configuring-amcl.rst:479
 msgid "Allows AMCL to accept maps more than once on the map_topic. This is especially useful when you're using the `LoadMap` service in `map_server`. Prior to Humble, this is ``first_map_only_``."
-msgstr "Allows AMCL to accept maps more than once on the map_topic. This is especially useful when you're using the `LoadMap` service in `map_server`. Prior to Humble, this is ``first_map_only_``."
+msgstr "允许AMCL在map_topic上接受多个地图。这在使用`map_server`中的`LoadMap`服务时特别有用。在Humble之前，该参数为`first_map_only_`。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:4
@@ -2227,7 +2227,7 @@ msgstr "Behavior Server"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:10
 msgid "The Behavior Server implements the server for handling recovery behavior requests and hosting a vector of plugins implementing various C++ behaviors. It is also possible to implement independent behavior servers for each custom behavior, but this server will allow multiple behaviors to share resources such as costmaps and TF buffers to lower incremental costs for new behaviors."
-msgstr "The Behavior Server implements the server for handling recovery behavior requests and hosting a vector of plugins implementing various C++ behaviors. It is also possible to implement independent behavior servers for each custom behavior, but this server will allow multiple behaviors to share resources such as costmaps and TF buffers to lower incremental costs for new behaviors."
+msgstr "Behavior Server实现了处理恢复行为请求和托管实现各种C++行为的插件向量的服务器。也可以为每个自定义行为实现独立的行为服务器，但此服务器允许多个行为共享资源，如costmaps和TF缓冲区，以降低新行为的增量成本。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:13
@@ -2237,7 +2237,7 @@ msgstr "Note: the wait recovery behavior has no parameters, the duration to wait
 
 #: ../../configuration/packages/configuring-behavior-server.rst:17
 msgid "Behavior Server Parameters"
-msgstr "Behavior Server Parameters"
+msgstr "Behavior Server参数"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
