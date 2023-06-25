@@ -451,7 +451,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">ComputePathToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateToPose.html">NavigateToPose</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">ClearEntireCostmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapExceptRegion.html">ClearCostmapExceptRegion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapAroundRobot.html">ClearCostmapAroundRobot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization</a></li>
@@ -462,12 +462,12 @@
 <li class="toctree-l4"><a class="reference internal" href="SmootherSelector.html">SmootherSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalCheckerSelector.html">GoalCheckerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateThroughPoses.html">NavigateThroughPoses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ComputePathThroughPoses.html">ComputePathThroughPoses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComputePathThroughPoses.html">计算路径通过姿势</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RemovePassedGoals.html">RemovePassedGoals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelControl.html">CancelControl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelBackUp.html">CancelBackUp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelSpin.html">CancelSpin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CancelWait.html">CancelWait</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CancelWait.html">取消等待</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelDriveOnHeading.html">CancelDriveOnHeading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelAssistedTeleop.html">CancelAssistedTeleop</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Smooth.html">SmoothPath</a></li>
@@ -941,12 +941,11 @@
              
   <div class="section" id="computepathtopose">
 <span id="bt-compute-path-to-pose-action"></span><h1>ComputePathToPose<a class="headerlink" href="#computepathtopose" title="永久链接至标题"></a></h1>
-<p>Invokes the ComputePathToPose ROS 2 action server, which is implemented by the <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_planner">nav2_planner</a> module.
-The server address can be remapped using the <code class="docutils literal notranslate"><span class="pre">server_name</span></code> input port.</p>
+<p>调用 ComputePathToPose ROS 2 动作服务器，该服务器由 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_planner">nav2_planner</a> 模块实现。服务器地址可以通过``server_name``输入端口进行重新映射。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">start</dt>
+<dt class="field-odd">开始</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 84%" />
@@ -962,7 +961,7 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Start pose. Optional. Only used if not left empty. Takes in a blackboard variable, e.g. &quot;{start}&quot;.</p>
+<dt>描述</dt><dd><p>起始姿势。可选。仅在非空时使用。接受黑板变量，例如 &quot;{start}&quot;。</p>
 </dd>
 </dl>
 </dd>
@@ -982,11 +981,11 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Goal pose. Takes in a blackboard variable, e.g. &quot;{goal}&quot;.</p>
+<dt>描述</dt><dd><p>目标姿态。接收一个黑板变量，例如 &quot;{goal}&quot;。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">planner_id</dt>
+<dt class="field-odd">规划器 ID</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 67%" />
@@ -1002,7 +1001,7 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Mapped name to the planner plugin type to use, e.g. GridBased.</p>
+<dt>描述</dt><dd><p>将名称映射到要使用的规划器插件类型，例如 GridBased。</p>
 </dd>
 </dl>
 </dd>
@@ -1051,7 +1050,7 @@ The server address can be remapped using the <code class="docutils literal notra
 <div class="section" id="output-ports">
 <h2>输出端口<a class="headerlink" href="#output-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">path</dt>
+<dt class="field-odd">路径</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 79%" />
@@ -1067,7 +1066,7 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Path created by action server. Takes in a blackboard variable, e.g. &quot;{path}&quot;.</p>
+<dt>描述</dt><dd><p>由动作服务器创建的路径。接受黑板变量，例如 &quot;{path}&quot;。</p>
 </dd>
 </dl>
 </dd>

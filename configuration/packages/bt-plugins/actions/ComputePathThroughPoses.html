@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ComputePathThroughPoses &mdash; Navigation 2 1.0.0 文档</title>
+  <title>计算路径通过姿势 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -451,7 +451,7 @@
 <li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateToPose.html">NavigateToPose</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">ClearEntireCostmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapExceptRegion.html">ClearCostmapExceptRegion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapAroundRobot.html">ClearCostmapAroundRobot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization</a></li>
@@ -462,12 +462,12 @@
 <li class="toctree-l4"><a class="reference internal" href="SmootherSelector.html">SmootherSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalCheckerSelector.html">GoalCheckerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateThroughPoses.html">NavigateThroughPoses</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">ComputePathThroughPoses</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">计算路径通过姿势</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RemovePassedGoals.html">RemovePassedGoals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelControl.html">CancelControl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelBackUp.html">CancelBackUp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelSpin.html">CancelSpin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CancelWait.html">CancelWait</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CancelWait.html">取消等待</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelDriveOnHeading.html">CancelDriveOnHeading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelAssistedTeleop.html">CancelAssistedTeleop</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Smooth.html">SmoothPath</a></li>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>ComputePathThroughPoses</li>
+      <li>计算路径通过姿势</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,13 +940,12 @@
            <div itemprop="articleBody">
              
   <div class="section" id="computepaththroughposes">
-<span id="bt-compute-path-through-poses-action"></span><h1>ComputePathThroughPoses<a class="headerlink" href="#computepaththroughposes" title="永久链接至标题"></a></h1>
-<p>Invokes the ComputePathThroughPoses ROS 2 action server, which is implemented by the <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_planner">nav2_planner</a> module.
-The server address can be remapped using the <code class="docutils literal notranslate"><span class="pre">server_name</span></code> input port.</p>
+<span id="bt-compute-path-through-poses-action"></span><h1>计算路径通过姿势<a class="headerlink" href="#computepaththroughposes" title="永久链接至标题"></a></h1>
+<p>调用 ComputePathThroughPoses ROS 2 动作服务器，由 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_planner">nav2_planner</a> 模块实现。服务器地址可以通过“server_name”输入端口重新映射。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">start</dt>
+<dt class="field-odd">开始</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 84%" />
@@ -962,11 +961,11 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Start pose. Optional. Only used if not left empty. Takes in a blackboard variable, e.g. &quot;{start}&quot;.</p>
+<dt>描述</dt><dd><p>起始姿势。可选。仅在非空时使用。接受黑板变量，例如 &quot;{start}&quot;。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">goals</dt>
+<dt class="field-even">目标</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 87%" />
@@ -982,11 +981,11 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Goal poses. Takes in a blackboard variable, e.g. &quot;{goals}&quot;.</p>
+<dt>描述</dt><dd><p>目标姿态。接收一个黑板变量，例如 &quot;{goals}&quot;。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">planner_id</dt>
+<dt class="field-odd">规划器 ID</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 67%" />
@@ -1002,7 +1001,7 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Mapped name to the planner plugin type to use, e.g. GridBased.</p>
+<dt>描述</dt><dd><p>将名称映射到要使用的规划器插件类型，例如 GridBased。</p>
 </dd>
 </dl>
 </dd>
@@ -1051,7 +1050,7 @@ The server address can be remapped using the <code class="docutils literal notra
 <div class="section" id="output-ports">
 <h2>输出端口<a class="headerlink" href="#output-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">path</dt>
+<dt class="field-odd">路径</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 79%" />
@@ -1067,7 +1066,7 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Path created by action server. Takes in a blackboard variable, e.g. &quot;{path}&quot;.</p>
+<dt>描述</dt><dd><p>由动作服务器创建的路径。接受黑板变量，例如 &quot;{path}&quot;。</p>
 </dd>
 </dl>
 </dd>
@@ -1087,7 +1086,7 @@ The server address can be remapped using the <code class="docutils literal notra
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Compute path through poses error code. See <code class="docutils literal notranslate"><span class="pre">ComputePathThroughPoses</span></code> action message for the enumerated set of error codes.</p>
+<dt>描述</dt><dd><p>计算通过姿态的路径错误代码。请参阅``ComputePathThroughPoses``动作消息以获取枚举的错误代码集。</p>
 </dd>
 </dl>
 </dd>

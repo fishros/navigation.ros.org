@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CancelWait &mdash; Navigation 2 1.0.0 文档</title>
+  <title>取消等待 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -451,7 +451,7 @@
 <li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateToPose.html">NavigateToPose</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">ClearEntireCostmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapExceptRegion.html">ClearCostmapExceptRegion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapAroundRobot.html">ClearCostmapAroundRobot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization</a></li>
@@ -462,12 +462,12 @@
 <li class="toctree-l4"><a class="reference internal" href="SmootherSelector.html">SmootherSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalCheckerSelector.html">GoalCheckerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateThroughPoses.html">NavigateThroughPoses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ComputePathThroughPoses.html">ComputePathThroughPoses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComputePathThroughPoses.html">计算路径通过姿势</a></li>
 <li class="toctree-l4"><a class="reference internal" href="RemovePassedGoals.html">RemovePassedGoals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelControl.html">CancelControl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelBackUp.html">CancelBackUp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelSpin.html">CancelSpin</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">CancelWait</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">取消等待</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelDriveOnHeading.html">CancelDriveOnHeading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelAssistedTeleop.html">CancelAssistedTeleop</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Smooth.html">SmoothPath</a></li>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>CancelWait</li>
+      <li>取消等待</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,7 +940,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="cancelwait">
-<span id="bt-cancel-wait"></span><h1>CancelWait<a class="headerlink" href="#cancelwait" title="永久链接至标题"></a></h1>
+<span id="bt-cancel-wait"></span><h1>取消等待<a class="headerlink" href="#cancelwait" title="永久链接至标题"></a></h1>
 <p>用于取消作为行为服务器的一部分的等待动作。服务器地址可以使用“server_name”输入端口重新映射。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
@@ -961,7 +961,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Service name, if not using default of <code class="docutils literal notranslate"><span class="pre">wait</span></code> due to remapping.</p>
+<dt>描述</dt><dd><p>服务名称，如果由于重映射而不使用默认值``wait``。</p>
 </dd>
 </dl>
 </dd>
