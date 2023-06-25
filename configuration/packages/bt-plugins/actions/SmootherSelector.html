@@ -448,7 +448,7 @@
 <li class="toctree-l4"><a class="reference internal" href="BackUp.html">备份</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DriveOnHeading.html">DriveOnHeading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AssistedTeleop.html">辅助遥控</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose（计算路径到位姿）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateToPose.html">NavigateToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
@@ -942,11 +942,11 @@
   <div class="section" id="smootherselector">
 <span id="bt-smoother-selector-node"></span><h1>SmootherSelector<a class="headerlink" href="#smootherselector" title="永久链接至标题"></a></h1>
 <p>It is used to select the Smoother that will be used by the Smoother server. It subscribes to the <code class="docutils literal notranslate"><span class="pre">smoother_selector</span></code> topic to receive command messages with the name of the Smoother to be used. It is commonly used before of the FollowPathAction. If none is provided on the topic, the <code class="docutils literal notranslate"><span class="pre">default_smoother</span></code> is used.</p>
-<p>Any publisher to this topic needs to be configured with some QoS defined as <code class="docutils literal notranslate"><span class="pre">reliable</span></code> and <code class="docutils literal notranslate"><span class="pre">transient</span> <span class="pre">local</span></code>.</p>
+<p>任何发布到此主题的发布者都需要配置一些定义为``可靠``和``瞬态局部``的QoS。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">topic_name</dt>
+<dt class="field-odd">topic_name（主题名称）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 26%" />

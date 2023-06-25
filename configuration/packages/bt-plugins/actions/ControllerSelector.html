@@ -448,7 +448,7 @@
 <li class="toctree-l4"><a class="reference internal" href="BackUp.html">备份</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DriveOnHeading.html">DriveOnHeading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="AssistedTeleop.html">辅助遥控</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose（计算路径到位姿）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateToPose.html">NavigateToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
@@ -941,12 +941,12 @@
              
   <div class="section" id="controllerselector">
 <span id="bt-controller-selector-node"></span><h1>ControllerSelector<a class="headerlink" href="#controllerselector" title="永久链接至标题"></a></h1>
-<p>It is used to select the Controller that will be used by the Controller server. It subscribes to the <code class="docutils literal notranslate"><span class="pre">controller_selector</span></code> topic to receive command messages with the name of the Controller to be used. It is commonly used before of the FollowPathAction. The <code class="docutils literal notranslate"><span class="pre">selected_controller</span></code> output port is passed to <code class="docutils literal notranslate"><span class="pre">controller_id</span></code> input port of the FollowPathAction. If none is provided on the topic, the <code class="docutils literal notranslate"><span class="pre">default_controller</span></code> is used.</p>
-<p>Any publisher to this topic needs to be configured with some QoS defined as <code class="docutils literal notranslate"><span class="pre">reliable</span></code> and <code class="docutils literal notranslate"><span class="pre">transient</span> <span class="pre">local</span></code>.</p>
+<p>用于选择将由控制器服务器使用的控制器。它订阅“controller_selector”主题，接收带有要使用的控制器名称的命令消息。它通常在FollowPathAction之前使用。将“selected_controller”输出端口传递给FollowPathAction的“controller_id”输入端口。如果主题上没有提供任何控制器，则使用“default_controller”。</p>
+<p>任何发布到此主题的发布者都需要配置一些定义为``可靠``和``瞬态局部``的QoS。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">topic_name</dt>
+<dt class="field-odd">topic_name（主题名称）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The name of the topic used to received select command messages. This is used to support multiple ControllerSelector nodes.</p>
+<dt>描述</dt><dd><p>用于接收选择命令消息的主题的名称。这用于支持多个ControllerSelector节点。</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The default value for the selected Controller if no message is received from the input topic.</p>
+<dt>描述</dt><dd><p>如果没有从输入主题接收到消息，则选定的控制器的默认值。</p>
 </dd>
 </dl>
 </dd>
@@ -1007,7 +1007,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The output selected Controller id. This selected_controller string is usually passed to the FollowPath behavior via the controller_id input port.</p>
+<dt>描述</dt><dd><p>选择的控制器id。通常，此selected_controller字符串通过controller_id输入端口传递给FollowPath行为。</p>
 </dd>
 </dl>
 </dd>
