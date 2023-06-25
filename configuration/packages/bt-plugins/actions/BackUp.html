@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BackUp &mdash; Navigation 2 1.0.0 文档</title>
+  <title>备份 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -445,9 +445,9 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../../configuring-bt-xml.html#action-plugins">Action Plugins</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Wait.html">Wait</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Spin.html">Spin</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">BackUp</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">备份</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DriveOnHeading.html">DriveOnHeading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="AssistedTeleop.html">AssistedTeleop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AssistedTeleop.html">辅助遥控</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ComputePathToPose.html">ComputePathToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateToPose.html">NavigateToPose</a></li>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>BackUp</li>
+      <li>备份</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,30 +940,28 @@
            <div itemprop="articleBody">
              
   <div class="section" id="backup">
-<span id="bt-backup-action"></span><h1>BackUp<a class="headerlink" href="#backup" title="永久链接至标题"></a></h1>
-<p>Invokes the BackUp ROS 2 action server, which causes the robot to back up by a specific displacement.
-It performs an linear translation by a given distance.
-This is used in nav2 Behavior Trees as a recovery behavior. The nav2_behaviors module implements the BackUp action server.</p>
+<span id="bt-backup-action"></span><h1>备份<a class="headerlink" href="#backup" title="永久链接至标题"></a></h1>
+<p>调用BackUp ROS 2动作服务器，使机器人向后移动特定距离。它通过给定的距离执行线性平移。在nav2行为树中用作恢复行为。nav2_behaviors模块实现了BackUp动作服务器。</p>
 <div class="section" id="input-ports">
-<h2>Input Ports<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
+<h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">backup_dist</dt>
+<dt class="field-odd">备份距离</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>double</p></td>
+<tr class="row-even"><td><p>双精度</p></td>
 <td><p>-0.15</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Total distance to backup (m).</p>
+<dt>描述</dt><dd><p>总备份距离（米）。</p>
 </dd>
 </dl>
 </dd>
@@ -974,16 +972,16 @@ This is used in nav2 Behavior Trees as a recovery behavior. The nav2_behaviors m
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>double</p></td>
+<tr class="row-even"><td><p>双精度</p></td>
 <td><p>0.025</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Backup speed (m/s).</p>
+<dt>描述</dt><dd><p>备用速度（米/秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -994,27 +992,27 @@ This is used in nav2 Behavior Trees as a recovery behavior. The nav2_behaviors m
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>double</p></td>
+<tr class="row-even"><td><p>双精度</p></td>
 <td><p>10.0</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time to envoke behavior for, if exceeds considers it a stuck condition or failure case (seconds).</p>
+<dt>描述</dt><dd><p>在超过指定时间后，将其视为卡住的条件或失败情况，单位为秒。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">server_name</dt>
+<dt class="field-even">服务器名称</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1023,27 +1021,27 @@ This is used in nav2 Behavior Trees as a recovery behavior. The nav2_behaviors m
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Action server name.</p>
+<dt>描述</dt><dd><p>行为服务器名称。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">server_timeout</dt>
+<dt class="field-odd">服务器超时</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>double</p></td>
+<tr class="row-even"><td><p>双精度</p></td>
 <td><p>10</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Action server timeout (ms).</p>
+<dt>描述</dt><dd><p>操作服务器超时（毫秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1058,7 +1056,7 @@ This is used in nav2 Behavior Trees as a recovery behavior. The nav2_behaviors m
 <col style="width: 33%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>uint16</p></td>
@@ -1067,7 +1065,7 @@ This is used in nav2 Behavior Trees as a recovery behavior. The nav2_behaviors m
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Backup error code. See <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action message for the enumerated set of error codes.</p>
+<dt>描述</dt><dd><p>备用错误代码。请参阅“BackUp”动作消息以获取枚举的错误代码集。</p>
 </dd>
 </dl>
 </dd>

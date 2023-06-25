@@ -445,9 +445,9 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#action-plugins">Action Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Wait.html">Wait</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Spin.html">Spin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/BackUp.html">BackUp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/BackUp.html">备份</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/DriveOnHeading.html">DriveOnHeading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/AssistedTeleop.html">AssistedTeleop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/AssistedTeleop.html">辅助遥控</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/ComputePathToPose.html">ComputePathToPose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/FollowPath.html">FollowPath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/NavigateToPose.html">NavigateToPose</a></li>
@@ -955,7 +955,7 @@ in the navigation task and provide a way to easily specify complex robot behavio
 <col style="width: 81%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>vector&lt;string&gt;</p></td>
@@ -976,7 +976,7 @@ They implement custom action servers with custom interface definitions and use t
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -997,7 +997,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1017,7 +1017,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 <col style="width: 81%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>vector&lt;string&gt;</p></td>
@@ -1057,7 +1057,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 <col style="width: 64%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
@@ -1077,7 +1077,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 <col style="width: 64%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
@@ -1099,11 +1099,11 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 35%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 <td><p>Unit</p></td>
 </tr>
-<tr class="row-even"><td><p>double</p></td>
+<tr class="row-even"><td><p>双精度</p></td>
 <td><p>0.1</p></td>
 <td><p>seconds</p></td>
 </tr>
@@ -1121,7 +1121,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 57%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1141,7 +1141,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 60%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1161,7 +1161,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 60%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1181,7 +1181,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1201,7 +1201,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1221,7 +1221,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 54%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
@@ -1241,7 +1241,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 64%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>bool</p></td>
@@ -1261,7 +1261,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 <col style="width: 66%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type</p></td>
+<tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>vector&lt;string&gt;</p></td>
