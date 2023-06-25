@@ -217,7 +217,7 @@ msgstr "The general task in Nav2 for the planner is to compute a valid, and pote
 
 #: ../../concepts/index.rst:155
 msgid "Controllers"
-msgstr "Controllers"
+msgstr "控制器"
 
 
 #: ../../concepts/index.rst:157

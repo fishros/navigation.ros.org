@@ -137,7 +137,7 @@ msgstr "使用指数衰减方式在costmap中膨胀致命障碍物"
 
 #: ../../plugins/index.rst:53
 msgid "`Obstacle Layer`_"
-msgstr "`Obstacle Layer`_"
+msgstr "`障碍物图层`_"
 
 
 #: ../../plugins/index.rst:53
@@ -147,7 +147,7 @@ msgstr "通过射线投射将2D激光扫描转化为持久的2D代价地图，�
 
 #: ../../plugins/index.rst:57
 msgid "`Spatio-Temporal Voxel Layer`_"
-msgstr "`Spatio-Temporal Voxel Layer`_"
+msgstr "`时空体素图层`_"
 
 
 #: ../../plugins/index.rst:57
@@ -157,7 +157,7 @@ msgstr "通过传感器模型对时间上稀疏的3D体素网格进行衰减维�
 
 #: ../../plugins/index.rst:61
 msgid "`Non-Persistent Voxel Layer`_"
-msgstr "`Non-Persistent Voxel Layer`_"
+msgstr "`非持久性体素图层`_"
 
 
 #: ../../plugins/index.rst:61
@@ -167,7 +167,7 @@ msgstr "维护只包含最多测量集的3D占据网格"
 
 #: ../../plugins/index.rst:65
 msgid "`Denoise Layer`_"
-msgstr "`Denoise Layer`_"
+msgstr "`去噪图层`_"
 
 
 #: ../../plugins/index.rst:65
@@ -177,7 +177,7 @@ msgstr "Andrey Ryzhikov"
 
 #: ../../plugins/index.rst:65
 msgid "Filters noise-induced standalone obstacles or small obstacles groups"
-msgstr "Filters noise-induced standalone obstacles or small obstacles groups"
+msgstr "过滤由噪声引起的孤立障碍物或小障碍物群组"
 
 
 #: ../../plugins/index.rst:80
@@ -187,7 +187,7 @@ msgstr "代价地图过滤器"
 
 #: ../../plugins/index.rst:85
 msgid "`Keepout Filter`_"
-msgstr "`Keepout Filter`_"
+msgstr "`保护过滤器`_"
 
 
 #: ../../plugins/index.rst:85 ../../plugins/index.rst:88 ../../plugins/index.rst:91
@@ -197,42 +197,42 @@ msgstr "Alexey Merzlyakov"
 
 #: ../../plugins/index.rst:85
 msgid "Maintains keep-out/safety zones and preferred lanes for moving"
-msgstr "Maintains keep-out/safety zones and preferred lanes for moving"
+msgstr "维护禁止区域/安全区域和移动的首选车道"
 
 
 #: ../../plugins/index.rst:88
 msgid "`Speed Filter`_"
-msgstr "`Speed Filter`_"
+msgstr "`速度过滤器`_"
 
 
 #: ../../plugins/index.rst:88
 msgid "Limits maximum velocity of robot in speed restriction areas"
-msgstr "Limits maximum velocity of robot in speed restriction areas"
+msgstr "限制机器人在速度限制区域内的最大速度"
 
 
 #: ../../plugins/index.rst:91
 msgid "`Binary Filter`_"
-msgstr "`Binary Filter`_"
+msgstr "`二值过滤器`_"
 
 
 #: ../../plugins/index.rst:91
 msgid "Enables binary (boolean) mask behavior to trigger actions."
-msgstr "Enables binary (boolean) mask behavior to trigger actions."
+msgstr "启用二进制（布尔）掩码行为以触发动作。"
 
 
 #: ../../plugins/index.rst:100
 msgid "Controllers"
-msgstr "Controllers"
+msgstr "控制器"
 
 
 #: ../../plugins/index.rst:103 ../../plugins/index.rst:136
 msgid "Drivetrain support"
-msgstr "Drivetrain support"
+msgstr "驱动系统支持"
 
 
 #: ../../plugins/index.rst:105
 msgid "`DWB Controller`_"
-msgstr "`DWB Controller`_"
+msgstr "`DWB控制器`_"
 
 
 #: ../../plugins/index.rst:105 ../../plugins/index.rst:283 ../../plugins/index.rst:288 ../../plugins/index.rst:303
@@ -242,17 +242,17 @@ msgstr "David Lu!!"
 
 #: ../../plugins/index.rst:105
 msgid "A highly configurable  DWA implementation with plugin interfaces"
-msgstr "A highly configurable  DWA implementation with plugin interfaces"
+msgstr "一个高度可配置的DWA实现，具有插件接口"
 
 
 #: ../../plugins/index.rst:105 ../../plugins/index.rst:138 ../../plugins/index.rst:152
 msgid "Differential, Omnidirectional, Legged"
-msgstr "Differential, Omnidirectional, Legged"
+msgstr "差分，全向，腿式"
 
 
 #: ../../plugins/index.rst:109
 msgid "`TEB Controller`_"
-msgstr "`TEB Controller`_"
+msgstr "`TEB控制器`_"
 
 
 #: ../../plugins/index.rst:109
@@ -262,12 +262,12 @@ msgstr "Christoph Rösmann"
 
 #: ../../plugins/index.rst:109
 msgid "A MPC-like controller suitable for ackermann, differential, and holonomic robots."
-msgstr "A MPC-like controller suitable for ackermann, differential, and holonomic robots."
+msgstr "一种适用于Ackermann、差分和全向机器人的类MPC控制器。"
 
 
 #: ../../plugins/index.rst:109
 msgid "**Ackermann**, Legged, Omnidirectional, Differential"
-msgstr "**Ackermann**, Legged, Omnidirectional, Differential"
+msgstr "**阿克曼**，腿式，全向，差分"
 
 
 #: ../../plugins/index.rst:113
