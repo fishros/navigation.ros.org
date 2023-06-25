@@ -5306,7 +5306,7 @@ msgstr "The ``RotationShimController`` is most suitable for:"
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:14
 msgid "Robots that can rotate in place, such as differential and omnidirectional robots."
-msgstr "Robots that can rotate in place, such as differential and omnidirectional robots."
+msgstr "能够原地旋转的机器人，如差分驱动和全向驱动机器人。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:15

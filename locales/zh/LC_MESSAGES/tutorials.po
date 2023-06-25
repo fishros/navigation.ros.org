@@ -2438,7 +2438,7 @@ msgstr "The ``RotationShimController`` is most suitable for:"
 
 #: ../../tutorials/docs/using_shim_controller.rst:31
 msgid "Robots that can rotate in place, such as differential and omnidirectional robots."
-msgstr "Robots that can rotate in place, such as differential and omnidirectional robots."
+msgstr "能够原地旋转的机器人，如差分驱动和全向驱动机器人。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:32
@@ -2523,5 +2523,5 @@ msgstr "General Tutorials"
 
 #: ../../tutorials/index.rst:6
 msgid "Navigation2 Tutorials"
-msgstr "Navigation2 Tutorials"
+msgstr "Navigation2教程"
 

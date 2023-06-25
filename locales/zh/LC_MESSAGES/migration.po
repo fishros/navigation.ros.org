@@ -1241,7 +1241,7 @@ msgstr "The Rotation Shim Controller is suitable for:"
 
 #: ../../migration/Galactic.rst:150
 msgid "Robots that can rotate in place, such as differential and omnidirectional robots."
-msgstr "Robots that can rotate in place, such as differential and omnidirectional robots."
+msgstr "能够原地旋转的机器人，如差分驱动和全向驱动机器人。"
 
 
 #: ../../migration/Galactic.rst:151

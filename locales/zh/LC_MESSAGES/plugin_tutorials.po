@@ -1364,7 +1364,7 @@ msgstr "4- 运行插件"
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:352
 msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on the map as it was described in :ref:`getting_started`. The robot will localize on the map and then click on the \"Nav2 goal\" and click on the pose where you want your robot to navigate to. After that navigator will take over with the behavior tree XML file behavior definition provided to it."
-msgstr "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on the map as it was described in :ref:`getting_started`. The robot will localize on the map and then click on the \"Nav2 goal\" and click on the pose where you want your robot to navigate to. After that navigator will take over with the behavior tree XML file behavior definition provided to it."
+msgstr "然后打开RViz，在顶部点击“2D Pose Estimate”按钮，并在地图上指定位置，就像在 :ref:`getting_started` 中描述的那样。机器人将在地图上进行定位，然后点击“Nav2 goal”，并点击您希望机器人导航到的姿势。之后导航器将使用提供的行为树XML文件行为定义接管控制。"
 
 
 #: ../../plugin_tutorials/index.rst:4
@@ -1374,5 +1374,5 @@ msgstr "插件教程"
 
 #: ../../plugin_tutorials/index.rst:6
 msgid "Navigation2 Tutorials"
-msgstr "Navigation2 Tutorials"
+msgstr "Navigation2教程"
 

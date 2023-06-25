@@ -117,7 +117,7 @@ msgstr "插件名称"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:46 ../../setup_guides/algorithm/select_algorithm.rst:88
 msgid "Supported Robot Types"
-msgstr "Supported Robot Types"
+msgstr "支持的机器人类型"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:48
@@ -127,7 +127,7 @@ msgstr "NavFn Planner"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:48
 msgid "Circular Differential, Circular Omnidirectional"
-msgstr "Circular Differential, Circular Omnidirectional"
+msgstr "圆形差分，圆形全向"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:50
