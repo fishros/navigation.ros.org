@@ -3787,7 +3787,7 @@ msgstr "原点x坐标"
 
 #: ../../configuration/packages/configuring-costmaps.rst:124
 msgid "X origin of the costmap relative to width (m)."
-msgstr "X origin of the costmap relative to width (m)."
+msgstr "与宽度（米）相关的代价地图的X原点。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3797,7 +3797,7 @@ msgstr "原点y坐标"
 
 #: ../../configuration/packages/configuring-costmaps.rst:135
 msgid "Y origin of the costmap relative to height (m)."
-msgstr "Y origin of the costmap relative to height (m)."
+msgstr "与高度（米）相关的代价地图的Y原点。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3807,7 +3807,7 @@ msgstr "发布频率"
 
 #: ../../configuration/packages/configuring-costmaps.rst:146
 msgid "Frequency to publish costmap to topic."
-msgstr "Frequency to publish costmap to topic."
+msgstr "发布代价地图到话题的频率。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3817,52 +3817,52 @@ msgstr "分辨率"
 
 #: ../../configuration/packages/configuring-costmaps.rst:157
 msgid "Resolution of 1 pixel of the costmap, in meters."
-msgstr "Resolution of 1 pixel of the costmap, in meters."
+msgstr "代价地图的每个像素的分辨率，以米为单位。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "robot_radius"
-msgstr "robot_radius"
+msgstr "机器人半径"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:179
 msgid "Robot radius to use, if footprint coordinates not provided."
-msgstr "Robot radius to use, if footprint coordinates not provided."
+msgstr "如果未提供足迹坐标，则使用的机器人半径。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "rolling_window"
-msgstr "rolling_window"
+msgstr "滚动窗口"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:190
 msgid "Whether costmap should roll with robot base frame."
-msgstr "Whether costmap should roll with robot base frame."
+msgstr "代价地图是否应与机器人基座标框一起滚动。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "track_unknown_space"
-msgstr "track_unknown_space"
+msgstr "跟踪未知空间"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:201
 msgid "If false, treats unknown space as free space, else as unknown space."
-msgstr "If false, treats unknown space as free space, else as unknown space."
+msgstr "如果为false，则将未知空间视为自由空间，否则视为未知空间。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "trinary_costmap"
-msgstr "trinary_costmap"
+msgstr "三值代价地图"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:223
 msgid "If occupancy grid map should be interpreted as only 3 values (free, occupied, unknown) or with its stored values."
-msgstr "If occupancy grid map should be interpreted as only 3 values (free, occupied, unknown) or with its stored values."
+msgstr "如果占用栅格地图只应解释为三个值（自由、占用、未知），或者与其存储的值一起。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "unknown_cost_value"
-msgstr "unknown_cost_value"
+msgstr "未知代价值"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:230
@@ -3872,7 +3872,7 @@ msgstr "255"
 
 #: ../../configuration/packages/configuring-costmaps.rst:234
 msgid "Cost of unknown space if tracking it."
-msgstr "Cost of unknown space if tracking it."
+msgstr "如果跟踪未知空间，则未知空间的代价。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3887,7 +3887,7 @@ msgstr "5.0"
 
 #: ../../configuration/packages/configuring-costmaps.rst:245
 msgid "Costmap update frequency."
-msgstr "Costmap update frequency."
+msgstr "代价地图更新频率。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3897,7 +3897,7 @@ msgstr "use_maximum"
 
 #: ../../configuration/packages/configuring-costmaps.rst:256
 msgid "whether when combining costmaps to use the maximum cost or override."
-msgstr "whether when combining costmaps to use the maximum cost or override."
+msgstr "在合并代价地图时是否使用最大代价或覆盖。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3907,7 +3907,7 @@ msgstr "plugins"
 
 #: ../../configuration/packages/configuring-costmaps.rst:263
 msgid "{\"static_layer\", \"obstacle_layer\", \"inflation_layer\"}"
-msgstr "{\"static_layer\", \"obstacle_layer\", \"inflation_layer\"}"
+msgstr "{\"静态层\", \"障碍层\", \"膨胀层\"}"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:267
@@ -3917,7 +3917,7 @@ msgstr "List of mapped plugin names for parameter namespaces and names."
 
 #: ../../configuration/packages/configuring-costmaps.rst
 msgid "filters"
-msgstr "filters"
+msgstr "过滤器"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:292
