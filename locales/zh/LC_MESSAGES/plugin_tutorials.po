@@ -37,7 +37,7 @@ msgstr "`要求`_"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:8 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:8
 msgid "`Tutorial Steps`_"
-msgstr "`Tutorial Steps`_"
+msgstr "`教程步骤`_"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:11 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:11 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:16 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:17 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:16 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:11
@@ -47,22 +47,22 @@ msgstr "概述"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:13
 msgid "This tutorial shows how to create you own Behavior Plugin. The Behavior Plugins live in the behavior server. Unlike the planner and controller servers, each behavior will host its own unique action server. The planners and controllers have the same API as they accomplish the same task. However, recoveries can be used to do a wide variety of tasks, so each behavior can have its own unique action message definition and server. This allows for massive flexibility in the behavior server enabling any behavior action imaginable that doesn't need to have other reuse."
-msgstr "This tutorial shows how to create you own Behavior Plugin. The Behavior Plugins live in the behavior server. Unlike the planner and controller servers, each behavior will host its own unique action server. The planners and controllers have the same API as they accomplish the same task. However, recoveries can be used to do a wide variety of tasks, so each behavior can have its own unique action message definition and server. This allows for massive flexibility in the behavior server enabling any behavior action imaginable that doesn't need to have other reuse."
+msgstr "本教程展示了如何创建自己的行为插件。行为插件位于行为服务器中。与规划器和控制器服务器不同，每个行为将拥有自己独特的动作服务器。规划器和控制器具有相同的API，因为它们执行相同的任务。然而，恢复可以用于执行各种各样的任务，因此每个行为可以拥有自己独特的动作消息定义和服务器。这使得行为服务器具有极大的灵活性，可以实现任何可能的行为动作，而无需进行其他的重用。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:21 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:17 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:23 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:28 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:21 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:20
 msgid "Requirements"
-msgstr "Requirements"
+msgstr "要求"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:23 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:19 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:30 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:23 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:22
 msgid "ROS 2 (binary or build-from-source)"
-msgstr "ROS 2 (binary or build-from-source)"
+msgstr "ROS 2（二进制或源码编译）"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:24 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:20 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:31 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:24 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:23
 msgid "Nav2 (Including dependencies)"
-msgstr "Nav2 (Including dependencies)"
+msgstr "Nav2（包括依赖项）"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:25 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:21 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:32 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:25 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:24
@@ -77,42 +77,42 @@ msgstr "Turtlebot3"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:29 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:25 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:28 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:36 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:29 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:28
 msgid "Tutorial Steps"
-msgstr "Tutorial Steps"
+msgstr "`教程步骤`"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:32
 msgid "1- Creating a new Behavior Plugin"
-msgstr "1- Creating a new Behavior Plugin"
+msgstr "1- 创建一个新的行为插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:34
 msgid "We will create a simple send sms behavior. It will use Twilio to send a message via SMS to a remote operations center. The code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as ``nav2_sms_behavior``. This package can be a considered as a reference for writing Behavior Plugin."
-msgstr "We will create a simple send sms behavior. It will use Twilio to send a message via SMS to a remote operations center. The code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as ``nav2_sms_behavior``. This package can be a considered as a reference for writing Behavior Plugin."
+msgstr "我们将创建一个简单的发送短信行为。它将使用Twilio通过短信向远程运营中心发送消息。本教程中的代码可以在 `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ 仓库的 ``nav2_sms_behavior`` 中找到。该软件包可作为编写行为插件的参考。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:39
 msgid "Our example plugin implements the plugin class of ``nav2_core::Behavior``. However, we have a nice wrapper for actions in ``nav2_behaviors``, so we use the ``nav2_behaviors::TimedBehavior`` base class for this application instead. This wrapper class derives from the ``nav2_core`` class so it can be used as a plugin, but handles the vast majority of ROS 2 action server boiler plate required."
-msgstr "Our example plugin implements the plugin class of ``nav2_core::Behavior``. However, we have a nice wrapper for actions in ``nav2_behaviors``, so we use the ``nav2_behaviors::TimedBehavior`` base class for this application instead. This wrapper class derives from the ``nav2_core`` class so it can be used as a plugin, but handles the vast majority of ROS 2 action server boiler plate required."
+msgstr "我们的示例插件实现了 ``nav2_core::Behavior`` 的插件类。但是，我们在 ``nav2_behaviors`` 中有一个很好的动作包装器，因此我们在此应用程序中使用 ``nav2_behaviors::TimedBehavior`` 基类。这个包装器类派生自 ``nav2_core`` 类，因此可以用作插件，但处理了所需的大部分 ROS 2 动作服务器样板代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:43
 msgid "The base class from ``nav2_core`` provides 4 pure virtual methods to implement a Behavior Plugin. The plugin will be used by the behavior server to host the plugins, but each plugin will provide their own unique action server interface. Let's learn more about the methods needed to write a Behavior Plugin **if you did not use the ``nav2_behaviors`` wrapper**."
-msgstr "The base class from ``nav2_core`` provides 4 pure virtual methods to implement a Behavior Plugin. The plugin will be used by the behavior server to host the plugins, but each plugin will provide their own unique action server interface. Let's learn more about the methods needed to write a Behavior Plugin **if you did not use the ``nav2_behaviors`` wrapper**."
+msgstr "``nav2_core`` 中的基类提供了4个纯虚方法来实现行为插件。行为服务器将使用插件来托管插件，但每个插件将提供自己独特的动作服务器接口。让我们了解更多关于编写行为插件所需的方法**如果您没有使用``nav2_behaviors``封装**。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:48 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:42 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:42
 msgid "**Virtual method**"
-msgstr "**Virtual method**"
+msgstr "**虚拟方法**"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:48 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:42 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:42
 msgid "**Method description**"
-msgstr "**Method description**"
+msgstr "**方法描述**"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:48 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:49 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:42 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:42
 msgid "**Requires override?**"
-msgstr "**Requires override?**"
+msgstr "**需要重写？**"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:47
@@ -122,12 +122,12 @@ msgstr "configure()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:50
 msgid "Method is called at when server enters on_configure state. Ideally this method should perform declarations of ROS parameters and initialization of behavior's member variables. This method takes 4 input parameters: shared pointer to parent node, behavior name, tf buffer pointer and shared pointer to a collision checker."
-msgstr "Method is called at when server enters on_configure state. Ideally this method should perform declarations of ROS parameters and initialization of behavior's member variables. This method takes 4 input parameters: shared pointer to parent node, behavior name, tf buffer pointer and shared pointer to a collision checker."
+msgstr "当服务器进入 on_configure 状态时调用该方法。理想情况下，此方法应该执行 ROS 参数的声明和行为成员变量的初始化。此方法接受 4 个输入参数：父节点的共享指针、行为名称、tf 缓冲指针和碰撞检查器的共享指针。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:74 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:78 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:55 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:55 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:62 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:76 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:67 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:70 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:76 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:58 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:61 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:44 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:62 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:67 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:70 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:76 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:79
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:56 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:51
@@ -137,7 +137,7 @@ msgstr "activate()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:56
 msgid "Method is called when behavior server enters on_activate state. Ideally this method should implement operations which are neccessary before the behavior goes to an active state."
-msgstr "Method is called when behavior server enters on_activate state. Ideally this method should implement operations which are neccessary before the behavior goes to an active state."
+msgstr "当行为服务器进入on_activate状态时调用该方法。理想情况下，此方法应实现在行为进入活动状态之前必要的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:60 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:55
@@ -147,7 +147,7 @@ msgstr "deactivate()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:60
 msgid "Method is called when behavior server enters on_deactivate state. Ideally this method should implement operations which are neccessary before behavior goes to an inactive state."
-msgstr "Method is called when behavior server enters on_deactivate state. Ideally this method should implement operations which are neccessary before behavior goes to an inactive state."
+msgstr "当行为服务器进入on_deactivate状态时调用该方法。理想情况下，此方法应实现在行为进入非活动状态之前必要的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:58 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:59
@@ -157,7 +157,7 @@ msgstr "cleanup()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:64 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:86
 msgid "Method is called when behavior server goes to on_cleanup state. Ideally this method should clean up resources which are created for the behavior."
-msgstr "Method is called when behavior server goes to on_cleanup state. Ideally this method should clean up resources which are created for the behavior."
+msgstr "当行为服务器进入on_cleanup状态时调用该方法。理想情况下，此方法应清理为行为创建的资源。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:68
