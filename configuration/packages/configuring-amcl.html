@@ -1361,7 +1361,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum allowed number of particles.</p>
+<dt>描述</dt><dd><p>粒子数的最小允许值。</p>
 </dd>
 </dl>
 </dd>
@@ -1401,7 +1401,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Particle Filter population error.</p>
+<dt>描述</dt><dd><p>粒子滤波器种群错误。</p>
 </dd>
 </dl>
 </dd>
@@ -1421,7 +1421,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Particle filter population density.</p>
+<dt>描述</dt><dd><p>粒子滤波器种群密度。</p>
 </dd>
 </dl>
 </dd>
@@ -1441,7 +1441,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1.</p>
+<dt>描述</dt><dd><p>快速平均权重滤波器的指数衰减率，用于决定何时通过添加随机姿势进行恢复。一个好的值可能是 0.1。</p>
 </dd>
 </dl>
 </dd>
@@ -1461,7 +1461,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001.</p>
+<dt>描述</dt><dd><p>慢速平均权重滤波器的指数衰减率，用于决定何时通过添加随机姿势进行恢复。一个好的值可能是 0.001。</p>
 </dd>
 </dl>
 </dd>
@@ -1481,7 +1481,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of filter updates required before resampling.</p>
+<dt>描述</dt><dd><p>重新取样前所需的滤波器更新次数。</p>
 </dd>
 </dl>
 </dd>
@@ -1501,9 +1501,9 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The fully-qualified type of the plugin class. Options are &quot;nav2_amcl::DifferentialMotionModel&quot; and &quot;nav2_amcl::OmniMotionModel&quot;. Users can also provide their own custom motion model plugin type.</p>
+<dt>描述</dt><dd><p>插件类的完全限定类型。选项为“nav2_amcl::DifferentialMotionModel”和“nav2_amcl::OmniMotionModel”。用户还可以提供自定义的运动模型插件类型。</p>
 </dd>
-<dt>Note for users of galactic and earlier</dt><dd><p>The models are selectable by string key (valid options: &quot;differential&quot;, &quot;omnidirectional&quot;) rather than plugins.</p>
+<dt>针对 Galactic 版本及更早版本的用户的注意事项。</dt><dd><p>模型可通过字符串键选择（有效选项为“differential”、“omnidirectional”），而不是插件。</p>
 </dd>
 </dl>
 </dd>
@@ -1523,7 +1523,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum rate (Hz) at which to store the last estimated pose and covariance to the parameter server, in the variables ~initial_pose_* and ~initial_cov_*. This saved pose will be used on subsequent runs to initialize the filter (-1.0 to disable).</p>
+<dt>描述</dt><dd><p>以每秒存储上次估计的姿态和协方差到参数服务器的最大速率（变量为~initial_pose_*和~initial_cov_*）。此保存的姿态将在后续运行中用于初始化滤波器（-1.0为禁用）。</p>
 </dd>
 </dl>
 </dd>
@@ -1543,7 +1543,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Standard deviation for Gaussian model used in z_hit part of the model.</p>
+<dt>描述</dt><dd><p>用于模型中z_hit部分的高斯模型的标准偏差。</p>
 </dd>
 </dl>
 </dd>
@@ -1563,7 +1563,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Set this to false to prevent amcl from publishing the transform between the global frame and the odometry frame.</p>
+<dt>描述</dt><dd><p>将其设置为false可防止amcl发布全局坐标系和里程计坐标系之间的变换。</p>
 </dd>
 </dl>
 </dd>
