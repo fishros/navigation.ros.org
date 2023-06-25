@@ -3962,7 +3962,7 @@ msgstr "\"nav2_costmap_2d::ObstacleLayer\""
 
 #: ../../configuration/packages/configuring-costmaps.rst:326
 msgid "\"inflation_layer\""
-msgstr "\"inflation_layer\""
+msgstr "\"通胀层\""
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:326
@@ -3972,7 +3972,7 @@ msgstr "\"nav2_costmap_2d::InflationLayer\""
 
 #: ../../configuration/packages/configuring-costmaps.rst:330
 msgid "Plugin Parameters"
-msgstr "Plugin Parameters"
+msgstr "插件参数"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:343
@@ -3982,7 +3982,7 @@ msgstr "成本地图过滤器参数"
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:4 ../../configuration/packages/dwb-params/controller.rst:4
 msgid "DWB Controller"
-msgstr "DWB Controller"
+msgstr "DWB控制器"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:10
@@ -3992,77 +3992,77 @@ msgstr "DWB 控制器是默认控制器。它是 `David Lu 的控制器 <https:/
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:15
 msgid "Controller"
-msgstr "Controller"
+msgstr "控制器"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:25
 msgid "Plugins"
-msgstr "Plugins"
+msgstr "插件"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:27
 msgid "The plugins listed below are inside the ``dwb_plugins`` namespace."
-msgstr "The plugins listed below are inside the ``dwb_plugins`` namespace."
+msgstr "以下插件位于``dwb_plugins``命名空间中。"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:37
 msgid "Trajectory Critics"
-msgstr "Trajectory Critics"
+msgstr "轨迹评论家"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:39
 msgid "The trajectory critics listed below are inside the ``dwb_critics`` namespace."
-msgstr "The trajectory critics listed below are inside the ``dwb_critics`` namespace."
+msgstr "以下轨迹批评者位于``dwb_critics``命名空间中。"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst:4
 msgid "Lifecycle Manager"
-msgstr "Lifecycle Manager"
+msgstr "生命周期管理器"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst:10
 msgid "The Lifecycle Manager module implements the method for handling the lifecycle transition states for the stack in a deterministic way. It will take in a set of ordered nodes to transition one-by-one into the configurating and activate states to run the stack. It will then bring down the stack into the finalized state in the opposite order. It will also create bond connections with the servers to ensure they are still up and transition down all nodes if any are non-responsive or crashed."
-msgstr "The Lifecycle Manager module implements the method for handling the lifecycle transition states for the stack in a deterministic way. It will take in a set of ordered nodes to transition one-by-one into the configurating and activate states to run the stack. It will then bring down the stack into the finalized state in the opposite order. It will also create bond connections with the servers to ensure they are still up and transition down all nodes if any are non-responsive or crashed."
+msgstr "生命周期管理器模块以确定性方式实现了处理堆栈生命周期转换状态的方法。它将接收一组有序节点，逐个将它们转换为配置和激活状态以运行堆栈。然后，它将按相反的顺序将堆栈降低到最终状态。它还将与服务器建立连接，以确保它们仍然运行，并在任何非响应或崩溃的节点时降低所有节点。"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst
 msgid "node_names"
-msgstr "node_names"
+msgstr "节点名称"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst:27
 msgid "Ordered list of node names to bringup through lifecycle transition."
-msgstr "Ordered list of node names to bringup through lifecycle transition."
+msgstr "通过生命周期转换引导节点名称的有序列表。"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst
 msgid "autostart"
-msgstr "autostart"
+msgstr "自动启动"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst:38
 msgid "Whether to transition nodes to active state on startup."
-msgstr "Whether to transition nodes to active state on startup."
+msgstr "是否在启动时将节点转换为活动状态。"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst
 msgid "bond_timeout"
-msgstr "bond_timeout"
+msgstr "绑定超时"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst:49
 msgid "Timeout to transition down all lifecycle nodes of this manager if a server is non-responsive, in seconds. Set to ``0`` to deactivate. Recommended to be always larger than 0.3s for all-local node discovery. Note: if a server cleanly exits the manager will immediately be notified."
-msgstr "Timeout to transition down all lifecycle nodes of this manager if a server is non-responsive, in seconds. Set to ``0`` to deactivate. Recommended to be always larger than 0.3s for all-local node discovery. Note: if a server cleanly exits the manager will immediately be notified."
+msgstr "如果服务器无响应，此管理器将超时关闭所有生命周期节点的时间（以秒为单位）。设置为``0``以停用。建议始终大于0.3秒，以用于所有本地节点发现。注意：如果服务器正常退出，管理器将立即收到通知。"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst
 msgid "attempt_respawn_reconnection"
-msgstr "attempt_respawn_reconnection"
+msgstr "尝试重新连接重生"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst:60
 msgid "Whether to try to reconnect to servers that go down, presumably because respawn is set to ``true`` to re-create crashed nodes. While default to ``true``, reconnections will not be made unless respawn is set to true in your launch files or your watchdog systems will bring up the server externally."
-msgstr "Whether to try to reconnect to servers that go down, presumably because respawn is set to ``true`` to re-create crashed nodes. While default to ``true``, reconnections will not be made unless respawn is set to true in your launch files or your watchdog systems will bring up the server externally."
+msgstr "是否尝试重新连接到关闭的服务器，假设是因为重新创建崩溃的节点而将其重新生成。默认为``true``，但只有在启动文件中将 respawn 设置为 true，或者监控系统将在外部启动服务器时，才会进行重新连接。"
 
 
 #: ../../configuration/packages/configuring-lifecycle.rst
@@ -4072,7 +4072,7 @@ msgstr "bond_respawn_max_duration"
 
 #: ../../configuration/packages/configuring-lifecycle.rst:71
 msgid "When a server crashes or becomes non-responsive, the lifecycle manager will bring down all nodes for safety. This is the duration of which the lifecycle manager will attempt to reconnect with the failed server(s) during to recover and re-activate the system. If this passes, it will stop attempts and will require a manual re-activation once the problem is manually resolved. Units: seconds."
-msgstr "When a server crashes or becomes non-responsive, the lifecycle manager will bring down all nodes for safety. This is the duration of which the lifecycle manager will attempt to reconnect with the failed server(s) during to recover and re-activate the system. If this passes, it will stop attempts and will require a manual re-activation once the problem is manually resolved. Units: seconds."
+msgstr "当服务器崩溃或变为无响应状态时，生命周期管理器将关闭所有节点以确保安全。这是生命周期管理器尝试与故障服务器重新连接以恢复并重新激活系统的持续时间。如果超过此时间，将停止尝试，并需要在手动解决问题后手动重新激活。单位：秒。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:4
@@ -4082,7 +4082,7 @@ msgstr "Map Server / Saver"
 
 #: ../../configuration/packages/configuring-map-server.rst:10
 msgid "The Map Server implements the server for handling the map load requests for the stack and host a map topic. It also implements a map saver server which will run in the background and save maps based on service requests. There exists a map saver CLI similar to ROS 1 as well for a single map save."
-msgstr "The Map Server implements the server for handling the map load requests for the stack and host a map topic. It also implements a map saver server which will run in the background and save maps based on service requests. There exists a map saver CLI similar to ROS 1 as well for a single map save."
+msgstr "地图服务器实现了用于处理堆栈的地图加载请求的服务器，并托管一个地图主题。它还实现了一个地图保存器服务器，该服务器将在后台运行，并根据服务请求保存地图。还存在一个类似于 ROS 1 的地图保存器 CLI，可用于单个地图保存。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:14
