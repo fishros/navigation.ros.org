@@ -1047,7 +1047,7 @@ msgstr "检查电池百分比是否低于指定值。"
 
 #: ../../plugins/index.rst:466
 msgid "`Is Path Valid Condition`_"
-msgstr "`Is Path Valid Condition`_"
+msgstr "`路径是否有效条件`_"
 
 
 #: ../../plugins/index.rst:466
@@ -1057,7 +1057,7 @@ msgstr "通过确保路径上没有致命障碍物来检查路径是否有效。
 
 #: ../../plugins/index.rst:472
 msgid "`Path Expiring Timer`_"
-msgstr "`Path Expiring Timer`_"
+msgstr "`路径到期计时器`_"
 
 
 #: ../../plugins/index.rst:472
@@ -1067,7 +1067,7 @@ msgstr "检查计时器是否已经过期。如果路径更新，则计时器将
 
 #: ../../plugins/index.rst:477
 msgid "`Are Error Codes Present`_"
-msgstr "`Are Error Codes Present`_"
+msgstr "`是否存在错误代码`_"
 
 
 #: ../../plugins/index.rst:477
@@ -1077,7 +1077,7 @@ msgstr "检查指定的错误代码是否存在。"
 
 #: ../../plugins/index.rst:481
 msgid "`Would A Controller Recovery Help`_"
-msgstr "`Would A Controller Recovery Help`_"
+msgstr "`控制器恢复是否有帮助`_"
 
 
 #: ../../plugins/index.rst:481
@@ -1087,7 +1087,7 @@ msgstr "检查控制器恢复是否有助于清除控制器服务器错误代码
 
 #: ../../plugins/index.rst:486
 msgid "`Would A Planner Recovery Help`_"
-msgstr "`Would A Planner Recovery Help`_"
+msgstr "`规划器恢复是否有帮助`_"
 
 
 #: ../../plugins/index.rst:486
@@ -1097,7 +1097,7 @@ msgstr "检查规划器恢复是否有助于清除规划器服务器错误代码
 
 #: ../../plugins/index.rst:491
 msgid "`Would A Smoother Recovery Help`_"
-msgstr "`Would A Smoother Recovery Help`_"
+msgstr "`平滑器恢复是否有帮助`_"
 
 
 #: ../../plugins/index.rst:491
@@ -1107,7 +1107,7 @@ msgstr "检查平滑器恢复是否有助于清除平滑器服务器错误代码
 
 #: ../../plugins/index.rst:496
 msgid "`Is Battery Charging Condition`_"
-msgstr "`Is Battery Charging Condition`_"
+msgstr "`电池充电状态`_"
 
 
 #: ../../plugins/index.rst:496
@@ -1122,7 +1122,7 @@ msgstr "Checks if the battery is charging."
 
 #: ../../plugins/index.rst:518
 msgid "Decorator Plugin Name"
-msgstr "Decorator Plugin Name"
+msgstr "装饰器插件名称"
 
 
 #: ../../plugins/index.rst:520
@@ -1132,7 +1132,7 @@ msgstr "`Rate Controller`_"
 
 #: ../../plugins/index.rst:520
 msgid "Throttles child node to a given rate"
-msgstr "Throttles child node to a given rate"
+msgstr "将子节点限制在给定速率下"
 
 
 #: ../../plugins/index.rst:523
@@ -1142,7 +1142,7 @@ msgstr "`Distance Controller`_"
 
 #: ../../plugins/index.rst:523
 msgid "Ticks child node based on the distance traveled by the robot"
-msgstr "Ticks child node based on the distance traveled by the robot"
+msgstr "根据机器人行进距离触发子节点"
 
 
 #: ../../plugins/index.rst:526
@@ -1152,7 +1152,7 @@ msgstr "`Speed Controller`_"
 
 #: ../../plugins/index.rst:526
 msgid "Throttles child node to a rate based on current robot speed."
-msgstr "Throttles child node to a rate based on current robot speed."
+msgstr "将子节点限制在基于当前机器人速度的速率下"
 
 
 #: ../../plugins/index.rst:529
@@ -1162,7 +1162,7 @@ msgstr "`Goal Updater`_"
 
 #: ../../plugins/index.rst:529
 msgid "Updates the goal received via topic subscription."
-msgstr "Updates the goal received via topic subscription."
+msgstr "通过主题订阅更新接收到的目标"
 
 
 #: ../../plugins/index.rst:532
@@ -1172,7 +1172,7 @@ msgstr "`Single Trigger`_"
 
 #: ../../plugins/index.rst:532
 msgid "Triggers nodes/subtrees below only a single time per BT run."
-msgstr "Triggers nodes/subtrees below only a single time per BT run."
+msgstr "每个BT运行仅触发一次下面的节点/子树"
 
 
 #: ../../plugins/index.rst:535
