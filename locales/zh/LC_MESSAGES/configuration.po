@@ -1232,7 +1232,7 @@ msgstr "在:ref:`configuring_bt_navigator`中定义和声明。"
 
 #: ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:36
 msgid "The distance that must travel before returning success (m)."
-msgstr "The distance that must travel before returning success (m)."
+msgstr "在成功返回之前必须行进的距离（米）。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GloballyUpdatedGoal.rst:4
@@ -1242,7 +1242,7 @@ msgstr "GloballyUpdatedGoal"
 
 #: ../../configuration/packages/bt-plugins/conditions/GloballyUpdatedGoal.rst:6 ../../configuration/packages/bt-plugins/conditions/GoalUpdated.rst:6
 msgid "Checks if the global navigation goal has changed in the blackboard. Returns failure if the goal is the same, if it changes, it returns success."
-msgstr "Checks if the global navigation goal has changed in the blackboard. Returns failure if the goal is the same, if it changes, it returns success."
+msgstr "检查全局导航目标是否在黑板中发生变化。如果目标相同，则返回失败；如果发生变化，则返回成功。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GloballyUpdatedGoal.rst:9
@@ -1252,7 +1252,7 @@ msgstr "该节点与GoalUpdated不同，它在BehaviorTree的每个时钟周期�
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:4
 msgid "GoalReached"
-msgstr "GoalReached"
+msgstr "目标已达成"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:6
@@ -1262,7 +1262,7 @@ msgstr "检查与目标的距离，如果距离目标小于预定义的阈值，
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:10
 msgid "Parameter"
-msgstr "Parameter"
+msgstr "参数"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst
@@ -1277,12 +1277,12 @@ msgstr "0.25"
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:25
 msgid "Tolerance of accepting pose as the goal (m)."
-msgstr "Tolerance of accepting pose as the goal (m)."
+msgstr "接受姿态作为目标的容差（米）。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:50
 msgid "Destination to check. Takes in a blackboard variable, e.g. \"{goal}\"."
-msgstr "Destination to check. Takes in a blackboard variable, e.g. \"{goal}\"."
+msgstr "要检查的目的地。接受黑板变量，例如\"{goal}\"。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalUpdated.rst:4
@@ -1292,82 +1292,82 @@ msgstr "GoalUpdated"
 
 #: ../../configuration/packages/bt-plugins/conditions/InitialPoseReceived.rst:4
 msgid "InitialPoseReceived"
-msgstr "InitialPoseReceived"
+msgstr "接收到初始姿势"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/InitialPoseReceived.rst:6
 msgid "Node that returns success when the initial pose is sent to AMCL via `/initial_pose``."
-msgstr "Node that returns success when the initial pose is sent to AMCL via `/initial_pose``."
+msgstr "当初始姿态通过 `/initial_pose` 发送给 AMCL 时返回成功的节点。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsBatteryCharging.rst:4
 msgid "IsBatteryCharging"
-msgstr "IsBatteryCharging"
+msgstr "电池是否正在充电"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsBatteryCharging.rst:6
 msgid "Checks if the battery is charging by subscribing to a ``sensor_msgs/BatteryState`` topic and checking if the power_supply_status is ``POWER_SUPPLY_STATUS_CHARGING``. Returns SUCCESS in that case, FAILURE otherwise."
-msgstr "Checks if the battery is charging by subscribing to a ``sensor_msgs/BatteryState`` topic and checking if the power_supply_status is ``POWER_SUPPLY_STATUS_CHARGING``. Returns SUCCESS in that case, FAILURE otherwise."
+msgstr "通过订阅 ``sensor_msgs/BatteryState`` 主题并检查 power_supply_status 是否为 ``POWER_SUPPLY_STATUS_CHARGING``，来检查电池是否正在充电。在这种情况下返回成功，否则返回失败。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsBatteryLow.rst:4
 msgid "IsBatteryLow"
-msgstr "IsBatteryLow"
+msgstr "电池是否低电量"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsBatteryLow.rst:6
 msgid "Checks if battery is low by subscribing to a ``sensor_msgs/BatteryState`` topic and checking if battery percentage/voltage is below a specified minimum value. By default percentage (in range 0 to 1) is used to check for low battery. Set the ``is_voltage`` parameter to `true` to use voltage. Returns SUCCESS when battery percentage/voltage is lower than the specified value, FAILURE otherwise."
-msgstr "Checks if battery is low by subscribing to a ``sensor_msgs/BatteryState`` topic and checking if battery percentage/voltage is below a specified minimum value. By default percentage (in range 0 to 1) is used to check for low battery. Set the ``is_voltage`` parameter to `true` to use voltage. Returns SUCCESS when battery percentage/voltage is lower than the specified value, FAILURE otherwise."
+msgstr "通过订阅 ``sensor_msgs/BatteryState`` 主题并检查电池百分比/电压是否低于指定的最小值来检查电池是否低电。默认情况下，使用百分比（范围在 0 到 1 之间）来检查低电。将 ``is_voltage`` 参数设置为 `true` 以使用电压。当电池百分比/电压低于指定值时返回成功，否则返回失败。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsPathValid.rst:4
 msgid "IsPathValid"
-msgstr "IsPathValid"
+msgstr "路径是否有效"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsPathValid.rst:6
 msgid "Checks to see if the global path is valid. If there is a obstacle along the path, the condition returns FAILURE, otherwise it returns SUCCESS."
-msgstr "Checks to see if the global path is valid. If there is a obstacle along the path, the condition returns FAILURE, otherwise it returns SUCCESS."
+msgstr "检查全局路径是否有效。如果路径上存在障碍物，则条件返回失败；否则返回成功。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsStuck.rst:4
 msgid "IsStuck"
-msgstr "IsStuck"
+msgstr "是否卡住"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/IsStuck.rst:6
 msgid "Determines if the robot is not progressing towards the goal. If the robot is stuck and not progressing, the condition returns SUCCESS, otherwise it returns FAILURE."
-msgstr "Determines if the robot is not progressing towards the goal. If the robot is stuck and not progressing, the condition returns SUCCESS, otherwise it returns FAILURE."
+msgstr "确定机器人是否没有朝着目标前进。如果机器人被卡住并且没有前进，则条件返回成功，否则返回失败。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/PathExpiringTimer.rst:4
 msgid "PathExpiringTimer"
-msgstr "PathExpiringTimer"
+msgstr "路径到期计时器"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/PathExpiringTimer.rst:6
 msgid "Checks if the timer has expired. Returns success if the timer has expired, otherwise it returns failure. The timer will reset if the path gets updated."
-msgstr "Checks if the timer has expired. Returns success if the timer has expired, otherwise it returns failure. The timer will reset if the path gets updated."
+msgstr "检查计时器是否已经过期。如果计时器已经过期，则返回成功，否则返回失败。如果路径被更新，计时器将被重置。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TimeExpired.rst:4
 msgid "TimeExpired"
-msgstr "TimeExpired"
+msgstr "时间已过期"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TimeExpired.rst:6
 msgid "Node that returns success when a time duration has passed"
-msgstr "Node that returns success when a time duration has passed"
+msgstr "当经过一段时间后返回成功的节点。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TimeExpired.rst ../../configuration/packages/configuring-bt-navigator.rst:115
 msgid "seconds"
-msgstr "seconds"
+msgstr "秒"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TimeExpired.rst:17
 msgid "The time passed to return success (s)."
-msgstr "The time passed to return success (s)."
+msgstr "经过的时间以秒为单位返回成功。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:4
@@ -1377,7 +1377,7 @@ msgstr "TransformAvailable"
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:6
 msgid "Checks if a TF transform is available. Returns failure if it cannot be found. Once found, it will always return success. Useful for initial condition checks."
-msgstr "Checks if a TF transform is available. Returns failure if it cannot be found. Once found, it will always return success. Useful for initial condition checks."
+msgstr "检查是否存在TF变换。如果找不到，则返回失败。一旦找到，将始终返回成功。用于初始条件检查。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst
@@ -1397,7 +1397,7 @@ msgstr "Child frame for transform."
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst
 msgid "parent"
-msgstr "parent"
+msgstr "父节点"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/TransformAvailable.rst:31
