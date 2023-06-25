@@ -1064,7 +1064,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum turning radius the robot can perform. Can be set to 0.0 (or w_curve can be set to 0.0 with the same effect) for diff-drive/holonomic robots</p>
+<dt>描述</dt><dd><p>机器人能够执行的最小转弯半径。对于差动驱动/全向运动机器人，可以设置为0.0（或者w_curve可以设置为0.0并产生相同的效果）。</p>
 </dd>
 </dl>
 </dd>
@@ -1124,7 +1124,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to maximize smoothness of path</p>
+<dt>描述</dt><dd><p>用于最大化路径平滑度的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1144,7 +1144,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to steer robot away from collision and cost</p>
+<dt>描述</dt><dd><p>将机器人远离碰撞和成本的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1164,8 +1164,7 @@
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>Option to use higher weight during forward/reverse direction change, helping optimizer to converge or add an extra obstacle avoidance at these problematic segments.
-Following image depicts improvement of the path with <code class="docutils literal notranslate"><span class="pre">w_cost_cusp_multiplier</span></code> (green) compared to one without it (purple). Original path has cyan color.</p>
+<dt>描述</dt><dd><p>选择在前进/后退方向变化时使用较高的权重，帮助优化器收敛或在这些有问题的段落上增加额外的避障。下面的图片显示了使用``w_cost_cusp_multiplier``（绿色）相比没有使用它的情况下（紫色）路径的改善。原始路径的颜色为青色。</p>
 <a class="reference internal image-reference" href="../../_images/w_cost_cusp_multiplier.png"><img alt="../../_images/w_cost_cusp_multiplier.png" class="align-center" src="../../_images/w_cost_cusp_multiplier.png" style="width: 282px; height: 429px;" /></a>
 </dd>
 </dl>
@@ -1186,7 +1185,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Length of the section around cusp in which nodes use <code class="docutils literal notranslate"><span class="pre">w_cost_cusp_multiplier</span></code> (w_cost rises gradually inside the zone towards the cusp point, whose costmap weight eqals w_cost*w_cost_cusp_multiplier)</p>
+<dt>描述</dt><dd><p>cusp区域周围的部分长度，在此区域内的节点使用``w_cost_cusp_multiplier``（w_cost在区域内逐渐上升，直至达到拐点，其costmap权重等于w_cost*w_cost_cusp_multiplier）</p>
 </dd>
 </dl>
 </dd>
@@ -1200,15 +1199,15 @@ Following image depicts improvement of the path with <code class="docutils liter
 <tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>array of double</p></td>
+<tr class="row-even"><td><p>double数组</p></td>
 <td><p>[]</p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>Points in robot frame to grab costmap values from. Format: [x1, y1, weight1, x2, y2, weight2, ...].</p>
+<dt>描述</dt><dd><p>从机器人坐标系中获取costmap值的点。格式：[x1, y1, weight1, x2, y2, weight2, ...]。</p>
 <p>IMPORTANT: Requires much higher number of optimizer iterations to actually improve the path. Use only if you really need it (highly elongated/asymmetric robots)</p>
-<p>Following image depicts how two cost check points can be used to improve cost awareness of a rectangular robot.</p>
+<p>下图描述了如何使用两个cost检查点来提高对矩形机器人的成本感知。</p>
 <a class="reference internal image-reference" href="../../_images/cost_check_points.png"><img alt="../../_images/cost_check_points.png" class="align-center" src="../../_images/cost_check_points.png" style="width: 176px; height: 284px;" /></a>
 </dd>
 </dl>
