@@ -952,7 +952,7 @@ msgstr "Developed by [Apex.AI](https://www.apex.ai/)"
 
 #: ../../development_guides/devcontainer_docs/index.md:60
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "前提条件"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:62

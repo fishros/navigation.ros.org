@@ -27,7 +27,7 @@ msgstr "Writing a New Behavior Plugin"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:6 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:6
 msgid "`Overview`_"
-msgstr "`Overview`_"
+msgstr "`概述`_"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:7 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:7

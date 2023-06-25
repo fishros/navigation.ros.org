@@ -666,7 +666,7 @@ msgstr "nav2_system_tests：一组用于CI的集成测试和基本仿真教程"
 
 #: ../../about/ros1_comparison.rst:50
 msgid "nav2_rviz_plugins: An rviz plugin to control the Navigation2 servers, command, cancel, and navigation with"
-msgstr "nav2_rviz_plugins: An rviz plugin to control the Navigation2 servers, command, cancel, and navigation with"
+msgstr "nav2_rviz_plugins: 一个用于控制Navigation2服务器的rviz插件，可以进行命令、取消和导航等操作。"
 
 
 #: ../../about/ros1_comparison.rst:51
@@ -676,5 +676,5 @@ msgstr "navigation2_behavior_trees：用于调用ROS动作服务器的行为树�
 
 #: ../../about/ros1_comparison.rst:53
 msgid "among many others."
-msgstr "among many others."
+msgstr "等等其他功能。"
 

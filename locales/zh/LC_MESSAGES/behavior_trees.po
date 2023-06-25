@@ -27,7 +27,7 @@ msgstr "Nav2行为树"
 
 #: ../../behavior_trees/index.rst:18
 msgid "Nav2 is an incredibly reconfigurable project. It allows users to set many different plugin types, across behavior trees, core algorithms, status checkers, and more! This section highlights some of the example behavior tree xml files provided by default in the project to do interesting tasks. It should be noted that these can be modified for your specific application, or used as a guide to building your own application-specific behavior tree. These are some exemplary examples of how you can reconfigure your navigation behavior significantly by using behavior trees. Other behavior trees are provided by Nav2 in the ``nav2_bt_navigator`` package, but this section highlights the important ones."
-msgstr "Nav2 is an incredibly reconfigurable project. It allows users to set many different plugin types, across behavior trees, core algorithms, status checkers, and more! This section highlights some of the example behavior tree xml files provided by default in the project to do interesting tasks. It should be noted that these can be modified for your specific application, or used as a guide to building your own application-specific behavior tree. These are some exemplary examples of how you can reconfigure your navigation behavior significantly by using behavior trees. Other behavior trees are provided by Nav2 in the ``nav2_bt_navigator`` package, but this section highlights the important ones."
+msgstr "Nav2是一个非常可重新配置的项目。它允许用户设置许多不同类型的插件，包括行为树、核心算法、状态检查器等等！本节介绍了项目中默认提供的一些示例行为树xml文件，用于执行有趣的任务。需要注意的是，这些文件可以根据您的特定应用进行修改，或者用作构建自己的应用程序特定行为树的指南。这些是一些示例，展示了如何通过使用行为树来显著重新配置导航行为。Nav2在``nav2_bt_navigator``包中提供了其他行为树，但本节重点介绍了重要的行为树。"
 
 
 #: ../../behavior_trees/index.rst:24
@@ -37,77 +37,77 @@ msgstr "下面是一个**非常**基本但功能完备的导航器示例。"
 
 #: ../../behavior_trees/index.rst:39
 msgid "This behavior tree will simply plan a new path to ``goal`` every 1 meter (set by ``DistanceController``) using ``ComputePathToPose``. If a new path is computed on the ``path`` blackboard variable, ``FollowPath`` will take this ``path`` and follow it using the server's default algorithm."
-msgstr "This behavior tree will simply plan a new path to ``goal`` every 1 meter (set by ``DistanceController``) using ``ComputePathToPose``. If a new path is computed on the ``path`` blackboard variable, ``FollowPath`` will take this ``path`` and follow it using the server's default algorithm."
+msgstr "此行为树将使用``ComputePathToPose``，根据``DistanceController``设置的每1米，简单地规划到``goal``的新路径。如果在``path``黑板变量上计算出新路径，则``FollowPath``将获取该``path``并使用服务器的默认算法进行跟随。"
 
 
 #: ../../behavior_trees/index.rst:42
 msgid "This tree contains:"
-msgstr "This tree contains:"
+msgstr "该树包含："
 
 
 #: ../../behavior_trees/index.rst:44
 msgid "No recovery methods"
-msgstr "No recovery methods"
+msgstr "没有恢复方法。"
 
 
 #: ../../behavior_trees/index.rst:45
 msgid "No retries on failure"
-msgstr "No retries on failure"
+msgstr "失败时不重试"
 
 
 #: ../../behavior_trees/index.rst:46
 msgid "No selected planner or controller algorithms"
-msgstr "No selected planner or controller algorithms"
+msgstr "没有选择的规划器或控制器算法。"
 
 
 #: ../../behavior_trees/index.rst:47
 msgid "No nodes to contextually change settings for optimal performance"
-msgstr "No nodes to contextually change settings for optimal performance"
+msgstr "没有上下文中更改设置以获得最佳性能的节点"
 
 
 #: ../../behavior_trees/index.rst:48
 msgid "No integration with automatic door, elevator, or other APIs"
-msgstr "No integration with automatic door, elevator, or other APIs"
+msgstr "没有与自动门、电梯或其他API的集成。"
 
 
 #: ../../behavior_trees/index.rst:49
 msgid "No user provided custom BT nodes"
-msgstr "No user provided custom BT nodes"
+msgstr "没有用户提供的自定义BT节点"
 
 
 #: ../../behavior_trees/index.rst:50
 msgid "No subtrees for other behaviors like docking, following, etc."
-msgstr "No subtrees for other behaviors like docking, following, etc."
+msgstr "没有针对其他行为（如对接、跟随等）的子树。"
 
 
 #: ../../behavior_trees/index.rst:52
 msgid "All of this, and more, can be set and configured for your customized navigation logic in Nav2."
-msgstr "All of this, and more, can be set and configured for your customized navigation logic in Nav2."
+msgstr "所有这些以及更多内容都可以在Nav2中设置和配置以定制化导航逻辑。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:4
 msgid "Detailed Behavior Tree Walkthrough"
-msgstr "Detailed Behavior Tree Walkthrough"
+msgstr "详细的行为树遍历"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:6
 msgid "`Overview`_"
-msgstr "`Overview`_"
+msgstr "`概述`_"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:7
 msgid "`Prerequisites`_"
-msgstr "`Prerequisites`_"
+msgstr "`前提条件`_"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:8
 msgid "`Navigate To Pose With Replanning and Recovery`_"
-msgstr "`Navigate To Pose With Replanning and Recovery`_"
+msgstr "`带有重新规划和恢复的导航到位点`_"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:9
 msgid "`Navigation Subtree`_"
-msgstr "`Navigation Subtree`_"
+msgstr "`导航子树`_"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:10
@@ -122,7 +122,7 @@ msgstr "概述"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:15
 msgid "This document serves as a reference guide to the main behavior tree (BT) used in Nav2."
-msgstr "This document serves as a reference guide to the main behavior tree (BT) used in Nav2."
+msgstr "本文档作为 Nav2 中使用的主要行为树（BT）的参考指南。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:17
@@ -132,7 +132,7 @@ msgstr "There are many example behavior trees provided in ``nav2_bt_navigator/be
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:23
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "前提条件"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:25
@@ -142,7 +142,7 @@ msgstr "Become familiar with the concept of a behavior tree before continuing wi
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:27
 msgid "Read the short explanation in `navigation concepts <../../concepts/index.html>`_"
-msgstr "Read the short explanation in `navigation concepts <../../concepts/index.html>`_"
+msgstr "请阅读 `导航概念 <../../concepts/index.html>`_ 中的简要说明。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:29
