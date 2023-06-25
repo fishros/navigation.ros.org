@@ -111,17 +111,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#controllers">控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#behaviors">行为</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smoothers">平滑器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#waypoint-following">Waypoint Following</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#waypoint-following">路径点跟随</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#state-estimation">State Estimation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#standards">Standards</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#global-positioning-localization-and-slam">Global Positioning: Localization and SLAM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#odometry">Odometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state-estimation">状态估计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standards">标准</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-positioning-localization-and-slam">全局定位：定位和SLAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#odometry">里程计</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#environmental-representation">Environmental Representation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#costmaps-and-layers">Costmaps and Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environmental-representation">环境表示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#costmaps-and-layers">代价地图和层</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#other-forms">Other Forms</a></li>
 </ul>
@@ -1013,74 +1013,58 @@
 <div class="section" id="smoothers">
 <h3>平滑器<a class="headerlink" href="#smoothers" title="永久链接至标题"></a></h3>
 <p>通常，与规划器搜索的路径的最佳性标准相比，路径的额外细化通常是有益的。为此引入了平滑器，通常负责减少路径的不平整和平滑突然的旋转，同时增加与障碍物和高代价区域的距离，因为平滑器可以访问全局环境表示。</p>
-<p>Use of a separate smoother over one that is included as part of a planner is advantageous when combining different planners with different smoothers or when a specific control over smoothing is required, e.g. smoothing only a specific part of the path.</p>
+<p>在将不同的规划器与不同的平滑器结合或需要对平滑进行特定控制时，使用独立的平滑器而不是作为规划器的一部分的平滑器具有优势，例如仅对路径的特定部分进行平滑。</p>
 <p>Nav2中平滑器的一般任务是接收路径并返回其改进版本。然而，对于不同的输入路径，改进的标准和获取方法也存在，因此可以在该服务器中注册多种平滑器。</p>
 </div>
 <div class="section" id="waypoint-following">
-<h3>Waypoint Following<a class="headerlink" href="#waypoint-following" title="永久链接至标题"></a></h3>
+<h3>路径点跟随<a class="headerlink" href="#waypoint-following" title="永久链接至标题"></a></h3>
 <p>路径点跟踪是导航系统的基本功能之一。它告诉我们的系统如何使用导航来到达多个目的地。</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> contains a waypoint following program with a plugin interface for specific task executors.
-This is useful if you need to go to a given location and complete a specific task like take a picture, pick up a box, or wait for user input.
-It is a nice demo application for how to use Nav2 in a sample application.</p>
-<p>However, it could be used for more than just a sample application.
-There are 2 schools of thoughts for fleet managers / dispatchers:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_waypoint_follower``包含一个路径点跟随程序，具有特定任务执行器的插件接口。如果您需要前往指定位置并完成特定任务，例如拍照、拾起盒子或等待用户输入，这将非常有用。这是一个演示如何在示例应用中使用Nav2的好的应用程序。</p>
+<p>然而，它可以用于不仅仅是一个示例应用程序。对于车队管理人员/调度员来说，有两种思路：</p>
 <ul class="simple">
-<li><p>Dumb robot; smart centralized dispatcher</p></li>
-<li><p>Smart robot; dumb centralized dispatcher</p></li>
+<li><p>愚蠢的机器人；智能集中调度程序</p></li>
+<li><p>智能机器人；愚蠢的集中调度员</p></li>
 </ul>
-<p>In the first, the <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> is fully sufficient to create a production-grade on-robot solution. Since the autonomy system / dispatcher is taking into account things like the robot's pose, battery level, current task, and more when assigning tasks, the application on the robot just needs to worry about the task at hand and not the other complexities of the system to complete the requested task. In this situation, you should think of a request to the waypoint follower as 1 unit of work (e.g. 1 pick in a warehouse, 1 security patrole loop, 1 aisle, etc) to do a task and then return to the dispatcher for the next task or request to recharge. In this school of thought, the waypoint following application is just one step above navigation and below the system autonomy application.</p>
-<p>In the second, the <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> is a nice sample application / proof of concept, but you really need your waypoint following / autonomy system on the robot to carry more weight in making a robust solution. In this case, you should use the <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> package to create a custom application-level behavior tree using navigation to complete the task. This can include subtrees like checking for the charge status mid-task for returning to dock or handling more than 1 unit of work in a more complex task. Soon, there will be a <code class="docutils literal notranslate"><span class="pre">nav2_bt_waypoint_follower</span></code> (name subject to adjustment) that will allow you to create this application more easily. In this school of thought, the waypoint following application is more closely tied to the system autonomy, or in many cases, is the system autonomy.</p>
-<p>Neither is better than the other, it highly depends on the tasks your robot(s) are completing, in what type of environment, and with what cloud resources available. Often this distinction is very clear for a given business case.</p>
+<p>首先，<a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_waypoint_follower``完全足够创建一个面向生产的机器人解决方案。由于自治系统/调度程序在分配任务时考虑了诸如机器人姿态、电池电量、当前任务等因素，因此机器人上的应用程序只需要关注当前任务而不必担心系统的其他复杂性来完成所请求的任务。在这种情况下，您应该将路径点跟随程序的请求视为一项工作单元（例如在仓库中拣选一个物品，执行一次安全巡逻，遍历一条通道等）来执行任务，然后返回给调度程序以获取下一个任务或充电请求。在这种思路中，路径点跟随应用程序只是导航的上一步，在系统自治应用程序之下。</p>
+<p>在第二种思路中，<code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 是一个很好的示例应用程序/概念验证，但是你真正需要的是机器人上的航路点跟踪/自主系统来更好地解决问题。在这种情况下，你应该使用 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 包来创建一个使用导航完成任务的自定义应用程序级行为树。这可以包括检查任务进行到一半时的充电状态以返回到码头，或者处理更复杂任务中超过1个工作单元的子树。很快，将会有一个``nav2_bt_waypoint_follower``（名称可能会有所调整），它将使您更容易创建这个应用程序。在这种思路中，航路点跟踪应用程序与系统自主性更为密切相关，或者在许多情况下，就是系统自主性本身。</p>
+<p>两者并没有优劣之分，它非常依赖于机器人所完成的任务类型、环境类型以及可用的云资源。对于特定的业务案例，通常这种区别非常明确。</p>
 </div>
 </div>
 <div class="section" id="state-estimation">
-<h2>State Estimation<a class="headerlink" href="#state-estimation" title="永久链接至标题"></a></h2>
-<p>Within the navigation project, there are 2 major transformations that need to be provided, according to community standards.
-The <code class="docutils literal notranslate"><span class="pre">map</span></code> to <code class="docutils literal notranslate"><span class="pre">odom</span></code> transform is provided by a positioning system (localization, mapping, SLAM) and <code class="docutils literal notranslate"><span class="pre">odom</span></code> to <code class="docutils literal notranslate"><span class="pre">base_link</span></code> by an odometry system.</p>
+<h2>状态估计<a class="headerlink" href="#state-estimation" title="永久链接至标题"></a></h2>
+<p>在导航项目中，根据社区标准需要提供两个主要的转换。<a href="#id1"><span class="problematic" id="id2">``</span></a>map``到``odom``的转换由定位系统（定位、地图构建、SLAM）提供，<a href="#id3"><span class="problematic" id="id4">``</span></a>odom``到``base_link``的转换由里程计系统提供。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>There is <strong>no</strong> requirement on using a LIDAR on your robot to use the navigation system. There is no requirement to use lidar-based collision avoidance,
-localization, or SLAM. However, we do provide instructions and support tried and true implementations of these things using lidars.
-You can be equally as successful using a vision or depth based positioning system and using other sensors for collision avoidance.
-The only requirement is that you follow the standards below with your choice of implementation.</p>
+<p>使用导航系统并不需要在机器人上使用激光雷达。也没有使用基于激光雷达的避障、定位或SLAM的要求。但是，我们提供了使用激光雷达的这些功能的指导和支持。您同样可以使用视觉或基于深度的定位系统，并使用其他传感器进行避障。唯一的要求是您必须按照下面的标准选择实现。</p>
 </div>
 <div class="section" id="standards">
-<h3>Standards<a class="headerlink" href="#standards" title="永久链接至标题"></a></h3>
-<p><a class="reference external" href="https://www.ros.org/reps/rep-0105.html">REP 105</a> defines the frames and conventions required for navigation and the larger ROS ecosystem.
-These conventions should be followed at all times to make use of the rich positioning, odometry, and SLAM projects available in the community.</p>
-<p>In a nutshell, REP-105 says that you must, at minimum, build a TF tree that contains a full <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">[sensor</span> <span class="pre">frames]</span></code> for your robot.
-TF2 is the time-variant transformation library in ROS 2 we use to represent and obtain time synchronized transformations.
-It is the job of the global positioning system (GPS, SLAM, Motion Capture) to, at minimum, provide the <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> transformation.
-It is then the role of the odometry system to provide the <code class="docutils literal notranslate"><span class="pre">odom</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transformation.
-The remainder of the transformations relative to <code class="docutils literal notranslate"><span class="pre">base_link</span></code> should be static and defined in your <a class="reference external" href="http://wiki.ros.org/urdf">URDF</a>.</p>
+<h3>标准<a class="headerlink" href="#standards" title="永久链接至标题"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">REP</span> <span class="pre">105</span> <span class="pre">&lt;https://www.ros.org/reps/rep-0105.html&gt;</span></code> 定义了导航和更大的ROS生态系统所需的坐标系和约定。为了利用社区中丰富的定位、里程计和SLAM项目，应始终遵循这些约定。</p>
+<p>简而言之，REP-105 规定你至少需要构建一个包含完整 <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">[sensor</span> <span class="pre">frames]</span></code> 的 TF 树来表示你的机器人。TF2 是 ROS 2 中用于表示和获取时间同步转换的时变转换库。全局定位系统（GPS、SLAM、动作捕捉）的任务是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> 转换。然后里程计系统的任务是提供 <code class="docutils literal notranslate"><span class="pre">odom</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 转换。相对于 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的其余转换应该是静态的，并在你的 <a class="reference external" href="http://wiki.ros.org/urdf">URDF</a> 中定义。</p>
 </div>
 <div class="section" id="global-positioning-localization-and-slam">
-<h3>Global Positioning: Localization and SLAM<a class="headerlink" href="#global-positioning-localization-and-slam" title="永久链接至标题"></a></h3>
-<p>It is the job of the global positioning system (GPS, SLAM, Motion Capture) to, at minimum, provide the <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> transformation.
-We provide <code class="docutils literal notranslate"><span class="pre">amcl</span></code> which is an Adaptive Monte-Carlo Localization technique based on a particle filter for localization in a static map.
-We also provide SLAM Toolbox as the default SLAM algorithm for use to position and generate a static map.</p>
+<h3>全局定位：定位和SLAM<a class="headerlink" href="#global-positioning-localization-and-slam" title="永久链接至标题"></a></h3>
+<p>全局定位系统（GPS、SLAM、动作捕捉）的任务是至少提供 <code class="docutils literal notranslate"><span class="pre">map</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> 转换。我们提供了 <code class="docutils literal notranslate"><span class="pre">amcl</span></code>，它是一种基于粒子滤波器的自适应蒙特卡洛定位技术，用于在静态地图中进行定位。我们还提供 SLAM 工具箱作为默认的 SLAM 算法，用于定位和生成静态地图。</p>
 <p>These methods may also produce other output including position topics, maps, or other metadata, but they must provide that transformation to be valid.
 Multiple positioning methods can be fused together using robot localization, discussed more below.</p>
 </div>
 <div class="section" id="odometry">
-<h3>Odometry<a class="headerlink" href="#odometry" title="永久链接至标题"></a></h3>
+<h3>里程计<a class="headerlink" href="#odometry" title="永久链接至标题"></a></h3>
 <p>It is the role of the odometry system to provide the <code class="docutils literal notranslate"><span class="pre">odom</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transformation.
 Odometry can come from many sources including LIDAR, RADAR, wheel encoders, VIO, and IMUs.
 The goal of the odometry is to provide a smooth and continuous local frame based on robot motion.
 The global positioning system will update the transformation relative to the global frame to account for the odometric drift.</p>
-<p><a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/">Robot Localization</a> is typically used for this fusion.
-It will take in <code class="docutils literal notranslate"><span class="pre">N</span></code> sensors of various types and provide a continuous and smooth odometry to TF and to a topic.
-A typical mobile robotics setup may have odometry from wheel encoders, IMUs, and vision fused in this manner.</p>
+<p><a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/">机器人定位</a> 通常用于此融合。它会接收各种类型的 <code class="docutils literal notranslate"><span class="pre">N</span></code> 个传感器，并为 TF 和一个话题提供连续平滑的里程计。一个典型的移动机器人设置可能会以此方式融合来自轮式编码器、IMU 和视觉的里程计信息。</p>
 <p>The smooth output can be used then for dead-reckoning for precise motion and updating the position of the robot accurately between global position updates.</p>
 </div>
 </div>
 <div class="section" id="environmental-representation">
-<h2>Environmental Representation<a class="headerlink" href="#environmental-representation" title="永久链接至标题"></a></h2>
+<h2>环境表示<a class="headerlink" href="#environmental-representation" title="永久链接至标题"></a></h2>
 <p>The environmental representation is the way the robot perceives its environment.
 It also acts as the central localization for various algorithms and data sources to combine their information into a single space.
 This space is then used by the controllers, planners, and recoveries to compute their tasks safely and efficiently.</p>
 <div class="section" id="costmaps-and-layers">
-<h3>Costmaps and Layers<a class="headerlink" href="#costmaps-and-layers" title="永久链接至标题"></a></h3>
+<h3>代价地图和层<a class="headerlink" href="#costmaps-and-layers" title="永久链接至标题"></a></h3>
 <p>The current environmental representation is a costmap.
 A costmap is a regular 2D grid of cells containing a cost from unknown, free, occupied, or inflated cost.
 This costmap is then searched to compute a global plan or sampled to compute local control efforts.</p>
