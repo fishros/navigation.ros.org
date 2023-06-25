@@ -830,7 +830,7 @@ msgstr "然后转到RViz，并单击顶部的“2D姿势估计”按钮，根据
 
 
 msgid "Image of gradient costmap used"
-msgstr "Image of gradient costmap used"
+msgstr "使用梯度成本地图的图像"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:4
@@ -839,7 +839,7 @@ msgstr "编写新的控制器插件"
 
 
 msgid "Animated gif of pure pursuit controller demo"
-msgstr "Animated gif of pure pursuit controller demo"
+msgstr "纯追踪控制器演示的动画gif图像"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:19
@@ -849,7 +849,7 @@ msgstr "本教程介绍如何创建自己的控制器插件 `plugin <https://ind
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:21
 msgid "In this tutorial, we will be implementing the pure pursuit path tracking algorithm based on this `paper <https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf>`_. It is recommended you go through it."
-msgstr "In this tutorial, we will be implementing the pure pursuit path tracking algorithm based on this `paper <https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf>`_. It is recommended you go through it."
+msgstr "在本教程中，我们将根据这篇 `论文 <https://www.ri.cmu.edu/pub_files/pub3/coulter_r_craig_1992_1/coulter_r_craig_1992_1.pdf>`_ 实现纯追踪路径跟踪算法。建议您阅读该论文。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:24
@@ -859,7 +859,7 @@ msgstr "注意：本教程基于现有的简化版本的Regulated Pure Pursuit�
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:39
 msgid "1- Create a new Controller Plugin"
-msgstr "1- Create a new Controller Plugin"
+msgstr "1- 创建一个新的控制器插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:41
@@ -869,27 +869,27 @@ msgstr "我们将实现纯追踪控制器。本教程中的带注释代码可以
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:44
 msgid "Our example plugin class ``nav2_pure_pursuit_controller::PurePursuitController`` inherits from the base class ``nav2_core::Controller``. The base class provides a set of virtual methods to implement a controller plugin. These methods are called at runtime by the controller server to compute velocity commands. The list of methods, their descriptions, and necessity are presented in the table below:"
-msgstr "Our example plugin class ``nav2_pure_pursuit_controller::PurePursuitController`` inherits from the base class ``nav2_core::Controller``. The base class provides a set of virtual methods to implement a controller plugin. These methods are called at runtime by the controller server to compute velocity commands. The list of methods, their descriptions, and necessity are presented in the table below:"
+msgstr "我们的示例插件类 ``nav2_pure_pursuit_controller::PurePursuitController`` 继承自基类 ``nav2_core::Controller``。基类提供了一组虚拟方法来实现控制器插件。这些方法在运行时由控制器服务器调用以计算速度命令。方法列表、描述和必要性如下表所示："
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:51
 msgid "Method is called when controller server enters on_configure state. Ideally this method should perform declarations of ROS parameters and initialization of controller's member variables. This method takes 4 input params: weak pointer to parent node, controller name, tf buffer pointer and shared pointer to costmap."
-msgstr "Method is called when controller server enters on_configure state. Ideally this method should perform declarations of ROS parameters and initialization of controller's member variables. This method takes 4 input params: weak pointer to parent node, controller name, tf buffer pointer and shared pointer to costmap."
+msgstr "当控制器服务器进入on_configure状态时调用此方法。理想情况下，此方法应执行ROS参数的声明和控制器成员变量的初始化。此方法接收4个输入参数：父节点的弱指针、控制器名称、tf缓冲指针和costmap的共享指针。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:56
 msgid "Method is called when controller server enters on_activate state. Ideally this method should implement operations which are neccessary before controller goes to an active state."
-msgstr "Method is called when controller server enters on_activate state. Ideally this method should implement operations which are neccessary before controller goes to an active state."
+msgstr "当控制器服务器进入“on_activate”状态时调用该方法。理想情况下，该方法应该实现在控制器进入活动状态之前必要的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:60
 msgid "Method is called when controller server enters on_deactivate state. Ideally this method should implement operations which are neccessary before controller goes to an inactive state."
-msgstr "Method is called when controller server enters on_deactivate state. Ideally this method should implement operations which are neccessary before controller goes to an inactive state."
+msgstr "当控制器服务器进入on_deactivate状态时调用此方法。理想情况下，此方法应实现在控制器进入非活动状态之前必要的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:64
 msgid "Method is called when controller server goes to on_cleanup state. Ideally this method should clean up resources which are created for the controller."
-msgstr "Method is called when controller server goes to on_cleanup state. Ideally this method should clean up resources which are created for the controller."
+msgstr "当控制器服务器进入“on_cleanup”状态时调用该方法。理想情况下，该方法应清理为控制器创建的资源。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:67
@@ -899,7 +899,7 @@ msgstr "setPlan()"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:67
 msgid "Method is called when the global plan is updated. Ideally this method should perform operations that transform the global plan and store it."
-msgstr "Method is called when the global plan is updated. Ideally this method should perform operations that transform the global plan and store it."
+msgstr "当全局路径更新时调用此方法。理想情况下，此方法应执行转换全局路径并存储的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:70
@@ -909,7 +909,7 @@ msgstr "computeVelocityCommands()"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:70
 msgid "Method is called when a new velocity command is demanded by the controller server in-order for the robot to follow the global path. This method returns a `geometry_msgs\\:\\:msg\\:\\:TwistStamped` which represents the velocity command for the robot to drive.  This method passes 2 parameters: reference to the current robot pose and its current velocity."
-msgstr "Method is called when a new velocity command is demanded by the controller server in-order for the robot to follow the global path. This method returns a `geometry_msgs\\:\\:msg\\:\\:TwistStamped` which represents the velocity command for the robot to drive.  This method passes 2 parameters: reference to the current robot pose and its current velocity."
+msgstr "当控制器服务器要求提供新的速度指令以便机器人跟随全局路径时，调用此方法。该方法返回一个`geometry_msgs::msg::TwistStamped`，表示机器人的速度指令。该方法接受两个参数：当前机器人姿态的引用和当前速度。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:76
@@ -919,27 +919,27 @@ msgstr "setSpeedLimit()"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:76
 msgid "Method is called when it is required to limit the maximum linear speed of the robot. Speed limit could be expressed in absolute value (m/s) or in percentage from maximum robot speed. Note that typically, maximum rotational speed is being limited proportionally to the change of maximum linear speed, in order to keep current robot behavior untouched."
-msgstr "Method is called when it is required to limit the maximum linear speed of the robot. Speed limit could be expressed in absolute value (m/s) or in percentage from maximum robot speed. Note that typically, maximum rotational speed is being limited proportionally to the change of maximum linear speed, in order to keep current robot behavior untouched."
+msgstr "当需要限制机器人的最大线速度时调用此方法。速度限制可以用绝对值（m/s）或相对于最大机器人速度的百分比表示。请注意，通常情况下，最大旋转速度与最大线速度的变化成比例限制，以保持当前机器人行为不变。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:83
 msgid "In this tutorial, we will use the methods ``PurePursuitController::configure``, ``PurePursuitController::setPlan`` and ``PurePursuitController::computeVelocityCommands``."
-msgstr "In this tutorial, we will use the methods ``PurePursuitController::configure``, ``PurePursuitController::setPlan`` and ``PurePursuitController::computeVelocityCommands``."
+msgstr "在本教程中，我们将使用``PurePursuitController::configure``、``PurePursuitController::setPlan``和``PurePursuitController::computeVelocityCommands``这些方法。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:86
 msgid "In controllers, ``configure()`` method must set member variables from ROS parameters and perform any initialization required."
-msgstr "In controllers, ``configure()`` method must set member variables from ROS parameters and perform any initialization required."
+msgstr "在控制器中，`configure()`方法必须从ROS参数设置成员变量并执行所需的任何初始化。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:125
 msgid "Here, ``plugin_name_ + \".desired_linear_vel\"`` is fetching the ROS parameter ``desired_linear_vel`` which is specific to our controller. Nav2 allows loading of multiple plugins, and to keep things organized, each plugin is mapped to some ID/name. Now, if we want to retrieve the parameters for that specific plugin, we use ``<mapped_name_of_plugin>.<name_of_parameter>`` as done in the above snippet. For example, our example controller is mapped to the name ``FollowPath`` and to retrieve the ``desired_linear_vel`` parameter, which is specific to \"FollowPath”, we used ``FollowPath.desired_linear_vel``. In other words, ``FollowPath`` is used as a namespace for plugin-specific parameters. We will see more on this when we discuss the parameters file (or params file)."
-msgstr "Here, ``plugin_name_ + \".desired_linear_vel\"`` is fetching the ROS parameter ``desired_linear_vel`` which is specific to our controller. Nav2 allows loading of multiple plugins, and to keep things organized, each plugin is mapped to some ID/name. Now, if we want to retrieve the parameters for that specific plugin, we use ``<mapped_name_of_plugin>.<name_of_parameter>`` as done in the above snippet. For example, our example controller is mapped to the name ``FollowPath`` and to retrieve the ``desired_linear_vel`` parameter, which is specific to \"FollowPath”, we used ``FollowPath.desired_linear_vel``. In other words, ``FollowPath`` is used as a namespace for plugin-specific parameters. We will see more on this when we discuss the parameters file (or params file)."
+msgstr "这里，``plugin_name_ + \".desired_linear_vel\"``获取了ROS参数``desired_linear_vel``，该参数是特定于我们的控制器的。Nav2允许加载多个插件，并为了保持组织的有序，每个插件都映射到某个ID/名称。现在，如果我们想要检索该特定插件的参数，我们可以像上面的代码片段中所做的那样使用``<mapped_name_of_plugin>.<name_of_parameter>``。例如，我们的示例控制器映射到名称``FollowPath``，为了检索特定于“FollowPath”的``desired_linear_vel``参数，我们使用了``FollowPath.desired_linear_vel``。换句话说，``FollowPath``被用作插件特定参数的命名空间。在我们讨论参数文件（或参数文件）时，我们将会看到更多相关内容。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:132
 msgid "The passed-in arguments are stored in member variables so that they can be used at a later stage if needed."
-msgstr "The passed-in arguments are stored in member variables so that they can be used at a later stage if needed."
+msgstr "传入的参数被存储在成员变量中，以便在以后的阶段如果需要时使用。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:134
@@ -949,7 +949,7 @@ msgstr "In ``setPlan()`` method, we receive the updated global path for the robo
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:145
 msgid "The computation for the desired velocity happens in the ``computeVelocityCommands()`` method. It is used to calculate the desired velocity command given the current velocity and pose. The third argument - is a pointer to the ``nav2_core::GoalChecker``, that checks whether a goal has been reached. In our example, this won't be used. In the case of pure pursuit, the algorithm computes velocity commands such that the robot tries to follow the global path as closely as possible. This algorithm assumes a constant linear velocity and computes the angular velocity based on the curvature of the global path."
-msgstr "The computation for the desired velocity happens in the ``computeVelocityCommands()`` method. It is used to calculate the desired velocity command given the current velocity and pose. The third argument - is a pointer to the ``nav2_core::GoalChecker``, that checks whether a goal has been reached. In our example, this won't be used. In the case of pure pursuit, the algorithm computes velocity commands such that the robot tries to follow the global path as closely as possible. This algorithm assumes a constant linear velocity and computes the angular velocity based on the curvature of the global path."
+msgstr "期望速度的计算在`computeVelocityCommands()`方法中进行。它用于根据当前速度和姿态计算期望的速度指令。第三个参数是指向`nav2_core::GoalChecker`的指针，用于检查是否已达到目标。在我们的示例中，此参数不会被使用。对于纯追踪算法，该算法会计算使机器人尽可能紧密地跟随全局路径的速度指令。该算法假设线速度恒定，根据全局路径的曲率计算角速度。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:194
@@ -959,7 +959,7 @@ msgstr "The remaining methods are not used, but it's mandatory to override them.
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:197
 msgid "2- Exporting the controller plugin"
-msgstr "2- Exporting the controller plugin"
+msgstr "2- 导出控制器插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:199
