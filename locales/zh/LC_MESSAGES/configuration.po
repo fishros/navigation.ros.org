@@ -1127,7 +1127,7 @@ msgstr "max_robot_pose_search_dist"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:93
 msgid "infinity"
-msgstr "infinity"
+msgstr "无限"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:97
@@ -1137,7 +1137,7 @@ msgstr "沿路径的最大前向积分距离（从最后检测到的姿势开始
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst:4
 msgid "Wait"
-msgstr "Wait"
+msgstr "等待"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst:6
@@ -1147,7 +1147,7 @@ msgstr "调用 Wait ROS 2 动作服务器，该服务器由 nav2_behaviors_ 模�
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst
 msgid "wait_duration"
-msgstr "wait_duration"
+msgstr "等待持续时间"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Wait.rst:23
@@ -1157,37 +1157,37 @@ msgstr "等待时间（秒）。"
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:4
 msgid "AreErrorCodesPresent"
-msgstr "AreErrorCodesPresent"
+msgstr "是否存在错误代码"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:6
 msgid "Checks the if the provided error code matches any error code within a set."
-msgstr "Checks the if the provided error code matches any error code within a set."
+msgstr "检查提供的错误代码是否与集合中的任何错误代码匹配。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:8 ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst:8 ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst:8 ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst:8
 msgid "If the active error code is a match, the node returns ``SUCCESS``. Otherwise, it returns ``FAILURE``."
-msgstr "If the active error code is a match, the node returns ``SUCCESS``. Otherwise, it returns ``FAILURE``."
+msgstr "如果当前的错误代码匹配，则节点返回“成功”。否则，返回“失败”。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst
 msgid "error_code"
-msgstr "error_code"
+msgstr "错误代码"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:18 ../../configuration/packages/bt-plugins/conditions/WouldAControllerRecoveryHelp.rst:18 ../../configuration/packages/bt-plugins/conditions/WouldAPlannerRecoveryHelp.rst:18 ../../configuration/packages/bt-plugins/conditions/WouldASmootherRecoveryHelp.rst:18
 msgid "unsigned short"
-msgstr "unsigned short"
+msgstr "无符号短整型"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:22
 msgid "The active error code to compare against."
-msgstr "The active error code to compare against."
+msgstr "要与之比较的活动错误代码。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst
 msgid "error_codes_to_check"
-msgstr "error_codes_to_check"
+msgstr "要检查的错误代码"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:29
@@ -1197,17 +1197,17 @@ msgstr "std::set<unsigned short>"
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:33
 msgid "The set of error codes you wish to compare against the active error code."
-msgstr "The set of error codes you wish to compare against the active error code."
+msgstr "您希望与活动错误代码进行比较的错误代码集合。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:38
 msgid "Error codes to check are defined in another port."
-msgstr "Error codes to check are defined in another port."
+msgstr "要检查的错误代码在另一个端口中定义。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/AreErrorCodesPresent.rst:44
 msgid "Error codes to check are defined to be 101, 107 and 119."
-msgstr "Error codes to check are defined to be 101, 107 and 119."
+msgstr "要检查的错误代码定义为101、107和119。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:4
@@ -1217,17 +1217,17 @@ msgstr "DistanceTraveled"
 
 #: ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:6
 msgid "Node that returns success when a configurable distance has been traveled."
-msgstr "Node that returns success when a configurable distance has been traveled."
+msgstr "当可配置距离已行进时返回成功的节点。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:9 ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:9 ../../configuration/packages/configuring-amcl.rst:13 ../../configuration/packages/configuring-bt-navigator.rst:17 ../../configuration/packages/configuring-collision-monitor.rst:49 ../../configuration/packages/configuring-controller-server.rst:14 ../../configuration/packages/configuring-lifecycle.rst:16 ../../configuration/packages/configuring-navfn.rst:15 ../../configuration/packages/configuring-planner-server.rst:14 ../../configuration/packages/configuring-thetastar.rst:23 ../../configuration/packages/configuring-waypoint-follower.rst:16 ../../configuration/packages/dwb-params/controller.rst:7 ../../configuration/packages/dwb-params/iterator.rst:7 ../../configuration/packages/dwb-params/kinematic.rst:7 ../../configuration/packages/dwb-params/visualization.rst:7 ../../configuration/packages/dwb-plugins/limited_accel_generator.rst:9 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:7 ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:9 ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:9 ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:9 ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst:9 ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:9 ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:11 ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:9 ../../configuration/packages/smac/configuring-smac-2d.rst:14 ../../configuration/packages/smac/configuring-smac-hybrid.rst:14 ../../configuration/packages/smac/configuring-smac-lattice.rst:18 ../../configuration/packages/trajectory_critics/base_obstacle.rst:10 ../../configuration/packages/trajectory_critics/goal_align.rst:9 ../../configuration/packages/trajectory_critics/goal_dist.rst:9 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:9 ../../configuration/packages/trajectory_critics/oscillation.rst:9 ../../configuration/packages/trajectory_critics/path_align.rst:9 ../../configuration/packages/trajectory_critics/path_dist.rst:9 ../../configuration/packages/trajectory_critics/prefer_forward.rst:9 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:9 ../../configuration/packages/trajectory_critics/twirling.rst:9
 msgid "Parameters"
-msgstr "Parameters"
+msgstr "参数"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:13 ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:14
 msgid "Defined and declared in :ref:`configuring_bt_navigator`."
-msgstr "Defined and declared in :ref:`configuring_bt_navigator`."
+msgstr "在:ref:`configuring_bt_navigator`中定义和声明。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:36
@@ -1247,7 +1247,7 @@ msgstr "Checks if the global navigation goal has changed in the blackboard. Retu
 
 #: ../../configuration/packages/bt-plugins/conditions/GloballyUpdatedGoal.rst:9
 msgid "This node differs from the GoalUpdated by retaining the state of the current goal/goals throughout each tick of the BehaviorTree such that it will update on any \"global\" change to the goal."
-msgstr "This node differs from the GoalUpdated by retaining the state of the current goal/goals throughout each tick of the BehaviorTree such that it will update on any \"global\" change to the goal."
+msgstr "该节点与GoalUpdated不同，它在BehaviorTree的每个时钟周期内保留当前目标/目标的状态，以便在目标发生任何“全局”变化时进行更新。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:4
@@ -1257,7 +1257,7 @@ msgstr "GoalReached"
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:6
 msgid "Checks the distance to the goal, if the distance to goal is less than the pre-defined threshold, the tree returns SUCCESS, otherwise it returns FAILURE."
-msgstr "Checks the distance to the goal, if the distance to goal is less than the pre-defined threshold, the tree returns SUCCESS, otherwise it returns FAILURE."
+msgstr "检查与目标的距离，如果距离目标小于预定义的阈值，则返回SUCCESS，否则返回FAILURE。"
 
 
 #: ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:10
