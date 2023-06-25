@@ -972,47 +972,47 @@ msgstr "检查目标是否被中断。"
 
 #: ../../plugins/index.rst:436
 msgid "`Globally Updated Goal Condition`_"
-msgstr "`Globally Updated Goal Condition`_"
+msgstr "`全局更新目标条件`_"
 
 
 #: ../../plugins/index.rst:436
 msgid "Checks if goal is preempted in the global BT context"
-msgstr "Checks if goal is preempted in the global BT context"
+msgstr "检查全局行为树上的目标是否被抢占"
 
 
 #: ../../plugins/index.rst:440
 msgid "`Initial Pose received Condition`_"
-msgstr "`Initial Pose received Condition`_"
+msgstr "`接收初始姿态条件`_"
 
 
 #: ../../plugins/index.rst:440
 msgid "Checks if initial pose has been set"
-msgstr "Checks if initial pose has been set"
+msgstr "检查初始姿态是否已设置"
 
 
 #: ../../plugins/index.rst:443
 msgid "`Is Stuck Condition`_"
-msgstr "`Is Stuck Condition`_"
+msgstr "`被卡住条件`_"
 
 
 #: ../../plugins/index.rst:443
 msgid "Checks if robot is making progress or stuck"
-msgstr "Checks if robot is making progress or stuck"
+msgstr "检查机器人是否在前进或卡住"
 
 
 #: ../../plugins/index.rst:447
 msgid "`Transform Available Condition`_"
-msgstr "`Transform Available Condition`_"
+msgstr "`可用变换条件`_"
 
 
 #: ../../plugins/index.rst:447
 msgid "Checks if a TF transformation is available. When succeeds returns success for subsequent calls."
-msgstr "Checks if a TF transformation is available. When succeeds returns success for subsequent calls."
+msgstr "检查是否有 TF 变换可用。成功时返回后续调用的成功。"
 
 
 #: ../../plugins/index.rst:454
 msgid "`Distance Traveled Condition`_"
-msgstr "`Distance Traveled Condition`_"
+msgstr "`已行进距离条件`_"
 
 
 #: ../../plugins/index.rst:454 ../../plugins/index.rst:458 ../../plugins/index.rst:462 ../../plugins/index.rst:523 ../../plugins/index.rst:526
@@ -1022,27 +1022,27 @@ msgstr "Sarthak Mittal"
 
 #: ../../plugins/index.rst:454
 msgid "Checks is robot has traveled a given distance."
-msgstr "Checks is robot has traveled a given distance."
+msgstr "检查机器人是否已行进给定距离。"
 
 
 #: ../../plugins/index.rst:458
 msgid "`Time Expired Condition`_"
-msgstr "`Time Expired Condition`_"
+msgstr "`时间到期条件`_"
 
 
 #: ../../plugins/index.rst:458
 msgid "Checks if a given time period has passed."
-msgstr "Checks if a given time period has passed."
+msgstr "检查是否已经过去了给定的时间段。"
 
 
 #: ../../plugins/index.rst:462
 msgid "`Is Battery Low Condition`_"
-msgstr "`Is Battery Low Condition`_"
+msgstr "`电池低电量条件`_"
 
 
 #: ../../plugins/index.rst:462
 msgid "Checks if battery percentage is below a specified value."
-msgstr "Checks if battery percentage is below a specified value."
+msgstr "检查电池百分比是否低于指定值。"
 
 
 #: ../../plugins/index.rst:466
@@ -1052,7 +1052,7 @@ msgstr "`Is Path Valid Condition`_"
 
 #: ../../plugins/index.rst:466
 msgid "Checks if a path is valid by making sure there are no LETHAL obstacles along the path."
-msgstr "Checks if a path is valid by making sure there are no LETHAL obstacles along the path."
+msgstr "通过确保路径上没有致命障碍物来检查路径是否有效。"
 
 
 #: ../../plugins/index.rst:472
@@ -1062,7 +1062,7 @@ msgstr "`Path Expiring Timer`_"
 
 #: ../../plugins/index.rst:472
 msgid "Checks if the timer has expired. The timer is reset if the path gets updated."
-msgstr "Checks if the timer has expired. The timer is reset if the path gets updated."
+msgstr "检查计时器是否已经过期。如果路径更新，则计时器将被重置。"
 
 
 #: ../../plugins/index.rst:477
@@ -1072,7 +1072,7 @@ msgstr "`Are Error Codes Present`_"
 
 #: ../../plugins/index.rst:477
 msgid "Checks if the specified error codes are present."
-msgstr "Checks if the specified error codes are present."
+msgstr "检查指定的错误代码是否存在。"
 
 
 #: ../../plugins/index.rst:481
@@ -1082,7 +1082,7 @@ msgstr "`Would A Controller Recovery Help`_"
 
 #: ../../plugins/index.rst:481
 msgid "Checks if a controller recovery could help clear the controller server error code."
-msgstr "Checks if a controller recovery could help clear the controller server error code."
+msgstr "检查控制器恢复是否有助于清除控制器服务器错误代码。"
 
 
 #: ../../plugins/index.rst:486
@@ -1092,7 +1092,7 @@ msgstr "`Would A Planner Recovery Help`_"
 
 #: ../../plugins/index.rst:486
 msgid "Checks if a planner recovery could help clear the planner server error code."
-msgstr "Checks if a planner recovery could help clear the planner server error code."
+msgstr "检查规划器恢复是否有助于清除规划器服务器错误代码。"
 
 
 #: ../../plugins/index.rst:491
@@ -1102,7 +1102,7 @@ msgstr "`Would A Smoother Recovery Help`_"
 
 #: ../../plugins/index.rst:491
 msgid "Checks if a Smoother recovery could help clear the smoother server error code."
-msgstr "Checks if a Smoother recovery could help clear the smoother server error code."
+msgstr "检查平滑器恢复是否有助于清除平滑器服务器错误代码。"
 
 
 #: ../../plugins/index.rst:496
