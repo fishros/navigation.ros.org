@@ -724,10 +724,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Nav2行为树</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">导航2特定节点介绍</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#action-nodes">动作节点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#condition-nodes">Condition Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#decorator-nodes">Decorator Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#condition-nodes">条件节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decorator-nodes">装饰节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#control-pipelinesequence">Control: PipelineSequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#control-recovery">Control: Recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-recovery">控制：恢复</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#control-roundrobin">Control: RoundRobin</a></li>
 </ul>
 </li>
@@ -962,31 +962,29 @@
 <p>完成时，这些动作节点将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>，如果动作服务器认为动作已正确完成，则返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>，否则返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>。请注意，在上面的列表中，<cite>ClearCostmapService</cite> 动作节点不是动作服务器客户端，而是服务客户端。</p>
 </div>
 <div class="section" id="condition-nodes">
-<h2>Condition Nodes<a class="headerlink" href="#condition-nodes" title="永久链接至标题"></a></h2>
+<h2>条件节点<a class="headerlink" href="#condition-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
 <li><p>GoalUpdated - 检查目标话题上的目标是否已更新</p></li>
-<li><p>GoalReached - Checks if the goal has been reached</p></li>
+<li><p>GoalReached - 检查是否已达到目标</p></li>
 <li><p>InitialPoseReceived - 检查是否已收到 <code class="docutils literal notranslate"><span class="pre">intial_pose</span></code> 话题上的姿态</p></li>
-<li><p>isBatteryLow - Checks to see if the battery is low by listening on the battery topic</p></li>
+<li><p>isBatteryLow - 通过监听电池主题来检查电池是否低</p></li>
 </ul>
 <p>上述条件节点列表可用于探测系统的特定方面。通常情况下，如果条件为真，则它们将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>，否则返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>。在默认的Nav2 BT中使用的关键条件是 <code class="docutils literal notranslate"><span class="pre">GoalUpdated</span></code>，它在特定子树中以异步方式进行检查。此条件节点允许描述行为：“如果目标已更新，则我们必须重新规划”。条件节点通常与ReactiveFallback节点配对使用。</p>
 </div>
 <div class="section" id="decorator-nodes">
-<h2>Decorator Nodes<a class="headerlink" href="#decorator-nodes" title="永久链接至标题"></a></h2>
+<h2>装饰节点<a class="headerlink" href="#decorator-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>Distance Controller - Will tick children nodes every time the robot has traveled a certain distance</p></li>
-<li><p>Rate Controller - Controls the ticking of its child node at a constant frequency. The tick rate is an exposed port</p></li>
-<li><p>Goal Updater - Will update the goal of children nodes via ports on the BT</p></li>
-<li><p>Single Trigger - Will only tick its child node once, and will return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> for all subsequent ticks</p></li>
-<li><p>Speed Controller - Controls the ticking of its child node at a rate proportional to the robot's speed</p></li>
+<li><p>距离控制器 - 每当机器人行驶一定距离时，将对子节点进行触发</p></li>
+<li><p>Rate Controller - 控制子节点以恒定频率进行刻度。刻度频率是一个公开端口</p></li>
+<li><p>目标更新器 - 通过行为树上的端口更新子节点的目标</p></li>
+<li><p>Single Trigger - 仅对子节点进行一次刻度，并在所有后续刻度中返回``FAILURE``</p></li>
+<li><p>速度控制器 - 控制其子节点以与机器人速度成比例的频率触发</p></li>
 </ul>
 </div>
 <div class="section" id="control-pipelinesequence">
 <h2>Control: PipelineSequence<a class="headerlink" href="#control-pipelinesequence" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> control node re-ticks previous children when a child returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.
-This node is similar to the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> node, with the additional property that the children prior to the &quot;current&quot; are re-ticked, (resembling the flow of water in a pipe).
-If at any point a child returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>, all children will be halted and the parent node will also return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>. Upon <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> of the <strong>last node</strong> in the sequence, this node will halt and return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.</p>
-<p>To explain this further, here is an example BT that uses PipelineSequence.</p>
+<p>当子节点返回“运行中”时，“PipelineSequence”控制节点将重新触发之前的子节点。该节点类似于“序列”节点，但其附加属性是在“当前”节点之前的子节点将被重新触发（类似于管道中的水流）。如果任何子节点返回“失败”，所有子节点都将停止运行，父节点也将返回“失败”。当序列中的**最后一个节点**返回“成功”时，该节点将停止运行并返回“成功”。</p>
+<p>为了进一步解释，这里有一个使用PipelineSequence的示例BT。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1008,8 +1006,8 @@ If at any point a child returns <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Action_A</span></code>, <code class="docutils literal notranslate"><span class="pre">Action_B</span></code>, and <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> are all <code class="docutils literal notranslate"><span class="pre">IDLE</span></code>.</p></li>
-<li><p>When the parent PipelineSequence is first ticked, let's assume <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>. The parent node will now return <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> and no other nodes are ticked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Action_A</span></code>、<a href="#id1"><span class="problematic" id="id2">``</span></a>Action_B``和``Action_C``都处于“空闲”状态。</p></li>
+<li><p>当父PipelineSequence首次被执行时，假设``Action_A``返回``RUNNING``。父节点现在将返回``RUNNING``，而且不会执行其他节点。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1021,7 +1019,7 @@ If at any point a child returns <code class="docutils literal notranslate"><span
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Now, let's assume <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>, <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> will now get ticked and will return <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>. <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> has not yet been ticked so will return <code class="docutils literal notranslate"><span class="pre">IDLE</span></code>.</p></li>
+<li><p>现在，让我们假设``Action_A``返回“成功”，然后``Action_B``将被触发并返回“运行中”。<a href="#id1"><span class="problematic" id="id2">``</span></a>Action_C``尚未被触发，因此返回“空闲”。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1033,7 +1031,7 @@ If at any point a child returns <code class="docutils literal notranslate"><span
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p><code class="docutils literal notranslate"><span class="pre">Action_A</span></code> gets ticked again and returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>, and <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> gets re-ticked and returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> and therefore the BT goes on to tick <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> for the first time. Let's assume <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>. The retick-ing of <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> is what makes PipelineSequence useful.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Action_A``再次被执行并返回``RUNNING</span></code>，<code class="docutils literal notranslate"><span class="pre">Action_B``重新被执行并返回``SUCCESS</span></code>，因此BT继续执行首次执行``Action_C``。假设``Action_C``返回``RUNNING``。重新执行``Action_A``是使PipelineSequence有用的关键。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1045,7 +1043,7 @@ If at any point a child returns <code class="docutils literal notranslate"><span
 <div class="line"><br /></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>All actions in the sequence will be re-ticked. Let's assume <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> still returns <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>, where as <code class="docutils literal notranslate"><span class="pre">Action_B</span></code> returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> again, and <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> now returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> on this tick. The sequence is now complete, and therefore <code class="docutils literal notranslate"><span class="pre">Action_A</span></code> is halted, even though it was still <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p></li>
+<li><p>序列中的所有动作都将被重新触发。假设``Action_A``仍然返回“运行中”，而``Action_B``再次返回“成功”，<a href="#id1"><span class="problematic" id="id2">``</span></a>Action_C``现在在此触发中返回“成功”。序列现已完成，因此即使``Action_A``仍处于“运行中”，也会停止``Action_A``的运行。</p></li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1056,17 +1054,17 @@ If at any point a child returns <code class="docutils literal notranslate"><span
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Recall that if <code class="docutils literal notranslate"><span class="pre">Action_A</span></code>, <code class="docutils literal notranslate"><span class="pre">Action_B</span></code>, or <code class="docutils literal notranslate"><span class="pre">Action_C</span></code> returned <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> at any point of time, the parent would have returned <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> and halted any children as well.</p>
+<p>请注意，如果``Action_A``、<code class="docutils literal notranslate"><span class="pre">Action_B``或``Action_C``在任何时候返回``FAILURE</span></code>，则父节点也将返回``FAILURE``，并停止执行任何子节点。</p>
 <p>For additional details regarding the <code class="docutils literal notranslate"><span class="pre">PipelineSequence</span></code> please see the <a class="reference external" href="../../configuration/packages/bt-plugins/controls/PipelineSequence.html">PipelineSequence configuration guide</a>.</p>
 </div>
 <div class="section" id="control-recovery">
-<h2>Control: Recovery<a class="headerlink" href="#control-recovery" title="永久链接至标题"></a></h2>
+<h2>控制：恢复<a class="headerlink" href="#control-recovery" title="永久链接至标题"></a></h2>
 <p>The Recovery control node has only two children and returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> if and only if the first child returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
 If the first child returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>, the second child will be ticked. This loop will continue until either:</p>
 <ul class="simple">
-<li><p>The first child returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> (which results in <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> of the parent node)</p></li>
+<li><p>第一个子节点返回``SUCCESS``（导致父节点返回``SUCCESS``）。</p></li>
 <li><p>The second child returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> (which results in <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> of the parent node)</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> input parameter is violated</p></li>
+<li><p>违反了``number_of_retries``输入参数的限制。</p></li>
 </ul>
 <p>This node is usually used to link together an action, and a recovery action as the name suggests. The first action will typically be the &quot;main&quot; behavior,
 and the second action will be something to be done in case of <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> of the main behavior. Often, the ticking of the second child action will promote the chance the first action will succeed.</p>
