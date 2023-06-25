@@ -366,7 +366,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#write-a-new-costmap2d-plugin">1-编写一个新的Costmap2D插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#export-and-make-gradientlayer-plugin">2- Export and make GradientLayer plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#export-and-make-gradientlayer-plugin">2- 导出并制作 GradientLayer 插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enable-the-plugin-in-costmap2d">3- Enable the plugin in Costmap2D</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-gradientlayer-plugin">4- Run GradientLayer plugin</a></li>
 </ul>
@@ -967,7 +967,7 @@
 <span class="n">class</span><span class="w"> </span><span class="n">GradientLayer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">nav2_costmap_2d</span><span class="o">::</span><span class="n">Layer</span>
 </pre></div>
 </div>
-<p>The basic class provides the set of virtual methods API for working with costmap layers in a plugin. These methods are called at runtime by <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code>. The list of methods, their description, and necessity to have these methods in plugin's code is presented in the table below:</p>
+<p>基本类提供了一组虚拟方法的API，用于在插件中处理代价地图图层。这些方法在运行时由``LayeredCostmap``调用。下表列出了这些方法、它们的描述以及插件代码中必须具备这些方法的必要性：</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -980,61 +980,46 @@
 <td><p><strong>需要重写？</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>onInitialize()</p></td>
-<td><p>Method is called at the end of plugin initialization. There is usually
-declarations of ROS parameters. This is where any required initialization
-should occur.</p></td>
+<td><p>该方法在插件初始化结束时被调用。通常会在这里声明ROS参数。任何必要的初始化应该在这里进行。</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>updateBounds()</p></td>
-<td><p>Method is called to ask the plugin: which area of costmap layer it needs
-to update. The method has 3 input parameters: robot position and
-orientation, and 4 output parameters: pointers to window bounds.
-These bounds are used for performance reasons: to update the area
-inside the window where new info is available, avoiding updates of the
-whole costmap on every iteration.</p></td>
+<td><p>该方法用于询问插件：它需要更新哪个代价地图图层的区域。该方法有3个输入参数：机器人的位置和方向，以及4个输出参数：窗口边界的指针。出于性能考虑，这些边界用于更新窗口内的区域，其中有新信息可用，避免在每次迭代中更新整个代价地图。</p></td>
 <td><p>是</p></td>
 </tr>
-<tr class="row-even"><td><p>updateCosts()</p></td>
-<td><p>Method is called each time when costmap re-calculation is required. It
-updates the costmap layer only within its bounds window. The method has 4
-input parameters: calculation window bounds, and 1 output parameter:
-reference to a resulting costmap <code class="docutils literal notranslate"><span class="pre">master_grid</span></code>. The <code class="docutils literal notranslate"><span class="pre">Layer</span></code> class
-provides the plugin with an internal costmap, <code class="docutils literal notranslate"><span class="pre">costmap_</span></code>, for updates.
-The <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> should be updated with values within the window bounds
-using one of the following update methods: <code class="docutils literal notranslate"><span class="pre">updateWithAddition()</span></code>,
-<code class="docutils literal notranslate"><span class="pre">updateWithMax()</span></code>, <code class="docutils literal notranslate"><span class="pre">updateWithOverwrite()</span></code> or
-<code class="docutils literal notranslate"><span class="pre">updateWithTrueOverwrite()</span></code>.</p></td>
+<tr class="row-even"><td><p>updateCosts（）</p></td>
+<td><p>每当需要重新计算代价地图时，将调用该方法。它仅在其边界窗口内更新代价地图图层。该方法有4个输入参数：计算窗口边界，以及1个输出参数：对结果代价地图``master_grid``的引用。<code class="docutils literal notranslate"><span class="pre">Layer``类为插件提供了一个用于更新的内部代价地图``costmap_</span></code>。应使用以下更新方法之一在窗口边界内更新``master_grid``的值：<code class="docutils literal notranslate"><span class="pre">updateWithAddition()</span></code>, <code class="docutils literal notranslate"><span class="pre">updateWithMax()</span></code>, <code class="docutils literal notranslate"><span class="pre">updateWithOverwrite()``或``updateWithTrueOverwrite()</span></code>。</p></td>
 <td><p>是</p></td>
 </tr>
-<tr class="row-odd"><td><p>matchSize()</p></td>
-<td><p>Method is called each time when map size was changed.</p></td>
+<tr class="row-odd"><td><p>matchSize（）</p></td>
+<td><p>每当地图尺寸发生变化时，将调用该方法。</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>onFootprintChanged()</p></td>
-<td><p>Method is called each time when footprint was changed.</p></td>
+<tr class="row-even"><td><p>onFootprintChanged（）</p></td>
+<td><p>每当足迹（footprint）发生变化时，将调用该方法。</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p>reset()</p></td>
-<td><p>It may have any code to be executed during costmap reset.</p></td>
+<tr class="row-odd"><td><p>reset（）</p></td>
+<td><p>在代价地图重置期间可以执行任何代码。</p></td>
 <td><p>是</p></td>
 </tr>
 </tbody>
 </table>
-<p>In our example these methods have the following functionality:</p>
+<p>在我们的示例中，这些方法具有以下功能：</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::onInitialize()</span></code> contains declaration of a ROS parameter with its default value:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::onInitialize()</span></code> 包含了一个带有默认值的 ROS 参数的声明：</p></li>
 </ol>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">declareParameter</span><span class="p">(</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">ParameterValue</span><span class="p">(</span><span class="nb">true</span><span class="p">));</span>
 <span class="n">node_</span><span class="o">-&gt;</span><span class="n">get_parameter</span><span class="p">(</span><span class="n">name_</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">enabled_</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>and sets <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> bounds recalculation indicator:</p>
+<p>并设置``need_recalculation_``边界重新计算指示器：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">need_recalculation_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::updateBounds()</span></code> re-calculates window bounds if <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> and updates them regardless of <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> value.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::updateCosts()</span></code> - in this method the gradient is writing directly to the resulting costmap <code class="docutils literal notranslate"><span class="pre">master_grid</span></code> without merging with previous layers. This is equal to working with internal <code class="docutils literal notranslate"><span class="pre">costmap_</span></code> and then calling <code class="docutils literal notranslate"><span class="pre">updateWithTrueOverwrite()</span></code> method. Here is the gradient making algorithm for master costmap:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::updateBounds()</span></code> 如果 <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则重新计算窗口边界，并且不论 <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> 的值如何，都会更新边界。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::updateCosts（）</span></code> - 在这个方法中，梯度直接写入到结果代价地图``master_grid``，而不与之前的图层合并。这等同于使用内部``costmap_``并调用``updateWithTrueOverwrite（）``方法。以下是主代价地图的梯度生成算法：</p></li>
 </ol>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">gradient_index</span><span class="p">;</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_j</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_j</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1055,35 +1040,35 @@ using one of the following update methods: <code class="docutils literal notrans
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>where the <code class="docutils literal notranslate"><span class="pre">GRADIENT_SIZE</span></code> is the size of each gradient period in map cells, <code class="docutils literal notranslate"><span class="pre">GRADIENT_FACTOR</span></code> - decrement of costmap's value per each step:</p>
+<p>其中，<code class="docutils literal notranslate"><span class="pre">GRADIENT_SIZE</span></code> 是地图单元中每个梯度周期的大小，<code class="docutils literal notranslate"><span class="pre">GRADIENT_FACTOR</span></code> 是每个步骤中代价地图值的递减量：</p>
 <img alt="../../_images/gradient_explanation.png" src="../../_images/gradient_explanation.png" />
-<p>These parameters are defined in plugin's header file.</p>
+<p>这些参数在插件的头文件中定义。</p>
 <ol class="arabic simple" start="4">
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::onFootprintChanged()</span></code> just resets <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> value.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::reset()</span></code> method is dummy: it is not used in this example plugin. It remains there since pure virtual function <code class="docutils literal notranslate"><span class="pre">reset()</span></code> in parent <code class="docutils literal notranslate"><span class="pre">Layer</span></code> class required to be overridden.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::onFootprintChanged()</span></code> 只是重置了 <code class="docutils literal notranslate"><span class="pre">need_recalculation_</span></code> 的值。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientLayer::reset()</span></code> 方法是虚拟的：在此示例插件中未被使用。它保留在那里是因为父类 <code class="docutils literal notranslate"><span class="pre">Layer</span></code> 中的纯虚拟函数 <code class="docutils literal notranslate"><span class="pre">reset()</span></code> 要求被覆盖。</p></li>
 </ol>
 </div>
 <div class="section" id="export-and-make-gradientlayer-plugin">
-<h3>2- Export and make GradientLayer plugin<a class="headerlink" href="#export-and-make-gradientlayer-plugin" title="永久链接至标题"></a></h3>
-<p>The written plugin will be loaded at runtime as its basic parent class and then will be called by plugin handling modules (for costmap2d by <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code>). Pluginlib opens a given plugin in run-time and provides methods from exported classes to be callable. The mechanism of class exporting tells pluginlib which basic class should be used during these calls. This allows to extend an application by plugins without knowing application source code or recompiling it.</p>
-<p>In our example the <code class="docutils literal notranslate"><span class="pre">nav2_gradient_costmap_plugin::GradientLayer</span></code> plugin's class should be dynamically loaded as a <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::Layer</span></code> basic class. For this the plugin should be registered as follows:</p>
+<h3>2- 导出并制作 GradientLayer 插件<a class="headerlink" href="#export-and-make-gradientlayer-plugin" title="永久链接至标题"></a></h3>
+<p>编写的插件将在运行时作为其基本父类加载，然后由插件处理模块调用（对于 costmap2d 是由 <code class="docutils literal notranslate"><span class="pre">LayeredCostmap</span></code> 调用）。Pluginlib 在运行时打开给定的插件，并提供从导出类可调用的方法。类导出机制告诉 pluginlib 在这些调用期间应使用哪个基本类。这允许通过插件扩展应用程序，而无需知道应用程序源代码或重新编译它。</p>
+<p>在我们的示例中，<code class="docutils literal notranslate"><span class="pre">nav2_gradient_costmap_plugin::GradientLayer</span></code> 插件的类应该作为 <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::Layer</span></code> 基类进行动态加载。为此，插件应按以下方式注册：</p>
 <ol class="arabic simple">
-<li><p>Plugin's class should be registered with a basic type of loaded class. For this there is a special macro <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> should be added to any source-file composing the plugin library:</p></li>
+<li><p>插件的类应该使用加载类的基本类型进行注册。为此，应该将特殊宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> 添加到组成插件库的任何源文件中：</p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#include &quot;pluginlib/class_list_macros.hpp&quot;
 PLUGINLIB_EXPORT_CLASS(nav2_gradient_costmap_plugin::GradientLayer, nav2_costmap_2d::Layer)
 </pre></div>
 </div>
-<p>This part is usually placed at the end of cpp-file where the plugin class was written (in our example <code class="docutils literal notranslate"><span class="pre">gradient_layer.cpp</span></code>). It is good practice to place these lines at the end of the file, but technically, you can also place at the top.</p>
+<p>这部分通常放在插件类所在的 cpp 文件的末尾（在我们的示例中是 <code class="docutils literal notranslate"><span class="pre">gradient_layer.cpp</span></code>）。将这些行放在文件末尾是良好的做法，但从技术上讲，也可以放在文件顶部。</p>
 <ol class="arabic simple" start="2">
-<li><p>Plugin's inormation should be stored to plugin description file. This is done by using separate XML (in our example <code class="docutils literal notranslate"><span class="pre">gradient_plugins.xml</span></code>) in the plugin's package. This file contains information about:</p></li>
+<li><p>插件的信息应存储到插件描述文件中。这是通过在插件的软件包中使用单独的 XML（在我们的示例中为 <code class="docutils literal notranslate"><span class="pre">gradient_plugins.xml</span></code>）来完成的。该文件包含有关以下内容的信息：</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: Path and name of library where plugin is placed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Plugin type referenced in <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> parameter (see next section for more details). It could be whatever you want.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: 在 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 参数中引用的插件类型（有关更多详细信息，请参见下一节）。它可以是任何你想要的。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: Plugin class with namespace taken from the source code.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">basic_class_type</span></code>: Basic parent class from which plugin class was derived.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">basic_class_type</span></code>: 插件类所派生的基本父类。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Plugin description in a text form.</p></li>
 </ul>
 </div></blockquote>
