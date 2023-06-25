@@ -147,7 +147,7 @@ msgstr "Nav2提供了许多规划插件。对于首次设置，请参阅:ref:`se
 
 #: ../../tuning/index.rst:56
 msgid "In general though, the following table is a good guide for the optimal planning plugin for different types of robot bases:"
-msgstr "In general though, the following table is a good guide for the optimal planning plugin for different types of robot bases:"
+msgstr "总的来说，下表是针对不同类型的机器人底盘的最佳规划插件的良好指南："
 
 
 #: ../../tuning/index.rst:59 ../../tuning/index.rst:87
@@ -162,7 +162,7 @@ msgstr "支持的机器人类型"
 
 #: ../../tuning/index.rst:61
 msgid "NavFn Planner"
-msgstr "NavFn Planner"
+msgstr "NavFn规划器"
 
 
 #: ../../tuning/index.rst:61
@@ -172,7 +172,7 @@ msgstr "圆形差分，圆形全向"
 
 #: ../../tuning/index.rst:63
 msgid "Smac Planner 2D"
-msgstr "Smac Planner 2D"
+msgstr "Smac 2D规划器"
 
 
 #: ../../tuning/index.rst:65
@@ -182,62 +182,62 @@ msgstr "Theta Star Planner"
 
 #: ../../tuning/index.rst:67
 msgid "Smac Hybrid-A* Planner"
-msgstr "Smac Hybrid-A* Planner"
+msgstr "Smac混合A*规划器"
 
 
 #: ../../tuning/index.rst:67
 msgid "Non-circular or Circular Ackermann, Non-circular or Circular Legged"
-msgstr "Non-circular or Circular Ackermann, Non-circular or Circular Legged"
+msgstr "非圆形或圆形阿克曼，非圆形或圆形腿式"
 
 
 #: ../../tuning/index.rst:69
 msgid "Smac Lattice Planner"
-msgstr "Smac Lattice Planner"
+msgstr "Smac格栅规划器"
 
 
 #: ../../tuning/index.rst:69
 msgid "Non-circular Differential, Non-circular Omnidirectional, Arbitrary"
-msgstr "Non-circular Differential, Non-circular Omnidirectional, Arbitrary"
+msgstr "非圆形差分，非圆形全向，任意"
 
 
 #: ../../tuning/index.rst:72
 msgid "If you are using a non-circular robot with very limited compute, it may be worth assessing the benefits of using one of the holonomic planners (e.g. particle assumption planners). It is the recommendation of the maintainers to start using one of the more advanced algorithms appropriate for your platform *first*, but to scale back the planner if need be. The run-time of the feasible planners are typically on par (or sometimes faster) than their holonomic counterparts, so don't let the more recent nature of them fool you."
-msgstr "If you are using a non-circular robot with very limited compute, it may be worth assessing the benefits of using one of the holonomic planners (e.g. particle assumption planners). It is the recommendation of the maintainers to start using one of the more advanced algorithms appropriate for your platform *first*, but to scale back the planner if need be. The run-time of the feasible planners are typically on par (or sometimes faster) than their holonomic counterparts, so don't let the more recent nature of them fool you."
+msgstr "如果您使用的是非圆形机器人且计算能力非常有限，评估使用全向规划器（例如粒子假设规划器）的好处可能是值得的。维护者建议首先开始使用适合您的平台的更高级算法，但如果需要，可以缩小规划器。可行规划器的运行时间通常与它们的全向对应物相当（或有时更快），所以不要被它们较新的特性所迷惑。"
 
 
 #: ../../tuning/index.rst:74
 msgid "Since the planning problem is primarily driven by the robot type, the table accurately summarizes the advice to users by the maintainers. Within the circular robot regime, the choice of planning algorithm is dependent on application and desirable behavior. NavFn will typically make broad, sweeping curves; Theta\\* prefers straight lines and supports them at any angle; and Smac 2D is essentially a classical A\\* algorithm with cost-aware penalties."
-msgstr "Since the planning problem is primarily driven by the robot type, the table accurately summarizes the advice to users by the maintainers. Within the circular robot regime, the choice of planning algorithm is dependent on application and desirable behavior. NavFn will typically make broad, sweeping curves; Theta\\* prefers straight lines and supports them at any angle; and Smac 2D is essentially a classical A\\* algorithm with cost-aware penalties."
+msgstr "由于规划问题主要受机器人类型驱动，该表格准确总结了维护者向用户提供的建议。在圆形机器人领域内，规划算法的选择取决于应用和所需行为。NavFn通常会产生宽广的曲线；Theta\\*更偏好直线并支持任意角度；而Smac 2D本质上是一种具有成本感知惩罚的经典A\\*算法。"
 
 
 #: ../../tuning/index.rst:77
 msgid "These are simply the default and available plugins from the community. For a specific application / platform, you may also choose to use none of these and create your own, and that's the intention of the Nav2 framework. See the :ref:`writing_new_nav2planner_plugin` tutorial for more details. If you're willing to contribute this work back to the community, please file a ticket or contact a maintainer! They'd love to hear from you."
-msgstr "These are simply the default and available plugins from the community. For a specific application / platform, you may also choose to use none of these and create your own, and that's the intention of the Nav2 framework. See the :ref:`writing_new_nav2planner_plugin` tutorial for more details. If you're willing to contribute this work back to the community, please file a ticket or contact a maintainer! They'd love to hear from you."
+msgstr "这些只是社区提供的默认和可用插件。针对特定应用/平台，您也可以选择不使用这些插件并自己创建，这是Nav2框架的目的。有关详细信息，请参阅:ref:`writing_new_nav2planner_plugin`教程。如果您愿意将这项工作贡献给社区，请提交工单或联系维护者！他们会很乐意听取您的意见。"
 
 
 #: ../../tuning/index.rst:80
 msgid "Controller Plugin Selection"
-msgstr "Controller Plugin Selection"
+msgstr "控制器插件选择"
 
 
 #: ../../tuning/index.rst:82
 msgid "Nav2 provides a number of controller plugins out of the box. For a first-time setup, see :ref:`select_algorithm` for a more verbose breakdown of algorithm styles within Nav2, and :ref:`plugins` for a full accounting of the current list of plugins available (which may be updated over time)."
-msgstr "Nav2 provides a number of controller plugins out of the box. For a first-time setup, see :ref:`select_algorithm` for a more verbose breakdown of algorithm styles within Nav2, and :ref:`plugins` for a full accounting of the current list of plugins available (which may be updated over time)."
+msgstr "Nav2提供了一系列现成的控制器插件。对于首次设置，请参阅:ref:`select_algorithm`以获取有关Nav2中算法样式的更详细解释，以及:ref:`plugins`以获取当前可用插件的完整列表（可能会随时间更新）"
 
 
 #: ../../tuning/index.rst:84
 msgid "In general though, the following table is a good first-order description of the controller plugins available for different types of robot bases:"
-msgstr "In general though, the following table is a good first-order description of the controller plugins available for different types of robot bases:"
+msgstr "一般而言，下表是对不同类型机器人底盘可用的控制器插件的良好初步描述："
 
 
 #: ../../tuning/index.rst:87
 msgid "Task"
-msgstr "Task"
+msgstr "任务"
 
 
 #: ../../tuning/index.rst:89
 msgid "DWB controller"
-msgstr "DWB controller"
+msgstr "DWB控制器"
 
 
 #: ../../tuning/index.rst:89 ../../tuning/index.rst:95
@@ -247,7 +247,7 @@ msgstr "差动、全向"
 
 #: ../../tuning/index.rst:89 ../../tuning/index.rst:91
 msgid "Dynamic obstacle avoidance"
-msgstr "Dynamic obstacle avoidance"
+msgstr "动态障碍物避免"
 
 
 #: ../../tuning/index.rst:91
@@ -257,7 +257,7 @@ msgstr "TEB Controller"
 
 #: ../../tuning/index.rst:91
 msgid "Differential, Omnidirectional, Ackermann, Legged"
-msgstr "Differential, Omnidirectional, Ackermann, Legged"
+msgstr "差动、全向、阿克曼、腿式"
 
 
 #: ../../tuning/index.rst:93
@@ -267,7 +267,7 @@ msgstr "RPP controller"
 
 #: ../../tuning/index.rst:93
 msgid "Differential, Ackermann, Legged"
-msgstr "Differential, Ackermann, Legged"
+msgstr "差动、阿克曼、腿式"
 
 
 #: ../../tuning/index.rst:93
@@ -277,7 +277,7 @@ msgstr "Exact path following"
 
 #: ../../tuning/index.rst:95
 msgid "Rotation Shim"
-msgstr "Rotation Shim"
+msgstr "旋转衬垫"
 
 
 #: ../../tuning/index.rst:95
@@ -287,7 +287,7 @@ msgstr "Rotate to rough heading"
 
 #: ../../tuning/index.rst:98
 msgid "All of the above controllers can handle both circular and arbitrary shaped robots in configuration."
-msgstr "All of the above controllers can handle both circular and arbitrary shaped robots in configuration."
+msgstr "上述所有控制器都可以处理圆形和任意形状的机器人配置。"
 
 
 #: ../../tuning/index.rst:100

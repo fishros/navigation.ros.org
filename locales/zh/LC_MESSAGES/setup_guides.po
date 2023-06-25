@@ -122,7 +122,7 @@ msgstr "支持的机器人类型"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:48
 msgid "NavFn Planner"
-msgstr "NavFn Planner"
+msgstr "NavFn规划器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:48
@@ -132,7 +132,7 @@ msgstr "圆形差分，圆形全向"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:50
 msgid "Smac Planner 2D"
-msgstr "Smac Planner 2D"
+msgstr "Smac 2D规划器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:52
@@ -142,17 +142,17 @@ msgstr "Theta Star Planner"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:54
 msgid "Smac Hybrid-A* Planner"
-msgstr "Smac Hybrid-A* Planner"
+msgstr "Smac混合A*规划器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:54
 msgid "Non-circular or Circular Ackermann, Non-circular or Circular Legged"
-msgstr "Non-circular or Circular Ackermann, Non-circular or Circular Legged"
+msgstr "非圆形或圆形阿克曼，非圆形或圆形腿式"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:56
 msgid "Smac Lattice Planner"
-msgstr "Smac Lattice Planner"
+msgstr "Smac格栅规划器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:56
@@ -197,12 +197,12 @@ msgstr "The last example for this section is the `Regulated Pure Pursuit control
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:88
 msgid "Task"
-msgstr "Task"
+msgstr "任务"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:90
 msgid "DWB controller"
-msgstr "DWB controller"
+msgstr "DWB控制器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:90
@@ -212,7 +212,7 @@ msgstr "差动、全向"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:90
 msgid "Dynamic obstacle avoidance"
-msgstr "Dynamic obstacle avoidance"
+msgstr "动态障碍物避免"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:92
@@ -222,7 +222,7 @@ msgstr "TEB Controller"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:92
 msgid "Differential, Omnidirectional, Ackermann, Legged"
-msgstr "Differential, Omnidirectional, Ackermann, Legged"
+msgstr "差动、全向、阿克曼、腿式"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:94
@@ -232,7 +232,7 @@ msgstr "RPP controller"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:94
 msgid "Differential, Ackermann, Legged"
-msgstr "Differential, Ackermann, Legged"
+msgstr "差动、阿克曼、腿式"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:94
