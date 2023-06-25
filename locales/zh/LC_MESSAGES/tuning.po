@@ -357,7 +357,7 @@ msgstr "``slam``：是否使用AMCL或SLAM Toolbox进行定位和/或建图。�
 
 #: ../../tuning/index.rst:128
 msgid "``map`` : The filepath to the map to use for navigation. Defaults to ``map.yaml`` in the package's ``maps/`` directory."
-msgstr "``map`` : The filepath to the map to use for navigation. Defaults to ``map.yaml`` in the package's ``maps/`` directory."
+msgstr "``map`` ：导航使用的地图文件路径。默认为包中``maps/``目录下的``map.yaml``文件。"
 
 
 #: ../../tuning/index.rst:129
@@ -367,7 +367,7 @@ msgstr "``world``：仿真中使用的世界文件的文件路径。默认为包
 
 #: ../../tuning/index.rst:130
 msgid "``params_file`` : The main navigation configuration file. Defaults to ``nav2_params.yaml`` in the package's ``params/`` directory."
-msgstr "``params_file`` : The main navigation configuration file. Defaults to ``nav2_params.yaml`` in the package's ``params/`` directory."
+msgstr "``params_file`` ：主导航配置文件。默认为包中``params/``目录下的``nav2_params.yaml``文件。"
 
 
 #: ../../tuning/index.rst:131
@@ -377,7 +377,7 @@ msgstr "``autostart``：是否自动启动导航系统的生命周期管理系�
 
 #: ../../tuning/index.rst:132
 msgid "``use_composition`` : Whether to launch each Nav2 server into individual processes or in a single composed node, to leverage savings in CPU and memory. Default ``true`` to use single process Nav2."
-msgstr "``use_composition`` : Whether to launch each Nav2 server into individual processes or in a single composed node, to leverage savings in CPU and memory. Default ``true`` to use single process Nav2."
+msgstr "``use_composition`` ：是否将每个Nav2服务器启动为单独的进程或单个组合节点，以节省CPU和内存。默认为``true``，使用单进程Nav2。"
 
 
 #: ../../tuning/index.rst:133
@@ -387,65 +387,65 @@ msgstr "``use_respawn``：是否允许服务器崩溃时自动重启。当与生
 
 #: ../../tuning/index.rst:134
 msgid "``use_sim_time`` : Whether to set all the nodes to use simulation time, needed in simulation. Default ``true`` for simulation."
-msgstr "``use_sim_time`` : Whether to set all the nodes to use simulation time, needed in simulation. Default ``true`` for simulation."
+msgstr "``use_sim_time`` ：是否将所有节点设置为使用仿真时间，在仿真中需要。默认为``true``，用于仿真。"
 
 
 #: ../../tuning/index.rst:135
 msgid "``rviz_config_file`` : The filepath to the rviz configuration file to use. Defaults to the ``rviz/`` directory's file."
-msgstr "``rviz_config_file`` : The filepath to the rviz configuration file to use. Defaults to the ``rviz/`` directory's file."
+msgstr "``rviz_config_file`` ：要使用的rviz配置文件的文件路径。默认为``rviz/``目录下的文件。"
 
 
 #: ../../tuning/index.rst:136
 msgid "``use_simulator`` : Whether or not to start the Gazebo simulator with the Nav2 stack. Defaults to ``true`` to launch Gazebo."
-msgstr "``use_simulator`` : Whether or not to start the Gazebo simulator with the Nav2 stack. Defaults to ``true`` to launch Gazebo."
+msgstr "``use_simulator`` ：是否启动Gazebo仿真器与Nav2堆栈。默认为``true``，启动Gazebo。"
 
 
 #: ../../tuning/index.rst:137
 msgid "``use_robot_state_pub`` : Whether or not to start the robot state publisher to publish the robot's URDF transformations to TF2. Defaults to ``true`` to publish the robot's TF2 transformations."
-msgstr "``use_robot_state_pub`` : Whether or not to start the robot state publisher to publish the robot's URDF transformations to TF2. Defaults to ``true`` to publish the robot's TF2 transformations."
+msgstr "``use_robot_state_pub`` ：是否启动机器人状态发布器，将机器人的URDF转换发布到TF2中。默认为``true``，以发布机器人的TF2转换。"
 
 
 #: ../../tuning/index.rst:138
 msgid "``use_rviz`` : Whether or not to launch rviz for visualization. Defaults to ``true`` to show rviz."
-msgstr "``use_rviz`` : Whether or not to launch rviz for visualization. Defaults to ``true`` to show rviz."
+msgstr "``use_rviz`` ：是否启动rviz进行可视化。默认为``true``，显示rviz。"
 
 
 #: ../../tuning/index.rst:139
 msgid "``headless`` : Whether or not to launch the Gazebo front-end alongside the background Gazebo simulation. Defaults to ``true`` to display the Gazebo window."
-msgstr "``headless`` : Whether or not to launch the Gazebo front-end alongside the background Gazebo simulation. Defaults to ``true`` to display the Gazebo window."
+msgstr "``headless`` ：是否在后台Gazebo仿真的同时启动Gazebo前端。默认为``true``，显示Gazebo窗口。"
 
 
 #: ../../tuning/index.rst:140
 msgid "``namespace`` : The namespace to launch robots into, if need be."
-msgstr "``namespace`` : The namespace to launch robots into, if need be."
+msgstr "``namespace`` ：如果需要，将机器人启动到的命名空间。"
 
 
 #: ../../tuning/index.rst:141
 msgid "``use_namespace`` : Whether or not to launch robots into this namespace. Default ``false`` and uses global namespace for single robot."
-msgstr "``use_namespace`` : Whether or not to launch robots into this namespace. Default ``false`` and uses global namespace for single robot."
+msgstr "``use_namespace`` ：是否将机器人启动到此命名空间。默认为``false``，对于单个机器人，使用全局命名空间。"
 
 
 #: ../../tuning/index.rst:142
 msgid "``robot_name`` : The name of the robot to launch."
-msgstr "``robot_name`` : The name of the robot to launch."
+msgstr "``robot_name`` ：要启动的机器人的名称。"
 
 
 #: ../../tuning/index.rst:143
 msgid "``robot_sdf`` : The filepath to the robot's gazebo configuration file containing the Gazebo plugins and setup to simulate the robot system."
-msgstr "``robot_sdf`` : The filepath to the robot's gazebo configuration file containing the Gazebo plugins and setup to simulate the robot system."
+msgstr "``robot_sdf`` ：机器人的Gazebo配置文件的文件路径，包含Gazebo插件和设置以模拟机器人系统。"
 
 
 #: ../../tuning/index.rst:144
 msgid "``x_pose``, ``y_pose``, ``z_pose``, ``roll``, ``pitch``, ``yaw`` : Parameters to set the initial position of the robot in the simulation."
-msgstr "``x_pose``, ``y_pose``, ``z_pose``, ``roll``, ``pitch``, ``yaw`` : Parameters to set the initial position of the robot in the simulation."
+msgstr "``x_pose``，``y_pose``，``z_pose``，``roll``，``pitch``，``yaw`` ：用于设置机器人在仿真中的初始位置的参数。"
 
 
 #: ../../tuning/index.rst:147
 msgid "Other Pages We'd Love To Offer"
-msgstr "Other Pages We'd Love To Offer"
+msgstr "其他我们愿意提供的页面"
 
 
 #: ../../tuning/index.rst:149
 msgid "If you are willing to chip in, some ideas are in https://github.com/ros-planning/navigation.ros.org/issues/204, but we'd be open to anything you think would be insightful!"
-msgstr "If you are willing to chip in, some ideas are in https://github.com/ros-planning/navigation.ros.org/issues/204, but we'd be open to anything you think would be insightful!"
+msgstr "如果你愿意贡献一些想法，可以参考 https://github.com/ros-planning/navigation.ros.org/issues/204，但我们对你认为有洞察力的任何想法都持开放态度！"
 
