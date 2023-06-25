@@ -1487,7 +1487,7 @@ msgstr "int"
 
 #: ../../configuration/packages/bt-plugins/controls/RecoveryNode.rst:25
 msgid "Number of retries."
-msgstr "Number of retries."
+msgstr "重试次数"
 
 
 #: ../../configuration/packages/bt-plugins/controls/RoundRobin.rst:5
@@ -1497,7 +1497,7 @@ msgstr "RoundRobin"
 
 #: ../../configuration/packages/bt-plugins/controls/RoundRobin.rst:7
 msgid "Custom control flow node used to create a round-robbin behavior for children BT nodes."
-msgstr "Custom control flow node used to create a round-robbin behavior for children BT nodes."
+msgstr "自定义控制流节点，用于为子行为树节点创建循环轮询行为。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:4
@@ -1507,22 +1507,22 @@ msgstr "DistanceController"
 
 #: ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:6
 msgid "A node that controls the tick rate for its child based on the distance traveled. The distance to be traveled before replanning can be supplied to the node as a parameter. The node returns RUNNING when it is not ticking its child. Currently, in the navigation stack, the ``DistanceController`` is used to adjust the rate at which the ``ComputePathToPose`` and ``GoalReached`` nodes are ticked."
-msgstr "A node that controls the tick rate for its child based on the distance traveled. The distance to be traveled before replanning can be supplied to the node as a parameter. The node returns RUNNING when it is not ticking its child. Currently, in the navigation stack, the ``DistanceController`` is used to adjust the rate at which the ``ComputePathToPose`` and ``GoalReached`` nodes are ticked."
+msgstr "控制其子节点根据行进距离进行刷新的节点。可以将行进距离作为参数提供给该节点。当该节点不刷新其子节点时，返回运行中状态。目前，在导航堆栈中，“DistanceController”用于调整对“ComputePathToPose”和“GoalReached”节点进行刷新的频率。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:23
 msgid "The distance travelled to trigger an action such as planning a path (m)."
-msgstr "The distance travelled to trigger an action such as planning a path (m)."
+msgstr "触发行动（如规划路径）所需的行程距离（米）。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:4
 msgid "GoalUpdater"
-msgstr "GoalUpdater"
+msgstr "目标更新器"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:6
 msgid "A custom control node, which updates the goal pose. It subscribes to a topic in which it can receive an updated goal pose to use instead of the one commanded in action. It is useful for dynamic object following tasks."
-msgstr "A custom control node, which updates the goal pose. It subscribes to a topic in which it can receive an updated goal pose to use instead of the one commanded in action. It is useful for dynamic object following tasks."
+msgstr "一个自定义控制节点，用于更新目标姿态。它订阅一个主题，在该主题中可以接收到更新的目标姿态，以替代在行动中命令的姿态。对于动态目标跟踪任务非常有用。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst
@@ -1537,7 +1537,7 @@ msgstr "\"goal_update\""
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:20
 msgid "The topic to receive the updated goal pose"
-msgstr "The topic to receive the updated goal pose"
+msgstr "用于接收更新后目标位姿的主题"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst
@@ -1547,7 +1547,7 @@ msgstr "input_goal"
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:34
 msgid "The original goal pose"
-msgstr "The original goal pose"
+msgstr "原始目标位姿"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst
@@ -1557,7 +1557,7 @@ msgstr "output_goal"
 
 #: ../../configuration/packages/bt-plugins/decorators/GoalUpdater.rst:45
 msgid "The resulting updated goal. If no goal received by subscription, it will be the input_goal"
-msgstr "The resulting updated goal. If no goal received by subscription, it will be the input_goal"
+msgstr "更新后的目标。如果没有通过订阅接收到目标，它将是输入目标"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:4
@@ -1567,7 +1567,7 @@ msgstr "PathLongerOnApproach"
 
 #: ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:6
 msgid "This node checks if the newly generated global path is significantly larger than the old global path in the user-defined robot's goal proximity and triggers their corresponding children. This allows users to enact special behaviors before a robot attempts to execute a path significantly longer than the prior path when close to a goal (e.g. going around an dynamic obstacle that may just need a few seconds to move out of the way)."
-msgstr "This node checks if the newly generated global path is significantly larger than the old global path in the user-defined robot's goal proximity and triggers their corresponding children. This allows users to enact special behaviors before a robot attempts to execute a path significantly longer than the prior path when close to a goal (e.g. going around an dynamic obstacle that may just need a few seconds to move out of the way)."
+msgstr "此节点检查新生成的全局路径是否在用户定义的机器人目标附近显着大于旧的全局路径，并触发相应的子节点。这使得用户能够在机器人尝试执行明显比之前路径长得多的路径之前，对目标附近的路径采取特殊行为（例如，绕过一个可能只需要几秒钟才能移开的动态障碍物）。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst
@@ -1577,7 +1577,7 @@ msgstr "prox_len"
 
 #: ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:31
 msgid "Proximity length (m) for the path to be longer on approach."
-msgstr "Proximity length (m) for the path to be longer on approach."
+msgstr "接近时路径长度（米），路径需要更长。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst
@@ -1592,7 +1592,7 @@ msgstr "2.0"
 
 #: ../../configuration/packages/bt-plugins/decorators/PathLongerOnApproach.rst:42
 msgid "Length multiplication factor to check if the path is significantly longer."
-msgstr "Length multiplication factor to check if the path is significantly longer."
+msgstr "长度乘法因子，用于检查路径是否显著较长。"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/RateController.rst:4
@@ -1607,7 +1607,7 @@ msgstr "A node that throttles the tick rate for its child. The tick rate can be 
 
 #: ../../configuration/packages/bt-plugins/decorators/RateController.rst
 msgid "hz"
-msgstr "hz"
+msgstr "赫兹"
 
 
 #: ../../configuration/packages/bt-plugins/decorators/RateController.rst:24
