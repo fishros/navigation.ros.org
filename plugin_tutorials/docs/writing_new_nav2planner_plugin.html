@@ -414,7 +414,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_behavior_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_behavior_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#exporting-the-behavior-plugin">2- Exporting the Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- Run Behavior Plugin</a></li>
 </ul>
@@ -1087,7 +1087,7 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_straightline_planner</span><span class="o">::</span><span class="n">StraightLine</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">GlobalPlanner</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that it requires pluginlib to export out plugin's class. Pluginlib would provide as macro <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> which does all the work of exporting.</p>
+<p>请注意，它需要 pluginlib 来导出插件的类。Pluginlib 提供了宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>，它完成了所有的导出工作。</p>
 <p>It is good practice to place these lines at the end of the file, but technically, you can also write at the top.</p>
 <ol class="arabic simple" start="2">
 <li><p>Next step would be to create plugin's description file in the root directory of the package. For example, <code class="docutils literal notranslate"><span class="pre">global_planner_plugin.xml</span></code> file in our tutorial package. This file contains the following information</p></li>
@@ -1096,9 +1096,9 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>: Plugin's library name and its location.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>: Name of the class.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>: Type of class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>: Name of the base class.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Description of the plugin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>：插件的描述。</p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;nav2_straightline_planner_plugin&quot;</span><span class="nt">&gt;</span>
@@ -1115,7 +1115,7 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Plugin description file should also be added to <code class="docutils literal notranslate"><span class="pre">package.xml</span></code></p></li>
+<li><p>插件描述文件还应添加到``package.xml``中。</p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
 <span class="w">  </span><span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>

@@ -414,7 +414,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exporting-the-behavior-plugin">2- Exporting the Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-behavior-plugin">4- Run Behavior Plugin</a></li>
 </ul>
@@ -994,8 +994,7 @@
 </tr>
 </tbody>
 </table>
-<p>For the <code class="docutils literal notranslate"><span class="pre">nav2_behaviors</span></code> wrapper, which provides the ROS 2 action interface and boilerplate, we have 4 virtual methods to implement.
-This tutorial uses this wrapper so these are the main elements we will address.</p>
+<p>对于提供ROS 2动作接口和样板代码的``nav2_behaviors``包装器，我们有4个虚拟方法需要实现。本教程使用这个包装器，因此我们将解决以下主要要素。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -1008,21 +1007,15 @@ This tutorial uses this wrapper so these are the main elements we will address.<
 <td><p><strong>需要重写？</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>onRun()</p></td>
-<td><p>Method is called immediately when a new behavior action request is
-received. Gives the action goal to process and should start behavior
-initialization / process.</p></td>
+<td><p>当接收到新的行为动作请求时立即调用该方法。将行为目标传递给处理，并应启动行为初始化/处理。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-odd"><td><p>onCycleUpdate()</p></td>
-<td><p>Method is called at the behavior update rate and should complete any
-necessary updates. An example for spinning is computing the command
-velocity for the current cycle, publishing it and checking for completion.</p></td>
+<td><p>以行为更新速率调用该方法，并应完成任何必要的更新。例如，对于旋转，可以计算当前周期的命令速度，将其发布并检查完成情况。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-even"><td><p>onConfigure()</p></td>
-<td><p>Method is called when behavior server enters on_configure state. Ideally
-this method should implement operations which are neccessary before
-behavior goes to a configured state (get parameters, etc).</p></td>
+<td><p>当行为服务器进入on_configure状态时调用该方法。理想情况下，此方法应该实现在行为进入已配置状态之前必需的操作（获取参数等）。</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>onCleanup()</p></td>
@@ -1031,10 +1024,8 @@ behavior goes to a configured state (get parameters, etc).</p></td>
 </tr>
 </tbody>
 </table>
-<p>For this tutorial, we will be using methods <code class="docutils literal notranslate"><span class="pre">onRun()</span></code>, <code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code>, and <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> to create the SMS behavior.
-<code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> will be skipped for brevity, but only declares parameters.</p>
-<p>In recoveries, <code class="docutils literal notranslate"><span class="pre">onRun()</span></code> method must set any initial state and kick off the behavior.
-For the case of our call for help behavior, we can trivially compute all of our needs in this method.</p>
+<p>对于本教程，我们将使用``onRun()``, <code class="docutils literal notranslate"><span class="pre">onCycleUpdate()``和``onConfigure()``方法来创建短信行为。为了简洁起见，我们将跳过``onConfigure()</span></code>，但仅声明参数。</p>
+<p>在恢复中，<code class="docutils literal notranslate"><span class="pre">onRun()</span></code> 方法必须设置任何初始状态并启动行为。对于我们的求助行为，我们可以在此方法中轻松计算出所有需要的内容。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Status</span><span class="w"> </span><span class="nf">SendSms::onRun</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Action</span><span class="o">::</span><span class="n">Goal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">command</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">response</span><span class="p">;</span>
@@ -1056,49 +1047,41 @@ For the case of our call for help behavior, we can trivially compute all of our 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>We receive an action goal, <code class="docutils literal notranslate"><span class="pre">command</span></code>, which we want to process.
-<code class="docutils literal notranslate"><span class="pre">command</span></code> contains a field <code class="docutils literal notranslate"><span class="pre">message</span></code> that contains the message we want to communicate to our mothership.
-This is the &quot;call for help&quot; message that we want to send via SMS to our brothers in arms in the operations center.</p>
-<p>We use the service Twilio to complete this task.
-Please <a class="reference external" href="https://www.twilio.com/">create an account</a> and get all the relavent information needed for creating the service (e.g. <code class="docutils literal notranslate"><span class="pre">account_sid</span></code>, <code class="docutils literal notranslate"><span class="pre">auth_token</span></code>, and a phone number).
-You can set these values as parameters in your configuration files corresponding to the <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> parameter declarations.</p>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">_twilio</span></code> object to send our message with your account information from the configuration file.
-We send the message and log to screen whether or not the message was sent successfully or not.
-We return a <code class="docutils literal notranslate"><span class="pre">FAILED</span></code> or <code class="docutils literal notranslate"><span class="pre">SUCCEEDED</span></code> depending on this value to be returned to the action client.</p>
-<p><code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code> is trivially simple as a result of our short-running behavior.
-If the behavior was instead longer running like spinning, navigating to a safe area, or getting out of a bad spot and waiting for help, then this function would be checking for timeouts or computing control values.
-For our example, we simply return success because we already completed our mission in <code class="docutils literal notranslate"><span class="pre">onRun()</span></code>.</p>
+<p>我们接收到一个动作目标``command``，我们想要处理它。<code class="docutils literal notranslate"><span class="pre">command``包含一个字段``message</span></code>，其中包含我们想要通过短信发送给作战指挥中心的消息。这是我们希望发送的“求救”短信，以便将其发送给我们的战友。</p>
+<p>我们使用 Twilio 服务完成此任务。请`创建一个账户 &lt;<a class="reference external" href="https://www.twilio.com/">https://www.twilio.com/</a>&gt;`_，并获取创建该服务所需的所有相关信息（例如 <code class="docutils literal notranslate"><span class="pre">account_sid</span></code>、<code class="docutils literal notranslate"><span class="pre">auth_token</span></code> 和一个电话号码）。您可以将这些值作为参数设置到与 <code class="docutils literal notranslate"><span class="pre">onConfigure()</span></code> 参数声明相对应的配置文件中。</p>
+<p>我们使用``_twilio``对象发送带有配置文件中的账户信息的消息。我们发送消息，并在屏幕上记录消息是否成功发送。根据这个值，我们返回``FAILED``或``SUCCEEDED``，以便返回给动作客户端。</p>
+<p><code class="docutils literal notranslate"><span class="pre">onCycleUpdate()</span></code> 对于我们这个短时运行的行为来说非常简单。如果行为需要长时间运行，例如旋转、导航到安全区域或离开危险区域并等待帮助，那么此函数将检查超时或计算控制值。对于我们的示例，我们简单地返回成功，因为我们已经在 <code class="docutils literal notranslate"><span class="pre">onRun()</span></code> 中完成了我们的任务。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Status</span><span class="w"> </span><span class="nf">SendSms::onCycleUpdate</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Status</span><span class="o">::</span><span class="n">SUCCEEDED</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The remaining methods are not used and are not mandatory to override them.</p>
+<p>剩余的方法未被使用，不需要强制重写它们。</p>
 </div>
 <div class="section" id="exporting-the-behavior-plugin">
-<h3>2- Exporting the Behavior Plugin<a class="headerlink" href="#exporting-the-behavior-plugin" title="永久链接至标题"></a></h3>
-<p>Now that we have created our custom behavior, we need to export our Behavior Plugin so that it would be visible to the behavior server. Plugins are loaded at runtime and if they are not visible, then our behavior server won't be able to load it. In ROS 2, exporting and loading plugins is handled by <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code>.</p>
-<p>Coming to our tutorial, class <code class="docutils literal notranslate"><span class="pre">nav2_sms_bahavior::SendSms</span></code> is loaded dynamically as <code class="docutils literal notranslate"><span class="pre">nav2_core::Behavior</span></code> which is our base class.</p>
+<h3>2- 导出行为插件<a class="headerlink" href="#exporting-the-behavior-plugin" title="永久链接至标题"></a></h3>
+<p>现在我们已经创建了自定义行为，我们需要导出我们的行为插件，以便行为服务器能够看到它。插件在运行时加载，如果它们不可见，那么我们的行为服务器将无法加载它。在ROS 2中，导出和加载插件由``pluginlib``处理。</p>
+<p>在我们的教程中，<code class="docutils literal notranslate"><span class="pre">nav2_sms_bahavior::SendSms</span></code> 类以 <code class="docutils literal notranslate"><span class="pre">nav2_core::Behavior</span></code> 动态加载，它是我们的基类。</p>
 <ol class="arabic simple">
-<li><p>To export the behavior, we need to provide two lines</p></li>
+<li><p>要导出该行为，我们需要提供两行代码。</p></li>
 </ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span>
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_sms_bahavior</span><span class="o">::</span><span class="n">SendSms</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">Behavior</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that it requires pluginlib to export out plugin's class. Pluginlib would provide as macro <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code> which does all the work of exporting.</p>
-<p>It is good practice to place these lines at the end of the file but technically, you can also write at the top.</p>
+<p>请注意，它需要 pluginlib 来导出插件的类。Pluginlib 提供了宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>，它完成了所有的导出工作。</p>
+<p>按照惯例，将这些代码放在文件末尾是一个好的做法，但从技术上讲，也可以放在文件顶部。</p>
 <ol class="arabic simple" start="2">
 <li><p>Next step would be to create plugin's description file in the root directory of the package. For example, <code class="docutils literal notranslate"><span class="pre">behavior_plugin.xml</span></code> file in our tutorial package. This file contains following information</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>: Plugin's library name and it's location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>：插件的库名称和位置。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>: Name of the class.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>: Type of class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>: Name of the base class.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Description of the plugin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>：插件的描述。</p></li>
 </ul>
 </div></blockquote>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;nav2_sms_behavior_plugin&quot;</span><span class="nt">&gt;</span>
@@ -1115,7 +1098,7 @@ For our example, we simply return success because we already completed our missi
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Plugin description file should also be added to <code class="docutils literal notranslate"><span class="pre">package.xml</span></code></p></li>
+<li><p>插件描述文件还应添加到``package.xml``中。</p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
 <span class="w">  </span><span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>
