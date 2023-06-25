@@ -755,10 +755,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#planners">规划器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smoothers">平滑器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#behaviors">行为</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#waypoint-task-executors">Waypoint Task Executors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#goal-checkers">Goal Checkers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#progress-checkers">Progress Checkers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#behavior-tree-nodes">Behavior Tree Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#waypoint-task-executors">路径点任务执行器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#goal-checkers">目标检查器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#progress-checkers">进度检查器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#behavior-tree-nodes">行为树节点</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migration Guides</a><ul>
@@ -1197,34 +1197,25 @@ Aleksei Budyakov</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">倒退</a></p></td>
 <td><p>Brian Wilcox</p></td>
-<td><p>Back up behavior of configurable
-distance to back out of a
-situation where the robot is
-stuck</p></td>
+<td><p>可配置距离的备份行为，以解决机器人卡住的情况</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">Wait</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">等待</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Wait behavior with configurable
-time to wait in case of time
-based obstacle like human traffic
-or getting more sensor data</p></td>
+<td><p>可配置等待时间的等待行为，用于处理基于时间的障碍，如人流或获取更多传感器数据</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">Drive On Heading</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">按航向前进</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>Drive on heading behavior with
-configurable distance to drive</p></td>
+<td><p>带有可配置驱动距离的按航向前进行为</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">Assisted Teleop</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">协助遥操作</a></p></td>
 <td><p>Joshua Wallace</p></td>
-<td><p>AssistedTeleop behavior that
-scales teleop commands to
-prevent collisions.</p></td>
+<td><p>辅助遥控行为，通过缩放遥控命令以防止碰撞。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="waypoint-task-executors">
-<h2>Waypoint Task Executors<a class="headerlink" href="#waypoint-task-executors" title="永久链接至标题"></a></h2>
+<h2>路径点任务执行器<a class="headerlink" href="#waypoint-task-executors" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1238,29 +1229,23 @@ prevent collisions.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower/plugins/wait_at_waypoint.cpp">WaitAtWaypoint</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower/plugins/wait_at_waypoint.cpp">在路标处等待</a></p></td>
 <td><p>Fetullah Atas</p></td>
-<td><p>A plugin to execute a wait
-behavior  on
-waypoint arrivals.</p></td>
+<td><p>在路标到达时执行等待行为的插件。</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower/plugins/photo_at_waypoint.cpp">PhotoAtWaypoint</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower/plugins/photo_at_waypoint.cpp">在路径点拍照</a></p></td>
 <td><p>Fetullah Atas</p></td>
-<td><p>A plugin to take and save photos
-to specified directory on
-waypoint arrivals.</p></td>
+<td><p>在路标到达时拍摄并保存照片到指定目录的插件。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower/plugins/input_at_waypoint.cpp">InputAtWaypoint</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>A plugin to wait for user input
-before moving onto the next
-waypoint.</p></td>
+<td><p>在继续下一个路径点之前等待用户输入的插件。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="goal-checkers">
-<h2>Goal Checkers<a class="headerlink" href="#goal-checkers" title="永久链接至标题"></a></h2>
+<h2>目标检查器<a class="headerlink" href="#goal-checkers" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1276,22 +1261,17 @@ waypoint.</p></td>
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_controller/plugins/simple_goal_checker.cpp">SimpleGoalChecker</a></p></td>
 <td><p>David Lu!!</p></td>
-<td><p>A plugin check whether robot
-is within translational distance
-and rotational distance of goal.</p></td>
+<td><p>该插件用于检查机器人是否在目标的平移距离和旋转距离范围内。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_controller/plugins/stopped_goal_checker.cpp">StoppedGoalChecker</a></p></td>
 <td><p>David Lu!!</p></td>
-<td><p>A plugin check whether robot
-is within translational distance
-, rotational distance of goal,
-and velocity threshold.</p></td>
+<td><p>该插件用于检查机器人是否在目标的平移距离、旋转距离和速度阈值范围内。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="progress-checkers">
-<h2>Progress Checkers<a class="headerlink" href="#progress-checkers" title="永久链接至标题"></a></h2>
+<h2>进度检查器<a class="headerlink" href="#progress-checkers" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1307,23 +1287,17 @@ and velocity threshold.</p></td>
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_controller/plugins/simple_progress_checker.cpp">SimpleProgressChecker</a></p></td>
 <td><p>David Lu!!</p></td>
-<td><p>A plugin to check whether the
-robot was able to move a minimum
-distance in a given time to
-make progress towards a goal</p></td>
+<td><p>一个插件，用于检查机器人是否能够在给定时间内移动最小距离，以实现朝目标前进的进度</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_controller/plugins/pose_progress_checker.cpp">PoseProgressChecker</a></p></td>
 <td><p>Guillaume Doisy</p></td>
-<td><p>A plugin to check whether the
-robot was able to move a minimum
-distance or angle in a given time
-to make progress towards a goal</p></td>
+<td><p>该插件用于检查机器人是否能够在给定的时间内以最小的距离或角度移动，以实现向目标前进的进展。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="behavior-tree-nodes">
-<h2>Behavior Tree Nodes<a class="headerlink" href="#behavior-tree-nodes" title="永久链接至标题"></a></h2>
+<h2>行为树节点<a class="headerlink" href="#behavior-tree-nodes" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 41%" />
