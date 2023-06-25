@@ -197,7 +197,7 @@ msgstr "Former Maintainer"
 
 #: ../../about/index.rst:66
 msgid "Carl Delsey"
-msgstr "Carl Delsey"
+msgstr "卡尔·德尔西"
 
 
 #: ../../about/index.rst:66

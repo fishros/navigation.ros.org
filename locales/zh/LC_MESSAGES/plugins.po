@@ -622,12 +622,12 @@ msgstr "行为树节点"
 
 #: ../../plugins/index.rst:322
 msgid "Action Plugin Name"
-msgstr "Action Plugin Name"
+msgstr "动作插件名称"
 
 
 #: ../../plugins/index.rst:324
 msgid "`Back Up Action`_"
-msgstr "`Back Up Action`_"
+msgstr "`备份动作`_"
 
 
 #: ../../plugins/index.rst:324 ../../plugins/index.rst:336 ../../plugins/index.rst:340 ../../plugins/index.rst:342 ../../plugins/index.rst:443 ../../plugins/index.rst:520
@@ -637,7 +637,7 @@ msgstr "Michael Jeronimo"
 
 #: ../../plugins/index.rst:324
 msgid "Calls backup behavior action"
-msgstr "Calls backup behavior action"
+msgstr "调用备份行为动作"
 
 
 #: ../../plugins/index.rst:326
@@ -647,52 +647,52 @@ msgstr "`Drive On Heading Action`_"
 
 #: ../../plugins/index.rst:326
 msgid "Calls drive on heading behavior action"
-msgstr "Calls drive on heading behavior action"
+msgstr "调用沿着指定方向行驶的行为动作"
 
 
 #: ../../plugins/index.rst:328
 msgid "`Assisted Teleop Action`_"
-msgstr "`Assisted Teleop Action`_"
+msgstr "`辅助遥控动作`_"
 
 
 #: ../../plugins/index.rst:328
 msgid "Calls assisted teleop behavior action"
-msgstr "Calls assisted teleop behavior action"
+msgstr "调用辅助遥控行为动作"
 
 
 #: ../../plugins/index.rst:330
 msgid "`Clear Entire Costmap Service`_"
-msgstr "`Clear Entire Costmap Service`_"
+msgstr "`清除整个代价地图服务`_"
 
 
 #: ../../plugins/index.rst:330 ../../plugins/index.rst:346 ../../plugins/index.rst:348 ../../plugins/index.rst:430 ../../plugins/index.rst:440 ../../plugins/index.rst:551 ../../plugins/index.rst:555
 msgid "Carl Delsey"
-msgstr "Carl Delsey"
+msgstr "卡尔·德尔西"
 
 
 #: ../../plugins/index.rst:330
 msgid "Calls clear entire costmap service"
-msgstr "Calls clear entire costmap service"
+msgstr "调用清除整个代价地图服务"
 
 
 #: ../../plugins/index.rst:332
 msgid "`Clear Costmap Except Region Service`_"
-msgstr "`Clear Costmap Except Region Service`_"
+msgstr "`清除代价地图除指定区域之外的服务`_"
 
 
 #: ../../plugins/index.rst:332
 msgid "Calls clear costmap except region service"
-msgstr "Calls clear costmap except region service"
+msgstr "调用清除代价地图除区域服务"
 
 
 #: ../../plugins/index.rst:334
 msgid "`Clear Costmap Around Robot Service`_"
-msgstr "`Clear Costmap Around Robot Service`_"
+msgstr "`清除机器人周围代价地图的服务`_"
 
 
 #: ../../plugins/index.rst:334
 msgid "Calls clear costmap around robot service"
-msgstr "Calls clear costmap around robot service"
+msgstr "调用机器人周围清除代价地图的服务"
 
 
 #: ../../plugins/index.rst:336
@@ -702,7 +702,7 @@ msgstr "`Compute Path to Pose Action`_"
 
 #: ../../plugins/index.rst:336
 msgid "Calls Nav2 planner server"
-msgstr "Calls Nav2 planner server"
+msgstr "调用Nav2规划器服务器"
 
 
 #: ../../plugins/index.rst:338
@@ -722,7 +722,7 @@ msgstr "Calls Nav2 smoother server"
 
 #: ../../plugins/index.rst:340
 msgid "`Follow Path Action`_"
-msgstr "`Follow Path Action`_"
+msgstr "`跟随路径操作`_"
 
 
 #: ../../plugins/index.rst:340
@@ -732,7 +732,7 @@ msgstr "Calls Nav2 controller server"
 
 #: ../../plugins/index.rst:342
 msgid "`Navigate to Pose Action`_"
-msgstr "`Navigate to Pose Action`_"
+msgstr "`导航至姿态操作`_"
 
 
 #: ../../plugins/index.rst:342
@@ -742,7 +742,7 @@ msgstr "BT Node for other BehaviorTree.CPP BTs to call Navigation2 as a subtree 
 
 #: ../../plugins/index.rst:346
 msgid "`Reinitalize Global Localization Service`_"
-msgstr "`Reinitalize Global Localization Service`_"
+msgstr "`重新初始化全局定位服务`_"
 
 
 #: ../../plugins/index.rst:346
@@ -752,7 +752,7 @@ msgstr "Reinitialize AMCL to a new pose"
 
 #: ../../plugins/index.rst:348
 msgid "`Spin Action`_"
-msgstr "`Spin Action`_"
+msgstr "`旋转操作`_"
 
 
 #: ../../plugins/index.rst:348
