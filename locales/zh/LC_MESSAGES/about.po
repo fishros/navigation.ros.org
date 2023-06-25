@@ -387,7 +387,7 @@ msgstr "Rosie"
 
 #: ../../about/robots.rst:19
 msgid "|karl|"
-msgstr "|karl|"
+msgstr "|卡尔|"
 
 
 #: ../../about/robots.rst
@@ -397,7 +397,7 @@ msgstr "Karelics"
 
 #: ../../about/robots.rst:19
 msgid "|birds|"
-msgstr "|birds|"
+msgstr "|鸟类|"
 
 
 #: ../../about/robots.rst
@@ -407,7 +407,7 @@ msgstr "Birds Eye"
 
 #: ../../about/robots.rst:21
 msgid "|pxl|"
-msgstr "|pxl|"
+msgstr "|像素|"
 
 
 #: ../../about/robots.rst
@@ -417,7 +417,7 @@ msgstr "Pixel"
 
 #: ../../about/robots.rst:21
 msgid "|brisa|"
-msgstr "|brisa|"
+msgstr "|布里萨|"
 
 
 #: ../../about/robots.rst
@@ -427,7 +427,7 @@ msgstr "Brisa"
 
 #: ../../about/robots.rst:21
 msgid "|tri|"
-msgstr "|tri|"
+msgstr "|三角形|"
 
 
 #: ../../about/robots.rst
@@ -437,7 +437,7 @@ msgstr "Olympics2020"
 
 #: ../../about/robots.rst:23
 msgid "|wyca|"
-msgstr "|wyca|"
+msgstr "|威卡|"
 
 
 #: ../../about/robots.rst
@@ -447,7 +447,7 @@ msgstr "Wyca Robotics"
 
 #: ../../about/robots.rst:23
 msgid "|elroy|"
-msgstr "|elroy|"
+msgstr "|埃尔罗伊|"
 
 
 #: ../../about/robots.rst
