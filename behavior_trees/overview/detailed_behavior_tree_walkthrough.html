@@ -736,7 +736,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">前提条件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#navigate-to-pose-with-replanning-and-recovery">使用重新规划和恢复导航到姿势</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#navigation-subtree">导航子树</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recovery-subtree">Recovery Subtree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovery-subtree">恢复子树</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../trees/nav_to_pose_recovery.html">Navigate To Pose</a></li>
@@ -1043,7 +1043,7 @@
 </div>
 <div class="section" id="navigation-subtree">
 <h2>导航子树<a class="headerlink" href="#navigation-subtree" title="永久链接至标题"></a></h2>
-<p>Now that we have gone over the control flow between the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree and the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree, let's focus on the Navigation subtree.</p>
+<p>现在我们已经讨论了“导航”子树和“恢复”子树之间的控制流程，让我们专注于导航子树。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1074,9 +1074,7 @@
 <span class="nt">&lt;/PipelineSequence&gt;</span>
 </pre></div>
 </div>
-<p>This subtree has two primary actions <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>.
-If either of these two actions fail, they will attempt to clear the failure contextually.
-The crux of the tree can be represented with only one parent and two children nodes like this:</p>
+<p>这个子树有两个主要的动作“ComputePathToPose”和“FollowPath”。如果其中任何一个动作失败，它们将尝试在上下文中清除失败。树的关键部分可以用一个父节点和两个子节点来表示，就像这样：</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1087,12 +1085,12 @@ The crux of the tree can be represented with only one parent and two children no
 <div class="line"><br /></div>
 </div>
 <p>父“PipelineSequence”节点允许选中“ComputePathToPose”，一旦成功，就选中“FollowPath”。在“FollowPath”子树被选中的同时，“ComputePathToPose”子树也将被选中。这允许在机器人移动时重新计算路径。</p>
-<p>Both the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and the <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> follow the same general structure.</p>
+<p>“ComputePathToPose”和“FollowPath”都遵循相同的一般结构。</p>
 <ul class="simple">
 <li><p>执行动作</p></li>
-<li><p>If the action fails, try to see if we can contextually recover</p></li>
+<li><p>如果动作失败，尝试在上下文中恢复</p></li>
 </ul>
-<p>The below is the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree:</p>
+<p>下面是``ComputePathToPose``子树：</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1102,30 +1100,27 @@ The crux of the tree can be represented with only one parent and two children no
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The parent <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> controls the flow between the action, and the contextual recovery subtree.
-The contextual recoveries for both <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> involve checking if the goal has been updated, and involves clearing the relevant costmap.</p>
-<p>Consider changing the <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> parameter in the parent <code class="docutils literal notranslate"><span class="pre">RecoveryNode</span></code> control node if your application can tolerate more attempts at contextual recoveries before moving on to system-level recoveries.</p>
-<p>The only differences in the BT subtree of <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> are outlined below:</p>
+<p>父节点“RecoveryNode”控制着动作和上下文恢复子树之间的流程。对于“ComputePathToPose”和“FollowPath”的上下文恢复，涉及检查目标是否已更新，并清除相关的代价地图。</p>
+<p>如果您的应用程序可以容忍更多次上下文恢复尝试，然后再进行系统级恢复，请考虑更改父级``RecoveryNode``控制节点中的``number_of_retries``参数。</p>
+<p>“ComputePathToPose”和“FollowPath”的BT子树唯一的区别如下所述：</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>The action node in the subtree:</dt><dd><ul>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree centers around the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> action.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> subtree centers around the <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> action.</p></li>
+<dt>子树中的动作节点：</dt><dd><ul>
+<li><p>“ComputePathToPose”子树围绕“ComputePathToPose”动作展开。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>FollowPath``子树围绕着``FollowPath``动作。</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>The <code class="docutils literal notranslate"><span class="pre">RateController</span></code> that decorates the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">RateController</span></code> decorates the <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree to keep planning at the specified frequency. The default frequency for this BT is 1 hz.
-This is done to prevent the BT from flooding the planning server with too many useless requests at the tree update rate (100Hz). Consider changing this frequency to something higher or lower depending on the application and the computational cost of
-calculating the path. There are other decorators that can be used instead of the <code class="docutils literal notranslate"><span class="pre">RateController</span></code>. Consider using the <code class="docutils literal notranslate"><span class="pre">SpeedController</span></code> or <code class="docutils literal notranslate"><span class="pre">DistanceController</span></code> decorators if appropriate.</p>
+<dt>装饰``ComputePathToPose``子树的``RateController``</dt><dd><p><code class="docutils literal notranslate"><span class="pre">RateController``修饰``ComputePathToPose``子树以保持以指定频率进行规划。此BT的默认频率为1</span> <span class="pre">Hz。这样做是为了防止BT以树更新频率（100Hz）向规划服务器发送过多的无用请求。根据应用程序和计算路径的计算成本，考虑将此频率更改为更高或更低的值。还有其他修饰器可以替代``RateController</span></code>。如果适用，考虑使用``SpeedController``或``DistanceController``修饰器。</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>The costmap that is being cleared within the contextual recovery:</dt><dd><ul>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">ComputePathToPose</span></code> subtree clears the global costmap. The global costmap is the relevant costmap in the context of the planner</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> subtree clears the local costmap. The local costmap is the relevant costmap in the context of the controller</p></li>
+<dt>在上下文恢复过程中被清除的代价地图：</dt><dd><ul>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>ComputePathToPose``子树清除全局代价地图。全局代价地图是规划器上下文中的相关代价地图。</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>FollowPath``子树清除了局部代价地图。在控制器的上下文中，局部代价地图是相关的代价地图。</p></li>
 </ul>
 </dd>
 </dl>
@@ -1133,9 +1128,8 @@ calculating the path. There are other decorators that can be used instead of the
 </ul>
 </div>
 <div class="section" id="recovery-subtree">
-<h2>Recovery Subtree<a class="headerlink" href="#recovery-subtree" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree is the second big &quot;half&quot; of the Nav2 default <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery.xml</span></code> tree.
-In short, this subtree is triggered when the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> and controls the recoveries at the system level (in the case the contextual recoveries in the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree were not sufficient).</p>
+<h2>恢复子树<a class="headerlink" href="#recovery-subtree" title="永久链接至标题"></a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>Recovery``子树是Nav2默认的``navigate_to_pose_w_replanning_and_recovery.xml``树的第二个重要的“半部分”。简而言之，当``Navigation``子树返回``FAILURE``时，将触发此子树，并在系统级别控制恢复过程（在``Navigation``子树的上下文恢复不足的情况下）。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1145,7 +1139,7 @@ In short, this subtree is triggered when the <code class="docutils literal notra
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>And the XML snippet:</p>
+<p>XML代码片段如下：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ReactiveFallback</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RecoveryFallback&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;GoalUpdated/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;RoundRobin</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RecoveryActions&quot;</span><span class="nt">&gt;</span>
@@ -1160,26 +1154,22 @@ In short, this subtree is triggered when the <code class="docutils literal notra
 <span class="nt">&lt;/ReactiveFallback&gt;</span>
 </pre></div>
 </div>
-<p>The top most parent, <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> controls the flow between the rest of the system wide recoveries, and asynchronously checks if a new goal has been received.
-If at any point the goal gets updated, this subtree will halt all children and return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>. This allows for quick reactions to new goals and preempt currently executing recoveries.
-This should look familiar to the contextual recovery portions of the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree. This is a common BT pattern to handle the situation &quot;Unless 'this condition' happens, Do action A&quot;.</p>
-<p>These condition nodes can be extremely powerful and are typically paired with <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code>. It can be easy to imagine wrapping this whole <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery</span></code> tree
-in a <code class="docutils literal notranslate"><span class="pre">ReactiveFallback</span></code> with a <code class="docutils literal notranslate"><span class="pre">isBatteryLow</span></code> condition -- meaning the <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_and_recovery</span></code> tree will execute <em>unless</em> the battery becomes low (and then entire a different subtree for docking to recharge).</p>
-<p>If the goal is never updated, the behavior tree will go on to the <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> node. These are the default four system-level recoveries in the BT are:</p>
+<p>最顶层的父节点``ReactiveFallback``控制系统范围内其他恢复过程的流程，并异步检查是否接收到新目标。如果在任何时候目标被更新，此子树将停止所有子节点并返回``SUCCESS``。这允许快速响应新目标并中止当前正在执行的恢复过程。这应该对``Navigation``子树的上下文恢复部分很熟悉。这是处理“除非发生'此条件'，否则执行操作A”的常见行为树模式。</p>
+<p>这些条件节点非常强大，通常与“ReactiveFallback”配对使用。很容易想象将整个“navigate_to_pose_w_replanning_and_recovery”树包装在带有“isBatteryLow”条件的“ReactiveFallback”中——这意味着“navigate_to_pose_w_replanning_and_recovery”树将执行，<a href="#id1"><span class="problematic" id="id2">**</span></a>除非**电池电量变低（然后执行完全不同的子树以进行充电）。</p>
+<p>如果目标从未更新，行为树将继续执行``RoundRobin``节点。在行为树中，系统级别的默认四个恢复过程是：</p>
 <ul class="simple">
-<li><p>A sequence that clears both costmaps (local, and global)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Spin</span></code> action</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Wait</span></code> action</p></li>
+<li><p>清除两个代价地图（本地和全局）的序列</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>Spin``操作</p></li>
+<li><p>“Wait”动作</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action</p></li>
 </ul>
-<p>Upon <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> of any of the four children of the parent <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code>, the robot will attempt to renavigate in the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree.
-If this renavigation was not successful, the next child of the <code class="docutils literal notranslate"><span class="pre">RoundRobin</span></code> will be ticked.</p>
+<p>在父级“RoundRobin”的四个子节点中的任何一个成功后，机器人将尝试在“Navigation”子树中重新导航。如果此次重新导航不成功，则将启动下一个“RoundRobin”的子节点。</p>
 <p>For example, let's say the robot is stuck and the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>:
 (for the sake of this example, let's assume that the goal is never updated).</p>
 <ol class="arabic simple">
-<li><p>The Costmap clearing sequence in the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree is attempted, and returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>. The robot now moves to <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree again</p></li>
+<li><p>尝试执行“Recovery”子树中的代价地图清除序列，并返回“成功”。机器人现在再次转到“Navigation”子树。</p></li>
 <li><p>Let's assume that clearing both costmaps was not sufficient, and the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> once again. The robot now ticks the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree</p></li>
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree, the <code class="docutils literal notranslate"><span class="pre">Spin</span></code> action will be ticked. If this returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>, then the robot will return to the main <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree <em>BUT</em> let's assume that the <code class="docutils literal notranslate"><span class="pre">Spin</span></code> action returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>. In this case, the tree will <em>remain</em> in the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree</p></li>
+<li><p>在“Recovery”子树中，将执行“Spin”动作。如果此动作返回“成功”，则机器人将返回主要的“Navigation”子树。<a href="#id1"><span class="problematic" id="id2">**</span></a>但是**假设“Spin”动作返回“失败”。在这种情况下，树将**保持**在“Recovery”子树中。</p></li>
 <li><p>Let's say the next action, <code class="docutils literal notranslate"><span class="pre">Wait</span></code> returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>. The robot will then move on to the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree</p></li>
 <li><p>Assume  the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> (clearing the costmaps, attempting a spin, and waiting were <em>still</em> not sufficient to recover the system. The robot will move onto the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree and attempt the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action. Let's say that the robot attempts the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action and was able to successfully complete the action. The <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action node returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> and so now we move on to the Navigation subtree again.</p></li>
 <li><p>In this hypothetical scenario, let's assume that the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action allowed the robot to successfully navigate in the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree, and the robot reaches the goal. In this case, the overall BT will still return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.</p></li>
