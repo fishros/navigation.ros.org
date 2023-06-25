@@ -762,7 +762,7 @@ msgstr "调用旋转行为动作"
 
 #: ../../plugins/index.rst:350
 msgid "`Wait Action`_"
-msgstr "`Wait Action`_"
+msgstr "`等待动作`_"
 
 
 #: ../../plugins/index.rst:350
@@ -772,7 +772,7 @@ msgstr "Calls wait behavior action"
 
 #: ../../plugins/index.rst:352
 msgid "`Truncate Path`_"
-msgstr "`Truncate Path`_"
+msgstr "`截断路径`_"
 
 
 #: ../../plugins/index.rst:352 ../../plugins/index.rst:529
@@ -782,7 +782,7 @@ msgstr "Francisco Martín"
 
 #: ../../plugins/index.rst:352
 msgid "Modifies a path making it shorter"
-msgstr "Modifies a path making it shorter"
+msgstr "修改路径使其更短"
 
 
 #: ../../plugins/index.rst:354
@@ -792,7 +792,7 @@ msgstr "`Truncate Path Local`_"
 
 #: ../../plugins/index.rst:354
 msgid "Extracts a path section around robot"
-msgstr "Extracts a path section around robot"
+msgstr "提取围绕机器人的路径部分"
 
 
 #: ../../plugins/index.rst:356
@@ -812,7 +812,7 @@ msgstr "Selects the global planner based on a topic input, otherwises uses a def
 
 #: ../../plugins/index.rst:360
 msgid "`Controller Selector`_"
-msgstr "`Controller Selector`_"
+msgstr "`控制器选择器`_"
 
 
 #: ../../plugins/index.rst:360
@@ -822,7 +822,7 @@ msgstr "Selects the controller based on a topic input, otherwises uses a default
 
 #: ../../plugins/index.rst:364
 msgid "`Goal Checker Selector`_"
-msgstr "`Goal Checker Selector`_"
+msgstr "`目标检查器选择器`_"
 
 
 #: ../../plugins/index.rst:364
