@@ -482,22 +482,22 @@ msgstr "Brian Wilcox"
 
 #: ../../plugins/index.rst:227
 msgid "Back up behavior of configurable distance to back out of a situation where the robot is stuck"
-msgstr "Back up behavior of configurable distance to back out of a situation where the robot is stuck"
+msgstr "可配置距离的备份行为，以解决机器人卡住的情况"
 
 
 #: ../../plugins/index.rst:232
 msgid "`Wait`_"
-msgstr "`Wait`_"
+msgstr "`等待`_"
 
 
 #: ../../plugins/index.rst:232
 msgid "Wait behavior with configurable time to wait in case of time based obstacle like human traffic or getting more sensor data"
-msgstr "Wait behavior with configurable time to wait in case of time based obstacle like human traffic or getting more sensor data"
+msgstr "可配置等待时间的等待行为，用于处理基于时间的障碍，如人流或获取更多传感器数据"
 
 
 #: ../../plugins/index.rst:237
 msgid "`Drive On Heading`_"
-msgstr "`Drive On Heading`_"
+msgstr "`按航向前进`_"
 
 
 #: ../../plugins/index.rst:237 ../../plugins/index.rst:240 ../../plugins/index.rst:326 ../../plugins/index.rst:328 ../../plugins/index.rst:392 ../../plugins/index.rst:394 ../../plugins/index.rst:436 ../../plugins/index.rst:466 ../../plugins/index.rst:472 ../../plugins/index.rst:477 ../../plugins/index.rst:481 ../../plugins/index.rst:486 ../../plugins/index.rst:491
@@ -507,27 +507,27 @@ msgstr "Joshua Wallace"
 
 #: ../../plugins/index.rst:237
 msgid "Drive on heading behavior with configurable distance to drive"
-msgstr "Drive on heading behavior with configurable distance to drive"
+msgstr "带有可配置驱动距离的按航向前进行为"
 
 
 #: ../../plugins/index.rst:240
 msgid "`Assisted Teleop`_"
-msgstr "`Assisted Teleop`_"
+msgstr "`协助遥操作`_"
 
 
 #: ../../plugins/index.rst:240
 msgid "AssistedTeleop behavior that scales teleop commands to prevent collisions."
-msgstr "AssistedTeleop behavior that scales teleop commands to prevent collisions."
+msgstr "辅助遥控行为，通过缩放遥控命令以防止碰撞。"
 
 
 #: ../../plugins/index.rst:253
 msgid "Waypoint Task Executors"
-msgstr "Waypoint Task Executors"
+msgstr "路径点任务执行器"
 
 
 #: ../../plugins/index.rst:258
 msgid "`WaitAtWaypoint`_"
-msgstr "`WaitAtWaypoint`_"
+msgstr "`在路标处等待`_"
 
 
 #: ../../plugins/index.rst:258 ../../plugins/index.rst:263
@@ -537,17 +537,17 @@ msgstr "Fetullah Atas"
 
 #: ../../plugins/index.rst:258
 msgid "A plugin to execute a wait behavior  on waypoint arrivals."
-msgstr "A plugin to execute a wait behavior  on waypoint arrivals."
+msgstr "在路标到达时执行等待行为的插件。"
 
 
 #: ../../plugins/index.rst:263
 msgid "`PhotoAtWaypoint`_"
-msgstr "`PhotoAtWaypoint`_"
+msgstr "`在路径点拍照`_"
 
 
 #: ../../plugins/index.rst:263
 msgid "A plugin to take and save photos to specified directory on waypoint arrivals."
-msgstr "A plugin to take and save photos to specified directory on waypoint arrivals."
+msgstr "在路标到达时拍摄并保存照片到指定目录的插件。"
 
 
 #: ../../plugins/index.rst:268
@@ -557,12 +557,12 @@ msgstr "`InputAtWaypoint`_"
 
 #: ../../plugins/index.rst:268
 msgid "A plugin to wait for user input before moving onto the next waypoint."
-msgstr "A plugin to wait for user input before moving onto the next waypoint."
+msgstr "在继续下一个路径点之前等待用户输入的插件。"
 
 
 #: ../../plugins/index.rst:278
 msgid "Goal Checkers"
-msgstr "Goal Checkers"
+msgstr "目标检查器"
 
 
 #: ../../plugins/index.rst:283
@@ -572,7 +572,7 @@ msgstr "`SimpleGoalChecker`_"
 
 #: ../../plugins/index.rst:283
 msgid "A plugin check whether robot is within translational distance and rotational distance of goal."
-msgstr "A plugin check whether robot is within translational distance and rotational distance of goal."
+msgstr "该插件用于检查机器人是否在目标的平移距离和旋转距离范围内。"
 
 
 #: ../../plugins/index.rst:288
@@ -582,12 +582,12 @@ msgstr "`StoppedGoalChecker`_"
 
 #: ../../plugins/index.rst:288
 msgid "A plugin check whether robot is within translational distance , rotational distance of goal, and velocity threshold."
-msgstr "A plugin check whether robot is within translational distance , rotational distance of goal, and velocity threshold."
+msgstr "该插件用于检查机器人是否在目标的平移距离、旋转距离和速度阈值范围内。"
 
 
 #: ../../plugins/index.rst:298
 msgid "Progress Checkers"
-msgstr "Progress Checkers"
+msgstr "进度检查器"
 
 
 #: ../../plugins/index.rst:303
@@ -597,7 +597,7 @@ msgstr "`SimpleProgressChecker`_"
 
 #: ../../plugins/index.rst:303
 msgid "A plugin to check whether the robot was able to move a minimum distance in a given time to make progress towards a goal"
-msgstr "A plugin to check whether the robot was able to move a minimum distance in a given time to make progress towards a goal"
+msgstr "一个插件，用于检查机器人是否能够在给定时间内移动最小距离，以实现朝目标前进的进度"
 
 
 #: ../../plugins/index.rst:308
@@ -612,12 +612,12 @@ msgstr "Guillaume Doisy"
 
 #: ../../plugins/index.rst:308
 msgid "A plugin to check whether the robot was able to move a minimum distance or angle in a given time to make progress towards a goal"
-msgstr "A plugin to check whether the robot was able to move a minimum distance or angle in a given time to make progress towards a goal"
+msgstr "该插件用于检查机器人是否能够在给定的时间内以最小的距离或角度移动，以实现向目标前进的进展。"
 
 
 #: ../../plugins/index.rst:319
 msgid "Behavior Tree Nodes"
-msgstr "Behavior Tree Nodes"
+msgstr "行为树节点"
 
 
 #: ../../plugins/index.rst:322
