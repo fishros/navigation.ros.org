@@ -379,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
 </li>
@@ -397,11 +397,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html">Writing a New Behavior Tree Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html">编写新的行为树插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- Creating a new BT Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
@@ -415,8 +415,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#run-behavior-plugin">4- Run Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#run-behavior-plugin">4- 运行行为插件</a></li>
 </ul>
 </li>
 </ul>
@@ -940,7 +940,7 @@
   <div class="section" id="navigation-plugins">
 <span id="plugins"></span><h1>导航插件<a class="headerlink" href="#navigation-plugins" title="永久链接至标题"></a></h1>
 <p>有许多插件接口供用户创建自己的定制应用程序或算法使用。包括 costmap 层、规划器、控制器、行为树和行为插件。下面列出了 ROS 2 Navigation 中已知的所有插件。如果你知道某个插件，或者你创建了一个新的插件，请考虑提交一个包含该信息的拉取请求。</p>
-<p>此文件可在 <code class="docutils literal notranslate"><span class="pre">sphinx_docs/plugins/index.rst</span></code> 下找到并编辑。有关创建自己插件的教程，请参阅：<a class="reference internal" href="../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#writing-new-costmap2d-plugin"><span class="std std-ref">Writing a New Costmap2D Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">Writing a New Behavior Tree Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#writing-new-nav2controller-plugin"><span class="std std-ref">Writing a New Controller Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#writing-new-nav2planner-plugin"><span class="std std-ref">Writing a New Planner Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#writing-new-behavior-plugin"><span class="std std-ref">编写新的行为插件</span></a> 或 <a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#writing-new-nav2navigator-plugin"><span class="std std-ref">Writing a New Navigator Plugin</span></a>。</p>
+<p>此文件可在 <code class="docutils literal notranslate"><span class="pre">sphinx_docs/plugins/index.rst</span></code> 下找到并编辑。有关创建自己插件的教程，请参阅：<a class="reference internal" href="../plugin_tutorials/docs/writing_new_costmap2d_plugin.html#writing-new-costmap2d-plugin"><span class="std std-ref">Writing a New Costmap2D Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2controller_plugin.html#writing-new-nav2controller-plugin"><span class="std std-ref">Writing a New Controller Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_nav2planner_plugin.html#writing-new-nav2planner-plugin"><span class="std std-ref">Writing a New Planner Plugin</span></a>、<a class="reference internal" href="../plugin_tutorials/docs/writing_new_behavior_plugin.html#writing-new-behavior-plugin"><span class="std std-ref">编写新的行为插件</span></a> 或 <a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#writing-new-nav2navigator-plugin"><span class="std std-ref">Writing a New Navigator Plugin</span></a>。</p>
 <div class="section" id="behavior-tree-navigators">
 <h2>行为树导航器<a class="headerlink" href="#behavior-tree-navigators" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">

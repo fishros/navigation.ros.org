@@ -379,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
 </li>
@@ -397,11 +397,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_bt_plugin.html">Writing a New Behavior Tree Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_bt_plugin.html">编写新的行为树插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- Creating a new BT Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
@@ -415,8 +415,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_behavior_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- Run Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- 运行行为插件</a></li>
 </ul>
 </li>
 </ul>
@@ -1095,9 +1095,9 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>: Plugin's library name and its location.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>: Name of the class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>：类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>: Name of the base class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>：基类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>：插件的描述。</p></li>
 </ul>
 </div></blockquote>
@@ -1109,7 +1109,7 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next step would be to export plugin using <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> by using cmake function <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code>. This function installs plugin description file to <code class="docutils literal notranslate"><span class="pre">share</span></code> directory and sets ament indexes to make it discoverable.</p></li>
+<li><p>下一步是使用``CMakeLists.txt``通过使用cmake函数``pluginlib_export_plugin_description_file()``导出插件。此函数将插件描述文件安装到``share``目录，并设置ament索引以便发现它。</p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core global_planner_plugin.xml)
 </pre></div>
@@ -1124,12 +1124,12 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Compile and it should be registered. Next, we'll use this plugin.</p></li>
+<li><p>编译后应该注册该插件。接下来，我们将使用这个插件。</p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-params-file">
-<h3>3- Pass the plugin name through params file<a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
-<p>To enable the plugin, we need to modify the <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> file as below to replace following params</p>
+<h3>3- 通过参数文件传递插件名称<a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
+<p>要启用该插件，我们需要修改``nav2_params.yaml``文件，如下所示，以替换以下参数</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>For Galactic or later, <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> and <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> have been replaced with a single <code class="docutils literal notranslate"><span class="pre">plugins</span></code> string vector for plugin names. The types are now defined in the <code class="docutils literal notranslate"><span class="pre">plugin_name</span></code> namespace in the <code class="docutils literal notranslate"><span class="pre">plugin:</span></code> field (e.g. <code class="docutils literal notranslate"><span class="pre">plugin:</span> <span class="pre">MyPlugin::Plugin</span></code>). Inline comments in the code blocks will help guide you through this.</p>

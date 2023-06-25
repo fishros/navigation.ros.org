@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Writing a New Behavior Tree Plugin" href="writing_new_bt_plugin.html" />
+    <link rel="next" title="编写新的行为树插件" href="writing_new_bt_plugin.html" />
     <link rel="prev" title="Writing a New Planner Plugin" href="writing_new_nav2planner_plugin.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -379,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
 </li>
@@ -397,11 +397,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_bt_plugin.html">Writing a New Behavior Tree Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_bt_plugin.html">编写新的行为树插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- Creating a new BT Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
@@ -415,8 +415,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_behavior_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- Run Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- 运行行为插件</a></li>
 </ul>
 </li>
 </ul>
@@ -1154,9 +1154,9 @@ plugins is handled by <code class="docutils literal notranslate"><span class="pr
 </ol>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>: Plugin's library name and its location.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>: Name of the class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>：类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>: Name of the base class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>：基类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>：插件的描述。</p></li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;library</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;nav2_pure_pursuit_controller&quot;</span><span class="nt">&gt;</span>

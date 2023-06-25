@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Writing a New Navigator Plugin" href="writing_new_navigator_plugin.html" />
-    <link rel="prev" title="Writing a New Behavior Tree Plugin" href="writing_new_bt_plugin.html" />
+    <link rel="prev" title="编写新的行为树插件" href="writing_new_bt_plugin.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -379,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
 </li>
@@ -397,11 +397,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_bt_plugin.html">Writing a New Behavior Tree Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_bt_plugin.html">编写新的行为树插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_bt_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- Creating a new BT Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_bt_plugin.html#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
@@ -415,8 +415,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-behavior-plugin">4- Run Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-behavior-plugin">4- 运行行为插件</a></li>
 </ul>
 </li>
 </ul>
@@ -1073,14 +1073,14 @@
 <p>请注意，它需要 pluginlib 来导出插件的类。Pluginlib 提供了宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>，它完成了所有的导出工作。</p>
 <p>按照惯例，将这些代码放在文件末尾是一个好的做法，但从技术上讲，也可以放在文件顶部。</p>
 <ol class="arabic simple" start="2">
-<li><p>Next step would be to create plugin's description file in the root directory of the package. For example, <code class="docutils literal notranslate"><span class="pre">behavior_plugin.xml</span></code> file in our tutorial package. This file contains following information</p></li>
+<li><p>下一步是在软件包的根目录中创建插件描述文件。例如，在我们的教程软件包中，我们可以创建一个名为``behavior_plugin.xml``的文件。该文件包含以下信息</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>：插件的库名称和位置。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>: Name of the class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>：类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>: Name of the base class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>：基类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>：插件的描述。</p></li>
 </ul>
 </div></blockquote>
@@ -1092,7 +1092,7 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next step would be to export plugin using <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> by using cmake function <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code>. This function installs plugin description file to <code class="docutils literal notranslate"><span class="pre">share</span></code> directory and sets ament indexes to make it discoverable.</p></li>
+<li><p>下一步是使用``CMakeLists.txt``通过使用cmake函数``pluginlib_export_plugin_description_file()``导出插件。此函数将插件描述文件安装到``share``目录，并设置ament索引以便发现它。</p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core behavior_plugin.xml)
 </pre></div>
@@ -1107,12 +1107,12 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Compile and it should be registered. Next, we'll use this plugin.</p></li>
+<li><p>编译后应该注册该插件。接下来，我们将使用这个插件。</p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-params-file">
-<h3>3- Pass the plugin name through params file<a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
-<p>To enable the plugin, we need to modify the <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> file as below to replace following params</p>
+<h3>3- 通过参数文件传递插件名称<a class="headerlink" href="#pass-the-plugin-name-through-params-file" title="永久链接至标题"></a></h3>
+<p>要启用该插件，我们需要修改``nav2_params.yaml``文件，如下所示，以替换以下参数</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">behavior_server</span><span class="p">:</span><span class="w">  </span><span class="c1"># Humble and later</span>
 <span class="nt">recoveries_server</span><span class="p">:</span><span class="w">  </span><span class="c1"># Galactic and earlier</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1170,16 +1170,15 @@
 <span class="w">    </span><span class="nt">rotational_acc_lim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.2</span>
 </pre></div>
 </div>
-<p>In the above snippet, you can observe that we add the SMS behavior under the <code class="docutils literal notranslate"><span class="pre">send_sms</span></code> ROS 2 action server name.
-We also tell the behavior server that the <code class="docutils literal notranslate"><span class="pre">send_sms</span></code> is of type <code class="docutils literal notranslate"><span class="pre">SendSms</span></code> and give it our parameters for your Twilio account.</p>
+<p>在上面的片段中，您可以观察到我们在``send_sms``的ROS 2动作服务器名称下添加了SMS行为。我们还告诉行为服务器``send_sms``的类型是``SendSms``，并为您的Twilio帐户提供了参数。</p>
 </div>
 <div class="section" id="run-behavior-plugin">
-<h3>4- Run Behavior Plugin<a class="headerlink" href="#run-behavior-plugin" title="永久链接至标题"></a></h3>
-<p>Run Turtlebot3 simulation with enabled Nav2. Detailed instruction how to make it are written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Below is shortcut command for that:</p>
+<h3>4- 运行行为插件<a class="headerlink" href="#run-behavior-plugin" title="永久链接至标题"></a></h3>
+<p>使用启用了Nav2的Turtlebot3模拟。如何进行此操作的详细说明请参见:ref:<cite>getting_started</cite>。下面是该操作的快捷命令：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>
-<p>In a new terminal run:</p>
+<p>在新终端中运行：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>action<span class="w"> </span>send_goal<span class="w"> </span><span class="s2">&quot;send_sms&quot;</span><span class="w"> </span>nav2_sms_behavior/action/SendSms<span class="w"> </span><span class="s2">&quot;{message : Hello!! Navigation2 World }&quot;</span>
 </pre></div>
 </div>

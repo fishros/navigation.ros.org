@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing a New Behavior Tree Plugin &mdash; Navigation 2 1.0.0 文档</title>
+  <title>编写新的行为树插件 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -379,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
 </ul>
 </li>
@@ -397,11 +397,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Writing a New Behavior Tree Plugin</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编写新的行为树插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-bt-plugin">1- Creating a new BT Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-bt-plugin">1- 创建一个新的BT插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- Exporting the planner plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#add-plugin-library-name-to-config">3- Add plugin library name to config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-your-custom-plugin">4- Run Your Custom plugin</a></li>
@@ -415,8 +415,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_behavior_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#creating-a-new-behavior-plugin">1- 创建一个新的行为插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#exporting-the-behavior-plugin">2- 导出行为插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- Pass the plugin name through params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- Run Behavior Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_behavior_plugin.html#run-behavior-plugin">4- 运行行为插件</a></li>
 </ul>
 </li>
 </ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Plugin Tutorials</a> &raquo;</li>
-      <li>Writing a New Behavior Tree Plugin</li>
+      <li>编写新的行为树插件</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="writing-a-new-behavior-tree-plugin">
-<span id="writing-new-nbt-plugin"></span><h1>Writing a New Behavior Tree Plugin<a class="headerlink" href="#writing-a-new-behavior-tree-plugin" title="永久链接至标题"></a></h1>
+<span id="writing-new-nbt-plugin"></span><h1>编写新的行为树插件<a class="headerlink" href="#writing-a-new-behavior-tree-plugin" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -947,8 +947,7 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial shows how to create your own behavior tree (BT) plugin.
-The BT plugins are used as nodes in the behavior tree XML processed by the BT Navigator for navigation logic.</p>
+<p>本教程展示如何创建自己的行为树（BT）插件。BT插件用作行为树XML中由BT Navigator处理的导航逻辑中的节点。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
@@ -962,18 +961,11 @@ The BT plugins are used as nodes in the behavior tree XML processed by the BT Na
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="creating-a-new-bt-plugin">
-<h3>1- Creating a new BT Plugin<a class="headerlink" href="#creating-a-new-bt-plugin" title="永久链接至标题"></a></h3>
-<p>We will create a simple BT plugin node to perform an action on another server.
-For this example, we're going to analyze the simplest behavior tree action node in the <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> package, the <code class="docutils literal notranslate"><span class="pre">wait</span></code> node.
-Beyond this example of an action BT node, you can also create custom decorator, condition, and control nodes.
-Each node type has a unique role in the behavior tree to perform actions like planning, control the flow of the BT, check the status of a condition, or modify the output of other BT nodes.</p>
-<p>The code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree">nav2_behavior_tree</a> package as the <code class="docutils literal notranslate"><span class="pre">wait_action</span></code> node.
-This action node can be considered as a reference for writing other action node plugins.</p>
-<p>Our example plugin inherits from the base class <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree::BtActionNode</span></code>.
-The base class is a wrapper on the BehaviorTree.CPP <code class="docutils literal notranslate"><span class="pre">BT::ActionNodeBase</span></code> that simplifies BT action nodes that utilize ROS 2 action clients.
-An <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> is both a BT action and uses ROS 2 action network interfaces for calling a remote server to do some work.</p>
-<p>When working with other types of BT nodes (e.g. decorator, control, condition) use the corresponding BT node, <code class="docutils literal notranslate"><span class="pre">BT::DecoratorNode</span></code>, <code class="docutils literal notranslate"><span class="pre">BT::ControlNode</span></code>, or <code class="docutils literal notranslate"><span class="pre">BT::ConditionNode</span></code>.
-For BT action nodes that do <em>not</em> utilize ROS 2 action interfaces, use the <code class="docutils literal notranslate"><span class="pre">BT::ActionNodeBase</span></code> base class itself.</p>
+<h3>1- 创建一个新的BT插件<a class="headerlink" href="#creating-a-new-bt-plugin" title="永久链接至标题"></a></h3>
+<p>我们将创建一个简单的BT插件节点，用于在另一个服务器上执行操作。在这个示例中，我们将分析``nav2_behavior_tree``软件包中最简单的行为树动作节点，即``wait``节点。除了动作BT节点的示例之外，您还可以创建自定义的装饰器、条件和控制节点。每种节点类型在行为树中扮演着独特的角色，用于执行诸如规划、控制BT的流程、检查条件的状态或修改其他BT节点的输出等操作。</p>
+<p>本教程中的代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree">nav2_behavior_tree</a> 包中找到，作为``wait_action``节点。该动作节点可以作为编写其他动作节点插件的参考。</p>
+<p>我们的示例插件继承自基类``nav2_behavior_tree::BtActionNode``。该基类是BehaviorTree.CPP中``BT::ActionNodeBase``的包装器，简化了使用ROS 2动作客户端的BT动作节点。<a href="#id1"><span class="problematic" id="id2">``</span></a>BTActionNode``既是BT动作，又使用ROS 2动作网络接口调用远程服务器进行一些工作。</p>
+<p>当使用其他类型的BT节点（例如装饰器、控制器、条件节点）时，请使用相应的BT节点，<code class="docutils literal notranslate"><span class="pre">BT::DecoratorNode</span></code>、<code class="docutils literal notranslate"><span class="pre">BT::ControlNode``或``BT::ConditionNode</span></code>。对于不使用ROS 2动作接口的BT动作节点，请直接使用``BT::ActionNodeBase``基类。</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> class provides 5 virtual methods to use, in addition to the information provided in the constructor.
 Let's learn more about the methods needed to write a BT action plugin.</p>
 <table class="docutils align-default">
@@ -983,11 +975,11 @@ Let's learn more about the methods needed to write a BT action plugin.</p>
 <col style="width: 20%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>method</strong></p></td>
+<tr class="row-odd"><td><p><strong>方法</strong></p></td>
 <td><p><strong>方法描述</strong></p></td>
 <td><p><strong>Required?</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>Constructor</p></td>
+<tr class="row-even"><td><p>构造函数</p></td>
 <td><p>Constructor to indicate the corresponding XML tag name to that matches
 the plugin, the name of the action server to call using the plugin,
 and any BehaviorTree.CPP special configurations required.</p></td>
