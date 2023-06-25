@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nav2 Behavior Trees &mdash; Navigation 2 1.0.0 文档</title>
+  <title>Nav2行为树 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -721,7 +721,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tuning/index.html#other-pages-we-d-love-to-offer">Other Pages We'd Love To Offer</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Nav2 Behavior Trees</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nav2行为树</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview/nav2_specific_nodes.html">Introduction To Nav2 Specific Nodes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="overview/nav2_specific_nodes.html#action-nodes">Action Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview/nav2_specific_nodes.html#condition-nodes">Condition Nodes</a></li>
@@ -928,7 +928,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Nav2 Behavior Trees</li>
+      <li>Nav2行为树</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -938,7 +938,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="nav2-behavior-trees">
-<span id="behavior-trees"></span><h1>Nav2 Behavior Trees<a class="headerlink" href="#nav2-behavior-trees" title="永久链接至标题"></a></h1>
+<span id="behavior-trees"></span><h1>Nav2行为树<a class="headerlink" href="#nav2-behavior-trees" title="永久链接至标题"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview/nav2_specific_nodes.html">Introduction To Nav2 Specific Nodes</a></li>
@@ -956,7 +956,7 @@ This section highlights some of the example behavior tree xml files provided by 
 It should be noted that these can be modified for your specific application, or used as a guide to building your own application-specific behavior tree.
 These are some exemplary examples of how you can reconfigure your navigation behavior significantly by using behavior trees.
 Other behavior trees are provided by Nav2 in the <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> package, but this section highlights the important ones.</p>
-<p>A <strong>very</strong> basic, but functional, navigator can be seen below.</p>
+<p>下面是一个**非常**基本但功能完备的导航器示例。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>

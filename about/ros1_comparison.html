@@ -721,7 +721,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tuning/index.html#other-pages-we-d-love-to-offer">Other Pages We'd Love To Offer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../behavior_trees/index.html">Nav2 Behavior Trees</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../behavior_trees/index.html">Nav2行为树</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../behavior_trees/overview/nav2_specific_nodes.html">Introduction To Nav2 Specific Nodes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../behavior_trees/overview/nav2_specific_nodes.html#action-nodes">Action Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../behavior_trees/overview/nav2_specific_nodes.html#condition-nodes">Condition Nodes</a></li>
@@ -940,42 +940,35 @@
              
   <div class="section" id="ros-to-ros-2-navigation">
 <span id="ros1-comparison"></span><h1>ROS 到 ROS 2 导航<a class="headerlink" href="#ros-to-ros-2-navigation" title="永久链接至标题"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">move_base</span></code> has been split into multiple components.
-Rather than a single monolithic state machine, navigation 2 makes use of action servers and ROS 2's
-low-latency, reliable communication to separate ideas. A behavior tree is used to orchestrate these tasks.
-This allows Navigation2 to have highly configurable navigation behavior without programming by rearranging tasks
-in a behavior tree xml file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">move_base</span></code> 已经拆分为多个组件。与单个的完整状态机不同，导航2利用动作服务器和ROS 2的低延迟、可靠通信来分离概念。行为树用于编排这些任务。这使得Navigation2能够通过在行为树XML文件中重新排列任务来具有高度可配置的导航行为，而无需进行编程。</p>
 <p>在顶层，<em>nav2_bt_navigator</em> 替代了 <code class="docutils literal notranslate"><span class="pre">move_base</span></code>，使用基于树的动作模型完成导航任务的 <em>Action</em> 接口。它使用 <em>行为树</em> 来实现更复杂的状态机，并通过添加其他 <em>Action 服务器</em> 来添加行为。这些行为树是可配置的 XML，我们提供了一些起始示例。</p>
-<p>The planning, behaviors, smoother, and controller servers are also action servers that the BT navigator can call to compute.
-All 4 servers can host many plugins of many algorithms each and individually called from the navigation behavior tree for specific behaviors.
-These servers are called from the BT navigator through their action servers to compute a result or complete a task.
-The state is maintained by the BT navigator behavior tree.</p>
+<p>规划、行为、平滑器和控制器服务器也是动作服务器，BT导航器可以调用它们进行计算。这4个服务器都可以承载多个算法的插件，并可以通过导航行为树对特定行为进行单独调用。BT导航器通过它们的动作服务器调用这些服务器以计算结果或完成任务。状态由BT导航器行为树维护。</p>
 <p>所有这些改变使得在启动/运行时能够用实现相同接口的任何其他算法替换这些节点。有关更多详细信息，请参阅每个软件包的 README.md。</p>
-<a class="reference internal image-reference" href="../_images/move_base_compare_2.png"><img alt="Move Base -&gt; Navigation2 Overview" class="align-center" src="../_images/move_base_compare_2.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/move_base_compare_2.png"><img alt="Move Base -&gt; Navigation2 概述" class="align-center" src="../_images/move_base_compare_2.png" style="width: 700px;" /></a>
 <p>注意：<code class="docutils literal notranslate"><span class="pre">nav2_simple_navigator</span></code> 不再存在，已被 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 替代。</p>
-<p><strong>In Summary:</strong></p>
-<p>Ported packages:</p>
+<p><strong>总结:</strong></p>
+<p>迁移的软件包：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>amcl: Ported to nav2_amcl</p></li>
-<li><p>map_server: Ported to nav2_map_server</p></li>
-<li><p>nav2_planner: Replaces global_planner, hosts <code class="docutils literal notranslate"><span class="pre">N</span></code> planner plugins</p></li>
-<li><p>nav2_controller: Replaces local_planner, hosts <code class="docutils literal notranslate"><span class="pre">N</span></code> controller plugins</p></li>
-<li><p>Navfn: Ported to nav2_navfn_planner</p></li>
-<li><p>DWB: Replaces DWA and ported to ROS 2 under nav2_dwb_controller metapackage</p></li>
-<li><p>nav_core: Ported as nav2_core with updates to interfaces</p></li>
-<li><p>costmap_2d: Ported as nav2_costmap_2d</p></li>
+<li><p>amcl: 迁移到 nav2_amcl</p></li>
+<li><p>map_server: 迁移到 nav2_map_server</p></li>
+<li><p>nav2_planner: 取代 global_planner，承载 <code class="docutils literal notranslate"><span class="pre">N</span></code> 个规划器插件</p></li>
+<li><p>nav2_controller: 替代 local_planner，托管“N”个控制器插件</p></li>
+<li><p>Navfn: 迁移到 nav2_navfn_planner</p></li>
+<li><p>DWB: 替代 DWA，并在 nav2_dwb_controller metapackage 下迁移到 ROS 2</p></li>
+<li><p>nav_core：已作为nav2_core进行移植，并更新了接口</p></li>
+<li><p>costmap_2d: 迁移到 nav2_costmap_2d</p></li>
 </ul>
 </div></blockquote>
-<p>New packages:</p>
+<p>新的软件包：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>nav2_bt_navigator: replaces <code class="docutils literal notranslate"><span class="pre">move_base</span></code> state machine</p></li>
-<li><p>nav2_lifecycle_manager: Handles the server program lifecycles</p></li>
-<li><p>nav2_waypoint_follower: Can take in many waypoints to execute a complex task through</p></li>
-<li><p>nav2_system_tests: A set of integration tests for CI and basic tutorials in simulation</p></li>
+<li><p>nav2_bt_navigator: 替代“move_base”状态机</p></li>
+<li><p>nav2_lifecycle_manager：处理服务器程序的生命周期</p></li>
+<li><p>nav2_waypoint_follower: 可以接收多个路径点以执行复杂任务</p></li>
+<li><p>nav2_system_tests：一组用于CI的集成测试和基本仿真教程</p></li>
 <li><p>nav2_rviz_plugins: An rviz plugin to control the Navigation2 servers, command, cancel, and navigation with</p></li>
-<li><p>navigation2_behavior_trees: wrappers for the behavior tree library to call ROS action servers</p></li>
+<li><p>navigation2_behavior_trees：用于调用ROS动作服务器的行为树库的包装器</p></li>
 </ul>
 </div></blockquote>
 <p>among many others.</p>
