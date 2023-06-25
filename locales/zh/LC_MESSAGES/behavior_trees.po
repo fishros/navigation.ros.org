@@ -222,7 +222,7 @@ msgstr "导航子树"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:124
 msgid "Now that we have gone over the control flow between the ``Navigation`` subtree and the ``Recovery`` subtree, let's focus on the Navigation subtree."
-msgstr "Now that we have gone over the control flow between the ``Navigation`` subtree and the ``Recovery`` subtree, let's focus on the Navigation subtree."
+msgstr "现在我们已经讨论了“导航”子树和“恢复”子树之间的控制流程，让我们专注于导航子树。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:133
@@ -232,7 +232,7 @@ msgstr "此子树的XML如下所示："
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:156
 msgid "This subtree has two primary actions ``ComputePathToPose`` and ``FollowPath``. If either of these two actions fail, they will attempt to clear the failure contextually. The crux of the tree can be represented with only one parent and two children nodes like this:"
-msgstr "This subtree has two primary actions ``ComputePathToPose`` and ``FollowPath``. If either of these two actions fail, they will attempt to clear the failure contextually. The crux of the tree can be represented with only one parent and two children nodes like this:"
+msgstr "这个子树有两个主要的动作“ComputePathToPose”和“FollowPath”。如果其中任何一个动作失败，它们将尝试在上下文中清除失败。树的关键部分可以用一个父节点和两个子节点来表示，就像这样："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:167
@@ -242,7 +242,7 @@ msgstr "父“PipelineSequence”节点允许选中“ComputePathToPose”，一
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:170
 msgid "Both the ``ComputePathToPose`` and the ``FollowPath`` follow the same general structure."
-msgstr "Both the ``ComputePathToPose`` and the ``FollowPath`` follow the same general structure."
+msgstr "“ComputePathToPose”和“FollowPath”都遵循相同的一般结构。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:172
@@ -252,112 +252,112 @@ msgstr "执行动作"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:174
 msgid "If the action fails, try to see if we can contextually recover"
-msgstr "If the action fails, try to see if we can contextually recover"
+msgstr "如果动作失败，尝试在上下文中恢复"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:176
 msgid "The below is the ``ComputePathToPose`` subtree:"
-msgstr "The below is the ``ComputePathToPose`` subtree:"
+msgstr "下面是``ComputePathToPose``子树："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:185
 msgid "The parent ``RecoveryNode`` controls the flow between the action, and the contextual recovery subtree. The contextual recoveries for both ``ComputePathToPose`` and ``FollowPath`` involve checking if the goal has been updated, and involves clearing the relevant costmap."
-msgstr "The parent ``RecoveryNode`` controls the flow between the action, and the contextual recovery subtree. The contextual recoveries for both ``ComputePathToPose`` and ``FollowPath`` involve checking if the goal has been updated, and involves clearing the relevant costmap."
+msgstr "父节点“RecoveryNode”控制着动作和上下文恢复子树之间的流程。对于“ComputePathToPose”和“FollowPath”的上下文恢复，涉及检查目标是否已更新，并清除相关的代价地图。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:188
 msgid "Consider changing the ``number_of_retries`` parameter in the parent ``RecoveryNode`` control node if your application can tolerate more attempts at contextual recoveries before moving on to system-level recoveries."
-msgstr "Consider changing the ``number_of_retries`` parameter in the parent ``RecoveryNode`` control node if your application can tolerate more attempts at contextual recoveries before moving on to system-level recoveries."
+msgstr "如果您的应用程序可以容忍更多次上下文恢复尝试，然后再进行系统级恢复，请考虑更改父级``RecoveryNode``控制节点中的``number_of_retries``参数。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:190
 msgid "The only differences in the BT subtree of ``ComputePathToPose`` and ``FollowPath`` are outlined below:"
-msgstr "The only differences in the BT subtree of ``ComputePathToPose`` and ``FollowPath`` are outlined below:"
+msgstr "“ComputePathToPose”和“FollowPath”的BT子树唯一的区别如下所述："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:194
 msgid "The action node in the subtree:"
-msgstr "The action node in the subtree:"
+msgstr "子树中的动作节点："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:193
 msgid "The ``ComputePathToPose`` subtree centers around the ``ComputePathToPose`` action."
-msgstr "The ``ComputePathToPose`` subtree centers around the ``ComputePathToPose`` action."
+msgstr "“ComputePathToPose”子树围绕“ComputePathToPose”动作展开。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:194
 msgid "The ``FollowPath`` subtree centers around the ``FollowPath`` action."
-msgstr "The ``FollowPath`` subtree centers around the ``FollowPath`` action."
+msgstr "``FollowPath``子树围绕着``FollowPath``动作。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:199
 msgid "The ``RateController`` that decorates the ``ComputePathToPose`` subtree"
-msgstr "The ``RateController`` that decorates the ``ComputePathToPose`` subtree"
+msgstr "装饰``ComputePathToPose``子树的``RateController``"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:197
 msgid "The ``RateController`` decorates the ``ComputePathToPose`` subtree to keep planning at the specified frequency. The default frequency for this BT is 1 hz. This is done to prevent the BT from flooding the planning server with too many useless requests at the tree update rate (100Hz). Consider changing this frequency to something higher or lower depending on the application and the computational cost of calculating the path. There are other decorators that can be used instead of the ``RateController``. Consider using the ``SpeedController`` or ``DistanceController`` decorators if appropriate."
-msgstr "The ``RateController`` decorates the ``ComputePathToPose`` subtree to keep planning at the specified frequency. The default frequency for this BT is 1 hz. This is done to prevent the BT from flooding the planning server with too many useless requests at the tree update rate (100Hz). Consider changing this frequency to something higher or lower depending on the application and the computational cost of calculating the path. There are other decorators that can be used instead of the ``RateController``. Consider using the ``SpeedController`` or ``DistanceController`` decorators if appropriate."
+msgstr "``RateController``修饰``ComputePathToPose``子树以保持以指定频率进行规划。此BT的默认频率为1 Hz。这样做是为了防止BT以树更新频率（100Hz）向规划服务器发送过多的无用请求。根据应用程序和计算路径的计算成本，考虑将此频率更改为更高或更低的值。还有其他修饰器可以替代``RateController``。如果适用，考虑使用``SpeedController``或``DistanceController``修饰器。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:203
 msgid "The costmap that is being cleared within the contextual recovery:"
-msgstr "The costmap that is being cleared within the contextual recovery:"
+msgstr "在上下文恢复过程中被清除的代价地图："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:202
 msgid "The ``ComputePathToPose`` subtree clears the global costmap. The global costmap is the relevant costmap in the context of the planner"
-msgstr "The ``ComputePathToPose`` subtree clears the global costmap. The global costmap is the relevant costmap in the context of the planner"
+msgstr "``ComputePathToPose``子树清除全局代价地图。全局代价地图是规划器上下文中的相关代价地图。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:203
 msgid "The ``FollowPath`` subtree clears the local costmap. The local costmap is the relevant costmap in the context of the controller"
-msgstr "The ``FollowPath`` subtree clears the local costmap. The local costmap is the relevant costmap in the context of the controller"
+msgstr "``FollowPath``子树清除了局部代价地图。在控制器的上下文中，局部代价地图是相关的代价地图。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:206
 msgid "Recovery Subtree"
-msgstr "Recovery Subtree"
+msgstr "恢复子树"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:208
 msgid "The ``Recovery`` subtree is the second big \"half\" of the Nav2 default ``navigate_to_pose_w_replanning_and_recovery.xml`` tree. In short, this subtree is triggered when the ``Navigation`` subtree returns ``FAILURE`` and controls the recoveries at the system level (in the case the contextual recoveries in the ``Navigation`` subtree were not sufficient)."
-msgstr "The ``Recovery`` subtree is the second big \"half\" of the Nav2 default ``navigate_to_pose_w_replanning_and_recovery.xml`` tree. In short, this subtree is triggered when the ``Navigation`` subtree returns ``FAILURE`` and controls the recoveries at the system level (in the case the contextual recoveries in the ``Navigation`` subtree were not sufficient)."
+msgstr "``Recovery``子树是Nav2默认的``navigate_to_pose_w_replanning_and_recovery.xml``树的第二个重要的“半部分”。简而言之，当``Navigation``子树返回``FAILURE``时，将触发此子树，并在系统级别控制恢复过程（在``Navigation``子树的上下文恢复不足的情况下）。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:218
 msgid "And the XML snippet:"
-msgstr "And the XML snippet:"
+msgstr "XML代码片段如下："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:235
 msgid "The top most parent, ``ReactiveFallback`` controls the flow between the rest of the system wide recoveries, and asynchronously checks if a new goal has been received. If at any point the goal gets updated, this subtree will halt all children and return ``SUCCESS``. This allows for quick reactions to new goals and preempt currently executing recoveries. This should look familiar to the contextual recovery portions of the ``Navigation`` subtree. This is a common BT pattern to handle the situation \"Unless 'this condition' happens, Do action A\"."
-msgstr "The top most parent, ``ReactiveFallback`` controls the flow between the rest of the system wide recoveries, and asynchronously checks if a new goal has been received. If at any point the goal gets updated, this subtree will halt all children and return ``SUCCESS``. This allows for quick reactions to new goals and preempt currently executing recoveries. This should look familiar to the contextual recovery portions of the ``Navigation`` subtree. This is a common BT pattern to handle the situation \"Unless 'this condition' happens, Do action A\"."
+msgstr "最顶层的父节点``ReactiveFallback``控制系统范围内其他恢复过程的流程，并异步检查是否接收到新目标。如果在任何时候目标被更新，此子树将停止所有子节点并返回``SUCCESS``。这允许快速响应新目标并中止当前正在执行的恢复过程。这应该对``Navigation``子树的上下文恢复部分很熟悉。这是处理“除非发生'此条件'，否则执行操作A”的常见行为树模式。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:239
 msgid "These condition nodes can be extremely powerful and are typically paired with ``ReactiveFallback``. It can be easy to imagine wrapping this whole ``navigate_to_pose_w_replanning_and_recovery`` tree in a ``ReactiveFallback`` with a ``isBatteryLow`` condition -- meaning the ``navigate_to_pose_w_replanning_and_recovery`` tree will execute *unless* the battery becomes low (and then entire a different subtree for docking to recharge)."
-msgstr "These condition nodes can be extremely powerful and are typically paired with ``ReactiveFallback``. It can be easy to imagine wrapping this whole ``navigate_to_pose_w_replanning_and_recovery`` tree in a ``ReactiveFallback`` with a ``isBatteryLow`` condition -- meaning the ``navigate_to_pose_w_replanning_and_recovery`` tree will execute *unless* the battery becomes low (and then entire a different subtree for docking to recharge)."
+msgstr "这些条件节点非常强大，通常与“ReactiveFallback”配对使用。很容易想象将整个“navigate_to_pose_w_replanning_and_recovery”树包装在带有“isBatteryLow”条件的“ReactiveFallback”中——这意味着“navigate_to_pose_w_replanning_and_recovery”树将执行，**除非**电池电量变低（然后执行完全不同的子树以进行充电）。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:242
 msgid "If the goal is never updated, the behavior tree will go on to the ``RoundRobin`` node. These are the default four system-level recoveries in the BT are:"
-msgstr "If the goal is never updated, the behavior tree will go on to the ``RoundRobin`` node. These are the default four system-level recoveries in the BT are:"
+msgstr "如果目标从未更新，行为树将继续执行``RoundRobin``节点。在行为树中，系统级别的默认四个恢复过程是："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:244
 msgid "A sequence that clears both costmaps (local, and global)"
-msgstr "A sequence that clears both costmaps (local, and global)"
+msgstr "清除两个代价地图（本地和全局）的序列"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:246
 msgid "``Spin`` action"
-msgstr "``Spin`` action"
+msgstr "``Spin``操作"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:248
 msgid "``Wait`` action"
-msgstr "``Wait`` action"
+msgstr "“Wait”动作"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:250
@@ -367,7 +367,7 @@ msgstr "``BackUp`` action"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:252
 msgid "Upon ``SUCCESS`` of any of the four children of the parent ``RoundRobin``, the robot will attempt to renavigate in the ``Navigation`` subtree. If this renavigation was not successful, the next child of the ``RoundRobin`` will be ticked."
-msgstr "Upon ``SUCCESS`` of any of the four children of the parent ``RoundRobin``, the robot will attempt to renavigate in the ``Navigation`` subtree. If this renavigation was not successful, the next child of the ``RoundRobin`` will be ticked."
+msgstr "在父级“RoundRobin”的四个子节点中的任何一个成功后，机器人将尝试在“Navigation”子树中重新导航。如果此次重新导航不成功，则将启动下一个“RoundRobin”的子节点。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:255
@@ -377,7 +377,7 @@ msgstr "For example, let's say the robot is stuck and the ``Navigation`` subtree
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:258
 msgid "The Costmap clearing sequence in the ``Recovery`` subtree is attempted, and returns ``SUCCESS``. The robot now moves to ``Navigation`` subtree again"
-msgstr "The Costmap clearing sequence in the ``Recovery`` subtree is attempted, and returns ``SUCCESS``. The robot now moves to ``Navigation`` subtree again"
+msgstr "尝试执行“Recovery”子树中的代价地图清除序列，并返回“成功”。机器人现在再次转到“Navigation”子树。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:260
@@ -387,7 +387,7 @@ msgstr "Let's assume that clearing both costmaps was not sufficient, and the ``N
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:262
 msgid "In the ``Recovery`` subtree, the ``Spin`` action will be ticked. If this returns ``SUCCESS``, then the robot will return to the main ``Navigation`` subtree *BUT* let's assume that the ``Spin`` action returns ``FAILURE``. In this case, the tree will *remain* in the ``Recovery`` subtree"
-msgstr "In the ``Recovery`` subtree, the ``Spin`` action will be ticked. If this returns ``SUCCESS``, then the robot will return to the main ``Navigation`` subtree *BUT* let's assume that the ``Spin`` action returns ``FAILURE``. In this case, the tree will *remain* in the ``Recovery`` subtree"
+msgstr "在“Recovery”子树中，将执行“Spin”动作。如果此动作返回“成功”，则机器人将返回主要的“Navigation”子树。**但是**假设“Spin”动作返回“失败”。在这种情况下，树将**保持**在“Recovery”子树中。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:264
