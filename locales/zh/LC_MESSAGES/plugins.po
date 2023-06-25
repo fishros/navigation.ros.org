@@ -847,7 +847,7 @@ msgstr "根据主题输入选择平滑器，否则使用默认的平滑器ID"
 
 #: ../../plugins/index.rst:372
 msgid "`Navigate Through Poses`_"
-msgstr "`Navigate Through Poses`_"
+msgstr "[导航通过姿势](Navigate Through Poses)_"
 
 
 #: ../../plugins/index.rst:372
@@ -857,7 +857,7 @@ msgstr "供其他BehaviorTree.CPP行为树调用Nav2的NavThroughPoses动作的B
 
 #: ../../plugins/index.rst:376
 msgid "`Remove Passed Goals`_"
-msgstr "`Remove Passed Goals`_"
+msgstr "[移除已完成目标](Remove Passed Goals)_"
 
 
 #: ../../plugins/index.rst:376
@@ -867,7 +867,7 @@ msgstr "从路径重新规划中剔除传递的目标姿势或在容差范围内
 
 #: ../../plugins/index.rst:380
 msgid "`Compute Path Through Poses`_"
-msgstr "`Compute Path Through Poses`_"
+msgstr "[计算通过姿势的路径](Compute Path Through Poses)_"
 
 
 #: ../../plugins/index.rst:380
@@ -877,7 +877,7 @@ msgstr "使用指定的规划器插件计算通过一组姿势而不是单个目
 
 #: ../../plugins/index.rst:384
 msgid "`Cancel Control Action`_"
-msgstr "`Cancel Control Action`_"
+msgstr "[取消控制动作](Cancel Control Action)_"
 
 
 #: ../../plugins/index.rst:384 ../../plugins/index.rst:386 ../../plugins/index.rst:388 ../../plugins/index.rst:390 ../../plugins/index.rst:535
@@ -887,7 +887,7 @@ msgstr "Pradheep Padmanabhan"
 
 #: ../../plugins/index.rst:384
 msgid "Cancels Nav2 controller server"
-msgstr "Cancels Nav2 controller server"
+msgstr "取消Nav2控制器服务器"
 
 
 #: ../../plugins/index.rst:386
@@ -897,67 +897,67 @@ msgstr "`取消备份动作`_"
 
 #: ../../plugins/index.rst:386
 msgid "Cancels backup behavior action"
-msgstr "Cancels backup behavior action"
+msgstr "取消备份行为动作"
 
 
 #: ../../plugins/index.rst:388
 msgid "`Cancel Spin Action`_"
-msgstr "`Cancel Spin Action`_"
+msgstr "`取消旋转操作`_"
 
 
 #: ../../plugins/index.rst:388
 msgid "Cancels spin behavior action"
-msgstr "Cancels spin behavior action"
+msgstr "取消旋转行为动作"
 
 
 #: ../../plugins/index.rst:390
 msgid "`Cancel Wait Action`_"
-msgstr "`Cancel Wait Action`_"
+msgstr "`取消等待操作`_"
 
 
 #: ../../plugins/index.rst:390
 msgid "Cancels wait behavior action"
-msgstr "Cancels wait behavior action"
+msgstr "取消等待行为动作"
 
 
 #: ../../plugins/index.rst:392
 msgid "`Cancel Drive on Heading Action`_"
-msgstr "`Cancel Drive on Heading Action`_"
+msgstr "`取消按照指定方向行驶操作`_"
 
 
 #: ../../plugins/index.rst:392
 msgid "Cancels drive on heading behavior action"
-msgstr "Cancels drive on heading behavior action"
+msgstr "取消朝特定方向驱动行为动作"
 
 
 #: ../../plugins/index.rst:394
 msgid "`Cancel Assisted Teleop Action`_"
-msgstr "`Cancel Assisted Teleop Action`_"
+msgstr "`取消辅助远程操作操作`_"
 
 
 #: ../../plugins/index.rst:394
 msgid "Cancels assisted teleop behavior action"
-msgstr "Cancels assisted teleop behavior action"
+msgstr "取消辅助远程操控行为动作"
 
 
 #: ../../plugins/index.rst:428
 msgid "Condition Plugin Name"
-msgstr "Condition Plugin Name"
+msgstr "条件插件名称"
 
 
 #: ../../plugins/index.rst:430
 msgid "`Goal Reached Condition`_"
-msgstr "`Goal Reached Condition`_"
+msgstr "`目标达成条件`_"
 
 
 #: ../../plugins/index.rst:430
 msgid "Checks if goal is reached within tol."
-msgstr "Checks if goal is reached within tol."
+msgstr "检查目标是否在容差范围内达到。"
 
 
 #: ../../plugins/index.rst:433
 msgid "`Goal Updated Condition`_"
-msgstr "`Goal Updated Condition`_"
+msgstr "`目标更新条件`_"
 
 
 #: ../../plugins/index.rst:433
@@ -967,7 +967,7 @@ msgstr "Aitor Miguel Blanco"
 
 #: ../../plugins/index.rst:433
 msgid "Checks if goal is preempted."
-msgstr "Checks if goal is preempted."
+msgstr "检查目标是否被中断。"
 
 
 #: ../../plugins/index.rst:436
