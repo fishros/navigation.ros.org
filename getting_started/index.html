@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../configuration/packages/smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuration/packages/configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../configuration/packages/configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#controllers">Controllers</a></li>
@@ -1003,20 +1003,16 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div><a class="reference internal image-reference" href="../_images/rviz-set-initial-pose.png"><img alt="Turtlebot的大致起始位置" class="align-center" src="../_images/rviz-set-initial-pose.png" style="width: 700px;" /></a>
 </div></blockquote>
 <p>如果位置不完全准确，没关系。<a href="#id1"><span class="problematic" id="id2">|</span></a>PN|会在导航过程中优化位置。如果您愿意，您还可以点击&quot;2D Pose Estimate&quot;按钮并重试。</p>
-<p>Once you've set the initial pose, the transform tree will be complete and
-Nav2 will be fully active and ready to go. You should see the robot and particle
-cloud now.</p>
+<p>一旦您设置了初始姿势，变换树将完成，Nav2 将完全激活并准备就绪。您现在应该能看到机器人和粒子云。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/navstack-ready.png"><img alt="|PN| is ready. Transforms and Costmap show in RViz." class="align-center" src="../_images/navstack-ready.png" style="width: 700px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/navstack-ready.png"><img alt="|PN| 准备就绪。在 RViz 中显示转换和 Costmap。" class="align-center" src="../_images/navstack-ready.png" style="width: 700px;" /></a>
 </div></blockquote>
-<p>Next, click the &quot;Navigaton2 Goal&quot; button and choose a destination.
-This will call the BT navigator to go to that goal through an action server.
-You can pause (cancel) or reset the action through the Nav2 rviz plugin shown.</p>
+<p>接下来，点击“Navigaton2 Goal”按钮并选择一个目标地点。这将通过一个动作服务器调用 BT 导航器前往目标地点。您可以通过 Nav2 rviz 插件进行暂停（取消）或重置动作。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/navigate-to-pose.png"><img alt="Setting the goal pose in RViz." class="align-center" src="../_images/navigate-to-pose.png" style="width: 700px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/navigate-to-pose.png"><img alt="在 RViz 中设置目标姿态。" class="align-center" src="../_images/navigate-to-pose.png" style="width: 700px;" /></a>
 </div></blockquote>
-<p>Now watch the robot go!</p>
-<a class="reference internal image-reference" href="../_images/navigation_with_recovery_behaviours.gif"><img alt="Navigation2 with Turtlebot 3 Demo" class="align-center" src="../_images/navigation_with_recovery_behaviours.gif" style="width: 700px;" /></a>
+<p>现在看着机器人出发吧！</p>
+<a class="reference internal image-reference" href="../_images/navigation_with_recovery_behaviours.gif"><img alt="使用 Turtlebot 3 Demo 进行 Navigation2。" class="align-center" src="../_images/navigation_with_recovery_behaviours.gif" style="width: 700px;" /></a>
 </div>
 </div>
 

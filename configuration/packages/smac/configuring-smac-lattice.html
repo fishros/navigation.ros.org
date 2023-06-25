@@ -554,7 +554,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#controllers">Controllers</a></li>
@@ -964,7 +964,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to allow traversing/search in unknown space.</p>
+<dt>描述</dt><dd><p>Whether to allow traversing/search in unknown space.</p>
 </dd>
 </dl>
 </dd>
@@ -984,7 +984,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>If an exact path cannot be found, the tolerance (as measured by the heuristic cost-to-goal) that would be acceptable to diverge from the requested pose in distance-to-goal.</p>
+<dt>描述</dt><dd><p>If an exact path cannot be found, the tolerance (as measured by the heuristic cost-to-goal) that would be acceptable to diverge from the requested pose in distance-to-goal.</p>
 </dd>
 </dl>
 </dd>
@@ -1004,7 +1004,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum number of search iterations before failing to limit compute time, disabled by -1.</p>
+<dt>描述</dt><dd><p>Maximum number of search iterations before failing to limit compute time, disabled by -1.</p>
 </dd>
 </dl>
 </dd>
@@ -1024,7 +1024,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum number of iterations once a visited node is within the goal tolerances to continue to try to find an exact match before returning the best path solution within tolerances.</p>
+<dt>描述</dt><dd><p>Maximum number of iterations once a visited node is within the goal tolerances to continue to try to find an exact match before returning the best path solution within tolerances.</p>
 </dd>
 </dl>
 </dd>
@@ -1044,7 +1044,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum planning time in seconds.</p>
+<dt>描述</dt><dd><p>Maximum planning time in seconds.</p>
 </dd>
 </dl>
 </dd>
@@ -1064,7 +1064,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>SE2 node will attempt to complete an analytic expansion with frequency proportional to this value and the minimum heuristic. Negative values convert to infinite.</p>
+<dt>描述</dt><dd><p>SE2 node will attempt to complete an analytic expansion with frequency proportional to this value and the minimum heuristic. Negative values convert to infinite.</p>
 </dd>
 </dl>
 </dd>
@@ -1084,7 +1084,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>If the length is too far, reject this expansion. This prevents shortcutting of search with its penalty functions far out from the goal itself (e.g. so we don't reverse half-way across open maps or cut through high cost zones). This should never be smaller than 4-5x the minimum turning radius being used, or planning times will begin to spike.</p>
+<dt>描述</dt><dd><p>If the length is too far, reject this expansion. This prevents shortcutting of search with its penalty functions far out from the goal itself (e.g. so we don't reverse half-way across open maps or cut through high cost zones). This should never be smaller than 4-5x the minimum turning radius being used, or planning times will begin to spike.</p>
 </dd>
 </dl>
 </dd>
@@ -1104,7 +1104,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in <code class="docutils literal notranslate"><span class="pre">allow_reverse_expansion</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p>
+<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in <code class="docutils literal notranslate"><span class="pre">allow_reverse_expansion</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1124,7 +1124,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search.</p>
+<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search.</p>
 </dd>
 </dl>
 </dd>
@@ -1144,7 +1144,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Heuristic penalty to apply to SE2 node if searching in non-straight direction.</p>
+<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node if searching in non-straight direction.</p>
 </dd>
 </dl>
 </dd>
@@ -1164,7 +1164,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Heuristic penalty to apply to SE2 node for cost at pose. Allows State Lattice to be cost aware.</p>
+<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node for cost at pose. Allows State Lattice to be cost aware.</p>
 </dd>
 </dl>
 </dd>
@@ -1184,7 +1184,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Penalty to apply for rotations in place, if minimum control set contains in-place rotations. This should always be set sufficiently high to weight against in-place rotations unless strictly necessary for obstacle avoidance or there may be frequent discontinuities in the plan where the plan requests the robot to rotate in place to short-cut an otherwise smooth forward-moving path for marginal path distance savings.</p>
+<dt>描述</dt><dd><p>Penalty to apply for rotations in place, if minimum control set contains in-place rotations. This should always be set sufficiently high to weight against in-place rotations unless strictly necessary for obstacle avoidance or there may be frequent discontinuities in the plan where the plan requests the robot to rotate in place to short-cut an otherwise smooth forward-moving path for marginal path distance savings.</p>
 </dd>
 </dl>
 </dd>
@@ -1204,7 +1204,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Heuristic penalty to apply to SE2 node penalty. Causes State Lattice to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be &gt;= 0.0 and &lt;= 1.0. Must be <cite>0.0</cite> to be fully admissible.</p>
+<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node penalty. Causes State Lattice to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be &gt;= 0.0 and &lt;= 1.0. Must be <cite>0.0</cite> to be fully admissible.</p>
 </dd>
 </dl>
 </dd>
@@ -1224,7 +1224,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The filepath to the state lattice minimum control set graph, this will default to a 16 bin, 0.5m turning radius control set located in <code class="docutils literal notranslate"><span class="pre">test/</span></code> for basic testing and evaluation (opposed to Hybrid-A*'s default of 0.5m).</p>
+<dt>描述</dt><dd><p>The filepath to the state lattice minimum control set graph, this will default to a 16 bin, 0.5m turning radius control set located in <code class="docutils literal notranslate"><span class="pre">test/</span></code> for basic testing and evaluation (opposed to Hybrid-A*'s default of 0.5m).</p>
 </dd>
 </dl>
 </dd>
@@ -1244,7 +1244,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Size of the dubin/reeds-sheep distance window to cache, in meters.</p>
+<dt>描述</dt><dd><p>Size of the dubin/reeds-sheep distance window to cache, in meters.</p>
 </dd>
 </dl>
 </dd>
@@ -1264,7 +1264,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Cache the obstacle map dynamic programming distance expansion heuristic between subsiquent replannings of the same goal location. Dramatically speeds up replanning performance (40x) if costmap is largely static.</p>
+<dt>描述</dt><dd><p>Cache the obstacle map dynamic programming distance expansion heuristic between subsiquent replannings of the same goal location. Dramatically speeds up replanning performance (40x) if costmap is largely static.</p>
 </dd>
 </dl>
 </dd>
@@ -1284,7 +1284,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>If true, allows the robot to use the primitives to expand in the mirrored opposite direction of the current robot's orientation (to reverse).</p>
+<dt>描述</dt><dd><p>If true, allows the robot to use the primitives to expand in the mirrored opposite direction of the current robot's orientation (to reverse).</p>
 </dd>
 </dl>
 </dd>
@@ -1304,7 +1304,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>If true, does simple and fast smoothing post-processing to the path from search</p>
+<dt>描述</dt><dd><p>If true, does simple and fast smoothing post-processing to the path from search</p>
 </dd>
 </dl>
 </dd>
@@ -1324,7 +1324,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The maximum number of iterations the smoother has to smooth the path, to bound potential computation.</p>
+<dt>描述</dt><dd><p>The maximum number of iterations the smoother has to smooth the path, to bound potential computation.</p>
 </dd>
 </dl>
 </dd>
@@ -1344,7 +1344,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight for smoother to apply to smooth out the data points</p>
+<dt>描述</dt><dd><p>Weight for smoother to apply to smooth out the data points</p>
 </dd>
 </dl>
 </dd>
@@ -1364,7 +1364,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight for smoother to apply to retain original data information</p>
+<dt>描述</dt><dd><p>Weight for smoother to apply to retain original data information</p>
 </dd>
 </dl>
 </dd>
@@ -1384,7 +1384,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Parameter tolerance change amount to terminate smoothing session</p>
+<dt>描述</dt><dd><p>Parameter tolerance change amount to terminate smoothing session</p>
 </dd>
 </dl>
 </dd>
@@ -1404,7 +1404,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner but can be helpful on the state lattice planner to reduce the &quot;blocky&quot; movements in State Lattice caused by the limited number of headings.</p>
+<dt>描述</dt><dd><p>Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner but can be helpful on the state lattice planner to reduce the &quot;blocky&quot; movements in State Lattice caused by the limited number of headings.</p>
 </dd>
 </dl>
 </dd>
@@ -1424,7 +1424,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Number of times to recursively attempt to smooth, must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1</span></code>.</p>
+<dt>描述</dt><dd><p>Number of times to recursively attempt to smooth, must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1</span></code>.</p>
 </dd>
 </dl>
 </dd>

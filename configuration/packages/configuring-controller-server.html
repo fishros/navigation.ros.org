@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -962,7 +962,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Frequency to run controller (Hz).</p>
+<dt>描述</dt><dd><p>Frequency to run controller (Hz).</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 </tbody>
 </table>
 <dl>
-<dt>Description</dt><dd><p>List of mapped names for controller plugins for processing requests and parameters.</p>
+<dt>描述</dt><dd><p>List of mapped names for controller plugins for processing requests and parameters.</p>
 </dd>
 <dt>Note</dt><dd><p>Each plugin namespace defined in this list needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
 <p>Example:</p>
@@ -1012,7 +1012,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 </tbody>
 </table>
 <dl>
-<dt>Description</dt><dd><p>Mapped name for progress checker plugin for checking progress made by robot. Formerly <code class="docutils literal notranslate"><span class="pre">progress_checker_plugin</span></code> for Humble and older with a single string plugin.</p>
+<dt>描述</dt><dd><p>Mapped name for progress checker plugin for checking progress made by robot. Formerly <code class="docutils literal notranslate"><span class="pre">progress_checker_plugin</span></code> for Humble and older with a single string plugin.</p>
 </dd>
 <dt>Note</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
 <p>Example:</p>
@@ -1042,7 +1042,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 </tbody>
 </table>
 <dl>
-<dt>Description</dt><dd><p>Mapped name for goal checker plugin for checking goal is reached.</p>
+<dt>描述</dt><dd><p>Mapped name for goal checker plugin for checking goal is reached.</p>
 </dd>
 <dt>Note</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
 <p>Example:</p>
@@ -1072,7 +1072,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
+<dt>描述</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
 Odometry values below this threshold (in m/s) will be set to 0.0.</p>
 </dd>
 </dl>
@@ -1093,7 +1093,7 @@ Odometry values below this threshold (in m/s) will be set to 0.0.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
+<dt>描述</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
 Odometry values below this threshold (in m/s) will be set to 0.0. For non-holonomic robots</p>
 </dd>
 </dl>
@@ -1114,7 +1114,7 @@ Odometry values below this threshold (in m/s) will be set to 0.0. For non-holono
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
+<dt>描述</dt><dd><p>The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin.
 Odometry values below this threshold (in rad/s) will be set to 0.0.</p>
 </dd>
 </dl>
@@ -1135,7 +1135,7 @@ Odometry values below this threshold (in rad/s) will be set to 0.0.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The maximum duration in seconds the called controller plugin can fail (i.e. the <code class="code docutils literal notranslate"><span class="pre">computeVelocityCommands</span></code> function of the plugin throwing an exception) before the <code class="code docutils literal notranslate"><span class="pre">nav2_msgs::action::FollowPath</span></code> action fails.
+<dt>描述</dt><dd><p>The maximum duration in seconds the called controller plugin can fail (i.e. the <code class="code docutils literal notranslate"><span class="pre">computeVelocityCommands</span></code> function of the plugin throwing an exception) before the <code class="code docutils literal notranslate"><span class="pre">nav2_msgs::action::FollowPath</span></code> action fails.
 Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any positive value for the appropriate timeout.</p>
 </dd>
 </dl>
@@ -1156,7 +1156,7 @@ Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Speed limiting topic name to subscribe. This could be published by Speed Filter (please refer to <a class="reference internal" href="costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">Speed Filter Parameters</span></a> configuration page). You can also use this without the Speed Filter as well if you provide an external server to publish <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">these messages</a>.</p>
+<dt>描述</dt><dd><p>Speed limiting topic name to subscribe. This could be published by Speed Filter (please refer to <a class="reference internal" href="costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">Speed Filter Parameters</span></a> configuration page). You can also use this without the Speed Filter as well if you provide an external server to publish <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">these messages</a>.</p>
 </dd>
 </dl>
 </dd>
@@ -1176,7 +1176,7 @@ Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Topic to get instantaneous measurement of speed from.</p>
+<dt>描述</dt><dd><p>Topic to get instantaneous measurement of speed from.</p>
 </dd>
 </dl>
 </dd>

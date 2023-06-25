@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -963,7 +963,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Frequency (Hz) to use the last received velocity command to smooth by velocity, acceleration, and deadband constraints. If set approximately to the rate of your local trajectory planner, it should smooth by acceleration constraints velocity commands. If set much higher, it will interpolate and provide a smooth set of commands to the hardware controller.</p>
+<dt>描述</dt><dd><p>Frequency (Hz) to use the last received velocity command to smooth by velocity, acceleration, and deadband constraints. If set approximately to the rate of your local trajectory planner, it should smooth by acceleration constraints velocity commands. If set much higher, it will interpolate and provide a smooth set of commands to the hardware controller.</p>
 </dd>
 </dl>
 </dd>
@@ -983,7 +983,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether or not to adjust other components of velocity proportionally to a component's required changes due to acceleration limits. This will try to adjust all components to follow the same direction, but still enforces acceleration limits to guarantee compliance, even if it means deviating off commanded trajectory slightly.</p>
+<dt>描述</dt><dd><p>Whether or not to adjust other components of velocity proportionally to a component's required changes due to acceleration limits. This will try to adjust all components to follow the same direction, but still enforces acceleration limits to guarantee compliance, even if it means deviating off commanded trajectory slightly.</p>
 </dd>
 </dl>
 </dd>
@@ -1003,7 +1003,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Type of feedback to use for the current state of the robot's velocity. In <code class="docutils literal notranslate"><span class="pre">OPEN_LOOP</span></code>, it will use the last commanded velocity as the next iteration's current velocity. When acceleration limits are set appropriately, this is a good assumption. In <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code>, it will use the odometry from the <code class="docutils literal notranslate"><span class="pre">odom</span></code> topic to estimate the robot's current speed. In closed loop mode, it is important that the odometry is high rate and low latency, relative to the smoothing frequency.</p>
+<dt>描述</dt><dd><p>Type of feedback to use for the current state of the robot's velocity. In <code class="docutils literal notranslate"><span class="pre">OPEN_LOOP</span></code>, it will use the last commanded velocity as the next iteration's current velocity. When acceleration limits are set appropriately, this is a good assumption. In <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code>, it will use the odometry from the <code class="docutils literal notranslate"><span class="pre">odom</span></code> topic to estimate the robot's current speed. In closed loop mode, it is important that the odometry is high rate and low latency, relative to the smoothing frequency.</p>
 </dd>
 </dl>
 </dd>
@@ -1023,7 +1023,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum velocities (m/s) in <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code> axes.</p>
+<dt>描述</dt><dd><p>Maximum velocities (m/s) in <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code> axes.</p>
 </dd>
 </dl>
 </dd>
@@ -1043,7 +1043,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Minimum velocities (m/s) in <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code> axes. This is <strong>signed</strong> and thus must be <strong>negative</strong> to reverse. Note: rotational velocities negative direction is a right-hand turn, so this should always be negative regardless of reversing preference.</p>
+<dt>描述</dt><dd><p>Minimum velocities (m/s) in <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code> axes. This is <strong>signed</strong> and thus must be <strong>negative</strong> to reverse. Note: rotational velocities negative direction is a right-hand turn, so this should always be negative regardless of reversing preference.</p>
 </dd>
 </dl>
 </dd>
@@ -1063,7 +1063,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Minimum velocities (m/s) to send to the robot hardware controllers, to prevent small commands from damaging hardware controllers if that speed cannot be achieved due to stall torque.</p>
+<dt>描述</dt><dd><p>Minimum velocities (m/s) to send to the robot hardware controllers, to prevent small commands from damaging hardware controllers if that speed cannot be achieved due to stall torque.</p>
 </dd>
 </dl>
 </dd>
@@ -1083,7 +1083,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Timeout (s) after which the velocity smoother will send a zero-ed out <code class="docutils literal notranslate"><span class="pre">Twist</span></code> command and stop publishing.</p>
+<dt>描述</dt><dd><p>Timeout (s) after which the velocity smoother will send a zero-ed out <code class="docutils literal notranslate"><span class="pre">Twist</span></code> command and stop publishing.</p>
 </dd>
 </dl>
 </dd>
@@ -1103,7 +1103,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum acceleration to apply to each axis <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code>.</p>
+<dt>描述</dt><dd><p>Maximum acceleration to apply to each axis <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1123,7 +1123,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Minimum acceleration to apply to each axis <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code>. This is <strong>signed</strong> and thus these should generally all be <strong>negative</strong>.</p>
+<dt>描述</dt><dd><p>Minimum acceleration to apply to each axis <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code>. This is <strong>signed</strong> and thus these should generally all be <strong>negative</strong>.</p>
 </dd>
 </dl>
 </dd>
@@ -1143,7 +1143,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Topic to find robot odometry, if in <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code> operational mode.</p>
+<dt>描述</dt><dd><p>Topic to find robot odometry, if in <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code> operational mode.</p>
 </dd>
 </dl>
 </dd>
@@ -1163,7 +1163,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Time (s) to buffer odometry commands to estimate the robot speed, if in <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code> operational mode.</p>
+<dt>描述</dt><dd><p>Time (s) to buffer odometry commands to estimate the robot speed, if in <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code> operational mode.</p>
 </dd>
 </dl>
 </dd>

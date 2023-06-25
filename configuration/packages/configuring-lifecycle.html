@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -964,7 +964,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Ordered list of node names to bringup through lifecycle transition.</p>
+<dt>描述</dt><dd><p>Ordered list of node names to bringup through lifecycle transition.</p>
 </dd>
 </dl>
 </dd>
@@ -984,7 +984,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to transition nodes to active state on startup.</p>
+<dt>描述</dt><dd><p>Whether to transition nodes to active state on startup.</p>
 </dd>
 </dl>
 </dd>
@@ -1004,7 +1004,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Timeout to transition down all lifecycle nodes of this manager if a server is non-responsive, in seconds. Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to deactivate. Recommended to be always larger than 0.3s for all-local node discovery. Note: if a server cleanly exits the manager will immediately be notified.</p>
+<dt>描述</dt><dd><p>Timeout to transition down all lifecycle nodes of this manager if a server is non-responsive, in seconds. Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to deactivate. Recommended to be always larger than 0.3s for all-local node discovery. Note: if a server cleanly exits the manager will immediately be notified.</p>
 </dd>
 </dl>
 </dd>
@@ -1024,7 +1024,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to try to reconnect to servers that go down, presumably because respawn is set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to re-create crashed nodes. While default to <code class="docutils literal notranslate"><span class="pre">true</span></code>, reconnections will not be made unless respawn is set to true in your launch files or your watchdog systems will bring up the server externally.</p>
+<dt>描述</dt><dd><p>Whether to try to reconnect to servers that go down, presumably because respawn is set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to re-create crashed nodes. While default to <code class="docutils literal notranslate"><span class="pre">true</span></code>, reconnections will not be made unless respawn is set to true in your launch files or your watchdog systems will bring up the server externally.</p>
 </dd>
 </dl>
 </dd>
@@ -1044,7 +1044,7 @@ It will also create bond connections with the servers to ensure they are still u
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>When a server crashes or becomes non-responsive, the lifecycle manager will bring down all nodes for safety. This is the duration of which the lifecycle manager will attempt to reconnect with the failed server(s) during to recover and re-activate the system. If this passes, it will stop attempts and will require a manual re-activation once the problem is manually resolved. Units: seconds.</p>
+<dt>描述</dt><dd><p>When a server crashes or becomes non-responsive, the lifecycle manager will bring down all nodes for safety. This is the duration of which the lifecycle manager will attempt to reconnect with the failed server(s) during to recover and re-activate the system. If this passes, it will stop attempts and will require a manual re-activation once the problem is manually resolved. Units: seconds.</p>
 </dd>
 </dl>
 </dd>

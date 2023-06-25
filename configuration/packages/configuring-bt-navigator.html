@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -964,7 +964,7 @@ in the navigation task and provide a way to easily specify complex robot behavio
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>New to Iron: Plugins for navigator types implementing the <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code> interface.
+<dt>描述</dt><dd><p>New to Iron: Plugins for navigator types implementing the <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code> interface.
 They implement custom action servers with custom interface definitions and use that data to populate and process behavior tree navigation requests. Plugin classes are defined under the same namespace, see examples below. Defaults correspond to the <code class="docutils literal notranslate"><span class="pre">NavigateToPoseNavigator</span></code> and <code class="docutils literal notranslate"><span class="pre">NavigateThroughPosesNavigator</span></code> navigators.</p>
 </dd>
 </dl>
@@ -985,7 +985,7 @@ They implement custom action servers with custom interface definitions and use t
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Path to the default behavior tree XML description for <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code>, see <a class="reference internal" href="configuring-bt-xml.html#configuring-behavior-tree-xml"><span class="std std-ref">Behavior Tree XML Nodes</span></a> for details on this file.
+<dt>描述</dt><dd><p>Path to the default behavior tree XML description for <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code>, see <a class="reference internal" href="configuring-bt-xml.html#configuring-behavior-tree-xml"><span class="std std-ref">Behavior Tree XML Nodes</span></a> for details on this file.
 Used to be <code class="docutils literal notranslate"><span class="pre">default_bt_xml_filename</span></code> pre-Galactic.</p>
 </dd>
 </dl>
@@ -1006,7 +1006,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Path to the default behavior tree XML description for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code>, see <a class="reference internal" href="configuring-bt-xml.html#configuring-behavior-tree-xml"><span class="std std-ref">Behavior Tree XML Nodes</span></a> for details on this file. New to Galactic after <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> was added.</p>
+<dt>描述</dt><dd><p>Path to the default behavior tree XML description for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code>, see <a class="reference internal" href="configuring-bt-xml.html#configuring-behavior-tree-xml"><span class="std std-ref">Behavior Tree XML Nodes</span></a> for details on this file. New to Galactic after <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> was added.</p>
 </dd>
 </dl>
 </dd>
@@ -1046,7 +1046,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>List of behavior tree node shared libraries.</p>
+<dt>描述</dt><dd><p>List of behavior tree node shared libraries.</p>
 </dd>
 </dl>
 </dd>
@@ -1066,7 +1066,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Duration (in milliseconds) for each iteration of BT execution.</p>
+<dt>描述</dt><dd><p>Duration (in milliseconds) for each iteration of BT execution.</p>
 </dd>
 </dl>
 </dd>
@@ -1086,7 +1086,7 @@ Used to be <code class="docutils literal notranslate"><span class="pre">default_
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Default timeout value (in milliseconds) while a BT action node is waiting for acknowledgement from an action server.
+<dt>描述</dt><dd><p>Default timeout value (in milliseconds) while a BT action node is waiting for acknowledgement from an action server.
 This value will be overwritten for a BT node if the input port &quot;server_timeout&quot; is provided.</p>
 </dd>
 </dl>
@@ -1110,7 +1110,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>TF transform tolerance.</p>
+<dt>描述</dt><dd><p>TF transform tolerance.</p>
 </dd>
 </dl>
 </dd>
@@ -1130,7 +1130,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Reference frame.</p>
+<dt>描述</dt><dd><p>Reference frame.</p>
 </dd>
 </dl>
 </dd>
@@ -1150,7 +1150,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Path to behavior tree XML description.</p>
+<dt>描述</dt><dd><p>Path to behavior tree XML description.</p>
 </dd>
 </dl>
 </dd>
@@ -1170,7 +1170,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Topic on which odometry is published</p>
+<dt>描述</dt><dd><p>Topic on which odometry is published</p>
 </dd>
 </dl>
 </dd>
@@ -1190,7 +1190,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Blackboard variable to use to supply the goal to the behavior tree for <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code>. Should match ports of BT XML file.</p>
+<dt>描述</dt><dd><p>Blackboard variable to use to supply the goal to the behavior tree for <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code>. Should match ports of BT XML file.</p>
 </dd>
 </dl>
 </dd>
@@ -1210,7 +1210,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Blackboard variable to get the path from the behavior tree for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> feedback. Should match port names of BT XML file.</p>
+<dt>描述</dt><dd><p>Blackboard variable to get the path from the behavior tree for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> feedback. Should match port names of BT XML file.</p>
 </dd>
 </dl>
 </dd>
@@ -1230,7 +1230,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Blackboard variable to use to supply the goals to the behavior tree for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code>. Should match ports of BT XML file.</p>
+<dt>描述</dt><dd><p>Blackboard variable to use to supply the goals to the behavior tree for <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code>. Should match ports of BT XML file.</p>
 </dd>
 </dl>
 </dd>
@@ -1250,7 +1250,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Use time provided by simulation.</p>
+<dt>描述</dt><dd><p>Use time provided by simulation.</p>
 </dd>
 </dl>
 </dd>
@@ -1271,7 +1271,7 @@ This value will be overwritten for a BT node if the input port &quot;server_time
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>List of of error codes to compare.</p>
+<dt>描述</dt><dd><p>List of of error codes to compare.</p>
 </dd>
 </dl>
 </dd>

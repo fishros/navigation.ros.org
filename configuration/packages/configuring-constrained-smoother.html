@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -967,7 +967,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to detect forward/reverse direction and cusps. Should be set to false for paths without orientations assigned</p>
+<dt>描述</dt><dd><p>Whether to detect forward/reverse direction and cusps. Should be set to false for paths without orientations assigned</p>
 </dd>
 </dl>
 </dd>
@@ -987,7 +987,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Every n-th node of the path is taken for optimization. Useful for speed-up</p>
+<dt>描述</dt><dd><p>Every n-th node of the path is taken for optimization. Useful for speed-up</p>
 </dd>
 </dl>
 </dd>
@@ -1007,7 +1007,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Upsampling factor for refining. 0 - path remains downsampled (see <code class="docutils literal notranslate"><span class="pre">path_downsampling_factor</span></code>), 1 - path is upsampled back to original granularity using cubic bezier, 2... - more upsampling</p>
+<dt>描述</dt><dd><p>Upsampling factor for refining. 0 - path remains downsampled (see <code class="docutils literal notranslate"><span class="pre">path_downsampling_factor</span></code>), 1 - path is upsampled back to original granularity using cubic bezier, 2... - more upsampling</p>
 </dd>
 </dl>
 </dd>
@@ -1027,7 +1027,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to prevent the start orientation from being smoothed</p>
+<dt>描述</dt><dd><p>Whether to prevent the start orientation from being smoothed</p>
 </dd>
 </dl>
 </dd>
@@ -1047,7 +1047,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to prevent the goal orientation from being smoothed</p>
+<dt>描述</dt><dd><p>Whether to prevent the goal orientation from being smoothed</p>
 </dd>
 </dl>
 </dd>
@@ -1067,7 +1067,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Minimum turning radius the robot can perform. Can be set to 0.0 (or w_curve can be set to 0.0 with the same effect) for diff-drive/holonomic robots</p>
+<dt>描述</dt><dd><p>Minimum turning radius the robot can perform. Can be set to 0.0 (or w_curve can be set to 0.0 with the same effect) for diff-drive/holonomic robots</p>
 </dd>
 </dl>
 </dd>
@@ -1087,7 +1087,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to enforce minimum_turning_radius</p>
+<dt>描述</dt><dd><p>Weight to enforce minimum_turning_radius</p>
 </dd>
 </dl>
 </dd>
@@ -1107,7 +1107,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to bind path to original as optional replacement for cost weight</p>
+<dt>描述</dt><dd><p>Weight to bind path to original as optional replacement for cost weight</p>
 </dd>
 </dl>
 </dd>
@@ -1127,7 +1127,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to maximize smoothness of path</p>
+<dt>描述</dt><dd><p>Weight to maximize smoothness of path</p>
 </dd>
 </dl>
 </dd>
@@ -1147,7 +1147,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to steer robot away from collision and cost</p>
+<dt>描述</dt><dd><p>Weight to steer robot away from collision and cost</p>
 </dd>
 </dl>
 </dd>
@@ -1167,7 +1167,7 @@ increasing its smoothness and distance from obstacles. Resulting path is marked 
 </tbody>
 </table>
 <dl>
-<dt>Description</dt><dd><p>Option to use higher weight during forward/reverse direction change, helping optimizer to converge or add an extra obstacle avoidance at these problematic segments.
+<dt>描述</dt><dd><p>Option to use higher weight during forward/reverse direction change, helping optimizer to converge or add an extra obstacle avoidance at these problematic segments.
 Following image depicts improvement of the path with <code class="docutils literal notranslate"><span class="pre">w_cost_cusp_multiplier</span></code> (green) compared to one without it (purple). Original path has cyan color.</p>
 <a class="reference internal image-reference" href="../../_images/w_cost_cusp_multiplier.png"><img alt="../../_images/w_cost_cusp_multiplier.png" class="align-center" src="../../_images/w_cost_cusp_multiplier.png" style="width: 282px; height: 429px;" /></a>
 </dd>
@@ -1189,7 +1189,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Length of the section around cusp in which nodes use <code class="docutils literal notranslate"><span class="pre">w_cost_cusp_multiplier</span></code> (w_cost rises gradually inside the zone towards the cusp point, whose costmap weight eqals w_cost*w_cost_cusp_multiplier)</p>
+<dt>描述</dt><dd><p>Length of the section around cusp in which nodes use <code class="docutils literal notranslate"><span class="pre">w_cost_cusp_multiplier</span></code> (w_cost rises gradually inside the zone towards the cusp point, whose costmap weight eqals w_cost*w_cost_cusp_multiplier)</p>
 </dd>
 </dl>
 </dd>
@@ -1209,7 +1209,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl>
-<dt>Description</dt><dd><p>Points in robot frame to grab costmap values from. Format: [x1, y1, weight1, x2, y2, weight2, ...].</p>
+<dt>描述</dt><dd><p>Points in robot frame to grab costmap values from. Format: [x1, y1, weight1, x2, y2, weight2, ...].</p>
 <p>IMPORTANT: Requires much higher number of optimizer iterations to actually improve the path. Use only if you really need it (highly elongated/asymmetric robots)</p>
 <p>Following image depicts how two cost check points can be used to improve cost awareness of a rectangular robot.</p>
 <a class="reference internal image-reference" href="../../_images/cost_check_points.png"><img alt="../../_images/cost_check_points.png" class="align-center" src="../../_images/cost_check_points.png" style="width: 176px; height: 284px;" /></a>
@@ -1232,7 +1232,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum number of optimizer iterations</p>
+<dt>描述</dt><dd><p>Maximum number of optimizer iterations</p>
 </dd>
 </dl>
 </dd>
@@ -1252,7 +1252,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to print optimizer debug info</p>
+<dt>描述</dt><dd><p>Whether to print optimizer debug info</p>
 </dd>
 </dl>
 </dd>
@@ -1272,7 +1272,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Linear solver type to be used by optimizer. Valid values are <code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> and <code class="docutils literal notranslate"><span class="pre">DENSE_QR</span></code></p>
+<dt>描述</dt><dd><p>Linear solver type to be used by optimizer. Valid values are <code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> and <code class="docutils literal notranslate"><span class="pre">DENSE_QR</span></code></p>
 </dd>
 </dl>
 </dd>
@@ -1292,7 +1292,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Gradient tolerance optimization termination criterion</p>
+<dt>描述</dt><dd><p>Gradient tolerance optimization termination criterion</p>
 </dd>
 </dl>
 </dd>
@@ -1312,7 +1312,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Function tolerance optimization termination criterion</p>
+<dt>描述</dt><dd><p>Function tolerance optimization termination criterion</p>
 </dd>
 </dl>
 </dd>
@@ -1332,7 +1332,7 @@ Following image depicts improvement of the path with <code class="docutils liter
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Parameter tolerance optimization termination criterion</p>
+<dt>描述</dt><dd><p>Parameter tolerance optimization termination criterion</p>
 </dd>
 </dl>
 </dd>

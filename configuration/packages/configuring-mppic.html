@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -970,7 +970,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The desired motion model to use for trajectory planning. Options are <code class="docutils literal notranslate"><span class="pre">DiffDrive</span></code>, <code class="docutils literal notranslate"><span class="pre">Omni</span></code>, or <code class="docutils literal notranslate"><span class="pre">Ackermann</span></code>. Differential drive robots may use forward/reverse and angular velocities; Omni add in lateral motion; and Ackermann adds minimum curvature constraints.</p>
+<dt>描述</dt><dd><p>The desired motion model to use for trajectory planning. Options are <code class="docutils literal notranslate"><span class="pre">DiffDrive</span></code>, <code class="docutils literal notranslate"><span class="pre">Omni</span></code>, or <code class="docutils literal notranslate"><span class="pre">Ackermann</span></code>. Differential drive robots may use forward/reverse and angular velocities; Omni add in lateral motion; and Ackermann adds minimum curvature constraints.</p>
 </dd>
 </dl>
 </dd>
@@ -990,7 +990,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>A vector of critic plugin functions to use, without <code class="docutils literal notranslate"><span class="pre">mppi::critic::</span></code> namespace which will be automatically added on loading.</p>
+<dt>描述</dt><dd><p>A vector of critic plugin functions to use, without <code class="docutils literal notranslate"><span class="pre">mppi::critic::</span></code> namespace which will be automatically added on loading.</p>
 </dd>
 </dl>
 </dd>
@@ -1010,7 +1010,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Iteration count in the MPPI algorithm. Recommended to remain as 1 and instead prefer larger batch sizes.</p>
+<dt>描述</dt><dd><p>Iteration count in the MPPI algorithm. Recommended to remain as 1 and instead prefer larger batch sizes.</p>
 </dd>
 </dl>
 </dd>
@@ -1030,7 +1030,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Count of randomly sampled candidate trajectories from current optimal control sequence in a given iteration. 1000 &#64; 50 Hz or 2000 &#64; 30 Hz seems to produce good results.</p>
+<dt>描述</dt><dd><p>Count of randomly sampled candidate trajectories from current optimal control sequence in a given iteration. 1000 &#64; 50 Hz or 2000 &#64; 30 Hz seems to produce good results.</p>
 </dd>
 </dl>
 </dd>
@@ -1050,7 +1050,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Number of time steps (points) in candidate trajectories</p>
+<dt>描述</dt><dd><p>Number of time steps (points) in candidate trajectories</p>
 </dd>
 </dl>
 </dd>
@@ -1070,7 +1070,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Length of each time step's <code class="docutils literal notranslate"><span class="pre">dt</span></code> timestep, in seconds. <code class="docutils literal notranslate"><span class="pre">time_steps</span> <span class="pre">*</span> <span class="pre">model_dt</span></code> is the prediction horizon.</p>
+<dt>描述</dt><dd><p>Length of each time step's <code class="docutils literal notranslate"><span class="pre">dt</span></code> timestep, in seconds. <code class="docutils literal notranslate"><span class="pre">time_steps</span> <span class="pre">*</span> <span class="pre">model_dt</span></code> is the prediction horizon.</p>
 </dd>
 </dl>
 </dd>
@@ -1090,7 +1090,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Sampling standard deviation for Vx</p>
+<dt>描述</dt><dd><p>Sampling standard deviation for Vx</p>
 </dd>
 </dl>
 </dd>
@@ -1110,7 +1110,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Sampling standard deviation for Vy</p>
+<dt>描述</dt><dd><p>Sampling standard deviation for Vy</p>
 </dd>
 </dl>
 </dd>
@@ -1130,7 +1130,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Sampling standard deviation for Wz (angular velocity)</p>
+<dt>描述</dt><dd><p>Sampling standard deviation for Wz (angular velocity)</p>
 </dd>
 </dl>
 </dd>
@@ -1150,7 +1150,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Target maximum forward velocity (m/s).</p>
+<dt>描述</dt><dd><p>Target maximum forward velocity (m/s).</p>
 </dd>
 </dl>
 </dd>
@@ -1170,7 +1170,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Target maximum lateral velocity, if using <code class="docutils literal notranslate"><span class="pre">Omni</span></code> motion model (m/s).</p>
+<dt>描述</dt><dd><p>Target maximum lateral velocity, if using <code class="docutils literal notranslate"><span class="pre">Omni</span></code> motion model (m/s).</p>
 </dd>
 </dl>
 </dd>
@@ -1190,7 +1190,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum reverse velocity (m/s).</p>
+<dt>描述</dt><dd><p>Maximum reverse velocity (m/s).</p>
 </dd>
 </dl>
 </dd>
@@ -1210,7 +1210,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum rotational velocity (rad/s).</p>
+<dt>描述</dt><dd><p>Maximum rotational velocity (rad/s).</p>
 </dd>
 </dl>
 </dd>
@@ -1230,7 +1230,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Selectiveness of trajectories by their costs (The closer this value to 0, the &quot;more&quot; we take in consideration controls with less cost), 0 mean use control with best cost, huge value will lead to just taking mean of all trajectories without cost consideration.</p>
+<dt>描述</dt><dd><p>Selectiveness of trajectories by their costs (The closer this value to 0, the &quot;more&quot; we take in consideration controls with less cost), 0 mean use control with best cost, huge value will lead to just taking mean of all trajectories without cost consideration.</p>
 </dd>
 </dl>
 </dd>
@@ -1250,7 +1250,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>A trade-off between smoothness (high) and low energy (low). This is a complex parameter that likely won't need to be changed from the default. See Section 3D-2 in &quot;Information Theoretic Model Predictive Control: Theory and Applications to Autonomous Driving&quot; for detailed information.</p>
+<dt>描述</dt><dd><p>A trade-off between smoothness (high) and low energy (low). This is a complex parameter that likely won't need to be changed from the default. See Section 3D-2 in &quot;Information Theoretic Model Predictive Control: Theory and Applications to Autonomous Driving&quot; for detailed information.</p>
 </dd>
 </dl>
 </dd>
@@ -1270,7 +1270,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to publish debuggin trajectories for visualization. This can slow down the controller substantially (e.g. 1000 batches of 56 size every 30hz is alot of data).</p>
+<dt>描述</dt><dd><p>Whether to publish debuggin trajectories for visualization. This can slow down the controller substantially (e.g. 1000 batches of 56 size every 30hz is alot of data).</p>
 </dd>
 </dl>
 </dd>
@@ -1290,7 +1290,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Number of attempts to find feasible trajectory on failure for soft-resets before reporting total failure.</p>
+<dt>描述</dt><dd><p>Number of attempts to find feasible trajectory on failure for soft-resets before reporting total failure.</p>
 </dd>
 </dl>
 </dd>
@@ -1310,7 +1310,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Required time of inactivity to reset optimizer  (only in Humble due to backport ABI policies).</p>
+<dt>描述</dt><dd><p>Required time of inactivity to reset optimizer  (only in Humble due to backport ABI policies).</p>
 </dd>
 </dl>
 </dd>
@@ -1334,7 +1334,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The step between trajectories to visualize to downsample candidate trajectory pool.</p>
+<dt>描述</dt><dd><p>The step between trajectories to visualize to downsample candidate trajectory pool.</p>
 </dd>
 </dl>
 </dd>
@@ -1354,7 +1354,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The step between points on trajectories to visualize to downsample trajectory density.</p>
+<dt>描述</dt><dd><p>The step between points on trajectories to visualize to downsample trajectory density.</p>
 </dd>
 </dl>
 </dd>
@@ -1379,7 +1379,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Time tolerance for data transformations with TF (s).</p>
+<dt>描述</dt><dd><p>Time tolerance for data transformations with TF (s).</p>
 </dd>
 </dl>
 </dd>
@@ -1399,7 +1399,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Distance ahead of nearest point on path to robot to prune path to (m).</p>
+<dt>描述</dt><dd><p>Distance ahead of nearest point on path to robot to prune path to (m).</p>
 </dd>
 </dl>
 </dd>
@@ -1419,7 +1419,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Max integrated distance ahead of robot pose to search for nearest path point in case of path looping.</p>
+<dt>描述</dt><dd><p>Max integrated distance ahead of robot pose to search for nearest path point in case of path looping.</p>
 </dd>
 </dl>
 </dd>
@@ -1444,7 +1444,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The minimum turning radius possible for the vehicle platform (m).</p>
+<dt>描述</dt><dd><p>The minimum turning radius possible for the vehicle platform (m).</p>
 </dd>
 </dl>
 </dd>
@@ -1469,7 +1469,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -1489,7 +1489,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -1514,7 +1514,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -1534,7 +1534,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -1554,7 +1554,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Minimal distance (m) between robot and goal above which angle goal cost considered.</p>
+<dt>描述</dt><dd><p>Minimal distance (m) between robot and goal above which angle goal cost considered.</p>
 </dd>
 </dl>
 </dd>
@@ -1579,7 +1579,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -1599,7 +1599,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -1619,7 +1619,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Minimal distance (m) between robot and goal above which goal distance cost considered.</p>
+<dt>描述</dt><dd><p>Minimal distance (m) between robot and goal above which goal distance cost considered.</p>
 </dd>
 </dl>
 </dd>
@@ -1644,7 +1644,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic for near collisions closer than <code class="docutils literal notranslate"><span class="pre">collision_margin_distance</span></code> to prevent near collisions <strong>only</strong> as a method of virtually inflating the footprint. This should not be used to generally influence obstacle avoidance away from critical collisions.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic for near collisions closer than <code class="docutils literal notranslate"><span class="pre">collision_margin_distance</span></code> to prevent near collisions <strong>only</strong> as a method of virtually inflating the footprint. This should not be used to generally influence obstacle avoidance away from critical collisions.</p>
 </dd>
 </dl>
 </dd>
@@ -1664,7 +1664,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic for generally preferring routes in lower cost space. This is separated from the critical term to allow for fine tuning of obstacle behaviors with path alignment for dynamic scenes without impacting actions which may directly lead to near-collisions. This is applied within the <code class="docutils literal notranslate"><span class="pre">inflation_radius</span></code> distance from obstacles.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic for generally preferring routes in lower cost space. This is separated from the critical term to allow for fine tuning of obstacle behaviors with path alignment for dynamic scenes without impacting actions which may directly lead to near-collisions. This is applied within the <code class="docutils literal notranslate"><span class="pre">inflation_radius</span></code> distance from obstacles.</p>
 </dd>
 </dl>
 </dd>
@@ -1684,7 +1684,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -1704,7 +1704,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to use point cost (if robot is circular or low compute power) or compute SE2 footprint cost.</p>
+<dt>描述</dt><dd><p>Whether to use point cost (if robot is circular or low compute power) or compute SE2 footprint cost.</p>
 </dd>
 </dl>
 </dd>
@@ -1724,7 +1724,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Cost to apply to a true collision in a trajectory.</p>
+<dt>描述</dt><dd><p>Cost to apply to a true collision in a trajectory.</p>
 </dd>
 </dl>
 </dd>
@@ -1744,7 +1744,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Margin distance (m) from collision to apply severe penalty, similar to footprint inflation. Between 0.05-0.2 is reasonable. Note that it will highly influence the controller not to enter spaces more confined than this, so ensure this parameter is set lower than the narrowest you expect the robot to need to traverse through.</p>
+<dt>描述</dt><dd><p>Margin distance (m) from collision to apply severe penalty, similar to footprint inflation. Between 0.05-0.2 is reasonable. Note that it will highly influence the controller not to enter spaces more confined than this, so ensure this parameter is set lower than the narrowest you expect the robot to need to traverse through.</p>
 </dd>
 </dl>
 </dd>
@@ -1764,7 +1764,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Distance (m) near goal to stop applying preferential obstacle term to allow robot to smoothly converge to goal pose in close proximity to obstacles.</p>
+<dt>描述</dt><dd><p>Distance (m) near goal to stop applying preferential obstacle term to allow robot to smoothly converge to goal pose in close proximity to obstacles.</p>
 </dd>
 </dl>
 </dd>
@@ -1784,7 +1784,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Exponential decay factor across inflation radius. This should be the same as for your inflation layer (Humble only)</p>
+<dt>描述</dt><dd><p>Exponential decay factor across inflation radius. This should be the same as for your inflation layer (Humble only)</p>
 </dd>
 </dl>
 </dd>
@@ -1804,7 +1804,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Radius to inflate costmap around lethal obstacles. This should be the same as for your inflation layer (Humble only)</p>
+<dt>描述</dt><dd><p>Radius to inflate costmap around lethal obstacles. This should be the same as for your inflation layer (Humble only)</p>
 </dd>
 </dl>
 </dd>
@@ -1829,7 +1829,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -1849,7 +1849,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -1869,7 +1869,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path alignment and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path alignment and allow goal critics to take over.</p>
 </dd>
 </dl>
 </dd>
@@ -1889,7 +1889,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Checks that the candidate trajectories are sufficiently far along their way tracking the path to apply the alignment critic. This ensures that path alignment is only considered when actually tracking the path, preventing awkward initialization motions preventing the robot from leaving the path to achieve the appropriate heading.</p>
+<dt>描述</dt><dd><p>Checks that the candidate trajectories are sufficiently far along their way tracking the path to apply the alignment critic. This ensures that path alignment is only considered when actually tracking the path, preventing awkward initialization motions preventing the robot from leaving the path to achieve the appropriate heading.</p>
 </dd>
 </dl>
 </dd>
@@ -1909,7 +1909,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum proportion of the path that can be occupied before this critic is not considered to allow the obstacle and path follow critics to avoid obstacles while following the path's intent in presence of dynamic objects in the scene. Between 0-1 for 0-100%.</p>
+<dt>描述</dt><dd><p>Maximum proportion of the path that can be occupied before this critic is not considered to allow the obstacle and path follow critics to avoid obstacles while following the path's intent in presence of dynamic objects in the scene. Between 0-1 for 0-100%.</p>
 </dd>
 </dl>
 </dd>
@@ -1934,7 +1934,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -1954,7 +1954,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -1974,7 +1974,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path angles and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path angles and allow goal critics to take over.</p>
 </dd>
 </dl>
 </dd>
@@ -1994,7 +1994,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Number of path points after furthest one any trajectory achieves to compute path angle relative to.</p>
+<dt>描述</dt><dd><p>Number of path points after furthest one any trajectory achieves to compute path angle relative to.</p>
 </dd>
 </dl>
 </dd>
@@ -2014,7 +2014,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Angular distance (rad) between robot and goal above which path angle cost starts being considered</p>
+<dt>描述</dt><dd><p>Angular distance (rad) between robot and goal above which path angle cost starts being considered</p>
 </dd>
 </dl>
 </dd>
@@ -2039,7 +2039,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -2059,7 +2059,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -2079,7 +2079,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path following and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path following and allow goal critics to take over.</p>
 </dd>
 </dl>
 </dd>
@@ -2099,7 +2099,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Number of path points after furthest one any trajectory achieves to drive path tracking relative to.</p>
+<dt>描述</dt><dd><p>Number of path points after furthest one any trajectory achieves to drive path tracking relative to.</p>
 </dd>
 </dl>
 </dd>
@@ -2124,7 +2124,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -2144,7 +2144,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>
@@ -2164,7 +2164,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering preferring forward and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering preferring forward and allow goal critics to take over.</p>
 </dd>
 </dl>
 </dd>
@@ -2189,7 +2189,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
 </dd>
 </dl>
 </dd>
@@ -2209,7 +2209,7 @@ This process is then repeated a number of times and returns a converged solution
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>Power order to apply to term.</p>
 </dd>
 </dl>
 </dd>

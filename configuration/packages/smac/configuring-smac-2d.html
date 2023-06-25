@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../plugins/index.html#controllers">Controllers</a></li>
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Tolerance in meters between requested goal pose and end of path.</p>
+<dt>描述</dt><dd><p>Tolerance in meters between requested goal pose and end of path.</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to downsample costmap to another resolution for search.</p>
+<dt>描述</dt><dd><p>Whether to downsample costmap to another resolution for search.</p>
 </dd>
 </dl>
 </dd>
@@ -1002,7 +1002,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Multiplier factor to downsample costmap by (e.g. if 5cm costmap at 2 <code class="docutils literal notranslate"><span class="pre">downsample_factor</span></code>, 10cm output).</p>
+<dt>描述</dt><dd><p>Multiplier factor to downsample costmap by (e.g. if 5cm costmap at 2 <code class="docutils literal notranslate"><span class="pre">downsample_factor</span></code>, 10cm output).</p>
 </dd>
 </dl>
 </dd>
@@ -1022,7 +1022,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Whether to allow traversing/search in unknown space.</p>
+<dt>描述</dt><dd><p>Whether to allow traversing/search in unknown space.</p>
 </dd>
 </dl>
 </dd>
@@ -1042,7 +1042,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum number of search iterations before failing to limit compute time, disabled by -1.</p>
+<dt>描述</dt><dd><p>Maximum number of search iterations before failing to limit compute time, disabled by -1.</p>
 </dd>
 </dl>
 </dd>
@@ -1062,7 +1062,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum number of iterations after the search is within <code class="docutils literal notranslate"><span class="pre">tolerance</span></code> before returning approximate path with best heuristic if exact path is not found.</p>
+<dt>描述</dt><dd><p>Maximum number of iterations after the search is within <code class="docutils literal notranslate"><span class="pre">tolerance</span></code> before returning approximate path with best heuristic if exact path is not found.</p>
 </dd>
 </dl>
 </dd>
@@ -1082,7 +1082,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Maximum planning time in seconds.</p>
+<dt>描述</dt><dd><p>Maximum planning time in seconds.</p>
 </dd>
 </dl>
 </dd>
@@ -1102,7 +1102,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Cost multiplier to apply to search to steer away from high cost areas. Larger values will place in the center of aisles more exactly (if non-<cite>FREE</cite> cost potential field exists) but take slightly longer to compute. To optimize for speed, a value of 1.0 is reasonable. A reasonable tradeoff value is 2.0. A value of 0.0 effective disables steering away from obstacles and acts like a naive binary search A*.</p>
+<dt>描述</dt><dd><p>Cost multiplier to apply to search to steer away from high cost areas. Larger values will place in the center of aisles more exactly (if non-<cite>FREE</cite> cost potential field exists) but take slightly longer to compute. To optimize for speed, a value of 1.0 is reasonable. A reasonable tradeoff value is 2.0. A value of 0.0 effective disables steering away from obstacles and acts like a naive binary search A*.</p>
 </dd>
 </dl>
 </dd>
@@ -1122,7 +1122,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>If true, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path</p>
+<dt>描述</dt><dd><p>If true, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path</p>
 </dd>
 </dl>
 </dd>
@@ -1142,7 +1142,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>The maximum number of iterations the smoother has to smooth the path, to bound potential computation.</p>
+<dt>描述</dt><dd><p>The maximum number of iterations the smoother has to smooth the path, to bound potential computation.</p>
 </dd>
 </dl>
 </dd>
@@ -1162,7 +1162,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight for smoother to apply to smooth out the data points</p>
+<dt>描述</dt><dd><p>Weight for smoother to apply to smooth out the data points</p>
 </dd>
 </dl>
 </dd>
@@ -1182,7 +1182,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Weight for smoother to apply to retain original data information</p>
+<dt>描述</dt><dd><p>Weight for smoother to apply to retain original data information</p>
 </dd>
 </dl>
 </dd>
@@ -1202,7 +1202,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Parameter tolerance change amount to terminate smoothing session</p>
+<dt>描述</dt><dd><p>Parameter tolerance change amount to terminate smoothing session</p>
 </dd>
 </dl>
 </dd>

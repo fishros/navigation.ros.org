@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -962,7 +962,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Timeout to attempt saving the map (seconds).</p>
+<dt>描述</dt><dd><p>Timeout to attempt saving the map (seconds).</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Free space maximum probability threshold value for occupancy grid.</p>
+<dt>描述</dt><dd><p>Free space maximum probability threshold value for occupancy grid.</p>
 </dd>
 </dl>
 </dd>
@@ -1002,7 +1002,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Occupied space minimum probability threshhold value for occupancy grid.</p>
+<dt>描述</dt><dd><p>Occupied space minimum probability threshhold value for occupancy grid.</p>
 </dd>
 </dl>
 </dd>
@@ -1027,7 +1027,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Path to map yaml file. Note from Rolling + Iron-Turtle forward: This parameter can set either from the yaml file or using the launch configuration parameter <code class="docutils literal notranslate"><span class="pre">map</span></code>. If we set it on launch commandline / launch configuration default, we override the yaml default. If you would like the specify your map file in yaml, remove the launch default so it is not overridden in Nav2's default launch files. Before Iron: <code class="docutils literal notranslate"><span class="pre">yaml_filename</span></code> must be set in the yaml (even if a bogus value) so that our launch scripts can overwrite it with launch values.</p>
+<dt>描述</dt><dd><p>Path to map yaml file. Note from Rolling + Iron-Turtle forward: This parameter can set either from the yaml file or using the launch configuration parameter <code class="docutils literal notranslate"><span class="pre">map</span></code>. If we set it on launch commandline / launch configuration default, we override the yaml default. If you would like the specify your map file in yaml, remove the launch default so it is not overridden in Nav2's default launch files. Before Iron: <code class="docutils literal notranslate"><span class="pre">yaml_filename</span></code> must be set in the yaml (even if a bogus value) so that our launch scripts can overwrite it with launch values.</p>
 </dd>
 </dl>
 </dd>
@@ -1047,7 +1047,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Topic to publish loaded map to.</p>
+<dt>描述</dt><dd><p>Topic to publish loaded map to.</p>
 </dd>
 </dl>
 </dd>
@@ -1067,7 +1067,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Frame to publish loaded map in.</p>
+<dt>描述</dt><dd><p>Frame to publish loaded map in.</p>
 </dd>
 </dl>
 </dd>
@@ -1092,7 +1092,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Type of costmap filter used. This is an enum for the type of filter this should be interpreted as. We provide the following pre-defined types:</p>
+<dt>描述</dt><dd><p>Type of costmap filter used. This is an enum for the type of filter this should be interpreted as. We provide the following pre-defined types:</p>
 <ul class="simple">
 <li><p>0: keepout zones / preferred lanes filter</p></li>
 <li><p>1: speed filter, speed limit is specified in % of maximum speed</p></li>
@@ -1118,7 +1118,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Topic to publish costmap filter information to.</p>
+<dt>描述</dt><dd><p>Topic to publish costmap filter information to.</p>
 </dd>
 </dl>
 </dd>
@@ -1138,7 +1138,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Topic to publish filter mask to. The value of this parameter should be in accordance with <code class="docutils literal notranslate"><span class="pre">topic_name</span></code> parameter of Map Server tuned to filter mask publishing.</p>
+<dt>描述</dt><dd><p>Topic to publish filter mask to. The value of this parameter should be in accordance with <code class="docutils literal notranslate"><span class="pre">topic_name</span></code> parameter of Map Server tuned to filter mask publishing.</p>
 </dd>
 </dl>
 </dd>
@@ -1158,7 +1158,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Base of <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask value -&gt; filter space value linear conversion which is being proceeded as:
+<dt>描述</dt><dd><p>Base of <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask value -&gt; filter space value linear conversion which is being proceeded as:
 <code class="docutils literal notranslate"><span class="pre">filter_space_value</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code></p>
 </dd>
 </dl>
@@ -1179,7 +1179,7 @@ It also implements a map saver server which will run in the background and save 
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description</dt><dd><p>Multiplier of <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask value -&gt; filter space value linear conversion which is being proceeded as:
+<dt>描述</dt><dd><p>Multiplier of <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask value -&gt; filter space value linear conversion which is being proceeded as:
 <code class="docutils literal notranslate"><span class="pre">filter_space_value</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code></p>
 </dd>
 </dl>

@@ -554,7 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">描述</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-thetastar.html">Theta Star Planner</a><ul>
@@ -747,8 +747,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../behavior_trees/trees/odometry_calibration.html">Odometry Calibration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Navigation Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">Behavior-Tree Navigators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">导航插件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-layers">Costmap Layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#costmap-filters">Costmap Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html#controllers">Controllers</a></li>
@@ -957,7 +957,7 @@ It is important to know that in June 2021 and December 2021, the package receive
 </div>
 </div>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="永久链接至标题"></a></h2>
+<h2>描述<a class="headerlink" href="#description" title="永久链接至标题"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. It uses template node types to develop different search-based planners.</p>
 <p>We support circular differential-drive and omni-directional drive robots using the <code class="docutils literal notranslate"><span class="pre">SmacPlanner2D</span></code> planner which implements a cost-aware A* planner. We support car-like (ackermann) and legged vehicles using the <code class="docutils literal notranslate"><span class="pre">SmacPlannerHybrid</span></code> plugin which implements a Hybrid-A* planner. We support non-circular, arbitrary shaped, any model vehicles using the <code class="docutils literal notranslate"><span class="pre">SmacPlannerLattice</span></code> plugin which implements a State Lattice planner (e.g. omni, diff, ackermann, legged, custom). It contains control sets and generators for ackermann, legged, differential drive and omnidirectional vehicles, but you may provide your own for another robot type or to have different planning behaviors.</p>
 <p>The last two plugins are both <strong>kinematically feasible</strong> and support <strong>reversing</strong>. They have performance similar to its 2D counter parts like 2D-A* and NavFn via highly optimized heuristic functions and efficient programming. An example of the 3 planners can be seen below, planning a roughly 75 m path.</p>
