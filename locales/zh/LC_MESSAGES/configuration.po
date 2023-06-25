@@ -2467,7 +2467,7 @@ msgstr "0.4"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:202
 msgid "Minimum rotational velocity (rad/s)."
-msgstr "Minimum rotational velocity (rad/s)."
+msgstr "最小旋转速度（rad/s）。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
@@ -2487,47 +2487,47 @@ msgstr "最大旋转加速度（弧度/秒^2）"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:216
 msgid "BackUp Behavior Parameters"
-msgstr "BackUp Behavior Parameters"
+msgstr "后退行为参数"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:218
 msgid "Backup distance, speed and time_allowance is given from the action request."
-msgstr "Backup distance, speed and time_allowance is given from the action request."
+msgstr "备份距离、速度和时间允许值是从操作请求中提供的。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:232
 msgid "DriveOnHeading Behavior Parameters"
-msgstr "DriveOnHeading Behavior Parameters"
+msgstr "按目标导航行为参数"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:234
 msgid "DriveOnHeading distance, speed and time_allowance is given from the action request."
-msgstr "DriveOnHeading distance, speed and time_allowance is given from the action request."
+msgstr "按指定方向行驶距离、速度和时间允许值是从操作请求中提供的。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:248
 msgid "AssistedTeleop Behavior Parameters"
-msgstr "AssistedTeleop Behavior Parameters"
+msgstr "辅助遥操作行为参数"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:250
 msgid "AssistedTeleop time_allowance is given in the action request"
-msgstr "AssistedTeleop time_allowance is given in the action request"
+msgstr "辅助远程操控中的时间允许值是在操作请求中给定的。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "projection_time"
-msgstr "projection_time"
+msgstr "投影时间"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "simulation_time_step"
-msgstr "simulation_time_step"
+msgstr "模拟时间步长"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:272
 msgid "Time step for projections (s)."
-msgstr "Time step for projections (s)."
+msgstr "投影的时间步长（秒）。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst ../../configuration/packages/configuring-behavior-server.rst:279
@@ -2537,27 +2537,27 @@ msgstr "cmd_vel_teleop"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:283
 msgid "Topic to listen for teleop messages."
-msgstr "Topic to listen for teleop messages."
+msgstr "用于监听远程操作消息的主题。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:4
 msgid "Behavior-Tree Navigator"
-msgstr "Behavior-Tree Navigator"
+msgstr "行为树导航器"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:10
 msgid "The BT Navigator (Behavior Tree Navigator) module implements the NavigateToPose task interface. It is a Behavior Tree-based implementation of navigation that is intended to allow for flexibility in the navigation task and provide a way to easily specify complex robot behaviors, including recovery."
-msgstr "The BT Navigator (Behavior Tree Navigator) module implements the NavigateToPose task interface. It is a Behavior Tree-based implementation of navigation that is intended to allow for flexibility in the navigation task and provide a way to easily specify complex robot behaviors, including recovery."
+msgstr "BT导航器（行为树导航器）模块实现了NavigateToPose任务接口。它是一种基于行为树的导航实现，旨在允许导航任务的灵活性，并提供一种简便的方式来指定复杂的机器人行为，包括恢复操作。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:14 ../../configuration/packages/configuring-bt-xml.rst:14
 msgid "Consider checking out the :ref:`groot_introduction` tutorial for using Groot to visualize and modify behavior trees."
-msgstr "Consider checking out the :ref:`groot_introduction` tutorial for using Groot to visualize and modify behavior trees."
+msgstr "考虑查看 :ref:`groot_introduction` 教程，了解如何使用 Groot 可视化和修改行为树。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
 msgid "navigators"
-msgstr "navigators"
+msgstr "导航器"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:24
@@ -2567,7 +2567,7 @@ msgstr "{'navigate_to_pose', 'navigate_through_poses'}"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:28
 msgid "New to Iron: Plugins for navigator types implementing the ``nav2_core::BehaviorTreeNavigator`` interface. They implement custom action servers with custom interface definitions and use that data to populate and process behavior tree navigation requests. Plugin classes are defined under the same namespace, see examples below. Defaults correspond to the ``NavigateToPoseNavigator`` and ``NavigateThroughPosesNavigator`` navigators."
-msgstr "New to Iron: Plugins for navigator types implementing the ``nav2_core::BehaviorTreeNavigator`` interface. They implement custom action servers with custom interface definitions and use that data to populate and process behavior tree navigation requests. Plugin classes are defined under the same namespace, see examples below. Defaults correspond to the ``NavigateToPoseNavigator`` and ``NavigateThroughPosesNavigator`` navigators."
+msgstr "Iron中的新功能：为实现nav2_core::BehaviorTreeNavigator接口的导航器类型添加插件。它们通过实现具有自定义接口定义的自定义动作服务器，并使用该数据来填充和处理行为树导航请求。插件类在相同的命名空间下定义，参见下面的示例。默认值对应于NavigateToPoseNavigator和NavigateThroughPosesNavigator。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2577,7 +2577,7 @@ msgstr "default_nav_to_pose_bt_xml"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:40
 msgid "Path to the default behavior tree XML description for ``NavigateToPose``, see :ref:`configuring_behavior_tree_xml` for details on this file. Used to be ``default_bt_xml_filename`` pre-Galactic."
-msgstr "Path to the default behavior tree XML description for ``NavigateToPose``, see :ref:`configuring_behavior_tree_xml` for details on this file. Used to be ``default_bt_xml_filename`` pre-Galactic."
+msgstr "用于NavigateToPose的默认行为树XML描述文件路径，请参阅：ref:`configuring_behavior_tree_xml`以获取有关此文件的详细信息。在Galactic之前，它被称为default_bt_xml_filename。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
@@ -2587,7 +2587,7 @@ msgstr "default_nav_through_poses_bt_xml"
 
 #: ../../configuration/packages/configuring-bt-navigator.rst:53
 msgid "Path to the default behavior tree XML description for ``NavigateThroughPoses``, see :ref:`configuring_behavior_tree_xml` for details on this file. New to Galactic after ``NavigateThroughPoses`` was added."
-msgstr "Path to the default behavior tree XML description for ``NavigateThroughPoses``, see :ref:`configuring_behavior_tree_xml` for details on this file. New to Galactic after ``NavigateThroughPoses`` was added."
+msgstr "用于NavigateThroughPoses的默认行为树XML描述文件路径，请参阅：ref:`configuring_behavior_tree_xml`以获取有关此文件的详细信息。在添加NavigateThroughPoses之后，它是Galactic的新功能。"
 
 
 #: ../../configuration/packages/configuring-bt-navigator.rst
