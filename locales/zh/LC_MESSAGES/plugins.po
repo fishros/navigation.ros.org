@@ -842,7 +842,7 @@ msgstr "Owen Hooper"
 
 #: ../../plugins/index.rst:368
 msgid "Selects the smoother based on a topic input, otherwises uses a default smoother id"
-msgstr "Selects the smoother based on a topic input, otherwises uses a default smoother id"
+msgstr "根据主题输入选择平滑器，否则使用默认的平滑器ID"
 
 
 #: ../../plugins/index.rst:372
@@ -852,7 +852,7 @@ msgstr "`Navigate Through Poses`_"
 
 #: ../../plugins/index.rst:372
 msgid "BT Node for other BehaviorTree.CPP BTs to call Nav2's NavThroughPoses action"
-msgstr "BT Node for other BehaviorTree.CPP BTs to call Nav2's NavThroughPoses action"
+msgstr "供其他BehaviorTree.CPP行为树调用Nav2的NavThroughPoses动作的BT节点"
 
 
 #: ../../plugins/index.rst:376
@@ -862,7 +862,7 @@ msgstr "`Remove Passed Goals`_"
 
 #: ../../plugins/index.rst:376
 msgid "Removes goal poses passed or within a tolerance for culling old viapoints from path re-planning"
-msgstr "Removes goal poses passed or within a tolerance for culling old viapoints from path re-planning"
+msgstr "从路径重新规划中剔除传递的目标姿势或在容差范围内剔除旧的途经点"
 
 
 #: ../../plugins/index.rst:380
@@ -872,7 +872,7 @@ msgstr "`Compute Path Through Poses`_"
 
 #: ../../plugins/index.rst:380
 msgid "Computes a path through a set of poses rather than a single end goal pose using the planner plugin specified"
-msgstr "Computes a path through a set of poses rather than a single end goal pose using the planner plugin specified"
+msgstr "使用指定的规划器插件计算通过一组姿势而不是单个目标姿势的路径"
 
 
 #: ../../plugins/index.rst:384
@@ -892,7 +892,7 @@ msgstr "Cancels Nav2 controller server"
 
 #: ../../plugins/index.rst:386
 msgid "`Cancel BackUp Action`_"
-msgstr "`Cancel BackUp Action`_"
+msgstr "`取消备份动作`_"
 
 
 #: ../../plugins/index.rst:386
