@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../behavior_trees/index.rst:4
 msgid "Nav2 Behavior Trees"
-msgstr "Nav2 Behavior Trees"
+msgstr "Nav2行为树"
 
 
 #: ../../behavior_trees/index.rst:18
@@ -32,7 +32,7 @@ msgstr "Nav2 is an incredibly reconfigurable project. It allows users to set man
 
 #: ../../behavior_trees/index.rst:24
 msgid "A **very** basic, but functional, navigator can be seen below."
-msgstr "A **very** basic, but functional, navigator can be seen below."
+msgstr "下面是一个**非常**基本但功能完备的导航器示例。"
 
 
 #: ../../behavior_trees/index.rst:39

@@ -562,7 +562,7 @@ msgstr "ROS 到 ROS 2 导航"
 
 #: ../../about/ros1_comparison.rst:6
 msgid "``move_base`` has been split into multiple components. Rather than a single monolithic state machine, navigation 2 makes use of action servers and ROS 2's low-latency, reliable communication to separate ideas. A behavior tree is used to orchestrate these tasks. This allows Navigation2 to have highly configurable navigation behavior without programming by rearranging tasks in a behavior tree xml file."
-msgstr "``move_base`` has been split into multiple components. Rather than a single monolithic state machine, navigation 2 makes use of action servers and ROS 2's low-latency, reliable communication to separate ideas. A behavior tree is used to orchestrate these tasks. This allows Navigation2 to have highly configurable navigation behavior without programming by rearranging tasks in a behavior tree xml file."
+msgstr "``move_base`` 已经拆分为多个组件。与单个的完整状态机不同，导航2利用动作服务器和ROS 2的低延迟、可靠通信来分离概念。行为树用于编排这些任务。这使得Navigation2能够通过在行为树XML文件中重新排列任务来具有高度可配置的导航行为，而无需进行编程。"
 
 
 #: ../../about/ros1_comparison.rst:12
@@ -572,7 +572,7 @@ msgstr "在顶层，*nav2_bt_navigator* 替代了 ``move_base``，使用基于�
 
 #: ../../about/ros1_comparison.rst:16
 msgid "The planning, behaviors, smoother, and controller servers are also action servers that the BT navigator can call to compute. All 4 servers can host many plugins of many algorithms each and individually called from the navigation behavior tree for specific behaviors. These servers are called from the BT navigator through their action servers to compute a result or complete a task. The state is maintained by the BT navigator behavior tree."
-msgstr "The planning, behaviors, smoother, and controller servers are also action servers that the BT navigator can call to compute. All 4 servers can host many plugins of many algorithms each and individually called from the navigation behavior tree for specific behaviors. These servers are called from the BT navigator through their action servers to compute a result or complete a task. The state is maintained by the BT navigator behavior tree."
+msgstr "规划、行为、平滑器和控制器服务器也是动作服务器，BT导航器可以调用它们进行计算。这4个服务器都可以承载多个算法的插件，并可以通过导航行为树对特定行为进行单独调用。BT导航器通过它们的动作服务器调用这些服务器以计算结果或完成任务。状态由BT导航器行为树维护。"
 
 
 #: ../../about/ros1_comparison.rst:21
@@ -581,7 +581,7 @@ msgstr "所有这些改变使得在启动/运行时能够用实现相同接口�
 
 
 msgid "Move Base -> Navigation2 Overview"
-msgstr "Move Base -> Navigation2 Overview"
+msgstr "Move Base -> Navigation2 概述"
 
 
 #: ../../about/ros1_comparison.rst:29
@@ -591,77 +591,77 @@ msgstr "注意：``nav2_simple_navigator`` 不再存在，已被 ``nav2_bt_navig
 
 #: ../../about/ros1_comparison.rst:31
 msgid "**In Summary:**"
-msgstr "**In Summary:**"
+msgstr "**总结:**"
 
 
 #: ../../about/ros1_comparison.rst:33
 msgid "Ported packages:"
-msgstr "Ported packages:"
+msgstr "迁移的软件包："
 
 
 #: ../../about/ros1_comparison.rst:35
 msgid "amcl: Ported to nav2_amcl"
-msgstr "amcl: Ported to nav2_amcl"
+msgstr "amcl: 迁移到 nav2_amcl"
 
 
 #: ../../about/ros1_comparison.rst:36
 msgid "map_server: Ported to nav2_map_server"
-msgstr "map_server: Ported to nav2_map_server"
+msgstr "map_server: 迁移到 nav2_map_server"
 
 
 #: ../../about/ros1_comparison.rst:37
 msgid "nav2_planner: Replaces global_planner, hosts ``N`` planner plugins"
-msgstr "nav2_planner: Replaces global_planner, hosts ``N`` planner plugins"
+msgstr "nav2_planner: 取代 global_planner，承载 ``N`` 个规划器插件"
 
 
 #: ../../about/ros1_comparison.rst:38
 msgid "nav2_controller: Replaces local_planner, hosts ``N`` controller plugins"
-msgstr "nav2_controller: Replaces local_planner, hosts ``N`` controller plugins"
+msgstr "nav2_controller: 替代 local_planner，托管“N”个控制器插件"
 
 
 #: ../../about/ros1_comparison.rst:39
 msgid "Navfn: Ported to nav2_navfn_planner"
-msgstr "Navfn: Ported to nav2_navfn_planner"
+msgstr "Navfn: 迁移到 nav2_navfn_planner"
 
 
 #: ../../about/ros1_comparison.rst:40
 msgid "DWB: Replaces DWA and ported to ROS 2 under nav2_dwb_controller metapackage"
-msgstr "DWB: Replaces DWA and ported to ROS 2 under nav2_dwb_controller metapackage"
+msgstr "DWB: 替代 DWA，并在 nav2_dwb_controller metapackage 下迁移到 ROS 2"
 
 
 #: ../../about/ros1_comparison.rst:41
 msgid "nav_core: Ported as nav2_core with updates to interfaces"
-msgstr "nav_core: Ported as nav2_core with updates to interfaces"
+msgstr "nav_core：已作为nav2_core进行移植，并更新了接口"
 
 
 #: ../../about/ros1_comparison.rst:42
 msgid "costmap_2d: Ported as nav2_costmap_2d"
-msgstr "costmap_2d: Ported as nav2_costmap_2d"
+msgstr "costmap_2d: 迁移到 nav2_costmap_2d"
 
 
 #: ../../about/ros1_comparison.rst:44
 msgid "New packages:"
-msgstr "New packages:"
+msgstr "新的软件包："
 
 
 #: ../../about/ros1_comparison.rst:46
 msgid "nav2_bt_navigator: replaces ``move_base`` state machine"
-msgstr "nav2_bt_navigator: replaces ``move_base`` state machine"
+msgstr "nav2_bt_navigator: 替代“move_base”状态机"
 
 
 #: ../../about/ros1_comparison.rst:47
 msgid "nav2_lifecycle_manager: Handles the server program lifecycles"
-msgstr "nav2_lifecycle_manager: Handles the server program lifecycles"
+msgstr "nav2_lifecycle_manager：处理服务器程序的生命周期"
 
 
 #: ../../about/ros1_comparison.rst:48
 msgid "nav2_waypoint_follower: Can take in many waypoints to execute a complex task through"
-msgstr "nav2_waypoint_follower: Can take in many waypoints to execute a complex task through"
+msgstr "nav2_waypoint_follower: 可以接收多个路径点以执行复杂任务"
 
 
 #: ../../about/ros1_comparison.rst:49
 msgid "nav2_system_tests: A set of integration tests for CI and basic tutorials in simulation"
-msgstr "nav2_system_tests: A set of integration tests for CI and basic tutorials in simulation"
+msgstr "nav2_system_tests：一组用于CI的集成测试和基本仿真教程"
 
 
 #: ../../about/ros1_comparison.rst:50
@@ -671,7 +671,7 @@ msgstr "nav2_rviz_plugins: An rviz plugin to control the Navigation2 servers, co
 
 #: ../../about/ros1_comparison.rst:51
 msgid "navigation2_behavior_trees: wrappers for the behavior tree library to call ROS action servers"
-msgstr "navigation2_behavior_trees: wrappers for the behavior tree library to call ROS action servers"
+msgstr "navigation2_behavior_trees：用于调用ROS动作服务器的行为树库的包装器"
 
 
 #: ../../about/ros1_comparison.rst:53
