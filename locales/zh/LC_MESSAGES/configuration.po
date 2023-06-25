@@ -3912,7 +3912,7 @@ msgstr "{\"静态层\", \"障碍层\", \"膨胀层\"}"
 
 #: ../../configuration/packages/configuring-costmaps.rst:267
 msgid "List of mapped plugin names for parameter namespaces and names."
-msgstr "List of mapped plugin names for parameter namespaces and names."
+msgstr "参数命名空间和名称的映射插件名称列表。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst
@@ -3927,17 +3927,17 @@ msgstr "{}"
 
 #: ../../configuration/packages/configuring-costmaps.rst:296
 msgid "List of mapped costmap filter names for parameter namespaces and names."
-msgstr "List of mapped costmap filter names for parameter namespaces and names."
+msgstr "映射的成本地图过滤器名称列表，用于参数命名空间和名称。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:299
 msgid "Costmap filters are also loadable plugins just as ordinary costmap layers. This separation is made to avoid plugin and filter interference and places these filters on top of the combined layered costmap. As  with plugins, each costmap filter namespace defined in this list needs to have a :code:`plugin` parameter defining the type of filter plugin to be loaded in the namespace."
-msgstr "Costmap filters are also loadable plugins just as ordinary costmap layers. This separation is made to avoid plugin and filter interference and places these filters on top of the combined layered costmap. As  with plugins, each costmap filter namespace defined in this list needs to have a :code:`plugin` parameter defining the type of filter plugin to be loaded in the namespace."
+msgstr "成本地图过滤器也可以作为普通成本地图图层一样作为可加载的插件。这种分离是为了避免插件和过滤器的干扰，并将这些过滤器放置在组合分层成本地图的顶部。与插件一样，此列表中定义的每个成本地图过滤器命名空间都需要有一个 :code:`plugin` 参数来定义要在命名空间中加载的过滤器插件的类型。"
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:317
 msgid "When the :code:`plugins` parameter is not overridden, the following default plugins are loaded:"
-msgstr "When the :code:`plugins` parameter is not overridden, the following default plugins are loaded:"
+msgstr "当未覆盖 :code:`plugins` 参数时，将加载以下默认插件："
 
 
 #: ../../configuration/packages/configuring-costmaps.rst:322
@@ -3977,7 +3977,7 @@ msgstr "Plugin Parameters"
 
 #: ../../configuration/packages/configuring-costmaps.rst:343
 msgid "Costmap Filters Parameters"
-msgstr "Costmap Filters Parameters"
+msgstr "成本地图过滤器参数"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:4 ../../configuration/packages/dwb-params/controller.rst:4
@@ -3987,7 +3987,7 @@ msgstr "DWB Controller"
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:10
 msgid "The DWB controller is the default controller. It is a fork of `David Lu's controller <https://github.com/locusrobotics/robot_navigation/tree/master/dwb_local_planner>`_ modified for ROS 2."
-msgstr "The DWB controller is the default controller. It is a fork of `David Lu's controller <https://github.com/locusrobotics/robot_navigation/tree/master/dwb_local_planner>`_ modified for ROS 2."
+msgstr "DWB 控制器是默认控制器。它是 `David Lu 的控制器 <https://github.com/locusrobotics/robot_navigation/tree/master/dwb_local_planner>`_ 的一个分支，经过了 ROS 2 的修改。"
 
 
 #: ../../configuration/packages/configuring-dwb-controller.rst:15
