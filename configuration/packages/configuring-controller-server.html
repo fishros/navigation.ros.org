@@ -512,7 +512,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">Costmap 2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap2d-ros-parameters">Costmap2D ROS Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/inflation.html">Inflation Layer Parameters</a></li>
@@ -538,7 +538,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-planner-server.html">Planner Server</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#parameters">参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#example">示例</a></li>
 </ul>
 </li>
@@ -571,7 +571,7 @@
 <li class="toctree-l4"><a class="reference internal" href="nav2_controller-plugins/stopped_goal_checker.html">StoppedGoalChecker</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -653,8 +653,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-behavior-server.html">行为服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#behavior-server-parameters">Behavior Server参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#default-plugins">Default Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#spin-behavior-parameters">Spin Behavior Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#default-plugins">默认插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#spin-behavior-parameters">旋转行为参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#backup-behavior-parameters">BackUp Behavior Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#driveonheading-behavior-parameters">DriveOnHeading Behavior Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#assistedteleop-behavior-parameters">AssistedTeleop Behavior Parameters</a></li>
@@ -976,7 +976,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 <tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>vector&lt;string&gt;</p></td>
+<tr class="row-even"><td><p>字符串向量</p></td>
 <td><p>['FollowPath']</p></td>
 </tr>
 </tbody>
@@ -984,8 +984,8 @@ It will take in path and plugin names for controller, progress checker and goal 
 <dl>
 <dt>描述</dt><dd><p>List of mapped names for controller plugins for processing requests and parameters.</p>
 </dd>
-<dt>Note</dt><dd><p>Each plugin namespace defined in this list needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
-<p>Example:</p>
+<dt>注意</dt><dd><p>此列表中定义的每个插件命名空间都需要有一个:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>plugin`参数，用于定义要加载到该命名空间中的插件类型。</p>
+<p>示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">controller_plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;FollowPath&quot;</span><span class="p p-Indicator">]</span>
@@ -1006,7 +1006,7 @@ It will take in path and plugin names for controller, progress checker and goal 
 <tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>vector&lt;string&gt;</p></td>
+<tr class="row-even"><td><p>字符串向量</p></td>
 <td><p>[&quot;progress_checker&quot;]</p></td>
 </tr>
 </tbody>
@@ -1014,8 +1014,8 @@ It will take in path and plugin names for controller, progress checker and goal 
 <dl>
 <dt>描述</dt><dd><p>Mapped name for progress checker plugin for checking progress made by robot. Formerly <code class="docutils literal notranslate"><span class="pre">progress_checker_plugin</span></code> for Humble and older with a single string plugin.</p>
 </dd>
-<dt>Note</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
-<p>Example:</p>
+<dt>注意</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
+<p>示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">progress_checker_plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;progress_checker&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># progress_checker_plugin: &quot;progress_checker&quot; For Humble and older</span>
@@ -1044,8 +1044,8 @@ It will take in path and plugin names for controller, progress checker and goal 
 <dl>
 <dt>描述</dt><dd><p>Mapped name for goal checker plugin for checking goal is reached.</p>
 </dd>
-<dt>Note</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
-<p>Example:</p>
+<dt>注意</dt><dd><p>The plugin namespace defined needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
+<p>示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">goal_checker_plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;goal_checker&quot;</span><span class="p p-Indicator">]</span>
@@ -1197,7 +1197,7 @@ Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any
 </div>
 </div>
 <div class="section" id="default-plugins">
-<h2>Default Plugins<a class="headerlink" href="#default-plugins" title="永久链接至标题"></a></h2>
+<h2>默认插件<a class="headerlink" href="#default-plugins" title="永久链接至标题"></a></h2>
 <p>When the <code class="code docutils literal notranslate"><span class="pre">progress_checker_plugins</span></code>, <code class="code docutils literal notranslate"><span class="pre">goal_checker_plugin</span></code> or <code class="code docutils literal notranslate"><span class="pre">controller_plugins</span></code> parameters are not overridden, the following default plugins are loaded:</p>
 <blockquote>
 <div><table class="docutils align-default">
@@ -1206,8 +1206,8 @@ Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any
 <col style="width: 75%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Namespace</p></td>
-<td><p>Plugin</p></td>
+<tr class="row-odd"><td><p>命名空间</p></td>
+<td><p>插件</p></td>
 </tr>
 <tr class="row-even"><td><p>&quot;progress_checker&quot;</p></td>
 <td><p>&quot;nav2_controller::SimpleProgressChecker&quot;</p></td>

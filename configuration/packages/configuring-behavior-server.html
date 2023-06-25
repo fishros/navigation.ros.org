@@ -512,7 +512,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-costmaps.html">Costmap 2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap2d-ros-parameters">Costmap2D ROS Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#plugin-parameters">Plugin Parameters</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/inflation.html">Inflation Layer Parameters</a></li>
@@ -538,7 +538,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuring-planner-server.html">Planner Server</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#parameters">参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#example">示例</a></li>
 </ul>
 </li>
@@ -571,7 +571,7 @@
 <li class="toctree-l4"><a class="reference internal" href="nav2_controller-plugins/stopped_goal_checker.html">StoppedGoalChecker</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#default-plugins">Default Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#example">示例</a></li>
 </ul>
 </li>
@@ -653,8 +653,8 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">行为服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#behavior-server-parameters">Behavior Server参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#default-plugins">Default Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spin-behavior-parameters">Spin Behavior Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-plugins">默认插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spin-behavior-parameters">旋转行为参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backup-behavior-parameters">BackUp Behavior Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#driveonheading-behavior-parameters">DriveOnHeading Behavior Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#assistedteleop-behavior-parameters">AssistedTeleop Behavior Parameters</a></li>
@@ -1066,7 +1066,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">local_frame</dt>
+<dt class="field-odd">本地帧</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1102,7 +1102,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Global reference frame.</p>
+<dt>描述</dt><dd><p>全局参考帧。</p>
 </dd>
 </dl>
 </dd>
@@ -1136,16 +1136,16 @@
 <tr class="row-odd"><td><p>类型</p></td>
 <td><p>默认</p></td>
 </tr>
-<tr class="row-even"><td><p>vector&lt;string&gt;</p></td>
+<tr class="row-even"><td><p>字符串向量</p></td>
 <td><p>{&quot;spin&quot;, &quot;back_up&quot;, &quot;drive_on_heading&quot;, &quot;wait&quot;}</p></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>List of plugin names to use, also matches action server names.</p>
+<dt>描述</dt><dd><p>要使用的插件名称列表，也与动作服务器名称匹配。</p>
 </dd>
-<dt>Note</dt><dd><p>Each plugin namespace defined in this list needs to have a <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> parameter defining the type of plugin to be loaded in the namespace.</p>
-<p>Example:</p>
+<dt>注意</dt><dd><p>此列表中定义的每个插件命名空间都需要有一个:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>plugin`参数，用于定义要加载到该命名空间中的插件类型。</p>
+<p>示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">behavior_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">behavior_plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;spin&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;backup&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;drive_on_heading&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;wait&quot;</span><span class="p p-Indicator">]</span>
@@ -1165,8 +1165,8 @@
 </dl>
 </div>
 <div class="section" id="default-plugins">
-<h2>Default Plugins<a class="headerlink" href="#default-plugins" title="永久链接至标题"></a></h2>
-<p>When the <code class="code docutils literal notranslate"><span class="pre">behavior_plugins</span></code> parameter is not overridden, the following default plugins are loaded:</p>
+<h2>默认插件<a class="headerlink" href="#default-plugins" title="永久链接至标题"></a></h2>
+<p>当未覆盖 <code class="code docutils literal notranslate"><span class="pre">behavior_plugins</span></code> 参数时，将加载以下默认插件：</p>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -1174,19 +1174,19 @@
 <col style="width: 75%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Namespace</p></td>
-<td><p>Plugin</p></td>
+<tr class="row-odd"><td><p>命名空间</p></td>
+<td><p>插件</p></td>
 </tr>
-<tr class="row-even"><td><p>&quot;spin&quot;</p></td>
+<tr class="row-even"><td><p>&quot;旋转&quot;</p></td>
 <td><p>&quot;nav2_behaviors/Spin&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>&quot;backup&quot;</p></td>
+<tr class="row-odd"><td><p>&quot;备份&quot;</p></td>
 <td><p>&quot;nav2_behaviors/BackUp&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>&quot;drive_on_heading&quot;</p></td>
+<tr class="row-even"><td><p>&quot;按照航向前进&quot;</p></td>
 <td><p>&quot;nav2_behaviors/DriveOnHeading&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>&quot;wait&quot;</p></td>
+<tr class="row-odd"><td><p>&quot;等待&quot;</p></td>
 <td><p>&quot;nav2_behaviors/Wait&quot;</p></td>
 </tr>
 </tbody>
@@ -1194,10 +1194,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="spin-behavior-parameters">
-<h2>Spin Behavior Parameters<a class="headerlink" href="#spin-behavior-parameters" title="永久链接至标题"></a></h2>
-<p>Spin distance is given from the action request</p>
+<h2>旋转行为参数<a class="headerlink" href="#spin-behavior-parameters" title="永久链接至标题"></a></h2>
+<p>从动作请求中给出旋转距离</p>
 <dl class="field-list">
-<dt class="field-odd">simulate_ahead_time</dt>
+<dt class="field-odd">模拟前进时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1213,11 +1213,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time to look ahead for collisions (s).</p>
+<dt>描述</dt><dd><p>向前查找碰撞的时间（秒）</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">max_rotational_vel</dt>
+<dt class="field-even">最大旋转速度</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1233,7 +1233,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum rotational velocity (rad/s).</p>
+<dt>描述</dt><dd><p>最大旋转速度（弧度/秒）</p>
 </dd>
 </dl>
 </dd>
@@ -1273,7 +1273,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>maximum rotational acceleration (rad/s^2).</p>
+<dt>描述</dt><dd><p>最大旋转加速度（弧度/秒^2）</p>
 </dd>
 </dl>
 </dd>
@@ -1283,7 +1283,7 @@
 <h2>BackUp Behavior Parameters<a class="headerlink" href="#backup-behavior-parameters" title="永久链接至标题"></a></h2>
 <p>Backup distance, speed and time_allowance is given from the action request.</p>
 <dl class="field-list">
-<dt class="field-odd">simulate_ahead_time</dt>
+<dt class="field-odd">模拟前进时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1299,7 +1299,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time to look ahead for collisions (s).</p>
+<dt>描述</dt><dd><p>向前查找碰撞的时间（秒）</p>
 </dd>
 </dl>
 </dd>
@@ -1309,7 +1309,7 @@
 <h2>DriveOnHeading Behavior Parameters<a class="headerlink" href="#driveonheading-behavior-parameters" title="永久链接至标题"></a></h2>
 <p>DriveOnHeading distance, speed and time_allowance is given from the action request.</p>
 <dl class="field-list">
-<dt class="field-odd">simulate_ahead_time</dt>
+<dt class="field-odd">模拟前进时间</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1325,7 +1325,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time to look ahead for collisions (s).</p>
+<dt>描述</dt><dd><p>向前查找碰撞的时间（秒）</p>
 </dd>
 </dl>
 </dd>
@@ -1351,7 +1351,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time to look ahead for collisions (s).</p>
+<dt>描述</dt><dd><p>向前查找碰撞的时间（秒）</p>
 </dd>
 </dl>
 </dd>
