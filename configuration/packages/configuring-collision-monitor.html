@@ -689,7 +689,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">碰撞监控</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#features">特点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#polygons-parameters">Polygons parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#polygons-parameters">多边形参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#observation-sources-parameters">Observation sources parameters</a></li>
 </ul>
 </li>
@@ -947,26 +947,25 @@
 <div class="section" id="features">
 <h2>特点<a class="headerlink" href="#features" title="永久链接至标题"></a></h2>
 <p>碰撞监控使用相对于机器人的基本框架原点的多边形来定义“区域”。落入这些区域的数据将触发相应的操作，具体取决于所使用的模型。一个给定的碰撞监控实例可以同时具有多个具有不同模型的区域。当多个区域同时触发时，使用最激进的区域（例如停止 &gt; 减速 50% &gt; 减速 10%）</p>
-<p>The following models of safety behaviors are employed by Collision Monitor:</p>
+<p>碰撞监测器使用以下安全行为模型：</p>
 <ul class="simple">
 <li><p><strong>停止模型</strong>：定义一个区域和一个点阈值。如果在该区域内出现``min_points``或更多的障碍点，则停止机器人直到障碍物消失。</p></li>
-<li><p><strong>Slowdown model</strong>: Define a zone around the robot and slow the maximum speed for a <code class="docutils literal notranslate"><span class="pre">slowdown_ratio</span></code>, if <code class="docutils literal notranslate"><span class="pre">min_points</span></code> or more points will appear inside the area.</p></li>
+<li><p><strong>减速模型</strong>：在机器人周围定义一个区域，并根据区域内出现的点数是否达到``min_points``或更多来降低最大速度的``slowdown_ratio``。</p></li>
 <li><p><strong>限制模型</strong>：定义一个围绕机器人的区域，并将最大线性速度和最大角速度限制为``linear_limit``和``angular_limit``的值，如果在该区域内出现``min_points``或更多点。</p></li>
-<li><p><strong>Approach model</strong>: Using the current robot speed, estimate the time to collision to sensor data. If the time is less than <code class="docutils literal notranslate"><span class="pre">time_before_collision</span></code> seconds (0.5, 2, 5, etc...), the robot will slow such that it is now at least <code class="docutils literal notranslate"><span class="pre">time_before_collision</span></code> seconds to collision. The effect here would be to keep the robot always <code class="docutils literal notranslate"><span class="pre">time_before_collision</span></code> seconds from any collision.</p></li>
+<li><p><strong>接近模型</strong>：根据当前机器人速度，估算与传感器数据的碰撞时间。如果时间小于``time_before_collision``秒（例如0.5、2、5等），机器人将减速，以确保与碰撞的时间至少为``time_before_collision``秒。其效果是使机器人始终与任何碰撞保持``time_before_collision``秒的距离。</p></li>
 </ul>
 <p>围绕机器人的区域可以采用以下形状：</p>
 <ul class="simple">
-<li><p>Arbitrary user-defined polygon relative to the robot base frame, which can be static in a configuration file or dynamically changing via a topic interface.</p></li>
-<li><p>Robot footprint polygon, which is used in the approach behavior model only. Will use the static user-defined polygon or the footprint topic to allow it to be dynamically adjusted over time.</p></li>
-<li><p>Circle: is made for the best performance and could be used in the cases where the zone or robot footprint could be approximated by round shape.</p></li>
+<li><p>机器人基准坐标系下的任意用户定义多边形，可以在配置文件中静态定义，也可以通过主题接口进行动态变化。</p></li>
+<li><p>机器人足迹多边形，仅在接近行为模型中使用。将使用静态用户定义的多边形或足迹主题，以便随时间动态调整。</p></li>
+<li><p>圆形：为了获得最佳性能，可以在区域或机器人外形可以近似为圆形的情况下使用。</p></li>
 </ul>
-<p>All shapes (<code class="docutils literal notranslate"><span class="pre">Polygon</span></code> and <code class="docutils literal notranslate"><span class="pre">Circle</span></code>) are derived from base <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> class, so without loss of generality they would be called as &quot;polygons&quot;.
-Subscribed footprint is also having the same properties as other polygons, but it is being obtained a footprint topic for the Approach Model.</p>
-<p>The data may be obtained from different data sources:</p>
+<p>所有形状（<code class="docutils literal notranslate"><span class="pre">Polygon``和``Circle</span></code>）都是从基本的``Polygon``类派生而来，所以不失一般性地可以称为“多边形”。订阅的足迹也具有与其他多边形相同的属性，但它通过足迹主题获得用于接近模型。</p>
+<p>数据可以从不同的数据源获取：</p>
 <ul class="simple">
-<li><p>Laser scanners (<code class="docutils literal notranslate"><span class="pre">sensor_msgs::msg::LaserScan</span></code> messages)</p></li>
-<li><p>PointClouds (<code class="docutils literal notranslate"><span class="pre">sensor_msgs::msg::PointCloud2</span></code> messages)</p></li>
-<li><p>IR/Sonars (<code class="docutils literal notranslate"><span class="pre">sensor_msgs::msg::Range</span></code> messages)</p></li>
+<li><p>激光扫描仪（<a href="#id1"><span class="problematic" id="id2">``</span></a>sensor_msgs::msg::LaserScan``消息）</p></li>
+<li><p>点云（<a href="#id1"><span class="problematic" id="id2">``</span></a>sensor_msgs::msg::PointCloud2``消息）</p></li>
+<li><p>红外/声纳（<a href="#id1"><span class="problematic" id="id2">``</span></a>sensor_msgs::msg::Range``消息）</p></li>
 </ul>
 </div>
 <div class="section" id="parameters">
@@ -988,7 +987,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>机器人基准坐标系。</p>
+<dt>描述：</dt><dd><p>机器人基准坐标系。</p>
 </dd>
 </dl>
 </dd>
@@ -1008,7 +1007,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>用于里程计的帧。</p>
+<dt>描述：</dt><dd><p>用于里程计的帧。</p>
 </dd>
 </dl>
 </dd>
@@ -1028,7 +1027,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Input <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> topic with desired robot velocity.</p>
+<dt>描述：</dt><dd><p>输入期望机器人速度的``cmd_vel``主题。</p>
 </dd>
 </dl>
 </dd>
@@ -1048,11 +1047,11 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Output <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> topic with output produced by Collision Monitor velocities.</p>
+<dt>描述：</dt><dd><p>输出带有碰撞监视器生成的速度的&quot;cmd_vel&quot;主题。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">state_topic</dt>
+<dt class="field-odd">状态主题</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1068,7 +1067,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Output the currently activated polygon action type and name. Optional parameter. No publisher will be created if it is unspecified.</p>
+<dt>描述：</dt><dd><p>输出当前激活的多边形动作类型和名称。可选参数。如果未指定，将不会创建发布者。</p>
 </dd>
 </dl>
 </dd>
@@ -1092,7 +1091,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">source_timeout</dt>
+<dt class="field-odd">源超时</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1108,11 +1107,11 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Maximum time interval in which source data is considered as valid.</p>
+<dt>描述：</dt><dd><p>源数据被视为有效的最大时间间隔。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">base_shift_correction</dt>
+<dt class="field-even">基准位移校正</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1128,11 +1127,11 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Whether to correct source data towards to base frame movement, considering the difference between current time and latest source time. If enabled, produces more accurate sources positioning in the robot base frame, at the cost of slower performance. This will cause average delays for <code class="docutils literal notranslate"><span class="pre">~1/(2*odom_rate)</span></code> per each <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> calculation cycle. However, disabling this option for better performance is not recommended for the fast moving robots, where during the typical rate of data sources, robot could move unacceptably far. Thus reasonable odometry rates are recommended (~100 hz).</p>
+<dt>描述：</dt><dd><p>是否根据当前时间和最新源时间的差异，将源数据校正为基准框架运动。如果启用，会在机器人基准框架中产生更准确的源位置，但性能会减慢。这将导致每个&quot;cmd_vel&quot;计算周期平均延迟约为&quot;~1/(2*odom_rate)&quot;。然而，对于高速移动的机器人，不推荐禁用此选项以获得更好的性能，因为在典型的数据源速率下，机器人可能移动得不可接受远。因此，建议使用合理的里程计速率（~100 Hz）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">stop_pub_timeout</dt>
+<dt class="field-odd">停止发布超时</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1148,11 +1147,11 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Timeout, after which zero-velocity ceases to be published. It could be used for other overrode systems outside Nav2 are trying to bring the robot out of a state close to a collision, or to allow a standing robot to go into sleep mode.</p>
+<dt>描述：</dt><dd><p>Timeout, after which zero-velocity ceases to be published. It could be used for other overrode systems outside Nav2 are trying to bring the robot out of a state close to a collision, or to allow a standing robot to go into sleep mode.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">polygons</dt>
+<dt class="field-even">多边形</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1168,11 +1167,11 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>List of zones (stop/slowdown/limit bounding boxes, footprint, approach circle, etc...). Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>List of zones (stop/slowdown/limit bounding boxes, footprint, approach circle, etc...). Causes an error, if not specialized.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">observation_sources</dt>
+<dt class="field-odd">观测源</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1188,13 +1187,13 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>List of data sources (laser scanners, pointclouds, etc...). Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>List of data sources (laser scanners, pointclouds, etc...). Causes an error, if not specialized.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="section" id="polygons-parameters">
-<h3>Polygons parameters<a class="headerlink" href="#polygons-parameters" title="永久链接至标题"></a></h3>
+<h3>多边形参数<a class="headerlink" href="#polygons-parameters" title="永久链接至标题"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;polygon</span> <span class="pre">name&gt;</span></code> is the corresponding polygon name ID selected for this type.</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;polygon_name&gt;</span></code>.type</dt>
@@ -1213,7 +1212,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Type of polygon shape. Available values are <code class="docutils literal notranslate"><span class="pre">polygon</span></code>, <code class="docutils literal notranslate"><span class="pre">circle</span></code>. Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>Type of polygon shape. Available values are <code class="docutils literal notranslate"><span class="pre">polygon</span></code>, <code class="docutils literal notranslate"><span class="pre">circle</span></code>. Causes an error, if not specialized.</p>
 </dd>
 </dl>
 </dd>
@@ -1233,7 +1232,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Polygon vertexes, listed in <code class="docutils literal notranslate"><span class="pre">{p1.x,</span> <span class="pre">p1.y,</span> <span class="pre">p2.x,</span> <span class="pre">p2.y,</span> <span class="pre">p3.x,</span> <span class="pre">p3.y,</span> <span class="pre">...}</span></code> format (e.g. <code class="docutils literal notranslate"><span class="pre">{0.5,</span> <span class="pre">0.25,</span> <span class="pre">0.5,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">0.25}</span></code> for the square in the front). Used for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type. Minimum 3 points for a triangle polygon. If not specified, the collision monitor will use dynamic polygon subscription to <code class="docutils literal notranslate"><span class="pre">polygon_sub_topic</span></code> for points in the <code class="docutils literal notranslate"><span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit</span></code> action types, or footprint subscriber to <code class="docutils literal notranslate"><span class="pre">footprint_topic</span></code> for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
+<dt>描述：</dt><dd><p>Polygon vertexes, listed in <code class="docutils literal notranslate"><span class="pre">{p1.x,</span> <span class="pre">p1.y,</span> <span class="pre">p2.x,</span> <span class="pre">p2.y,</span> <span class="pre">p3.x,</span> <span class="pre">p3.y,</span> <span class="pre">...}</span></code> format (e.g. <code class="docutils literal notranslate"><span class="pre">{0.5,</span> <span class="pre">0.25,</span> <span class="pre">0.5,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">-0.25,</span> <span class="pre">0.0,</span> <span class="pre">0.25}</span></code> for the square in the front). Used for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type. Minimum 3 points for a triangle polygon. If not specified, the collision monitor will use dynamic polygon subscription to <code class="docutils literal notranslate"><span class="pre">polygon_sub_topic</span></code> for points in the <code class="docutils literal notranslate"><span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit</span></code> action types, or footprint subscriber to <code class="docutils literal notranslate"><span class="pre">footprint_topic</span></code> for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
 </dd>
 </dl>
 </dd>
@@ -1253,7 +1252,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Topic to listen the polygon points from. Applicable only for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type and <code class="docutils literal notranslate"><span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit</span></code> action types. Causes an error, if not specified <strong>and</strong> points are also not specified. If both <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">polygon_sub_topic</span></code> are specified, the static <code class="docutils literal notranslate"><span class="pre">points</span></code> takes priority.</p>
+<dt>描述：</dt><dd><p>Topic to listen the polygon points from. Applicable only for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type and <code class="docutils literal notranslate"><span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">slowdown</span></code>/<code class="docutils literal notranslate"><span class="pre">limit</span></code> action types. Causes an error, if not specified <strong>and</strong> points are also not specified. If both <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">polygon_sub_topic</span></code> are specified, the static <code class="docutils literal notranslate"><span class="pre">points</span></code> takes priority.</p>
 </dd>
 </dl>
 </dd>
@@ -1273,7 +1272,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Topic to listen the robot footprint from. Applicable only for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type and <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type. If both <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">footprint_topic</span></code> are specified, the static <code class="docutils literal notranslate"><span class="pre">points</span></code> takes priority.</p>
+<dt>描述：</dt><dd><p>Topic to listen the robot footprint from. Applicable only for <code class="docutils literal notranslate"><span class="pre">polygon</span></code> type and <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type. If both <code class="docutils literal notranslate"><span class="pre">points</span></code> and <code class="docutils literal notranslate"><span class="pre">footprint_topic</span></code> are specified, the static <code class="docutils literal notranslate"><span class="pre">points</span></code> takes priority.</p>
 </dd>
 </dl>
 </dd>
@@ -1293,7 +1292,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Circle radius. Used for <code class="docutils literal notranslate"><span class="pre">circle</span></code> type. Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>Circle radius. Used for <code class="docutils literal notranslate"><span class="pre">circle</span></code> type. Causes an error, if not specialized.</p>
 </dd>
 </dl>
 </dd>
@@ -1313,7 +1312,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Zone behavior model. Available values are <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">slowdown</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code>, <code class="docutils literal notranslate"><span class="pre">approach</span></code>. Causes an error, if not specialized.</p>
+<dt>描述：</dt><dd><p>Zone behavior model. Available values are <code class="docutils literal notranslate"><span class="pre">stop</span></code>, <code class="docutils literal notranslate"><span class="pre">slowdown</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code>, <code class="docutils literal notranslate"><span class="pre">approach</span></code>. Causes an error, if not specialized.</p>
 </dd>
 </dl>
 </dd>
@@ -1333,7 +1332,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Minimum number of data readings within a zone to trigger the action. Former <code class="docutils literal notranslate"><span class="pre">max_points</span></code> parameter for Humble, that meant the maximum number of data readings within a zone to not trigger the action). <code class="docutils literal notranslate"><span class="pre">min_points</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">max_points</span> <span class="pre">+</span> <span class="pre">1</span></code> value.</p>
+<dt>描述：</dt><dd><p>Minimum number of data readings within a zone to trigger the action. Former <code class="docutils literal notranslate"><span class="pre">max_points</span></code> parameter for Humble, that meant the maximum number of data readings within a zone to not trigger the action). <code class="docutils literal notranslate"><span class="pre">min_points</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">max_points</span> <span class="pre">+</span> <span class="pre">1</span></code> value.</p>
 </dd>
 </dl>
 </dd>
@@ -1353,7 +1352,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Robot slowdown (share of its actual speed). Applicable for <code class="docutils literal notranslate"><span class="pre">slowdown</span></code> action type.</p>
+<dt>描述：</dt><dd><p>Robot slowdown (share of its actual speed). Applicable for <code class="docutils literal notranslate"><span class="pre">slowdown</span></code> action type.</p>
 </dd>
 </dl>
 </dd>
@@ -1373,7 +1372,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Robot linear speed limit. Applicable for <code class="docutils literal notranslate"><span class="pre">limit</span></code> action type.</p>
+<dt>描述：</dt><dd><p>Robot linear speed limit. Applicable for <code class="docutils literal notranslate"><span class="pre">limit</span></code> action type.</p>
 </dd>
 </dl>
 </dd>
@@ -1393,7 +1392,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Robot angular speed limit. Applicable for <code class="docutils literal notranslate"><span class="pre">limit</span></code> action type.</p>
+<dt>描述：</dt><dd><p>Robot angular speed limit. Applicable for <code class="docutils literal notranslate"><span class="pre">limit</span></code> action type.</p>
 </dd>
 </dl>
 </dd>
@@ -1413,7 +1412,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Time before collision in seconds. Maximum simulation time used in collision prediction. Higher values mean lower performance. Applicable for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
+<dt>描述：</dt><dd><p>Time before collision in seconds. Maximum simulation time used in collision prediction. Higher values mean lower performance. Applicable for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
 </dd>
 </dl>
 </dd>
@@ -1433,7 +1432,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Time iteration step for robot movement simulation during collision prediction. Lower values mean lower prediction accuracy but better performance. Applicable for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
+<dt>描述：</dt><dd><p>Time iteration step for robot movement simulation during collision prediction. Lower values mean lower prediction accuracy but better performance. Applicable for <code class="docutils literal notranslate"><span class="pre">approach</span></code> action type.</p>
 </dd>
 </dl>
 </dd>
@@ -1453,7 +1452,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Whether to publish the polygon in a separate topic.</p>
+<dt>描述：</dt><dd><p>Whether to publish the polygon in a separate topic.</p>
 </dd>
 </dl>
 </dd>
@@ -1473,7 +1472,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Topic name to publish a polygon to. Used only if <code class="docutils literal notranslate"><span class="pre">visualize</span></code> is true.</p>
+<dt>描述：</dt><dd><p>Topic name to publish a polygon to. Used only if <code class="docutils literal notranslate"><span class="pre">visualize</span></code> is true.</p>
 </dd>
 </dl>
 </dd>
@@ -1499,7 +1498,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Type of polygon shape. Could be <code class="docutils literal notranslate"><span class="pre">scan</span></code>, <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> or <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
+<dt>描述：</dt><dd><p>Type of polygon shape. Could be <code class="docutils literal notranslate"><span class="pre">scan</span></code>, <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> or <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -1519,7 +1518,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Topic to listen the source data from.</p>
+<dt>描述：</dt><dd><p>Topic to listen the source data from.</p>
 </dd>
 </dl>
 </dd>
@@ -1539,7 +1538,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Minimum height the PointCloud projection to 2D space started from. Applicable for <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> type.</p>
+<dt>描述：</dt><dd><p>Minimum height the PointCloud projection to 2D space started from. Applicable for <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> type.</p>
 </dd>
 </dl>
 </dd>
@@ -1559,7 +1558,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Maximum height the PointCloud projection to 2D space ended with. Applicable for <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> type.</p>
+<dt>描述：</dt><dd><p>Maximum height the PointCloud projection to 2D space ended with. Applicable for <code class="docutils literal notranslate"><span class="pre">pointcloud</span></code> type.</p>
 </dd>
 </dl>
 </dd>
@@ -1579,7 +1578,7 @@ Subscribed footprint is also having the same properties as other polygons, but i
 </tbody>
 </table>
 <dl class="simple">
-<dt>Description:</dt><dd><p>Angle increment (in radians) between nearby obstacle points at the range arc. Two outermost points from the field of view are not taken into account (they will always exist regardless of this value). Applicable for <code class="docutils literal notranslate"><span class="pre">range</span></code> type.</p>
+<dt>描述：</dt><dd><p>Angle increment (in radians) between nearby obstacle points at the range arc. Two outermost points from the field of view are not taken into account (they will always exist regardless of this value). Applicable for <code class="docutils literal notranslate"><span class="pre">range</span></code> type.</p>
 </dd>
 </dl>
 </dd>
