@@ -1967,7 +1967,7 @@ msgstr "500"
 
 #: ../../configuration/packages/configuring-amcl.rst:244
 msgid "Minimum allowed number of particles."
-msgstr "Minimum allowed number of particles."
+msgstr "粒子数的最小允许值。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst ../../configuration/packages/configuring-collision-monitor.rst
@@ -1997,7 +1997,7 @@ msgstr "0.05"
 
 #: ../../configuration/packages/configuring-amcl.rst:266
 msgid "Particle Filter population error."
-msgstr "Particle Filter population error."
+msgstr "粒子滤波器种群错误。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2012,7 +2012,7 @@ msgstr "0.99"
 
 #: ../../configuration/packages/configuring-amcl.rst:277
 msgid "Particle filter population density."
-msgstr "Particle filter population density."
+msgstr "粒子滤波器种群密度。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2022,7 +2022,7 @@ msgstr "recovery_alpha_fast"
 
 #: ../../configuration/packages/configuring-amcl.rst:288
 msgid "Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1."
-msgstr "Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1."
+msgstr "快速平均权重滤波器的指数衰减率，用于决定何时通过添加随机姿势进行恢复。一个好的值可能是 0.1。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2032,7 +2032,7 @@ msgstr "recovery_alpha_slow"
 
 #: ../../configuration/packages/configuring-amcl.rst:299
 msgid "Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001."
-msgstr "Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001."
+msgstr "慢速平均权重滤波器的指数衰减率，用于决定何时通过添加随机姿势进行恢复。一个好的值可能是 0.001。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2042,7 +2042,7 @@ msgstr "resample_interval"
 
 #: ../../configuration/packages/configuring-amcl.rst:311
 msgid "Number of filter updates required before resampling."
-msgstr "Number of filter updates required before resampling."
+msgstr "重新取样前所需的滤波器更新次数。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2057,17 +2057,17 @@ msgstr "\"nav2_amcl::DifferentialMotionModel\""
 
 #: ../../configuration/packages/configuring-amcl.rst:322
 msgid "The fully-qualified type of the plugin class. Options are \"nav2_amcl::DifferentialMotionModel\" and \"nav2_amcl::OmniMotionModel\". Users can also provide their own custom motion model plugin type."
-msgstr "The fully-qualified type of the plugin class. Options are \"nav2_amcl::DifferentialMotionModel\" and \"nav2_amcl::OmniMotionModel\". Users can also provide their own custom motion model plugin type."
+msgstr "插件类的完全限定类型。选项为“nav2_amcl::DifferentialMotionModel”和“nav2_amcl::OmniMotionModel”。用户还可以提供自定义的运动模型插件类型。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:325
 msgid "Note for users of galactic and earlier"
-msgstr "Note for users of galactic and earlier"
+msgstr "针对 Galactic 版本及更早版本的用户的注意事项。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:325
 msgid "The models are selectable by string key (valid options: \"differential\", \"omnidirectional\") rather than plugins."
-msgstr "The models are selectable by string key (valid options: \"differential\", \"omnidirectional\") rather than plugins."
+msgstr "模型可通过字符串键选择（有效选项为“differential”、“omnidirectional”），而不是插件。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2077,7 +2077,7 @@ msgstr "save_pose_rate"
 
 #: ../../configuration/packages/configuring-amcl.rst:336
 msgid "Maximum rate (Hz) at which to store the last estimated pose and covariance to the parameter server, in the variables ~initial_pose_* and ~initial_cov_*. This saved pose will be used on subsequent runs to initialize the filter (-1.0 to disable)."
-msgstr "Maximum rate (Hz) at which to store the last estimated pose and covariance to the parameter server, in the variables ~initial_pose_* and ~initial_cov_*. This saved pose will be used on subsequent runs to initialize the filter (-1.0 to disable)."
+msgstr "以每秒存储上次估计的姿态和协方差到参数服务器的最大速率（变量为~initial_pose_*和~initial_cov_*）。此保存的姿态将在后续运行中用于初始化滤波器（-1.0为禁用）。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2087,7 +2087,7 @@ msgstr "sigma_hit"
 
 #: ../../configuration/packages/configuring-amcl.rst:347
 msgid "Standard deviation for Gaussian model used in z_hit part of the model."
-msgstr "Standard deviation for Gaussian model used in z_hit part of the model."
+msgstr "用于模型中z_hit部分的高斯模型的标准偏差。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -2097,7 +2097,7 @@ msgstr "tf_broadcast"
 
 #: ../../configuration/packages/configuring-amcl.rst:358
 msgid "Set this to false to prevent amcl from publishing the transform between the global frame and the odometry frame."
-msgstr "Set this to false to prevent amcl from publishing the transform between the global frame and the odometry frame."
+msgstr "将其设置为false可防止amcl发布全局坐标系和里程计坐标系之间的变换。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst:369 ../../configuration/packages/configuring-collision-monitor.rst:115
