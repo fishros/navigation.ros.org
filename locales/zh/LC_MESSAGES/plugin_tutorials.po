@@ -482,7 +482,7 @@ msgstr "在构造函数中，我们需要获取适用于行为树节点的任何
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:103
 msgid "Here, we give the input of the ``xml_tag_name``, which tells the BT node plugin the string in the XML that corresponds to this node. This will be seen later when we register this BT node as a plugin. It also takes in the string name of the action server that it will call to execute some behavior. Finally, a set of configurations that we can safely ignore for the purposes of most node plugins."
-msgstr "Here, we give the input of the ``xml_tag_name``, which tells the BT node plugin the string in the XML that corresponds to this node. This will be seen later when we register this BT node as a plugin. It also takes in the string name of the action server that it will call to execute some behavior. Finally, a set of configurations that we can safely ignore for the purposes of most node plugins."
+msgstr "在这里，我们提供了``xml_tag_name``的输入，它告诉BT节点插件与此节点对应的XML中的字符串。当我们将此BT节点注册为插件时，稍后会看到它。它还接受要调用以执行某些行为的动作服务器的字符串名称。最后，有一组配置，对于大多数节点插件的目的，我们可以安全地忽略它们。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:108
@@ -492,7 +492,7 @@ msgstr "然后我们调用``BTActionNode``构造函数。可以看到，它是�
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:112
 msgid "In the body of the constructor, we get the input port ``getInput`` of the parameter ``wait_duration``, which can be configured independently for every instance of the ``wait`` node in the tree. It is set in the ``duration`` parameter and inserted into the ``goal_``. The ``goal_`` class variable is the goal that the ROS 2 action client will send to the action server. So in this example, we set the duration to the time we want to wait by so that the action server knows the specifics of our request."
-msgstr "In the body of the constructor, we get the input port ``getInput`` of the parameter ``wait_duration``, which can be configured independently for every instance of the ``wait`` node in the tree. It is set in the ``duration`` parameter and inserted into the ``goal_``. The ``goal_`` class variable is the goal that the ROS 2 action client will send to the action server. So in this example, we set the duration to the time we want to wait by so that the action server knows the specifics of our request."
+msgstr "在构造函数的主体中，我们获取参数``wait_duration``的输入端口``getInput``，可以独立配置每个树中``wait``节点的实例。它设置在``duration``参数中，并插入到``goal_``中。``goal_``类变量是ROS 2动作客户端将发送到动作服务器的目标。因此，在此示例中，我们设置持续时间为所需等待的时间，以便动作服务器了解我们请求的具体内容。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:117
@@ -502,7 +502,7 @@ msgstr "``providedPorts()``方法使我们有机会定义输入或输出端口�
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:133
 msgid "The ``on_tick()`` method is called when the behavior tree ticks a specific node. For the wait BT node, we simply want to notify a counter on the blackboard that an action plugin that corresponds to a recovery was ticked. This is useful to keep metrics about the number of recoveries executed during a specific navigation run. You could also log or update the ``goal_`` waiting duration if that is a variable input."
-msgstr "The ``on_tick()`` method is called when the behavior tree ticks a specific node. For the wait BT node, we simply want to notify a counter on the blackboard that an action plugin that corresponds to a recovery was ticked. This is useful to keep metrics about the number of recoveries executed during a specific navigation run. You could also log or update the ``goal_`` waiting duration if that is a variable input."
+msgstr "当行为树对特定节点进行刻度时，将调用``on_tick()``方法。对于等待BT节点，我们只想通知黑板上的一个计数器，即与恢复对应的动作插件已经刻度。这对于在特定导航运行期间执行的恢复次数进行度量非常有用。您还可以记录或更新``goal_``等待持续时间（如果它是可变输入）。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:145
@@ -512,7 +512,7 @@ msgstr "剩下的方法未被使用，也不是强制要求重写它们。只有
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:150 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:137
 msgid "2- Exporting the planner plugin"
-msgstr "2- Exporting the planner plugin"
+msgstr "2- 导出规划器插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:152
@@ -522,76 +522,76 @@ msgstr "现在我们已经创建了自定义的BT节点，我们需要导出插�
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:169
 msgid "In this macro, we must create a ``NodeBuilder`` so that our custom action node can have a non-default constructor signature (for the action and xml names). This lambda will return a unique pointer to the behavior tree node we have created. Fill in the constructor with the relevant information, giving it the ``name`` and ``config`` given in the function arguments. Then define the ROS 2 action server's name that this BT node will call, in this case, it's the ``Wait`` action."
-msgstr "In this macro, we must create a ``NodeBuilder`` so that our custom action node can have a non-default constructor signature (for the action and xml names). This lambda will return a unique pointer to the behavior tree node we have created. Fill in the constructor with the relevant information, giving it the ``name`` and ``config`` given in the function arguments. Then define the ROS 2 action server's name that this BT node will call, in this case, it's the ``Wait`` action."
+msgstr "在此宏中，我们必须创建一个``NodeBuilder``，以便我们的自定义动作节点可以具有非默认的构造函数签名（用于动作和xml名称）。此lambda将返回我们创建的行为树节点的唯一指针。使用函数参数中给定的相关信息填写构造函数。然后定义此BT节点将调用的ROS 2动作服务器的名称，在本例中为``Wait``动作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:174
 msgid "We finally give the builder to a factory to register. ``Wait`` given to the factory is the name in the behavior tree XML file that corresponds to this BT node plugin. An example can be seen below, where the ``Wait`` BT XML node specifies a non-variable input port ``wait_duration`` of 5 seconds."
-msgstr "We finally give the builder to a factory to register. ``Wait`` given to the factory is the name in the behavior tree XML file that corresponds to this BT node plugin. An example can be seen below, where the ``Wait`` BT XML node specifies a non-variable input port ``wait_duration`` of 5 seconds."
+msgstr "我们最终将构建器交给工厂进行注册。工厂中的“Wait”是与此BT节点插件对应的行为树XML文件中的名称。下面是一个示例，其中“Wait”BT XML节点指定了一个非变量输入端口“wait_duration”，持续时间为5秒。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:183
 msgid "3- Add plugin library name to config"
-msgstr "3- Add plugin library name to config"
+msgstr "3- 将插件库名称添加到配置中"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:185
 msgid "In order for the BT Navigator node to discover the plugin we've just registered, we need to list the plugin library name under the bt_navigator node in the configuration YAML file. Configuration should look similar to the one shown below. Take note of nav2_wait_action_bt_node listed under plugin_lib_names."
-msgstr "In order for the BT Navigator node to discover the plugin we've just registered, we need to list the plugin library name under the bt_navigator node in the configuration YAML file. Configuration should look similar to the one shown below. Take note of nav2_wait_action_bt_node listed under plugin_lib_names."
+msgstr "为了使BT Navigator节点能够发现我们刚刚注册的插件，我们需要在配置的YAML文件中的bt_navigator节点下列出插件库的名称。配置应该类似于下面所示的内容。请注意plugin_lib_names下列出的nav2_wait_action_bt_node。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:201
 msgid "4- Run Your Custom plugin"
-msgstr "4- Run Your Custom plugin"
+msgstr "4- 运行您的自定义插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:203
 msgid "Now you can use a behavior tree with your custom BT node. For example, the ``navigate_w_replanning_and_recovery.xml`` file is shown below."
-msgstr "Now you can use a behavior tree with your custom BT node. For example, the ``navigate_w_replanning_and_recovery.xml`` file is shown below."
+msgstr "现在您可以在自定义BT节点中使用行为树。例如，下面显示了``navigate_w_replanning_and_recovery.xml``文件。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:206
 msgid "Select this BT XML file in your specific navigation request in ``NavigateToPose`` or as the default behavior tree in the BT Navigator's configuration yaml file."
-msgstr "Select this BT XML file in your specific navigation request in ``NavigateToPose`` or as the default behavior tree in the BT Navigator's configuration yaml file."
+msgstr "在``NavigateToPose``中的具体导航请求中选择此BT XML文件，或者将其作为BT导航器配置yaml文件中的默认行为树。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:4
 msgid "Writing a New Costmap2D Plugin"
-msgstr "Writing a New Costmap2D Plugin"
+msgstr "编写新的Costmap2D插件"
 
 
 msgid "Animated gif with gradient demo"
-msgstr "Animated gif with gradient demo"
+msgstr "带有渐变效果的动画GIF演示"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:18
 msgid "This tutorial shows how to create your own simple `plugin <http://wiki.ros.org/pluginlib>`_ for Costmap2D."
-msgstr "This tutorial shows how to create your own simple `plugin <http://wiki.ros.org/pluginlib>`_ for Costmap2D."
+msgstr "本教程展示了如何为Costmap2D创建自己的简单`插件 <http://wiki.ros.org/pluginlib>`_。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:20
 msgid "Before starting the tutorial, please check this `video <https://vimeo.com/106994708>`_ which contains information about Costmap2D layers design and plugins basic operational principals."
-msgstr "Before starting the tutorial, please check this `video <https://vimeo.com/106994708>`_ which contains information about Costmap2D layers design and plugins basic operational principals."
+msgstr "在开始教程之前，请查看此`视频<https://vimeo.com/106994708>`_，其中包含关于Costmap2D图层设计和插件基本操作原则的信息。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:25
 msgid "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
-msgstr "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
+msgstr "假设已安装或本地构建了ROS 2、Gazebo和TurtleBot3软件包。请确保Nav2项目也在本地构建，就像在:ref:`build-instructions`中所述一样。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:31
 msgid "1- Write a new Costmap2D plugin"
-msgstr "1- Write a new Costmap2D plugin"
+msgstr "1-编写一个新的Costmap2D插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:33
 msgid "For a demonstration, this example will create a costmap plugin that puts repeating cost gradients in the costmap. The annotated code for this tutorial can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_gradient_costmap_plugin`` ROS 2-package. Please refer to it when making your own layer plugin for Costmap2D."
-msgstr "For a demonstration, this example will create a costmap plugin that puts repeating cost gradients in the costmap. The annotated code for this tutorial can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_gradient_costmap_plugin`` ROS 2-package. Please refer to it when making your own layer plugin for Costmap2D."
+msgstr "作为演示，本示例将创建一个在costmap中放置重复的成本梯度的成本图插件。有关本教程的带注释代码可以在`navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_存储库中找到，作为``nav2_gradient_costmap_plugin`` ROS 2软件包。在创建自己的Costmap2D层插件时，请参考它。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:37
 msgid "The plugin class ``nav2_gradient_costmap_plugin::GradientLayer`` is inherited from basic class ``nav2_costmap_2d::Layer``:"
-msgstr "The plugin class ``nav2_gradient_costmap_plugin::GradientLayer`` is inherited from basic class ``nav2_costmap_2d::Layer``:"
+msgstr "插件类``nav2_gradient_costmap_plugin::GradientLayer``继承自基类``nav2_costmap_2d::Layer``："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:46

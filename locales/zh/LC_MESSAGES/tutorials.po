@@ -617,7 +617,7 @@ msgstr "Noisy sensor measurements can cause to errors in ``Voxel Layer`` or ``Ob
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:23 ../../tutorials/docs/navigation2_with_keepout_filter.rst:26
 msgid "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
-msgstr "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
+msgstr "假设已安装或本地构建了ROS 2、Gazebo和TurtleBot3软件包。请确保Nav2项目也在本地构建，就像在:ref:`build-instructions`中所述一样。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:29
