@@ -192,7 +192,7 @@ msgstr "备用速度（米/秒）。"
 
 #: ../../configuration/packages/bt-plugins/actions/BackUp.rst:71 ../../configuration/packages/bt-plugins/actions/ComputePathThroughPoses.rst:70 ../../configuration/packages/bt-plugins/actions/ComputePathToPose.rst:70 ../../configuration/packages/bt-plugins/actions/ControllerSelector.rst:39 ../../configuration/packages/bt-plugins/actions/DriveOnHeading.rst:70 ../../configuration/packages/bt-plugins/actions/FollowPath.rst:70 ../../configuration/packages/bt-plugins/actions/GoalCheckerSelector.rst:39 ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:58 ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:58 ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:39 ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:57 ../../configuration/packages/bt-plugins/actions/Smooth.rst:56 ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:39 ../../configuration/packages/bt-plugins/actions/Spin.rst:71
 msgid "Output Ports"
-msgstr "Output Ports"
+msgstr "输出端口"
 
 
 #: ../../configuration/packages/bt-plugins/actions/BackUp.rst:82
@@ -217,12 +217,12 @@ msgstr "service_name"
 
 #: ../../configuration/packages/bt-plugins/actions/CancelAssistedTeleop.rst:20
 msgid "Service name, if not using default of ``assisted_teleop`` due to remapping."
-msgstr "Service name, if not using default of ``assisted_teleop`` due to remapping."
+msgstr "服务名称，如果由于重映射而不使用默认的``assisted_teleop``。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelAssistedTeleop.rst:32 ../../configuration/packages/bt-plugins/actions/CancelBackUp.rst:32 ../../configuration/packages/bt-plugins/actions/CancelControl.rst:32 ../../configuration/packages/bt-plugins/actions/CancelDriveOnHeading.rst:32 ../../configuration/packages/bt-plugins/actions/CancelSpin.rst:32 ../../configuration/packages/bt-plugins/actions/CancelWait.rst:32 ../../configuration/packages/bt-plugins/actions/ReinitializeGlobalLocalization.rst:32
 msgid "Server timeout (ms)."
-msgstr "Server timeout (ms)."
+msgstr "服务器超时（毫秒）。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelBackUp.rst:4
@@ -232,12 +232,12 @@ msgstr "CancelBackUp"
 
 #: ../../configuration/packages/bt-plugins/actions/CancelBackUp.rst:6
 msgid "Used to cancel the backup action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
-msgstr "Used to cancel the backup action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
+msgstr "用于取消行为服务器中的备份操作。服务器地址可以使用“server_name”输入端口重新映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelBackUp.rst:20
 msgid "Service name, if not using default of ``backup`` due to remapping."
-msgstr "Service name, if not using default of ``backup`` due to remapping."
+msgstr "服务名称，如果由于重映射而不使用默认的``backup``。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelControl.rst:4
@@ -247,12 +247,12 @@ msgstr "CancelControl"
 
 #: ../../configuration/packages/bt-plugins/actions/CancelControl.rst:6
 msgid "Used to cancel the goals given to the controllers' action server. The server address can be remapped using the ``server_name`` input port."
-msgstr "Used to cancel the goals given to the controllers' action server. The server address can be remapped using the ``server_name`` input port."
+msgstr "用于取消发送给控制器动作服务器的目标。服务器地址可以通过``server_name``输入端口进行重映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelControl.rst:20 ../../configuration/packages/bt-plugins/actions/ReinitializeGlobalLocalization.rst:20
 msgid "Service name."
-msgstr "Service name."
+msgstr "服务名称。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelDriveOnHeading.rst:4
@@ -262,12 +262,12 @@ msgstr "CancelDriveOnHeading"
 
 #: ../../configuration/packages/bt-plugins/actions/CancelDriveOnHeading.rst:6
 msgid "Used to cancel the drive on heading action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
-msgstr "Used to cancel the drive on heading action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
+msgstr "用于取消作为行为服务器的一部分的朝向动作。服务器地址可以使用“server_name”输入端口重新映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelDriveOnHeading.rst:20
 msgid "Service name, if not using default of ``drive_on_heading`` due to remapping."
-msgstr "Service name, if not using default of ``drive_on_heading`` due to remapping."
+msgstr "服务名称，如果由于重映射而不使用默认的``drive_on_heading``。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelSpin.rst:4
@@ -277,12 +277,12 @@ msgstr "CancelSpin"
 
 #: ../../configuration/packages/bt-plugins/actions/CancelSpin.rst:6
 msgid "Used to cancel the spin action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
-msgstr "Used to cancel the spin action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
+msgstr "用于取消行为服务器中的旋转动作。服务器地址可以通过``server_name``输入端口进行重映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelSpin.rst:20
 msgid "Service name, if not using default of ``spin`` due to remapping."
-msgstr "Service name, if not using default of ``spin`` due to remapping."
+msgstr "服务名称，如果由于重新映射而不使用默认的“spin”。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelWait.rst:4
@@ -292,7 +292,7 @@ msgstr "CancelWait"
 
 #: ../../configuration/packages/bt-plugins/actions/CancelWait.rst:6
 msgid "Used to cancel the wait action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
-msgstr "Used to cancel the wait action that is part of the behavior server. The server address can be remapped using the ``server_name`` input port."
+msgstr "用于取消作为行为服务器的一部分的等待动作。服务器地址可以使用“server_name”输入端口重新映射。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/CancelWait.rst:20
