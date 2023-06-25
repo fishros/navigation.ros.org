@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Map Server / Saver &mdash; Navigation 2 1.0.0 文档</title>
+  <title>地图服务器/保存器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -639,10 +639,10 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-rotation-shim-controller.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Map Server / Saver</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#map-saver-parameters">Map Saver Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#map-server-parameters">Map Server Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap-filter-info-server-parameters">Costmap Filter Info Server Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">地图服务器/保存器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#map-saver-parameters">地图保存器参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map-server-parameters">地图服务器参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#costmap-filter-info-server-parameters">Costmap过滤器信息服务器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Map Server / Saver</li>
+      <li>地图服务器/保存器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,11 +939,11 @@
            <div itemprop="articleBody">
              
   <div class="section" id="map-server-saver">
-<span id="configuring-map-server"></span><h1>Map Server / Saver<a class="headerlink" href="#map-server-saver" title="永久链接至标题"></a></h1>
+<span id="configuring-map-server"></span><h1>地图服务器/保存器<a class="headerlink" href="#map-server-saver" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server">在Github上的源代码</a></p>
 <p>地图服务器实现了用于处理堆栈的地图加载请求的服务器，并托管一个地图主题。它还实现了一个地图保存器服务器，该服务器将在后台运行，并根据服务请求保存地图。还存在一个类似于 ROS 1 的地图保存器 CLI，可用于单个地图保存。</p>
 <div class="section" id="map-saver-parameters">
-<h2>Map Saver Parameters<a class="headerlink" href="#map-saver-parameters" title="永久链接至标题"></a></h2>
+<h2>地图保存器参数<a class="headerlink" href="#map-saver-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">save_map_timeout</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -961,7 +961,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Timeout to attempt saving the map (seconds).</p>
+<dt>描述</dt><dd><p>尝试保存地图的超时时间（秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -981,7 +981,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Free space maximum probability threshold value for occupancy grid.</p>
+<dt>描述</dt><dd><p>占用栅格的空闲空间最大概率阈值。</p>
 </dd>
 </dl>
 </dd>
@@ -1001,14 +1001,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Occupied space minimum probability threshhold value for occupancy grid.</p>
+<dt>描述</dt><dd><p>占用空间的最小概率阈值，用于占用网格。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="map-server-parameters">
-<h2>Map Server Parameters<a class="headerlink" href="#map-server-parameters" title="永久链接至标题"></a></h2>
+<h2>地图服务器参数<a class="headerlink" href="#map-server-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">yaml_filename</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1026,7 +1026,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Path to map yaml file. Note from Rolling + Iron-Turtle forward: This parameter can set either from the yaml file or using the launch configuration parameter <code class="docutils literal notranslate"><span class="pre">map</span></code>. If we set it on launch commandline / launch configuration default, we override the yaml default. If you would like the specify your map file in yaml, remove the launch default so it is not overridden in Nav2's default launch files. Before Iron: <code class="docutils literal notranslate"><span class="pre">yaml_filename</span></code> must be set in the yaml (even if a bogus value) so that our launch scripts can overwrite it with launch values.</p>
+<dt>描述</dt><dd><p>映射yaml文件的路径。从Rolling + Iron-Turtle开始注意：此参数可以从yaml文件中设置，也可以使用启动配置参数“map”进行设置。如果我们在启动命令行/启动配置默认值中设置它，会覆盖yaml文件中的默认值。如果您想在yaml中指定地图文件，请删除启动默认值，以防止在Nav2的默认启动文件中被覆盖。在Iron之前：必须在yaml中设置“yaml_filename”（即使是虚假值），以便我们的启动脚本可以用启动值覆盖它。</p>
 </dd>
 </dl>
 </dd>
@@ -1046,7 +1046,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic to publish loaded map to.</p>
+<dt>描述</dt><dd><p>将加载的地图发布到的话题。</p>
 </dd>
 </dl>
 </dd>
@@ -1066,16 +1066,16 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Frame to publish loaded map in.</p>
+<dt>描述</dt><dd><p>发布加载的地图所在的框架。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="costmap-filter-info-server-parameters">
-<h2>Costmap Filter Info Server Parameters<a class="headerlink" href="#costmap-filter-info-server-parameters" title="永久链接至标题"></a></h2>
+<h2>Costmap过滤器信息服务器参数<a class="headerlink" href="#costmap-filter-info-server-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">type</dt>
+<dt class="field-odd">类型</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1091,12 +1091,12 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Type of costmap filter used. This is an enum for the type of filter this should be interpreted as. We provide the following pre-defined types:</p>
+<dt>描述</dt><dd><p>使用的代价地图过滤器类型。这是一个用于解释应该将其解释为的过滤器类型的枚举。我们提供以下预定义类型：</p>
 <ul class="simple">
-<li><p>0: keepout zones / preferred lanes filter</p></li>
-<li><p>1: speed filter, speed limit is specified in % of maximum speed</p></li>
-<li><p>2: speed filter, speed limit is specified in absolute value (m/s)</p></li>
-<li><p>3: binary filter</p></li>
+<li><p>0：限制区域/首选车道过滤器</p></li>
+<li><p>1: 速度过滤器，速度限制以最大速度的百分比表示</p></li>
+<li><p>2：速度过滤器，速度限制以绝对值（m/s）指定</p></li>
+<li><p>3: 二进制过滤器</p></li>
 </ul>
 </dd>
 </dl>
@@ -1137,7 +1137,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic to publish filter mask to. The value of this parameter should be in accordance with <code class="docutils literal notranslate"><span class="pre">topic_name</span></code> parameter of Map Server tuned to filter mask publishing.</p>
+<dt>描述</dt><dd><p>用于发布过滤器掩码的主题。该参数的值应与Map Server的``topic_name``参数相符，用于调整过滤器掩码的发布。</p>
 </dd>
 </dl>
 </dd>
@@ -1157,8 +1157,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Base of <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask value -&gt; filter space value linear conversion which is being proceeded as:
-<code class="docutils literal notranslate"><span class="pre">filter_space_value</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code></p>
+<dt>描述</dt><dd><p>将``OccupancyGrid``掩码值转换为过滤器空间值的基准 -&gt; 线性转换，处理方式为：<code class="docutils literal notranslate"><span class="pre">filter_space_value</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code></p>
 </dd>
 </dl>
 </dd>
