@@ -2317,7 +2317,7 @@ msgstr "TF变换容差。"
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "local_frame"
-msgstr "local_frame"
+msgstr "本地帧"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:94
@@ -2327,7 +2327,7 @@ msgstr "本地参考框架。"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:105
 msgid "Global reference frame."
-msgstr "Global reference frame."
+msgstr "全局参考帧。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
@@ -2337,7 +2337,7 @@ msgstr "行为插件"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:123 ../../configuration/packages/configuring-bt-navigator.rst:24 ../../configuration/packages/configuring-bt-navigator.rst:61 ../../configuration/packages/configuring-bt-navigator.rst:203 ../../configuration/packages/configuring-collision-monitor.rst:155 ../../configuration/packages/configuring-collision-monitor.rst:167 ../../configuration/packages/configuring-controller-server.rst:32 ../../configuration/packages/configuring-controller-server.rst:57 ../../configuration/packages/configuring-costmaps.rst:263 ../../configuration/packages/configuring-costmaps.rst:292 ../../configuration/packages/configuring-lifecycle.rst:23 ../../configuration/packages/configuring-planner-server.rst:21 ../../configuration/packages/configuring-smoother-server.rst:65 ../../configuration/packages/costmap-plugins/obstacle.rst:59 ../../configuration/packages/costmap-plugins/range.rst:24 ../../configuration/packages/costmap-plugins/voxel.rst:125 ../../configuration/packages/dwb-params/controller.rst:16 ../../configuration/packages/dwb-params/controller.rst:27
 msgid "vector<string>"
-msgstr "vector<string>"
+msgstr "字符串向量"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:123
@@ -2347,47 +2347,47 @@ msgstr "{\"spin\", \"back_up\", \"drive_on_heading\", \"wait\"}"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:127 ../../configuration/packages/configuring-smoother-server.rst:69
 msgid "List of plugin names to use, also matches action server names."
-msgstr "List of plugin names to use, also matches action server names."
+msgstr "要使用的插件名称列表，也与动作服务器名称匹配。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:147 ../../configuration/packages/configuring-controller-server.rst:50 ../../configuration/packages/configuring-controller-server.rst:75 ../../configuration/packages/configuring-controller-server.rst:99 ../../configuration/packages/configuring-costmaps.rst:285 ../../configuration/packages/configuring-costmaps.rst:312 ../../configuration/packages/configuring-planner-server.rst:39 ../../configuration/packages/configuring-smoother-server.rst:86 ../../configuration/packages/configuring-waypoint-follower.rst:65 ../../configuration/packages/costmap-plugins/speed_filter.rst:56
 msgid "Note"
-msgstr "Note"
+msgstr "注意"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:130 ../../configuration/packages/configuring-controller-server.rst:39 ../../configuration/packages/configuring-costmaps.rst:270 ../../configuration/packages/configuring-planner-server.rst:28 ../../configuration/packages/configuring-smoother-server.rst:72
 msgid "Each plugin namespace defined in this list needs to have a :code:`plugin` parameter defining the type of plugin to be loaded in the namespace."
-msgstr "Each plugin namespace defined in this list needs to have a :code:`plugin` parameter defining the type of plugin to be loaded in the namespace."
+msgstr "此列表中定义的每个插件命名空间都需要有一个:code:`plugin`参数，用于定义要加载到该命名空间中的插件类型。"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:132 ../../configuration/packages/configuring-controller-server.rst:41 ../../configuration/packages/configuring-controller-server.rst:66 ../../configuration/packages/configuring-controller-server.rst:91 ../../configuration/packages/configuring-costmaps.rst:272 ../../configuration/packages/configuring-costmaps.rst:301 ../../configuration/packages/configuring-planner-server.rst:30 ../../configuration/packages/configuring-smoother-server.rst:74 ../../configuration/packages/configuring-waypoint-follower.rst:54
 msgid "Example:"
-msgstr "Example:"
+msgstr "示例："
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:150 ../../configuration/packages/configuring-controller-server.rst:185 ../../configuration/packages/configuring-costmaps.rst:315 ../../configuration/packages/configuring-planner-server.rst:53
 msgid "Default Plugins"
-msgstr "Default Plugins"
+msgstr "默认插件"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:152
 msgid "When the :code:`behavior_plugins` parameter is not overridden, the following default plugins are loaded:"
-msgstr "When the :code:`behavior_plugins` parameter is not overridden, the following default plugins are loaded:"
+msgstr "当未覆盖 :code:`behavior_plugins` 参数时，将加载以下默认插件："
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:155 ../../configuration/packages/configuring-controller-server.rst:190 ../../configuration/packages/configuring-costmaps.rst:320 ../../configuration/packages/configuring-planner-server.rst:58 ../../configuration/packages/configuring-waypoint-follower.rst:83
 msgid "Namespace"
-msgstr "Namespace"
+msgstr "命名空间"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:155 ../../configuration/packages/configuring-controller-server.rst:190 ../../configuration/packages/configuring-costmaps.rst:320 ../../configuration/packages/configuring-planner-server.rst:58 ../../configuration/packages/configuring-waypoint-follower.rst:83
 msgid "Plugin"
-msgstr "Plugin"
+msgstr "插件"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:157
 msgid "\"spin\""
-msgstr "\"spin\""
+msgstr "\"旋转\""
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:157
@@ -2397,7 +2397,7 @@ msgstr "\"nav2_behaviors/Spin\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:159
 msgid "\"backup\""
-msgstr "\"backup\""
+msgstr "\"备份\""
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:159
@@ -2407,7 +2407,7 @@ msgstr "\"nav2_behaviors/BackUp\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:161
 msgid "\"drive_on_heading\""
-msgstr "\"drive_on_heading\""
+msgstr "\"按照航向前进\""
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:161
@@ -2417,7 +2417,7 @@ msgstr "\"nav2_behaviors/DriveOnHeading\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:163
 msgid "\"wait\""
-msgstr "\"wait\""
+msgstr "\"等待\""
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:163
@@ -2427,32 +2427,32 @@ msgstr "\"nav2_behaviors/Wait\""
 
 #: ../../configuration/packages/configuring-behavior-server.rst:167
 msgid "Spin Behavior Parameters"
-msgstr "Spin Behavior Parameters"
+msgstr "旋转行为参数"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:169
 msgid "Spin distance is given from the action request"
-msgstr "Spin distance is given from the action request"
+msgstr "从动作请求中给出旋转距离"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst ../../configuration/packages/configuring-rotation-shim-controller.rst
 msgid "simulate_ahead_time"
-msgstr "simulate_ahead_time"
+msgstr "模拟前进时间"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:180 ../../configuration/packages/configuring-behavior-server.rst:229 ../../configuration/packages/configuring-behavior-server.rst:245 ../../configuration/packages/configuring-behavior-server.rst:261
 msgid "Time to look ahead for collisions (s)."
-msgstr "Time to look ahead for collisions (s)."
+msgstr "向前查找碰撞的时间（秒）"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
 msgid "max_rotational_vel"
-msgstr "max_rotational_vel"
+msgstr "最大旋转速度"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:191 ../../configuration/packages/configuring-mppic.rst:174
 msgid "Maximum rotational velocity (rad/s)."
-msgstr "Maximum rotational velocity (rad/s)."
+msgstr "最大旋转速度（弧度/秒）"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst
@@ -2482,7 +2482,7 @@ msgstr "3.2"
 
 #: ../../configuration/packages/configuring-behavior-server.rst:213
 msgid "maximum rotational acceleration (rad/s^2)."
-msgstr "maximum rotational acceleration (rad/s^2)."
+msgstr "最大旋转加速度（弧度/秒^2）"
 
 
 #: ../../configuration/packages/configuring-behavior-server.rst:216
