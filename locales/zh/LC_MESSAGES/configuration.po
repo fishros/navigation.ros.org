@@ -1757,7 +1757,7 @@ msgstr "alpha5"
 
 #: ../../configuration/packages/configuring-amcl.rst:68
 msgid "For Omni models only: translation noise."
-msgstr "For Omni models only: translation noise."
+msgstr "仅适用于Omni模型：翻译噪声。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst ../../configuration/packages/configuring-collision-monitor.rst
@@ -1777,7 +1777,7 @@ msgstr "beam_skip_distance"
 
 #: ../../configuration/packages/configuring-amcl.rst:90
 msgid "Ignore beams that most particles disagree with in Likelihood field model. Maximum distance to consider skipping for (m)."
-msgstr "Ignore beams that most particles disagree with in Likelihood field model. Maximum distance to consider skipping for (m)."
+msgstr "在似然场模型中忽略大多数粒子不同意的射线。要考虑跳过的最大距离（米）。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1792,7 +1792,7 @@ msgstr "0.9"
 
 #: ../../configuration/packages/configuring-amcl.rst:101
 msgid "Percentage of beams after not matching map to force full update due to bad convergance."
-msgstr "Percentage of beams after not matching map to force full update due to bad convergance."
+msgstr "未能将地图匹配到强制完全更新由于收敛性不佳的射线的百分比。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1802,7 +1802,7 @@ msgstr "beam_skip_threshold"
 
 #: ../../configuration/packages/configuring-amcl.rst:112
 msgid "Percentage of beams required to skip."
-msgstr "Percentage of beams required to skip."
+msgstr "需要跳过的射线的百分比。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
@@ -1817,7 +1817,7 @@ msgstr "False"
 
 #: ../../configuration/packages/configuring-amcl.rst:123
 msgid "Whether to do beam skipping in Likelihood field model."
-msgstr "Whether to do beam skipping in Likelihood field model."
+msgstr "是否在似然场模型中进行射线跳过。"
 
 
 #: ../../configuration/packages/configuring-amcl.rst
