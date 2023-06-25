@@ -198,7 +198,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-and-controller-servers">Planner and Controller Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#selecting-the-algorithm-plugins">Selecting the Algorithm Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-server">Planner Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#controller-server">Controller Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#controller-server">控制器服务器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#conclusion">Conclusion</a></li>
@@ -562,7 +562,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-thetastar.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-controller-server.html">Controller Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-controller-server.html">控制器服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-controller-server.html#provided-plugins">Provided Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nav2_controller-plugins/simple_progress_checker.html">SimpleProgressChecker</a></li>
@@ -1206,7 +1206,7 @@
 </table>
 <dl>
 <dt>描述</dt><dd><p>从机器人坐标系中获取costmap值的点。格式：[x1, y1, weight1, x2, y2, weight2, ...]。</p>
-<p>IMPORTANT: Requires much higher number of optimizer iterations to actually improve the path. Use only if you really need it (highly elongated/asymmetric robots)</p>
+<p>重要提示：要实际改善路径，需要更高数量的优化器迭代次数。仅在确实需要时使用（高度拉长/非对称机器人）。</p>
 <p>下图描述了如何使用两个cost检查点来提高对矩形机器人的成本感知。</p>
 <a class="reference internal image-reference" href="../../_images/cost_check_points.png"><img alt="../../_images/cost_check_points.png" class="align-center" src="../../_images/cost_check_points.png" style="width: 176px; height: 284px;" /></a>
 </dd>
@@ -1228,7 +1228,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum number of optimizer iterations</p>
+<dt>描述</dt><dd><p>优化器迭代的最大次数</p>
 </dd>
 </dl>
 </dd>
@@ -1248,7 +1248,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to print optimizer debug info</p>
+<dt>描述</dt><dd><p>是否打印优化器调试信息</p>
 </dd>
 </dl>
 </dd>
@@ -1268,7 +1268,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Linear solver type to be used by optimizer. Valid values are <code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> and <code class="docutils literal notranslate"><span class="pre">DENSE_QR</span></code></p>
+<dt>描述</dt><dd><p>优化器使用的线性求解器类型。有效值为``SPARSE_NORMAL_CHOLESKY``和``DENSE_QR``</p>
 </dd>
 </dl>
 </dd>
@@ -1288,7 +1288,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Gradient tolerance optimization termination criterion</p>
+<dt>描述</dt><dd><p>梯度容差优化终止条件</p>
 </dd>
 </dl>
 </dd>
@@ -1308,7 +1308,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Function tolerance optimization termination criterion</p>
+<dt>描述</dt><dd><p>函数容差优化终止准则</p>
 </dd>
 </dl>
 </dd>
@@ -1328,7 +1328,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Parameter tolerance optimization termination criterion</p>
+<dt>描述</dt><dd><p>参数容忍度优化终止准则</p>
 </dd>
 </dl>
 </dd>
