@@ -2807,7 +2807,7 @@ msgstr "碰撞监控使用相对于机器人的基本框架原点的多边形来
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:26
 msgid "The following models of safety behaviors are employed by Collision Monitor:"
-msgstr "The following models of safety behaviors are employed by Collision Monitor:"
+msgstr "碰撞监测器使用以下安全行为模型："
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:28
@@ -2817,7 +2817,7 @@ msgstr "**停止模型**：定义一个区域和一个点阈值。如果在该�
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:29
 msgid "**Slowdown model**: Define a zone around the robot and slow the maximum speed for a ``slowdown_ratio``, if ``min_points`` or more points will appear inside the area."
-msgstr "**Slowdown model**: Define a zone around the robot and slow the maximum speed for a ``slowdown_ratio``, if ``min_points`` or more points will appear inside the area."
+msgstr "**减速模型**：在机器人周围定义一个区域，并根据区域内出现的点数是否达到``min_points``或更多来降低最大速度的``slowdown_ratio``。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:30
@@ -2827,7 +2827,7 @@ msgstr "**限制模型**：定义一个围绕机器人的区域，并将最大�
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:31
 msgid "**Approach model**: Using the current robot speed, estimate the time to collision to sensor data. If the time is less than ``time_before_collision`` seconds (0.5, 2, 5, etc...), the robot will slow such that it is now at least ``time_before_collision`` seconds to collision. The effect here would be to keep the robot always ``time_before_collision`` seconds from any collision."
-msgstr "**Approach model**: Using the current robot speed, estimate the time to collision to sensor data. If the time is less than ``time_before_collision`` seconds (0.5, 2, 5, etc...), the robot will slow such that it is now at least ``time_before_collision`` seconds to collision. The effect here would be to keep the robot always ``time_before_collision`` seconds from any collision."
+msgstr "**接近模型**：根据当前机器人速度，估算与传感器数据的碰撞时间。如果时间小于``time_before_collision``秒（例如0.5、2、5等），机器人将减速，以确保与碰撞的时间至少为``time_before_collision``秒。其效果是使机器人始终与任何碰撞保持``time_before_collision``秒的距离。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:33
@@ -2837,47 +2837,47 @@ msgstr "围绕机器人的区域可以采用以下形状："
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:35
 msgid "Arbitrary user-defined polygon relative to the robot base frame, which can be static in a configuration file or dynamically changing via a topic interface."
-msgstr "Arbitrary user-defined polygon relative to the robot base frame, which can be static in a configuration file or dynamically changing via a topic interface."
+msgstr "机器人基准坐标系下的任意用户定义多边形，可以在配置文件中静态定义，也可以通过主题接口进行动态变化。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:36
 msgid "Robot footprint polygon, which is used in the approach behavior model only. Will use the static user-defined polygon or the footprint topic to allow it to be dynamically adjusted over time."
-msgstr "Robot footprint polygon, which is used in the approach behavior model only. Will use the static user-defined polygon or the footprint topic to allow it to be dynamically adjusted over time."
+msgstr "机器人足迹多边形，仅在接近行为模型中使用。将使用静态用户定义的多边形或足迹主题，以便随时间动态调整。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:37
 msgid "Circle: is made for the best performance and could be used in the cases where the zone or robot footprint could be approximated by round shape."
-msgstr "Circle: is made for the best performance and could be used in the cases where the zone or robot footprint could be approximated by round shape."
+msgstr "圆形：为了获得最佳性能，可以在区域或机器人外形可以近似为圆形的情况下使用。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:39
 msgid "All shapes (``Polygon`` and ``Circle``) are derived from base ``Polygon`` class, so without loss of generality they would be called as \"polygons\". Subscribed footprint is also having the same properties as other polygons, but it is being obtained a footprint topic for the Approach Model."
-msgstr "All shapes (``Polygon`` and ``Circle``) are derived from base ``Polygon`` class, so without loss of generality they would be called as \"polygons\". Subscribed footprint is also having the same properties as other polygons, but it is being obtained a footprint topic for the Approach Model."
+msgstr "所有形状（``Polygon``和``Circle``）都是从基本的``Polygon``类派生而来，所以不失一般性地可以称为“多边形”。订阅的足迹也具有与其他多边形相同的属性，但它通过足迹主题获得用于接近模型。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:42
 msgid "The data may be obtained from different data sources:"
-msgstr "The data may be obtained from different data sources:"
+msgstr "数据可以从不同的数据源获取："
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:44
 msgid "Laser scanners (``sensor_msgs::msg::LaserScan`` messages)"
-msgstr "Laser scanners (``sensor_msgs::msg::LaserScan`` messages)"
+msgstr "激光扫描仪（``sensor_msgs::msg::LaserScan``消息）"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:45
 msgid "PointClouds (``sensor_msgs::msg::PointCloud2`` messages)"
-msgstr "PointClouds (``sensor_msgs::msg::PointCloud2`` messages)"
+msgstr "点云（``sensor_msgs::msg::PointCloud2``消息）"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:46
 msgid "IR/Sonars (``sensor_msgs::msg::Range`` messages)"
-msgstr "IR/Sonars (``sensor_msgs::msg::Range`` messages)"
+msgstr "红外/声纳（``sensor_msgs::msg::Range``消息）"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:60 ../../configuration/packages/configuring-collision-monitor.rst:71 ../../configuration/packages/configuring-collision-monitor.rst:82 ../../configuration/packages/configuring-collision-monitor.rst:93 ../../configuration/packages/configuring-collision-monitor.rst:104 ../../configuration/packages/configuring-collision-monitor.rst:126 ../../configuration/packages/configuring-collision-monitor.rst:137 ../../configuration/packages/configuring-collision-monitor.rst:148 ../../configuration/packages/configuring-collision-monitor.rst:160 ../../configuration/packages/configuring-collision-monitor.rst:171 ../../configuration/packages/configuring-collision-monitor.rst:187 ../../configuration/packages/configuring-collision-monitor.rst:198 ../../configuration/packages/configuring-collision-monitor.rst:209 ../../configuration/packages/configuring-collision-monitor.rst:220 ../../configuration/packages/configuring-collision-monitor.rst:231 ../../configuration/packages/configuring-collision-monitor.rst:242 ../../configuration/packages/configuring-collision-monitor.rst:253 ../../configuration/packages/configuring-collision-monitor.rst:264 ../../configuration/packages/configuring-collision-monitor.rst:275 ../../configuration/packages/configuring-collision-monitor.rst:286 ../../configuration/packages/configuring-collision-monitor.rst:297 ../../configuration/packages/configuring-collision-monitor.rst:308 ../../configuration/packages/configuring-collision-monitor.rst:319 ../../configuration/packages/configuring-collision-monitor.rst:332 ../../configuration/packages/configuring-collision-monitor.rst:348 ../../configuration/packages/configuring-collision-monitor.rst:359 ../../configuration/packages/configuring-collision-monitor.rst:370 ../../configuration/packages/configuring-collision-monitor.rst:381 ../../configuration/packages/configuring-collision-monitor.rst:393
 msgid "Description:"
-msgstr "Description:"
+msgstr "描述："
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -2892,7 +2892,7 @@ msgstr "\"cmd_vel_raw\""
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:82
 msgid "Input ``cmd_vel`` topic with desired robot velocity."
-msgstr "Input ``cmd_vel`` topic with desired robot velocity."
+msgstr "输入期望机器人速度的``cmd_vel``主题。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
@@ -2907,42 +2907,42 @@ msgstr "\"cmd_vel\""
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:93
 msgid "Output ``cmd_vel`` topic with output produced by Collision Monitor velocities."
-msgstr "Output ``cmd_vel`` topic with output produced by Collision Monitor velocities."
+msgstr "输出带有碰撞监视器生成的速度的\"cmd_vel\"主题。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "state_topic"
-msgstr "state_topic"
+msgstr "状态主题"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:104
 msgid "Output the currently activated polygon action type and name. Optional parameter. No publisher will be created if it is unspecified."
-msgstr "Output the currently activated polygon action type and name. Optional parameter. No publisher will be created if it is unspecified."
+msgstr "输出当前激活的多边形动作类型和名称。可选参数。如果未指定，将不会创建发布者。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "source_timeout"
-msgstr "source_timeout"
+msgstr "源超时"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:126
 msgid "Maximum time interval in which source data is considered as valid."
-msgstr "Maximum time interval in which source data is considered as valid."
+msgstr "源数据被视为有效的最大时间间隔。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "base_shift_correction"
-msgstr "base_shift_correction"
+msgstr "基准位移校正"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:137
 msgid "Whether to correct source data towards to base frame movement, considering the difference between current time and latest source time. If enabled, produces more accurate sources positioning in the robot base frame, at the cost of slower performance. This will cause average delays for ``~1/(2*odom_rate)`` per each ``cmd_vel`` calculation cycle. However, disabling this option for better performance is not recommended for the fast moving robots, where during the typical rate of data sources, robot could move unacceptably far. Thus reasonable odometry rates are recommended (~100 hz)."
-msgstr "Whether to correct source data towards to base frame movement, considering the difference between current time and latest source time. If enabled, produces more accurate sources positioning in the robot base frame, at the cost of slower performance. This will cause average delays for ``~1/(2*odom_rate)`` per each ``cmd_vel`` calculation cycle. However, disabling this option for better performance is not recommended for the fast moving robots, where during the typical rate of data sources, robot could move unacceptably far. Thus reasonable odometry rates are recommended (~100 hz)."
+msgstr "是否根据当前时间和最新源时间的差异，将源数据校正为基准框架运动。如果启用，会在机器人基准框架中产生更准确的源位置，但性能会减慢。这将导致每个\"cmd_vel\"计算周期平均延迟约为\"~1/(2*odom_rate)\"。然而，对于高速移动的机器人，不推荐禁用此选项以获得更好的性能，因为在典型的数据源速率下，机器人可能移动得不可接受远。因此，建议使用合理的里程计速率（~100 Hz）。"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "stop_pub_timeout"
-msgstr "stop_pub_timeout"
+msgstr "停止发布超时"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:148
@@ -2952,7 +2952,7 @@ msgstr "Timeout, after which zero-velocity ceases to be published. It could be u
 
 #: ../../configuration/packages/configuring-collision-monitor.rst
 msgid "polygons"
-msgstr "polygons"
+msgstr "多边形"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:159
@@ -2962,7 +2962,7 @@ msgstr "List of zones (stop/slowdown/limit bounding boxes, footprint, approach c
 
 #: ../../configuration/packages/configuring-collision-monitor.rst ../../configuration/packages/configuring-costmaps.rst
 msgid "observation_sources"
-msgstr "observation_sources"
+msgstr "观测源"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:171
@@ -2972,7 +2972,7 @@ msgstr "List of data sources (laser scanners, pointclouds, etc...). Causes an er
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:174
 msgid "Polygons parameters"
-msgstr "Polygons parameters"
+msgstr "多边形参数"
 
 
 #: ../../configuration/packages/configuring-collision-monitor.rst:176
