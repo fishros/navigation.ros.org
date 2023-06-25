@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReinitializeGlobalLocalization &mdash; Navigation 2 1.0.0 文档</title>
+  <title>ReinitializeGlobalLocalization（重新初始化全局定位） &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -454,16 +454,16 @@
 <li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapExceptRegion.html">ClearCostmapExceptRegion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapAroundRobot.html">ClearCostmapAroundRobot</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">ReinitializeGlobalLocalization</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ReinitializeGlobalLocalization（重新初始化全局定位）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TruncatePath.html">TruncatePath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TruncatePathLocal.html">TruncatePathLocal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PlannerSelector.html">PlannerSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlannerSelector.html">PlannerSelector（规划器选择器）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ControllerSelector.html">ControllerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SmootherSelector.html">SmootherSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalCheckerSelector.html">GoalCheckerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateThroughPoses.html">NavigateThroughPoses</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ComputePathThroughPoses.html">计算路径通过姿势</a></li>
-<li class="toctree-l4"><a class="reference internal" href="RemovePassedGoals.html">RemovePassedGoals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RemovePassedGoals.html">RemovePassedGoals（移除已通过的目标）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelControl.html">CancelControl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelBackUp.html">CancelBackUp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelSpin.html">CancelSpin</a></li>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>ReinitializeGlobalLocalization</li>
+      <li>ReinitializeGlobalLocalization（重新初始化全局定位）</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,8 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="reinitializegloballocalization">
-<span id="bt-reinitialize-global-localization-action"></span><h1>ReinitializeGlobalLocalization<a class="headerlink" href="#reinitializegloballocalization" title="永久链接至标题"></a></h1>
-<p>Used to trigger global relocalization using AMCL in case of severe delocalization or kidnapped robot problem.</p>
+<span id="bt-reinitialize-global-localization-action"></span><h1>ReinitializeGlobalLocalization（重新初始化全局定位）<a class="headerlink" href="#reinitializegloballocalization" title="永久链接至标题"></a></h1>
+<p>用于在严重失位或被劫持的机器人问题下触发使用 AMCL 进行全局重定位。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RemovePassedGoals &mdash; Navigation 2 1.0.0 文档</title>
+  <title>RemovePassedGoals（移除已通过的目标） &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
@@ -454,16 +454,16 @@
 <li class="toctree-l4"><a class="reference internal" href="ClearEntireCostmap.html">清除整个成本地图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapExceptRegion.html">ClearCostmapExceptRegion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ClearCostmapAroundRobot.html">ClearCostmapAroundRobot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ReinitializeGlobalLocalization.html">ReinitializeGlobalLocalization（重新初始化全局定位）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TruncatePath.html">TruncatePath</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TruncatePathLocal.html">TruncatePathLocal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PlannerSelector.html">PlannerSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PlannerSelector.html">PlannerSelector（规划器选择器）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ControllerSelector.html">ControllerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SmootherSelector.html">SmootherSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GoalCheckerSelector.html">GoalCheckerSelector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NavigateThroughPoses.html">NavigateThroughPoses</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ComputePathThroughPoses.html">计算路径通过姿势</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">RemovePassedGoals</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">RemovePassedGoals（移除已通过的目标）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelControl.html">CancelControl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelBackUp.html">CancelBackUp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelSpin.html">CancelSpin</a></li>
@@ -930,7 +930,7 @@
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../../configuring-bt-xml.html">Behavior Tree XML Nodes</a> &raquo;</li>
-      <li>RemovePassedGoals</li>
+      <li>RemovePassedGoals（移除已通过的目标）</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,13 +940,12 @@
            <div itemprop="articleBody">
              
   <div class="section" id="removepassedgoals">
-<span id="bt-remove-passed-goals-action"></span><h1>RemovePassedGoals<a class="headerlink" href="#removepassedgoals" title="永久链接至标题"></a></h1>
-<p>Looks over the input port <code class="docutils literal notranslate"><span class="pre">goals</span></code> and removes any point that the robot is in close proximity to or has recently passed.
-This is used to cull goal points that have been passed from <code class="docutils literal notranslate"><span class="pre">ComputePathToPoses</span></code> to enable replanning to only the current task goals.</p>
+<span id="bt-remove-passed-goals-action"></span><h1>RemovePassedGoals（移除已通过的目标）<a class="headerlink" href="#removepassedgoals" title="永久链接至标题"></a></h1>
+<p>检查输入端口的“goals”并删除机器人靠近或最近经过的任何点。这用于剔除已从 ComputePathToPoses 传递的目标点，以便仅对当前任务目标进行重新规划。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">radius</dt>
+<dt class="field-odd">radius（半径）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -962,7 +961,7 @@ This is used to cull goal points that have been passed from <code class="docutil
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The radius (m) in proximity to the viapoint for the BT node to remove from the list as having passed.</p>
+<dt>描述</dt><dd><p>在通过的蓝牙节点列表中，从列表中移除与目标点接近的半径（米）。</p>
 </dd>
 </dl>
 </dd>
@@ -977,16 +976,16 @@ This is used to cull goal points that have been passed from <code class="docutil
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>&quot;map&quot;</p></td>
+<td><p>&quot;地图&quot;</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Reference frame.</p>
+<dt>描述</dt><dd><p>参考坐标系。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">robot_base_frame</dt>
+<dt class="field-odd">机器人基准坐标系</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 35%" />
@@ -1002,7 +1001,7 @@ This is used to cull goal points that have been passed from <code class="docutil
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Robot base frame.</p>
+<dt>描述</dt><dd><p>机器人基准坐标系。</p>
 </dd>
 </dl>
 </dd>
@@ -1022,7 +1021,7 @@ This is used to cull goal points that have been passed from <code class="docutil
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>A vector of goals to check if it passed any in the current iteration.</p>
+<dt>描述</dt><dd><p>一个目标向量，用于检查在当前迭代中是否通过了任何目标。</p>
 </dd>
 </dl>
 </dd>
@@ -1047,7 +1046,7 @@ This is used to cull goal points that have been passed from <code class="docutil
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>A vector of goals with goals removed in proximity to the robot</p>
+<dt>描述</dt><dd><p>一个目标向量，其中的目标在接近机器人时被移除。</p>
 </dd>
 </dl>
 </dd>
