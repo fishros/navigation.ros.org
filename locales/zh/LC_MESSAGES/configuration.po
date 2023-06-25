@@ -3552,7 +3552,7 @@ msgstr "检查机器人进度的进度检查插件的映射名称。以前用于
 
 #: ../../configuration/packages/configuring-controller-server.rst:64 ../../configuration/packages/configuring-controller-server.rst:89 ../../configuration/packages/configuring-waypoint-follower.rst:52
 msgid "The plugin namespace defined needs to have a :code:`plugin` parameter defining the type of plugin to be loaded in the namespace."
-msgstr "The plugin namespace defined needs to have a :code:`plugin` parameter defining the type of plugin to be loaded in the namespace."
+msgstr "定义的插件命名空间需要有一个 :code:`plugin` 参数来定义要在命名空间中加载的插件类型。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3582,7 +3582,7 @@ msgstr "0.0001"
 
 #: ../../configuration/packages/configuring-controller-server.rst:110
 msgid "The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin. Odometry values below this threshold (in m/s) will be set to 0.0."
-msgstr "The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin. Odometry values below this threshold (in m/s) will be set to 0.0."
+msgstr "控制器服务器在将接收到的里程计消息发送给控制器插件之前会过滤速度部分。低于此阈值（以 m/s 为单位）的里程计值将被设置为 0.0。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3592,7 +3592,7 @@ msgstr "min_y_velocity_threshold"
 
 #: ../../configuration/packages/configuring-controller-server.rst:122
 msgid "The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin. Odometry values below this threshold (in m/s) will be set to 0.0. For non-holonomic robots"
-msgstr "The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin. Odometry values below this threshold (in m/s) will be set to 0.0. For non-holonomic robots"
+msgstr "控制器服务器在将接收到的里程计消息发送给控制器插件之前会过滤速度部分。低于此阈值（以 m/s 为单位）的里程计值将被设置为 0.0。对于非全向移动机器人"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3602,7 +3602,7 @@ msgstr "min_theta_velocity_threshold"
 
 #: ../../configuration/packages/configuring-controller-server.rst:134
 msgid "The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin. Odometry values below this threshold (in rad/s) will be set to 0.0."
-msgstr "The controller server filters the velocity portion of the odometry messages received before sending them to the controller plugin. Odometry values below this threshold (in rad/s) will be set to 0.0."
+msgstr "控制器服务器在将接收到的里程计消息发送给控制器插件之前会过滤速度部分。低于此阈值（以 rad/s 为单位）的里程计值将被设置为 0.0。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3612,7 +3612,7 @@ msgstr "failure_tolerance"
 
 #: ../../configuration/packages/configuring-controller-server.rst:146
 msgid "The maximum duration in seconds the called controller plugin can fail (i.e. the :code:`computeVelocityCommands` function of the plugin throwing an exception) before the :code:`nav2_msgs::action::FollowPath` action fails. Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any positive value for the appropriate timeout."
-msgstr "The maximum duration in seconds the called controller plugin can fail (i.e. the :code:`computeVelocityCommands` function of the plugin throwing an exception) before the :code:`nav2_msgs::action::FollowPath` action fails. Setting it to the special value of -1.0 makes it infinite, 0 to disable, and any positive value for the appropriate timeout."
+msgstr "被调用的控制器插件在失败之前的最大持续时间（即插件的 `computeVelocityCommands` 函数抛出异常）允许的时间（以秒为单位），否则 `nav2_msgs::action::FollowPath` 动作将失败。将其设置为特殊值 -1.0 可以使其无限制，设置为 0 则禁用，设置为正值可设定适当的超时时间。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst
@@ -3632,7 +3632,7 @@ msgstr "Speed limiting topic name to subscribe. This could be published by Speed
 
 #: ../../configuration/packages/configuring-controller-server.rst:169
 msgid "Topic to get instantaneous measurement of speed from."
-msgstr "Topic to get instantaneous measurement of speed from."
+msgstr "用于获取瞬时速度测量值的主题。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:173 ../../configuration/packages/configuring-smac-planner.rst:14 ../../configuration/packages/configuring-waypoint-follower.rst:68
@@ -3642,7 +3642,7 @@ msgstr "Provided Plugins"
 
 #: ../../configuration/packages/configuring-controller-server.rst:174
 msgid "The plugins listed below are inside the ``nav2_controller`` namespace."
-msgstr "The plugins listed below are inside the ``nav2_controller`` namespace."
+msgstr "下面列出的插件位于 `nav2_controller` 命名空间中。"
 
 
 #: ../../configuration/packages/configuring-controller-server.rst:187
