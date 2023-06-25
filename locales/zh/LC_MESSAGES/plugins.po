@@ -347,7 +347,7 @@ msgstr "`SmacPlannerHybrid`_"
 
 #: ../../plugins/index.rst:144
 msgid "(formerly `SmacPlanner`)"
-msgstr "(formerly `SmacPlanner`)"
+msgstr "(以前称为 `SmacPlanner`)"
 
 
 #: ../../plugins/index.rst:143
@@ -357,7 +357,7 @@ msgstr "一种使用Dubin或Reeds-shepp运动模型的SE2混合A*算法实现，
 
 #: ../../plugins/index.rst:143
 msgid "**Ackermann**, Differential, Omnidirectional, Legged"
-msgstr "**Ackermann**, Differential, Omnidirectional, Legged"
+msgstr "**Ackermann**、差分、全向、腿式"
 
 
 #: ../../plugins/index.rst:152
@@ -367,7 +367,7 @@ msgstr "`SmacPlanner2D`_"
 
 #: ../../plugins/index.rst:152
 msgid "A 2D A* implementation Using either 4 or 8 connected neighborhoods with smoother and multi-resolution query"
-msgstr "A 2D A* implementation Using either 4 or 8 connected neighborhoods with smoother and multi-resolution query"
+msgstr "一个使用4个或8个相邻区域连接的2D A*实现，具有更平滑和多分辨率查询"
 
 
 #: ../../plugins/index.rst:158
@@ -377,7 +377,7 @@ msgstr "`SmacPlannerLattice`_"
 
 #: ../../plugins/index.rst:158
 msgid "An implementation of State Lattice Planner using pre-generated minimum control sets for kinematically feasible planning with any type of vehicle imaginable. Includes generator script for Ackermann, diff, omni, and legged robots."
-msgstr "An implementation of State Lattice Planner using pre-generated minimum control sets for kinematically feasible planning with any type of vehicle imaginable. Includes generator script for Ackermann, diff, omni, and legged robots."
+msgstr "一个使用预生成的最小控制集实现的状态栅格规划器，可用于对任何类型的车辆进行动力学可行规划。包括用于 Ackermann、差分、全向和腿式机器人的生成器脚本。"
 
 
 #: ../../plugins/index.rst:158
@@ -397,7 +397,7 @@ msgstr "Anshumaan Singh"
 
 #: ../../plugins/index.rst:168
 msgid "An implementaion of Theta* using either 4 or 8 connected neighborhoods, assumes the robot as a 2D holonomic particle"
-msgstr "An implementaion of Theta* using either 4 or 8 connected neighborhoods, assumes the robot as a 2D holonomic particle"
+msgstr "一个使用4个或8个相邻区域连接的Theta*实现，将机器人假设为2D全向粒子"
 
 
 #: ../../plugins/index.rst:168
@@ -407,72 +407,72 @@ msgstr "差动、全向"
 
 #: ../../plugins/index.rst:183
 msgid "Smoothers"
-msgstr "Smoothers"
+msgstr "平滑器"
 
 
 #: ../../plugins/index.rst:188
 msgid "`Simple Smoother`_"
-msgstr "`Simple Smoother`_"
+msgstr "`简单平滑器`_"
 
 
 #: ../../plugins/index.rst:188
 msgid "A simple path smoother for infeasible (e.g. 2D) planners"
-msgstr "A simple path smoother for infeasible (e.g. 2D) planners"
+msgstr "适用于无法实现（例如2D）规划器的简单路径平滑器"
 
 
 #: ../../plugins/index.rst:192
 msgid "`Constrained Smoother`_"
-msgstr "`Constrained Smoother`_"
+msgstr "`约束平滑器`_"
 
 
 #: ../../plugins/index.rst:192
 msgid "Matej Vargovcik & Steve Macenski"
-msgstr "Matej Vargovcik & Steve Macenski"
+msgstr "Matej Vargovcik和Steve Macenski"
 
 
 #: ../../plugins/index.rst:192
 msgid "A path smoother using a constraints problem solver to optimize various criteria such as smoothness or distance from obstacles, maintaining minimum turning radius"
-msgstr "A path smoother using a constraints problem solver to optimize various criteria such as smoothness or distance from obstacles, maintaining minimum turning radius"
+msgstr "使用约束问题求解器优化各种准则（如平滑性或与障碍物的距离），以实现路径平滑化，保持最小转弯半径"
 
 
 #: ../../plugins/index.rst:200
 msgid "`Savitzky-Golay Smoother`_"
-msgstr "`Savitzky-Golay Smoother`_"
+msgstr "`Savitzky-Golay平滑器`_"
 
 
 #: ../../plugins/index.rst:200
 msgid "A path smoother using a Savitzky-Golay filter to smooth the path via digital signal processing to remove noise from the path."
-msgstr "A path smoother using a Savitzky-Golay filter to smooth the path via digital signal processing to remove noise from the path."
+msgstr "使用Savitzky-Golay滤波器通过数字信号处理对路径进行平滑，以去除路径中的噪声。"
 
 
 #: ../../plugins/index.rst:213
 msgid "Behaviors"
-msgstr "Behaviors"
+msgstr "行为"
 
 
 #: ../../plugins/index.rst:218
 msgid "`Clear Costmap`_"
-msgstr "`Clear Costmap`_"
+msgstr "`清除代价地图`_"
 
 
 #: ../../plugins/index.rst:218
 msgid "A service to clear the given costmap in case of incorrect perception or robot is stuck"
-msgstr "A service to clear the given costmap in case of incorrect perception or robot is stuck"
+msgstr "在感知错误或机器人卡住的情况下清除给定代价地图的服务"
 
 
 #: ../../plugins/index.rst:222
 msgid "`Spin`_"
-msgstr "`Spin`_"
+msgstr "`旋转`_"
 
 
 #: ../../plugins/index.rst:222
 msgid "Rotate behavior of configurable angles to clear out free space and nudge robot out of potential local failures"
-msgstr "Rotate behavior of configurable angles to clear out free space and nudge robot out of potential local failures"
+msgstr "将机器人旋转到可配置角度以清除空闲空间，并推动机器人摆脱潜在的局部故障"
 
 
 #: ../../plugins/index.rst:227
 msgid "`Back Up`_"
-msgstr "`Back Up`_"
+msgstr "`倒退`_"
 
 
 #: ../../plugins/index.rst:227

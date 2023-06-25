@@ -252,7 +252,7 @@ msgstr "The general task in Nav2 for a controller is to compute a valid control 
 
 #: ../../concepts/index.rst:172
 msgid "Behaviors"
-msgstr "Behaviors"
+msgstr "行为"
 
 
 #: ../../concepts/index.rst:174
@@ -277,7 +277,7 @@ msgstr "It is important to note that the behavior server can hold any behavior t
 
 #: ../../concepts/index.rst:188
 msgid "Smoothers"
-msgstr "Smoothers"
+msgstr "平滑器"
 
 
 #: ../../concepts/index.rst:190
