@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction To Nav2 Specific Nodes &mdash; Navigation 2 1.0.0 文档</title>
+  <title>导航2特定节点介绍 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -722,8 +722,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Nav2行为树</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction To Nav2 Specific Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#action-nodes">Action Nodes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">导航2特定节点介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#action-nodes">动作节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#condition-nodes">Condition Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#decorator-nodes">Decorator Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#control-pipelinesequence">Control: PipelineSequence</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Nav2行为树</a> &raquo;</li>
-      <li>Introduction To Nav2 Specific Nodes</li>
+      <li>导航2特定节点介绍</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,42 +939,37 @@
            <div itemprop="articleBody">
              
   <div class="section" id="introduction-to-nav2-specific-nodes">
-<span id="nav2-specifc-nodes"></span><h1>Introduction To Nav2 Specific Nodes<a class="headerlink" href="#introduction-to-nav2-specific-nodes" title="永久链接至标题"></a></h1>
+<span id="nav2-specifc-nodes"></span><h1>导航2特定节点介绍<a class="headerlink" href="#introduction-to-nav2-specific-nodes" title="永久链接至标题"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <dl class="simple">
-<dt>Vocabulary can be a large point of confusion here when first starting out.</dt><dd><ul class="simple">
-<li><p>A <code class="docutils literal notranslate"><span class="pre">Node</span></code> when discussing BTs is entirely different than a <code class="docutils literal notranslate"><span class="pre">Node</span></code> in the ROS 2 context</p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">ActionNode</span></code> in the context of BTs is not necessarily connected to an Action Server in the ROS 2 context (but often it is)</p></li>
+<dt>在刚开始时，词汇可能是一个令人困惑的重要问题。</dt><dd><ul class="simple">
+<li><p>在讨论BT时，<a href="#id1"><span class="problematic" id="id2">``</span></a>Node``与ROS 2上下文中的``Node``完全不同。</p></li>
+<li><p>在BT的上下文中，<code class="docutils literal notranslate"><span class="pre">ActionNode</span></code> 不一定与ROS 2上下文中的Action服务器连接（但通常会连接）。</p></li>
 </ul>
 </dd>
 </dl>
 </div>
-<p>There are quite a few custom Nav2 BT nodes that are provided to be used in the Nav2 specific fashion. Some commonly used Nav2 nodes will be described below.
-The full list of custom BT nodes can be found in the <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins">nav2_behavior_tree plugins folder</a>.
-The <a class="reference external" href="../../configuration/packages/configuring-bt-xml.html">configuration guide</a> can also be quite useful.</p>
+<p>有许多定制的Nav2 BT节点可用于以Nav2特定方式使用。下面将介绍一些常用的Nav2节点。完整的定制BT节点列表可在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree/plugins">nav2_behavior_tree插件文件夹</a> 中找到。<a class="reference external" href="../../configuration/packages/configuring-bt-xml.html">配置指南</a> 也可能非常有用。</p>
 <div class="section" id="action-nodes">
-<h2>Action Nodes<a class="headerlink" href="#action-nodes" title="永久链接至标题"></a></h2>
+<h2>动作节点<a class="headerlink" href="#action-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>ComputePathToPose - ComputePathToPose Action Server Client (Planner Interface)</p></li>
-<li><p>FollowPath - FollowPath Action Server Client (Controller Interface)</p></li>
-<li><p>Spin, Wait, Backup - Behaviors Action Server Client</p></li>
-<li><p>ClearCostmapService - ClearCostmapService Server Clients</p></li>
+<li><p>ComputePathToPose - 计算到位姿的行为服务器客户端（规划器接口）</p></li>
+<li><p>FollowPath - FollowPath 动作服务器客户端（控制器接口）</p></li>
+<li><p>Spin, Wait, Backup - 行为服务器客户端</p></li>
+<li><p>ClearCostmapService - ClearCostmapService 服务器客户端</p></li>
 </ul>
-<p>Upon completion, these action nodes will return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> if the action server believes the action has been completed correctly, <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> when still running, and will return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> otherwise. Note that in the above list,
-the <cite>ClearCostmapService</cite> action node is <em>not</em> an action server client, but a service client.</p>
+<p>完成时，这些动作节点将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>，如果动作服务器认为动作已正确完成，则返回 <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>，否则返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>。请注意，在上面的列表中，<cite>ClearCostmapService</cite> 动作节点不是动作服务器客户端，而是服务客户端。</p>
 </div>
 <div class="section" id="condition-nodes">
 <h2>Condition Nodes<a class="headerlink" href="#condition-nodes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>GoalUpdated - Checks if the goal on the goal topic has been updated</p></li>
+<li><p>GoalUpdated - 检查目标话题上的目标是否已更新</p></li>
 <li><p>GoalReached - Checks if the goal has been reached</p></li>
-<li><p>InitialPoseReceived - Checks to see if a pose on the <code class="docutils literal notranslate"><span class="pre">intial_pose</span></code> topic has been received</p></li>
+<li><p>InitialPoseReceived - 检查是否已收到 <code class="docutils literal notranslate"><span class="pre">intial_pose</span></code> 话题上的姿态</p></li>
 <li><p>isBatteryLow - Checks to see if the battery is low by listening on the battery topic</p></li>
 </ul>
-<p>The above list of condition nodes can be used to probe particular aspects of the system. Typically they will return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> if the condition is true and <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> otherwise.
-The key condition that is used in the default Nav2 BT is <code class="docutils literal notranslate"><span class="pre">GoalUpdated</span></code> which is checked asynchronously within particular subtrees. This condition node allows for the behavior described as &quot;If the goal has been updated, then we must replan&quot;.
-Condition nodes are typically paired with ReactiveFallback nodes.</p>
+<p>上述条件节点列表可用于探测系统的特定方面。通常情况下，如果条件为真，则它们将返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>，否则返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>。在默认的Nav2 BT中使用的关键条件是 <code class="docutils literal notranslate"><span class="pre">GoalUpdated</span></code>，它在特定子树中以异步方式进行检查。此条件节点允许描述行为：“如果目标已更新，则我们必须重新规划”。条件节点通常与ReactiveFallback节点配对使用。</p>
 </div>
 <div class="section" id="decorator-nodes">
 <h2>Decorator Nodes<a class="headerlink" href="#decorator-nodes" title="永久链接至标题"></a></h2>

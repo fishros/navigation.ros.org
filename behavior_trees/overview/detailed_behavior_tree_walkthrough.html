@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Navigate To Pose" href="../trees/nav_to_pose_recovery.html" />
-    <link rel="prev" title="Introduction To Nav2 Specific Nodes" href="nav2_specific_nodes.html" />
+    <link rel="prev" title="导航2特定节点介绍" href="nav2_specific_nodes.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -722,8 +722,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Nav2行为树</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="nav2_specific_nodes.html">Introduction To Nav2 Specific Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="nav2_specific_nodes.html#action-nodes">Action Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nav2_specific_nodes.html">导航2特定节点介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nav2_specific_nodes.html#action-nodes">动作节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nav2_specific_nodes.html#condition-nodes">Condition Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nav2_specific_nodes.html#decorator-nodes">Decorator Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nav2_specific_nodes.html#control-pipelinesequence">Control: PipelineSequence</a></li>
@@ -1161,20 +1161,19 @@
 <li><p>清除两个代价地图（本地和全局）的序列</p></li>
 <li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>Spin``操作</p></li>
 <li><p>“Wait”动作</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>BackUp``动作</p></li>
 </ul>
 <p>在父级“RoundRobin”的四个子节点中的任何一个成功后，机器人将尝试在“Navigation”子树中重新导航。如果此次重新导航不成功，则将启动下一个“RoundRobin”的子节点。</p>
-<p>For example, let's say the robot is stuck and the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>:
-(for the sake of this example, let's assume that the goal is never updated).</p>
+<p>例如，假设机器人卡住了，<code class="docutils literal notranslate"><span class="pre">Navigation``子树返回``FAILURE</span></code>：（为了举例，假设目标从未更新）。</p>
 <ol class="arabic simple">
 <li><p>尝试执行“Recovery”子树中的代价地图清除序列，并返回“成功”。机器人现在再次转到“Navigation”子树。</p></li>
-<li><p>Let's assume that clearing both costmaps was not sufficient, and the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> once again. The robot now ticks the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree</p></li>
+<li><p>假设清除两个代价地图仍然不足，<code class="docutils literal notranslate"><span class="pre">Navigation``子树再次返回``FAILURE</span></code>。机器人现在触发``Recovery``子树。</p></li>
 <li><p>在“Recovery”子树中，将执行“Spin”动作。如果此动作返回“成功”，则机器人将返回主要的“Navigation”子树。<a href="#id1"><span class="problematic" id="id2">**</span></a>但是**假设“Spin”动作返回“失败”。在这种情况下，树将**保持**在“Recovery”子树中。</p></li>
-<li><p>Let's say the next action, <code class="docutils literal notranslate"><span class="pre">Wait</span></code> returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>. The robot will then move on to the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree</p></li>
-<li><p>Assume  the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> (clearing the costmaps, attempting a spin, and waiting were <em>still</em> not sufficient to recover the system. The robot will move onto the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree and attempt the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action. Let's say that the robot attempts the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action and was able to successfully complete the action. The <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action node returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> and so now we move on to the Navigation subtree again.</p></li>
-<li><p>In this hypothetical scenario, let's assume that the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action allowed the robot to successfully navigate in the <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> subtree, and the robot reaches the goal. In this case, the overall BT will still return <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.</p></li>
+<li><p>假设下一个动作，<code class="docutils literal notranslate"><span class="pre">Wait``返回``SUCCESS</span></code>。然后机器人将继续执行``Navigation``子树。</p></li>
+<li><p>假设 <code class="docutils literal notranslate"><span class="pre">Navigation</span></code> 子树返回 <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> （清除代价图、尝试旋转和等待仍然无法恢复系统）。机器人将进入 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树并尝试 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作。假设机器人尝试了 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作并成功完成了该动作。<code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作节点返回 <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>，现在我们再次进入 Navigation 子树。</p></li>
+<li><p>在这个假设的场景中，假设``BackUp``动作使得机器人能够在``Navigation``子树中成功导航，并且机器人到达了目标。在这种情况下，整个BT仍然返回``SUCCESS``。</p></li>
 </ol>
-<p>If the <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> action was not sufficient enough to allow the robot to become un-stuck, the above logic will go on indefinitely until the <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code> in the parent of the <code class="docutils literal notranslate"><span class="pre">Navigate</span></code> subtree and <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree is exceeded, or if all the system-wide recoveries in the <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> subtree return <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> (this is unlikely, and likely points to some other system failure).</p>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">BackUp</span></code> 动作不足以使机器人解困，上述逻辑将无限循环，直到超过``Navigate`` 子树和 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树的父节点中的 <code class="docutils literal notranslate"><span class="pre">number_of_retries</span></code>，或者如果 <code class="docutils literal notranslate"><span class="pre">Recovery</span></code> 子树中的所有系统级恢复都返回 <a href="#id1"><span class="problematic" id="id2">``</span></a>FAILURE``（这种情况不太可能，很可能是其他系统故障）。</p>
 </div>
 </div>
 
