@@ -50,10 +50,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">开始使用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#installation">安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#running-the-example">Running the Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#running-the-example">运行示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">导航</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../development_guides/index.html">Development Guides</a><ul>
@@ -1133,7 +1133,7 @@ image: keepout_mask.pgm
 <li><p>According to the Costmap Filters design, <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values are being linearly transformed into feature map in a filter space. For a Keepout Filter these values are directly passed as a filter space values without a linear conversion. Even though <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> coefficients are not used in Keepout Filter, they should be set to <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> accordingly in order to explicitly show that we have one-to-one conversion from <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values -&gt; to a filter value space.</p></li>
 </ul>
 </div></blockquote>
-<p>Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Keepout Filter could be found in a <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo">nav2_costmap_filters_demo</a> directory of <code class="docutils literal notranslate"><span class="pre">navigation2_tutorials</span></code> repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">Getting Started</span></a>, build the demo and launch <code class="docutils literal notranslate"><span class="pre">costmap_filter_info.launch.py</span></code> as follows:</p>
+<p>Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Keepout Filter could be found in a <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo">nav2_costmap_filters_demo</a> directory of <code class="docutils literal notranslate"><span class="pre">navigation2_tutorials</span></code> repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>, build the demo and launch <code class="docutils literal notranslate"><span class="pre">costmap_filter_info.launch.py</span></code> as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/tutorials_ws/src
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/tutorials_ws/src
 $<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ros-planning/navigation2_tutorials.git
@@ -1186,7 +1186,7 @@ local_costmap:
 </div>
 <div class="section" id="run-nav2-stack">
 <h3>4. Run Nav2 stack<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
-<p>After Costmap Filter Info Publisher Server and Map Server were launched and Keepout Filter was enabled for global/local costmaps, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">Getting Started</span></a>:</p>
+<p>After Costmap Filter Info Publisher Server and Map Server were launched and Keepout Filter was enabled for global/local costmaps, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>
 </div>

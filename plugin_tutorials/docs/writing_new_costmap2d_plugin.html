@@ -50,10 +50,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">开始使用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#installation">安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#running-the-example">Running the Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#running-the-example">运行示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">导航</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../development_guides/index.html">Development Guides</a><ul>
@@ -1159,11 +1159,11 @@ gradient_layer_2:
 </div>
 <div class="section" id="run-gradientlayer-plugin">
 <h3>4- Run GradientLayer plugin<a class="headerlink" href="#run-gradientlayer-plugin" title="永久链接至标题"></a></h3>
-<p>Run Turtlebot3 simulation with enabled Nav2. Detailed instructions how to make it are written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">Getting Started</span></a>. Below is shortcut command for that:</p>
+<p>Run Turtlebot3 simulation with enabled Nav2. Detailed instructions how to make it are written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Below is shortcut command for that:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>
 </div>
-<p>Then goto RViz and click on the &quot;2D Pose Estimate&quot; button at the top and point the location on map as it was described in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">Getting Started</span></a>. Robot will be localized on map and the result should be as presented at picture below. There, the gradient costmap can be seen. There are also 2 noticeable things: dynamically updated by <code class="docutils literal notranslate"><span class="pre">GradientLayer::updateCosts()</span></code> costmap within its bounds and global path curved by gradient:</p>
+<p>Then goto RViz and click on the &quot;2D Pose Estimate&quot; button at the top and point the location on map as it was described in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Robot will be localized on map and the result should be as presented at picture below. There, the gradient costmap can be seen. There are also 2 noticeable things: dynamically updated by <code class="docutils literal notranslate"><span class="pre">GradientLayer::updateCosts()</span></code> costmap within its bounds and global path curved by gradient:</p>
 <a class="reference internal image-reference" href="../../_images/gradient_layer_run.png"><img alt="Image of gradient costmap used" class="align-center" src="../../_images/gradient_layer_run.png" style="width: 700px;" /></a>
 </div>
 </div>

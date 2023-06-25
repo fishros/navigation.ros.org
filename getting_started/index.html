@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started &mdash; Navigation 2 1.0.0 文档</title>
+  <title>开始使用 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -50,10 +50,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">开始使用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-the-example">Running the Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#navigating">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-example">运行示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#navigating">导航</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../development_guides/index.html">Development Guides</a><ul>
@@ -928,7 +928,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Getting Started</li>
+      <li>开始使用</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -938,12 +938,11 @@
            <div itemprop="articleBody">
              
   <div class="section" id="getting-started">
-<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="永久链接至标题"></a></h1>
+<span id="id1"></span><h1>开始使用<a class="headerlink" href="#getting-started" title="永久链接至标题"></a></h1>
 <p>本文档将引导您完成安装|PN|二进制文件并在Gazebo仿真器中操作模拟的Turtlebot 3的过程。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>See the <a class="reference internal" href="../development_guides/build_docs/index.html#build-instructions"><span class="std std-ref">Build and Install</span></a> for other situations such as building from source or
-working with other types of robots.</p>
+<p>参见 <span class="xref std std-ref">构建指南</span> 以获取其他情况，例如从源代码构建或与其他类型的机器人一起工作。</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
@@ -967,59 +966,43 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </ol>
 </div>
 <div class="section" id="running-the-example">
-<h2>Running the Example<a class="headerlink" href="#running-the-example" title="永久链接至标题"></a></h2>
+<h2>运行示例<a class="headerlink" href="#running-the-example" title="永久链接至标题"></a></h2>
 <ol class="arabic">
-<li><p>Start a terminal in your GUI</p></li>
-<li><p>Set key environment variables:</p>
+<li><p>在您的GUI中启动终端</p></li>
+<li><p>设置关键环境变量：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/&lt;ros2-distro&gt;/setup.bash
 <span class="nb">export</span><span class="w"> </span><span class="nv">TURTLEBOT3_MODEL</span><span class="o">=</span>waffle
 <span class="nb">export</span><span class="w"> </span><span class="nv">GAZEBO_MODEL_PATH</span><span class="o">=</span><span class="nv">$GAZEBO_MODEL_PATH</span>:/opt/ros/&lt;ros2-distro&gt;/share/turtlebot3_gazebo/models
 </pre></div>
 </div>
 </li>
-<li><p>In the same terminal, run:</p>
+<li><p>在同一个终端中运行：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>headless:<span class="o">=</span>False
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">ROS</span> <span class="pre">2</span> <span class="pre">Dashing</span> <span class="pre">Diademata</span></code> or earlier, use
-<code class="docutils literal notranslate"><span class="pre">nav2_simulation_launch.py</span></code>.
-However, it is recommended to use the most recent <a class="reference external" href="https://ros.org/reps/rep-2000.html">ROS 2 LTS distribution</a>  for improved stablity and feature
-completeness.</p>
-<p><code class="docutils literal notranslate"><span class="pre">headless</span></code> defaults to true; if not set to false, gzclient (the 3d view) is not started.</p>
+<p>对于``ROS 2 Dashing Diademata``或更早版本，请使用``nav2_simulation_launch.py``。但是，建议使用最新的`ROS 2 LTS发行版&lt;<a class="reference external" href="https://ros.org/reps/rep-2000.html">https://ros.org/reps/rep-2000.html</a>&gt;`_以获得更好的稳定性和功能完整性。</p>
+<p><code class="docutils literal notranslate"><span class="pre">headless</span></code> 默认为true；如果未设置为false，则不会启动gzclient（3D视图）。</p>
 </div>
-<p>This launch file will launch Nav2 with the AMCL localizer in the
-<code class="docutils literal notranslate"><span class="pre">turtlebot3_world</span></code> world.
-It will also launch the robot state publisher to provide transforms,
-a Gazebo instance with the Turtlebot3 URDF, and RVIZ.</p>
-<p>If everything has started correctly, you will see the RViz and Gazebo GUIs like
-this:</p>
+<p>此启动文件将在``turtlebot3_world``世界中启动带有AMCL定位的Nav2。它还将启动机器人状态发布器以提供变换，带有Turtlebot3 URDF的Gazebo实例和RVIZ。</p>
+<p>如果一切正常启动，您将看到RViz和Gazebo GUI如下所示：</p>
 <a class="reference internal image-reference" href="../_images/rviz-not-started.png"><img alt="../_images/rviz-not-started.png" src="../_images/rviz-not-started.png" style="width: 45%;" /></a>
 <a class="reference internal image-reference" href="../_images/gazebo_turtlebot1.png"><img alt="../_images/gazebo_turtlebot1.png" src="../_images/gazebo_turtlebot1.png" style="width: 46%;" /></a>
 </li>
-<li><p>If not autostarting, click the &quot;Startup&quot; button in the bottom left corner of RViz.
-This will cause Nav2 to change to the Active state. It should
-change appearance to show the map.</p>
-<a class="reference internal image-reference" href="../_images/rviz_initial.png"><img alt="Initial appearance of RViz transitioning to the Active state" class="align-center" src="../_images/rviz_initial.png" style="width: 700px;" /></a>
+<li><p>如果未自动启动，请单击RViz左下角的&quot;Startup&quot;按钮。这将导致|PN|更改为Active状态。它应该改变外观以显示地图。</p>
+<a class="reference internal image-reference" href="../_images/rviz_initial.png"><img alt="RViz的初始外观转换为Active状态" class="align-center" src="../_images/rviz_initial.png" style="width: 700px;" /></a>
 </li>
 </ol>
 </div>
 <div class="section" id="navigating">
-<h2>Navigating<a class="headerlink" href="#navigating" title="永久链接至标题"></a></h2>
-<p>After starting, the robot initially has no idea where it is. By default,
-Nav2 waits for you to give it an approximate starting position. Take a look
-at where the robot is in the Gazebo world, and find that spot on the map. Set
-the initial pose by clicking the &quot;2D Pose Estimate&quot; button in RViz, and then
-down clicking on the map in that location. You set the orientation by dragging
-forward from the down click.</p>
-<p>If you are using the defaults so far, the robot should look roughly like this.</p>
+<h2>导航<a class="headerlink" href="#navigating" title="永久链接至标题"></a></h2>
+<p>启动后，机器人最初不知道自己在哪里。默认情况下，Nav2 等待您提供一个大致的起始位置。观察机器人在Gazebo世界中的位置，并在地图上找到那个位置。通过在RViz中点击“2D Pose Estimate”按钮，然后在该位置的地图上进行下按来设置初始姿态。您可以通过从下按位置向前拖动来设置方向。</p>
+<p>如果您到目前为止使用的是默认设置，机器人应该大致如下图所示。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/rviz-set-initial-pose.png"><img alt="Approximate starting location of Turtlebot" class="align-center" src="../_images/rviz-set-initial-pose.png" style="width: 700px;" /></a>
+<div><a class="reference internal image-reference" href="../_images/rviz-set-initial-pose.png"><img alt="Turtlebot的大致起始位置" class="align-center" src="../_images/rviz-set-initial-pose.png" style="width: 700px;" /></a>
 </div></blockquote>
-<p>If you don't get the location exactly right, that's fine. Nav2 will refine
-the position as it navigates. You can also, click the &quot;2D Pose
-Estimate&quot; button and try again, if you prefer.</p>
+<p>如果位置不完全准确，没关系。<a href="#id1"><span class="problematic" id="id2">|</span></a>PN|会在导航过程中优化位置。如果您愿意，您还可以点击&quot;2D Pose Estimate&quot;按钮并重试。</p>
 <p>Once you've set the initial pose, the transform tree will be complete and
 Nav2 will be fully active and ready to go. You should see the robot and particle
 cloud now.</p>
