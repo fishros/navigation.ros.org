@@ -637,7 +637,7 @@ msgstr "behavior_tree"
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:55
 msgid "Behavior tree absolute path. If none is specified, NavigateThroughPoses action server uses a default behavior tree."
-msgstr "Behavior tree absolute path. If none is specified, NavigateThroughPoses action server uses a default behavior tree."
+msgstr "行为树的绝对路径。如果未指定路径，则NavigateThroughPoses操作服务器将使用默认行为树。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateThroughPoses.rst:69 ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:69
@@ -667,72 +667,72 @@ msgstr "接收包含目标的黑板变量，例如 \"{goal}\"。"
 
 #: ../../configuration/packages/bt-plugins/actions/NavigateToPose.rst:55
 msgid "Behavior tree absolute path. If none is specified, NavigateToPose action server uses a default behavior tree."
-msgstr "Behavior tree absolute path. If none is specified, NavigateToPose action server uses a default behavior tree."
+msgstr "行为树的绝对路径。如果未指定路径，则NavigateToPose操作服务器将使用默认行为树。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:4
 msgid "PlannerSelector"
-msgstr "PlannerSelector"
+msgstr "PlannerSelector（规划器选择器）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:6
 msgid "It is used to select the planner that will be used by the planner server. It subscribes to the ``planner_selector`` topic to receive command messages with the name of the planner to be used. It is commonly used before of the ComputePathToPoseAction. The ``selected_planner`` output port is passed to ``planner_id`` input port of the ComputePathToPoseAction. If none is provided on the topic, the ``default_planner`` is used."
-msgstr "It is used to select the planner that will be used by the planner server. It subscribes to the ``planner_selector`` topic to receive command messages with the name of the planner to be used. It is commonly used before of the ComputePathToPoseAction. The ``selected_planner`` output port is passed to ``planner_id`` input port of the ComputePathToPoseAction. If none is provided on the topic, the ``default_planner`` is used."
+msgstr "用于选择由规划器服务器使用的规划器。它订阅``planner_selector``主题，以接收带有要使用的规划器名称的命令消息。通常在执行ComputePathToPoseAction之前使用。``selected_planner``输出端口传递给ComputePathToPoseAction的``planner_id``输入端口。如果主题上未提供任何消息，则使用``default_planner``。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:20
 msgid "planner_selector"
-msgstr "planner_selector"
+msgstr "planner_selector（规划器选择器）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:24
 msgid "The name of the topic used to received select command messages. This is used to support multiple PlannerSelector nodes."
-msgstr "The name of the topic used to received select command messages. This is used to support multiple PlannerSelector nodes."
+msgstr "用于接收选择命令消息的主题名称。这用于支持多个PlannerSelector节点。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst
 msgid "default_planner"
-msgstr "default_planner"
+msgstr "default_planner（默认规划器）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:35
 msgid "The default value for the selected planner if no message is received from the input topic."
-msgstr "The default value for the selected planner if no message is received from the input topic."
+msgstr "如果未从输入主题接收到消息，则选定规划器的默认值。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst
 msgid "selected_planner"
-msgstr "selected_planner"
+msgstr "selected_planner（已选择的规划器）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/PlannerSelector.rst:50
 msgid "The output selected planner id. This selected_planner string is usually passed to the ComputePathToPose behavior via the planner_id input port."
-msgstr "The output selected planner id. This selected_planner string is usually passed to the ComputePathToPose behavior via the planner_id input port."
+msgstr "输出选定的规划器 ID。通常将此 selected_planner 字符串通过 planner_id 输入端口传递给 ComputePathToPose 行为。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ReinitializeGlobalLocalization.rst:4
 msgid "ReinitializeGlobalLocalization"
-msgstr "ReinitializeGlobalLocalization"
+msgstr "ReinitializeGlobalLocalization（重新初始化全局定位）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/ReinitializeGlobalLocalization.rst:6
 msgid "Used to trigger global relocalization using AMCL in case of severe delocalization or kidnapped robot problem."
-msgstr "Used to trigger global relocalization using AMCL in case of severe delocalization or kidnapped robot problem."
+msgstr "用于在严重失位或被劫持的机器人问题下触发使用 AMCL 进行全局重定位。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:4
 msgid "RemovePassedGoals"
-msgstr "RemovePassedGoals"
+msgstr "RemovePassedGoals（移除已通过的目标）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:6
 msgid "Looks over the input port ``goals`` and removes any point that the robot is in close proximity to or has recently passed. This is used to cull goal points that have been passed from ``ComputePathToPoses`` to enable replanning to only the current task goals."
-msgstr "Looks over the input port ``goals`` and removes any point that the robot is in close proximity to or has recently passed. This is used to cull goal points that have been passed from ``ComputePathToPoses`` to enable replanning to only the current task goals."
+msgstr "检查输入端口的“goals”并删除机器人靠近或最近经过的任何点。这用于剔除已从 ComputePathToPoses 传递的目标点，以便仅对当前任务目标进行重新规划。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst
 msgid "radius"
-msgstr "radius"
+msgstr "radius（半径）"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:17 ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:52 ../../configuration/packages/configuring-amcl.rst:86 ../../configuration/packages/configuring-amcl.rst:332 ../../configuration/packages/configuring-amcl.rst:398 ../../configuration/packages/configuring-amcl.rst:420 ../../configuration/packages/configuring-collision-monitor.rst:260 ../../configuration/packages/configuring-collision-monitor.rst:271 ../../configuration/packages/configuring-collision-monitor.rst:282 ../../configuration/packages/configuring-collision-monitor.rst:377 ../../configuration/packages/configuring-mppic.rst:137 ../../configuration/packages/configuring-mppic.rst:148 ../../configuration/packages/configuring-navfn.rst:22 ../../configuration/packages/configuring-regulated-pp.rst:30 ../../configuration/packages/configuring-rotation-shim-controller.rst:47 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:38 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:49 ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:18 ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:29 ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:18
@@ -742,7 +742,7 @@ msgstr "0.5"
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:21
 msgid "The radius (m) in proximity to the viapoint for the BT node to remove from the list as having passed."
-msgstr "The radius (m) in proximity to the viapoint for the BT node to remove from the list as having passed."
+msgstr "在通过的蓝牙节点列表中，从列表中移除与目标点接近的半径（米）。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst ../../configuration/packages/bt-plugins/conditions/GoalReached.rst ../../configuration/packages/bt-plugins/decorators/DistanceController.rst ../../configuration/packages/configuring-behavior-server.rst ../../configuration/packages/configuring-bt-navigator.rst ../../configuration/packages/configuring-costmaps.rst
@@ -752,17 +752,17 @@ msgstr "global_frame"
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:28 ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:43 ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:57 ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:30 ../../configuration/packages/configuring-amcl.rst:130 ../../configuration/packages/configuring-behavior-server.rst:101 ../../configuration/packages/configuring-costmaps.rst:54 ../../configuration/packages/configuring-costmaps.rst:98 ../../configuration/packages/configuring-map-server.rst:68 ../../configuration/packages/configuring-map-server.rst:79
 msgid "\"map\""
-msgstr "\"map\""
+msgstr "\"地图\""
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:32 ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:47 ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:61 ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:34 ../../configuration/packages/configuring-bt-navigator.rst:130 ../../configuration/packages/configuring-costmaps.rst:58
 msgid "Reference frame."
-msgstr "Reference frame."
+msgstr "参考坐标系。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst ../../configuration/packages/bt-plugins/conditions/GoalReached.rst ../../configuration/packages/bt-plugins/decorators/DistanceController.rst ../../configuration/packages/configuring-behavior-server.rst ../../configuration/packages/configuring-bt-navigator.rst ../../configuration/packages/configuring-costmaps.rst ../../configuration/packages/configuring-smoother-server.rst
 msgid "robot_base_frame"
-msgstr "robot_base_frame"
+msgstr "机器人基准坐标系"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:39 ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:49 ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:54 ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:68 ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:41 ../../configuration/packages/configuring-behavior-server.rst:112 ../../configuration/packages/configuring-costmaps.rst:164 ../../configuration/packages/configuring-smoother-server.rst:54
@@ -772,7 +772,7 @@ msgstr "\"base_link\""
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:43 ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:58 ../../configuration/packages/bt-plugins/conditions/GoalReached.rst:72 ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:45 ../../configuration/packages/configuring-amcl.rst:79 ../../configuration/packages/configuring-behavior-server.rst:116 ../../configuration/packages/configuring-collision-monitor.rst:60 ../../configuration/packages/configuring-costmaps.rst:168 ../../configuration/packages/configuring-smoother-server.rst:58
 msgid "Robot base frame."
-msgstr "Robot base frame."
+msgstr "机器人基准坐标系。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst
@@ -782,7 +782,7 @@ msgstr "input_goals"
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:54
 msgid "A vector of goals to check if it passed any in the current iteration."
-msgstr "A vector of goals to check if it passed any in the current iteration."
+msgstr "一个目标向量，用于检查在当前迭代中是否通过了任何目标。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst
@@ -792,7 +792,7 @@ msgstr "output_goals"
 
 #: ../../configuration/packages/bt-plugins/actions/RemovePassedGoals.rst:68
 msgid "A vector of goals with goals removed in proximity to the robot"
-msgstr "A vector of goals with goals removed in proximity to the robot"
+msgstr "一个目标向量，其中的目标在接近机器人时被移除。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:4
@@ -802,7 +802,7 @@ msgstr "SmoothPath"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:6
 msgid "Invokes the SmoothPath action API in the smoother server to smooth a given path plan."
-msgstr "Invokes the SmoothPath action API in the smoother server to smooth a given path plan."
+msgstr "调用平滑器服务器中的平滑路径操作API，以平滑给定的路径规划。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst
