@@ -4451,7 +4451,7 @@ msgstr "gamma"
 
 #: ../../configuration/packages/configuring-mppic.rst:196
 msgid "A trade-off between smoothness (high) and low energy (low). This is a complex parameter that likely won't need to be changed from the default. See Section 3D-2 in \"Information Theoretic Model Predictive Control: Theory and Applications to Autonomous Driving\" for detailed information."
-msgstr "A trade-off between smoothness (high) and low energy (low). This is a complex parameter that likely won't need to be changed from the default. See Section 3D-2 in \"Information Theoretic Model Predictive Control: Theory and Applications to Autonomous Driving\" for detailed information."
+msgstr "光滑性（高）和能量消耗（低）之间的权衡。这是一个复杂的参数，通常不需要从默认值进行更改。详细信息请参见《信息论模型预测控制：理论与自动驾驶应用》第3D-2节。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4461,7 +4461,7 @@ msgstr "visualize"
 
 #: ../../configuration/packages/configuring-mppic.rst:207
 msgid "Whether to publish debuggin trajectories for visualization. This can slow down the controller substantially (e.g. 1000 batches of 56 size every 30hz is alot of data)."
-msgstr "Whether to publish debuggin trajectories for visualization. This can slow down the controller substantially (e.g. 1000 batches of 56 size every 30hz is alot of data)."
+msgstr "是否发布用于可视化的调试轨迹。这可能会大大减慢控制器的速度（例如，每30hz有1000个大小为56的批次数据）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4471,7 +4471,7 @@ msgstr "retry_attempt_limit"
 
 #: ../../configuration/packages/configuring-mppic.rst:218
 msgid "Number of attempts to find feasible trajectory on failure for soft-resets before reporting total failure."
-msgstr "Number of attempts to find feasible trajectory on failure for soft-resets before reporting total failure."
+msgstr "在软重置失败后，尝试寻找可行轨迹的次数，然后报告总体失败。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4481,27 +4481,27 @@ msgstr "reset_period"
 
 #: ../../configuration/packages/configuring-mppic.rst:229
 msgid "Required time of inactivity to reset optimizer  (only in Humble due to backport ABI policies)."
-msgstr "Required time of inactivity to reset optimizer  (only in Humble due to backport ABI policies)."
+msgstr "重置优化器所需的不活动时间（仅在Humble中由于后向兼容ABI策略）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:232
 msgid "Trajectory Visualization"
-msgstr "Trajectory Visualization"
+msgstr "轨迹可视化"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "trajectory_step"
-msgstr "trajectory_step"
+msgstr "轨迹步长"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:243
 msgid "The step between trajectories to visualize to downsample candidate trajectory pool."
-msgstr "The step between trajectories to visualize to downsample candidate trajectory pool."
+msgstr "要可视化的轨迹之间的步长，以对候选轨迹池进行下采样。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "time_step"
-msgstr "time_step"
+msgstr "时间步长"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:250
@@ -4511,17 +4511,17 @@ msgstr "3"
 
 #: ../../configuration/packages/configuring-mppic.rst:254
 msgid "The step between points on trajectories to visualize to downsample trajectory density."
-msgstr "The step between points on trajectories to visualize to downsample trajectory density."
+msgstr "在轨迹上的点之间用于可视化的步长，以降低轨迹密度。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:257
 msgid "Path Handler"
-msgstr "Path Handler"
+msgstr "路径处理器"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:268
 msgid "Time tolerance for data transformations with TF (s)."
-msgstr "Time tolerance for data transformations with TF (s)."
+msgstr "使用TF进行数据转换的时间容差（秒）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4536,22 +4536,22 @@ msgstr "1.5"
 
 #: ../../configuration/packages/configuring-mppic.rst:279
 msgid "Distance ahead of nearest point on path to robot to prune path to (m)."
-msgstr "Distance ahead of nearest point on path to robot to prune path to (m)."
+msgstr "从路径上最近点到机器人之前的距离，用于修剪路径（米）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:286
 msgid "Costmap size / 2"
-msgstr "Costmap size / 2"
+msgstr "代价地图尺寸的一半"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:290
 msgid "Max integrated distance ahead of robot pose to search for nearest path point in case of path looping."
-msgstr "Max integrated distance ahead of robot pose to search for nearest path point in case of path looping."
+msgstr "机器人姿势前方的最大积分距离，在路径循环的情况下，用于搜索最近的路径点。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:294
 msgid "Ackermann Motion Model"
-msgstr "Ackermann Motion Model"
+msgstr "阿克曼运动模型"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4561,7 +4561,7 @@ msgstr "min_turning_r"
 
 #: ../../configuration/packages/configuring-mppic.rst:305
 msgid "The minimum turning radius possible for the vehicle platform (m)."
-msgstr "The minimum turning radius possible for the vehicle platform (m)."
+msgstr "车辆平台可能的最小转弯半径（米）。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:309
