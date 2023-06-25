@@ -51,7 +51,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">安装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-the-example">Running the Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#navigating">Navigating</a></li>
 </ul>
@@ -939,8 +939,7 @@
              
   <div class="section" id="getting-started">
 <span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="永久链接至标题"></a></h1>
-<p>This document will take you through the process of installing the Nav2 binaries
-and navigating a simulated Turtlebot 3 in the Gazebo simulator.</p>
+<p>本文档将引导您完成安装|PN|二进制文件并在Gazebo仿真器中操作模拟的Turtlebot 3的过程。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>See the <a class="reference internal" href="../development_guides/build_docs/index.html#build-instructions"><span class="std std-ref">Build and Install</span></a> for other situations such as building from source or
@@ -948,21 +947,19 @@ working with other types of robots.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>This is a simplified version of the Turtlebot 3 instructions. We highly
-recommend you follow the <a class="reference external" href="https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/">official Turtlebot 3 manual</a> if you intend to
-continue working with this robot beyond the minimal example provided here.</p>
+<p>这是Turtlebot 3说明书的简化版本。如果您打算在此提供的最小示例之外继续使用该机器人，我们强烈建议您遵循`官方的Turtlebot 3手册`_。</p>
 </div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="永久链接至标题"></a></h2>
+<h2>安装<a class="headerlink" href="#installation" title="永久链接至标题"></a></h2>
 <ol class="arabic">
-<li><p>Install the <a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Debians.html">ROS 2 binary packages</a> as described in the official docs</p></li>
-<li><p>Install the Nav2 packages using your operating system's package manager:</p>
+<li><p>按照官方文档中的描述，安装`ROS 2二进制包`_</p></li>
+<li><p>使用您操作系统的软件包管理器安装|PN|软件包：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-navigation2
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-nav2-bringup
 </pre></div>
 </div>
 </li>
-<li><p>Install the Turtlebot 3 packages (Humble and older):</p>
+<li><p>安装Turtlebot 3软件包（Humble和更早版本）：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-turtlebot3-gazebo
 </pre></div>
 </div>
