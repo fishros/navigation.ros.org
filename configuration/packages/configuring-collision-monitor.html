@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collision Monitor &mdash; Navigation 2 1.0.0 文档</title>
+  <title>碰撞监控 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -441,8 +441,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-navigator.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-bt-xml.html">Behavior Tree XML Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#action-plugins">Action Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-bt-xml.html">行为树XML节点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#action-plugins">动作插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Wait.html">等待</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Spin.html">Spin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/BackUp.html">备份</a></li>
@@ -473,7 +473,7 @@
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Smooth.html">平滑路径</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#condition-plugins">条件插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/TransformAvailable.html">可转换</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/DistanceTraveled.html">DistanceTraveled</a></li>
@@ -492,13 +492,13 @@
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#control-plugins">Control Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#control-plugins">控制插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/controls/PipelineSequence.html">管道序列</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/controls/RoundRobin.html">RoundRobin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/controls/RecoveryNode.html">恢复节点</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#decorator-plugins">Decorator Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-bt-xml.html#decorator-plugins">装饰器插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController 速度控制器</a></li>
@@ -686,8 +686,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-velocity-smoother.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Collision Monitor</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">碰撞监控</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features">特点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#polygons-parameters">Polygons parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#observation-sources-parameters">Observation sources parameters</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Collision Monitor</li>
+      <li>碰撞监控</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,29 +939,22 @@
            <div itemprop="articleBody">
              
   <div class="section" id="collision-monitor">
-<span id="configuring-collision-monitor"></span><h1>Collision Monitor<a class="headerlink" href="#collision-monitor" title="永久链接至标题"></a></h1>
-<p>The Collision Monitor is a node providing an additional level of robot safety.
-It performs several collision avoidance related tasks using incoming data from the sensors, bypassing the costmap and trajectory planners, to monitor for and prevent potential collisions at the emergency-stop level.</p>
-<p>This is analogous to safety sensor and hardware features; take in laser scans from a real-time certified safety scanner, detect if there is to be an imminent collision in a configurable bounding box, and either emergency-stop the certified robot controller or slow the robot to avoid such collision.
-However, this node is done at the CPU level with any form of sensor.
-As such, this does not provide hard real-time safety certifications, but uses the same types of techniques with the same types of data for users that do not have safety-rated laser sensors, safety-rated controllers, or wish to use any type of data input (e.g. pointclouds from depth or stereo or range sensors).</p>
-<p>This is a useful and integral part of large heavy industrial robots, or robots moving with high velocities, around people or other dynamic agents (e.g. other robots) as a safety mechanism for high-response emergency stopping.
-The costmaps / trajectory planners will handle most situations, but this is to handle obstacles that virtually appear out of no where (from the robot's perspective) or approach the robot at such high speed it needs to immediately stop to prevent collision.</p>
-<p>See the package's <code class="docutils literal notranslate"><span class="pre">README</span></code> for more complete information.</p>
+<span id="configuring-collision-monitor"></span><h1>碰撞监控<a class="headerlink" href="#collision-monitor" title="永久链接至标题"></a></h1>
+<p>碰撞监视器是一个提供额外机器人安全级别的节点。它使用传感器的输入数据执行几个与避碰相关的任务，绕过代价地图和轨迹规划器，监视并防止紧急停止级别的潜在碰撞。</p>
+<p>这类似于安全传感器和硬件功能；从实时认证的安全扫描仪获取激光扫描数据，检测是否存在即将发生的碰撞，并通过紧急停止认证的机器人控制器或减速机器人来避免此类碰撞。但是，此节点是在CPU级别上使用任何形式的传感器完成的。因此，它不提供硬实时的安全认证，但对于没有安全等级激光传感器、安全等级控制器或希望使用任何类型的数据输入（例如深度或立体或距离传感器的点云）的用户，它使用相同类型的技术和数据。</p>
+<p>这是大型重型工业机器人或以高速移动的机器人与人员或其他动态实体（例如其他机器人）之间的安全机制的有用且必要的一部分。代价地图/轨迹规划器将处理大多数情况，但该节点用于处理几乎突然出现的障碍物（从机器人的角度来看），或者以如此高的速度接近机器人，以至于需要立即停止以防止碰撞。</p>
+<p>请参阅软件包的“README”以获取更完整的信息。</p>
 <div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="永久链接至标题"></a></h2>
-<p>The Collision Monitor uses polygons relative the robot's base frame origin to define &quot;zones&quot;.
-Data that fall into these zones trigger an operation depending on the model being used.
-A given instance of the Collision Monitor can have many zones with different models at the same time.
-When multiple zones trigger at once, the most aggressive one is used (e.g. stop &gt; slow 50% &gt; slow 10%).</p>
+<h2>特点<a class="headerlink" href="#features" title="永久链接至标题"></a></h2>
+<p>碰撞监控使用相对于机器人的基本框架原点的多边形来定义“区域”。落入这些区域的数据将触发相应的操作，具体取决于所使用的模型。一个给定的碰撞监控实例可以同时具有多个具有不同模型的区域。当多个区域同时触发时，使用最激进的区域（例如停止 &gt; 减速 50% &gt; 减速 10%）</p>
 <p>The following models of safety behaviors are employed by Collision Monitor:</p>
 <ul class="simple">
-<li><p><strong>Stop model</strong>: Define a zone and a point threshold. If <code class="docutils literal notranslate"><span class="pre">min_points</span></code> or more obstacle points appear inside this area, stop the robot until the obstacles will disappear.</p></li>
+<li><p><strong>停止模型</strong>：定义一个区域和一个点阈值。如果在该区域内出现``min_points``或更多的障碍点，则停止机器人直到障碍物消失。</p></li>
 <li><p><strong>Slowdown model</strong>: Define a zone around the robot and slow the maximum speed for a <code class="docutils literal notranslate"><span class="pre">slowdown_ratio</span></code>, if <code class="docutils literal notranslate"><span class="pre">min_points</span></code> or more points will appear inside the area.</p></li>
-<li><p><strong>Limit model</strong>: Define a zone around the robot and restricts the maximum linear and angular velocities to <code class="docutils literal notranslate"><span class="pre">linear_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">angular_limit</span></code> values accordingly, if <code class="docutils literal notranslate"><span class="pre">min_points</span></code> or more points will appear inside the area.</p></li>
+<li><p><strong>限制模型</strong>：定义一个围绕机器人的区域，并将最大线性速度和最大角速度限制为``linear_limit``和``angular_limit``的值，如果在该区域内出现``min_points``或更多点。</p></li>
 <li><p><strong>Approach model</strong>: Using the current robot speed, estimate the time to collision to sensor data. If the time is less than <code class="docutils literal notranslate"><span class="pre">time_before_collision</span></code> seconds (0.5, 2, 5, etc...), the robot will slow such that it is now at least <code class="docutils literal notranslate"><span class="pre">time_before_collision</span></code> seconds to collision. The effect here would be to keep the robot always <code class="docutils literal notranslate"><span class="pre">time_before_collision</span></code> seconds from any collision.</p></li>
 </ul>
-<p>The zones around the robot can take the following shapes:</p>
+<p>围绕机器人的区域可以采用以下形状：</p>
 <ul class="simple">
 <li><p>Arbitrary user-defined polygon relative to the robot base frame, which can be static in a configuration file or dynamically changing via a topic interface.</p></li>
 <li><p>Robot footprint polygon, which is used in the approach behavior model only. Will use the static user-defined polygon or the footprint topic to allow it to be dynamically adjusted over time.</p></li>

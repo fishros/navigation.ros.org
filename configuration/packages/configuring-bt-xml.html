@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Behavior Tree XML Nodes &mdash; Navigation 2 1.0.0 文档</title>
+  <title>行为树XML节点 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -441,8 +441,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-bt-navigator.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Behavior Tree XML Nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#action-plugins">Action Plugins</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">行为树XML节点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#action-plugins">动作插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Wait.html">等待</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Spin.html">Spin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/BackUp.html">备份</a></li>
@@ -473,7 +473,7 @@
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/actions/Smooth.html">平滑路径</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#condition-plugins">Condition Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#condition-plugins">条件插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/GoalReached.html">目标已达成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/TransformAvailable.html">可转换</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/DistanceTraveled.html">DistanceTraveled</a></li>
@@ -492,13 +492,13 @@
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/conditions/IsBatteryCharging.html">电池是否正在充电</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#control-plugins">Control Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#control-plugins">控制插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/controls/PipelineSequence.html">管道序列</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/controls/RoundRobin.html">RoundRobin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/controls/RecoveryNode.html">恢复节点</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#decorator-plugins">Decorator Plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#decorator-plugins">装饰器插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/DistanceController.html">DistanceController</a></li>
 <li class="toctree-l4"><a class="reference internal" href="bt-plugins/decorators/SpeedController.html">SpeedController 速度控制器</a></li>
@@ -686,8 +686,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-velocity-smoother.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-collision-monitor.html">Collision Monitor</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-collision-monitor.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-collision-monitor.html">碰撞监控</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-collision-monitor.html#features">特点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-collision-monitor.html#parameters">参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="configuring-collision-monitor.html#polygons-parameters">Polygons parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuring-collision-monitor.html#observation-sources-parameters">Observation sources parameters</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Behavior Tree XML Nodes</li>
+      <li>行为树XML节点</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,12 +939,12 @@
            <div itemprop="articleBody">
              
   <div class="section" id="behavior-tree-xml-nodes">
-<span id="configuring-behavior-tree-xml"></span><h1>Behavior Tree XML Nodes<a class="headerlink" href="#behavior-tree-xml-nodes" title="永久链接至标题"></a></h1>
-<p>The <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree">nav2_behavior_tree</a> package provides several navigation-specific nodes that are pre-registered and can be included in Behavior Trees.</p>
-<p>Check this <a class="reference external" href="https://www.behaviortree.dev/bt_basics/">introduction</a> to learn how behavior trees work and the difference between actions, conditions, controls and decorators.</p>
+<span id="configuring-behavior-tree-xml"></span><h1>行为树XML节点<a class="headerlink" href="#behavior-tree-xml-nodes" title="永久链接至标题"></a></h1>
+<p>nav2_behavior_tree_软件包提供了几个与导航相关的节点，这些节点已经预先注册，可以包含在行为树中。</p>
+<p>查看此介绍_以了解行为树的工作原理以及动作、条件、控制和装饰器之间的区别。</p>
 <p>考虑查看 <a class="reference internal" href="../../tutorials/docs/using_groot.html#groot-introduction"><span class="std std-ref">Groot - Interacting with Behavior Trees</span></a> 教程，了解如何使用 Groot 可视化和修改行为树。</p>
 <div class="section" id="action-plugins">
-<h2>Action Plugins<a class="headerlink" href="#action-plugins" title="永久链接至标题"></a></h2>
+<h2>动作插件<a class="headerlink" href="#action-plugins" title="永久链接至标题"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bt-plugins/actions/Wait.html">等待</a></li>
@@ -979,7 +979,7 @@
 </div>
 </div>
 <div class="section" id="condition-plugins">
-<h2>Condition Plugins<a class="headerlink" href="#condition-plugins" title="永久链接至标题"></a></h2>
+<h2>条件插件<a class="headerlink" href="#condition-plugins" title="永久链接至标题"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bt-plugins/conditions/GoalReached.html">目标已达成</a></li>
@@ -1002,7 +1002,7 @@
 </div>
 </div>
 <div class="section" id="control-plugins">
-<h2>Control Plugins<a class="headerlink" href="#control-plugins" title="永久链接至标题"></a></h2>
+<h2>控制插件<a class="headerlink" href="#control-plugins" title="永久链接至标题"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bt-plugins/controls/PipelineSequence.html">管道序列</a></li>
@@ -1012,7 +1012,7 @@
 </div>
 </div>
 <div class="section" id="decorator-plugins">
-<h2>Decorator Plugins<a class="headerlink" href="#decorator-plugins" title="永久链接至标题"></a></h2>
+<h2>装饰器插件<a class="headerlink" href="#decorator-plugins" title="永久链接至标题"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bt-plugins/decorators/RateController.html">RateController</a></li>
@@ -1026,8 +1026,7 @@
 </div>
 <div class="section" id="example">
 <h2>示例<a class="headerlink" href="#example" title="永久链接至标题"></a></h2>
-<p>This Behavior Tree replans the global path periodically at 1 Hz and it also has
-recovery actions.</p>
+<p>该行为树以1 Hz的频率定期重新规划全局路径，并具有恢复动作。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;RecoveryNode</span><span class="w"> </span><span class="na">number_of_retries=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateRecovery&quot;</span><span class="nt">&gt;</span>
