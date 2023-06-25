@@ -736,7 +736,7 @@ msgstr "插件的信息应存储到插件描述文件中。这是通过在插件
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:146
 msgid "``path``: Path and name of library where plugin is placed."
-msgstr "``path``: Path and name of library where plugin is placed."
+msgstr "``path``：插件所在库的路径和名称。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:147
@@ -746,7 +746,7 @@ msgstr "``name``: 在 ``plugin_types`` 参数中引用的插件类型（有关�
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:148
 msgid "``type``: Plugin class with namespace taken from the source code."
-msgstr "``type``: Plugin class with namespace taken from the source code."
+msgstr "``type``：插件类，其命名空间来自源代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:149
@@ -756,77 +756,77 @@ msgstr "``basic_class_type``: 插件类所派生的基本父类。"
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:150
 msgid "``description``: Plugin description in a text form."
-msgstr "``description``: Plugin description in a text form."
+msgstr "``description``：以文本形式的插件描述。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:160
 msgid "The export of plugin is performed by including ``pluginlib_export_plugin_description_file()`` cmake-function into ``CMakeLists.txt``. This function installs plugin description file into ``share`` directory and sets ament indexes for plugin description XML to be discoverable as a plugin of selected type:"
-msgstr "The export of plugin is performed by including ``pluginlib_export_plugin_description_file()`` cmake-function into ``CMakeLists.txt``. This function installs plugin description file into ``share`` directory and sets ament indexes for plugin description XML to be discoverable as a plugin of selected type:"
+msgstr "通过将``pluginlib_export_plugin_description_file()`` cmake函数包含在``CMakeLists.txt``中来执行插件的导出。此函数将插件描述文件安装到``share``目录中，并为插件描述XML设置ament索引，以便可以将其发现为所选类型的插件："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:166
 msgid "Plugin description file is also should be added to ``package.xml``. ``costmap_2d`` is the package of the interface definition, for our case ``Layer``, and requires a path to the xml file:"
-msgstr "Plugin description file is also should be added to ``package.xml``. ``costmap_2d`` is the package of the interface definition, for our case ``Layer``, and requires a path to the xml file:"
+msgstr "插件描述文件还应添加到 ``package.xml`` 中。``costmap_2d`` 是接口定义的包，在我们的案例中为 ``Layer``，需要提供指向 XML 文件的路径："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:175
 msgid "After everything is done put the plugin package into ``src`` directory of a certain ROS 2-workspace, build the plugin package (``colcon build --packages-select nav2_gradient_costmap_plugin --symlink-install``) and source ``setup.bash`` file when it necessary."
-msgstr "After everything is done put the plugin package into ``src`` directory of a certain ROS 2-workspace, build the plugin package (``colcon build --packages-select nav2_gradient_costmap_plugin --symlink-install``) and source ``setup.bash`` file when it necessary."
+msgstr "完成所有步骤后，将插件包放入特定ROS 2工作空间的``src``目录中，构建插件包（``colcon build --packages-select nav2_gradient_costmap_plugin --symlink-install``），并在必要时源化``setup.bash``文件。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:177
 msgid "Now the plugin is ready to use."
-msgstr "Now the plugin is ready to use."
+msgstr "现在插件已经准备好使用了。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:180
 msgid "3- Enable the plugin in Costmap2D"
-msgstr "3- Enable the plugin in Costmap2D"
+msgstr "3- 在Costmap2D中启用插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:182
 msgid "At the next step it is required to tell Costmap2D about new plugin. For that the plugin should be added to ``plugin_names`` and ``plugin_types`` lists in ``nav2_params.yaml`` optionally for ``local_costmap``/``global_costmap`` in order to be enabled in run-time for Controller/Planner Server. ``plugin_names`` list contains the names of plugin objects. These names could be anything you want. ``plugin_types`` contains types of listed in ``plugin_names`` objects. These types should correspond to ``name`` field of plugin class specified in plugin description XML-file."
-msgstr "At the next step it is required to tell Costmap2D about new plugin. For that the plugin should be added to ``plugin_names`` and ``plugin_types`` lists in ``nav2_params.yaml`` optionally for ``local_costmap``/``global_costmap`` in order to be enabled in run-time for Controller/Planner Server. ``plugin_names`` list contains the names of plugin objects. These names could be anything you want. ``plugin_types`` contains types of listed in ``plugin_names`` objects. These types should correspond to ``name`` field of plugin class specified in plugin description XML-file."
+msgstr "下一步需要告知 Costmap2D 新插件的存在。为此，插件应可选地添加到 ``nav2_params.yaml`` 的 ``local_costmap``/``global_costmap`` 的 ``plugin_names`` 和 ``plugin_types`` 列表中，以便在 Controller/Planner 服务器的运行时启用。``plugin_names`` 列表包含插件对象的名称，这些名称可以任意指定。``plugin_types`` 包含在 ``plugin_names`` 中列出的对象的类型，这些类型应与插件描述 XML 文件中指定的插件类的 ``name`` 字段对应。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:186 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:194
 msgid "For Galactic or later, ``plugin_names`` and ``plugin_types`` have been replaced with a single ``plugins`` string vector for plugin names. The types are now defined in the ``plugin_name`` namespace in the ``plugin:`` field (e.g. ``plugin: MyPlugin::Plugin``). Inline comments in the code blocks will help guide you through this."
-msgstr "For Galactic or later, ``plugin_names`` and ``plugin_types`` have been replaced with a single ``plugins`` string vector for plugin names. The types are now defined in the ``plugin_name`` namespace in the ``plugin:`` field (e.g. ``plugin: MyPlugin::Plugin``). Inline comments in the code blocks will help guide you through this."
+msgstr "对于Galactic或更新版本，``plugin_names``和``plugin_types``已经被单个``plugins``字符串向量替代，用于插件名称。现在，类型在``plugin_name``命名空间中的``plugin:``字段中定义（例如：``plugin: MyPlugin::Plugin``）。代码块中的内联注释将帮助指导您完成此操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:188
 msgid "For example:"
-msgstr "For example:"
+msgstr "例如："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:213
 msgid "YAML-file may also contain the list of parameters (if any) for each plugin, identified by plugins object name."
-msgstr "YAML-file may also contain the list of parameters (if any) for each plugin, identified by plugins object name."
+msgstr "YAML文件还可以包含每个插件的参数列表（如果有）。这些参数由插件对象名称进行标识。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:215
 msgid "NOTE: there could be many simultaneously loaded plugin objects of one type. For this, ``plugin_names`` list should contain different plugins names whether the ``plugin_types`` will remain the same types. For example:"
-msgstr "NOTE: there could be many simultaneously loaded plugin objects of one type. For this, ``plugin_names`` list should contain different plugins names whether the ``plugin_types`` will remain the same types. For example:"
+msgstr "注意：一种类型的插件可能同时加载多个对象。因此，“plugin_names”列表应包含不同的插件名称，而“plugin_types”将保持相同的类型。例如："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:221
 msgid "In this case each plugin object will be handled by its own parameters tree in a YAML-file, like:"
-msgstr "In this case each plugin object will be handled by its own parameters tree in a YAML-file, like:"
+msgstr "在这种情况下，每个插件对象将在YAML文件中通过自己的参数树进行处理，例如："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:235
 msgid "4- Run GradientLayer plugin"
-msgstr "4- Run GradientLayer plugin"
+msgstr "4- 运行GradientLayer插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:237
 msgid "Run Turtlebot3 simulation with enabled Nav2. Detailed instructions how to make it are written at :ref:`getting_started`. Below is shortcut command for that:"
-msgstr "Run Turtlebot3 simulation with enabled Nav2. Detailed instructions how to make it are written at :ref:`getting_started`. Below is shortcut command for that:"
+msgstr "使用启用了Nav2的Turtlebot3仿真运行。如何进行设置的详细说明请参阅:ref:`getting_started`。以下是快捷命令："
 
 
 #: ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:243
 msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on map as it was described in :ref:`getting_started`. Robot will be localized on map and the result should be as presented at picture below. There, the gradient costmap can be seen. There are also 2 noticeable things: dynamically updated by ``GradientLayer::updateCosts()`` costmap within its bounds and global path curved by gradient:"
-msgstr "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on map as it was described in :ref:`getting_started`. Robot will be localized on map and the result should be as presented at picture below. There, the gradient costmap can be seen. There are also 2 noticeable things: dynamically updated by ``GradientLayer::updateCosts()`` costmap within its bounds and global path curved by gradient:"
+msgstr "然后转到RViz，并单击顶部的“2D姿势估计”按钮，根据:ref:`getting_started`中所述，在地图上指向位置。机器人将在地图上进行定位，结果应如下图所示。在那里，可以看到梯度代价图。还有两个明显的特点：由``GradientLayer::updateCosts()``在其边界内动态更新的代价图和由梯度曲线化的全局路径："
 
 
 msgid "Image of gradient costmap used"
@@ -835,7 +835,7 @@ msgstr "Image of gradient costmap used"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:4
 msgid "Writing a New Controller Plugin"
-msgstr "Writing a New Controller Plugin"
+msgstr "编写新的控制器插件"
 
 
 msgid "Animated gif of pure pursuit controller demo"
@@ -844,7 +844,7 @@ msgstr "Animated gif of pure pursuit controller demo"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:19
 msgid "This tutorial shows how to create your own controller `plugin <https://index.ros.org/p/pluginlib/>`_."
-msgstr "This tutorial shows how to create your own controller `plugin <https://index.ros.org/p/pluginlib/>`_."
+msgstr "本教程介绍如何创建自己的控制器插件 `plugin <https://index.ros.org/p/pluginlib/>`_。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:21
@@ -854,7 +854,7 @@ msgstr "In this tutorial, we will be implementing the pure pursuit path tracking
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:24
 msgid "Note: This tutorial is based on a previously existing simplified version of the Regulated Pure Pursuit controller now in the Nav2 stack. You can find the source code matching this tutorial `here <https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller>`_."
-msgstr "Note: This tutorial is based on a previously existing simplified version of the Regulated Pure Pursuit controller now in the Nav2 stack. You can find the source code matching this tutorial `here <https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller>`_."
+msgstr "注意：本教程基于现有的简化版本的Regulated Pure Pursuit控制器，该控制器现已包含在Nav2堆栈中。您可以在 `这里 <https://github.com/ros-planning/navigation2_tutorials/tree/126902457c5c646b136569886d6325f070c1073d/nav2_pure_pursuit_controller>`_ 找到与本教程相匹配的源代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:39
@@ -864,7 +864,7 @@ msgstr "1- Create a new Controller Plugin"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:41
 msgid "We will be implementing the pure pursuit controller. The annotated code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_pure_pursuit_controller``. This package can be considered as a reference for writing your own controller plugin."
-msgstr "We will be implementing the pure pursuit controller. The annotated code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_pure_pursuit_controller``. This package can be considered as a reference for writing your own controller plugin."
+msgstr "我们将实现纯追踪控制器。本教程中的带注释代码可以在 `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ 存储库的``nav2_pure_pursuit_controller``中找到。该软件包可被视为编写自己的控制器插件的参考。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:44

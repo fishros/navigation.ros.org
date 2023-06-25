@@ -2078,7 +2078,7 @@ msgstr "STVL is an optional plugin, like all plugins, in Costmap2D. Costmap Plug
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:85
 msgid "For Galactic or later, ``plugin_names`` and ``plugin_types`` have been replaced with a single ``plugins`` string vector for plugin names. The types are now defined in the ``plugin_name`` namespace in the ``plugin:`` field (e.g. ``plugin: MyPlugin::Plugin``). Inline comments in the code blocks will help guide you through this."
-msgstr "For Galactic or later, ``plugin_names`` and ``plugin_types`` have been replaced with a single ``plugins`` string vector for plugin names. The types are now defined in the ``plugin_name`` namespace in the ``plugin:`` field (e.g. ``plugin: MyPlugin::Plugin``). Inline comments in the code blocks will help guide you through this."
+msgstr "对于Galactic或更新版本，``plugin_names``和``plugin_types``已经被单个``plugins``字符串向量替代，用于插件名称。现在，类型在``plugin_name``命名空间中的``plugin:``字段中定义（例如：``plugin: MyPlugin::Plugin``）。代码块中的内联注释将帮助指导您完成此操作。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:87
