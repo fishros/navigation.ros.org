@@ -1117,7 +1117,7 @@ msgstr "Alberto Tudela"
 
 #: ../../plugins/index.rst:496
 msgid "Checks if the battery is charging."
-msgstr "Checks if the battery is charging."
+msgstr "检查电池是否正在充电。"
 
 
 #: ../../plugins/index.rst:518
@@ -1127,7 +1127,7 @@ msgstr "装饰器插件名称"
 
 #: ../../plugins/index.rst:520
 msgid "`Rate Controller`_"
-msgstr "`Rate Controller`_"
+msgstr "`速率控制器`_"
 
 
 #: ../../plugins/index.rst:520
@@ -1137,7 +1137,7 @@ msgstr "将子节点限制在给定速率下"
 
 #: ../../plugins/index.rst:523
 msgid "`Distance Controller`_"
-msgstr "`Distance Controller`_"
+msgstr "`距离控制器`_"
 
 
 #: ../../plugins/index.rst:523
@@ -1147,7 +1147,7 @@ msgstr "根据机器人行进距离触发子节点"
 
 #: ../../plugins/index.rst:526
 msgid "`Speed Controller`_"
-msgstr "`Speed Controller`_"
+msgstr "`速度控制器`_"
 
 
 #: ../../plugins/index.rst:526
@@ -1157,7 +1157,7 @@ msgstr "将子节点限制在基于当前机器人速度的速率下"
 
 #: ../../plugins/index.rst:529
 msgid "`Goal Updater`_"
-msgstr "`Goal Updater`_"
+msgstr "`目标更新器`_"
 
 
 #: ../../plugins/index.rst:529
@@ -1167,7 +1167,7 @@ msgstr "通过主题订阅更新接收到的目标"
 
 #: ../../plugins/index.rst:532
 msgid "`Single Trigger`_"
-msgstr "`Single Trigger`_"
+msgstr "`单触发器`_"
 
 
 #: ../../plugins/index.rst:532
@@ -1177,7 +1177,7 @@ msgstr "每个BT运行仅触发一次下面的节点/子树"
 
 #: ../../plugins/index.rst:535
 msgid "`PathLongerOnApproach`_"
-msgstr "`PathLongerOnApproach`_"
+msgstr "`路径在接近时更长`_"
 
 
 #: ../../plugins/index.rst:535
