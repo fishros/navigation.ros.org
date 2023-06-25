@@ -109,8 +109,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#planner-controller-smoother-and-recovery-servers">Planner, Controller, Smoother and Recovery Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#planners">规划器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#controllers">控制器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#behaviors">Behaviors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smoothers">Smoothers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#behaviors">行为</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smoothers">平滑器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#waypoint-following">Waypoint Following</a></li>
 </ul>
 </li>
@@ -753,8 +753,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#controllers">控制器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#planners">规划器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#smoothers">Smoothers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behaviors">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#smoothers">平滑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behaviors">行为</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#waypoint-task-executors">Waypoint Task Executors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#goal-checkers">Goal Checkers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#progress-checkers">Progress Checkers</a></li>
@@ -1077,7 +1077,7 @@ However, many classes of controllers and local planners exist.
 It is the goal of this project that all controller algorithms can be plugins in this server for common research and industrial tasks.</p>
 </div>
 <div class="section" id="behaviors">
-<h3>Behaviors<a class="headerlink" href="#behaviors" title="永久链接至标题"></a></h3>
+<h3>行为<a class="headerlink" href="#behaviors" title="永久链接至标题"></a></h3>
 <p>Recovery behaviors are a mainstay of fault-tolerant systems.
 The goal of recoveries are to deal with unknown or failure conditions of the system and autonomously handle them.
 Examples may include faults in the perception system resulting in the environmental representation being full of fake obstacles.
@@ -1089,7 +1089,7 @@ This can be done via email, SMS, Slack, Matrix, etc.</p>
 <p>It is important to note that the behavior server can hold any behavior to share access to expensive resources like costmaps or TF buffers, not just recovery behaviors. Each may have its own API.</p>
 </div>
 <div class="section" id="smoothers">
-<h3>Smoothers<a class="headerlink" href="#smoothers" title="永久链接至标题"></a></h3>
+<h3>平滑器<a class="headerlink" href="#smoothers" title="永久链接至标题"></a></h3>
 <p>As criteria for optimality of the path searched by a planner are usually reduced compared to reality, additional path refinement is often beneficial.
 Smoothers have been introduced for this purpose, typically responsible for reducing path raggedness and smoothing abrupt rotations,
 but also for increasing distance from obstacles and high-cost areas as the smoothers have access to a global environmental representation.</p>

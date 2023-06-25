@@ -109,8 +109,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planner-controller-smoother-and-recovery-servers">Planner, Controller, Smoother and Recovery Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#planners">规划器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#controllers">控制器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#behaviors">Behaviors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#smoothers">Smoothers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#behaviors">行为</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#smoothers">平滑器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#waypoint-following">Waypoint Following</a></li>
 </ul>
 </li>
@@ -753,8 +753,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#controllers">控制器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#planners">规划器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#smoothers">Smoothers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#behaviors">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smoothers">平滑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#behaviors">行为</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#waypoint-task-executors">Waypoint Task Executors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#goal-checkers">Goal Checkers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#progress-checkers">Progress Checkers</a></li>
@@ -1116,53 +1116,34 @@ Aleksei Budyakov</p></td>
 <td><p>差分，全向，腿式</p></td>
 </tr>
 <tr class="row-odd"><td><dl class="simple">
-<dt><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">SmacPlannerHybrid</a></dt><dd><p>(formerly <cite>SmacPlanner</cite>)</p>
+<dt><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">SmacPlannerHybrid</a></dt><dd><p>(以前称为 <cite>SmacPlanner</cite>)</p>
 </dd>
 </dl>
 </td>
 <td><p>Steve Macenski</p></td>
 <td><p>一种使用Dubin或Reeds-shepp运动模型的SE2混合A*算法实现，具有更平滑和多分辨率查询。适用于汽车、类似汽车和Ackermann车辆。运动学可行。</p></td>
-<td><p><strong>Ackermann</strong>,
-Differential,
-Omnidirectional,
-Legged</p></td>
+<td><p><strong>Ackermann</strong>、差分、全向、腿式</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">SmacPlanner2D</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>A 2D A* implementation
-Using either 4 or 8
-connected neighborhoods
-with smoother and
-multi-resolution query</p></td>
+<td><p>一个使用4个或8个相邻区域连接的2D A*实现，具有更平滑和多分辨率查询</p></td>
 <td><p>差分，全向，腿式</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">SmacPlannerLattice</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>An implementation of State
-Lattice Planner using
-pre-generated minimum control
-sets for kinematically
-feasible planning with any
-type of vehicle imaginable.
-Includes generator script for
-Ackermann, diff, omni, and
-legged robots.</p></td>
+<td><p>一个使用预生成的最小控制集实现的状态栅格规划器，可用于对任何类型的车辆进行动力学可行规划。包括用于 Ackermann、差分、全向和腿式机器人的生成器脚本。</p></td>
 <td><p>差动、全向、Ackermann、腿式、任意/自定义</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_theta_star_planner">ThetaStarPlanner</a></p></td>
 <td><p>Anshumaan Singh</p></td>
-<td><p>An implementaion of Theta*
-using either 4 or 8
-connected neighborhoods,
-assumes the robot as a
-2D holonomic particle</p></td>
+<td><p>一个使用4个或8个相邻区域连接的Theta*实现，将机器人假设为2D全向粒子</p></td>
 <td><p>差动、全向</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="smoothers">
-<h2>Smoothers<a class="headerlink" href="#smoothers" title="永久链接至标题"></a></h2>
+<h2>平滑器<a class="headerlink" href="#smoothers" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -1176,36 +1157,23 @@ assumes the robot as a
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">Simple Smoother</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">简单平滑器</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>A simple path smoother for
-infeasible (e.g. 2D)
-planners</p></td>
+<td><p>适用于无法实现（例如2D）规划器的简单路径平滑器</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_constrained_smoother">Constrained Smoother</a></p></td>
-<td><p>Matej Vargovcik &amp; Steve Macenski</p></td>
-<td><p>A path smoother using a
-constraints problem solver
-to optimize various criteria
-such as smoothness or
-distance from obstacles,
-maintaining minimum turning
-radius</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_constrained_smoother">约束平滑器</a></p></td>
+<td><p>Matej Vargovcik和Steve Macenski</p></td>
+<td><p>使用约束问题求解器优化各种准则（如平滑性或与障碍物的距离），以实现路径平滑化，保持最小转弯半径</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">Savitzky-Golay Smoother</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">Savitzky-Golay平滑器</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>A path smoother using a
-Savitzky-Golay filter
-to smooth the path via
-digital signal processing
-to remove noise from the
-path.</p></td>
+<td><p>使用Savitzky-Golay滤波器通过数字信号处理对路径进行平滑，以去除路径中的噪声。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="behaviors">
-<h2>Behaviors<a class="headerlink" href="#behaviors" title="永久链接至标题"></a></h2>
+<h2>行为<a class="headerlink" href="#behaviors" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 28%" />
@@ -1219,20 +1187,15 @@ path.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_costmap_2d/src/clear_costmap_service.cpp">Clear Costmap</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_costmap_2d/src/clear_costmap_service.cpp">清除代价地图</a></p></td>
 <td><p>Eitan Marder-Eppstein</p></td>
-<td><p>A service to clear the given
-costmap in case of incorrect
-perception or robot is stuck</p></td>
+<td><p>在感知错误或机器人卡住的情况下清除给定代价地图的服务</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">Spin</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">旋转</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Rotate behavior of configurable
-angles to clear out free space
-and nudge robot out of potential
-local failures</p></td>
+<td><p>将机器人旋转到可配置角度以清除空闲空间，并推动机器人摆脱潜在的局部故障</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">Back Up</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behaviors/plugins">倒退</a></p></td>
 <td><p>Brian Wilcox</p></td>
 <td><p>Back up behavior of configurable
 distance to back out of a
