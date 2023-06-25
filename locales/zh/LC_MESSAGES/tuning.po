@@ -152,7 +152,7 @@ msgstr "In general though, the following table is a good guide for the optimal p
 
 #: ../../tuning/index.rst:59 ../../tuning/index.rst:87
 msgid "Plugin Name"
-msgstr "Plugin Name"
+msgstr "插件名称"
 
 
 #: ../../tuning/index.rst:59 ../../tuning/index.rst:87

@@ -37,7 +37,7 @@ msgstr "Iron Roadmap"
 
 #: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
 msgid "Plugin Name"
-msgstr "Plugin Name"
+msgstr "插件名称"
 
 
 #: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59

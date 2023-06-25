@@ -112,7 +112,7 @@ msgstr "Summary"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:46 ../../setup_guides/algorithm/select_algorithm.rst:88
 msgid "Plugin Name"
-msgstr "Plugin Name"
+msgstr "插件名称"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:46 ../../setup_guides/algorithm/select_algorithm.rst:88

@@ -137,29 +137,29 @@ msgstr "如果位置不完全准确，没关系。|PN|会在导航过程中优�
 
 #: ../../getting_started/index.rst:108
 msgid "Once you've set the initial pose, the transform tree will be complete and |PN| will be fully active and ready to go. You should see the robot and particle cloud now."
-msgstr "Once you've set the initial pose, the transform tree will be complete and |PN| will be fully active and ready to go. You should see the robot and particle cloud now."
+msgstr "一旦您设置了初始姿势，变换树将完成，|PN| 将完全激活并准备就绪。您现在应该能看到机器人和粒子云。"
 
 
 #: ../../getting_started/index.rst
 msgid "|PN| is ready. Transforms and Costmap show in RViz."
-msgstr "|PN| is ready. Transforms and Costmap show in RViz."
+msgstr "|PN| 准备就绪。在 RViz 中显示转换和 Costmap。"
 
 
 #: ../../getting_started/index.rst:117
 msgid "Next, click the \"Navigaton2 Goal\" button and choose a destination. This will call the BT navigator to go to that goal through an action server. You can pause (cancel) or reset the action through the Nav2 rviz plugin shown."
-msgstr "Next, click the \"Navigaton2 Goal\" button and choose a destination. This will call the BT navigator to go to that goal through an action server. You can pause (cancel) or reset the action through the Nav2 rviz plugin shown."
+msgstr "接下来，点击“Navigaton2 Goal”按钮并选择一个目标地点。这将通过一个动作服务器调用 BT 导航器前往目标地点。您可以通过 Nav2 rviz 插件进行暂停（取消）或重置动作。"
 
 
 #: ../../getting_started/index.rst
 msgid "Setting the goal pose in RViz."
-msgstr "Setting the goal pose in RViz."
+msgstr "在 RViz 中设置目标姿态。"
 
 
 #: ../../getting_started/index.rst:126
 msgid "Now watch the robot go!"
-msgstr "Now watch the robot go!"
+msgstr "现在看着机器人出发吧！"
 
 
 msgid "Navigation2 with Turtlebot 3 Demo"
-msgstr "Navigation2 with Turtlebot 3 Demo"
+msgstr "使用 Turtlebot 3 Demo 进行 Navigation2。"
 

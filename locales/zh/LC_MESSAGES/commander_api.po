@@ -62,7 +62,7 @@ msgstr "Robot Navigator Method"
 
 #: ../../commander_api/index.rst:59 ../../commander_api/index.rst:140 ../../commander_api/index.rst:186
 msgid "Description"
-msgstr "Description"
+msgstr "描述"
 
 
 #: ../../commander_api/index.rst:61

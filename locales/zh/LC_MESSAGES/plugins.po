@@ -22,37 +22,37 @@ msgstr ""
 
 #: ../../plugins/index.rst:4
 msgid "Navigation Plugins"
-msgstr "Navigation Plugins"
+msgstr "导航插件"
 
 
 #: ../../plugins/index.rst:6
 msgid "There are a number of plugin interfaces for users to create their own custom applications or algorithms with. Namely, the costmap layer, planner, controller, behavior tree, and behavior plugins. A list of all known plugins are listed here below for ROS 2 Navigation. If you know of a plugin, or you have created a new plugin, please consider submitting a pull request with that information."
-msgstr "There are a number of plugin interfaces for users to create their own custom applications or algorithms with. Namely, the costmap layer, planner, controller, behavior tree, and behavior plugins. A list of all known plugins are listed here below for ROS 2 Navigation. If you know of a plugin, or you have created a new plugin, please consider submitting a pull request with that information."
+msgstr "有许多插件接口供用户创建自己的定制应用程序或算法使用。包括 costmap 层、规划器、控制器、行为树和行为插件。下面列出了 ROS 2 Navigation 中已知的所有插件。如果你知道某个插件，或者你创建了一个新的插件，请考虑提交一个包含该信息的拉取请求。"
 
 
 #: ../../plugins/index.rst:11
 msgid "This file can be found and editted under ``sphinx_docs/plugins/index.rst``. For tutorials on creating your own plugins, please see :ref:`writing_new_costmap2d_plugin`, :ref:`writing_new_nbt_plugin`, :ref:`writing_new_nav2controller_plugin`, :ref:`writing_new_nav2planner_plugin`, :ref:`writing_new_behavior_plugin`, or :ref:`writing_new_nav2navigator_plugin`."
-msgstr "This file can be found and editted under ``sphinx_docs/plugins/index.rst``. For tutorials on creating your own plugins, please see :ref:`writing_new_costmap2d_plugin`, :ref:`writing_new_nbt_plugin`, :ref:`writing_new_nav2controller_plugin`, :ref:`writing_new_nav2planner_plugin`, :ref:`writing_new_behavior_plugin`, or :ref:`writing_new_nav2navigator_plugin`."
+msgstr "此文件可在 ``sphinx_docs/plugins/index.rst`` 下找到并编辑。有关创建自己插件的教程，请参阅：:ref:`writing_new_costmap2d_plugin`、:ref:`writing_new_nbt_plugin`、:ref:`writing_new_nav2controller_plugin`、:ref:`writing_new_nav2planner_plugin`、:ref:`writing_new_behavior_plugin` 或 :ref:`writing_new_nav2navigator_plugin`。"
 
 
 #: ../../plugins/index.rst:15
 msgid "Behavior-Tree Navigators"
-msgstr "Behavior-Tree Navigators"
+msgstr "行为树导航器"
 
 
 #: ../../plugins/index.rst:18 ../../plugins/index.rst:35 ../../plugins/index.rst:83 ../../plugins/index.rst:103 ../../plugins/index.rst:136 ../../plugins/index.rst:186 ../../plugins/index.rst:216 ../../plugins/index.rst:256 ../../plugins/index.rst:281 ../../plugins/index.rst:301
 msgid "Plugin Name"
-msgstr "Plugin Name"
+msgstr "插件名称"
 
 
 #: ../../plugins/index.rst:18 ../../plugins/index.rst:35 ../../plugins/index.rst:83 ../../plugins/index.rst:103 ../../plugins/index.rst:136 ../../plugins/index.rst:186 ../../plugins/index.rst:216 ../../plugins/index.rst:256 ../../plugins/index.rst:281 ../../plugins/index.rst:301 ../../plugins/index.rst:322 ../../plugins/index.rst:428 ../../plugins/index.rst:518 ../../plugins/index.rst:549
 msgid "Creator"
-msgstr "Creator"
+msgstr "创建者"
 
 
 #: ../../plugins/index.rst:18 ../../plugins/index.rst:35 ../../plugins/index.rst:83 ../../plugins/index.rst:103 ../../plugins/index.rst:136 ../../plugins/index.rst:186 ../../plugins/index.rst:216 ../../plugins/index.rst:256 ../../plugins/index.rst:281 ../../plugins/index.rst:301 ../../plugins/index.rst:322 ../../plugins/index.rst:428 ../../plugins/index.rst:518 ../../plugins/index.rst:549
 msgid "Description"
-msgstr "Description"
+msgstr "描述"
 
 
 #: ../../plugins/index.rst:20
@@ -112,7 +112,7 @@ msgstr "David Lu"
 
 #: ../../plugins/index.rst:42
 msgid "Uses a probabalistic model to put data from sensors that publish range msgs on the costmap"
-msgstr "Uses a probabalistic model to put data from sensors that publish range msgs on the costmap"
+msgstr "使用概率模型将发布范围消息的传感器数据放置在代价地图上"
 
 
 #: ../../plugins/index.rst:46
@@ -122,7 +122,7 @@ msgstr "`Static Layer`_"
 
 #: ../../plugins/index.rst:46
 msgid "Gets static ``map`` and loads occupancy information into costmap"
-msgstr "Gets static ``map`` and loads occupancy information into costmap"
+msgstr "获取静态``map``并将占用信息加载到代价地图中"
 
 
 #: ../../plugins/index.rst:50

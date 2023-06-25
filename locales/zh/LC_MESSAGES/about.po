@@ -232,7 +232,7 @@ msgstr "This is a community maintained list of related repositories and projects
 
 #: ../../about/related_projects.rst:9
 msgid "Description"
-msgstr "Description"
+msgstr "描述"
 
 
 #: ../../about/related_projects.rst:11
