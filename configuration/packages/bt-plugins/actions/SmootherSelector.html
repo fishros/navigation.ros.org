@@ -470,7 +470,7 @@
 <li class="toctree-l4"><a class="reference internal" href="CancelWait.html">取消等待</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelDriveOnHeading.html">CancelDriveOnHeading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CancelAssistedTeleop.html">CancelAssistedTeleop</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Smooth.html">SmoothPath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Smooth.html">平滑路径</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuring-bt-xml.html#condition-plugins">Condition Plugins</a><ul>
@@ -941,7 +941,7 @@
              
   <div class="section" id="smootherselector">
 <span id="bt-smoother-selector-node"></span><h1>SmootherSelector<a class="headerlink" href="#smootherselector" title="永久链接至标题"></a></h1>
-<p>It is used to select the Smoother that will be used by the Smoother server. It subscribes to the <code class="docutils literal notranslate"><span class="pre">smoother_selector</span></code> topic to receive command messages with the name of the Smoother to be used. It is commonly used before of the FollowPathAction. If none is provided on the topic, the <code class="docutils literal notranslate"><span class="pre">default_smoother</span></code> is used.</p>
+<p>用于选择由平滑器服务器使用的平滑器。它订阅“smoother_selector”主题，以接收带有要使用的平滑器名称的命令消息。通常在FollowPathAction之前使用。如果主题上没有提供任何内容，则使用“default_smoother”。</p>
 <p>任何发布到此主题的发布者都需要配置一些定义为``可靠``和``瞬态局部``的QoS。</p>
 <div class="section" id="input-ports">
 <h2>输入端口<a class="headerlink" href="#input-ports" title="永久链接至标题"></a></h2>
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The name of the topic used to received select command messages. This is used to support multiple SmootherSelector nodes.</p>
+<dt>描述</dt><dd><p>用于接收选择命令消息的主题名称。这用于支持多个SmootherSelector节点。</p>
 </dd>
 </dl>
 </dd>
