@@ -1039,7 +1039,7 @@ msgstr "使用启用的 Nav2 运行 Turtlebot3 模拟。有关如何运行的详
 
 #: ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:282
 msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on the map as it was described in :ref:`getting_started`. The robot will localize on the map and then click on the \"Nav2 goal\" and click on the pose where you want your robot to navigate to. After that controller will make the robot follow the global path."
-msgstr "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point the location on the map as it was described in :ref:`getting_started`. The robot will localize on the map and then click on the \"Nav2 goal\" and click on the pose where you want your robot to navigate to. After that controller will make the robot follow the global path."
+msgstr "然后进入RViz，并点击顶部的\"2D Pose Estimate\"按钮，在地图上指定位置，就像在 :ref:`getting_started` 中描述的那样。机器人将在地图上进行定位，然后点击\"Nav2 goal\"，并在您希望机器人导航到的姿态上点击。之后，控制器将使机器人沿着全局路径移动。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:4
@@ -1049,7 +1049,7 @@ msgstr "编写一个新的规划器插件"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:18
 msgid "This tutorial shows how to create your own planner plugin."
-msgstr "This tutorial shows how to create your own planner plugin."
+msgstr "本教程展示了如何创建自己的规划器插件。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:32
@@ -1059,7 +1059,7 @@ msgstr "1- 创建一个新的规划器插件"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:34
 msgid "We will create a simple straight-line planner. The annotated code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_straightline_planner``. This package can be considered as a reference for writing planner plugin."
-msgstr "We will create a simple straight-line planner. The annotated code in this tutorial can be found in `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ repository as the ``nav2_straightline_planner``. This package can be considered as a reference for writing planner plugin."
+msgstr "我们将创建一个简单的直线规划器。本教程中的注释代码可以在 `navigation_tutorials <https://github.com/ros-planning/navigation2_tutorials>`_ 存储库中找到，作为 ``nav2_straightline_planner``。这个包可以作为编写规划器插件的参考。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:38
@@ -1069,7 +1069,7 @@ msgstr "我们的示例插件继承自基类 ``nav2_core::GlobalPlanner``。基�
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:44
 msgid "Method is called at when planner server enters on_configure state. Ideally this methods should perform declarations of ROS parameters and initialization of planner's member variables. This method takes 4 input params: shared pointer to parent node, planner name, tf buffer pointer and shared pointer to costmap."
-msgstr "Method is called at when planner server enters on_configure state. Ideally this methods should perform declarations of ROS parameters and initialization of planner's member variables. This method takes 4 input params: shared pointer to parent node, planner name, tf buffer pointer and shared pointer to costmap."
+msgstr "该方法在规划器服务器进入 on_configure 状态时调用。理想情况下，这个方法应该执行ROS参数的声明和规划器成员变量的初始化。该方法接受4个输入参数：父节点的共享指针、规划器名称、tf缓冲指针和成本地图的共享指针。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:50
@@ -1079,12 +1079,12 @@ msgstr "当规划器服务器进入 on_activate 状态时调用该方法。理�
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:54
 msgid "Method is called when planner server enters on_deactivate state. Ideally this method should implement operations which are neccessary before planner goes to an inactive state."
-msgstr "Method is called when planner server enters on_deactivate state. Ideally this method should implement operations which are neccessary before planner goes to an inactive state."
+msgstr "该方法在规划器服务器进入 on_deactivate 状态时调用。理想情况下，这个方法应该实现在规划器进入非活动状态之前必要的操作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:58
 msgid "Method is called when planner server goes to on_cleanup state. Ideally this method should clean up resoures which are created for the planner."
-msgstr "Method is called when planner server goes to on_cleanup state. Ideally this method should clean up resoures which are created for the planner."
+msgstr "当规划器服务器进入on_cleanup状态时调用此方法。理想情况下，此方法应清理为规划器创建的资源。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:61
@@ -1094,62 +1094,62 @@ msgstr "createPlan()"
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:61
 msgid "Method is called when planner server demands a global plan for specified start and goal pose. This method returns `nav_msgs\\:\\:msg\\:\\:Path` carrying global plan. This method takes 2 input parmas: start pose and goal pose."
-msgstr "Method is called when planner server demands a global plan for specified start and goal pose. This method returns `nav_msgs\\:\\:msg\\:\\:Path` carrying global plan. This method takes 2 input parmas: start pose and goal pose."
+msgstr "当规划器服务器要求指定起始和目标姿态的全局路径时调用此方法。此方法返回携带全局路径的`nav_msgs::msg::Path`。此方法接受两个输入参数：起始姿态和目标姿态。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:66
 msgid "For this tutorial, we will be using methods ``StraightLine::configure()`` and ``StraightLine::createPlan()`` to create straight-line planner."
-msgstr "For this tutorial, we will be using methods ``StraightLine::configure()`` and ``StraightLine::createPlan()`` to create straight-line planner."
+msgstr "在本教程中，我们将使用方法 ``StraightLine::configure()`` 和 ``StraightLine::createPlan()`` 来创建直线规划器。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:68
 msgid "In planners, ``configure()`` method must set member variables from ROS parameters and any initialization required,"
-msgstr "In planners, ``configure()`` method must set member variables from ROS parameters and any initialization required,"
+msgstr "在规划器中，``configure()``方法必须从ROS参数设置成员变量和进行任何所需的初始化。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:82
 msgid "Here, ``name_ + \".interpolation_resolution\"`` is fetching the ROS parameters ``interpolation_resolution`` which is specific to our planner. Nav2 allows the loading of multiple plugins, and to keep things organized, each plugin is mapped to some ID/name. Now if we want to retrieve the parameters for that specific plugin, we use ``<mapped_name_of_plugin>.<name_of_parameter>`` as done in the above snippet. For example, our example planner is mapped to the name \"GridBased\" and to retrieve the ``interpolation_resolution`` parameter which is specific to \"GridBased\", we used ``Gridbased.interpolation_resolution``. In other words, ``GridBased`` is used as a namespace for plugin-specific parameters. We will see more on this when we discuss the parameters file (or params file)."
-msgstr "Here, ``name_ + \".interpolation_resolution\"`` is fetching the ROS parameters ``interpolation_resolution`` which is specific to our planner. Nav2 allows the loading of multiple plugins, and to keep things organized, each plugin is mapped to some ID/name. Now if we want to retrieve the parameters for that specific plugin, we use ``<mapped_name_of_plugin>.<name_of_parameter>`` as done in the above snippet. For example, our example planner is mapped to the name \"GridBased\" and to retrieve the ``interpolation_resolution`` parameter which is specific to \"GridBased\", we used ``Gridbased.interpolation_resolution``. In other words, ``GridBased`` is used as a namespace for plugin-specific parameters. We will see more on this when we discuss the parameters file (or params file)."
+msgstr "在这里，``name_ + \".interpolation_resolution\"`` 获取了 ROS 参数 ``interpolation_resolution``，该参数是特定于我们的规划器的。Nav2 允许加载多个插件，并为了保持组织，每个插件都映射到某个 ID/名称。现在，如果我们想要检索该特定插件的参数，我们可以像上面的片段中那样使用 ``<mapped_name_of_plugin>.<name_of_parameter>``。例如，我们的示例规划器映射到名称 \"GridBased\"，为了检索特定于 \"GridBased\" 的 ``interpolation_resolution`` 参数，我们使用了 ``Gridbased.interpolation_resolution``。换句话说，``GridBased`` 被用作插件特定参数的命名空间。当我们讨论参数文件（或参数文件）时，我们将会更多地了解这一点。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:84
 msgid "In ``createPlan()`` method, we need to create a path from the given start to goal poses. The ``StraightLine::createPlan()`` is called using start pose and goal pose to solve the global path planning problem. Upon succeeding, it converts the path to the ``nav_msgs::msg::Path`` and returns to the planner server. Below annotation shows the implementation of this method."
-msgstr "In ``createPlan()`` method, we need to create a path from the given start to goal poses. The ``StraightLine::createPlan()`` is called using start pose and goal pose to solve the global path planning problem. Upon succeeding, it converts the path to the ``nav_msgs::msg::Path`` and returns to the planner server. Below annotation shows the implementation of this method."
+msgstr "在``createPlan()``方法中，我们需要根据给定的起始和目标姿态创建一个路径。使用起始姿态和目标姿态调用``StraightLine::createPlan()``来解决全局路径规划问题。成功后，它将路径转换为``nav_msgs::msg::Path``并返回给规划器服务器。下面的注释显示了此方法的实现。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:134
 msgid "The remaining methods are not used but it's mandatory to override them. As per the rules, we did override all but left them blank."
-msgstr "The remaining methods are not used but it's mandatory to override them. As per the rules, we did override all but left them blank."
+msgstr "剩余的方法没有使用，但是强制要求重写它们。根据规则，我们确实重写了所有方法，但是将它们留空。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:139
 msgid "Now that we have created our custom planner, we need to export our planner plugin so that it will be visible to the planner server. Plugins are loaded at runtime and if they are not visible, then our planner server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
-msgstr "Now that we have created our custom planner, we need to export our planner plugin so that it will be visible to the planner server. Plugins are loaded at runtime and if they are not visible, then our planner server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr "现在我们已经创建了自定义规划器，我们需要导出规划器插件，以便它对规划器服务器可见。插件在运行时加载，如果它们不可见，则我们的规划器服务器将无法加载它。在ROS 2中，导出和加载插件由``pluginlib``处理。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:141
 msgid "Coming back to our tutorial, class ``nav2_straightline_planner::StraightLine`` is loaded dynamically as ``nav2_core::GlobalPlanner`` which is our base class."
-msgstr "Coming back to our tutorial, class ``nav2_straightline_planner::StraightLine`` is loaded dynamically as ``nav2_core::GlobalPlanner`` which is our base class."
+msgstr "回到我们的教程，类 ``nav2_straightline_planner::StraightLine`` 以 ``nav2_core::GlobalPlanner`` 的形式进行动态加载，后者是我们的基类。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:143
 msgid "To export the planner, we need to provide two lines"
-msgstr "To export the planner, we need to provide two lines"
+msgstr "要导出规划器，我们需要提供两行代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:154
 msgid "Next step would be to create plugin's description file in the root directory of the package. For example, ``global_planner_plugin.xml`` file in our tutorial package. This file contains the following information"
-msgstr "Next step would be to create plugin's description file in the root directory of the package. For example, ``global_planner_plugin.xml`` file in our tutorial package. This file contains the following information"
+msgstr "下一步是在包的根目录中创建插件的描述文件。例如，在我们的教程包中创建 ``global_planner_plugin.xml`` 文件。该文件包含以下信息"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:220
 msgid "In the above snippet, you can observe the mapping of our ``nav2_straightline_planner/StraightLine`` planner to its id ``GridBased``. To pass plugin-specific parameters, we have used ``<plugin_id>.<plugin_specific_parameter>``."
-msgstr "In the above snippet, you can observe the mapping of our ``nav2_straightline_planner/StraightLine`` planner to its id ``GridBased``. To pass plugin-specific parameters, we have used ``<plugin_id>.<plugin_specific_parameter>``."
+msgstr "在上面的代码片段中，您可以观察到我们的``nav2_straightline_planner/StraightLine``规划器与其id``GridBased``的映射关系。为了传递特定于插件的参数，我们使用了``<plugin_id>.<plugin_specific_parameter>``的形式。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:223
 msgid "4- Run StraightLine plugin"
-msgstr "4- Run StraightLine plugin"
+msgstr "4- 运行 StraightLine 插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:225
@@ -1159,7 +1159,7 @@ msgstr "Run Turtlebot3 simulation with enabled navigation2. Detailed instruction
 
 #: ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:231
 msgid "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point to the location on map as it was described in :ref:`getting_started`. Robot will localize on the map and then click on \"Navigation2 goal\" and click on the pose where you want your planner to consider a goal pose. After that planner will plan the path and robot will start moving towards the goal."
-msgstr "Then goto RViz and click on the \"2D Pose Estimate\" button at the top and point to the location on map as it was described in :ref:`getting_started`. Robot will localize on the map and then click on \"Navigation2 goal\" and click on the pose where you want your planner to consider a goal pose. After that planner will plan the path and robot will start moving towards the goal."
+msgstr "然后进入 RViz，点击顶部的 \"2D Pose Estimate\" 按钮，并指向地图上的位置，就像在 :ref:`getting_started` 中所描述的那样。机器人将在地图上进行定位，然后点击 \"Navigation2 goal\"，并点击您希望规划器考虑的目标位姿。之后规划器将规划路径，机器人将开始朝目标前进。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:4
@@ -1169,7 +1169,7 @@ msgstr "Writing a New Navigator Plugin"
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:13
 msgid "This tutorial shows how to create your own behavior-tree navigator `plugin <https://index.ros.org/p/pluginlib/>`_ based on the ``nav2_core::BehaviorTreeNavigator`` base class."
-msgstr "This tutorial shows how to create your own behavior-tree navigator `plugin <https://index.ros.org/p/pluginlib/>`_ based on the ``nav2_core::BehaviorTreeNavigator`` base class."
+msgstr "本教程展示了如何基于 ``nav2_core::BehaviorTreeNavigator`` 基类创建自己的行为树导航器 `插件 <https://index.ros.org/p/pluginlib/>`_。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:15
