@@ -1182,12 +1182,12 @@ msgstr "`路径在接近时更长`_"
 
 #: ../../plugins/index.rst:535
 msgid "Triggers child nodes if the new global path is significantly larger than the old global path on approach to the goal"
-msgstr "Triggers child nodes if the new global path is significantly larger than the old global path on approach to the goal"
+msgstr "如果新的全局路径在接近目标时明显比旧的全局路径更长，则触发子节点"
 
 
 #: ../../plugins/index.rst:549
 msgid "Control Plugin Name"
-msgstr "Control Plugin Name"
+msgstr "控制插件名称"
 
 
 #: ../../plugins/index.rst:551
@@ -1197,7 +1197,7 @@ msgstr "`Pipeline Sequence`_"
 
 #: ../../plugins/index.rst:551
 msgid "A variant of a sequence node that will re-tick previous children even if another child is running"
-msgstr "A variant of a sequence node that will re-tick previous children even if another child is running"
+msgstr "序列节点的一种变体，即使有其他子节点正在运行，也会重新触发先前的子节点"
 
 
 #: ../../plugins/index.rst:555
@@ -1207,7 +1207,7 @@ msgstr "`Recovery`_"
 
 #: ../../plugins/index.rst:555
 msgid "Node must contain 2 children and returns success if first succeeds. If first fails, the second will be ticked. If successful, it will retry the first and then return its value"
-msgstr "Node must contain 2 children and returns success if first succeeds. If first fails, the second will be ticked. If successful, it will retry the first and then return its value"
+msgstr "节点必须包含2个子节点，并在第一个子节点成功时返回成功。如果第一个子节点失败，则会触发第二个子节点。如果成功，将重试第一个子节点，然后返回其值"
 
 
 #: ../../plugins/index.rst:562
@@ -1222,5 +1222,5 @@ msgstr "Mohammad Haghighipanah"
 
 #: ../../plugins/index.rst:562
 msgid "Will tick ``i`` th child until a result and move on to ``i+1``"
-msgstr "Will tick ``i`` th child until a result and move on to ``i+1``"
+msgstr "将逐个处理第 ``i`` 个子节点，直到获得结果并转到 ``i+1``"
 

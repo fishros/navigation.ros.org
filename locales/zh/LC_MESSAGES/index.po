@@ -27,27 +27,27 @@ msgstr "|LPN|"
 
 #: ../../index.rst:19
 msgid "Our Sponsors"
-msgstr "Our Sponsors"
+msgstr "我们的赞助商"
 
 
 #: ../../index.rst:27
 msgid "Overview"
-msgstr "Overview"
+msgstr "概述"
 
 
 #: ../../index.rst:29
 msgid "Nav2 is the professionally supported spiritual successor of the ROS Navigation Stack. This project seeks to find a safe way to have a mobile robot move to complete complex tasks through many types of environments and classes of robot kinematics. Not only can it move from Point A to Point B, but it can have intermediary poses, and represent other types of tasks like object following and more. Nav2 is a production-grade and high-quality navigation framework trusted by 50+ companies worldwide."
-msgstr "Nav2 is the professionally supported spiritual successor of the ROS Navigation Stack. This project seeks to find a safe way to have a mobile robot move to complete complex tasks through many types of environments and classes of robot kinematics. Not only can it move from Point A to Point B, but it can have intermediary poses, and represent other types of tasks like object following and more. Nav2 is a production-grade and high-quality navigation framework trusted by 50+ companies worldwide."
+msgstr "Nav2是ROS导航栈的专业支持精神继承者。该项目旨在找到一种安全的方式，使移动机器人能够在多种环境和机器人运动学类别中完成复杂任务。它不仅可以从A点移动到B点，还可以有中间姿态，并代表其他类型的任务，如物体跟踪等。Nav2是一个经过生产级和高质量验证的导航框架，得到全球50多家公司的信任。"
 
 
 #: ../../index.rst:34
 msgid "It provides perception, planning, control, localization, visualization, and much more to build highly reliable autonomous systems. This will complete environmental modeling from sensor data, dynamic path planning, compute velocities for motors, avoid obstacles, represent semantic regions and objects, and structure higher-level robot behaviors. To learn more about this project, such as related projects, robots using, ROS1 comparison, and maintainers, see :ref:`about`. To learn more about navigation and ROS concepts, see :ref:`concepts`."
-msgstr "It provides perception, planning, control, localization, visualization, and much more to build highly reliable autonomous systems. This will complete environmental modeling from sensor data, dynamic path planning, compute velocities for motors, avoid obstacles, represent semantic regions and objects, and structure higher-level robot behaviors. To learn more about this project, such as related projects, robots using, ROS1 comparison, and maintainers, see :ref:`about`. To learn more about navigation and ROS concepts, see :ref:`concepts`."
+msgstr "它提供感知、规划、控制、定位、可视化等功能，用于构建高度可靠的自主系统。这将通过传感器数据完成环境建模，动态路径规划，计算电机速度，避开障碍物，表示语义区域和对象，并构建更高层次的机器人行为。要了解有关此项目的更多信息，例如相关项目、使用的机器人、ROS1比较和维护者，请参阅：:ref:`about`。要了解有关导航和ROS概念的更多信息，请参阅：:ref:`concepts`。"
 
 
 #: ../../index.rst:39
 msgid "Nav2 uses behavior trees to create customized and intelligent navigation behavior via orchestrating many independent modular servers. A task server can be used to compute a path, control effort, recovery, or any other navigation related task. These separate servers communicate with the behavior tree (BT) over a ROS interface such as an action server or service. A robot may utilize potentially many different behavior trees to allow a robot to perform many types of unique tasks."
-msgstr "Nav2 uses behavior trees to create customized and intelligent navigation behavior via orchestrating many independent modular servers. A task server can be used to compute a path, control effort, recovery, or any other navigation related task. These separate servers communicate with the behavior tree (BT) over a ROS interface such as an action server or service. A robot may utilize potentially many different behavior trees to allow a robot to perform many types of unique tasks."
+msgstr "Nav2使用行为树通过协调许多独立的模块化服务器来创建定制和智能的导航行为。任务服务器可用于计算路径、控制力量、恢复或任何其他与导航相关的任务。这些独立的服务器通过ROS接口（如动作服务器或服务）与行为树（BT）进行通信。机器人可以利用多个不同的行为树来执行许多类型的独特任务。"
 
 
 #: ../../index.rst:45
@@ -57,7 +57,7 @@ msgstr "The diagram below will give you a good first-look at the structure of Na
 
 #: ../../index.rst:51
 msgid "The expected inputs to Nav2 are TF transformations conforming to REP-105, a map source if utilizing the Static Costmap Layer, a BT XML file, and any relevant sensor data sources. It will then provide valid velocity commands for the motors of a holonomic or non-holonomic robot to follow. We currently support all of the major robot types: holonomic, differential-drive, legged, and ackermann (car-like) base types! We support them uniquely with both circular and arbitrarily-shaped robots for SE2 collision checking."
-msgstr "The expected inputs to Nav2 are TF transformations conforming to REP-105, a map source if utilizing the Static Costmap Layer, a BT XML file, and any relevant sensor data sources. It will then provide valid velocity commands for the motors of a holonomic or non-holonomic robot to follow. We currently support all of the major robot types: holonomic, differential-drive, legged, and ackermann (car-like) base types! We support them uniquely with both circular and arbitrarily-shaped robots for SE2 collision checking."
+msgstr "Nav2的预期输入包括符合REP-105的TF变换、如果使用静态代价地图层则为地图源、BT XML文件和任何相关的传感器数据源。然后，它将为全向或非全向机器人的电机提供有效的速度命令。我们目前支持所有主要的机器人类型：全向、差动驱动、腿部和阿克曼（类似汽车）基本类型！我们通过SE2碰撞检查支持具有圆形和任意形状的机器人的独特功能。"
 
 
 #: ../../index.rst:59
@@ -67,7 +67,7 @@ msgstr "It has tools to:"
 
 #: ../../index.rst:61
 msgid "Load, serve, and store maps (Map Server)"
-msgstr "Load, serve, and store maps (Map Server)"
+msgstr "加载、提供和存储地图（地图服务器）"
 
 
 #: ../../index.rst:62
@@ -77,7 +77,7 @@ msgstr "Localize the robot on the map (AMCL)"
 
 #: ../../index.rst:63
 msgid "Plan a path from A to B around obstacles (Nav2 Planner)"
-msgstr "Plan a path from A to B around obstacles (Nav2 Planner)"
+msgstr "规划绕过障碍物的从A到B的路径（Nav2规划器）"
 
 
 #: ../../index.rst:64
@@ -87,7 +87,7 @@ msgstr "Control the robot as it follows the path (Nav2 Controller)"
 
 #: ../../index.rst:65
 msgid "Smooth path plans to be more continuous and feasible (Nav2 Smoother)"
-msgstr "Smooth path plans to be more continuous and feasible (Nav2 Smoother)"
+msgstr "使路径规划更连续和可行（Nav2平滑器）"
 
 
 #: ../../index.rst:66
@@ -97,7 +97,7 @@ msgstr "Convert sensor data into a costmap representation of the world (Nav2 Cos
 
 #: ../../index.rst:67
 msgid "Build complicated robot behaviors using behavior trees (Nav2 Behavior Trees and BT Navigator)"
-msgstr "Build complicated robot behaviors using behavior trees (Nav2 Behavior Trees and BT Navigator)"
+msgstr "使用行为树构建复杂的机器人行为（Nav2行为树和BT导航器）"
 
 
 #: ../../index.rst:68
@@ -107,7 +107,7 @@ msgstr "Compute recovery behaviors in case of failure (Nav2 Recoveries)"
 
 #: ../../index.rst:69
 msgid "Follow sequential waypoints (Nav2 Waypoint Follower)"
-msgstr "Follow sequential waypoints (Nav2 Waypoint Follower)"
+msgstr "按顺序跟随航点（Nav2航点跟随器）"
 
 
 #: ../../index.rst:70

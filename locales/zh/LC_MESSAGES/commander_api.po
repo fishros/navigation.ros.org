@@ -27,7 +27,7 @@ msgstr "Simple Commander API"
 
 #: ../../commander_api/index.rst:7
 msgid "Overview"
-msgstr "Overview"
+msgstr "概述"
 
 
 #: ../../commander_api/index.rst:9

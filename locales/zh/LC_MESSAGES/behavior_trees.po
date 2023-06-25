@@ -117,7 +117,7 @@ msgstr "`Recovery Subtree`_"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:13
 msgid "Overview"
-msgstr "Overview"
+msgstr "概述"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:15

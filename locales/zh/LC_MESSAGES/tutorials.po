@@ -337,7 +337,7 @@ msgstr "`Tutorial Steps`_"
 
 #: ../../tutorials/docs/adding_smoother.rst:15 ../../tutorials/docs/camera_calibration.rst:12 ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:15 ../../tutorials/docs/get_backtrace.rst:14 ../../tutorials/docs/get_profile.rst:14 ../../tutorials/docs/navigation2_dynamic_point_following.rst:18 ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:19 ../../tutorials/docs/navigation2_with_keepout_filter.rst:19 ../../tutorials/docs/navigation2_with_slam.rst:11 ../../tutorials/docs/navigation2_with_speed_filter.rst:19 ../../tutorials/docs/navigation2_with_stvl.rst:19 ../../tutorials/docs/using_collision_monitor.rst:16 ../../tutorials/docs/using_groot.rst:16 ../../tutorials/docs/using_shim_controller.rst:14
 msgid "Overview"
-msgstr "Overview"
+msgstr "概述"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:17

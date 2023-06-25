@@ -42,7 +42,7 @@ msgstr "`Tutorial Steps`_"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:11 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:11 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:16 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:17 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:16 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:11
 msgid "Overview"
-msgstr "Overview"
+msgstr "概述"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:13
