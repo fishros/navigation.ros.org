@@ -101,12 +101,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">导航概念</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ros-2">ROS 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#action-server">动作服务器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lifecycle-nodes-and-bond">Lifecycle Nodes and Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lifecycle-nodes-and-bond">生命周期节点和 Bond</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#behavior-trees">Behavior Trees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#navigation-servers">Navigation Servers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#planner-controller-smoother-and-recovery-servers">Planner, Controller, Smoother and Recovery Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#behavior-trees">行为树</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#navigation-servers">导航服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#planner-controller-smoother-and-recovery-servers">规划器、控制器、平滑器和恢复服务器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#planners">规划器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#controllers">控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#behaviors">行为</a></li>
@@ -946,90 +946,51 @@
 <div class="section" id="action-server">
 <h3>动作服务器<a class="headerlink" href="#action-server" title="永久链接至标题"></a></h3>
 <p>正如在ROS中一样，操作服务器是控制导航等长时间运行任务的常见方式。该堆栈更广泛地使用了操作，并且在某些情况下没有简单的主题接口。作为ROS 2中的开发人员，理解操作服务器更为重要。一些简单的CLI示例可以在 <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Understanding-ROS2-Actions.html">ROS 2文档</a> 中找到。</p>
-<p>Action servers are similar to a canonical service server.
-A client will request some task to be completed, except, this task may take a long time.
-An example would be moving the shovel up from a bulldozer or ask a robot to travel 10 meters to the right.</p>
+<p>动作服务器类似于规范服务服务器。客户端将请求完成某些任务，但是这个任务可能需要很长时间。一个例子是将铲子从推土机上抬起，或者让机器人向右行驶10米。</p>
 <p>在这种情况下，操作服务器和客户端允许我们在另一个进程或线程中调用长时间运行的任务，并返回其结果的future。在这一点上，阻塞直到操作完成是允许的，但是您可能希望定期检查操作是否完成并继续在客户端线程中处理工作。由于它是长时间运行的，操作服务器还将向其客户端提供反馈。此反馈可以是任何内容，并在ROS <code class="docutils literal notranslate"><span class="pre">.action</span></code> 中与请求和结果类型一起定义。在推土机示例中，请求可以是一个角度，反馈可以是剩余要移动的角度，结果是一个成功或失败的布尔值以及最终角度。在导航示例中，请求可以是一个位置，反馈可以是导航所花费的时间和到目标的距离，结果是一个表示成功与否的布尔值。</p>
-<p>Feedback and results can be gathered synchronously by registering callbacks with the action client.
-They may also be gathered by asynchronously requesting information from the shared future objects.
-Both require spinning the client node to process callback groups.</p>
+<p>可以通过在动作客户端注册回调函数来同步获取反馈和结果。也可以通过异步请求共享的 future 对象来获取它们。这两种方法都需要在客户端节点中进行回调组处理。</p>
 <p>此堆栈中使用操作服务器通过 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 操作消息与最高级别的行为树（BT）导航器进行通信。它们还用于BT导航器与后续的较小操作服务器进行计算规划、控制努力和恢复的通信。每个服务器与之交互的 <code class="docutils literal notranslate"><span class="pre">.action</span></code> 类型在 <code class="docutils literal notranslate"><span class="pre">nav2_msgs</span></code> 中具有自己的独特定义。</p>
 </div>
 <div class="section" id="lifecycle-nodes-and-bond">
-<h3>Lifecycle Nodes and Bond<a class="headerlink" href="#lifecycle-nodes-and-bond" title="永久链接至标题"></a></h3>
+<h3>生命周期节点和 Bond<a class="headerlink" href="#lifecycle-nodes-and-bond" title="永久链接至标题"></a></h3>
 <p>生命周期（或管理）节点是ROS 2中特有的。更多信息可以在 <a class="reference external" href="https://design.ros2.org/articles/node_lifecycle.html">这里找到</a>。它们是包含用于启动和关闭ROS 2服务器的状态机转换的节点。这有助于确定性地处理ROS系统的启动和关闭行为。它还帮助用户以合理的方式组织他们的程序，以用于商业</p>
-<p>When a node is started, it is in the unconfigured state, only processing the node's constructor which should <strong>not</strong> contain any ROS networking setup or parameter reading.
-By the launch system, or the supplied lifecycle manager, the nodes need to be transitioned to inactive by configuring.
-After, it is possible to activate the node by transitioning through the activating stage.</p>
-<p>This state will allow the node to process information and be fully setup to run.
-The configuration stage, triggering the <code class="docutils literal notranslate"><span class="pre">on_configure()</span></code> method, will setup all parameters, ROS networking interfaces, and for safety systems, all dynamically allocated memory.
-The activation stage, triggering the <code class="docutils literal notranslate"><span class="pre">on_activate()</span></code> method, will active the ROS networking interfaces and set any states in the program to start processing information.</p>
-<p>To shutdown, we transition into deactivating, cleaning up, shutting down and end in the finalized state.
-The networking interfaces are deactivated and stop processing, deallocate memory, exit cleanly, in those stages, respectively.</p>
-<p>The lifecycle node framework is used extensively through out this project and all servers utilize it.
-It is best convention for all ROS systems to use lifecycle nodes if it is possible.</p>
-<p>Within Nav2, we use a wrapper of LifecycleNodes, <code class="docutils literal notranslate"><span class="pre">nav2_util</span> <span class="pre">LifecycleNode</span></code>.
-This wrapper wraps much of the complexities of LifecycleNodes for typical applications.
-It also includes a <code class="docutils literal notranslate"><span class="pre">bond</span></code> connection for the lifecycle manager to ensure that after a server transitions up, it also remains active.
-If a server crashes, it lets the lifecycle manager know and transition down the system to prevent a critical failure. See <a class="reference internal" href="../migration/Eloquent.html#eloquent-migration"><span class="std std-ref">Eloquent to Foxy</span></a> for details.</p>
+<p>当节点启动时，它处于未配置状态，只处理节点的构造函数，该函数**不应**包含任何 ROS 网络设置或参数读取。通过启动系统或提供的生命周期管理器，需要将节点转换为非活动状态。然后，可以通过经历激活阶段来激活节点。</p>
+<p>该状态将允许节点处理信息并完全设置运行环境。配置阶段触发``on_configure()``方法，将设置所有参数、ROS网络接口，并为安全系统分配所有动态分配的内存。激活阶段触发``on_activate()``方法，将激活ROS网络接口并设置程序中的任何状态以开始处理信息。</p>
+<p>要关闭节点，我们需要经历非激活、清理、关闭阶段，并最终处于已完成状态。这些阶段分别是停用网络接口并停止处理、释放内存、正常退出。</p>
+<p>生命周期节点框架在整个项目中被广泛使用，所有服务器都利用了该框架。如果可能的话，使用生命周期节点是所有ROS系统的最佳惯例。</p>
+<p>在 Nav2 中，我们使用了生命周期节点的包装器 <code class="docutils literal notranslate"><span class="pre">nav2_util</span> <span class="pre">LifecycleNode</span></code>。这个包装器为典型的应用程序简化了生命周期节点的复杂性。它还包括一个 <code class="docutils literal notranslate"><span class="pre">bond</span></code> 连接，用于确保在服务器转换为上层后，它仍然保持活动状态。如果服务器崩溃，它会通知生命周期管理器并降级系统，以防止关键故障。有关详细信息，请参见 <a class="reference internal" href="../migration/Eloquent.html#eloquent-migration"><span class="std std-ref">Eloquent to Foxy</span></a>。</p>
 </div>
 </div>
 <div class="section" id="behavior-trees">
-<h2>Behavior Trees<a class="headerlink" href="#behavior-trees" title="永久链接至标题"></a></h2>
-<p>Behavior trees (BT) are becoming increasingly common in complex robotics tasks.
-They are a tree structure of tasks to be completed.
-It creates a more scalable and human-understandable framework for defining multi-step or many state applications.
-This is opposed to a finite state machine (FSM) which may have dozens of states and hundreds of transitions.
-An example would be a soccer-playing robot.
-Embedding the logic of soccer game play into a FSM would be challenging and error prone with many possible states and rules.
-Additionally, modeling choices like to shoot at the goal from the left, right, or center, is particularly unclear.
-With a BT, basic primitives, like &quot;kick&quot;, &quot;walk&quot;, &quot;go to ball&quot;, can be created and reused for many behaviors.
-More information can be found <a class="reference external" href="https://arxiv.org/abs/1709.00084">in this book</a>.
-I <strong>strongly</strong> recommend reading chapters 1-3 to get a good understanding of the nomenclature and workflow.
-It should only take about 30 minutes.</p>
-<p>Behavior Trees provide a formal structure for navigation logic which can be both used to create complex systems but also be verifiable and validated as provenly correct using advanced tools. Having the application logic centralized in the behavior tree and with independent task servers (which only communicate data over the tree) allows for formal analysis.</p>
-<p>For this project, we use <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> as the behavior tree library.
-We create node plugins which can be constructed into a tree, inside the <code class="docutils literal notranslate"><span class="pre">BT</span> <span class="pre">Navigator</span></code>.
-The node plugins are loaded into the BT and when the XML file of the tree is parsed, the registered names are associated.
-At this point, we can march through the behavior tree to navigate.</p>
-<p>One reason this library is used is its ability to load subtrees. This means that the Nav2 behavior tree can be loaded into another higher-level BT to use this project as node plugin.
-An example would be in soccer play, using the Nav2 behavior tree as the &quot;go to ball&quot; node with a ball detection as part of a larger task.
-Additionally, we supply a <code class="docutils literal notranslate"><span class="pre">NavigateToPoseAction</span></code> plugin (among others) for BT so the Nav2 stack can be called from a client application through the usual action interface.</p>
-<p>Other systems could be used to design complex autonomous behavior, namely Hierarchical FSMs (HFSM).
-Behavior Trees were selected due to popularity across the robotics and related industries and by largely user demand.
-However, due to the independent task server nature of Nav2, it is not difficult to offer a <code class="docutils literal notranslate"><span class="pre">nav2_hfsm_navigator</span></code> package in the future, pending interest and contribution.</p>
+<h2>行为树<a class="headerlink" href="#behavior-trees" title="永久链接至标题"></a></h2>
+<p>行为树（Behavior trees，BT）在复杂的机器人任务中越来越常见。它们是一种由任务构成的树状结构，用于完成任务。它为定义多步骤或多状态应用程序提供了一个更具可扩展性和可理解性的框架。这与有数十个状态和数百个转换的有限状态机（FSM）相反。一个例子是踢足球的机器人。将足球比赛的逻辑嵌入到有限状态机中将会具有挑战性，并且容易出错，因为存在许多可能的状态和规则。此外，像从左、右或中间射门这样的建模选择尤其不清楚。通过使用行为树，可以创建和重用基本的原语，如“踢球”，“行走”，“走向球”，以实现多种行为。有关更多信息，请参阅 <a class="reference external" href="https://arxiv.org/abs/1709.00084">本书</a> 的第1-3章。我**强烈**建议阅读这些章</p>
+<p>行为树为导航逻辑提供了一种形式化结构，既可以用于创建复杂系统，又可以使用先进的工具进行验证和验证其正确性。将应用逻辑集中在行为树中，并使用独立的任务服务器（仅通过树进行数据通信），可以进行形式化分析。</p>
+<p>在这个项目中，我们使用 <a class="reference external" href="https://www.behaviortree.dev/">BehaviorTree CPP V3</a> 作为行为树库。我们创建可以构建成树的节点插件，放置在 <code class="docutils literal notranslate"><span class="pre">BT</span> <span class="pre">Navigator</span></code> 中。节点插件会加载到行为树中，并在解析树的XML文件时与注册的名称关联起来。此时，我们可以通过行为树进行导航。</p>
+<p>使用此库的一个原因是它能够加载子树。这意味着Nav2行为树可以加载到另一个更高级别的行为树中，以将该项目用作节点插件。例如，在足球比赛中，可以将Nav2行为树作为&quot;去球&quot;节点，并作为更大任务的一部分进行球检测。此外，我们还为行为树提供了``NavigateToPoseAction``插件（以及其他插件），以便可以通过通常的操作接口从客户端应用程序调用Nav2堆栈。</p>
+<p>其他系统也可以用于设计复杂的自主行为，例如分层有限状态机（HFSM）。选择行为树是因为它在机器人和相关行业中很受欢迎，并且用户需求较大。然而，由于Nav2具有独立的任务服务器特性，未来很容易提供一个 <code class="docutils literal notranslate"><span class="pre">nav2_hfsm_navigator</span></code> 包，具体取决于兴趣和贡献的情况。</p>
 </div>
 <div class="section" id="navigation-servers">
-<h2>Navigation Servers<a class="headerlink" href="#navigation-servers" title="永久链接至标题"></a></h2>
-<p>Planners and controllers are at the heart of a navigation task.
-Recoveries are used to get the robot out of a bad situation or attempt to deal with various forms of issues to make the system fault-tolerant.
-Smoothers can be used for additional quality improvements of the planned path.
-In this section, the general concepts around them and their uses in this project are analyzed.</p>
+<h2>导航服务器<a class="headerlink" href="#navigation-servers" title="永久链接至标题"></a></h2>
+<p>规划器和控制器是导航任务的核心。恢复机制用于将机器人从困境中解救出来，或者尝试解决各种问题，使系统具有容错性。平滑器可用于对规划路径进行额外的质量改进。本节将分析这些概念以及它们在该项目中的用途。</p>
 <div class="section" id="planner-controller-smoother-and-recovery-servers">
-<h3>Planner, Controller, Smoother and Recovery Servers<a class="headerlink" href="#planner-controller-smoother-and-recovery-servers" title="永久链接至标题"></a></h3>
-<p>Four of the action servers in this project are the planner, behavior, smoother and controller servers.</p>
+<h3>规划器、控制器、平滑器和恢复服务器<a class="headerlink" href="#planner-controller-smoother-and-recovery-servers" title="永久链接至标题"></a></h3>
+<p>该项目中有四个动作服务器，包括规划器、行为器、平滑器和控制器服务器。</p>
 <p>These action servers are used to host a map of algorithm plugins to complete various tasks.
 They also host the environmental representation used by the algorithm plugins to compute their outputs.</p>
-<p>The planner, smoother and controller servers will be configured at runtime with the names (aliases) and types of algorithms to use.
-These types are the pluginlib names that have been registered and the names are the aliases for the task.
-An example would be the DWB controller used with name <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>, as it follows a reference path.
-In this case, then all parameters for DWB would be placed in that namespace, e.g. <code class="docutils literal notranslate"><span class="pre">FollowPath.&lt;param&gt;</span></code>.</p>
+<p>规划器、平滑器和控制器服务器将在运行时配置算法的名称（别名）和类型。这些类型是已注册的插件库名称，而名称则是任务的别名。一个例子是使用名称 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 的DWB控制器，因为它遵循一个参考路径。在这种情况下，所有DWB的参数将放置在该命名空间中，例如 <code class="docutils literal notranslate"><span class="pre">FollowPath.&lt;param&gt;</span></code>。</p>
 <p>These three servers then expose an action interface corresponding to their task.
 When the behavior tree ticks the corresponding BT node, it will call the action server to process its task.
 The action server callback inside the server will call the chosen algorithm by its name (e.g. <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>) that maps to a specific algorithm.
 This allows a user to abstract the algorithm used in the behavior tree to classes of algorithms.
 For instance, you can have <code class="docutils literal notranslate"><span class="pre">N</span></code> plugin controllers to follow paths, dock with charger, avoid dynamic obstacles, or interface with a tool.
 Having all of these plugins in the same server allows the user to make use of a single environmental representation object, which is costly to duplicate.</p>
-<p>For the behavior server, each of the behaviors also contains their own name, however, each plugin will also expose its own special action server.
-This is done because of the wide variety of behavior actions that may be created which cannot have a single simple interface to share.
-The behavior server also contains a costmap subscriber to the local costmap, receiving real-time updates from the controller server, to compute its tasks.
-We do this to avoid having multiple instances of the local costmap which are computationally expensive to duplicate.</p>
+<p>对于行为服务器，每个行为也有自己的名称，然而，每个插件还会公开自己的特殊动作服务器。这是因为可能会创建各种各样的行为动作，无法共享单个简单的接口。行为服务器还包含一个用于接收控制器服务器的本地代价地图的代价地图订阅者，以计算其任务。我们这样做是为了避免多个代价地图实例的重复计算，这会消耗大量计算资源。</p>
 <p>Alternatively, since the BT nodes are trivial plugins calling an action, new BT nodes can be created to call other action servers with other action types.
 It is advisable to use the provided servers if possible at all times.
 If, due to the plugin or action interfaces, a new server is needed, that can be sustained with the framework.
 The new server should use the new type and plugin interface, similar to the provided servers.
 A new BT node plugin will need to be created to call the new action server -- however no forking or modification is required in the Nav2 repo itself by making extensive use of servers and plugins.</p>
-<p>If you find that you require a new interface to the pluginlib definition or action type, please file a ticket and see if we can rectify that in the same interfaces.</p>
+<p>如果您发现需要一个新的插件库定义或动作类型的接口，请提交工单，看看我们能否在同一接口中进行修复。</p>
 </div>
 <div class="section" id="planners">
 <h3>规划器<a class="headerlink" href="#planners" title="永久链接至标题"></a></h3>
