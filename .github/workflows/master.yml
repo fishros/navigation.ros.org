@@ -69,5 +69,5 @@ jobs:
           publish_dir: ./
           publish_branch: po-en-master  
 
-      # - name: Request to update
-      #   run: echo `curl "http://fishros.org:2023/calib_server/update_version?branch=humble&url=git@github.com:fishros/ros2_documentation.git&repository=ros2_documentation&popath=source/locales/zh/LC_MESSAGES"`
+      - name: Request to update
+        run: echo `curl "http://fishros.org:2024/nav2/calib/update_version?branch=master&repository=navigation.ros.org&url=git@github.com:fishros/navigation.ros.org.git&popath=locales/zh/LC_MESSAGES"`
