@@ -162,7 +162,7 @@ msgstr "当行为服务器进入on_cleanup状态时调用该方法。理想情�
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:68
 msgid "For the ``nav2_behaviors`` wrapper, which provides the ROS 2 action interface and boilerplate, we have 4 virtual methods to implement. This tutorial uses this wrapper so these are the main elements we will address."
-msgstr "For the ``nav2_behaviors`` wrapper, which provides the ROS 2 action interface and boilerplate, we have 4 virtual methods to implement. This tutorial uses this wrapper so these are the main elements we will address."
+msgstr "对于提供ROS 2动作接口和样板代码的``nav2_behaviors``包装器，我们有4个虚拟方法需要实现。本教程使用这个包装器，因此我们将解决以下主要要素。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:74
@@ -172,7 +172,7 @@ msgstr "onRun()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:74
 msgid "Method is called immediately when a new behavior action request is received. Gives the action goal to process and should start behavior initialization / process."
-msgstr "Method is called immediately when a new behavior action request is received. Gives the action goal to process and should start behavior initialization / process."
+msgstr "当接收到新的行为动作请求时立即调用该方法。将行为目标传递给处理，并应启动行为初始化/处理。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:78
@@ -182,7 +182,7 @@ msgstr "onCycleUpdate()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:78
 msgid "Method is called at the behavior update rate and should complete any necessary updates. An example for spinning is computing the command velocity for the current cycle, publishing it and checking for completion."
-msgstr "Method is called at the behavior update rate and should complete any necessary updates. An example for spinning is computing the command velocity for the current cycle, publishing it and checking for completion."
+msgstr "以行为更新速率调用该方法，并应完成任何必要的更新。例如，对于旋转，可以计算当前周期的命令速度，将其发布并检查完成情况。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:82
@@ -192,7 +192,7 @@ msgstr "onConfigure()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:82
 msgid "Method is called when behavior server enters on_configure state. Ideally this method should implement operations which are neccessary before behavior goes to a configured state (get parameters, etc)."
-msgstr "Method is called when behavior server enters on_configure state. Ideally this method should implement operations which are neccessary before behavior goes to a configured state (get parameters, etc)."
+msgstr "当行为服务器进入on_configure状态时调用该方法。理想情况下，此方法应该实现在行为进入已配置状态之前必需的操作（获取参数等）。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:82 ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:86 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:59 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:63 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:68 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:71 ../../plugin_tutorials/docs/writing_new_bt_plugin.rst:74 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:72 ../../plugin_tutorials/docs/writing_new_costmap2d_plugin.rst:74 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:47 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:51 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:55 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:59
@@ -207,67 +207,67 @@ msgstr "onCleanup()"
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:90
 msgid "For this tutorial, we will be using methods ``onRun()``, ``onCycleUpdate()``, and ``onConfigure()`` to create the SMS behavior. ``onConfigure()`` will be skipped for brevity, but only declares parameters."
-msgstr "For this tutorial, we will be using methods ``onRun()``, ``onCycleUpdate()``, and ``onConfigure()`` to create the SMS behavior. ``onConfigure()`` will be skipped for brevity, but only declares parameters."
+msgstr "对于本教程，我们将使用``onRun()``, ``onCycleUpdate()``和``onConfigure()``方法来创建短信行为。为了简洁起见，我们将跳过``onConfigure()``，但仅声明参数。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:93
 msgid "In recoveries, ``onRun()`` method must set any initial state and kick off the behavior. For the case of our call for help behavior, we can trivially compute all of our needs in this method."
-msgstr "In recoveries, ``onRun()`` method must set any initial state and kick off the behavior. For the case of our call for help behavior, we can trivially compute all of our needs in this method."
+msgstr "在恢复中，``onRun()`` 方法必须设置任何初始状态并启动行为。对于我们的求助行为，我们可以在此方法中轻松计算出所有需要的内容。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:118
 msgid "We receive an action goal, ``command``, which we want to process. ``command`` contains a field ``message`` that contains the message we want to communicate to our mothership. This is the \"call for help\" message that we want to send via SMS to our brothers in arms in the operations center."
-msgstr "We receive an action goal, ``command``, which we want to process. ``command`` contains a field ``message`` that contains the message we want to communicate to our mothership. This is the \"call for help\" message that we want to send via SMS to our brothers in arms in the operations center."
+msgstr "我们接收到一个动作目标``command``，我们想要处理它。``command``包含一个字段``message``，其中包含我们想要通过短信发送给作战指挥中心的消息。这是我们希望发送的“求救”短信，以便将其发送给我们的战友。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:122
 msgid "We use the service Twilio to complete this task. Please `create an account <https://www.twilio.com/>`_ and get all the relavent information needed for creating the service (e.g. ``account_sid``, ``auth_token``, and a phone number). You can set these values as parameters in your configuration files corresponding to the ``onConfigure()`` parameter declarations."
-msgstr "We use the service Twilio to complete this task. Please `create an account <https://www.twilio.com/>`_ and get all the relavent information needed for creating the service (e.g. ``account_sid``, ``auth_token``, and a phone number). You can set these values as parameters in your configuration files corresponding to the ``onConfigure()`` parameter declarations."
+msgstr "我们使用 Twilio 服务完成此任务。请`创建一个账户 <https://www.twilio.com/>`_，并获取创建该服务所需的所有相关信息（例如 ``account_sid``、``auth_token`` 和一个电话号码）。您可以将这些值作为参数设置到与 ``onConfigure()`` 参数声明相对应的配置文件中。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:126
 msgid "We use the ``_twilio`` object to send our message with your account information from the configuration file. We send the message and log to screen whether or not the message was sent successfully or not. We return a ``FAILED`` or ``SUCCEEDED`` depending on this value to be returned to the action client."
-msgstr "We use the ``_twilio`` object to send our message with your account information from the configuration file. We send the message and log to screen whether or not the message was sent successfully or not. We return a ``FAILED`` or ``SUCCEEDED`` depending on this value to be returned to the action client."
+msgstr "我们使用``_twilio``对象发送带有配置文件中的账户信息的消息。我们发送消息，并在屏幕上记录消息是否成功发送。根据这个值，我们返回``FAILED``或``SUCCEEDED``，以便返回给动作客户端。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:130
 msgid "``onCycleUpdate()`` is trivially simple as a result of our short-running behavior. If the behavior was instead longer running like spinning, navigating to a safe area, or getting out of a bad spot and waiting for help, then this function would be checking for timeouts or computing control values. For our example, we simply return success because we already completed our mission in ``onRun()``."
-msgstr "``onCycleUpdate()`` is trivially simple as a result of our short-running behavior. If the behavior was instead longer running like spinning, navigating to a safe area, or getting out of a bad spot and waiting for help, then this function would be checking for timeouts or computing control values. For our example, we simply return success because we already completed our mission in ``onRun()``."
+msgstr "``onCycleUpdate()`` 对于我们这个短时运行的行为来说非常简单。如果行为需要长时间运行，例如旋转、导航到安全区域或离开危险区域并等待帮助，那么此函数将检查超时或计算控制值。对于我们的示例，我们简单地返回成功，因为我们已经在 ``onRun()`` 中完成了我们的任务。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:141
 msgid "The remaining methods are not used and are not mandatory to override them."
-msgstr "The remaining methods are not used and are not mandatory to override them."
+msgstr "剩余的方法未被使用，不需要强制重写它们。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:144
 msgid "2- Exporting the Behavior Plugin"
-msgstr "2- Exporting the Behavior Plugin"
+msgstr "2- 导出行为插件"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:146
 msgid "Now that we have created our custom behavior, we need to export our Behavior Plugin so that it would be visible to the behavior server. Plugins are loaded at runtime and if they are not visible, then our behavior server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
-msgstr "Now that we have created our custom behavior, we need to export our Behavior Plugin so that it would be visible to the behavior server. Plugins are loaded at runtime and if they are not visible, then our behavior server won't be able to load it. In ROS 2, exporting and loading plugins is handled by ``pluginlib``."
+msgstr "现在我们已经创建了自定义行为，我们需要导出我们的行为插件，以便行为服务器能够看到它。插件在运行时加载，如果它们不可见，那么我们的行为服务器将无法加载它。在ROS 2中，导出和加载插件由``pluginlib``处理。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:148
 msgid "Coming to our tutorial, class ``nav2_sms_bahavior::SendSms`` is loaded dynamically as ``nav2_core::Behavior`` which is our base class."
-msgstr "Coming to our tutorial, class ``nav2_sms_bahavior::SendSms`` is loaded dynamically as ``nav2_core::Behavior`` which is our base class."
+msgstr "在我们的教程中，``nav2_sms_bahavior::SendSms`` 类以 ``nav2_core::Behavior`` 动态加载，它是我们的基类。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:150
 msgid "To export the behavior, we need to provide two lines"
-msgstr "To export the behavior, we need to provide two lines"
+msgstr "要导出该行为，我们需要提供两行代码。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:157 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:150
 msgid "Note that it requires pluginlib to export out plugin's class. Pluginlib would provide as macro ``PLUGINLIB_EXPORT_CLASS`` which does all the work of exporting."
-msgstr "Note that it requires pluginlib to export out plugin's class. Pluginlib would provide as macro ``PLUGINLIB_EXPORT_CLASS`` which does all the work of exporting."
+msgstr "请注意，它需要 pluginlib 来导出插件的类。Pluginlib 提供了宏 ``PLUGINLIB_EXPORT_CLASS``，它完成了所有的导出工作。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:159
 msgid "It is good practice to place these lines at the end of the file but technically, you can also write at the top."
-msgstr "It is good practice to place these lines at the end of the file but technically, you can also write at the top."
+msgstr "按照惯例，将这些代码放在文件末尾是一个好的做法，但从技术上讲，也可以放在文件顶部。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:161
@@ -277,7 +277,7 @@ msgstr "Next step would be to create plugin's description file in the root direc
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:163 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:282
 msgid "``library path``: Plugin's library name and it's location."
-msgstr "``library path``: Plugin's library name and it's location."
+msgstr "``library path``：插件的库名称和位置。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:164 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:219 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:157 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:283
@@ -287,7 +287,7 @@ msgstr "``class name``: Name of the class."
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:165 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:220 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:158 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:284
 msgid "``class type``: Type of class."
-msgstr "``class type``: Type of class."
+msgstr "``class type``：类的类型。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:166 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:221 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:159 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:285
@@ -297,7 +297,7 @@ msgstr "``base class``: Name of the base class."
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:167 ../../plugin_tutorials/docs/writing_new_nav2controller_plugin.rst:222 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:160 ../../plugin_tutorials/docs/writing_new_navigator_plugin.rst:286
 msgid "``description``: Description of the plugin."
-msgstr "``description``: Description of the plugin."
+msgstr "``description``：插件的描述。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:177 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:170
@@ -307,7 +307,7 @@ msgstr "Next step would be to export plugin using ``CMakeLists.txt`` by using cm
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:183 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:176
 msgid "Plugin description file should also be added to ``package.xml``"
-msgstr "Plugin description file should also be added to ``package.xml``"
+msgstr "插件描述文件还应添加到``package.xml``中。"
 
 
 #: ../../plugin_tutorials/docs/writing_new_behavior_plugin.rst:192 ../../plugin_tutorials/docs/writing_new_nav2planner_plugin.rst:185
