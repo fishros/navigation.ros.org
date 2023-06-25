@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing a New Navigator Plugin &mdash; Navigation 2 1.0.0 文档</title>
+  <title>编写新的导航器插件 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -421,11 +421,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Writing a New Navigator Plugin</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编写新的导航器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-new-navigator-plugin">1- Create a new Navigator Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-new-navigator-plugin">1- 创建新的导航器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-navigator-plugin">2- Exporting the navigator plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-plugin">4- Run plugin</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Plugin Tutorials</a> &raquo;</li>
-      <li>Writing a New Navigator Plugin</li>
+      <li>编写新的导航器插件</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="writing-a-new-navigator-plugin">
-<span id="writing-new-nav2navigator-plugin"></span><h1>Writing a New Navigator Plugin<a class="headerlink" href="#writing-a-new-navigator-plugin" title="永久链接至标题"></a></h1>
+<span id="writing-new-nav2navigator-plugin"></span><h1>编写新的导航器插件<a class="headerlink" href="#writing-a-new-navigator-plugin" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -948,8 +948,8 @@
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
 <p>本教程展示了如何基于 <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code> 基类创建自己的行为树导航器 <a class="reference external" href="https://index.ros.org/p/pluginlib/">插件</a>。</p>
-<p>In this tutorial, we will be reviewing the <code class="docutils literal notranslate"><span class="pre">Navigate</span> <span class="pre">to</span> <span class="pre">Pose</span></code> behavior-tree navigator plugin, which is the foundational navigator of Nav2 and complimentary behavior to ROS 1 Navigation. This completes point-to-point navigation. This tutorial will be reviewing the code and structure as of ROS 2 Iron. While small variations may be made over time, this should be sufficient to get started writing your own navigator if you choose as we do not expect major API changes on this system.</p>
-<p>It may be beneficial to write your own Navigator if you have a custom action message definition you'd like to use with Navigation rather than the provided <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> or <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> interfaces (e.g. doing complete coverage or containing additional constraint information). The role of the Navigators are to extract information from requests to pass to the behavior tree / blackboard, populate feedback and responses, and maintain the state of the behavior tree if relevant. The behavior tree XML will define the actual navigation logic used.</p>
+<p>在本教程中，我们将回顾“导航到位姿（Navigate to Pose）”行为树导航器插件，它是Nav2的基础导航器和ROS 1 Navigation的补充行为。这完成了点对点导航。本教程将回顾ROS 2 Iron版本的代码和结构。尽管随着时间的推移可能会进行一些小的变化，但这应该足以让您开始编写自己的导航器，因为我们不希望在此系统上进行重大的API更改。</p>
+<p>如果您有自定义的操作消息定义，并且希望与导航一起使用而不是使用提供的“NavigateToPose”或“NavigateThroughPoses”接口（例如完成全面覆盖或包含其他约束信息），则编写自己的导航器可能会有益处。导航器的作用是从请求中提取信息，传递给行为树/黑板，填充反馈和响应，并在相关时维护行为树的状态。行为树的 XML 将定义实际使用的导航逻辑。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
@@ -963,11 +963,11 @@
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="create-a-new-navigator-plugin">
-<h3>1- Create a new Navigator Plugin<a class="headerlink" href="#create-a-new-navigator-plugin" title="永久链接至标题"></a></h3>
-<p>We will be implementing pure point-to-point navigation behavior. The code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2/nav2_bt_navigator">Nav2's BT Navigator package</a> as the <code class="docutils literal notranslate"><span class="pre">NavigateToPoseNavigator</span></code>. This package can be considered as a reference for writing your own plugin.</p>
-<p>Our example plugin class <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator::NavigateToPoseNavigator</span></code> inherits from the base class <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code>. The base class provides a set of virtual methods to implement a navigator plugin. These methods are called at runtime by the BT Navigator server or as a response to ROS 2 actions to process a navigation request.</p>
-<p>Note that this class has itself a base class of <code class="docutils literal notranslate"><span class="pre">NavigatorBase</span></code>. This class is to provide a non-templated base-class for use in loading the plugins into vectors for storage and calls for basic state transition in the lifecycle node. Its members (e.g. <code class="docutils literal notranslate"><span class="pre">on_XYZ</span></code>) are implemented for you in <code class="docutils literal notranslate"><span class="pre">BehaviorTreeNavigator</span></code> and marked as <code class="docutils literal notranslate"><span class="pre">final</span></code> so they are not possible to be overrided by the user. The API that you will be implementing for your navigator are the virtual methods within <code class="docutils literal notranslate"><span class="pre">BehaviorTreeNavigator</span></code>, not <code class="docutils literal notranslate"><span class="pre">NavigatorBase</span></code>. These <code class="docutils literal notranslate"><span class="pre">on_XYZ</span></code> APIs are implemented in necessary functions in <code class="docutils literal notranslate"><span class="pre">BehaviorTreeNavigator</span></code> to handle boilerplate logic regarding the behavior tree and action server to minimize code duplication across the navigator implementations (e.g. <code class="docutils literal notranslate"><span class="pre">on_configure</span></code> will create the action server, register callbacks, populate the blackboard with some necessary basic information, and then call a user-defined <code class="docutils literal notranslate"><span class="pre">configure</span></code> function for any additional user-specific needs).</p>
-<p>The list of methods, their descriptions, and necessity are presented in the table below:</p>
+<h3>1- 创建新的导航器插件<a class="headerlink" href="#create-a-new-navigator-plugin" title="永久链接至标题"></a></h3>
+<p>我们将实现纯点对点导航行为。本教程中的代码可以在`Nav2 的 BT Navigator 包 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/nav2_bt_navigator">https://github.com/ros-planning/navigation2/nav2_bt_navigator</a>&gt;`_ 中找到，命名为“NavigateToPoseNavigator”。可以将此包视为编写自己插件的参考。</p>
+<p>我们的示例插件类``nav2_bt_navigator::NavigateToPoseNavigator``继承自基类``nav2_core::BehaviorTreeNavigator``。基类提供了一组虚拟方法来实现导航器插件。这些方法在运行时由BT导航服务器调用，或作为对ROS 2动作的响应以处理导航请求。</p>
+<p>请注意，这个类本身有一个基类“NavigatorBase”。该类提供了一个非模板化的基类，用于将插件加载到向量中以进行存储，并在生命周期节点中进行基本状态转换的调用。其成员（例如“on_XYZ”）在“BehaviorTreeNavigator”中已经为您实现，并标记为“final”，因此用户无法重写它们。您要实现的导航器的 API 是“BehaviorTreeNavigator”中的虚拟方法，而不是“NavigatorBase”。这些“on_XYZ” API 在“BehaviorTreeNavigator”中的必要函数中实现，以处理有关行为树和动作服务器的样板逻辑，以最小化导航器实现之间的代码重复（例如，“on_configure”将创建动作服务器，注册回调，将黑板填充为一些必要的基本信息，然后调用用户定义的“configure”函数以满足任何额外的用户特定需求）。</p>
+<p>下表列出了方法及其描述和必要性：</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -980,60 +980,43 @@
 <td><p><strong>需要重写？</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>getDefaultBTFilepath()</p></td>
-<td><p>Method is called on initialization to retrieve the default BT filepath to use for
-navigation. This may be done via parameters, hardcoded logic, sentinal files, etc.</p></td>
+<td><p>在初始化时调用该方法以获取用于导航的默认BT文件路径。这可以通过参数、硬编码逻辑、哨兵文件等方式完成。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-odd"><td><p>configure()</p></td>
-<td><p>Method is called when BT navigator server enters on_configure state. This method
-should implement operations which are neccessary before navigator goes to an active
-state, such as getting parameters, setting up the blackboard, etc.</p></td>
+<td><p>当 BT 导航服务器进入“on_configure”状态时调用此方法。该方法应该实现在导航器进入活动状态之前的必要操作，如获取参数、设置黑板等。</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-even"><td><p>activate()</p></td>
-<td><p>Method is called when BT navigator server enters on_activate state. This method
-should implement operations which are neccessary before navigator goes to an active
-state, such as create clients and subscriptions.</p></td>
+<td><p>当BT导航服务器进入on_activate状态时调用该方法。此方法应实现在导航器进入活动状态之前必需的操作，例如创建客户端和订阅。</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>deactivate()</p></td>
-<td><p>Method is called when BT navigator server enters on_deactivate state.  This
-method should implement operations which are neccessary before navigator goes to an
-inactive state.</p></td>
+<td><p>当 BT 导航服务器进入“on_deactivate”状态时调用此方法。该方法应该实现在导航器进入非活动状态之前的必要操作。</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-even"><td><p>cleanup()</p></td>
-<td><p>Method is called when BT navigator server goes to on_cleanup state. This method
-should clean up resources which are created for the navigator.</p></td>
+<td><p>当BT导航服务器进入on_cleanup状态时调用该方法。此方法应清理为导航器创建的资源。</p></td>
 <td><p>No</p></td>
 </tr>
 <tr class="row-odd"><td><p>goalReceived()</p></td>
-<td><p>Method is called when a new goal is received by the action server to process. It may
-accept or deny this goal with its return signature. If accepted, it may need to load
-the appropriate parameters from the request (e.g. which BT to use), add request
-parameters to the blackboard for your applications use, or reset internal state.</p></td>
+<td><p>当动作服务器接收到新目标以进行处理时调用该方法。它可以通过返回值来接受或拒绝该目标。如果接受，可能需要从请求中加载适当的参数（例如要使用的BT），将请求参数添加到黑板以供应用程序使用，或重置内部状态。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-even"><td><p>onLoop()</p></td>
-<td><p>Method is called periodically while the behavior tree is looping to check statuses
-or more commonly to publish action feedback statuses to the client.</p></td>
+<td><p>在行为树循环过程中，定期调用此方法来检查状态，或更常见地向客户端发布动作反馈状态。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-odd"><td><p>onPreempt()</p></td>
-<td><p>Method is called when a new goal is requesting preemption over the existing
-goal currently being processed. If the new goal is viable, it should make all
-appropriate updates to the BT and blackboard such that this new request may
-immediately start being processed without hard cancelation of the initial task
-(e.g. preemption).</p></td>
+<td><p>当一个新目标请求对当前正在处理的现有目标进行抢占时，调用该方法。如果新目标可行，应对BT和黑板进行所有适当的更新，以使该新请求可以立即开始处理，而无需硬取消初始任务（例如抢占）。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-even"><td><p>goalCompleted()</p></td>
-<td><p>Method is called when a goal is completed to populate the action result object or
-do any additional checks required at the end of a task.</p></td>
+<td><p>当目标完成以填充动作结果对象或在任务结束时执行任何其他必要检查时调用该方法。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-odd"><td><p>getName()</p></td>
-<td><p>Method is called to get the name of this navigator type</p></td>
+<td><p>调用该方法以获取此导航器类型的名称。</p></td>
 <td><p>是</p></td>
 </tr>
 </tbody>
