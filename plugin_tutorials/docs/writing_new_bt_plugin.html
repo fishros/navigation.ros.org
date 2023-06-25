@@ -966,8 +966,7 @@
 <p>本教程中的代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_behavior_tree">nav2_behavior_tree</a> 包中找到，作为``wait_action``节点。该动作节点可以作为编写其他动作节点插件的参考。</p>
 <p>我们的示例插件继承自基类``nav2_behavior_tree::BtActionNode``。该基类是BehaviorTree.CPP中``BT::ActionNodeBase``的包装器，简化了使用ROS 2动作客户端的BT动作节点。<a href="#id1"><span class="problematic" id="id2">``</span></a>BTActionNode``既是BT动作，又使用ROS 2动作网络接口调用远程服务器进行一些工作。</p>
 <p>当使用其他类型的BT节点（例如装饰器、控制器、条件节点）时，请使用相应的BT节点，<code class="docutils literal notranslate"><span class="pre">BT::DecoratorNode</span></code>、<code class="docutils literal notranslate"><span class="pre">BT::ControlNode``或``BT::ConditionNode</span></code>。对于不使用ROS 2动作接口的BT动作节点，请直接使用``BT::ActionNodeBase``基类。</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> class provides 5 virtual methods to use, in addition to the information provided in the constructor.
-Let's learn more about the methods needed to write a BT action plugin.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>BTActionNode``类提供了5个虚拟方法供使用，除了构造函数提供的信息之外。让我们更详细地了解编写BT动作插件所需的方法。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -977,53 +976,40 @@ Let's learn more about the methods needed to write a BT action plugin.</p>
 <tbody>
 <tr class="row-odd"><td><p><strong>方法</strong></p></td>
 <td><p><strong>方法描述</strong></p></td>
-<td><p><strong>Required?</strong></p></td>
+<td><p><strong>是否必需？</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>构造函数</p></td>
-<td><p>Constructor to indicate the corresponding XML tag name to that matches
-the plugin, the name of the action server to call using the plugin,
-and any BehaviorTree.CPP special configurations required.</p></td>
+<td><p>构造函数用于指示与插件匹配的相应XML标记名称，使用插件调用的动作服务器的名称，以及任何需要的BehaviorTree.CPP特殊配置。</p></td>
 <td><p>是</p></td>
 </tr>
-<tr class="row-odd"><td><p>providedPorts()</p></td>
-<td><p>A function to define the input and output ports a BT node may have.
-These are analogous to parameters that are defined in the BT XML
-by hardcoded values or by the value of output ports of other nodes.</p></td>
+<tr class="row-odd"><td><p>提供的端口()</p></td>
+<td><p>一个函数，用于定义BT节点可能具有的输入和输出端口。这类似于通过硬编码值或其他节点的输出端口的值在BT XML中定义的参数。</p></td>
 <td><p>是</p></td>
 </tr>
-<tr class="row-even"><td><p>on_tick()</p></td>
-<td><p>Method is called when this BT node is ticked by the behavior tree while
-executing. This should be used to get dynamic updates like new blackboard
-values, input ports, or parameters. May also reset state for the action.</p></td>
+<tr class="row-even"><td><p>每秒执行()</p></td>
+<td><p>在执行期间，当行为树对此BT节点进行打勾时调用此方法。这应该用于获取动态更新，如新的黑板值、输入端口或参数。也可以重置动作的状态。</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p>on_wait_for_result()</p></td>
-<td><p>Method is called when the behavior tree node is waiting for a result from
-the ROS 2 action server it called. This could be used to check for updates
-to preempt the current task, check for a timeout, or anything to compute
-while waiting for the action to complete.</p></td>
+<tr class="row-odd"><td><p>等待结果()</p></td>
+<td><p>当行为树节点正在等待ROS 2动作服务器返回结果时调用此方法。这可以用于检查当前任务的更新情况，检查超时或在等待动作完成时进行计算等操作。</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>on_success()</p></td>
-<td><p>Method is called when the ROS 2 action server returns a successful result.
-Returns the value the BT node will report back to the tree.</p></td>
+<tr class="row-even"><td><p>成功()</p></td>
+<td><p>当ROS 2动作服务器返回成功结果时调用此方法。返回BT节点将向树报告的值。</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p>on_aborted()</p></td>
-<td><p>Method is called when the ROS 2 action server returns an aborted result.
-Returns the value the BT node will report back to the tree.</p></td>
+<tr class="row-odd"><td><p>中止()</p></td>
+<td><p>当ROS 2动作服务器返回一个中止的结果时，调用该方法。返回BT节点将向树报告的值。</p></td>
 <td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>on_cancelled()</p></td>
-<td><p>MMethod is called when the ROS 2 action server returns a cancelled result.
-Returns the value the BT node will report back to the tree.</p></td>
+<tr class="row-even"><td><p>取消()</p></td>
+<td><p>当ROS 2动作服务器返回一个取消的结果时，调用该方法。返回BT节点将向树报告的值。</p></td>
 <td><p>No</p></td>
 </tr>
 </tbody>
 </table>
-<p>For this tutorial, we will only be using the <code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> method.</p>
-<p>In the constructor, we need to get any non-variable parameters that apply to the behavior tree node.
-In this example, we need to get the value of the duration to sleep from the input port of the behavior tree XML.</p>
+<p>在本教程中，我们只会使用``每秒执行()``方法。</p>
+<p>在构造函数中，我们需要获取适用于行为树节点的任何非变量参数。在这个示例中，我们需要从行为树XML的输入端口获取睡眠持续时间的值。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">WaitAction</span><span class="o">::</span><span class="n">WaitAction</span><span class="p">(</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">xml_tag_name</span><span class="p">,</span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">action_name</span><span class="p">,</span>
@@ -1047,17 +1033,12 @@ In this example, we need to get the value of the duration to sleep from the inpu
 This will be seen later when we register this BT node as a plugin.
 It also takes in the string name of the action server that it will call to execute some behavior.
 Finally, a set of configurations that we can safely ignore for the purposes of most node plugins.</p>
-<p>We then call the <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> constructor. As can be seen, it's templated by the ROS 2 action type, so we give it the <code class="docutils literal notranslate"><span class="pre">nav2_msgs::action::Wait</span></code> action message type and forward our other inputs.
-The <code class="docutils literal notranslate"><span class="pre">BTActionNode</span></code> has the <code class="docutils literal notranslate"><span class="pre">tick()</span></code> method, which is called directly by the behavior tree when this node is called from the tree.
-<code class="docutils literal notranslate"><span class="pre">on_tick()</span></code> is then called before sending the action client goal.</p>
+<p>然后我们调用``BTActionNode``构造函数。可以看到，它是由ROS 2动作类型进行模板化的，因此我们将其提供给``nav2_msgs::action::Wait``动作消息类型，并转发其他输入。当行为树从树中调用该节点时，<code class="docutils literal notranslate"><span class="pre">BTActionNode``具有``tick()``方法，该方法直接被调用。然后，在发送动作客户端目标之前调用``on_tick()</span></code>。</p>
 <p>In the body of the constructor, we get the input port <code class="docutils literal notranslate"><span class="pre">getInput</span></code> of the parameter <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code>, which can be configured independently for every instance of the <code class="docutils literal notranslate"><span class="pre">wait</span></code> node in the tree.
 It is set in the <code class="docutils literal notranslate"><span class="pre">duration</span></code> parameter and inserted into the <code class="docutils literal notranslate"><span class="pre">goal_</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">goal_</span></code> class variable is the goal that the ROS 2 action client will send to the action server.
 So in this example, we set the duration to the time we want to wait by so that the action server knows the specifics of our request.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">providedPorts()</span></code> method gives us the opportunity to define input or output ports.
-Ports can be thought of as parameters that the behavior tree node has access to from the behavior tree itself.
-For our example, there is only a single input port, the <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code> which can be set in the BT XML for each instance of the <code class="docutils literal notranslate"><span class="pre">wait</span></code> recovery.
-We set the type, <code class="docutils literal notranslate"><span class="pre">int</span></code>, the default <code class="docutils literal notranslate"><span class="pre">1</span></code>, the name <code class="docutils literal notranslate"><span class="pre">wait_duration</span></code>, and a description of the port <code class="docutils literal notranslate"><span class="pre">Wait</span> <span class="pre">time</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">providedPorts()``方法使我们有机会定义输入或输出端口。端口可以被视为行为树节点从行为树本身访问的参数。对于我们的示例，只有一个输入端口，即``wait_duration</span></code>，可以在每个``wait``恢复的BT XML中设置。我们设置了类型为``int``，默认值为``1``，名称为``wait_duration``，端口的描述为``等待时间``。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span><span class="w"> </span><span class="nf">providedPorts</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">providedBasicPorts</span><span class="p">(</span>
@@ -1077,15 +1058,11 @@ You could also log or update the <code class="docutils literal notranslate"><spa
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The remaining methods are not used and are not mandatory to override them.
-Only some BT node plugins will require overriding <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> to check for preemption or check a timeout.
-The success, aborted, and cancelled methods will default to <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>, <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>, <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> respectively, if not overridden.</p>
+<p>剩下的方法未被使用，也不是强制要求重写它们。只有一些BT节点插件需要重写``on_wait_for_result()``以检查抢占或检查超时。如果未重写，成功、中止和取消方法将分别默认为``SUCCESS``、<code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>、<code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>。</p>
 </div>
 <div class="section" id="exporting-the-planner-plugin">
 <h3>2- Exporting the planner plugin<a class="headerlink" href="#exporting-the-planner-plugin" title="永久链接至标题"></a></h3>
-<p>Now that we have created our custom BT node, we need to export our plugin so that it would be visible to the behavior tree when it loads a custom BT XML.
-Plugins are loaded at runtime, and if they are not visible, then our BT Navigator server won't be able to load them or use them.
-In BehaviorTree.CPP, exporting and loading plugins is handled by the <code class="docutils literal notranslate"><span class="pre">BT_REGISTER_NODES</span></code> macro.</p>
+<p>现在我们已经创建了自定义的BT节点，我们需要导出插件，以便在加载自定义的BT XML时，行为树能够看到它。插件在运行时加载，如果它们不可见，那么我们的BT导航服务器将无法加载或使用它们。在BehaviorTree.CPP中，导出和加载插件由``BT_REGISTER_NODES``宏处理。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BT_REGISTER_NODES</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="n">BT</span><span class="o">::</span><span class="n">NodeBuilder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span>
