@@ -882,7 +882,7 @@ msgstr "was_completed"
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:89
 msgid "Indicates if the smoothing process was completed. Will return ``false`` if ``check_for_collisions`` is set to ``true`` and a collision is detected."
-msgstr "Indicates if the smoothing process was completed. Will return ``false`` if ``check_for_collisions`` is set to ``true`` and a collision is detected."
+msgstr "指示平滑过程是否已完成。如果将“check_for_collisions”设置为“true”并检测到冲突，则返回“false”。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Smooth.rst:100
@@ -917,7 +917,7 @@ msgstr "default_smoother"
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:35
 msgid "The default value for the selected Smoother if no message is received from the input topic."
-msgstr "The default value for the selected Smoother if no message is received from the input topic."
+msgstr "如果没有从输入主题接收到消息，则选择平滑器的默认值。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst
@@ -927,7 +927,7 @@ msgstr "selected_smoother"
 
 #: ../../configuration/packages/bt-plugins/actions/SmootherSelector.rst:50
 msgid "The output selected Smoother id."
-msgstr "The output selected Smoother id."
+msgstr "输出选择的平滑器 ID。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst:4
@@ -937,7 +937,7 @@ msgstr "Spin"
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst:6
 msgid "Invokes the Spin ROS 2 action server, which is implemented by the nav2_behaviors_ module. It performs an in-place rotation by a given angle. This action is used in nav2 Behavior Trees as a recovery behavior."
-msgstr "Invokes the Spin ROS 2 action server, which is implemented by the nav2_behaviors_ module. It performs an in-place rotation by a given angle. This action is used in nav2 Behavior Trees as a recovery behavior."
+msgstr "调用由 nav2_behaviors_ 模块实现的 Spin ROS 2 动作服务器。它通过给定的角度执行就地旋转。该动作在 nav2 行为树中用作恢复行为。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst
@@ -952,7 +952,7 @@ msgstr "1.57"
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst:24
 msgid "Spin distance (radians)."
-msgstr "Spin distance (radians)."
+msgstr "旋转距离（弧度）。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst:64 ../../configuration/packages/configuring-amcl.rst:354 ../../configuration/packages/configuring-collision-monitor.rst:133 ../../configuration/packages/configuring-costmaps.rst:219 ../../configuration/packages/configuring-navfn.rst:44 ../../configuration/packages/configuring-savitzky-golay-smoother.rst:27 ../../configuration/packages/configuring-simple-smoother.rst:33 ../../configuration/packages/configuring-thetastar.rst:78 ../../configuration/packages/costmap-plugins/binary_filter.rst:20 ../../configuration/packages/costmap-plugins/denoise.rst:13 ../../configuration/packages/costmap-plugins/inflation.rst:14 ../../configuration/packages/costmap-plugins/keepout_filter.rst:17 ../../configuration/packages/costmap-plugins/obstacle.rst:15 ../../configuration/packages/costmap-plugins/obstacle.rst:26 ../../configuration/packages/costmap-plugins/obstacle.rst:158 ../../configuration/packages/costmap-plugins/range.rst:13 ../../configuration/packages/costmap-plugins/speed_filter.rst:23 ../../configuration/packages/costmap-plugins/static.rst:13 ../../configuration/packages/costmap-plugins/static.rst:35 ../../configuration/packages/costmap-plugins/voxel.rst:15 ../../configuration/packages/costmap-plugins/voxel.rst:26 ../../configuration/packages/costmap-plugins/voxel.rst:224 ../../configuration/packages/smac/configuring-smac-2d.rst:54 ../../configuration/packages/smac/configuring-smac-hybrid.rst:43 ../../configuration/packages/smac/configuring-smac-lattice.rst:25
@@ -962,12 +962,12 @@ msgstr "True"
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst:68
 msgid "True if the action is being used as a recovery."
-msgstr "True if the action is being used as a recovery."
+msgstr "如果动作用作恢复，则为True。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/Spin.rst:82
 msgid "Spin error code. See ``Spin`` action message for the enumerated set of error codes."
-msgstr "Spin error code. See ``Spin`` action message for the enumerated set of error codes."
+msgstr "旋转错误代码。请参阅“Spin”动作消息以获取枚举的错误代码集。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:4
@@ -977,12 +977,12 @@ msgstr "TruncatePath"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:6
 msgid "A custom control node, which modifies a path making it shorter. It removes parts of the path closer than a distance to the goal pose. The resulting last pose of the path orientates the robot to the original goal pose."
-msgstr "A custom control node, which modifies a path making it shorter. It removes parts of the path closer than a distance to the goal pose. The resulting last pose of the path orientates the robot to the original goal pose."
+msgstr "自定义控制节点，修改路径使其更短。它移除路径中距离目标位姿一定距离以内的部分。路径的最终位姿将使机器人朝向原始目标位姿。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
 msgid "input_path"
-msgstr "input_path"
+msgstr "输入路径"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:16 ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:41 ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:16 ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:107
@@ -992,12 +992,12 @@ msgstr "nav_msgs/Path"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:20 ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:20
 msgid "The original path to be truncated."
-msgstr "The original path to be truncated."
+msgstr "要截断的原始路径。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst ../../configuration/packages/bt-plugins/decorators/DistanceController.rst
 msgid "distance"
-msgstr "distance"
+msgstr "距离"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:27 ../../configuration/packages/bt-plugins/actions/Wait.rst:19 ../../configuration/packages/bt-plugins/conditions/DistanceTraveled.rst:32 ../../configuration/packages/bt-plugins/conditions/TimeExpired.rst:13 ../../configuration/packages/bt-plugins/decorators/DistanceController.rst:19 ../../configuration/packages/bt-plugins/decorators/SpeedController.rst:30 ../../configuration/packages/configuring-amcl.rst:365 ../../configuration/packages/configuring-behavior-server.rst:187 ../../configuration/packages/configuring-behavior-server.rst:257 ../../configuration/packages/configuring-collision-monitor.rst:144 ../../configuration/packages/configuring-costmaps.rst:142 ../../configuration/packages/configuring-map-server.rst:143 ../../configuration/packages/configuring-mppic.rst:225 ../../configuration/packages/configuring-mppic.rst:399 ../../configuration/packages/configuring-regulated-pp.rst:151 ../../configuration/packages/configuring-rotation-shim-controller.rst:91 ../../configuration/packages/configuring-thetastar.rst:44 ../../configuration/packages/configuring-velocity-smoother.rst:89 ../../configuration/packages/costmap-plugins/range.rst:46 ../../configuration/packages/trajectory_critics/base_obstacle.rst:32 ../../configuration/packages/trajectory_critics/goal_align.rst:42 ../../configuration/packages/trajectory_critics/goal_dist.rst:32 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:32 ../../configuration/packages/trajectory_critics/oscillation.rst:66 ../../configuration/packages/trajectory_critics/path_align.rst:41 ../../configuration/packages/trajectory_critics/path_dist.rst:30 ../../configuration/packages/trajectory_critics/prefer_forward.rst:21 ../../configuration/packages/trajectory_critics/prefer_forward.rst:65 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:65 ../../configuration/packages/trajectory_critics/twirling.rst:20
@@ -1007,12 +1007,12 @@ msgstr "1.0"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:31
 msgid "The distance to the original goal for truncating the path."
-msgstr "The distance to the original goal for truncating the path."
+msgstr "截断路径的原始目标距离。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst:34 ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:100
 msgid "Ouput Ports"
-msgstr "Ouput Ports"
+msgstr "输出端口"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePath.rst ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
@@ -1047,7 +1047,7 @@ msgstr "8.0"
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst:31
 msgid "The trimming distance in forward direction."
-msgstr "The trimming distance in forward direction."
+msgstr "向前修剪的距离。"
 
 
 #: ../../configuration/packages/bt-plugins/actions/TruncatePathLocal.rst
