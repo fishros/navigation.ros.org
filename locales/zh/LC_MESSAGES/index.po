@@ -117,7 +117,7 @@ msgstr "管理服务器的生命周期和看门狗（Nav2生命周期管理器�
 
 #: ../../index.rst:71
 msgid "Plugins to enable your own custom algorithms and behaviors (Nav2 Core)"
-msgstr "Plugins to enable your own custom algorithms and behaviors (Nav2 Core)"
+msgstr "启用自定义算法和行为的插件（Nav2核心）"
 
 
 #: ../../index.rst:72
@@ -127,7 +127,7 @@ msgstr "Monitor raw sensor data for imminent collision or dangerous situation (C
 
 #: ../../index.rst:73
 msgid "Python3 API to interact with Nav2 in a pythonic manner (Simple Commander)"
-msgstr "Python3 API to interact with Nav2 in a pythonic manner (Simple Commander)"
+msgstr "以Pythonic方式与Nav2进行交互的Python3 API（简单指挥官）"
 
 
 #: ../../index.rst:74
@@ -136,7 +136,7 @@ msgstr "A smoother on output velocities to guarantee dynamic feasibility of comm
 
 
 msgid "Navigation2 Block Diagram"
-msgstr "Navigation2 Block Diagram"
+msgstr "Navigation2块图"
 
 
 #: ../../index.rst:81
@@ -146,7 +146,7 @@ msgstr "We also provide a set of starting plugins to get you going. A list of al
 
 #: ../../index.rst:85
 msgid "Citations"
-msgstr "Citations"
+msgstr "引用文献"
 
 
 #: ../../index.rst:87
@@ -156,7 +156,7 @@ msgstr "If you use the navigation framework, an algorithm from this repository, 
 
 #: ../../index.rst:91
 msgid "S. Macenski, F. Martín, R. White, J. Clavero. `The Marathon 2: A Navigation System <https://arxiv.org/abs/2003.00368/>`_. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020."
-msgstr "S. Macenski, F. Martín, R. White, J. Clavero. `The Marathon 2: A Navigation System <https://arxiv.org/abs/2003.00368/>`_. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2020."
+msgstr "S. Macenski, F. Martín, R. White, J. Clavero. `马拉松2号：导航系统<https://arxiv.org/abs/2003.00368/>`_. 2020年IEEE/RSJ国际智能机器人与系统大会（IROS）。"
 
 
 #: ../../index.rst:95
@@ -166,7 +166,7 @@ msgstr "IROS 2020 talk on Nav2 Marathon Experiments:"
 
 #: ../../index.rst:114
 msgid "If you use our work on VSLAM and formal comparisons for service robot needs, please cite the paper:"
-msgstr "If you use our work on VSLAM and formal comparisons for service robot needs, please cite the paper:"
+msgstr "如果您在VSLAM和服务机器人需求的正式比较方面使用了我们的工作，请引用该论文："
 
 
 #: ../../index.rst:116
@@ -176,7 +176,7 @@ msgstr "A. Merzlyakov, S. Macenski. `A Comparison of Modern General-Purpose Visu
 
 #: ../../index.rst:131
 msgid "Example"
-msgstr "Example"
+msgstr "示例"
 
 
 #: ../../index.rst:133
