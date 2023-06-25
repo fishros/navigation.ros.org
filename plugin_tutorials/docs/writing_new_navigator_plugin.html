@@ -373,11 +373,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2planner_plugin.html">Writing a New Planner Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2planner_plugin.html">编写一个新的规划器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- 创建一个新的规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
@@ -391,8 +391,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#create-a-new-controller-plugin">1- 创建一个新的控制器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#exporting-the-controller-plugin">2- 导出控制器插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#run-pure-pursuit-controller-plugin">4- Run Pure Pursuit Controller plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#run-pure-pursuit-controller-plugin">4- 运行 Pure Pursuit Controller 插件。</a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +427,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#create-a-new-navigator-plugin">1- Create a new Navigator Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-navigator-plugin">2- Exporting the navigator plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-plugin">4- Run plugin</a></li>
 </ul>
 </li>
@@ -1207,14 +1207,14 @@ Plugins are loaded at runtime, and if they are not visible, then our server won'
 plugins is handled by <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code>.</p>
 <p>Coming to our tutorial, class <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator::NavigateToPoseNavigator</span></code> is loaded dynamically as <code class="docutils literal notranslate"><span class="pre">nav2_core::NavigatorBase</span></code> which is our base class due to the subtleties previously described.</p>
 <ol class="arabic simple">
-<li><p>To export the controller, we need to provide two lines</p></li>
+<li><p>要导出控制器，我们需要提供两行代码。</p></li>
 </ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span>
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_bt_navigator</span><span class="o">::</span><span class="n">NavigateToPoseNavigator</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">NavigatorBase</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that it requires pluginlib to export out the plugin's class. Pluginlib would provide as macro <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>, which does all the work of exporting.</p>
-<p>It is good practice to place these lines at the end of the file, but technically, you can also write at the top.</p>
+<p>请注意，它需要 pluginlib 来导出插件的类。Pluginlib 将提供宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>，该宏执行所有导出的工作。</p>
+<p>将这些行代码放在文件末尾是一个好的做法，但从技术上讲，你也可以写在文件顶部。</p>
 <ol class="arabic simple" start="2">
 <li><p>The next step would be to create the plugin's description file in the root directory of the package. For example, <code class="docutils literal notranslate"><span class="pre">navigator_plugin.xml</span></code> file in our tutorial package. This file contains the following information</p></li>
 </ol>
@@ -1235,13 +1235,13 @@ plugins is handled by <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next step would be to export plugin using <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> by using CMake function <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code>. This function installs the plugin description file to <code class="docutils literal notranslate"><span class="pre">share</span></code> directory and sets ament indexes to make it discoverable.</p></li>
+<li><p>下一步是使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 导出插件，使用 CMake 函数 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code>。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置 ament 索引以使其可被发现。</p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core navigator_plugin.xml)
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>The plugin description file should also be added to <code class="docutils literal notranslate"><span class="pre">package.xml</span></code></p></li>
+<li><p>插件描述文件也应添加到``package.xml``中。</p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
 <span class="w">  </span><span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>
@@ -1250,12 +1250,12 @@ plugins is handled by <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Compile, and it should be registered. Next, we'll use this plugin.</p></li>
+<li><p>编译后，应该进行注册。接下来，我们将使用此插件。</p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-the-params-file">
-<h3>3- Pass the plugin name through the params file<a class="headerlink" href="#pass-the-plugin-name-through-the-params-file" title="永久链接至标题"></a></h3>
-<p>To enable the plugin, we need to modify the <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> file as below</p>
+<h3>3- 通过参数文件传递插件名称<a class="headerlink" href="#pass-the-plugin-name-through-the-params-file" title="永久链接至标题"></a></h3>
+<p>要启用插件，我们需要修改 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件如下所示：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bt_navigator:
   ros__parameters:
     use_sim_time: true
@@ -1279,7 +1279,7 @@ To pass plugin-specific parameters we have used <code class="docutils literal no
 </div>
 <div class="section" id="run-plugin">
 <h3>4- Run plugin<a class="headerlink" href="#run-plugin" title="永久链接至标题"></a></h3>
-<p>Run Turtlebot3 simulation with enabled Nav2. Detailed instructions on how to make it run are written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Below is a shortcut command for that:</p>
+<p>使用启用的 Nav2 运行 Turtlebot3 模拟。有关如何运行的详细说明，请参阅 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>。下面是一个快捷命令：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>

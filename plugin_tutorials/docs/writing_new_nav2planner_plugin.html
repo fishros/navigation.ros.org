@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing a New Planner Plugin &mdash; Navigation 2 1.0.0 文档</title>
+  <title>编写一个新的规划器插件 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -373,11 +373,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Writing a New Planner Plugin</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编写一个新的规划器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-planner-plugin">1- 创建一个新的规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-straightline-plugin">4- Run StraightLine plugin</a></li>
@@ -391,8 +391,8 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2controller_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#create-a-new-controller-plugin">1- 创建一个新的控制器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#exporting-the-controller-plugin">2- 导出控制器插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#run-pure-pursuit-controller-plugin">4- Run Pure Pursuit Controller plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2controller_plugin.html#run-pure-pursuit-controller-plugin">4- 运行 Pure Pursuit Controller 插件。</a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +427,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_navigator_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#create-a-new-navigator-plugin">1- Create a new Navigator Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#exporting-the-navigator-plugin">2- Exporting the navigator plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#run-plugin">4- Run plugin</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Plugin Tutorials</a> &raquo;</li>
-      <li>Writing a New Planner Plugin</li>
+      <li>编写一个新的规划器插件</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="writing-a-new-planner-plugin">
-<span id="writing-new-nav2planner-plugin"></span><h1>Writing a New Planner Plugin<a class="headerlink" href="#writing-a-new-planner-plugin" title="永久链接至标题"></a></h1>
+<span id="writing-new-nav2planner-plugin"></span><h1>编写一个新的规划器插件<a class="headerlink" href="#writing-a-new-planner-plugin" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -962,12 +962,11 @@
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="creating-a-new-planner-plugin">
-<h3>1- Creating a new Planner Plugin<a class="headerlink" href="#creating-a-new-planner-plugin" title="永久链接至标题"></a></h3>
+<h3>1- 创建一个新的规划器插件<a class="headerlink" href="#creating-a-new-planner-plugin" title="永久链接至标题"></a></h3>
 <p>We will create a simple straight-line planner.
 The annotated code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials">navigation_tutorials</a> repository as the <code class="docutils literal notranslate"><span class="pre">nav2_straightline_planner</span></code>.
 This package can be considered as a reference for writing planner plugin.</p>
-<p>Our example plugin inherits from the base class <code class="docutils literal notranslate"><span class="pre">nav2_core::GlobalPlanner</span></code>. The base class provides 5 pure virtual methods to implement a planner plugin. The plugin will be used by the planner server to compute trajectories.
-Let's learn more about the methods needed to write a planner plugin.</p>
+<p>我们的示例插件继承自基类 <code class="docutils literal notranslate"><span class="pre">nav2_core::GlobalPlanner</span></code>。基类提供了 5 个纯虚拟方法来实现规划器插件。该插件将由规划器服务器用于计算轨迹。让我们更多地了解编写规划器插件所需的方法。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -988,9 +987,7 @@ shared pointer to costmap.</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-odd"><td><p>activate()</p></td>
-<td><p>Method is called when planner server enters on_activate state. Ideally this
-method should implement operations which are neccessary before planner goes
-to an active state.</p></td>
+<td><p>当规划器服务器进入 on_activate 状态时调用该方法。理想情况下，此方法应该实现在规划器进入活动状态之前必要的操作。</p></td>
 <td><p>是</p></td>
 </tr>
 <tr class="row-even"><td><p>deactivate()</p></td>
@@ -1088,13 +1085,13 @@ global plan. This method takes 2 input parmas: start pose and goal pose.</p></td
 </pre></div>
 </div>
 <p>请注意，它需要 pluginlib 来导出插件的类。Pluginlib 提供了宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>，它完成了所有的导出工作。</p>
-<p>It is good practice to place these lines at the end of the file, but technically, you can also write at the top.</p>
+<p>将这些行代码放在文件末尾是一个好的做法，但从技术上讲，你也可以写在文件顶部。</p>
 <ol class="arabic simple" start="2">
 <li><p>Next step would be to create plugin's description file in the root directory of the package. For example, <code class="docutils literal notranslate"><span class="pre">global_planner_plugin.xml</span></code> file in our tutorial package. This file contains the following information</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>: Plugin's library name and its location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>：插件的库名称及其位置。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>：类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>：基类的名称。</p></li>

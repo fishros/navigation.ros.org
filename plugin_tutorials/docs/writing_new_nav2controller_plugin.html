@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="编写新的行为树插件" href="writing_new_bt_plugin.html" />
-    <link rel="prev" title="Writing a New Planner Plugin" href="writing_new_nav2planner_plugin.html" />
+    <link rel="prev" title="编写一个新的规划器插件" href="writing_new_nav2planner_plugin.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -373,11 +373,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2planner_plugin.html">Writing a New Planner Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing_new_nav2planner_plugin.html">编写一个新的规划器插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="writing_new_nav2planner_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- Creating a new Planner Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#creating-a-new-planner-plugin">1- 创建一个新的规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#exporting-the-planner-plugin">2- 导出规划器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#pass-the-plugin-name-through-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_nav2planner_plugin.html#run-straightline-plugin">4- Run StraightLine plugin</a></li>
@@ -391,8 +391,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#create-a-new-controller-plugin">1- 创建一个新的控制器插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exporting-the-controller-plugin">2- 导出控制器插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-pure-pursuit-controller-plugin">4- Run Pure Pursuit Controller plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-pure-pursuit-controller-plugin">4- 运行 Pure Pursuit Controller 插件。</a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +427,7 @@
 <li class="toctree-l3"><a class="reference internal" href="writing_new_navigator_plugin.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#create-a-new-navigator-plugin">1- Create a new Navigator Plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#exporting-the-navigator-plugin">2- Exporting the navigator plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#pass-the-plugin-name-through-the-params-file">3- Pass the plugin name through the params file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#pass-the-plugin-name-through-the-params-file">3- 通过参数文件传递插件名称</a></li>
 <li class="toctree-l4"><a class="reference internal" href="writing_new_navigator_plugin.html#run-plugin">4- Run plugin</a></li>
 </ul>
 </li>
@@ -1048,8 +1048,7 @@
 </div>
 <p>这里，<code class="docutils literal notranslate"><span class="pre">plugin_name_</span> <span class="pre">+</span> <span class="pre">&quot;.desired_linear_vel&quot;``获取了ROS参数``desired_linear_vel</span></code>，该参数是特定于我们的控制器的。Nav2允许加载多个插件，并为了保持组织的有序，每个插件都映射到某个ID/名称。现在，如果我们想要检索该特定插件的参数，我们可以像上面的代码片段中所做的那样使用``&lt;mapped_name_of_plugin&gt;.&lt;name_of_parameter&gt;``。例如，我们的示例控制器映射到名称``FollowPath``，为了检索特定于“FollowPath”的``desired_linear_vel``参数，我们使用了``FollowPath.desired_linear_vel``。换句话说，<a href="#id1"><span class="problematic" id="id2">``</span></a>FollowPath``被用作插件特定参数的命名空间。在我们讨论参数文件（或参数文件）时，我们将会看到更多相关内容。</p>
 <p>传入的参数被存储在成员变量中，以便在以后的阶段如果需要时使用。</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">setPlan()</span></code> method, we receive the updated global path for the robot to follow. In our example, we transform the received global path into
-the frame of the robot and then store this transformed global path for later use.</p>
+<p>在``setPlan()``方法中，我们接收到机器人要遵循的更新全局路径。在我们的示例中，我们将接收到的全局路径转换为机器人的坐标系，并将转换后的全局路径存储起来以供以后使用。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">PurePursuitController::setPlan</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">nav_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="c1">// Transform global path into the robot&#39;s frame</span>
@@ -1101,28 +1100,26 @@ the frame of the robot and then store this transformed global path for later use
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The remaining methods are not used, but it's mandatory to override them. As per the rules, we did override all but left them empty.</p>
+<p>剩余的方法没有使用，但是必须进行覆盖。根据规则，我们确实进行了覆盖，但是将它们保留为空白。</p>
 </div>
 <div class="section" id="exporting-the-controller-plugin">
 <h3>2- 导出控制器插件<a class="headerlink" href="#exporting-the-controller-plugin" title="永久链接至标题"></a></h3>
-<p>Now that we have created our custom controller, we need to export our controller plugin so that it will be visible to the controller server.
-Plugins are loaded at runtime, and if they are not visible, then our controller server won't be able to load them. In ROS 2, exporting and loading
-plugins is handled by <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code>.</p>
-<p>Coming back to our tutorial, class <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller::PurePursuitController</span></code> is loaded dynamically as <code class="docutils literal notranslate"><span class="pre">nav2_core::Controller</span></code> which is our base class.</p>
+<p>现在，我们已经创建了自定义控制器，我们需要导出控制器插件，以便控制器服务器能够看到它们。插件是在运行时加载的，如果它们不可见，那么控制器服务器将无法加载它们。在ROS 2中，导出和加载插件由``pluginlib``处理。</p>
+<p>回到我们的教程，类 <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller::PurePursuitController</span></code> 动态加载为 <code class="docutils literal notranslate"><span class="pre">nav2_core::Controller</span></code>，这是我们的基类。</p>
 <ol class="arabic simple">
-<li><p>To export the controller, we need to provide two lines</p></li>
+<li><p>要导出控制器，我们需要提供两行代码。</p></li>
 </ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pluginlib/class_list_macros.hpp&quot;</span>
 <span class="n">PLUGINLIB_EXPORT_CLASS</span><span class="p">(</span><span class="n">nav2_pure_pursuit_controller</span><span class="o">::</span><span class="n">PurePursuitController</span><span class="p">,</span><span class="w"> </span><span class="n">nav2_core</span><span class="o">::</span><span class="n">Controller</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that it requires pluginlib to export out the plugin's class. Pluginlib would provide as macro <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>, which does all the work of exporting.</p>
-<p>It is good practice to place these lines at the end of the file, but technically, you can also write at the top.</p>
+<p>请注意，它需要 pluginlib 来导出插件的类。Pluginlib 将提供宏 <code class="docutils literal notranslate"><span class="pre">PLUGINLIB_EXPORT_CLASS</span></code>，该宏执行所有导出的工作。</p>
+<p>将这些行代码放在文件末尾是一个好的做法，但从技术上讲，你也可以写在文件顶部。</p>
 <ol class="arabic simple" start="2">
-<li><p>The next step would be to create the plugin's description file in the root directory of the package. For example, <code class="docutils literal notranslate"><span class="pre">pure_pursuit_controller_plugin.xml</span></code> file in our tutorial package. This file contains the following information</p></li>
+<li><p>下一步是在软件包的根目录中创建插件的描述文件。例如，在我们的教程软件包中创建一个名为 <code class="docutils literal notranslate"><span class="pre">pure_pursuit_controller_plugin.xml</span></code> 的文件。此文件包含以下信息：</p></li>
 </ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>: Plugin's library name and its location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">path</span></code>：插件的库名称及其位置。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code>：类的名称。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">type</span></code>：类的类型。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span></code>：基类的名称。</p></li>
@@ -1138,13 +1135,13 @@ plugins is handled by <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next step would be to export plugin using <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> by using CMake function <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code>. This function installs the plugin description file to <code class="docutils literal notranslate"><span class="pre">share</span></code> directory and sets ament indexes to make it discoverable.</p></li>
+<li><p>下一步是使用 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 导出插件，使用 CMake 函数 <code class="docutils literal notranslate"><span class="pre">pluginlib_export_plugin_description_file()</span></code>。此函数将插件描述文件安装到 <code class="docutils literal notranslate"><span class="pre">share</span></code> 目录，并设置 ament 索引以使其可被发现。</p></li>
 </ol>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pluginlib_export_plugin_description_file(nav2_core pure_pursuit_controller_plugin.xml)
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>The plugin description file should also be added to <code class="docutils literal notranslate"><span class="pre">package.xml</span></code></p></li>
+<li><p>插件描述文件也应添加到``package.xml``中。</p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;export&gt;</span>
 <span class="w">  </span><span class="nt">&lt;build_type&gt;</span>ament_cmake<span class="nt">&lt;/build_type&gt;</span>
@@ -1153,12 +1150,12 @@ plugins is handled by <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Compile, and it should be registered. Next, we'll use this plugin.</p></li>
+<li><p>编译后，应该进行注册。接下来，我们将使用此插件。</p></li>
 </ol>
 </div>
 <div class="section" id="pass-the-plugin-name-through-the-params-file">
-<h3>3- Pass the plugin name through the params file<a class="headerlink" href="#pass-the-plugin-name-through-the-params-file" title="永久链接至标题"></a></h3>
-<p>To enable the plugin, we need to modify the <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> file as below</p>
+<h3>3- 通过参数文件传递插件名称<a class="headerlink" href="#pass-the-plugin-name-through-the-params-file" title="永久链接至标题"></a></h3>
+<p>要启用插件，我们需要修改 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 文件如下所示：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>controller_server:
   ros__parameters:
     controller_plugins: [&quot;FollowPath&quot;]
@@ -1172,12 +1169,11 @@ plugins is handled by <code class="docutils literal notranslate"><span class="pr
       transform_tolerance: 1.0
 </pre></div>
 </div>
-<p>In the above snippet, you can observe the mapping of our <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller/PurePursuitController</span></code> controller to its id <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>.
-To pass plugin-specific parameters we have used <code class="docutils literal notranslate"><span class="pre">&lt;plugin_id&gt;.&lt;plugin_specific_parameter&gt;</span></code>.</p>
+<p>在上面的代码片段中，您可以观察到我们将 <code class="docutils literal notranslate"><span class="pre">nav2_pure_pursuit_controller/PurePursuitController</span></code> 控制器映射到其 ID <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>。要传递特定于插件的参数，我们使用了 <code class="docutils literal notranslate"><span class="pre">&lt;plugin_id&gt;.&lt;plugin_specific_parameter&gt;</span></code>。</p>
 </div>
 <div class="section" id="run-pure-pursuit-controller-plugin">
-<h3>4- Run Pure Pursuit Controller plugin<a class="headerlink" href="#run-pure-pursuit-controller-plugin" title="永久链接至标题"></a></h3>
-<p>Run Turtlebot3 simulation with enabled Nav2. Detailed instructions on how to make it run are written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>. Below is a shortcut command for that:</p>
+<h3>4- 运行 Pure Pursuit Controller 插件。<a class="headerlink" href="#run-pure-pursuit-controller-plugin" title="永久链接至标题"></a></h3>
+<p>使用启用的 Nav2 运行 Turtlebot3 模拟。有关如何运行的详细说明，请参阅 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>。下面是一个快捷命令：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>params_file:<span class="o">=</span>/path/to/your_params_file.yaml
 </pre></div>
 </div>
