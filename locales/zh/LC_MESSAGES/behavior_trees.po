@@ -112,7 +112,7 @@ msgstr "`导航子树`_"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:10
 msgid "`Recovery Subtree`_"
-msgstr "`Recovery Subtree`_"
+msgstr "`恢复子树`_"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:13
@@ -127,7 +127,7 @@ msgstr "本文档作为 Nav2 中使用的主要行为树（BT）的参考指南�
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:17
 msgid "There are many example behavior trees provided in ``nav2_bt_navigator/behavior_trees``, but these sometimes have to be re-configured based on the application of the robot. The following document will walk through the current main default BT ``navigate_to_pose_w_replanning_and_recovery.xml`` in great detail."
-msgstr "There are many example behavior trees provided in ``nav2_bt_navigator/behavior_trees``, but these sometimes have to be re-configured based on the application of the robot. The following document will walk through the current main default BT ``navigate_to_pose_w_replanning_and_recovery.xml`` in great detail."
+msgstr "在 ``nav2_bt_navigator/behavior_trees`` 中提供了许多示例行为树，但有时需要根据机器人的应用重新配置它们。下面的文档将详细介绍当前主要的默认行为树 ``navigate_to_pose_w_replanning_and_recovery.xml``。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:23
@@ -137,7 +137,7 @@ msgstr "前提条件"
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:25
 msgid "Become familiar with the concept of a behavior tree before continuing with this walkthrough"
-msgstr "Become familiar with the concept of a behavior tree before continuing with this walkthrough"
+msgstr "在继续本指南之前，请熟悉行为树的概念。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:27
@@ -147,77 +147,77 @@ msgstr "请阅读 `导航概念 <../../concepts/index.html>`_ 中的简要说明
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:29
 msgid "Read the general tutorial and guide (not Nav2 specific) on the `BehaviorTree CPP V3 <https://www.behaviortree.dev/>`_ website. Specifically, the \"Learn the Basics\" section on the BehaviorTree CPP V3 website explains the basic generic nodes that will be used that this guide will build upon."
-msgstr "Read the general tutorial and guide (not Nav2 specific) on the `BehaviorTree CPP V3 <https://www.behaviortree.dev/>`_ website. Specifically, the \"Learn the Basics\" section on the BehaviorTree CPP V3 website explains the basic generic nodes that will be used that this guide will build upon."
+msgstr "在 `BehaviorTree CPP V3 <https://www.behaviortree.dev/>`_ 网站上阅读一般教程和指南（非特定于Nav2）。特别是 BehaviorTree CPP V3 网站上的\"学习基础知识\"部分解释了此指南将要构建的基本通用节点。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:31
 msgid "Become familiar with the custom `Nav2 specific BT nodes <nav2_specific_nodes.html>`_"
-msgstr "Become familiar with the custom `Nav2 specific BT nodes <nav2_specific_nodes.html>`_"
+msgstr "熟悉定制的`Nav2特定的行为树节点 <nav2_specific_nodes.html>`_"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:34
 msgid "Navigate To Pose With Replanning and Recovery"
-msgstr "Navigate To Pose With Replanning and Recovery"
+msgstr "使用重新规划和恢复导航到姿势"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:36
 msgid "The following section will describe in detail the concept of the main and default BT currently used in Nav2, ``navigate_to_pose_w_replanning_and_recovery.xml``. This behavior tree replans the global path periodically at 1 Hz and it also has recovery actions."
-msgstr "The following section will describe in detail the concept of the main and default BT currently used in Nav2, ``navigate_to_pose_w_replanning_and_recovery.xml``. This behavior tree replans the global path periodically at 1 Hz and it also has recovery actions."
+msgstr "下一部分将详细描述Nav2当前使用的主要和默认行为树的概念，即``navigate_to_pose_w_replanning_and_recovery.xml``。该行为树以1 Hz的频率定期重新规划全局路径，并具有恢复动作。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:46
 msgid "BTs are primarily defined in XML. The tree shown above is represented in XML as follows."
-msgstr "BTs are primarily defined in XML. The tree shown above is represented in XML as follows."
+msgstr "行为树主要以 XML 形式定义。上面显示的树在 XML 中表示如下。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:88
 msgid "This is likely still a bit overwhelming, but this tree can be broken into two smaller subtrees that we can focus on one at a time. These smaller subtrees are the children of the top-most ``RecoveryNode``. From this point forward the ``NavigateWithReplanning`` subtree will be referred to as the ``Navigation`` subtree, and the ``RecoveryFallback`` subtree will be known as the ``Recovery`` subtree. This can be represented in the following way:"
-msgstr "This is likely still a bit overwhelming, but this tree can be broken into two smaller subtrees that we can focus on one at a time. These smaller subtrees are the children of the top-most ``RecoveryNode``. From this point forward the ``NavigateWithReplanning`` subtree will be referred to as the ``Navigation`` subtree, and the ``RecoveryFallback`` subtree will be known as the ``Recovery`` subtree. This can be represented in the following way:"
+msgstr "这可能还有点令人不知所措，但这棵树可以分成两个较小的子树，我们可以一次关注一个子树。这些较小的子树是最顶层的``RecoveryNode``的子节点。从这一点开始，``NavigateWithReplanning``子树将被称为``Navigation``子树，``RecoveryFallback``子树将被称为``Recovery``子树。可以用以下方式表示："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:99
 msgid "The ``Navigation`` subtree mainly involves actual navigation behavior:"
-msgstr "The ``Navigation`` subtree mainly involves actual navigation behavior:"
+msgstr "``Navigation`` 子树主要涉及实际导航行为："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:101
 msgid "calculating a path"
-msgstr "calculating a path"
+msgstr "计算路径"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:103
 msgid "following a path"
-msgstr "following a path"
+msgstr "按照路径进行"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:105
 msgid "contextual recovery behaviors for each of the above primary navigation behaviors"
-msgstr "contextual recovery behaviors for each of the above primary navigation behaviors"
+msgstr "针对上述每个主要导航行为的上下文恢复行为"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:107
 msgid "The ``Recovery`` subtree includes behaviors for system level failures or items that were not easily dealt with internally."
-msgstr "The ``Recovery`` subtree includes behaviors for system level failures or items that were not easily dealt with internally."
+msgstr "“Recovery”子树包括系统级故障或内部难以处理的项目的行为。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:109
 msgid "The overall BT will (hopefully) spend most of its time in the ``Navigation`` subtree. If either of the two main behaviors in the ``Navigation`` subtree fail (path calculation or path following), contextual recoveries will be attempted."
-msgstr "The overall BT will (hopefully) spend most of its time in the ``Navigation`` subtree. If either of the two main behaviors in the ``Navigation`` subtree fail (path calculation or path following), contextual recoveries will be attempted."
+msgstr "整个行为树（希望如此）大部分时间都在``Navigation``子树中。如果``Navigation``子树中的两个主要行为（路径计算或路径跟踪）中的任何一个失败，将尝试进行上下文恢复。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:112
 msgid "If the contextual recoveries were still not enough, the ``Navigation`` subtree will return ``FAILURE``. The system will move on to the ``Recovery`` subtree to attempt to clear any system level navigation failures."
-msgstr "If the contextual recoveries were still not enough, the ``Navigation`` subtree will return ``FAILURE``. The system will move on to the ``Recovery`` subtree to attempt to clear any system level navigation failures."
+msgstr "如果上下文恢复仍然不足，将返回“FAILURE”给“Navigation”子树。系统将继续执行“Recovery”子树，以尝试清除任何系统级导航故障。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:115
 msgid "This happens until the ``number_of_retries`` for the parent ``RecoveryNode`` is exceeded (which by default is 6)."
-msgstr "This happens until the ``number_of_retries`` for the parent ``RecoveryNode`` is exceeded (which by default is 6)."
+msgstr "直到超过父级``RecoveryNode``的``number_of_retries``次数为止（默认为6次）。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:122
 msgid "Navigation Subtree"
-msgstr "Navigation Subtree"
+msgstr "导航子树"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:124
@@ -227,7 +227,7 @@ msgstr "Now that we have gone over the control flow between the ``Navigation`` s
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:133
 msgid "The XML of this subtree is as follows:"
-msgstr "The XML of this subtree is as follows:"
+msgstr "此子树的XML如下所示："
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:156
@@ -237,7 +237,7 @@ msgstr "This subtree has two primary actions ``ComputePathToPose`` and ``FollowP
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:167
 msgid "The parent ``PipelineSequence`` node allows the ``ComputePathToPose`` to be ticked, and once that succeeds, ``FollowPath`` to be ticked. While the ``FollowPath`` subtree is being ticked, the ``ComputePathToPose`` subtree will be ticked as well. This allows for the path to be recomputed as the robot moves around."
-msgstr "The parent ``PipelineSequence`` node allows the ``ComputePathToPose`` to be ticked, and once that succeeds, ``FollowPath`` to be ticked. While the ``FollowPath`` subtree is being ticked, the ``ComputePathToPose`` subtree will be ticked as well. This allows for the path to be recomputed as the robot moves around."
+msgstr "父“PipelineSequence”节点允许选中“ComputePathToPose”，一旦成功，就选中“FollowPath”。在“FollowPath”子树被选中的同时，“ComputePathToPose”子树也将被选中。这允许在机器人移动时重新计算路径。"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:170
@@ -247,7 +247,7 @@ msgstr "Both the ``ComputePathToPose`` and the ``FollowPath`` follow the same ge
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:172
 msgid "Do the action"
-msgstr "Do the action"
+msgstr "执行动作"
 
 
 #: ../../behavior_trees/overview/detailed_behavior_tree_walkthrough.rst:174
