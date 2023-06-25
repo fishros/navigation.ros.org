@@ -677,7 +677,7 @@ msgstr "该行为树实现了从起始点开始的导航行为，试图随时间
 
 #: ../../behavior_trees/trees/follow_point.rst:11
 msgid "In this tree, we replan at 1 hz just as we did in :ref:`behavior_tree_nav_to_pose` using the ``ComputePathToPose`` node. However, this time when we replan, we update the ``goal`` based on the newest information in on the updated goal topic. After we plan a path to this dynamic point, we use the ``TruncatePath`` node to remove path points from the end of the path near the dynamic point. This behavior tree node is useful so that the robot always remains at least ``distance`` away from the obstacle, even if it stops. It also smooths out any off path behavior involved with trying to path plan towards a probably occupied space in the costmap."
-msgstr "In this tree, we replan at 1 hz just as we did in :ref:`behavior_tree_nav_to_pose` using the ``ComputePathToPose`` node. However, this time when we replan, we update the ``goal`` based on the newest information in on the updated goal topic. After we plan a path to this dynamic point, we use the ``TruncatePath`` node to remove path points from the end of the path near the dynamic point. This behavior tree node is useful so that the robot always remains at least ``distance`` away from the obstacle, even if it stops. It also smooths out any off path behavior involved with trying to path plan towards a probably occupied space in the costmap."
+msgstr "在这棵树中，我们像在 :ref:`behavior_tree_nav_to_pose` 中一样，以1 Hz的频率进行重新规划，使用``ComputePathToPose``节点。然而，这一次在重新规划时，我们根据更新后的目标主题中的最新信息更新``goal``。在规划到这个动态点的路径后，我们使用``TruncatePath``节点从靠近动态点的路径末端删除路径点。这个行为树节点非常有用，因为它可以让机器人始终与障碍物保持至少``distance``的距离，即使它停下来。它还可以平滑处理与尝试在代价地图中的可能占用空间上进行路径规划的任何偏离路径的行为。"
 
 
 #: ../../behavior_trees/trees/follow_point.rst:17
@@ -687,7 +687,7 @@ msgstr "在计算和截取到动态点的新路径后，它会再次通过 ``Fol
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:4
 msgid "Navigate Through Poses"
-msgstr "Navigate Through Poses"
+msgstr "导航到姿态"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:6
@@ -697,7 +697,7 @@ msgstr "该行为树实现了从起始点到自由空间中最终目标的导航
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:10
 msgid "The ``ComputePathThroughPoses`` and ``FollowPath`` BT nodes both also specify their algorithms to utilize. By convention we name these by the style of algorithms that they are (e.g. not ``DWB`` but rather ``FollowPath``) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller."
-msgstr "The ``ComputePathThroughPoses`` and ``FollowPath`` BT nodes both also specify their algorithms to utilize. By convention we name these by the style of algorithms that they are (e.g. not ``DWB`` but rather ``FollowPath``) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller."
+msgstr "``ComputePathThroughPoses``和``FollowPath``两个BT节点也指定了它们要使用的算法。按照惯例，我们按照它们的算法风格来命名它们（例如，不是``DWB``而是``FollowPath``），这样行为树或应用程序开发人员就不必担心技术细节，他们只想使用一个路径跟踪控制器。"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:13 ../../behavior_trees/trees/nav_to_pose_recovery.rst:14 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:14
@@ -707,57 +707,57 @@ msgstr "在这个行为树中，我们尝试在返回任务失败之前重试整
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:16
 msgid "In nominal execution, this will replan the path at every 3 seconds and pass that path onto the controller, similar to the behavior tree in :ref:`behavior_trees`. The planner though is now ``ComputePathThroughPoses`` taking a vector, ``goals``, rather than a single pose ``goal`` to plan to. The ``RemovePassedGoals`` node is used to cull out ``goals`` that the robot has passed on its path. In this case, it is set to remove a pose from the poses when the robot is within ``0.5`` of the goal and it is the next goal in the list. This is implemented such that replanning can be computed after the robot has passed by some of the intermediary poses and not continue to try to replan through them in the future. This time, if the planner fails, it will trigger contextually aware recoveries in its subtree, clearing the global costmap. Additional recoveries can be added here for additional context-specific recoveries, such as trying another algorithm."
-msgstr "In nominal execution, this will replan the path at every 3 seconds and pass that path onto the controller, similar to the behavior tree in :ref:`behavior_trees`. The planner though is now ``ComputePathThroughPoses`` taking a vector, ``goals``, rather than a single pose ``goal`` to plan to. The ``RemovePassedGoals`` node is used to cull out ``goals`` that the robot has passed on its path. In this case, it is set to remove a pose from the poses when the robot is within ``0.5`` of the goal and it is the next goal in the list. This is implemented such that replanning can be computed after the robot has passed by some of the intermediary poses and not continue to try to replan through them in the future. This time, if the planner fails, it will trigger contextually aware recoveries in its subtree, clearing the global costmap. Additional recoveries can be added here for additional context-specific recoveries, such as trying another algorithm."
+msgstr "在正常执行中，这将每隔3秒重新规划路径，并将该路径传递给控制器，类似于 :ref:`behavior_trees` 中的行为树。但是，这次的规划器是``ComputePathThroughPoses``，它接受一个向量``goals``而不是单个姿态``goal``来进行规划。``RemovePassedGoals``节点用于删除机器人在路径上已经经过的``goals``。在这种情况下，它被设置为在机器人距离目标``0.5``并且它是列表中的下一个目标时，从姿态中移除一个。这样实现后，重新规划可以在机器人经过一些中间姿态后进行计算，而不会在将来继续尝试通过它们进行重新规划。这次，如果规划器失败，它将触发上下文感知的子树中的恢复操作，清除全局代价地图。可以在这里添加其他特定上下文的恢复操作，例如尝试另一个算法。"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:24 ../../behavior_trees/trees/nav_to_pose_recovery.rst:21
 msgid "Similarly, the controller has similar logic. If it fails, it also attempts a costmap clearing of the local costmap impacting the controller. It is worth noting the ``GoalUpdated`` node in the reactive fallback. This allows us to exit recovery conditions when a new goal has been passed to the navigation system through a preemption. This ensures that the navigation system will be very responsive immediately when a new goal is issued, even when the last goal was in an attempted recovery."
-msgstr "Similarly, the controller has similar logic. If it fails, it also attempts a costmap clearing of the local costmap impacting the controller. It is worth noting the ``GoalUpdated`` node in the reactive fallback. This allows us to exit recovery conditions when a new goal has been passed to the navigation system through a preemption. This ensures that the navigation system will be very responsive immediately when a new goal is issued, even when the last goal was in an attempted recovery."
+msgstr "同样，控制器也有类似的逻辑。如果控制器失败，它也会尝试清除本地代价地图，从而影响控制器的行为。值得注意的是反应式回退中的``GoalUpdated``节点。这使得当通过抢占向导航系统传递新目标时，我们能够退出恢复条件。这确保在发出新目标时，导航系统将立即做出非常快速的响应，即使最后一个目标处于恢复尝试中的状态。"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:29
 msgid "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree also has the ``GoalUpdated`` BT node it ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will tick the costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
-msgstr "If these contextual recoveries fail, this behavior tree enters the recovery subtree. This subtree is reserved for system-level failures to help resolve issues like the robot being stuck or in a bad spot. This subtree also has the ``GoalUpdated`` BT node it ticks every iteration to ensure responsiveness of new goals. Next, the recovery subtree will tick the costmap clearing operations, spinning, waiting, and backing up. After each of the recoveries in the subtree, the main navigation subtree will be reattempted. If it continues to fail, the next recovery in the recovery subtree is ticked."
+msgstr "如果这些上下文恢复操作失败，这个行为树将进入恢复子树。这个子树用于处理系统级故障，以帮助解决机器人卡住或处于糟糕位置的问题。这个子树还有``GoalUpdated``BT节点，每次迭代都会被触发，以确保对新目标"
 
 
 #: ../../behavior_trees/trees/nav_through_poses_recovery.rst:36 ../../behavior_trees/trees/nav_to_pose_recovery.rst:33 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:29
 msgid "While this behavior tree does not make use of it, the ``PlannerSelector``, ``ControllerSelector``, and ``GoalCheckerSelector`` behavior tree nodes can also be helpful. Rather than hardcoding the algorithm to use (``GridBased`` and ``FollowPath``), these behavior tree nodes will allow a user to dynamically change the algorithm used in the navigation system via a ROS topic. It may be instead advisable to create different subtree contexts using condition nodes with specified algorithms in their most useful and unique situations. However, the selector nodes can be a useful way to change algorithms from an external application rather than via internal behavior tree control flow logic. It is better to implement changes through behavior tree methods, but we understand that many professional users have external applications to dynamically change settings of their navigators."
-msgstr "While this behavior tree does not make use of it, the ``PlannerSelector``, ``ControllerSelector``, and ``GoalCheckerSelector`` behavior tree nodes can also be helpful. Rather than hardcoding the algorithm to use (``GridBased`` and ``FollowPath``), these behavior tree nodes will allow a user to dynamically change the algorithm used in the navigation system via a ROS topic. It may be instead advisable to create different subtree contexts using condition nodes with specified algorithms in their most useful and unique situations. However, the selector nodes can be a useful way to change algorithms from an external application rather than via internal behavior tree control flow logic. It is better to implement changes through behavior tree methods, but we understand that many professional users have external applications to dynamically change settings of their navigators."
+msgstr "虽然此行为树没有使用，但是``PlannerSelector``、``ControllerSelector``和``GoalCheckerSelector``行为树节点也可能很有帮助。与硬编码要使用的算法（``GridBased``和``FollowPath``）不同，这些行为树节点将允许用户通过ROS主题动态更改导航系统中使用的算法。相反，可能更明智的做法是使用条件节点在最有用和独特的情况下创建具有指定算法的不同子树上下文。然而，选择节点可以是一种有用的方式，通过外部应用程序而不是通过内部行为树控制流逻辑来更改算法。最好通过行为树方法来实现更改，但我们理解许多专业用户有外部应用程序以动态更改其导航器的设置。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:2
 msgid "Navigate To Pose and Pause Near Goal-Obstacle"
-msgstr "Navigate To Pose and Pause Near Goal-Obstacle"
+msgstr "导航到姿势并在目标障碍物附近暂停"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:4
 msgid "As a prerequisite, we encourage the users to go through the `Behavior Tree documentation <https://behaviortree.github.io/BehaviorTree.CPP/>`_, which explains about different behaviors nodes used in these trees such as ``ReactiveSequence``, ``SequenceStar`` and ``RetryUntilSucessfull``."
-msgstr "As a prerequisite, we encourage the users to go through the `Behavior Tree documentation <https://behaviortree.github.io/BehaviorTree.CPP/>`_, which explains about different behaviors nodes used in these trees such as ``ReactiveSequence``, ``SequenceStar`` and ``RetryUntilSucessfull``."
+msgstr "作为先决条件，我们鼓励用户阅读`行为树文档 <https://behaviortree.github.io/BehaviorTree.CPP/>`_，该文档解释了这些树中使用的不同行为节点，如``ReactiveSequence``、``SequenceStar``和``RetryUntilSucessfull``。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:6
 msgid "This behavior tree is a soft extension to the :ref:`behavior_tree_nav_to_pose`. Apart from the functionalities of :ref:`behavior_tree_nav_to_pose`, this behavior tree allows the robot to efficiently handle an obstacle (e.g. forklift, person, or other temporary obstacles) close to the goal by pausing the robot's navigation and wait for a user-specified time to check if the obstacle has cleared. If the obstacle has moved during the waiting time, the robot will continue to the goal taking the shorter path. If the obstacle has not moved during the waiting time or the waiting time expires, then the robot will use the longer path around to reach the final goal location. Ultimately, for a given task, this behavior tree aids in solving the problem of long cycle time, which is caused because of the long path generated due to the temporary obstacles present close to the goal location."
-msgstr "This behavior tree is a soft extension to the :ref:`behavior_tree_nav_to_pose`. Apart from the functionalities of :ref:`behavior_tree_nav_to_pose`, this behavior tree allows the robot to efficiently handle an obstacle (e.g. forklift, person, or other temporary obstacles) close to the goal by pausing the robot's navigation and wait for a user-specified time to check if the obstacle has cleared. If the obstacle has moved during the waiting time, the robot will continue to the goal taking the shorter path. If the obstacle has not moved during the waiting time or the waiting time expires, then the robot will use the longer path around to reach the final goal location. Ultimately, for a given task, this behavior tree aids in solving the problem of long cycle time, which is caused because of the long path generated due to the temporary obstacles present close to the goal location."
+msgstr "此行为树是 :ref:`behavior_tree_nav_to_pose` 的软扩展。除了 :ref:`behavior_tree_nav_to_pose` 的功能外，此行为树允许机器人有效地处理靠近目标的障碍物（例如叉车、人员或其他临时障碍物），即暂停机器人的导航并等待用户指定的时间，以检查障碍物是否已清除。如果障碍物在等待时间内移动，机器人将继续朝目标前进，采用较短的路径。如果障碍物在等待时间内未移动或等待时间到期，则机器人将使用绕过障碍物的较长路径到达最终目标位置。对于给定的任务，此行为树有助于解决由于目标位置附近存在临时障碍物而导致的长循环时间问题。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:11
 msgid "The behavior tree is depicted in the image below. From the image, it can be noted that there is an additional branch in the Navigation Subtree known as ``MonitorAndFollowPath``. This branch is created with the intention for the users to perform any kind of monitoring behavior that their robot should exhibit. In this particular BT, the monitoring branch is exclusively utilized by ``PathLongerOnApproach`` BT node for checking if the global planner has decided to plan a significantly longer path for the robot on approaching the user-specified goal proximity. If there is no significantly longer path, the monitor node goes into the ``FollowPath`` recovery node, which then generates the necessary control commands."
-msgstr "The behavior tree is depicted in the image below. From the image, it can be noted that there is an additional branch in the Navigation Subtree known as ``MonitorAndFollowPath``. This branch is created with the intention for the users to perform any kind of monitoring behavior that their robot should exhibit. In this particular BT, the monitoring branch is exclusively utilized by ``PathLongerOnApproach`` BT node for checking if the global planner has decided to plan a significantly longer path for the robot on approaching the user-specified goal proximity. If there is no significantly longer path, the monitor node goes into the ``FollowPath`` recovery node, which then generates the necessary control commands."
+msgstr "下图显示了行为树的结构。从图中可以看出，导航子树中有一个额外的分支，称为``MonitorAndFollowPath``。这个分支的目的是让用户执行他们的机器人应该表现出的任何类型的监控行为。在这个特定的行为树中，监控分支仅被``PathLongerOnApproach``行为树节点使用，用于检查全局规划器是否决定在接近用户指定的目标附近为机器人规划一条更长的路径。如果没有更长的路径，监控节点进入``FollowPath``恢复节点，然后生成必要的控制命令。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:18
 msgid "Once there is a significantly longer path, the child node for the ``PathLongerOnApproach`` node ticks. The child node is a ``RetryUntilSuccesfull`` decorator node, which inturns have a ``SequenceStar`` node as its child. Firstly, the ``SequenceStar`` node cancels the controller server by ticking the ``CancelControl`` node. The cancellation of the controller server halts the further navigation of the robot. Next, the ``SequenceStar`` node ticks the ``Wait`` node, which enables the robot to wait for the given user-specified time. Here we need to note that, the ``MonitorAndFollowPath`` is a ``ReactiveSequence`` node, therefore the ``PathLongerOnApproach`` node needs to return SUCCESS, before the ``FollowPath`` node can be ticked once again."
-msgstr "Once there is a significantly longer path, the child node for the ``PathLongerOnApproach`` node ticks. The child node is a ``RetryUntilSuccesfull`` decorator node, which inturns have a ``SequenceStar`` node as its child. Firstly, the ``SequenceStar`` node cancels the controller server by ticking the ``CancelControl`` node. The cancellation of the controller server halts the further navigation of the robot. Next, the ``SequenceStar`` node ticks the ``Wait`` node, which enables the robot to wait for the given user-specified time. Here we need to note that, the ``MonitorAndFollowPath`` is a ``ReactiveSequence`` node, therefore the ``PathLongerOnApproach`` node needs to return SUCCESS, before the ``FollowPath`` node can be ticked once again."
+msgstr "一旦存在明显较长的路径，子节点 ``PathLongerOnApproach`` 将开始执行。子节点是一个 ``RetryUntilSuccesfull`` 装饰器节点，其下有一个 ``SequenceStar`` 节点作为其子节点。首先，``SequenceStar`` 节点通过执行 ``CancelControl`` 节点取消控制器服务器。取消控制器服务器会停止机器人的进一步导航。接下来，``SequenceStar`` 节点会执行 ``Wait`` 节点，使机器人等待给定的用户指定时间。需要注意的是，``MonitorAndFollowPath`` 是一个 ``ReactiveSequence`` 节点，因此在 ``FollowPath`` 节点可以再次执行之前，``PathLongerOnApproach`` 节点需要返回成功（SUCCESS）。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:24
 msgid "In the below GIF, it can be seen that the robot is approaching the goal location, but it found an obstacle in the goal proximity, because of which the global planner, plans a longer path around. This is the point where the ``PathLongerOnApproach`` ticks and ticks its children, consequently cancelling the ``controller_server`` and waiting to see if the obstacle clears up. In the below scenario, the obstacles do not clear, causing the robot to take the longer path."
-msgstr "In the below GIF, it can be seen that the robot is approaching the goal location, but it found an obstacle in the goal proximity, because of which the global planner, plans a longer path around. This is the point where the ``PathLongerOnApproach`` ticks and ticks its children, consequently cancelling the ``controller_server`` and waiting to see if the obstacle clears up. In the below scenario, the obstacles do not clear, causing the robot to take the longer path."
+msgstr "在下面的GIF图中，可以看到机器人正在接近目标位置，但在目标附近发现了障碍物，因此全局规划器规划了一条更长的路径。这是``PathLongerOnApproach``节点开始工作并激活"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:30
 msgid "Alternatively, if the obstacles are cleared, then there is a shorter path generated by the global planner. Now, the ``PathLongerOnApproach`` returns SUCCESS, that cause the ``FollowPath`` to continue with the robot navigation."
-msgstr "Alternatively, if the obstacles are cleared, then there is a shorter path generated by the global planner. Now, the ``PathLongerOnApproach`` returns SUCCESS, that cause the ``FollowPath`` to continue with the robot navigation."
+msgstr "或者，如果障碍物被清除，则全局规划器会生成较短的路径。现在，``PathLongerOnApproach`` 返回成功（SUCCESS），导致 ``FollowPath`` 继续机器人的导航。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:35
@@ -767,7 +767,7 @@ msgstr "Apart from the above scenarios, we also need to note that, the robot wil
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:37
 msgid "In conclusion, this particular BT would serve, both as an example and ready-to-use BT for an organizational specific application, that wishes to optimize its process cycle time."
-msgstr "In conclusion, this particular BT would serve, both as an example and ready-to-use BT for an organizational specific application, that wishes to optimize its process cycle time."
+msgstr "总而言之，这个特定的行为树既可以作为示例，也可以作为组织特定应用的即用行为树，以优化其流程周期时间。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_and_pause_near_goal_obstacle.rst:82
@@ -777,7 +777,7 @@ msgstr "A complete demo of this BT can be seen in the video below:"
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:4
 msgid "Navigate To Pose"
-msgstr "Navigate To Pose"
+msgstr "导航到姿势"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:6
@@ -787,7 +787,7 @@ msgstr "This behavior tree implements a significantly more mature version of the
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:11 ../../behavior_trees/trees/nav_to_pose_with_consistent_replanning_and_if_path_becomes_invalid.rst:11
 msgid "The ``ComputePathToPose`` and ``FollowPath`` BT nodes both also specify their algorithms to utilize. By convention we name these by the style of algorithms that they are (e.g. not ``DWB`` but rather ``FollowPath``) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller."
-msgstr "The ``ComputePathToPose`` and ``FollowPath`` BT nodes both also specify their algorithms to utilize. By convention we name these by the style of algorithms that they are (e.g. not ``DWB`` but rather ``FollowPath``) such that a behavior tree or application developer need not worry about the technical specifics. They just want to use a path following controller."
+msgstr "``ComputePathToPose`` 和 ``FollowPath`` 的BT节点也指定了它们要使用的算法。按照惯例，我们按算法的风格命名它们（例如，不是 ``DWB`` 而是 ``FollowPath``），这样行为树或应用程序开发人员就不需要关注技术细节。他们只想使用一个路径跟踪控制器。"
 
 
 #: ../../behavior_trees/trees/nav_to_pose_recovery.rst:17
