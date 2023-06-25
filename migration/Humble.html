@@ -122,7 +122,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#environmental-representation">Environmental Representation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmaps-and-layers">Costmaps and Layers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#other-forms">Other Forms</a></li>
 </ul>
 </li>
@@ -750,7 +750,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">导航插件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-layers">Costmap Layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#controllers">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#planners">Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#smoothers">Smoothers</a></li>
@@ -791,7 +791,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#followpath-goal-checker-id-attribute">FollowPath goal_checker_id attribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#groot-support">Groot Support</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#smacplanner">SmacPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#thetastarplanner">ThetaStarPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#regulatedpurepursuitcontroller">RegulatedPurePursuitController</a></li>
@@ -860,7 +860,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#smac-planner-path-tolerances">Smac Planner Path Tolerances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#savitzky-golay-smoother">Savitzky-Golay Smoother</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smootherselector-bt-node">SmootherSelector BT Node</a></li>
@@ -1013,7 +1013,7 @@ The following errors codes are supported (with more to come as necessary): Unkno
 See <a class="reference internal" href="../tutorials/docs/adding_a_nav2_task_server.html#adding-a-nav2-task-server"><span class="std std-ref">Adding a New Nav2 Task Server</span></a> and the PR for additional information.</p>
 </div>
 <div class="section" id="costmap-filters">
-<h2>Costmap Filters<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
+<h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
 <p>Costmap Filters now are have an ability to be enabled/disabled in run-time by calling <code class="docutils literal notranslate"><span class="pre">toggle_filter</span></code> service for appropriate filter (<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3229">PR #3229</a>).</p>
 <p>Added new binary flip filter, allowing e.g. to turn off camera in sensitive areas, turn on headlights/leds/other safety things or switch operating mode when robot is inside marked on mask areas (<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3228">PR #3228</a>).</p>
 </div>

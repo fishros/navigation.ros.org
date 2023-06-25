@@ -122,7 +122,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#environmental-representation">Environmental Representation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#costmaps-and-layers">Costmaps and Layers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#other-forms">Other Forms</a></li>
 </ul>
 </li>
@@ -750,7 +750,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">导航插件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-layers">Costmap Layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#controllers">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#planners">Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#smoothers">Smoothers</a></li>
@@ -791,7 +791,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#followpath-goal-checker-id-attribute">FollowPath goal_checker_id attribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#groot-support">Groot Support</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#smacplanner">SmacPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#thetastarplanner">ThetaStarPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#regulatedpurepursuitcontroller">RegulatedPurePursuitController</a></li>
@@ -860,7 +860,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#smac-planner-path-tolerances">Smac Planner Path Tolerances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#savitzky-golay-smoother">Savitzky-Golay Smoother</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#smootherselector-bt-node">SmootherSelector BT Node</a></li>
@@ -1173,7 +1173,7 @@ Additionally, layers can be created to algorithmically change the underlying cos
 Finally, they may be used to buffer live data into the 2D or 3D world for binary obstacle marking.</p>
 </div>
 <div class="section" id="costmap-filters">
-<h3>Costmap Filters<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h3>
+<h3>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h3>
 <p>Imagine, you're annotating a map file (or any image file) in order to have a specific action occur based on the location in the annotated map. Examples of marking/annotating might be keep out zones to avoid planning inside, or have pixels belong to maximum speeds in marked areas. This annotated map is called &quot;filter mask&quot;. Just like a mask overlaid on a surface, it can or cannot be same size, pose and scale as a main map. The main goal of filter mask - is to provide the ability of marking areas on maps with some additional features or behavioral changes.</p>
 <p>Costmap filters are a costmap layer-based approach of applying spatial-dependent behavioral changes, annotated in filter masks, into the Nav2 stack.
 Costmap filters are implemented as costmap plugins.

@@ -122,7 +122,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#environmental-representation">Environmental Representation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmaps-and-layers">Costmaps and Layers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#other-forms">Other Forms</a></li>
 </ul>
 </li>
@@ -750,7 +750,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">导航插件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-layers">Costmap Layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#controllers">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#planners">Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plugins/index.html#smoothers">Smoothers</a></li>
@@ -791,7 +791,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#followpath-goal-checker-id-attribute">FollowPath goal_checker_id attribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#groot-support">Groot Support</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smacplanner">SmacPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thetastarplanner">ThetaStarPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#regulatedpurepursuitcontroller">RegulatedPurePursuitController</a></li>
@@ -860,7 +860,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#smac-planner-path-tolerances">Smac Planner Path Tolerances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Humble.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Humble.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#savitzky-golay-smoother">Savitzky-Golay Smoother</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#smootherselector-bt-node">SmootherSelector BT Node</a></li>
@@ -1051,7 +1051,7 @@ All major image formats such as <code class="docutils literal notranslate"><span
 </ul>
 </div>
 <div class="section" id="costmap-filters">
-<h2>Costmap Filters<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
+<h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
 <p>A new concept interacting with spatial-dependent objects called &quot;Costmap Filters&quot; appeared in Galactic (more information about this concept could be found at <a class="reference internal" href="../concepts/index.html#concepts"><span class="std std-ref">Navigation Concepts</span></a> page). Costmap filters are acting as a costmap plugins, applied to a separate costmap above common plugins. In order to make a filtered costmap and change robot's behavior in annotated areas, filter plugin reads the data came from filter mask. Then this data is being linearly transformed into feature map in a filter space. It could be passability of an area, maximum speed limit in m/s, robot desired direction in degrees or anything else. Transformed feature map along with the map/costmap, sensors data and current robot position is used in plugin's algorithms to make required updates in the resulting costmap and robot's behavor.</p>
 <p>Architecturally, costmap filters consists from <code class="docutils literal notranslate"><span class="pre">CostmapFilter</span></code> class which is a basic class incorporating much common of its inherited filter plugins:</p>
 <ul class="simple">

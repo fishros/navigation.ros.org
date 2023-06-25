@@ -122,7 +122,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/index.html#environmental-representation">Environmental Representation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmaps-and-layers">Costmaps and Layers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/index.html#other-forms">Other Forms</a></li>
 </ul>
 </li>
@@ -750,7 +750,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">导航插件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#behavior-tree-navigators">行为树导航器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-layers">Costmap Layers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#planners">Planners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smoothers">Smoothers</a></li>
@@ -791,7 +791,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#followpath-goal-checker-id-attribute">FollowPath goal_checker_id attribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#groot-support">Groot Support</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#smacplanner">SmacPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#thetastarplanner">ThetaStarPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Foxy.html#regulatedpurepursuitcontroller">RegulatedPurePursuitController</a></li>
@@ -860,7 +860,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#smac-planner-path-tolerances">Smac Planner Path Tolerances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#costmap-filters">Costmap Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#savitzky-golay-smoother">Savitzky-Golay Smoother</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../migration/Humble.html#smootherselector-bt-node">SmootherSelector BT Node</a></li>
@@ -958,13 +958,11 @@
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_bt_navigator/src/navigators">NavigateToPoseNavigator</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Point-to-point navigation via a
-behavior tree action server</p></td>
+<td><p>通过行为树动作服务器实现点对点导航</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_bt_navigator/src/navigators">NavigateThroughPosesNavigator</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Point-through-points navigation
-via a behavior tree action server</p></td>
+<td><p>通过行为树动作服务器实现途经多个点的导航</p></td>
 </tr>
 </tbody>
 </table>
@@ -984,43 +982,33 @@ via a behavior tree action server</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/voxel_layer.cpp">Voxel Layer</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/voxel_layer.cpp">体素图层</a></p></td>
 <td><p>Eitan Marder-Eppstein</p></td>
-<td><p>Maintains persistant
-3D voxel layer using depth and
-laser sensor readings and
-raycasting to clear free space</p></td>
+<td><p>使用深度和激光传感器读数以及射线投射来维护持久的3D体素图层，以清理空闲空间</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/range_sensor_layer.cpp">Range Layer</a></p></td>
 <td><p>David Lu</p></td>
 <td><p>使用概率模型将发布范围消息的传感器数据放置在代价地图上</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/static_layer.cpp">Static Layer</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/static_layer.cpp">静态图层</a></p></td>
 <td><p>Eitan Marder-Eppstein</p></td>
 <td><p>获取静态``map``并将占用信息加载到代价地图中</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/inflation_layer.cpp">Inflation Layer</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/inflation_layer.cpp">膨胀图层</a></p></td>
 <td><p>Eitan Marder-Eppstein</p></td>
-<td><p>Inflates lethal obstacles in
-costmap with exponential decay</p></td>
+<td><p>使用指数衰减方式在costmap中膨胀致命障碍物</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_costmap_2d/plugins/obstacle_layer.cpp">Obstacle Layer</a></p></td>
 <td><p>Eitan Marder-Eppstein</p></td>
-<td><p>Maintains persistent 2D costmap
-from 2D laser scans with
-raycasting to clear free space</p></td>
+<td><p>通过射线投射将2D激光扫描转化为持久的2D代价地图，用于清除自由空间</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">Spatio-Temporal Voxel Layer</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Maintains temporal 3D sparse
-volumetric voxel grid with decay
-through sensor models</p></td>
+<td><p>通过传感器模型对时间上稀疏的3D体素网格进行衰减维护</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/SteveMacenski/nonpersistent_voxel_layer">Non-Persistent Voxel Layer</a></p></td>
 <td><p>Steve Macenski</p></td>
-<td><p>Maintains 3D occupancy grid
-consisting only of the most
-sets of measurements</p></td>
+<td><p>维护只包含最多测量集的3D占据网格</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ryzhikovas/navigation2/tree/feature-costmap2d-denoise/nav2_costmap_2d/plugins/denoise_layer.cpp">Denoise Layer</a></p></td>
 <td><p>Andrey Ryzhikov</p></td>
@@ -1032,7 +1020,7 @@ obstacles groups</p></td>
 </table>
 </div>
 <div class="section" id="costmap-filters">
-<h2>Costmap Filters<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
+<h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 27%" />
