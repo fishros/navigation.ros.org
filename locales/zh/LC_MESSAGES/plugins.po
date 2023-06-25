@@ -767,7 +767,7 @@ msgstr "`等待动作`_"
 
 #: ../../plugins/index.rst:350
 msgid "Calls wait behavior action"
-msgstr "Calls wait behavior action"
+msgstr "等待行为调用"
 
 
 #: ../../plugins/index.rst:352
@@ -787,7 +787,7 @@ msgstr "修改路径使其更短"
 
 #: ../../plugins/index.rst:354
 msgid "`Truncate Path Local`_"
-msgstr "`Truncate Path Local`_"
+msgstr "`截断本地路径`_"
 
 
 #: ../../plugins/index.rst:354
@@ -797,7 +797,7 @@ msgstr "提取围绕机器人的路径部分"
 
 #: ../../plugins/index.rst:356
 msgid "`Planner Selector`_"
-msgstr "`Planner Selector`_"
+msgstr "`规划器选择器`_"
 
 
 #: ../../plugins/index.rst:356 ../../plugins/index.rst:360 ../../plugins/index.rst:364
@@ -807,7 +807,7 @@ msgstr "Pablo Iñigo Blasco"
 
 #: ../../plugins/index.rst:356
 msgid "Selects the global planner based on a topic input, otherwises uses a default planner id"
-msgstr "Selects the global planner based on a topic input, otherwises uses a default planner id"
+msgstr "基于主题输入选择全局规划器，否则使用默认规划器 ID"
 
 
 #: ../../plugins/index.rst:360
@@ -817,7 +817,7 @@ msgstr "`控制器选择器`_"
 
 #: ../../plugins/index.rst:360
 msgid "Selects the controller based on a topic input, otherwises uses a default controller id"
-msgstr "Selects the controller based on a topic input, otherwises uses a default controller id"
+msgstr "基于主题输入选择控制器，否则使用默认控制器 ID"
 
 
 #: ../../plugins/index.rst:364
@@ -827,7 +827,7 @@ msgstr "`目标检查器选择器`_"
 
 #: ../../plugins/index.rst:364
 msgid "Selects the goal checker based on a topic input, otherwises uses a default goal checker id"
-msgstr "Selects the goal checker based on a topic input, otherwises uses a default goal checker id"
+msgstr "基于主题输入选择目标检查器，否则使用默认目标检查器 ID"
 
 
 #: ../../plugins/index.rst:368
