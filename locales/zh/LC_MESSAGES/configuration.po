@@ -4207,7 +4207,7 @@ msgstr "\"costmap_filter_info\""
 
 #: ../../configuration/packages/configuring-map-server.rst:113
 msgid "Topic to publish costmap filter information to."
-msgstr "Topic to publish costmap filter information to."
+msgstr "用于发布代价地图过滤器信息的主题。"
 
 
 #: ../../configuration/packages/configuring-map-server.rst
@@ -4227,7 +4227,7 @@ msgstr "用于发布过滤器掩码的主题。该参数的值应与Map Server�
 
 #: ../../configuration/packages/configuring-map-server.rst
 msgid "base"
-msgstr "base"
+msgstr "基础"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:135
@@ -4237,51 +4237,51 @@ msgstr "将``OccupancyGrid``掩码值转换为过滤器空间值的基准 -> 线
 
 #: ../../configuration/packages/configuring-map-server.rst
 msgid "multiplier"
-msgstr "multiplier"
+msgstr "倍增器"
 
 
 #: ../../configuration/packages/configuring-map-server.rst:147
 msgid "Multiplier of ``OccupancyGrid`` mask value -> filter space value linear conversion which is being proceeded as: ``filter_space_value = base + multiplier * mask_value``"
-msgstr "Multiplier of ``OccupancyGrid`` mask value -> filter space value linear conversion which is being proceeded as: ``filter_space_value = base + multiplier * mask_value``"
+msgstr "``OccupancyGrid``掩码值的乘数->过滤空间值的线性转换，处理方式为：``filter_space_value = base + multiplier * mask_value``"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:4
 msgid "Model Predictive Path Integral Controller"
-msgstr "Model Predictive Path Integral Controller"
+msgstr "模型预测路径积分控制器"
 
 
 msgid "MPPI on Turtlebot3 demo"
-msgstr "MPPI on Turtlebot3 demo"
+msgstr "Turtlebot3上的MPPI演示"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:16
 msgid "The MPPI Controller implements a `Model Predictive Path Integral Controller <https://ieeexplore.ieee.org/document/7487277>`_. The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes."
-msgstr "The MPPI Controller implements a `Model Predictive Path Integral Controller <https://ieeexplore.ieee.org/document/7487277>`_. The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes."
+msgstr "MPPI控制器实现了一个`模型预测路径积分控制器 <https://ieeexplore.ieee.org/document/7487277>`_。新的Nav2 MPPI控制器是一个预测控制器，是TEB和纯路径跟踪MPC控制器的继任者。它使用基于采样的方法来选择最优轨迹，在连续迭代之间进行优化。它包含了基于插件的目标函数，用于自定义和扩展各种行为和行为属性。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:19
 msgid "It works currently with Differential, Omnidirectional, and Ackermann robots. This controller is measured to run at 50+ Hz on a modest Intel processor (4th gen i5)."
-msgstr "It works currently with Differential, Omnidirectional, and Ackermann robots. This controller is measured to run at 50+ Hz on a modest Intel processor (4th gen i5)."
+msgstr "目前适用于差分、全向和Ackermann机器人。该控制器在一台性能适中的Intel处理器（第四代i5）上以50+赫兹运行。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:22
 msgid "The MPPI algorithm is an MPC variant that finds a control velocity for the robot using an iterative approach. Using the previous time step's best control solution and the robot's current state, a set of randomly sampled perturbations from a Gaussian distribution are applied. These noised controls are forward simulated to generate a set of trajectories within the robot's motion model. Next, these trajectories are scored using a set of plugin-based critic functions to find the best trajectory in the batch. The output scores are used to set the best control with a soft max function. This process is then repeated a number of times and returns a converged solution. This solution is then used as the basis of the next time step's initial control."
-msgstr "The MPPI algorithm is an MPC variant that finds a control velocity for the robot using an iterative approach. Using the previous time step's best control solution and the robot's current state, a set of randomly sampled perturbations from a Gaussian distribution are applied. These noised controls are forward simulated to generate a set of trajectories within the robot's motion model. Next, these trajectories are scored using a set of plugin-based critic functions to find the best trajectory in the batch. The output scores are used to set the best control with a soft max function. This process is then repeated a number of times and returns a converged solution. This solution is then used as the basis of the next time step's initial control."
+msgstr "MPPI算法是一种MPC变体，它使用迭代方法为机器人找到控制速度。利用上一个时间步的最佳控制解和机器人的当前状态，从高斯分布中随机采样一组扰动控制。这些带噪声的控制被正向模拟，生成机器人运动模型内的一组轨迹。然后，使用一组基于插件的评价函数对这些轨迹进行评分，以找到批次中的最佳轨迹。输出的评分用于通过软最大函数设置最佳控制。然后，重复此过程多次，直到获得收敛解。将此解作为下一个时间步的初始控制的基础。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:26
 msgid "A powerful result of this work is the ability to utilize objective functions which are not require to be convex nor differentiable, providing greater designer flexibility in behavior."
-msgstr "A powerful result of this work is the ability to utilize objective functions which are not require to be convex nor differentiable, providing greater designer flexibility in behavior."
+msgstr "这项工作的一个强大结果是能够利用不需要是凸的、也不需要是可微分的目标函数，为设计者在行为上提供更大的灵活性。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:31
 msgid "MPPI Parameters"
-msgstr "MPPI Parameters"
+msgstr "MPPI 参数"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "motion_model"
-msgstr "motion_model"
+msgstr "运动模型"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:38
@@ -4291,22 +4291,22 @@ msgstr "\"DiffDrive\""
 
 #: ../../configuration/packages/configuring-mppic.rst:42
 msgid "The desired motion model to use for trajectory planning. Options are ``DiffDrive``, ``Omni``, or ``Ackermann``. Differential drive robots may use forward/reverse and angular velocities; Omni add in lateral motion; and Ackermann adds minimum curvature constraints."
-msgstr "The desired motion model to use for trajectory planning. Options are ``DiffDrive``, ``Omni``, or ``Ackermann``. Differential drive robots may use forward/reverse and angular velocities; Omni add in lateral motion; and Ackermann adds minimum curvature constraints."
+msgstr "用于轨迹规划的期望运动模型。选项包括``DiffDrive``（差分驱动）、``Omni``（全向）或``Ackermann``（阿克曼）。差分驱动机器人可以使用前进/后退和角速度；全向机器人添加了横向运动；而阿克曼则添加了最小曲率约束。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "critics"
-msgstr "critics"
+msgstr "批评家"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:49
 msgid "string vector"
-msgstr "string vector"
+msgstr "字符串向量"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:53
 msgid "A vector of critic plugin functions to use, without ``mppi::critic::`` namespace which will be automatically added on loading."
-msgstr "A vector of critic plugin functions to use, without ``mppi::critic::`` namespace which will be automatically added on loading."
+msgstr "要使用的批评家插件函数向量，无需 ``mppi::critic::`` 命名空间，在加载时会自动添加。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4316,7 +4316,7 @@ msgstr "iteration_count"
 
 #: ../../configuration/packages/configuring-mppic.rst:64
 msgid "Iteration count in the MPPI algorithm. Recommended to remain as 1 and instead prefer larger batch sizes."
-msgstr "Iteration count in the MPPI algorithm. Recommended to remain as 1 and instead prefer larger batch sizes."
+msgstr "MPPI 算法中的迭代次数。建议保持为 1，并选择更大的批次大小。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
@@ -4336,7 +4336,7 @@ msgstr "Count of randomly sampled candidate trajectories from current optimal co
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "time_steps"
-msgstr "time_steps"
+msgstr "时间步数"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:82
