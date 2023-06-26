@@ -102,7 +102,7 @@ msgstr "安装"
 
 #: ../../development_guides/build_docs/index.rst:9
 msgid "Nav2 and its dependencies are released as binaries. You may install it via the following to get the latest stable released version:"
-msgstr "Nav2 and its dependencies are released as binaries. You may install it via the following to get the latest stable released version:"
+msgstr "Nav2及其依赖项发布为二进制文件。您可以通过以下方式安装它以获取最新的稳定版本："
 
 
 #: ../../development_guides/build_docs/index.rst:21
@@ -112,62 +112,62 @@ msgstr "构建"
 
 #: ../../development_guides/build_docs/index.rst:23
 msgid "There are a few ways to build Nav2 using:"
-msgstr "There are a few ways to build Nav2 using:"
+msgstr "有几种方法可以构建Nav2，包括："
 
 
 #: ../../development_guides/build_docs/index.rst:25 ../../development_guides/build_docs/index.rst:43
 msgid "Released Distribution Binaries"
-msgstr "Released Distribution Binaries"
+msgstr "已发布的分发二进制文件"
 
 
 #: ../../development_guides/build_docs/index.rst:27
 msgid "Build Nav2 using readily installable binary dependencies"
-msgstr "Build Nav2 using readily installable binary dependencies"
+msgstr "使用现成可安装的二进制依赖项构建Nav2"
 
 
 #: ../../development_guides/build_docs/index.rst:29 ../../development_guides/build_docs/index.rst:77
 msgid "Rolling Development Source"
-msgstr "Rolling Development Source"
+msgstr "滚动式开发源代码"
 
 
 #: ../../development_guides/build_docs/index.rst:31
 msgid "Build Nav2 using custom or latest source dependencies"
-msgstr "Build Nav2 using custom or latest source dependencies"
+msgstr "使用自定义或最新的源代码依赖项构建Nav2"
 
 
 #: ../../development_guides/build_docs/index.rst:33 ../../development_guides/build_docs/index.rst:111
 msgid "Docker Container Images"
-msgstr "Docker Container Images"
+msgstr "Docker 容器映像"
 
 
 #: ../../development_guides/build_docs/index.rst:35
 msgid "Build Nav2 using cached images and templated Dockerfiles"
-msgstr "Build Nav2 using cached images and templated Dockerfiles"
+msgstr "使用缓存的映像和模板化的Docker文件构建Nav2"
 
 
 #: ../../development_guides/build_docs/index.rst:38
 msgid "For a *repeatable*, *reproducible* and *streamlined* development experience, check the Nav2 documentation on using :ref:`devcontainers`!"
-msgstr "For a *repeatable*, *reproducible* and *streamlined* development experience, check the Nav2 documentation on using :ref:`devcontainers`!"
+msgstr "要获得可重复、可复制和流畅的开发体验，请查看 Nav2 文档中关于使用 :ref:`devcontainers` 的内容！"
 
 
 #: ../../development_guides/build_docs/index.rst:45
 msgid "To build Nav2, you'll first need to build or install ROS 2 and related development tools, including: ``colcon``, ``rosdep`` and ``vcstool``."
-msgstr "To build Nav2, you'll first need to build or install ROS 2 and related development tools, including: ``colcon``, ``rosdep`` and ``vcstool``."
+msgstr "要构建Nav2，您首先需要构建或安装ROS 2及其相关开发工具，包括：``colcon``、``rosdep``和``vcstool``。"
 
 
 #: ../../development_guides/build_docs/index.rst:48
 msgid "For more information on building or installing ROS 2 distros, see the official documentation:"
-msgstr "For more information on building or installing ROS 2 distros, see the official documentation:"
+msgstr "有关构建或安装 ROS 2 发行版的更多信息，请参阅官方文档："
 
 
 #: ../../development_guides/build_docs/index.rst:50
 msgid "`ROS 2 Installation <https://docs.ros.org/en/rolling/Installation.html>`_"
-msgstr "`ROS 2 Installation <https://docs.ros.org/en/rolling/Installation.html>`_"
+msgstr "``ROS 2安装 <https://docs.ros.org/en/rolling/Installation.html>`_"
 
 
 #: ../../development_guides/build_docs/index.rst:51
 msgid "`Install development tools and ROS tools <https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Development-Setup.html#install-development-tools-and-ros-tools>`_"
-msgstr "`Install development tools and ROS tools <https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Development-Setup.html#install-development-tools-and-ros-tools>`_"
+msgstr "`安装开发工具和 ROS 工具 <https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Development-Setup.html#install-development-tools-and-ros-tools>`_"
 
 
 #: ../../development_guides/build_docs/index.rst:53
@@ -177,7 +177,7 @@ msgstr "Once your environment is setup, clone the repo, install all dependencies
 
 #: ../../development_guides/build_docs/index.rst:56
 msgid "The branch naming schema for Nav2 is organized by ROS distro, while the default branch for Rolling is ``main``."
-msgstr "The branch naming schema for Nav2 is organized by ROS distro, while the default branch for Rolling is ``main``."
+msgstr "Nav2 的分支命名方案按照 ROS 发行版进行组织，而 Rolling 的默认分支为 ``main``。"
 
 
 #: ../../development_guides/build_docs/index.rst:69 ../../development_guides/build_docs/index.rst:103
