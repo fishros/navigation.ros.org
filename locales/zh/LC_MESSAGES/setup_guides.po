@@ -412,7 +412,7 @@ msgstr "在本指南中，我们展示了如何为您的机器人配置圆形和
 
 #: ../../setup_guides/footprint/setup_footprint.rst:109
 msgid "As a demo, we have configured the costmap footprint parameters of  ``sam_bot``. We set the local costmap to use a polygon-shaped footprint following ``sam_bot``'s shape while we set the the global costmap to use a circular footprint. Lastly, we visualized and confirmed the footprints of the local and global costmaps in RViz."
-msgstr "As a demo, we have configured the costmap footprint parameters of  ``sam_bot``. We set the local costmap to use a polygon-shaped footprint following ``sam_bot``'s shape while we set the the global costmap to use a circular footprint. Lastly, we visualized and confirmed the footprints of the local and global costmaps in RViz."
+msgstr "作为演示，我们已经配置了 ``sam_bot`` 的代价地图足迹参数。我们将局部代价地图设置为使用 ``sam_bot`` 的形状的多边形足迹，而全局代价地图则使用圆形足迹。最后，我们在RViz中可视化并确认了局部和全局代价地图的足迹。"
 
 
 #: ../../setup_guides/index.rst:4
@@ -422,7 +422,7 @@ msgstr "首次机器人设置指南"
 
 #: ../../setup_guides/index.rst:6
 msgid "This section is a collection of guides that aims to provide readers a good resource for setting up Nav2. The objectives for this section are as follows:"
-msgstr "This section is a collection of guides that aims to provide readers a good resource for setting up Nav2. The objectives for this section are as follows:"
+msgstr "本部分是一系列指南，旨在为读者提供一个很好的资源，用于设置Nav2。本部分的目标如下："
 
 
 #: ../../setup_guides/index.rst:8
@@ -432,77 +432,77 @@ msgstr "帮助新用户设置带有新机器人的 Navigation2"
 
 #: ../../setup_guides/index.rst:9
 msgid "Help people with custom built robots to properly set up their robots to be used in ROS/Navigation2"
-msgstr "Help people with custom built robots to properly set up their robots to be used in ROS/Navigation2"
+msgstr "帮助使用自定义构建的机器人的人们正确设置其机器人以在ROS/Navigation2中使用"
 
 
 #: ../../setup_guides/index.rst:10
 msgid "Act as a checklist, template or boilerplate reference for more experienced readers"
-msgstr "Act as a checklist, template or boilerplate reference for more experienced readers"
+msgstr "作为一个检查清单、模板或样板参考，供更有经验的读者使用"
 
 
 #: ../../setup_guides/index.rst:11
 msgid "Provide examples which can be run on simulators/tools like Gazebo or RViz to guide readers on the Nav2 setup process even without a physical robot."
-msgstr "Provide examples which can be run on simulators/tools like Gazebo or RViz to guide readers on the Nav2 setup process even without a physical robot."
+msgstr "提供可以在模拟器/工具（如Gazebo或RViz）上运行的示例，以指导读者进行Nav2设置过程，即使没有物理机器人。"
 
 
 #: ../../setup_guides/index.rst:12
 msgid "Broad strokes, tips, and tricks for configuring certain packages and integrating different components of the robot platform (sensors, odometry, etc.)"
-msgstr "Broad strokes, tips, and tricks for configuring certain packages and integrating different components of the robot platform (sensors, odometry, etc.)"
+msgstr "用于配置特定软件包和集成机器人平台的不同组件（传感器、里程计等）的基本信息、技巧和窍门"
 
 
 #: ../../setup_guides/index.rst:14
 msgid "To guide you through the first-time setup of your robot, we will be tackling the following topics:"
-msgstr "To guide you through the first-time setup of your robot, we will be tackling the following topics:"
+msgstr "为了指导您完成机器人的首次设置，我们将涉及以下主题："
 
 
 #: ../../setup_guides/index.rst:16
 msgid "Introduce TF2 and setup your robot URDF"
-msgstr "Introduce TF2 and setup your robot URDF"
+msgstr "介绍TF2并设置机器人URDF"
 
 
 #: ../../setup_guides/index.rst:17
 msgid "Setup sensor sources for robot odometry"
-msgstr "Setup sensor sources for robot odometry"
+msgstr "为机器人里程计设置传感器源"
 
 
 #: ../../setup_guides/index.rst:18
 msgid "Setup sensor sources for perception"
-msgstr "Setup sensor sources for perception"
+msgstr "设置感知的传感器源"
 
 
 #: ../../setup_guides/index.rst:19
 msgid "Configure round or arbitrary shaped footprints for your robot"
-msgstr "Configure round or arbitrary shaped footprints for your robot"
+msgstr "为您的机器人配置圆形或任意形状的足迹"
 
 
 #: ../../setup_guides/index.rst:20
 msgid "Select and set up planner and controller navigation plugins for your robot's navigation tasks"
-msgstr "Select and set up planner and controller navigation plugins for your robot's navigation tasks"
+msgstr "为机器人的导航任务选择和设置规划器和控制器导航插件"
 
 
 #: ../../setup_guides/index.rst:21
 msgid "Lifecycle node management for easy bringup of other related sensors or nodes"
-msgstr "Lifecycle node management for easy bringup of other related sensors or nodes"
+msgstr "生命周期节点管理，方便引入其他相关传感器或节点"
 
 
 #: ../../setup_guides/index.rst:23
 msgid "These tutorials are not meant to be full tuning and configuration guides since they only aim to help you get your robot up and running with a basic configuration. For more detailed discussions and guides on how to customize and tune Nav2 for your robot, head on to the :ref:`configuration` section."
-msgstr "These tutorials are not meant to be full tuning and configuration guides since they only aim to help you get your robot up and running with a basic configuration. For more detailed discussions and guides on how to customize and tune Nav2 for your robot, head on to the :ref:`configuration` section."
+msgstr "这些教程不旨在成为完整的调优和配置指南，因为它们只旨在帮助您使用基本配置启动和运行机器人。如需有关如何自定义和调优适用于您的机器人的Nav2的详细讨论和指南，请参阅 :ref:`configuration` 部分。"
 
 
 #: ../../setup_guides/index.rst:25
 msgid "**Table of Contents:**"
-msgstr "**Table of Contents:**"
+msgstr "**目录：**"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:2
 msgid "Setting Up Odometry"
-msgstr "Setting Up Odometry"
+msgstr "设置里程计"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:4
 msgid "In this guide, we will be looking at how to integrate our robot's odometry system with Nav2. First we will provide a brief introduction on odometry, plus the necessary messages and transforms that need to be published for Nav2 to function correctly. Next, we will show how to setup odometry with two different cases. In the first case, we will show how to setup an odometry system for a robot with already available wheel encoders. In the second case, we will build a demo that simulates a functioning odometry system on ``sam_bot`` (the robot that we built in the previous section) using Gazebo. Afterwards, we will discuss how various sources of odometry can be fused to provide a smoothed odometry using the ``robot_localization`` package. Lastly, we will also show how to publish the ``odom`` => ``base_link`` transform using ``robot_localization``."
-msgstr "In this guide, we will be looking at how to integrate our robot's odometry system with Nav2. First we will provide a brief introduction on odometry, plus the necessary messages and transforms that need to be published for Nav2 to function correctly. Next, we will show how to setup odometry with two different cases. In the first case, we will show how to setup an odometry system for a robot with already available wheel encoders. In the second case, we will build a demo that simulates a functioning odometry system on ``sam_bot`` (the robot that we built in the previous section) using Gazebo. Afterwards, we will discuss how various sources of odometry can be fused to provide a smoothed odometry using the ``robot_localization`` package. Lastly, we will also show how to publish the ``odom`` => ``base_link`` transform using ``robot_localization``."
+msgstr "在本指南中，我们将介绍如何将我们机器人的里程计系统与Nav2集成。首先，我们将简要介绍里程计，以及需要发布的消息和变换，以确保Nav2的正常运行。接下来，我们将展示如何设置两种不同情况下的里程计。在第一种情况下，我们将展示如何为已有轮式编码器的机器人设置里程计系统。在第二种情况下，我们将在Gazebo中构建一个演示，模拟使用``sam_bot``（我们在上一节中构建的机器人）的正常运行的里程计系统。然后，我们将讨论如何将各种里程计来源融合，以提供平滑的里程计，使用``robot_localization``软件包。最后，我们还将展示如何使用``robot_localization``发布``odom`` => ``base_link``的变换。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:7 ../../setup_guides/urdf/setup_urdf.rst:9
@@ -512,7 +512,7 @@ msgstr "The complete source code in this tutorial can be found in `navigation2_t
 
 #: ../../setup_guides/odom/setup_odom.rst:10
 msgid "Odometry Introduction"
-msgstr "Odometry Introduction"
+msgstr "里程计简介"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:12
@@ -522,7 +522,7 @@ msgstr "The odometry system provides a locally accurate estimate of a robot's po
 
 #: ../../setup_guides/odom/setup_odom.rst:14
 msgid "The ``odom`` frame and the transformation associated with it use a robot's odometry system to publish localization information that is continuous but becomes less accurate over time or distance (depending on the sensor modalities and drift). In spite of this, the information can still be used by the robot to navigate its immediate vicinity (e.g collision avoidance). To obtain consistently accurate odometry information over time, the ``map`` frame provides globally accurate information that is used to correct the ``odom`` frame."
-msgstr "The ``odom`` frame and the transformation associated with it use a robot's odometry system to publish localization information that is continuous but becomes less accurate over time or distance (depending on the sensor modalities and drift). In spite of this, the information can still be used by the robot to navigate its immediate vicinity (e.g collision avoidance). To obtain consistently accurate odometry information over time, the ``map`` frame provides globally accurate information that is used to correct the ``odom`` frame."
+msgstr "``odom``坐标系及其相关变换使用机器人的里程计系统发布连续但随时间或距离准确性逐渐降低的定位信息（取决于传感器模态和漂移情况）。尽管如此，机器人仍然可以使用这些信息来导航其周围的环境（例如避免碰撞）。为了获得一致准确的里程计信息，``map``坐标系提供了全局准确的信息，用于校正``odom``坐标系。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:16
@@ -532,7 +532,7 @@ msgstr "As discussed in the previous guides and in `REP 105 <https://www.ros.org
 
 #: ../../setup_guides/odom/setup_odom.rst:18
 msgid "In addition to the required ``odom`` => ``base_link`` transform, Nav2 also requires the publishing of ``nav_msgs/Odometry`` message because this message provides the velocity information of the robot. In detail, the ``nav_msgs/Odometry`` message contains the following information:"
-msgstr "In addition to the required ``odom`` => ``base_link`` transform, Nav2 also requires the publishing of ``nav_msgs/Odometry`` message because this message provides the velocity information of the robot. In detail, the ``nav_msgs/Odometry`` message contains the following information:"
+msgstr "除了必需的``odom`` => ``base_link``变换之外，Nav2还需要发布``nav_msgs/Odometry``消息，因为该消息提供了机器人的速度信息。具体而言，``nav_msgs/Odometry``消息包含以下信息："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:38
@@ -542,7 +542,7 @@ msgstr "This message tells us the estimates for the pose and velocity of the rob
 
 #: ../../setup_guides/odom/setup_odom.rst:42
 msgid "Setting Up Odometry on your Robot"
-msgstr "Setting Up Odometry on your Robot"
+msgstr "设置机器人的里程计"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:44
