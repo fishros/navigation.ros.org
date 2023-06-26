@@ -5116,7 +5116,7 @@ msgstr "是否使用基于速度缩放的前瞻距离或常数“前瞻距离（
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "min_approach_linear_velocity"
-msgstr "min_approach_linear_velocity"
+msgstr "最小接近线速度"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:122
@@ -5126,7 +5126,7 @@ msgstr "在接近目标时应用的最小速度阈值（米/秒），以确保�
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "approach_velocity_scaling_dist"
-msgstr "approach_velocity_scaling_dist"
+msgstr "接近速度缩放距离"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:133
@@ -5136,7 +5136,7 @@ msgstr "开始减速的路径剩余距离（米）。应小于代价地图宽度
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "use_collision_detection"
-msgstr "use_collision_detection"
+msgstr "使用碰撞检测"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:144
@@ -5146,7 +5146,7 @@ msgstr "是否启用碰撞检测。"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "max_allowed_time_to_collision_up_to_carrot"
-msgstr "max_allowed_time_to_collision_up_to_carrot"
+msgstr "最大允许碰撞时间（直到胡萝卜位置）"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:155
@@ -5156,27 +5156,27 @@ msgstr "当“use_collision_detection”为“true”时，向前投影速度命
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "use_regulated_linear_velocity_scaling"
-msgstr "use_regulated_linear_velocity_scaling"
+msgstr "使用规定线速度缩放"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:166
 msgid "Whether to use the regulated features for path curvature (e.g. slow on high curvature paths)."
-msgstr "Whether to use the regulated features for path curvature (e.g. slow on high curvature paths)."
+msgstr "是否使用规范化特征来计算路径曲率（例如，在高曲率路径上减速）。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "use_cost_regulated_linear_velocity_scaling"
-msgstr "use_cost_regulated_linear_velocity_scaling"
+msgstr "使用代价规定线速度缩放"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:177
 msgid "Whether to use the regulated features for proximity to obstacles (e.g. slow in close proximity to obstacles)."
-msgstr "Whether to use the regulated features for proximity to obstacles (e.g. slow in close proximity to obstacles)."
+msgstr "是否使用规范化特征来计算与障碍物的接近度（例如，在靠近障碍物时减速）。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
 msgid "regulated_linear_scaling_min_radius"
-msgstr "regulated_linear_scaling_min_radius"
+msgstr "规定线速度缩放最小半径"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:184
@@ -5186,7 +5186,7 @@ msgstr "0.90"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:188
 msgid "The turning radius (m) for which the regulation features are triggered when ``use_regulated_linear_velocity_scaling`` is ``true``. Remember, sharper turns have smaller radii."
-msgstr "The turning radius (m) for which the regulation features are triggered when ``use_regulated_linear_velocity_scaling`` is ``true``. Remember, sharper turns have smaller radii."
+msgstr "当``use_regulated_linear_velocity_scaling``为``true``时触发规则特性的转弯半径（米）。请记住，转弯越急，半径越小。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5196,7 +5196,7 @@ msgstr "regulated_linear_scaling_min_speed"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:199
 msgid "The minimum speed (m/s) for which any of the regulated heuristics can send, to ensure process is still achievable even in high cost spaces with high curvature. Must be ``> 0.1``."
-msgstr "The minimum speed (m/s) for which any of the regulated heuristics can send, to ensure process is still achievable even in high cost spaces with high curvature. Must be ``> 0.1``."
+msgstr "为了确保即使在成本高且曲率高的空间中，仍能实现过程，任何受管制的启发式算法都可以发送的最低速度（米/秒）。必须为``> 0.1``。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5206,7 +5206,7 @@ msgstr "use_fixed_curvature_lookahead"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:210
 msgid "Whether to use a fixed lookahead distance to compute curvature from. Since a lookahead distance may be set to vary on velocity, it can introduce a reference cycle that can be problematic for large lookahead distances."
-msgstr "Whether to use a fixed lookahead distance to compute curvature from. Since a lookahead distance may be set to vary on velocity, it can introduce a reference cycle that can be problematic for large lookahead distances."
+msgstr "是否使用固定的前瞻距离计算曲率。由于前瞻距离可能会根据速度的变化而设置，它可能会引入一个参考循环，对于较大的前瞻距离可能会有问题。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5216,7 +5216,7 @@ msgstr "curvature_lookahead_dist"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:221
 msgid "Distance to look ahead on the path to detect curvature."
-msgstr "Distance to look ahead on the path to detect curvature."
+msgstr "在路径上前瞻查看的距离，以检测曲率。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5226,7 +5226,7 @@ msgstr "use_rotate_to_heading"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:232
 msgid "Whether to enable rotating to rough heading and goal orientation when using holonomic planners. Recommended on for all robot types that can rotate in place."
-msgstr "Whether to enable rotating to rough heading and goal orientation when using holonomic planners. Recommended on for all robot types that can rotate in place."
+msgstr "在使用全向规划器时，是否启用旋转到粗略朝向和目标朝向。建议对所有可以原地旋转的机器人类型进行启用。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:234 ../../configuration/packages/configuring-regulated-pp.rst:247
