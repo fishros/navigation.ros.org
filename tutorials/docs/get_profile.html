@@ -274,7 +274,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#preliminaries">准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#profile-from-a-node">来自节点的配置文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#profile-from-a-launch-file">Profile from a Launch File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profile-from-a-launch-file">从启动文件中进行分析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">来自Nav2 Bringup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#interpreting-results">Interpreting Results</a></li>
 </ul>
@@ -955,12 +955,12 @@
 <div class="section" id="preliminaries">
 <h2>准备工作<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
 <p>本教程使用了两个工具，即``Valgrind``工具集中的callgrind和``kcachegrind``。Valgrind用于获取程序的分析信息，而kcachegrind则是用于解释这些信息并进行有用工作的可视化引擎。</p>
-<p>Thus, we must install them.</p>
+<p>因此，我们必须安装它们。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>valgrind<span class="w"> </span>kcachegrind
 </pre></div>
 </div>
 <p>有关更多信息，请参阅`Valgrind手册&lt;<a class="reference external" href="https://valgrind.org/docs/manual/cl-manual.html">https://valgrind.org/docs/manual/cl-manual.html</a>&gt;`_，其中包括可以用于指定更多信息的其他valgrind参数。</p>
-<p>Generally speaking, to use valgrind we need to compile with debugging information. This can be done by passing <code class="docutils literal notranslate"><span class="pre">-g</span></code> as a compiling option or compile <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> as <code class="docutils literal notranslate"><span class="pre">Debug</span></code> or <code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code>. Then, we run our program using valgrind to capture the run-time statistics for later analysis. These are stored in <code class="docutils literal notranslate"><span class="pre">callgrind.out.XXX</span></code> files, where the suffix is the PID of the process. kcachegrind is used to visualize and analyze the results of the program execution.</p>
+<p>一般而言，要使用Valgrind，我们需要在编译时加入调试信息。可以通过将``-g``作为编译选项传递或将``CMAKE_BUILD_TYPE``设置为``Debug``或``RelWithDebInfo``来完成。然后，我们使用Valgrind运行程序，以便捕获运行时统计信息以供后续分析。这些信息存储在名为``callgrind.out.XXX``的文件中，其中后缀是进程的PID。使用kcachegrind可视化和分析程序执行的结果。</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="c"># CMakeLists.txt</span>
 <span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-g</span><span class="p">)</span>
 </pre></div>
@@ -976,29 +976,29 @@ kcachegrind<span class="w"> </span>callgrind.out.XXX
 </div>
 <div class="section" id="profile-from-a-node">
 <h2>来自节点的配置文件<a class="headerlink" href="#profile-from-a-node" title="永久链接至标题"></a></h2>
-<p>As in our generic example, for a given node, we need to compile with debug flags to capture the information for profiling with Valgrind. This can be done easily from the commandline. Note that we use <code class="docutils literal notranslate"><span class="pre">--packages-select</span></code> to only compile with this flag for the packages we want to profile nodes within.</p>
+<p>与我们的通用示例一样，对于给定的节点，我们需要使用调试标志进行编译，以便捕获用于使用Valgrind进行分析的信息。这可以很容易地通过命令行完成。请注意，我们使用``--packages-select``仅对我们想要在节点内进行分析的软件包使用此标志进行编译。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>&lt;packages<span class="w"> </span>of<span class="w"> </span>interest&gt;<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo
 </pre></div>
 </div>
 <p>可选地，您可以将以下行添加到要分析的软件包的``CMakeLists.txt``中。当您有一个包含许多软件包的工作空间，但只想使用单个``colcon build``调用编译带有调试信息的子集时，这可能更可取。</p>
-<p>It is important that this should be added to both the host server and plugin packages(s) if you would like the results of a plugin's run-time profile.</p>
+<p>如果您想要插件的运行时分析结果，这一点对主机服务器和插件软件包都很重要。</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-pg</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>After either compiling method, this node should be run in its own terminal to isolate it from the rest of your system. Thus, this should not be composed in the same process as other nodes. To run a ROS 2 node with valgrind, this can be done from the commandline via:</p>
+<p>在编译完任一种方法后，应该在独立的终端中运行此节点，以使其与系统的其他部分隔离开来。因此，不应该在与其他节点相同的进程中组合使用。要使用valgrind运行ROS 2节点，可以通过以下命令行完成：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>--prefix<span class="w"> </span><span class="s1">&#39;valgrind --tool=callgrind&#39;</span><span class="w"> </span>&lt;pkg&gt;<span class="w"> </span>&lt;node&gt;<span class="w"> </span>--all-other-launch<span class="w"> </span>arguments
 </pre></div>
 </div>
-<p>An example of this might be used for profiling the controller server with a particular controller plugin loaded. Both <code class="docutils literal notranslate"><span class="pre">nav2_controller</span></code> and the plugin package of interest are compiled with debug flags. In the example below, we are running a ROS 2 node with remapped topics and a path to its parameter file:</p>
+<p>一个例子是使用特定的控制器插件加载对控制器服务器进行分析。<a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_controller``和所需的插件软件包都使用调试标志进行编译。在下面的示例中，我们正在运行一个具有重新映射主题和参数文件路径的ROS 2节点：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>--prefix<span class="w"> </span><span class="s1">&#39;valgrind --tool=callgrind&#39;</span><span class="w"> </span>nav2_controller<span class="w"> </span>controller_server<span class="w"> </span>--ros-args<span class="w"> </span>-r<span class="w"> </span>__node:<span class="o">=</span>controller_server<span class="w"> </span>-r<span class="w"> </span>cmd_vel:<span class="o">=</span>cmd_vel_nav<span class="w"> </span>--params-file<span class="w"> </span>/path/to/nav2_bringup/params/nav2_params.yaml
 </pre></div>
 </div>
-<p>Once sufficient data has been collected, cleanly exit the process with Control+C.</p>
+<p>在收集足够的数据后，使用Control+C干净地退出进程。</p>
 </div>
 <div class="section" id="profile-from-a-launch-file">
-<h2>Profile from a Launch File<a class="headerlink" href="#profile-from-a-launch-file" title="永久链接至标题"></a></h2>
-<p>Just as in the Node example, we must also compile with debug flags when profiling a node from launch. We can complete the same valgrind call as from the commandline as within a launch file using launch prefixes.</p>
-<p>As our example before, this is how we'd launch the <code class="docutils literal notranslate"><span class="pre">controller_server</span></code> node from inside a launch file.</p>
+<h2>从启动文件中进行分析<a class="headerlink" href="#profile-from-a-launch-file" title="永久链接至标题"></a></h2>
+<p>与节点示例中一样，当从launch文件对节点进行性能分析时，我们还必须使用调试标志进行编译。我们可以使用与命令行相同的valgrind调用方式，也可以在launch文件中使用launch前缀完成。</p>
+<p>与我们之前的示例一样，这是我们如何在启动文件中启动``controller_server``节点。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start_controller_server_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
     <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
       <span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;nav2_bringup&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/params/nav2_params.yaml&#39;</span><span class="p">,</span>
@@ -1011,24 +1011,24 @@ kcachegrind<span class="w"> </span>callgrind.out.XXX
     <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that just like before, we should isolate this process from others. So this should not be run with any other nodes in this launch file nor use node composition when profiling a particular node.</p>
-<p>Once sufficient data has been collected, cleanly exit the process with Control+C.</p>
+<p>请注意，与以前一样，我们应该将此进程与其他进程隔离开来。因此，在对特定节点进行性能分析时，不应该在此launch文件中与任何其他节点一起运行，也不应该使用节点组合。</p>
+<p>在收集足够的数据后，使用Control+C干净地退出进程。</p>
 </div>
 <div class="section" id="from-nav2-bringup">
 <h2>来自Nav2 Bringup<a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
-<p>Because Nav2 bringup has more than one node per launch file (and in the case <code class="docutils literal notranslate"><span class="pre">use_composition=true</span></code>, more than one per process), it is necessary to separate out a particular node that you're interested in profiling from the rest of the system. As previously described, once they're isolated in either a launch file or as a node to be launched on the commandline, they can easily be run to collect the callgrind information.</p>
-<p>The steps within Nav2 are as follows:</p>
+<p>由于Nav2的引导过程中每个启动文件都有多个节点（并且在``use_composition=true``的情况下，每个进程还有多个节点），因此需要从整个系统中分离出您感兴趣的特定节点进行性能分析。如前所述，一旦它们被隔离在启动文件或作为要在命令行上启动的节点中，就可以轻松运行它们以收集callgrind信息。</p>
+<p>在Nav2中的步骤如下：</p>
 <ul class="simple">
-<li><p>Remove server node from the <code class="docutils literal notranslate"><span class="pre">navigation_launch.py</span></code>, ensuring to remove from both composed and non-composed options within the file</p></li>
-<li><p>In a separate launch file or using <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> CLI, start up the node you'd like to profile using the instructions above</p></li>
-<li><p>Launch Nav2 as usual with the missing node</p></li>
-<li><p>Once your data has been collected, control+C and cleanly finish the profiled process and the rest of the navigation</p></li>
+<li><p>从``navigation_launch.py``中删除服务器节点，并确保从文件中的组合和非组合选项中删除该节点</p></li>
+<li><p>在单独的launch文件中或使用``ros2 run``命令行界面，按照上述说明启动要进行性能分析的节点</p></li>
+<li><p>像往常一样启动Nav2，缺少的节点会被忽略</p></li>
+<li><p>在收集完数据后，使用Control+C干净地结束正在进行性能分析的进程以及其余的导航过程</p></li>
 </ul>
-<p>It is important that the profiler node is launched before Nav2 so that it can take the signals from the lifecycle manager to transition up.</p>
+<p>重要的是在Nav2之前启动分析器节点，这样它可以接收生命周期管理器发出的信号以进行状态转换。</p>
 </div>
 <div class="section" id="interpreting-results">
 <h2>Interpreting Results<a class="headerlink" href="#interpreting-results" title="永久链接至标题"></a></h2>
-<p>Once you have your <code class="docutils literal notranslate"><span class="pre">callgrind</span></code> results, regardless of if you did it through a node, launch file, Nav2, or elsewhere, now we can analyze the results from the profiler to identify bottlenecks or potential areas of improvement. Using <code class="docutils literal notranslate"><span class="pre">kcachegrind</span></code>:</p>
+<p>一旦您获得了``callgrind``结果，无论您是通过节点、启动文件、Nav2还是其他方式进行分析，现在我们可以通过分析分析器的结果来识别性能瓶颈或潜在改进的领域。使用``kcachegrind``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kcachegrind<span class="w"> </span>callgrind.out.XXX
 </pre></div>
 </div>
@@ -1036,7 +1036,7 @@ kcachegrind<span class="w"> </span>callgrind.out.XXX
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/kcachegrind.png"><img alt="../../_images/kcachegrind.png" class="align-center" src="../../_images/kcachegrind.png" style="width: 600px; height: 450px;" /></a>
 </div></blockquote>
-<p>If you select the top level entry on the left sidebar, then select &quot;Call Graph&quot; at the bottom of the right workspace, it should show you a call graph of where the compute time was spent as a graph of method calls. This can be exceptionally helpful to find the methods where the most time is spent.</p>
+<p>如果您在左侧边栏上选择顶级条目，然后在右侧工作区的底部选择“调用图”，它将显示计算时间花费的调用图，即方法调用的图形表示。这对于找到花费最多时间的方法非常有帮助。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/call_graph.png"><img alt="../../_images/call_graph.png" class="align-center" src="../../_images/call_graph.png" style="width: 600px; height: 450px;" /></a>
 </div></blockquote>
