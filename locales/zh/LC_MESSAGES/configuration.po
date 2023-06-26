@@ -6885,7 +6885,7 @@ msgstr "32.0"
 
 #: ../../configuration/packages/dwb-params/controller.rst:196
 msgid "Scale for path align critic, overriding local default."
-msgstr "Scale for path align critic, overriding local default."
+msgstr "路径对齐批评家的缩放比例，覆盖本地默认值。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
@@ -6920,12 +6920,12 @@ msgstr "``<dwb plugin>``.GoalDist.scale"
 
 #: ../../configuration/packages/dwb-params/controller.rst:229
 msgid "Scale for goal distance critic, overriding local default."
-msgstr "Scale for goal distance critic, overriding local default."
+msgstr "目标距离评论家的缩放比例，覆盖本地默认值。"
 
 
 #: ../../configuration/packages/dwb-params/iterator.rst:4
 msgid "XYTheta Iterator"
-msgstr "XYTheta Iterator"
+msgstr "XYTheta 迭代器"
 
 
 #: ../../configuration/packages/dwb-params/iterator.rst
@@ -6935,7 +6935,7 @@ msgstr "``<dwb plugin>``.vx_samples"
 
 #: ../../configuration/packages/dwb-params/iterator.rst:20
 msgid "Number of velocity samples in the X velocity direction."
-msgstr "Number of velocity samples in the X velocity direction."
+msgstr "X 轴速度方向的速度样本数。"
 
 
 #: ../../configuration/packages/dwb-params/iterator.rst
@@ -6945,7 +6945,7 @@ msgstr "``<dwb plugin>``.vy_samples"
 
 #: ../../configuration/packages/dwb-params/iterator.rst:31
 msgid "Number of velocity samples in the Y velocity direction."
-msgstr "Number of velocity samples in the Y velocity direction."
+msgstr "Y方向速度采样数量。"
 
 
 #: ../../configuration/packages/dwb-params/iterator.rst
@@ -6955,62 +6955,62 @@ msgstr "``<dwb plugin>``.vtheta_samples"
 
 #: ../../configuration/packages/dwb-params/iterator.rst:42
 msgid "Number of velocity samples in the angular directions."
-msgstr "Number of velocity samples in the angular directions."
+msgstr "角向速度采样数量。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:4
 msgid "Kinematic Parameters"
-msgstr "Kinematic Parameters"
+msgstr "运动学参数"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
 msgid "``<dwb plugin>``.max_vel_theta"
-msgstr "``<dwb plugin>``.max_vel_theta"
+msgstr "``<dwb插件>``.max_vel_theta"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:20
 msgid "Maximum angular velocity (rad/s)."
-msgstr "Maximum angular velocity (rad/s)."
+msgstr "最大角速度（弧度/秒）。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
 msgid "``<dwb plugin>``.min_speed_xy"
-msgstr "``<dwb plugin>``.min_speed_xy"
+msgstr "``<dwb插件>``.min_speed_xy"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:31
 msgid "Minimum translational speed (m/s)."
-msgstr "Minimum translational speed (m/s)."
+msgstr "最小平移速度（米/秒）。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
 msgid "``<dwb plugin>``.max_speed_xy"
-msgstr "``<dwb plugin>``.max_speed_xy"
+msgstr "``<dwb插件>``.max_speed_xy"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:42
 msgid "Maximum translational speed (m/s)."
-msgstr "Maximum translational speed (m/s)."
+msgstr "最大平移速度 (m/s)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
 msgid "``<dwb plugin>``.min_speed_theta"
-msgstr "``<dwb plugin>``.min_speed_theta"
+msgstr "``<dwb插件>``.min_speed_theta"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:53
 msgid "Minimum angular speed (rad/s)."
-msgstr "Minimum angular speed (rad/s)."
+msgstr "最小角速度 (rad/s)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
 msgid "``<dwb plugin>``.min_vel_x"
-msgstr "``<dwb plugin>``.min_vel_x"
+msgstr "``<dwb插件>``.min_vel_x"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:64
 msgid "Minimum velocity X (m/s)."
-msgstr "Minimum velocity X (m/s)."
+msgstr "最小速度X (m/s)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7020,7 +7020,7 @@ msgstr "``<dwb plugin>``.min_vel_y"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:75
 msgid "Minimum velocity Y (m/s)."
-msgstr "Minimum velocity Y (m/s)."
+msgstr "最小速度Y (m/s)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7030,7 +7030,7 @@ msgstr "``<dwb plugin>``.max_vel_x"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:86
 msgid "Maximum velocity X (m/s)."
-msgstr "Maximum velocity X (m/s)."
+msgstr "最大速度X (m/s)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7040,7 +7040,7 @@ msgstr "``<dwb plugin>``.max_vel_y"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:97
 msgid "Maximum velocity Y (m/s)."
-msgstr "Maximum velocity Y (m/s)."
+msgstr "最大速度Y (m/s)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7050,7 +7050,7 @@ msgstr "``<dwb plugin>``.acc_lim_x"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:108
 msgid "Maximum acceleration X (m/s^2)."
-msgstr "Maximum acceleration X (m/s^2)."
+msgstr "最大加速度X (m/s^2)。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
