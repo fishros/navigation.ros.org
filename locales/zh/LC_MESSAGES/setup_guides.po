@@ -1227,142 +1227,142 @@ msgstr "我们首先启动 ``display.launch.py``，它启动机器人状态发�
 
 #: ../../setup_guides/sensors/setup_sensors.rst:438
 msgid "Then we will launch ``slam_toolbox`` to publish to ``/map`` topic and provide the ``map`` => ``odom`` transform. Recall that the ``map`` => ``odom`` transform is one of the primary requirements of the Nav2 system. The messages published on the ``/map`` topic will then be used by the static layer of the ``global_costmap``."
-msgstr "Then we will launch ``slam_toolbox`` to publish to ``/map`` topic and provide the ``map`` => ``odom`` transform. Recall that the ``map`` => ``odom`` transform is one of the primary requirements of the Nav2 system. The messages published on the ``/map`` topic will then be used by the static layer of the ``global_costmap``."
+msgstr "接下来我们将启动``slam_toolbox``，发布到``/map``话题，并提供``map`` => ``odom``的变换。请记住，``map`` => ``odom``的变换是Nav2系统的主要要求之一。在``/map``话题上发布的消息将由``global_costmap``的静态层使用。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:440
 msgid "After we have properly setup our robot description, odometry sensors, and necessary transforms, we will finally launch the Nav2 system itself. For now, we will only be exploring the costmap generation system of Nav2. After launching Nav2, we will visualize the costmaps in RViz to confirm our output."
-msgstr "After we have properly setup our robot description, odometry sensors, and necessary transforms, we will finally launch the Nav2 system itself. For now, we will only be exploring the costmap generation system of Nav2. After launching Nav2, we will visualize the costmaps in RViz to confirm our output."
+msgstr "在正确设置机器人描述、里程计传感器和必要的转换之后，我们将最终启动Nav2系统本身。目前，我们只会探索Nav2的代价地图生成系统。在启动Nav2之后，我们将在RViz中可视化代价地图，以确认我们的输出。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:443
 msgid "Launching Description Nodes, RViz and Gazebo"
-msgstr "Launching Description Nodes, RViz and Gazebo"
+msgstr "启动描述节点、RViz和Gazebo"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:445
 msgid "Let us now launch our Robot Description Nodes, RViz and Gazebo through the launch file ``display.launch.py``. Open a new terminal and execute the lines below."
-msgstr "Let us now launch our Robot Description Nodes, RViz and Gazebo through the launch file ``display.launch.py``. Open a new terminal and execute the lines below."
+msgstr "现在让我们通过启动文件“display.launch.py”启动机器人描述节点、RViz和Gazebo。打开一个新终端并执行下面的命令。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:453
 msgid "RViz and the Gazebo should now be launched with ``sam_bot`` present in both. Recall that the ``base_link`` => ``sensors`` transform is now being published by ``robot_state_publisher`` and the ``odom`` => ``base_link`` transform by our Gazebo plugins. Both transforms should now be dislpayed show without errors in RViz."
-msgstr "RViz and the Gazebo should now be launched with ``sam_bot`` present in both. Recall that the ``base_link`` => ``sensors`` transform is now being published by ``robot_state_publisher`` and the ``odom`` => ``base_link`` transform by our Gazebo plugins. Both transforms should now be dislpayed show without errors in RViz."
+msgstr "现在应该启动了RViz和Gazebo，并且``sam_bot``同时出现在两者中。请记住，``base_link`` => ``sensors``的变换现在由``robot_state_publisher``发布，而``odom`` => ``base_link``的变换由我们的Gazebo插件发布。在RViz中，这两个变换现在都应该显示正常，没有错误。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:456
 msgid "Launching slam_toolbox"
-msgstr "Launching slam_toolbox"
+msgstr "启动slam_toolbox"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:458
 msgid "To be able to launch ``slam_toolbox``, make sure that you have installed the ``slam_toolbox`` package by executing the following command:"
-msgstr "To be able to launch ``slam_toolbox``, make sure that you have installed the ``slam_toolbox`` package by executing the following command:"
+msgstr "要能够启动``slam_toolbox``，请确保您已经通过执行以下命令安装了``slam_toolbox``软件包："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:464
 msgid "We will launch the ``async_slam_toolbox_node`` of ``slam_toolbox`` using the package's built-in launch files. Open a new terminal and then execute the following lines:"
-msgstr "We will launch the ``async_slam_toolbox_node`` of ``slam_toolbox`` using the package's built-in launch files. Open a new terminal and then execute the following lines:"
+msgstr "我们将使用该软件包内置的启动文件启动``slam_toolbox``的``async_slam_toolbox_node``。打开一个新终端，然后执行以下命令："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:470
 msgid "The ``slam_toolbox`` should now be publishing to the ``/map`` topic and providing the ``map`` => ``odom`` transform."
-msgstr "The ``slam_toolbox`` should now be publishing to the ``/map`` topic and providing the ``map`` => ``odom`` transform."
+msgstr "``slam_toolbox``现在应该正在发布到``/map``话题并提供``map`` => ``odom``的变换。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:472
 msgid "We can verify in RViz that the ``/map`` topic is being published. In the RViz window, click the add button at the bottom-left part then go to ``By topic`` tab then select the ``Map`` under the ``/map`` topic. You should be able to visualize the message received in the ``/map`` as shown in the image below."
-msgstr "We can verify in RViz that the ``/map`` topic is being published. In the RViz window, click the add button at the bottom-left part then go to ``By topic`` tab then select the ``Map`` under the ``/map`` topic. You should be able to visualize the message received in the ``/map`` as shown in the image below."
+msgstr "我们可以在RViz中验证``/map``主题是否正在发布。在RViz窗口中，点击左下角的添加按钮，然后转到“按主题”选项卡，选择``/map``主题下的``Map``。您应该能够在下面的图像中可视化接收到的``/map``消息。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:477
 msgid "We can also check that the transforms are correct by executing the following lines in a new terminal:"
-msgstr "We can also check that the transforms are correct by executing the following lines in a new terminal:"
+msgstr "我们还可以通过在新终端中执行以下命令来检查变换是否正确："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:483
 msgid "Note: For Galactic and newer, it should be ``view_frames`` and not ``view_frames.py`` The line above will create a ``frames.pdf`` file that shows the current transform tree. Your tranform tree should be similar to the one shown below:"
-msgstr "Note: For Galactic and newer, it should be ``view_frames`` and not ``view_frames.py`` The line above will create a ``frames.pdf`` file that shows the current transform tree. Your tranform tree should be similar to the one shown below:"
+msgstr "注意：对于Galactic及更新版本，应为``view_frames``而不是``view_frames.py``。上面的命令将创建一个显示当前变换树的``frames.pdf``文件。您的变换树应该类似于下面显示的树："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:490
 msgid "Launching Nav2"
-msgstr "Launching Nav2"
+msgstr "启动Nav2"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:491
 msgid "First, Make sure you have installed the Nav2 packages by executing the following:"
-msgstr "First, Make sure you have installed the Nav2 packages by executing the following:"
+msgstr "首先，确保您已经安装了Nav2软件包，执行以下命令："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:498
 msgid "We will now launch Nav2 using the ``nav2_bringup``'s built-in launch file, ``navigation_launch.py`` . Open a new terminal and execute the following:"
-msgstr "We will now launch Nav2 using the ``nav2_bringup``'s built-in launch file, ``navigation_launch.py`` . Open a new terminal and execute the following:"
+msgstr "我们将使用``nav2_bringup``的内置launch文件``navigation_launch.py``来启动Nav2。打开一个新的终端并执行以下命令："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:504
 msgid "Note that the parameters of the ``nav2_costmap_2d`` that we discussed in the previous subsection are included in the default parameters of ``navigation_launch.py``. Aside from the ``nav2_costmap_2d`` parameters, it also contains parameters for the other nodes that are included in Nav2 implementation."
-msgstr "Note that the parameters of the ``nav2_costmap_2d`` that we discussed in the previous subsection are included in the default parameters of ``navigation_launch.py``. Aside from the ``nav2_costmap_2d`` parameters, it also contains parameters for the other nodes that are included in Nav2 implementation."
+msgstr "请注意，在前一小节中讨论的``nav2_costmap_2d``的参数已包含在``navigation_launch.py``的默认参数中。除了``nav2_costmap_2d``参数外，它还包含了Nav2实现中其他节点的参数。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:506
 msgid "After we have properly set up and launched Nav2, the ``/global_costmap`` and ``/local_costmap`` topics should now be active."
-msgstr "After we have properly set up and launched Nav2, the ``/global_costmap`` and ``/local_costmap`` topics should now be active."
+msgstr "在我们正确设置和启动Nav2之后，``/global_costmap``和``/local_costmap``话题现在应该是活动的。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:509
 msgid "To make the costmaps show up, run the 3 commands in this order"
-msgstr "To make the costmaps show up, run the 3 commands in this order"
+msgstr "要显示成本地图，请按以下顺序运行这3个命令："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:511
 msgid "Launching Description Nodes, RViz and Gazebo - in logs wait for \"Connected to gazebo master\""
-msgstr "Launching Description Nodes, RViz and Gazebo - in logs wait for \"Connected to gazebo master\""
+msgstr "启动Description节点、RViz和Gazebo-在日志中等待\"Connected to gazebo master\""
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:512
 msgid "Launching slam_toolbox - in logs wait for \"Registering sensor\""
-msgstr "Launching slam_toolbox - in logs wait for \"Registering sensor\""
+msgstr "启动 slam_toolbox - 在日志中等待\"Registering sensor\""
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:513
 msgid "Launching Nav2 - in logs wait for \"Creating bond timer\""
-msgstr "Launching Nav2 - in logs wait for \"Creating bond timer\""
+msgstr "启动Nav2-在日志中等待\"Creating bond timer\""
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:516
 msgid "Visualizing Costmaps in RViz"
-msgstr "Visualizing Costmaps in RViz"
+msgstr "在RViz中可视化成本地图"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:518
 msgid "The ``global_costmap``, ``local_costmap`` and the voxel representation of the detected obstacles can be visualized in RViz."
-msgstr "The ``global_costmap``, ``local_costmap`` and the voxel representation of the detected obstacles can be visualized in RViz."
+msgstr "可以在RViz中可视化``global_costmap``、``local_costmap``和检测到的障碍物的体素表示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:520
 msgid "To visualize the ``global_costmap`` in RViz, click the add button at the bottom-left part of the RViz window. Go to ``By topic`` tab then select the ``Map`` under the ``/global_costmap/costmap`` topic. The ``global_costmap`` should show in the RViz window, as shown below. The ``global_costmap`` shows areas which should be avoided (black) by our robot when it navigates our simulated world in Gazebo."
-msgstr "To visualize the ``global_costmap`` in RViz, click the add button at the bottom-left part of the RViz window. Go to ``By topic`` tab then select the ``Map`` under the ``/global_costmap/costmap`` topic. The ``global_costmap`` should show in the RViz window, as shown below. The ``global_costmap`` shows areas which should be avoided (black) by our robot when it navigates our simulated world in Gazebo."
+msgstr "要在RViz中可视化``global_costmap``，请单击RViz窗口左下角的添加按钮。转到``By topic``选项卡，然后在``/global_costmap/costmap``主题下选择``Map``。``global_costmap``应显示在RViz窗口中，如下所示。``global_costmap``显示了我们的机器人在Gazebo中导航我们的模拟世界时应避免的区域（黑色）。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:525
 msgid "To visualize the ``local_costmap`` in RViz, select the ``Map`` under the ``/local_costmap/costmap`` topic. Set the ``color scheme`` in RViz to ``costmap`` to make it appear similar to the image below."
-msgstr "To visualize the ``local_costmap`` in RViz, select the ``Map`` under the ``/local_costmap/costmap`` topic. Set the ``color scheme`` in RViz to ``costmap`` to make it appear similar to the image below."
+msgstr "要在RViz中可视化``local_costmap``，请在``/local_costmap/costmap``话题下选择``Map``。在RViz中将``color scheme``设置为``costmap``，使其与下面的图像类似。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:530
 msgid "To visualize the voxel representation of the detected object, open a new terminal and execute the following lines:"
-msgstr "To visualize the voxel representation of the detected object, open a new terminal and execute the following lines:"
+msgstr "要在RViz中可视化检测到的对象的体素表示，请打开一个新终端并执行以下命令："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:536
 msgid "The line above sets the topic where the the markers will be published to ``/my_marker``. To see the markers in RViz, select ``Marker`` under the ``/my_marker`` topic, as shown below."
-msgstr "The line above sets the topic where the the markers will be published to ``/my_marker``. To see the markers in RViz, select ``Marker`` under the ``/my_marker`` topic, as shown below."
+msgstr "上面的行设置了将标记发布到``/my_marker``话题。要在RViz中查看标记，请在``/my_marker``话题下选择``Marker``，如下图所示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:542
 msgid "Then set the ``fixed frame`` in RViz to ``odom`` and you should now see the voxels in RViz, which represent the cube and the sphere that we have in the Gazebo world:"
-msgstr "Then set the ``fixed frame`` in RViz to ``odom`` and you should now see the voxels in RViz, which represent the cube and the sphere that we have in the Gazebo world:"
+msgstr "然后将RViz中的``fixed frame``设置为``odom``，您现在应该在RViz中看到表示Gazebo世界中的立方体和球体的体素："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:550
