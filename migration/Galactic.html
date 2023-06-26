@@ -812,10 +812,10 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Galactic转换为Humble</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#major-improvements-to-smac-planners">对Smac规划器进行了重大改进</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simple-python-commander">Simple (Python) Commander</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reduce-nodes-and-executors">Reduce Nodes and Executors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#api-change-for-nav2-core">API Change for nav2_core</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#extending-the-btservicenode-to-process-service-results">Extending the BtServiceNode to process Service-Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-python-commander">简单（Python）指令器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reduce-nodes-and-executors">减少节点和执行器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-change-for-nav2-core">nav2_core的API更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extending-the-btservicenode-to-process-service-results">扩展BtServiceNode以处理服务结果</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#including-new-rotation-shim-controller-plugin">Including new Rotation Shim Controller Plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spawning-the-robot-in-gazebo">Spawning the robot in Gazebo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#recovery-behavior-timeout">Recovery Behavior Timeout</a></li>
@@ -976,17 +976,17 @@
 <dt>这些改进的要点是：</dt><dd><ul class="simple">
 <li><p>规划速度比以前快2-3倍，在几乎所有情况下都在200毫秒以下，使其与NavFn和全局规划器一样快（但现在是运动学可行的）。典型的规划时间在不使用缓存或降采样功能的情况下都在100毫秒以下。</p></li>
 <li><p>通过改进的平滑器和一种新颖的启发式算法，路径质量显著提高，使机器人在可能的情况下朝向通道中心。这样可以生成更平滑、尽可能远离障碍物的路径。</p></li>
-<li><p>Using caching or downsampler parameterizations, can easily achieve path planning with sub-50ms in nearly any sized space.</p></li>
+<li><p>使用缓存或降采样参数化，几乎可以在任何大小的空间中实现低于50毫秒的路径规划。</p></li>
 <li><p>平滑器现在可以进行更多的细化操作，即使在倒车时也可以创建运动学上可行的边界条件。</p></li>
 </ul>
 </dd>
 </dl>
-<p>Additional improvements were made to include a <code class="docutils literal notranslate"><span class="pre">analytic_expansion_max_length</span></code> parameter such that analytic expansions are limited in their potential length. If the length is too far, reject this expansion. This prevents unsafe shortcutting of paths into higher cost areas far out from the goal itself, let search to the work of getting close before the analytic expansion brings it home. This should never be smaller than 4-5x the minimum turning radius being used, or planning times will begin to spike.</p>
+<p>还进行了其他改进，包括``analytic_expansion_max_length``参数的引入，限制了解析扩展的潜在长度。如果长度太长，则拒绝此扩展。这样可以防止将路径不安全地捷径到离目标远的高成本区域，让搜索工作在解析扩展接近目标之前完成。此参数的值不应小于使用的最小转弯半径的4-5倍，否则规划时间将开始急剧增加。</p>
 <p>此外，遍历成本和启发式成本计算已经更新**，如果您之前有现有配置，则需要重新调整惩罚函数**。算法的默认设置也相应调整以适应这一变化，以实现类似以前的开箱即用行为（作为参考使用）。</p>
 </div>
 <div class="section" id="simple-python-commander">
-<h2>Simple (Python) Commander<a class="headerlink" href="#simple-python-commander" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2411">This PR 2411</a> introduces a new package to Nav2, called the <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code>. It is a set of functions in an object, <code class="docutils literal notranslate"><span class="pre">BasicNavigator</span></code>, which can be used to build Nav2-powered autonomy tasks in Python3 without concerning yourself with the Nav2, ROS 2, or Action server details. It contains a simple API taking common types (primarily <code class="docutils literal notranslate"><span class="pre">PoseStamped</span></code>) and handles all of the implementation details behind the hood. For example, this is a simple navigation task using this API:</p>
+<h2>简单（Python）指令器<a class="headerlink" href="#simple-python-commander" title="永久链接至标题"></a></h2>
+<p><cite>This PR 2411 &lt;https://github.com/ros-planning/navigation2/pull/2411&gt;`_引入了一个新的包到Nav2，称为``nav2_simple_commander`</cite>。它是一个在对象中的一组函数，<code class="docutils literal notranslate"><span class="pre">BasicNavigator</span></code>，可以用于在Python3中构建使用Nav2驱动的自主任务，而不必关心Nav2、ROS 2或Action服务器的详细信息。它包含一个简单的API，接受常见的类型（主要是``PoseStamped``），并处理所有在幕后的实现细节。例如，这是一个使用这个API的简单导航任务：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">navigator</span> <span class="o">=</span> <span class="n">BasicNavigator</span><span class="p">()</span>
@@ -1021,40 +1021,40 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Goal failed!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">The full API can be found in the README of the package</a>. A number of well commented examples and demos can also be found in the package's source code at the link prior.</p>
+<p>完整的API可以在软件包的README中找到：&lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander</a>&gt;。还可以在软件包的源代码中找到一些有详细注释的示例和演示：&lt;<a class="reference external" href="https://github.com/ros-planning/navigation2">https://github.com/ros-planning/navigation2</a>&gt;。</p>
 </div>
 <div class="section" id="reduce-nodes-and-executors">
-<h2>Reduce Nodes and Executors<a class="headerlink" href="#reduce-nodes-and-executors" title="永久链接至标题"></a></h2>
-<p>In order for nav2 to make the best use of ROS 2, we need minimize the number of nodes and executors in nav2, which can improve performance.</p>
-<p>This functionality has been discussed in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/816">the ticket #816</a>, and carried out in</p>
+<h2>减少节点和执行器<a class="headerlink" href="#reduce-nodes-and-executors" title="永久链接至标题"></a></h2>
+<p>为了使nav2充分利用ROS 2，我们需要尽量减少nav2中的节点和执行器数量，以提高性能。</p>
+<p>这个功能在`票号816 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/816">https://github.com/ros-planning/navigation2/issues/816</a>&gt;`_中讨论过，并在</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">client_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">WaypointFollower</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2441">PR2441</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">MapSaver</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2454">PR2454</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">bond_client_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleManager</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2456">PR2456</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleManagerClient</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2469">PR2469</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ControllerServer</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2479">PR2479</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">PlannerServer</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2480">PR2480</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">AmclNode</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2483">PR2483</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> and <code class="docutils literal notranslate"><span class="pre">clinet_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Costmap2DROS</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2489">PR2489</a></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">rclcpp_node_</span></code> in <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">LifecycleNode</span></code> : <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2993">PR2993</a></p></li>
+<li><p>在``WaypointFollower``类中删除``client_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2441">PR2441</a></p></li>
+<li><p>删除``class MapSaver``中的``rclcpp_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2454">PR2454</a></p></li>
+<li><p>在``LifecycleManager``类中删除``bond_client_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2456">PR2456</a></p></li>
+<li><p>删除``class LifecycleManagerClient``中的``node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2469">PR2469</a></p></li>
+<li><p>在``class ControllerServer``中移除``rclcpp_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>，<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2479">PR2479</a></p></li>
+<li><p>删除``class PlannerServer``中的``rclcpp_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2459">PR2459</a>，<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2480">PR2480</a></p></li>
+<li><p>在``class AmclNode``中移除``rclcpp_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2483">PR2483</a></p></li>
+<li><p>删除``class Costmap2DROS``中的``rclcpp_node_``和``client_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2489">PR2489</a></p></li>
+<li><p>在``class LifecycleNode``中移除``rclcpp_node_``：<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2993">PR2993</a></p></li>
 </ul>
 </div></blockquote>
 <dl class="simple">
 <dt>some APIs are changed in these PRs:</dt><dd><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2489">PR2489</a> removes arguments <code class="docutils literal notranslate"><span class="pre">client_node</span></code>, <code class="docutils literal notranslate"><span class="pre">rclcpp_node</span></code> and adds argument <code class="docutils literal notranslate"><span class="pre">callback_group</span></code> in the initialize function of class <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::Layer</span></code>. <code class="docutils literal notranslate"><span class="pre">callback_group</span></code> is used to replace <code class="docutils literal notranslate"><span class="pre">rclcpp_node</span></code>.</p></li>
+<li><p><cite>PR2489 &lt;https://github.com/ros-planning/navigation2/pull/2489&gt;`_在``nav2_costmap_2d::Layer``类的初始化函数中移除了参数``client_node`</cite>、<code class="docutils literal notranslate"><span class="pre">rclcpp_node``并添加了参数``callback_group</span></code>。<code class="docutils literal notranslate"><span class="pre">callback_group``用于替代``rclcpp_node</span></code>。</p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2993">PR2993</a> removes argument <code class="docutils literal notranslate"><span class="pre">use_rclcpp_node</span> <span class="pre">``</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">constructor</span> <span class="pre">of</span> <span class="pre">class</span> <span class="pre">``nav2_util::LifecycleNode</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="api-change-for-nav2-core">
-<h2>API Change for nav2_core<a class="headerlink" href="#api-change-for-nav2-core" title="永久链接至标题"></a></h2>
+<h2>nav2_core的API更改<a class="headerlink" href="#api-change-for-nav2-core" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2976">PR 2976</a> changes the API for <code class="docutils literal notranslate"><span class="pre">nav2_core::Controller</span></code> and <code class="docutils literal notranslate"><span class="pre">nav2_core::Smoother</span></code> by replacing the use of shared pointer references <code class="docutils literal notranslate"><span class="pre">(const</span> <span class="pre">shared_ptr&lt;&gt;</span> <span class="pre">&amp;)</span></code> to shared pointers <code class="docutils literal notranslate"><span class="pre">(shared_ptr&lt;&gt;)</span></code>.
 Use of shared pointer references meant that the shared pointer counter was never incremented.</p>
 </div>
 <div class="section" id="extending-the-btservicenode-to-process-service-results">
-<h2>Extending the BtServiceNode to process Service-Results<a class="headerlink" href="#extending-the-btservicenode-to-process-service-results" title="永久链接至标题"></a></h2>
+<h2>扩展BtServiceNode以处理服务结果<a class="headerlink" href="#extending-the-btservicenode-to-process-service-results" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2481">This PR 2481</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2992">PR 2992</a>  address <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2467">the ticket</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2968">this ticket</a> and adds a virtual <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> function to the <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> class (<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp">can be found here</a>).
 Similar to the already existing virtual <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> function, it can be overwritten in the child class to react to a respective event with some user-defined operation.
 The added <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> function will be called after the service interaction of the <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> has been successfully completed.</p>
@@ -1070,8 +1070,7 @@ The added <code class="docutils literal notranslate"><span class="pre">on_comple
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The returned <code class="docutils literal notranslate"><span class="pre">BT::NodeStatus</span></code> will set the current status of the BT-Node. Since the function has access to the results of the service, the returned node-status can depend on those service results, for example.
-The normal behavior of the <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> is not affected by introducing the <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> function, since the the default implementation still simply returns <code class="docutils literal notranslate"><span class="pre">BT::NodeStatus::SUCCESS</span></code>, if the service interaction completed successfully.</p>
+<p>返回的``BT::NodeStatus``将设置BT节点的当前状态。由于函数可以访问服务的结果，因此返回的节点状态可以依赖于这些服务结果。引入``on_completion()``函数不会影响``BtServiceNode``的正常行为，因为默认实现仍然在服务交互成功完成时简单地返回``BT::NodeStatus::SUCCESS``。</p>
 </div>
 <div class="section" id="including-new-rotation-shim-controller-plugin">
 <h2>Including new Rotation Shim Controller Plugin<a class="headerlink" href="#including-new-rotation-shim-controller-plugin" title="永久链接至标题"></a></h2>
