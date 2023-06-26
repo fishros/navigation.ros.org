@@ -7130,7 +7130,7 @@ msgstr "是否发布全局路径规划结果。"
 
 #: ../../configuration/packages/dwb-params/visualization.rst
 msgid "``<dwb plugin>``.publish_transformed_plan"
-msgstr "``<dwb plugin>``.publish_transformed_plan"
+msgstr "``<dwb插件>``.publish_transformed_plan"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst:42
@@ -7140,7 +7140,7 @@ msgstr "是否在里程计坐标系中发布全局路径规划结果。"
 
 #: ../../configuration/packages/dwb-params/visualization.rst
 msgid "``<dwb plugin>``.publish_local_plan"
-msgstr "``<dwb plugin>``.publish_local_plan"
+msgstr "``<dwb插件>``.publish_local_plan"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst:53
@@ -7150,32 +7150,32 @@ msgstr "是否发布局部路径规划器的规划结果。"
 
 #: ../../configuration/packages/dwb-params/visualization.rst
 msgid "``<dwb plugin>``.publish_trajectories"
-msgstr "``<dwb plugin>``.publish_trajectories"
+msgstr "``<dwb插件>``.publish_trajectories"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst:64
 msgid "Whether to publish debug trajectories."
-msgstr "Whether to publish debug trajectories."
+msgstr "是否发布调试轨迹。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
 msgid "``<dwb plugin>``.publish_cost_grid_pc"
-msgstr "``<dwb plugin>``.publish_cost_grid_pc"
+msgstr "``<dwb插件>``.publish_cost_grid_pc"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst:75
 msgid "Whether to publish the cost grid."
-msgstr "Whether to publish the cost grid."
+msgstr "是否发布成本网格。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
 msgid "``<dwb plugin>``.marker_lifetime"
-msgstr "``<dwb plugin>``.marker_lifetime"
+msgstr "``<dwb插件>``.marker_lifetime"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst:86
 msgid "How long for the marker to remain."
-msgstr "How long for the marker to remain."
+msgstr "标记保留的时间长度。"
 
 
 #: ../../configuration/packages/dwb-plugins/limited_accel_generator.rst:4
@@ -7185,7 +7185,7 @@ msgstr "LimitedAccelGenerator"
 
 #: ../../configuration/packages/dwb-plugins/limited_accel_generator.rst ../../configuration/packages/dwb-plugins/standard_traj_generator.rst
 msgid "``<dwb plugin>``.sim_time"
-msgstr "``<dwb plugin>``.sim_time"
+msgstr "``<dwb插件>``.sim_time"
 
 
 #: ../../configuration/packages/dwb-plugins/limited_accel_generator.rst:16 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:16
@@ -7195,62 +7195,62 @@ msgstr "1.7"
 
 #: ../../configuration/packages/dwb-plugins/limited_accel_generator.rst:20 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:20
 msgid "Time to simulate ahead by (s)."
-msgstr "Time to simulate ahead by (s)."
+msgstr "提前模拟的时间（秒）。"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:4
 msgid "StandardTrajectoryGenerator"
-msgstr "StandardTrajectoryGenerator"
+msgstr "StandardTrajectoryGenerator（标准轨迹生成器）"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst
 msgid "``<dwb plugin>``.discretize_by_time"
-msgstr "``<dwb plugin>``.discretize_by_time"
+msgstr "``<dwb插件>``.discretize_by_time"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:31
 msgid "If true, forward simulate by time. If False, forward simulate by linear and angular granularity."
-msgstr "If true, forward simulate by time. If False, forward simulate by linear and angular granularity."
+msgstr "如果为True，则通过时间进行正向模拟。如果为False，则通过线性和角度粒度进行正向模拟。"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst
 msgid "``<dwb plugin>``.time_granularity"
-msgstr "``<dwb plugin>``.time_granularity"
+msgstr "``<dwb插件>``.time_granularity"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:42
 msgid "Time ahead to project."
-msgstr "Time ahead to project."
+msgstr "向前投影的时间。"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst
 msgid "``<dwb plugin>``.linear_granularity"
-msgstr "``<dwb plugin>``.linear_granularity"
+msgstr "``<dwb插件>``.线性粒度"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:53
 msgid "Linear distance forward to project."
-msgstr "Linear distance forward to project."
+msgstr "向前投影的线性距离。"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst
 msgid "``<dwb plugin>``.angular_granularity"
-msgstr "``<dwb plugin>``.angular_granularity"
+msgstr "``<dwb插件>``.角度粒度"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:64
 msgid "Angular distance to project."
-msgstr "Angular distance to project."
+msgstr "向前投影的角度距离。"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst
 msgid "``<dwb plugin>``.include_last_point"
-msgstr "``<dwb plugin>``.include_last_point"
+msgstr "``<dwb插件>``.包括最后一个点"
 
 
 #: ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:75
 msgid "Whether to include the last pose in the trajectory."
-msgstr "Whether to include the last pose in the trajectory."
+msgstr "是否在轨迹中包括最后一个姿态。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:4
@@ -7260,12 +7260,12 @@ msgstr "PoseProgressChecker"
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:6
 msgid "Checks whether the robot has made progress based on translation and rotation."
-msgstr "Checks whether the robot has made progress based on translation and rotation."
+msgstr "根据平移和旋转检查机器人是否有进展。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:11 ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:11
 msgid "``<nav2_controller plugin>``: nav2_controller plugin name defined in the **progress_checker_plugin_id** parameter in :ref:`configuring_controller_server`."
-msgstr "``<nav2_controller plugin>``: nav2_controller plugin name defined in the **progress_checker_plugin_id** parameter in :ref:`configuring_controller_server`."
+msgstr "``<nav2_controller插件>``: 在:ref:`configuring_controller_server`中的**progress_checker_plugin_id**参数中定义的nav2_controller插件名称。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst
@@ -7275,7 +7275,7 @@ msgstr "``<nav2_controller plugin>``.required_movement_radius"
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:22 ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:22
 msgid "Minimum amount a robot must move to be progressing to goal (m)."
-msgstr "Minimum amount a robot must move to be progressing to goal (m)."
+msgstr "机器人必须移动的最小距离才能向目标前进（米）。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst
@@ -7285,7 +7285,7 @@ msgstr "``<nav2_controller plugin>``.required_movement_angle"
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:33
 msgid "Minimum amount a robot must rotate to be progressing to goal (rad)."
-msgstr "Minimum amount a robot must rotate to be progressing to goal (rad)."
+msgstr "机器人必须旋转的最小角度才能向目标前进（弧度）。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst
