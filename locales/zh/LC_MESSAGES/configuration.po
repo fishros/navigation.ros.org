@@ -5021,7 +5021,7 @@ msgstr "如果您使用了此存储库中的规定纯追踪控制器算法或软
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:20
 msgid "Macenski, S. Singh, F. Martin, J. Gines, `Regulated Pure Pursuit for Robot Path Tracking <https://arxiv.org/abs/2305.20026>`_. Autonomous Robots, 2023."
-msgstr "Macenski, S. Singh, F. Martin, J. Gines, `Regulated Pure Pursuit for Robot Path Tracking <https://arxiv.org/abs/2305.20026>`_. Autonomous Robots, 2023."
+msgstr "Macenski, S. Singh, F. Martin, J. Gines, `机器人路径跟踪的调控纯追踪方法 <https://arxiv.org/abs/2305.20026>`_. 自主机器人, 2023."
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:23
@@ -5051,7 +5051,7 @@ msgstr "0.6"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:45
 msgid "The lookahead distance (m) to use to find the lookahead point when ``use_velocity_scaled_lookahead_dist`` is ``false``."
-msgstr "The lookahead distance (m) to use to find the lookahead point when ``use_velocity_scaled_lookahead_dist`` is ``false``."
+msgstr "当 ``use_velocity_scaled_lookahead_dist`` 为 ``false`` 时，用于寻找前瞻点的前瞻距离（米）。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5061,7 +5061,7 @@ msgstr "min_lookahead_dist"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:56
 msgid "The minimum lookahead distance (m) threshold when ``use_velocity_scaled_lookahead_dist`` is ``true``."
-msgstr "The minimum lookahead distance (m) threshold when ``use_velocity_scaled_lookahead_dist`` is ``true``."
+msgstr "当 ``use_velocity_scaled_lookahead_dist`` 为 ``true`` 时，最小前瞻距离（米）阈值。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5071,7 +5071,7 @@ msgstr "max_lookahead_dist"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:67
 msgid "The maximum lookahead distance (m) threshold when ``use_velocity_scaled_lookahead_dist`` is ``true``."
-msgstr "The maximum lookahead distance (m) threshold when ``use_velocity_scaled_lookahead_dist`` is ``true``."
+msgstr "当 ``use_velocity_scaled_lookahead_dist`` 为 ``true`` 时，最大前瞻距离（米）阈值。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5081,7 +5081,7 @@ msgstr "lookahead_time"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:78
 msgid "The time (s) to project the velocity by when ``use_velocity_scaled_lookahead_dist`` is ``true``. Also known as the lookahead gain."
-msgstr "The time (s) to project the velocity by when ``use_velocity_scaled_lookahead_dist`` is ``true``. Also known as the lookahead gain."
+msgstr "当 ``use_velocity_scaled_lookahead_dist`` 为 ``true`` 时，将速度投影的时间（秒）。也称为前瞻增益。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst ../../configuration/packages/configuring-rotation-shim-controller.rst
@@ -5096,12 +5096,12 @@ msgstr "1.8"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:89
 msgid "If ``use_rotate_to_heading`` is ``true``, this is the angular velocity to use."
-msgstr "If ``use_rotate_to_heading`` is ``true``, this is the angular velocity to use."
+msgstr "如果“use_rotate_to_heading”为“true”，则使用此角速度。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:100
 msgid "The TF transform tolerance (s)."
-msgstr "The TF transform tolerance (s)."
+msgstr "TF变换容差（秒）。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5111,7 +5111,7 @@ msgstr "use_velocity_scaled_lookahead_dist"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:111
 msgid "Whether to use the velocity scaled lookahead distances or constant ``lookahead_distance``."
-msgstr "Whether to use the velocity scaled lookahead distances or constant ``lookahead_distance``."
+msgstr "是否使用基于速度缩放的前瞻距离或常数“前瞻距离（lookahead_distance）”。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5121,7 +5121,7 @@ msgstr "min_approach_linear_velocity"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:122
 msgid "The minimum velocity (m/s) threshold to apply when approaching the goal to ensure progress. Must be ``> 0.01``."
-msgstr "The minimum velocity (m/s) threshold to apply when approaching the goal to ensure progress. Must be ``> 0.01``."
+msgstr "在接近目标时应用的最小速度阈值（米/秒），以确保进展。必须为“> 0.01”。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5131,7 +5131,7 @@ msgstr "approach_velocity_scaling_dist"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:133
 msgid "The distance (m) left on the path at which to start slowing down. Should be less than the half the costmap width."
-msgstr "The distance (m) left on the path at which to start slowing down. Should be less than the half the costmap width."
+msgstr "开始减速的路径剩余距离（米）。应小于代价地图宽度的一半。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5141,7 +5141,7 @@ msgstr "use_collision_detection"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:144
 msgid "Whether to enable collision detection."
-msgstr "Whether to enable collision detection."
+msgstr "是否启用碰撞检测。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5151,7 +5151,7 @@ msgstr "max_allowed_time_to_collision_up_to_carrot"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:155
 msgid "The time (s) to project a velocity command forward to check for collisions when ``use_collision_detection`` is ``true``. Pre-``Humble``, this was ``max_allowed_time_to_collision``."
-msgstr "The time (s) to project a velocity command forward to check for collisions when ``use_collision_detection`` is ``true``. Pre-``Humble``, this was ``max_allowed_time_to_collision``."
+msgstr "当“use_collision_detection”为“true”时，向前投影速度命令以检查碰撞的时间（秒）。在“Humble”之前，这是“max_allowed_time_to_collision”。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
