@@ -812,7 +812,7 @@ msgstr "新的 ClearCostmapExceptRegion 和 ClearCostmapAroundRobot BT 节点"
 
 #: ../../migration/Foxy.rst:254
 msgid "The ClearEntireCostmap action node was already implemented but the ClearCostmapExceptRegion and ClearCostmapAroundRobot BT nodes calling the sister services ``(local_or_global)_costmap/clear_except_(local_or_global)_costmap`` and ``clear_around_(local_or_global)_costmap`` of Costmap 2D were missing, they are now implemented in a similar way. They both expose a ``reset_distance`` input port. See :ref:`bt_clear_costmap_except_region_action` and :ref:`bt_clear_entire_costmap_around_robot_action` for more.  The changes were introduced in this `pull request 2204 <https://github.com/ros-planning/navigation2/pull/2204>`_."
-msgstr "The ClearEntireCostmap action node was already implemented but the ClearCostmapExceptRegion and ClearCostmapAroundRobot BT nodes calling the sister services ``(local_or_global)_costmap/clear_except_(local_or_global)_costmap`` and ``clear_around_(local_or_global)_costmap`` of Costmap 2D were missing, they are now implemented in a similar way. They both expose a ``reset_distance`` input port. See :ref:`bt_clear_costmap_except_region_action` and :ref:`bt_clear_entire_costmap_around_robot_action` for more.  The changes were introduced in this `pull request 2204 <https://github.com/ros-planning/navigation2/pull/2204>`_."
+msgstr "已经实现了ClearEntireCostmap动作节点，但是调用Costmap 2D的ClearCostmapExceptRegion和ClearCostmapAroundRobot BT节点的姐妹服务(local_or_global)_costmap/clear_except_(local_or_global)_costmap和clear_around_(local_or_global)_costmap缺失，现在以类似的方式实现了它们。它们都暴露了一个reset_distance输入端口。有关更多信息，请参阅bt_clear_costmap_except_region_action和bt_clear_entire_costmap_around_robot_action。这些更改已经在此pull request 2204中引入。"
 
 
 #: ../../migration/Foxy.rst:257
@@ -822,7 +822,7 @@ msgstr "新的行为树节点"
 
 #: ../../migration/Foxy.rst:258
 msgid "A new behavior tree node was added and dynamically loadable at run-time using behavior tree cpp v3. See ``nav2_behavior_tree`` for a full listing, or :ref:`plugins` for the current list of behavior tree plugins and their descriptions. These plugins are set as default in the ``nav2_bt_navigator`` but may be overridden by the ``bt_plugins`` parameter to include your specific plugins."
-msgstr "A new behavior tree node was added and dynamically loadable at run-time using behavior tree cpp v3. See ``nav2_behavior_tree`` for a full listing, or :ref:`plugins` for the current list of behavior tree plugins and their descriptions. These plugins are set as default in the ``nav2_bt_navigator`` but may be overridden by the ``bt_plugins`` parameter to include your specific plugins."
+msgstr "新增了一个行为树节点，可以在运行时使用行为树cpp v3进行动态加载。请参阅nav2_behavior_tree以获取完整列表，或参阅插件以获取当前行为树插件列表及其描述。这些插件在nav2_bt_navigator中被设置为默认值，但可以通过bt_plugins参数进行覆盖，以包括您特定的插件。"
 
 
 #: ../../migration/Foxy.rst:264
@@ -862,7 +862,7 @@ msgstr "`ComputePathThroughPoses <https://github.com/ros-planning/navigation2/pu
 
 #: ../../migration/Foxy.rst:272
 msgid "Additionally, behavior tree nodes were modified to contain their own local executors to spin for actions, topics, services, etc to ensure that each behavior tree node is independent of each other (e.g. spinning in one BT node doesn't trigger a callback in another)."
-msgstr "Additionally, behavior tree nodes were modified to contain their own local executors to spin for actions, topics, services, etc to ensure that each behavior tree node is independent of each other (e.g. spinning in one BT node doesn't trigger a callback in another)."
+msgstr "此外，修改了行为树节点，使其包含自己的本地执行器以旋转动作、主题、服务等，以确保每个行为树节点相互独立（例如，在一个BT节点中旋转不会触发另一个回调）。"
 
 
 #: ../../migration/Foxy.rst:275
@@ -872,37 +872,37 @@ msgstr "sensor_msgs/PointCloud to sensor_msgs/PointCloud2 Change"
 
 #: ../../migration/Foxy.rst:276
 msgid "Due to deprecation of `sensor_msgs/PointCloud <https://docs.ros2.org/foxy/api/sensor_msgs/msg/PointCloud.html>`_ the topics which were publishing sensor_msgs/PointCloud are converted to sensor_msgs/PointCloud2. The details on these topics and their respective information are listed below."
-msgstr "Due to deprecation of `sensor_msgs/PointCloud <https://docs.ros2.org/foxy/api/sensor_msgs/msg/PointCloud.html>`_ the topics which were publishing sensor_msgs/PointCloud are converted to sensor_msgs/PointCloud2. The details on these topics and their respective information are listed below."
+msgstr "由于sensor_msgs/PointCloud被弃用，发布sensor_msgs/PointCloud的主题转换为sensor_msgs/PointCloud2。下面列出了这些主题及其相应的信息。"
 
 
 #: ../../migration/Foxy.rst:278
 msgid "``clearing_endpoints`` topic in ``voxel_layer`` plugin of ``nav2_costmap_2d`` package"
-msgstr "``clearing_endpoints`` topic in ``voxel_layer`` plugin of ``nav2_costmap_2d`` package"
+msgstr "``voxel_layer`` 插件中的 ``clearing_endpoints`` 主题属于 ``nav2_costmap_2d`` 包"
 
 
 #: ../../migration/Foxy.rst:279
 msgid "``voxel_marked_cloud`` and ``voxel_unknown_cloud`` topic in ``costmap_2d_cloud`` node of ``nav2_costmap_2d`` package"
-msgstr "``voxel_marked_cloud`` and ``voxel_unknown_cloud`` topic in ``costmap_2d_cloud`` node of ``nav2_costmap_2d`` package"
+msgstr "``costmap_2d_cloud`` 节点中的 ``voxel_marked_cloud`` 和 ``voxel_unknown_cloud`` 主题，位于 ``nav2_costmap_2d`` 包中。"
 
 
 #: ../../migration/Foxy.rst:280
 msgid "``cost_cloud`` topic of ``publisher.cpp`` of ``dwb_core`` package."
-msgstr "``cost_cloud`` topic of ``publisher.cpp`` of ``dwb_core`` package."
+msgstr "``dwb_core`` 包的 ``publisher.cpp`` 中的 ``cost_cloud`` 主题"
 
 
 #: ../../migration/Foxy.rst:282
 msgid "These changes were introduced in `pull request 2263 <https://github.com/ros-planning/navigation2/pull/2263>`_."
-msgstr "These changes were introduced in `pull request 2263 <https://github.com/ros-planning/navigation2/pull/2263>`_."
+msgstr "这些更改是在 `pull request 2263 <https://github.com/ros-planning/navigation2/pull/2263>`_ 中引入的。"
 
 
 #: ../../migration/Foxy.rst:285
 msgid "ControllerServer New Parameter failure_tolerance"
-msgstr "ControllerServer New Parameter failure_tolerance"
+msgstr "ControllerServer 新参数 failure_tolerance"
 
 
 #: ../../migration/Foxy.rst:286
 msgid "A new parameter :code:`failure_tolerance` was added to the Controller Server for tolerating controller plugin exceptions without failing immediately. It is analogous to ``controller_patience`` in ROS(1) Nav. See :ref:`configuring_controller_server` for description. This change was introduced in this `pull request 2264 <https://github.com/ros-planning/navigation2/pull/2264>`_."
-msgstr "A new parameter :code:`failure_tolerance` was added to the Controller Server for tolerating controller plugin exceptions without failing immediately. It is analogous to ``controller_patience`` in ROS(1) Nav. See :ref:`configuring_controller_server` for description. This change was introduced in this `pull request 2264 <https://github.com/ros-planning/navigation2/pull/2264>`_."
+msgstr "Controller Server 添加了一个新参数 :code:`failure_tolerance`，用于容忍控制器插件的异常而不立即失败。它类似于 ROS(1) Nav 中的 ``controller_patience``。有关描述，请参阅 :ref:`configuring_controller_server`。这些更改是在这个 `pull request 2264 <https://github.com/ros-planning/navigation2/pull/2264>`_ 中引入的。"
 
 
 #: ../../migration/Foxy.rst:290
@@ -912,7 +912,7 @@ msgstr "Removed BT XML Launch Configurations"
 
 #: ../../migration/Foxy.rst:291
 msgid "The launch python configurations for CLI setting of the behavior tree XML file has been removed. Instead, you should use the yaml files to set this value. If you, however, have a ``path`` to the yaml file that is inconsistent in a larger deployment, you can use the ``RewrittenYaml`` tool in your parent launch file to remap the default XML paths utilizing the ``get_shared_package_path()`` directory finder (or as you were before in python3)."
-msgstr "The launch python configurations for CLI setting of the behavior tree XML file has been removed. Instead, you should use the yaml files to set this value. If you, however, have a ``path`` to the yaml file that is inconsistent in a larger deployment, you can use the ``RewrittenYaml`` tool in your parent launch file to remap the default XML paths utilizing the ``get_shared_package_path()`` directory finder (or as you were before in python3)."
+msgstr "已删除用于设置行为树 XML 文件的 CLI 设置的启动 Python 配置。相反，您应该使用 yaml 文件来设置该值。然而，如果您在较大的部署中有一个与 yaml 文件不一致的 ``path``，您可以在父启动文件中使用 ``RewrittenYaml`` 工具，利用 ``get_shared_package_path()`` 目录查找器（或者像之前一样使用 Python 3）重新映射默认的 XML 路径。"
 
 
 #: ../../migration/Foxy.rst:293
@@ -922,7 +922,7 @@ msgstr "The use of map subscription QoS launch configuration was also removed, u
 
 #: ../../migration/Foxy.rst:297
 msgid "Nav2 RViz Panel Action Feedback Information"
-msgstr "Nav2 RViz Panel Action Feedback Information"
+msgstr "Nav2 RViz 面板的行动反馈信息"
 
 
 #: ../../migration/Foxy.rst:298
@@ -931,7 +931,7 @@ msgstr "The Nav2 RViz Panel now displays the action feedback published by ``nav2
 
 
 msgid "Navigation feedback in RViz."
-msgstr "Navigation feedback in RViz."
+msgstr "在 RViz 中的导航反馈。"
 
 
 #: ../../migration/Galactic.rst:4
@@ -941,7 +941,7 @@ msgstr "Galactic to Humble"
 
 #: ../../migration/Galactic.rst:6
 msgid "Moving from ROS 2 Galactic to Humble, a number of stability improvements were added that we will not specifically address here."
-msgstr "Moving from ROS 2 Galactic to Humble, a number of stability improvements were added that we will not specifically address here."
+msgstr "从 ROS 2 Galactic 到 Humble，我们添加了一些稳定性改进，我们将不在此处具体介绍。"
 
 
 #: ../../migration/Galactic.rst:9
