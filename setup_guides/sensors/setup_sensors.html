@@ -1298,76 +1298,75 @@ ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<sp
 <div class="section" id="id2">
 <h3>构建、运行和验证<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
 <p>我们首先启动 <code class="docutils literal notranslate"><span class="pre">display.launch.py</span></code>，它启动机器人状态发布器，在我们的 URDF 中提供了 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">sensors</span></code> 的变换。它还启动了作为物理模拟器的 Gazebo，并提供了从差动驱动插件获取的 <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code>，我们在前一个指南中为 <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> 添加了该插件，具体内容请参见`使用 Gazebo 模拟里程计系统 &lt;<a class="reference external" href="https://navigation.ros.org/setup_guides/odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">https://navigation.ros.org/setup_guides/odom/setup_odom.html#simulating-an-odometry-system-using-gazebo</a>&gt;`_。它还启动了 RViz，我们可以使用它来可视化机器人和传感器信息。</p>
-<p>Then we will launch <code class="docutils literal notranslate"><span class="pre">slam_toolbox</span></code> to publish to <code class="docutils literal notranslate"><span class="pre">/map</span></code> topic and provide the <code class="docutils literal notranslate"><span class="pre">map</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> transform. Recall that the <code class="docutils literal notranslate"><span class="pre">map</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> transform is one of the primary requirements of the Nav2 system. The messages published on the <code class="docutils literal notranslate"><span class="pre">/map</span></code> topic will then be used by the static layer of the <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code>.</p>
-<p>After we have properly setup our robot description, odometry sensors, and necessary transforms, we will finally launch the Nav2 system itself. For now, we will only be exploring the costmap generation system of Nav2. After launching Nav2, we will visualize the costmaps in RViz to confirm our output.</p>
+<p>接下来我们将启动``slam_toolbox``，发布到``/map``话题，并提供``map`` =&gt; <code class="docutils literal notranslate"><span class="pre">odom``的变换。请记住，``map</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">odom``的变换是Nav2系统的主要要求之一。在</span></code>/map``话题上发布的消息将由``global_costmap``的静态层使用。</p>
+<p>在正确设置机器人描述、里程计传感器和必要的转换之后，我们将最终启动Nav2系统本身。目前，我们只会探索Nav2的代价地图生成系统。在启动Nav2之后，我们将在RViz中可视化代价地图，以确认我们的输出。</p>
 <div class="section" id="launching-description-nodes-rviz-and-gazebo">
-<h4>Launching Description Nodes, RViz and Gazebo<a class="headerlink" href="#launching-description-nodes-rviz-and-gazebo" title="永久链接至标题"></a></h4>
-<p>Let us now launch our Robot Description Nodes, RViz and Gazebo through the launch file <code class="docutils literal notranslate"><span class="pre">display.launch.py</span></code>. Open a new terminal and execute the lines below.</p>
+<h4>启动描述节点、RViz和Gazebo<a class="headerlink" href="#launching-description-nodes-rviz-and-gazebo" title="永久链接至标题"></a></h4>
+<p>现在让我们通过启动文件“display.launch.py”启动机器人描述节点、RViz和Gazebo。打开一个新终端并执行下面的命令。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
 .<span class="w"> </span>install/setup.bash
 ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<span class="w"> </span>display.launch.py
 </pre></div>
 </div>
-<p>RViz and the Gazebo should now be launched with <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> present in both. Recall that the <code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">sensors</span></code> transform is now being published by <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code> and the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform by our Gazebo plugins. Both transforms should now be dislpayed show without errors in RViz.</p>
+<p>现在应该启动了RViz和Gazebo，并且``sam_bot``同时出现在两者中。请记住，<code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">sensors``的变换现在由``robot_state_publisher``发布，而``odom</span></code> =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的变换由我们的Gazebo插件发布。在RViz中，这两个变换现在都应该显示正常，没有错误。</p>
 </div>
 <div class="section" id="launching-slam-toolbox">
-<h4>Launching slam_toolbox<a class="headerlink" href="#launching-slam-toolbox" title="永久链接至标题"></a></h4>
-<p>To be able to launch <code class="docutils literal notranslate"><span class="pre">slam_toolbox</span></code>, make sure that you have installed the <code class="docutils literal notranslate"><span class="pre">slam_toolbox</span></code> package by executing the following command:</p>
+<h4>启动slam_toolbox<a class="headerlink" href="#launching-slam-toolbox" title="永久链接至标题"></a></h4>
+<p>要能够启动``slam_toolbox``，请确保您已经通过执行以下命令安装了``slam_toolbox``软件包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-slam-toolbox
 </pre></div>
 </div>
-<p>We will launch the <code class="docutils literal notranslate"><span class="pre">async_slam_toolbox_node</span></code> of <code class="docutils literal notranslate"><span class="pre">slam_toolbox</span></code> using the package's built-in launch files. Open a new terminal and then execute the following lines:</p>
+<p>我们将使用该软件包内置的启动文件启动``slam_toolbox``的``async_slam_toolbox_node``。打开一个新终端，然后执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>slam_toolbox<span class="w"> </span>online_async_launch.py
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">slam_toolbox</span></code> should now be publishing to the <code class="docutils literal notranslate"><span class="pre">/map</span></code> topic and providing the <code class="docutils literal notranslate"><span class="pre">map</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> transform.</p>
-<p>We can verify in RViz that the <code class="docutils literal notranslate"><span class="pre">/map</span></code> topic is being published. In the RViz window, click the add button at the bottom-left part then go to <code class="docutils literal notranslate"><span class="pre">By</span> <span class="pre">topic</span></code> tab then select the <code class="docutils literal notranslate"><span class="pre">Map</span></code> under the <code class="docutils literal notranslate"><span class="pre">/map</span></code> topic. You should be able to visualize the message received in the <code class="docutils literal notranslate"><span class="pre">/map</span></code> as shown in the image below.</p>
+<p><code class="docutils literal notranslate"><span class="pre">slam_toolbox``现在应该正在发布到</span></code>/map``话题并提供``map`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>odom``的变换。</p>
+<p>我们可以在RViz中验证``/map``主题是否正在发布。在RViz窗口中，点击左下角的添加按钮，然后转到“按主题”选项卡，选择``/map``主题下的``Map``。您应该能够在下面的图像中可视化接收到的``/map``消息。</p>
 <img alt="../../_images/map.png" class="align-center" src="../../_images/map.png" />
-<p>We can also check that the transforms are correct by executing the following lines in a new terminal:</p>
+<p>我们还可以通过在新终端中执行以下命令来检查变换是否正确：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_tools<span class="w"> </span>view_frames.py
 </pre></div>
 </div>
-<p>Note: For Galactic and newer, it should be <code class="docutils literal notranslate"><span class="pre">view_frames</span></code> and not <code class="docutils literal notranslate"><span class="pre">view_frames.py</span></code>
-The line above will create a <code class="docutils literal notranslate"><span class="pre">frames.pdf</span></code> file that shows the current transform tree. Your tranform tree should be similar to the one shown below:</p>
+<p>注意：对于Galactic及更新版本，应为``view_frames``而不是``view_frames.py``。上面的命令将创建一个显示当前变换树的``frames.pdf``文件。您的变换树应该类似于下面显示的树：</p>
 <img alt="../../_images/view_frames.png" class="align-center" src="../../_images/view_frames.png" />
 </div>
 <div class="section" id="launching-nav2">
-<h4>Launching Nav2<a class="headerlink" href="#launching-nav2" title="永久链接至标题"></a></h4>
-<p>First, Make sure you have installed the Nav2 packages by executing the following:</p>
+<h4>启动Nav2<a class="headerlink" href="#launching-nav2" title="永久链接至标题"></a></h4>
+<p>首先，确保您已经安装了Nav2软件包，执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-navigation2
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-nav2-bringup
 </pre></div>
 </div>
-<p>We will now launch Nav2 using the <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code>'s built-in launch file, <code class="docutils literal notranslate"><span class="pre">navigation_launch.py</span></code> . Open a new terminal and execute the following:</p>
+<p>我们将使用``nav2_bringup``的内置launch文件``navigation_launch.py``来启动Nav2。打开一个新的终端并执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>navigation_launch.py
 </pre></div>
 </div>
-<p>Note that the parameters of the <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d</span></code> that we discussed in the previous subsection are included in the default parameters of <code class="docutils literal notranslate"><span class="pre">navigation_launch.py</span></code>. Aside from the <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d</span></code> parameters, it also contains parameters for the other nodes that are included in Nav2 implementation.</p>
-<p>After we have properly set up and launched Nav2, the <code class="docutils literal notranslate"><span class="pre">/global_costmap</span></code> and <code class="docutils literal notranslate"><span class="pre">/local_costmap</span></code> topics should now be active.</p>
+<p>请注意，在前一小节中讨论的``nav2_costmap_2d``的参数已包含在``navigation_launch.py``的默认参数中。除了``nav2_costmap_2d``参数外，它还包含了Nav2实现中其他节点的参数。</p>
+<p>在我们正确设置和启动Nav2之后，<code class="docutils literal notranslate"><span class="pre">/global_costmap``和</span></code>/local_costmap``话题现在应该是活动的。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>To make the costmaps show up, run the 3 commands in this order</p>
+<p>要显示成本地图，请按以下顺序运行这3个命令：</p>
 <ol class="arabic simple">
-<li><p>Launching Description Nodes, RViz and Gazebo - in logs wait for &quot;Connected to gazebo master&quot;</p></li>
-<li><p>Launching slam_toolbox - in logs wait for &quot;Registering sensor&quot;</p></li>
-<li><p>Launching Nav2 - in logs wait for &quot;Creating bond timer&quot;</p></li>
+<li><p>启动Description节点、RViz和Gazebo-在日志中等待&quot;Connected to gazebo master&quot;</p></li>
+<li><p>启动 slam_toolbox - 在日志中等待&quot;Registering sensor&quot;</p></li>
+<li><p>启动Nav2-在日志中等待&quot;Creating bond timer&quot;</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="visualizing-costmaps-in-rviz">
-<h4>Visualizing Costmaps in RViz<a class="headerlink" href="#visualizing-costmaps-in-rviz" title="永久链接至标题"></a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code>, <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> and the voxel representation of the detected obstacles can be visualized in RViz.</p>
-<p>To visualize the <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> in RViz, click the add button at the bottom-left part of the RViz window. Go to <code class="docutils literal notranslate"><span class="pre">By</span> <span class="pre">topic</span></code> tab then select the <code class="docutils literal notranslate"><span class="pre">Map</span></code> under the <code class="docutils literal notranslate"><span class="pre">/global_costmap/costmap</span></code> topic. The <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> should show in the RViz window, as shown below. The <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> shows areas which should be avoided (black) by our robot when it navigates our simulated world in Gazebo.</p>
+<h4>在RViz中可视化成本地图<a class="headerlink" href="#visualizing-costmaps-in-rviz" title="永久链接至标题"></a></h4>
+<p>可以在RViz中可视化``global_costmap``、<a href="#id1"><span class="problematic" id="id2">``</span></a>local_costmap``和检测到的障碍物的体素表示。</p>
+<p>要在RViz中可视化``global_costmap``，请单击RViz窗口左下角的添加按钮。转到``By topic``选项卡，然后在``/global_costmap/costmap``主题下选择``Map``。<a href="#id1"><span class="problematic" id="id2">``</span></a>global_costmap``应显示在RViz窗口中，如下所示。<a href="#id3"><span class="problematic" id="id4">``</span></a>global_costmap``显示了我们的机器人在Gazebo中导航我们的模拟世界时应避免的区域（黑色）。</p>
 <img alt="../../_images/costmap_global_rviz.png" class="align-center" src="../../_images/costmap_global_rviz.png" />
-<p>To visualize the <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> in RViz, select the <code class="docutils literal notranslate"><span class="pre">Map</span></code> under the <code class="docutils literal notranslate"><span class="pre">/local_costmap/costmap</span></code> topic. Set the <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">scheme</span></code> in RViz to <code class="docutils literal notranslate"><span class="pre">costmap</span></code> to make it appear similar to the image below.</p>
+<p>要在RViz中可视化``local_costmap``，请在``/local_costmap/costmap``话题下选择``Map``。在RViz中将``color scheme``设置为``costmap``，使其与下面的图像类似。</p>
 <img alt="../../_images/local_costmap_rviz.png" class="align-center" src="../../_images/local_costmap_rviz.png" />
-<p>To visualize the voxel representation of the detected object, open a new terminal and execute the following lines:</p>
+<p>要在RViz中可视化检测到的对象的体素表示，请打开一个新终端并执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>nav2_costmap_2d<span class="w"> </span>nav2_costmap_2d_markers<span class="w"> </span>voxel_grid:<span class="o">=</span>/local_costmap/voxel_grid<span class="w"> </span>visualization_marker:<span class="o">=</span>/my_marker
 </pre></div>
 </div>
-<p>The line above sets the topic where the the markers will be published to <code class="docutils literal notranslate"><span class="pre">/my_marker</span></code>. To see the markers in RViz, select <code class="docutils literal notranslate"><span class="pre">Marker</span></code> under the <code class="docutils literal notranslate"><span class="pre">/my_marker</span></code> topic, as shown below.</p>
+<p>上面的行设置了将标记发布到``/my_marker``话题。要在RViz中查看标记，请在``/my_marker``话题下选择``Marker``，如下图所示。</p>
 <a class="reference internal image-reference" href="../../_images/add_my_marker.png"><img alt="../../_images/add_my_marker.png" class="align-center" src="../../_images/add_my_marker.png" style="width: 49%;" /></a>
-<p>Then set the <code class="docutils literal notranslate"><span class="pre">fixed</span> <span class="pre">frame</span></code> in RViz to <code class="docutils literal notranslate"><span class="pre">odom</span></code> and you should now see the voxels in RViz, which represent the cube and the sphere that we have in the Gazebo world:</p>
+<p>然后将RViz中的``fixed frame``设置为``odom``，您现在应该在RViz中看到表示Gazebo世界中的立方体和球体的体素：</p>
 <img alt="../../_images/voxel_layer.png" class="align-center" src="../../_images/voxel_layer.png" />
 </div>
 </div>
