@@ -6290,7 +6290,7 @@ msgstr "``<障碍物图层>``. ``<数据源>``.obstacle_min_range"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:195 ../../configuration/packages/costmap-plugins/voxel.rst:261
 msgid "Minimum range to mark obstacles in costmap."
-msgstr "Minimum range to mark obstacles in costmap."
+msgstr "在代价地图中标记障碍物的最小距离。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6300,7 +6300,7 @@ msgstr "``<障碍物图层>``. ``<数据源>``.raytrace_max_range"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:206 ../../configuration/packages/costmap-plugins/voxel.rst:272
 msgid "Maximum range to raytrace clear obstacles from costmap."
-msgstr "Maximum range to raytrace clear obstacles from costmap."
+msgstr "从代价地图中射线跟踪清除障碍物的最大距离。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6310,17 +6310,17 @@ msgstr "``<障碍物图层>``. ``<数据源>``.raytrace_min_range"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:217 ../../configuration/packages/costmap-plugins/voxel.rst:283
 msgid "Minimum range to raytrace clear obstacles from costmap."
-msgstr "Minimum range to raytrace clear obstacles from costmap."
+msgstr "从代价地图中射线跟踪清除障碍物的最小距离。"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst:4
 msgid "Range Sensor Parameters"
-msgstr "Range Sensor Parameters"
+msgstr "范围传感器参数"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst:6
 msgid "``<range layer>`` is the corresponding plugin name selected for this type."
-msgstr "``<range layer>`` is the corresponding plugin name selected for this type."
+msgstr "``<range layer>`` 是为此类型选择的相应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6335,7 +6335,7 @@ msgstr "``<range layer>``.topics"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:22
 msgid "Type Default"
-msgstr "Type Default"
+msgstr "类型 默认值"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst:24
@@ -6345,7 +6345,7 @@ msgstr "[\"\"]"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:28
 msgid "Range topics to subscribe to."
-msgstr "Range topics to subscribe to."
+msgstr "订阅的范围主题"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6355,7 +6355,7 @@ msgstr "``<range layer>``.phi"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:39
 msgid "Phi value."
-msgstr "Phi value."
+msgstr "Phi 值"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6365,7 +6365,7 @@ msgstr "``<range layer>``.inflate_cone"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:50
 msgid "Inflate the triangular area covered by the sensor (percentage)."
-msgstr "Inflate the triangular area covered by the sensor (percentage)."
+msgstr "扩大传感器覆盖的三角区域（百分比）"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6375,7 +6375,7 @@ msgstr "``<range layer>``.no_readings_timeout"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:61
 msgid "If zero, this parameter has no effect. Otherwise if the layer does not receive sensor data for this amount of time, the layer will warn the user and the layer will be marked as not current."
-msgstr "If zero, this parameter has no effect. Otherwise if the layer does not receive sensor data for this amount of time, the layer will warn the user and the layer will be marked as not current."
+msgstr "如果为零，此参数无效。否则，如果该层在此时间段内未接收到传感器数据，则该层将向用户发出警告，并将该层标记为非当前层。"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6385,7 +6385,7 @@ msgstr "``<range layer>``.clear_threshold"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:74
 msgid "Probability below which cells are marked as free."
-msgstr "Probability below which cells are marked as free."
+msgstr "将概率低于此值的单元格标记为可通行。"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6400,7 +6400,7 @@ msgstr "0.8"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:85
 msgid "Probability above which cells are marked as occupied."
-msgstr "Probability above which cells are marked as occupied."
+msgstr "被标记为占用的单元格的概率上限。"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6410,7 +6410,7 @@ msgstr "``<range layer>``.clear_on_max_reading"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:96
 msgid "Whether to clear the sensor readings on max range."
-msgstr "Whether to clear the sensor readings on max range."
+msgstr "是否在最大范围上清除传感器读数。"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst
@@ -6420,12 +6420,12 @@ msgstr "``<range layer>``.input_sensor_type"
 
 #: ../../configuration/packages/costmap-plugins/range.rst:103
 msgid "ALL"
-msgstr "ALL"
+msgstr "全部"
 
 
 #: ../../configuration/packages/costmap-plugins/range.rst:107
 msgid "Input sensor type is either ALL (automatic selection), VARIABLE (min range != max range), or FIXED (min range == max range)."
-msgstr "Input sensor type is either ALL (automatic selection), VARIABLE (min range != max range), or FIXED (min range == max range)."
+msgstr "输入传感器类型可以是ALL（自动选择）、VARIABLE（最小范围!=最大范围）或FIXED（最小范围==最大范围）。"
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:4
@@ -6435,7 +6435,7 @@ msgstr "Speed Filter Parameters"
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:6
 msgid "Speed Filter - is a Costmap Filter that restricting maximum velocity of robot. The areas where robot should slow down and values of maximum allowed velocities are encoded at filter mask. Filter mask published by Map Server, goes in a pair with filter info topic published by Costmap Filter Info Server. Speed Filter itself publishes a speed restricting messages which are targeted for a Controller in order to make the robot to not exceed the required velocity."
-msgstr "Speed Filter - is a Costmap Filter that restricting maximum velocity of robot. The areas where robot should slow down and values of maximum allowed velocities are encoded at filter mask. Filter mask published by Map Server, goes in a pair with filter info topic published by Costmap Filter Info Server. Speed Filter itself publishes a speed restricting messages which are targeted for a Controller in order to make the robot to not exceed the required velocity."
+msgstr "速度过滤器 - 是一种成本地图过滤器，用于限制机器人的最大速度。机器人需要减速的区域和允许的最大速度值被编码在过滤器掩码中。地图服务器发布的过滤器掩码与成本地图过滤器信息服务器发布的过滤器信息主题配对使用。速度过滤器本身发布限制速度的消息，这些消息针对控制器，以确保机器人不会超过所需速度。"
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst
@@ -6445,7 +6445,7 @@ msgstr "``<filter name>``.speed_limit_topic"
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:49
 msgid "Topic to publish speed limit to. The `messages <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg>`_ have the following fields' meaning:"
-msgstr "Topic to publish speed limit to. The `messages <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg>`_ have the following fields' meaning:"
+msgstr "发布速度限制的主题。`消息 <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg>`_ 具有以下字段的含义："
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:51
