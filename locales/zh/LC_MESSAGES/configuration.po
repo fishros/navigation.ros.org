@@ -7365,7 +7365,7 @@ msgstr "StoppedGoalChecker"
 
 #: ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst:6
 msgid "Checks whether the robot has reached the goal pose and come to a stop."
-msgstr "Checks whether the robot has reached the goal pose and come to a stop."
+msgstr "检查机器人是否已达到目标姿态并停止。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst
@@ -7375,7 +7375,7 @@ msgstr "``<nav2_controller plugin>``.trans_stopped_velocity"
 
 #: ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst:22
 msgid "Velocity below is considered to be stopped at tolerance met (m/s)."
-msgstr "Velocity below is considered to be stopped at tolerance met (m/s)."
+msgstr "速度低于该值时认为已停止（单位：m/s）。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst
@@ -7385,7 +7385,7 @@ msgstr "``<nav2_controller plugin>``.rot_stopped_velocity"
 
 #: ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst:33 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:36
 msgid "Velocity below is considered to be stopped at tolerance met (rad/s)."
-msgstr "Velocity below is considered to be stopped at tolerance met (rad/s)."
+msgstr "速度低于该值时认为已停止（单位：rad/s）。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:4
@@ -7395,7 +7395,7 @@ msgstr "InputAtWaypoint"
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:6
 msgid "Lets robot to wait for external input, with timeout, at a waypoint."
-msgstr "Lets robot to wait for external input, with timeout, at a waypoint."
+msgstr "使机器人在航点处等待外部输入，超时后继续执行。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:11 ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:13 ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:11
@@ -7410,7 +7410,7 @@ msgstr "``<nav2_waypoint_follower plugin>``.enabled"
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:22 ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:24 ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:22
 msgid "Whether waypoint_task_executor plugin is enabled."
-msgstr "Whether waypoint_task_executor plugin is enabled."
+msgstr "是否启用 waypoint_task_executor 插件。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst
@@ -7420,7 +7420,7 @@ msgstr "``<nav2_waypoint_follower plugin>``.timeout"
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:34
 msgid "Amount of time in seconds to wait for user input before moving on to the next waypoint."
-msgstr "Amount of time in seconds to wait for user input before moving on to the next waypoint."
+msgstr "在前往下一个航点之前等待用户输入的时间（以秒为单位）。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst
@@ -7435,7 +7435,7 @@ msgstr "\"input_at_waypoint/input\""
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:45
 msgid "Topic input is published to to indicate to move to the next waypoint, in `std_msgs/Empty`."
-msgstr "Topic input is published to to indicate to move to the next waypoint, in `std_msgs/Empty`."
+msgstr "将主题输入发布为`std_msgs/Empty`，以指示移动到下一个航点。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:4
@@ -7445,7 +7445,7 @@ msgstr "PhotoAtWaypoint"
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:6
 msgid "Run-time plugin that takes photos at waypoint arrivals when using waypoint follower node. Saves the taken photos to specified directory. The name for taken photos are determined by the waypoint index and timestamp(seconds). For instance ``/home/atas/0_1602582820.png`` is an sample taken image, where ``0_1602582820`` is the file name determined by waypoint index and time stamp. The leading digit in file name implies the waypoint index and the rest of digits at righthand side imples the time stamp when the photo was taken."
-msgstr "Run-time plugin that takes photos at waypoint arrivals when using waypoint follower node. Saves the taken photos to specified directory. The name for taken photos are determined by the waypoint index and timestamp(seconds). For instance ``/home/atas/0_1602582820.png`` is an sample taken image, where ``0_1602582820`` is the file name determined by waypoint index and time stamp. The leading digit in file name implies the waypoint index and the rest of digits at righthand side imples the time stamp when the photo was taken."
+msgstr "运行时插件，当使用航点跟随节点时，在到达航点时拍照。将拍摄的照片保存到指定目录中。拍摄的照片名称由航点索引和时间戳（秒）确定。例如，``/home/atas/0_1602582820.png`` 是一个拍摄的示例图片，其中 ``0_1602582820`` 是由航点索引和时间戳确定的文件名。文件名中的前导数字表示航点索引，右侧的其余数字表示拍摄照片的时间戳。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst
@@ -7460,7 +7460,7 @@ msgstr "\"/camera/color/image_raw\""
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:36
 msgid "Camera image topic name to susbcribe"
-msgstr "Camera image topic name to susbcribe"
+msgstr "订阅相机图像的主题名称"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst
@@ -7475,7 +7475,7 @@ msgstr "\"/tmp/waypoint_images\""
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:47
 msgid "Path to directory to save taken photos at waypoint arrivals."
-msgstr "Path to directory to save taken photos at waypoint arrivals."
+msgstr "保存拍摄照片的目录路径，用于在航点到达时。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst
@@ -7490,7 +7490,7 @@ msgstr "\"png\""
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:58
 msgid "Desired image format."
-msgstr "Desired image format."
+msgstr "期望的图像格式。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:4
@@ -7500,7 +7500,7 @@ msgstr "WaitAtWaypoint"
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:6
 msgid "Lets robot to pause for a specified amount of time after reaching each waypoints."
-msgstr "Lets robot to pause for a specified amount of time after reaching each waypoints."
+msgstr "在到达每个路径点后，让机器人暂停指定的时间。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst
@@ -7510,7 +7510,7 @@ msgstr "``<nav2_waypoint_follower plugin>``.waypoint_pause_duration"
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:34
 msgid "Amount of time in milliseconds, for robot to sleep/wait after each waypoint is reached. If zero, robot will directly continue to next waypoint."
-msgstr "Amount of time in milliseconds, for robot to sleep/wait after each waypoint is reached. If zero, robot will directly continue to next waypoint."
+msgstr "机器人在到达每个路径点后等待的时间（以毫秒为单位）。如果为零，则机器人将直接继续下一个路径点。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:4
@@ -7519,7 +7519,7 @@ msgstr "Smac 2D Planner"
 
 
 msgid "Paths generated by the Smac 2D-A*"
-msgstr "Paths generated by the Smac 2D-A*"
+msgstr "由Smac 2D-A*生成的路径。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:21
