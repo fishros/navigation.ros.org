@@ -1664,7 +1664,7 @@ msgstr "在启动Costmap Filter Info Publisher Server和Map Server并为全局/�
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:289
 msgid "And check that filter is working properly as in the pictures below (first picture shows keepout filter enabled for the global costmap, second - differently-sized ``keepout_mask.pgm`` filter mask):"
-msgstr "And check that filter is working properly as in the pictures below (first picture shows keepout filter enabled for the global costmap, second - differently-sized ``keepout_mask.pgm`` filter mask):"
+msgstr "请确保过滤器按照下面的图片正确工作（第一张图片显示全局代价地图启用了keepout过滤器，第二张图片显示大小不同的`keepout_mask.pgm`过滤器掩码）："
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:4
@@ -1674,27 +1674,27 @@ msgstr "（SLAM）在制图时导航"
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:13
 msgid "This document explains how to use Nav2 with SLAM. The following steps show ROS 2 users how to generate occupancy grid maps and use Nav2 to move their robot around. This tutorial applies to both simulated and physical robots, but will be completed here on physical robot."
-msgstr "This document explains how to use Nav2 with SLAM. The following steps show ROS 2 users how to generate occupancy grid maps and use Nav2 to move their robot around. This tutorial applies to both simulated and physical robots, but will be completed here on physical robot."
+msgstr "本文档解释了如何将Nav2与SLAM配合使用。以下步骤展示了ROS 2用户如何生成占据栅格地图并使用Nav2来移动他们的机器人。本教程适用于仿真和实体机器人，但本文将在实体机器人上完成。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:17
 msgid "Before completing this tutorial, completing the :ref:`getting_started` is highly recommended especially if you are new to ROS and Navigation2."
-msgstr "Before completing this tutorial, completing the :ref:`getting_started` is highly recommended especially if you are new to ROS and Navigation2."
+msgstr "在完成本教程之前，强烈建议您先完成 :ref:`getting_started`，特别是如果您对ROS和Navigation2还不熟悉的话。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:20
 msgid "In this tutorial we'll be using SLAM Toolbox. More information can be found in the `ROSCon talk for SLAM Toolbox <https://vimeo.com/378682207>`_"
-msgstr "In this tutorial we'll be using SLAM Toolbox. More information can be found in the `ROSCon talk for SLAM Toolbox <https://vimeo.com/378682207>`_"
+msgstr "在本教程中，我们将使用SLAM工具箱。更多信息可以在`ROSCon关于SLAM工具箱的演讲 <https://vimeo.com/378682207>`_中找到。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:25
 msgid "You must install Navigation2, Turtlebot3, and SLAM Toolbox. If you don't have them installed, please follow :ref:`getting_started`."
-msgstr "You must install Navigation2, Turtlebot3, and SLAM Toolbox. If you don't have them installed, please follow :ref:`getting_started`."
+msgstr "您必须安装Navigation2、Turtlebot3和SLAM Toolbox。如果您还没有安装它们，请按照 :ref:`getting_started` 进行安装。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:28
 msgid "SLAM Toolbox can be installed via:"
-msgstr "SLAM Toolbox can be installed via:"
+msgstr "可以通过以下方式安装SLAM工具箱："
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:30
@@ -1704,7 +1704,7 @@ msgstr "``sudo apt install ros-<ros2-distro>-slam-toolbox``"
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:32
 msgid "or from built from source in your workspace with:"
-msgstr "or from built from source in your workspace with:"
+msgstr "或者从工作空间构建源代码："
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:34
@@ -1714,17 +1714,17 @@ msgstr "``git clone -b <ros2-distro>-devel git@github.com:stevemacenski/slam_too
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:41
 msgid "0- Launch Robot Interfaces"
-msgstr "0- Launch Robot Interfaces"
+msgstr "0- 启动机器人接口"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:43
 msgid "For this tutorial, we will use the turtlebot3. If you have another robot, replace with your robot specific interfaces. Typically, this includes the robot state publisher of the URDF, simulated or physical robot interfaces, controllers, safety nodes, and the like."
-msgstr "For this tutorial, we will use the turtlebot3. If you have another robot, replace with your robot specific interfaces. Typically, this includes the robot state publisher of the URDF, simulated or physical robot interfaces, controllers, safety nodes, and the like."
+msgstr "在本教程中，我们将使用turtlebot3。如果您有其他机器人，请将其替换为您的机器人特定接口。通常，这包括URDF的机器人状态发布器、模拟或物理机器人接口、控制器、安全节点等。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:53
 msgid "Launch your robot's interface and robot state publisher,"
-msgstr "Launch your robot's interface and robot state publisher,"
+msgstr "启动机器人的接口和机器人状态发布器，"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:55
@@ -1734,12 +1734,12 @@ msgstr "``ros2 launch turtlebot3_bringup robot.launch.py``"
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:58
 msgid "1- Launch Navigation2"
-msgstr "1- Launch Navigation2"
+msgstr "1- 启动 Navigation2"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:60
 msgid "Launch Navigation without nav2_amcl and nav2_map_server. It is assumed that the SLAM node(s) will publish to /map topic and provide the map->odom transform."
-msgstr "Launch Navigation without nav2_amcl and nav2_map_server. It is assumed that the SLAM node(s) will publish to /map topic and provide the map->odom transform."
+msgstr "启动Navigation，但不包括nav2_amcl和nav2_map_server。假设SLAM节点将发布到/map主题，并提供map->odom的变换。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:63
@@ -1749,12 +1749,12 @@ msgstr "``ros2 launch nav2_bringup navigation_launch.py``"
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:66
 msgid "2- Launch SLAM"
-msgstr "2- Launch SLAM"
+msgstr "2- 启动 SLAM"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:68
 msgid "Bring up your choice of SLAM implementation. Make sure it provides the map->odom transform and /map topic. Run Rviz and add the topics you want to visualize such as /map, /tf, /laserscan etc. For this tutorial, we will use `SLAM Toolbox <https://github.com/SteveMacenski/slam_toolbox>`_."
-msgstr "Bring up your choice of SLAM implementation. Make sure it provides the map->odom transform and /map topic. Run Rviz and add the topics you want to visualize such as /map, /tf, /laserscan etc. For this tutorial, we will use `SLAM Toolbox <https://github.com/SteveMacenski/slam_toolbox>`_."
+msgstr "启动您选择的 SLAM 实现。确保它提供了 map->odom 变换和 /map 主题。运行 Rviz 并添加您想要可视化的主题，例如 /map，/tf，/laserscan 等。对于本教程，我们将使用 `SLAM Toolbox <https://github.com/SteveMacenski/slam_toolbox>`_。"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:74
@@ -1764,17 +1764,17 @@ msgstr "``ros2 launch slam_toolbox online_async_launch.py``"
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:77
 msgid "3- Working with SLAM"
-msgstr "3- Working with SLAM"
+msgstr "3- 使用 SLAM"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:79
 msgid "Move your robot by requesting a goal through RViz or the ROS 2 CLI, ie:"
-msgstr "Move your robot by requesting a goal through RViz or the ROS 2 CLI, ie:"
+msgstr "通过 RViz 或 ROS 2 CLI 请求一个目标来移动你的机器人，例如："
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:85
 msgid "You should see the map update live! To save this map to file:"
-msgstr "You should see the map update live! To save this map to file:"
+msgstr "您应该可以看到实时更新的地图！要将此地图保存到文件中："
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:87
@@ -1783,22 +1783,22 @@ msgstr "``ros2 run nav2_map_server map_saver_cli -f ~/map``"
 
 
 msgid "Navigation2 with SLAM"
-msgstr "Navigation2 with SLAM"
+msgstr "带 SLAM 的 Navigation2"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:95
 msgid "4- Getting Started Simplification"
-msgstr "4- Getting Started Simplification"
+msgstr "4- 快速入门简化"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:97
 msgid "If you're only interested in running SLAM in the turtlebot3 getting started sandbox world, we also provide a simple way to enable SLAM as a launch configuration. Rather than individually launching the interfaces, navigation, and SLAM, you can continue to use the ``tb3_simulation_launch.py`` with ``slam`` config set to true. We provide the instructions above with the assumption that you'd like to run SLAM on your own robot which would have separated simulation / robot interfaces and navigation launch files that are combined in ``tb3_simulation_launch.py`` for the purposes of easy testing."
-msgstr "If you're only interested in running SLAM in the turtlebot3 getting started sandbox world, we also provide a simple way to enable SLAM as a launch configuration. Rather than individually launching the interfaces, navigation, and SLAM, you can continue to use the ``tb3_simulation_launch.py`` with ``slam`` config set to true. We provide the instructions above with the assumption that you'd like to run SLAM on your own robot which would have separated simulation / robot interfaces and navigation launch files that are combined in ``tb3_simulation_launch.py`` for the purposes of easy testing."
+msgstr "如果您只对在 turtlebot3 入门沙盒世界中运行 SLAM 感兴趣，我们还提供了一种简单的方法来将 SLAM 启用为启动配置。您可以继续使用 ``tb3_simulation_launch.py``，并将 ``slam`` 配置设置为 true，而不是单独启动界面、导航和 SLAM。我们提供的上述说明是基于您希望在自己的机器人上运行 SLAM，该机器人具有分离的仿真/机器人接口和导航启动文件，这些文件在 ``tb3_simulation_launch.py`` 中合并，以便进行简单的测试。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:4
 msgid "Navigating with Speed Limits"
-msgstr "Navigating with Speed Limits"
+msgstr "带速度限制的导航"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:21
@@ -1808,7 +1808,7 @@ msgstr "This tutorial shows how to simply utilize Speed Filter which is designed
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:26
 msgid "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that the Nav2 project is also built locally as it was made in :ref:`build-instructions`."
-msgstr "It is assumed that ROS 2, Gazebo and TurtleBot3 packages are installed or built locally. Please make sure that the Nav2 project is also built locally as it was made in :ref:`build-instructions`."
+msgstr "假设已经安装或在本地构建了 ROS 2、Gazebo 和 TurtleBot3 包。请确保 Nav2 项目也已在 :ref:`build-instructions` 中本地构建。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:34
