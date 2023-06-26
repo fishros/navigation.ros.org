@@ -1539,7 +1539,7 @@ msgstr "Keepout Filter还涵盖了首选车道的情况，即机器人只能在�
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:60
 msgid "For simplicity, in the example fill the areas with black color (in ``trinary`` mode this means occupied map) that you are going to mark as a keep-out zones:"
-msgstr "For simplicity, in the example fill the areas with black color (in ``trinary`` mode this means occupied map) that you are going to mark as a keep-out zones:"
+msgstr "为简化起见，在示例中使用黑色填充区域（在``trinary``模式下表示占用地图）来标记为禁止区域："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:65
@@ -1549,7 +1549,7 @@ msgstr "填充所有保留区域后保存``keepout_mask.pgm``图像。"
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:67
 msgid "Like all other maps, filter mask should have its own YAML metadata file. Copy `turtlebot3_world.yaml <https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml>`_ to ``keepout_mask.yaml``. Open ``keepout_mask.yaml`` and correct ``image`` field to a newly made PGM mask:"
-msgstr "Like all other maps, filter mask should have its own YAML metadata file. Copy `turtlebot3_world.yaml <https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml>`_ to ``keepout_mask.yaml``. Open ``keepout_mask.yaml`` and correct ``image`` field to a newly made PGM mask:"
+msgstr "与所有其他地图一样，过滤器掩码应具有自己的YAML元数据文件。将`turtlebot3_world.yaml <https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml>`_复制到``keepout_mask.yaml``中。打开``keepout_mask.yaml``并将``image``字段更正为新创建的PGM掩码："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:75
@@ -1559,7 +1559,7 @@ msgstr "由于过滤器掩膜图像是主地图的副本，因此不需要更改
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:79
 msgid "World map itself and filter mask could have different sizes, origin and resolution which might be useful e.g. for cases when filter mask is covering smaller areas on maps or when one filter mask is used repeatedly many times (like annotating a keepout zone for same shape rooms in the hotel). For this case, you need to correct ``resolution`` and ``origin`` fields in YAML as well so that the filter mask is correctly laid on top of the original map."
-msgstr "World map itself and filter mask could have different sizes, origin and resolution which might be useful e.g. for cases when filter mask is covering smaller areas on maps or when one filter mask is used repeatedly many times (like annotating a keepout zone for same shape rooms in the hotel). For this case, you need to correct ``resolution`` and ``origin`` fields in YAML as well so that the filter mask is correctly laid on top of the original map."
+msgstr "世界地图本身和过滤器掩码可能具有不同的大小、原点和分辨率，这在以下情况下可能很有用：当过滤器掩码覆盖地图上较小区域时，或者当一个过滤器掩码重复多次使用时（例如，在酒店的相同形状房间中注释禁止区域）。对于这种情况，您还需要在YAML中正确设置``resolution``和``origin``字段，以便将过滤器掩码正确放置在原始地图上。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:83
@@ -1569,7 +1569,7 @@ msgstr "另一个重要说明是，由于Costmap2D不支持方向性，``origin`
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:86 ../../tutorials/docs/navigation2_with_speed_filter.rst:100
 msgid "2. Configure Costmap Filter Info Publisher Server"
-msgstr "2. Configure Costmap Filter Info Publisher Server"
+msgstr "2. 配置成本地图过滤器信息发布服务器"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:88
@@ -1579,7 +1579,7 @@ msgstr "每个costmap过滤器在``nav2_msgs/CostmapFilterInfo``类型的消息�
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:90
 msgid "In order to enable Keepout Filter in your configuration, both servers should be enabled as a lifecycle nodes in Python launch-file. For example, this might look as follows:"
-msgstr "In order to enable Keepout Filter in your configuration, both servers should be enabled as a lifecycle nodes in Python launch-file. For example, this might look as follows:"
+msgstr "为了在配置中启用禁止区域过滤器，两个服务器都应作为Python启动文件中的生命周期节点启用。例如，可能如下所示："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:199 ../../tutorials/docs/navigation2_with_speed_filter.rst:213
@@ -1589,77 +1589,77 @@ msgstr "其中``params_file``变"
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:218 ../../tutorials/docs/navigation2_with_speed_filter.rst:232
 msgid "Note, that:"
-msgstr "Note, that:"
+msgstr "请注意："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:220
 msgid "For Keepout Filter the ``type`` of costmap filter should be set to ``0``."
-msgstr "For Keepout Filter the ``type`` of costmap filter should be set to ``0``."
+msgstr "对于Keepout过滤器，costmap过滤器的“type”应设置为“0”。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:221 ../../tutorials/docs/navigation2_with_speed_filter.rst:235
 msgid "Filter mask topic name should be the equal for ``mask_topic`` parameter of Costmap Filter Info Publisher Server and ``topic_name`` parameter of Map Server."
-msgstr "Filter mask topic name should be the equal for ``mask_topic`` parameter of Costmap Filter Info Publisher Server and ``topic_name`` parameter of Map Server."
+msgstr "过滤器掩码主题名称应与成本地图过滤器信息发布服务器的``mask_topic``参数和地图服务器的``topic_name``参数相等。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:222
 msgid "According to the Costmap Filters design, ``OccupancyGrid`` values are being linearly transformed into feature map in a filter space. For a Keepout Filter these values are directly passed as a filter space values without a linear conversion. Even though ``base`` and ``multiplier`` coefficients are not used in Keepout Filter, they should be set to ``0.0`` and ``1.0`` accordingly in order to explicitly show that we have one-to-one conversion from ``OccupancyGrid`` values -> to a filter value space."
-msgstr "According to the Costmap Filters design, ``OccupancyGrid`` values are being linearly transformed into feature map in a filter space. For a Keepout Filter these values are directly passed as a filter space values without a linear conversion. Even though ``base`` and ``multiplier`` coefficients are not used in Keepout Filter, they should be set to ``0.0`` and ``1.0`` accordingly in order to explicitly show that we have one-to-one conversion from ``OccupancyGrid`` values -> to a filter value space."
+msgstr "根据Costmap过滤器的设计，OccupancyGrid的值在过滤器空间中被线性转换为特征图。对于Keepout过滤器，这些值直接作为过滤器空间的值传递，而不进行线性转换。即使在Keepout过滤器中未使用基础（base）和乘数（multiplier）系数，它们应分别设置为“0.0”和“1.0”，以明确表示我们从OccupancyGrid的值转换为过滤器值空间时是一对一的关系。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:224
 msgid "Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Keepout Filter could be found in a `nav2_costmap_filters_demo <https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo>`_ directory of ``navigation2_tutorials`` repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at :ref:`getting_started`, build the demo and launch ``costmap_filter_info.launch.py`` as follows:"
-msgstr "Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Keepout Filter could be found in a `nav2_costmap_filters_demo <https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo>`_ directory of ``navigation2_tutorials`` repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at :ref:`getting_started`, build the demo and launch ``costmap_filter_info.launch.py`` as follows:"
+msgstr "可在``navigation2_tutorials``存储库的``nav2_costmap_filters_demo``目录中找到完全可用的独立Python启动脚本、带有ROS参数和Keepout Filter示例的YAML文件。要简单运行Filter Info Publisher服务器和Map服务器以及在Turtlebot3标准仿真中进行调优，按照:ref:`getting_started`中的说明构建演示并启动``costmap_filter_info.launch.py``："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:237
 msgid "3. Enable Keepout Filter"
-msgstr "3. Enable Keepout Filter"
+msgstr "3. 启用Keepout过滤器"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:239
 msgid "Costmap Filters are Costamp2D plugins. You can enable the ``KeepoutFilter`` plugin in Costmap2D by adding ``keepout_filter`` to the ``plugins`` parameter in ``nav2_params.yaml``. You can place it in the ``global_costmap`` for planning with keepouts and ``local_costmap`` to make sure the robot won't attempt to drive through a keepout zone. The KeepoutFilter plugin should have the following parameters defined:"
-msgstr "Costmap Filters are Costamp2D plugins. You can enable the ``KeepoutFilter`` plugin in Costmap2D by adding ``keepout_filter`` to the ``plugins`` parameter in ``nav2_params.yaml``. You can place it in the ``global_costmap`` for planning with keepouts and ``local_costmap`` to make sure the robot won't attempt to drive through a keepout zone. The KeepoutFilter plugin should have the following parameters defined:"
+msgstr "Costmap Filters是Costamp2D插件。您可以通过在``nav2_params.yaml``的``plugins``参数中添加``keepout_filter``来启用Costmap2D中的``KeepoutFilter``插件。您可以将其放置在``global_costmap``中以便进行带有禁区的规划，将其放置在``local_costmap``中以确保机器人不会试图穿越禁区。KeepoutFilter插件应定义以下参数："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:241
 msgid "``plugin``: type of plugin. In our case ``nav2_costmap_2d::KeepoutFilter``."
-msgstr "``plugin``: type of plugin. In our case ``nav2_costmap_2d::KeepoutFilter``."
+msgstr "“plugin”：插件的类型。在我们的例子中为“nav2_costmap_2d::KeepoutFilter”。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:242
 msgid "``filter_info_topic``: filter info topic name. This need to be equal to ``filter_info_topic`` parameter of Costmap Filter Info Publisher Server from the chapter above."
-msgstr "``filter_info_topic``: filter info topic name. This need to be equal to ``filter_info_topic`` parameter of Costmap Filter Info Publisher Server from the chapter above."
+msgstr "``filter_info_topic``：过滤器信息主题名称。这个参数需要与上面章节中的Costmap Filter Info Publisher Server的``filter_info_topic``参数相等。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:244
 msgid "Full list of parameters supported by ``KeepoutFilter`` are listed at :ref:`keepout_filter` page."
-msgstr "Full list of parameters supported by ``KeepoutFilter`` are listed at :ref:`keepout_filter` page."
+msgstr "“KeepoutFilter”支持的参数的完整列表请参考:ref:`keepout_filter`页面。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:246
 msgid "It is important to note that enabling ``KeepoutFilter`` for ``global_costmap`` only will cause the path planner to build plans bypassing keepout zones. Enabling ``KeepoutFilter`` for ``local_costmap`` only will cause the robot to not enter keepout zones, but the path may still go through them. So, the best practice is to enable ``KeepoutFilter`` for global and local costmaps simultaneously by adding it both in ``global_costmap`` and ``local_costmap`` in ``nav2_params.yaml``. However it does not always have to be true. In some cases keepout zones don't have to be the same for global and local costmaps, e.g. if the robot doesn't allowed to intentionally go inside keepout zones, but if its there, the robot can drive in and out really quick if it clips an edge or corner. For this case, there is not need to use extra resources of the local costmap copy."
-msgstr "It is important to note that enabling ``KeepoutFilter`` for ``global_costmap`` only will cause the path planner to build plans bypassing keepout zones. Enabling ``KeepoutFilter`` for ``local_costmap`` only will cause the robot to not enter keepout zones, but the path may still go through them. So, the best practice is to enable ``KeepoutFilter`` for global and local costmaps simultaneously by adding it both in ``global_costmap`` and ``local_costmap`` in ``nav2_params.yaml``. However it does not always have to be true. In some cases keepout zones don't have to be the same for global and local costmaps, e.g. if the robot doesn't allowed to intentionally go inside keepout zones, but if its there, the robot can drive in and out really quick if it clips an edge or corner. For this case, there is not need to use extra resources of the local costmap copy."
+msgstr "重要的是要注意，仅在``global_costmap``中启用``KeepoutFilter``将导致路径规划器在绕过禁区时建立计划。仅在``local_costmap``中启用``KeepoutFilter``将导致机器人不进入禁区，但路径仍然可能穿过禁区。因此，最佳做法是在``nav2_params.yaml``中同时将其添加到``global_costmap``和``local_costmap``中，以同时启用全局和局部costmap的``KeepoutFilter``。然而，并不总是必须如此。在某些情况下，全局costmap和局部costmap的禁区可能不同，例如，如果机器人不允许有意进入禁区，但如果在禁区内，机器人可以非常快速地进入和离开，只要它碰到一个边缘或角落。对于这种情况，不需要使用局部costmap副本的额外资源。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:248
 msgid "To enable ``KeepoutFilter`` with same mask for both global and local costmaps, use the following configuration:"
-msgstr "To enable ``KeepoutFilter`` with same mask for both global and local costmaps, use the following configuration:"
+msgstr "要为全局和局部costmap使用相同的掩码启用“KeepoutFilter”，请使用以下配置："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:278
 msgid "All costmap filters should be enabled through a ``filters`` parameter -- though it is technically possible to include in the layered costmap itself. This is separated from the layer plugins to prevent interference in the layers, particularly the  inflation layer."
-msgstr "All costmap filters should be enabled through a ``filters`` parameter -- though it is technically possible to include in the layered costmap itself. This is separated from the layer plugins to prevent interference in the layers, particularly the  inflation layer."
+msgstr "所有costmap过滤器都应通过``filters``参数启用-尽管在分层costmap中包含它们也是可行的。这是为了防止干扰层，尤其是膨胀层。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:281 ../../tutorials/docs/navigation2_with_speed_filter.rst:293
 msgid "4. Run Nav2 stack"
-msgstr "4. Run Nav2 stack"
+msgstr "4. 运行Nav2堆栈"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:283
 msgid "After Costmap Filter Info Publisher Server and Map Server were launched and Keepout Filter was enabled for global/local costmaps, run Nav2 stack as written in :ref:`getting_started`:"
-msgstr "After Costmap Filter Info Publisher Server and Map Server were launched and Keepout Filter was enabled for global/local costmaps, run Nav2 stack as written in :ref:`getting_started`:"
+msgstr "在启动Costmap Filter Info Publisher Server和Map Server并为全局/局部costmap启用Keepout Filter后，按照:ref:`getting_started`中的说明运行Nav2堆栈："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:289
@@ -1669,7 +1669,7 @@ msgstr "And check that filter is working properly as in the pictures below (firs
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:4
 msgid "(SLAM) Navigating While Mapping"
-msgstr "(SLAM) Navigating While Mapping"
+msgstr "（SLAM）在制图时导航"
 
 
 #: ../../tutorials/docs/navigation2_with_slam.rst:13
