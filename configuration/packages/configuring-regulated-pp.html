@@ -946,7 +946,7 @@
 <p>如果您使用了此存储库中的规定纯追踪控制器算法或软件，请在您的论文中引用此工作：</p>
 <ul class="simple">
 <li><ol class="upperalpha simple" start="19">
-<li><p>Macenski, S. Singh, F. Martin, J. Gines, <a class="reference external" href="https://arxiv.org/abs/2305.20026">Regulated Pure Pursuit for Robot Path Tracking</a>. Autonomous Robots, 2023.</p></li>
+<li><p>Macenski, S. Singh, F. Martin, J. Gines, <a class="reference external" href="https://arxiv.org/abs/2305.20026">机器人路径跟踪的调控纯追踪方法</a>. 自主机器人, 2023.</p></li>
 </ol>
 </li>
 </ul>
@@ -989,7 +989,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The lookahead distance (m) to use to find the lookahead point when <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<dt>描述</dt><dd><p>当 <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> 为 <code class="docutils literal notranslate"><span class="pre">false</span></code> 时，用于寻找前瞻点的前瞻距离（米）。</p>
 </dd>
 </dl>
 </dd>
@@ -1009,7 +1009,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The minimum lookahead distance (m) threshold when <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<dt>描述</dt><dd><p>当 <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 时，最小前瞻距离（米）阈值。</p>
 </dd>
 </dl>
 </dd>
@@ -1029,7 +1029,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The maximum lookahead distance (m) threshold when <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<dt>描述</dt><dd><p>当 <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 时，最大前瞻距离（米）阈值。</p>
 </dd>
 </dl>
 </dd>
@@ -1049,7 +1049,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The time (s) to project the velocity by when <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Also known as the lookahead gain.</p>
+<dt>描述</dt><dd><p>当 <code class="docutils literal notranslate"><span class="pre">use_velocity_scaled_lookahead_dist</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 时，将速度投影的时间（秒）。也称为前瞻增益。</p>
 </dd>
 </dl>
 </dd>
@@ -1069,7 +1069,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, this is the angular velocity to use.</p>
+<dt>描述</dt><dd><p>如果“use_rotate_to_heading”为“true”，则使用此角速度。</p>
 </dd>
 </dl>
 </dd>
@@ -1089,7 +1089,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The TF transform tolerance (s).</p>
+<dt>描述</dt><dd><p>TF变换容差（秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1109,7 +1109,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to use the velocity scaled lookahead distances or constant <code class="docutils literal notranslate"><span class="pre">lookahead_distance</span></code>.</p>
+<dt>描述</dt><dd><p>是否使用基于速度缩放的前瞻距离或常数“前瞻距离（lookahead_distance）”。</p>
 </dd>
 </dl>
 </dd>
@@ -1129,7 +1129,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The minimum velocity (m/s) threshold to apply when approaching the goal to ensure progress. Must be <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">0.01</span></code>.</p>
+<dt>描述</dt><dd><p>在接近目标时应用的最小速度阈值（米/秒），以确保进展。必须为“&gt; 0.01”。</p>
 </dd>
 </dl>
 </dd>
@@ -1149,7 +1149,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The distance (m) left on the path at which to start slowing down. Should be less than the half the costmap width.</p>
+<dt>描述</dt><dd><p>开始减速的路径剩余距离（米）。应小于代价地图宽度的一半。</p>
 </dd>
 </dl>
 </dd>
@@ -1169,7 +1169,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to enable collision detection.</p>
+<dt>描述</dt><dd><p>是否启用碰撞检测。</p>
 </dd>
 </dl>
 </dd>
@@ -1189,7 +1189,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The time (s) to project a velocity command forward to check for collisions when <code class="docutils literal notranslate"><span class="pre">use_collision_detection</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Pre-<code class="docutils literal notranslate"><span class="pre">Humble</span></code>, this was <code class="docutils literal notranslate"><span class="pre">max_allowed_time_to_collision</span></code>.</p>
+<dt>描述</dt><dd><p>当“use_collision_detection”为“true”时，向前投影速度命令以检查碰撞的时间（秒）。在“Humble”之前，这是“max_allowed_time_to_collision”。</p>
 </dd>
 </dl>
 </dd>
