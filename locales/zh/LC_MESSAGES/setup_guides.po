@@ -1787,77 +1787,77 @@ msgstr "RVIZ是一种机器人可视化工具，可以使用URDF查看机器人�
 
 #: ../../setup_guides/urdf/setup_urdf.rst:354
 msgid "As you can see, we have successfully created a simple differential drive robot and visualized it in RVIz. It is not necessary to visualize your robot in RVIz, but it's a good step in order to see if you have properly defined your URDF. This helps you ensure that the robot state publisher is publishing the correct transformations."
-msgstr "As you can see, we have successfully created a simple differential drive robot and visualized it in RVIz. It is not necessary to visualize your robot in RVIz, but it's a good step in order to see if you have properly defined your URDF. This helps you ensure that the robot state publisher is publishing the correct transformations."
+msgstr "正如您所见，我们成功创建了一个简单的差动驱动机器人并在RVIz中可视化它。在RVIz中可视化机器人并非必需，但这是一个很好的步骤，可以验证您是否正确定义了URDF。这有助于确保机器人状态发布器发布了正确的变换。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:356
 msgid "You may have noticed that another window was launched - this is a GUI for the joint state publisher. The joint state publisher is another ROS 2 package which publishes the state for our non-fixed joints. You can manipulate this publisher through the small GUI and the new pose of the joints will be reflected in RVIz. Sliding the bars for any of the two wheels will rotate these joints. You can see this in action by viewing RVIZ as you sweep the sliders in the Joint State Publisher GUI."
-msgstr "You may have noticed that another window was launched - this is a GUI for the joint state publisher. The joint state publisher is another ROS 2 package which publishes the state for our non-fixed joints. You can manipulate this publisher through the small GUI and the new pose of the joints will be reflected in RVIz. Sliding the bars for any of the two wheels will rotate these joints. You can see this in action by viewing RVIZ as you sweep the sliders in the Joint State Publisher GUI."
+msgstr "你可能已经注意到另一个窗口被打开了 - 这是一个用于关节状态发布的图形用户界面(GUI)。关节状态发布器是另一个 ROS 2 包，用于发布非固定关节的状态。你可以通过这个小型 GUI 操作该发布器，关节的新姿态将在 RVIz 中得到反映。滑动任一两个轮子的滑块将会旋转这些关节。当你在关节状态发布器的 GUI 中滑动滑块时，你可以通过观察 RVIZ 来看到这一过程。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:360
 msgid "We won't be interacting much with this package for Nav2, but if you would like to know more about the joint state publisher, feel free to have a look at the official `Joint State Publisher Documentation <http://wiki.ros.org/joint_state_publisher>`_."
-msgstr "We won't be interacting much with this package for Nav2, but if you would like to know more about the joint state publisher, feel free to have a look at the official `Joint State Publisher Documentation <http://wiki.ros.org/joint_state_publisher>`_."
+msgstr "对于Nav2，我们不会与此软件包进行太多的交互，但如果您想了解更多关于关节状态发布器的信息，请随时查看官方的“关节状态发布器文档<http://wiki.ros.org/joint_state_publisher>`_”。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:362
 msgid "At this point, you may already decide to stop with this tutorial since we have already achieved our objective of creating a URDF for a simple differential drive robot. The robot state publisher is now publishing the transforms derived from the URDF. These transforms can now be used by other packages (such as Nav2) to get information regarding the shape and structure of your robot. However, to properly use this URDF in a simulation, we need physical properties so that the robot reacts to physical environments like a real robot would. The visualization fields are only for visualization, not collision, so your robot will drive straight through obstacles. We'll get into adding these properties in our URDF in the next section."
-msgstr "At this point, you may already decide to stop with this tutorial since we have already achieved our objective of creating a URDF for a simple differential drive robot. The robot state publisher is now publishing the transforms derived from the URDF. These transforms can now be used by other packages (such as Nav2) to get information regarding the shape and structure of your robot. However, to properly use this URDF in a simulation, we need physical properties so that the robot reacts to physical environments like a real robot would. The visualization fields are only for visualization, not collision, so your robot will drive straight through obstacles. We'll get into adding these properties in our URDF in the next section."
+msgstr "此时，你可能已经决定停止本教程，因为我们已经实现了创建一个简单差动驱动机器人的目标。机器人状态发布器现在正在发布从 URDF 中导出的变换。其他软件包(例如Nav2)现在可以使用这些变换来获取有关机器人形状和结构的信息。然而，为了在仿真中正确使用这个 URDF，我们需要物理属性，以便机器人对物理环境作出反应，就像真实机器人一样。可视化字段仅用于可视化，而不是用于碰撞，所以你的机器人会直接穿过障碍物。我们将在下一节中介绍如何在我们的 URDF 中添加这些属性。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:365
 msgid "Adding Physical Properties"
-msgstr "Adding Physical Properties"
+msgstr "添加物理属性"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:367
 msgid "As an additional section to this guide, we will be modifying our current URDF to include some of our robot's kinematic properties. This information may be used by physics simulators such as Gazebo to model and simulate how our robot will act in the virtual environment."
-msgstr "As an additional section to this guide, we will be modifying our current URDF to include some of our robot's kinematic properties. This information may be used by physics simulators such as Gazebo to model and simulate how our robot will act in the virtual environment."
+msgstr "作为本指南的额外部分，我们将修改当前的 URDF，以包含机器人的一些运动学属性。这些信息可以被物理仿真器(如Gazebo)用来建模和模拟机器人在虚拟环境中的行为。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:369
 msgid "Let us first define macros containing the inertial properties of the geometric primitives we used in our project. Place the snippet below after our constants section in the URDF:"
-msgstr "Let us first define macros containing the inertial properties of the geometric primitives we used in our project. Place the snippet below after our constants section in the URDF:"
+msgstr "让我们首先定义包含我们项目中使用的几何基元的惯性属性的宏。将下面的代码段放置在URDF中常量部分之后："
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:398
 msgid "Let us start by adding collision areas to our ``base_link`` using the ``<collision>`` tag. We will also be using the box_inertia macro we defined before to add some inertial properties to our ``base_link``. Include the following code snippet within ``<link name=\"base_link\">`` tag of base_link in our URDF."
-msgstr "Let us start by adding collision areas to our ``base_link`` using the ``<collision>`` tag. We will also be using the box_inertia macro we defined before to add some inertial properties to our ``base_link``. Include the following code snippet within ``<link name=\"base_link\">`` tag of base_link in our URDF."
+msgstr "让我们从使用 ``<collision>`` 标签为``base_link``添加碰撞区域开始。我们还将使用之前定义的 box_inertia 宏来为``base_link``添加一些惯性属性。在 URDF 的``<link name=\"base_link\">``标签中包含以下代码片段。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:411
 msgid "Next, let us do the same for our wheel macros. Include the following code snippet within the ``<link name=\"${prefix}_link\">`` tag of our wheel macros in our URDF."
-msgstr "Next, let us do the same for our wheel macros. Include the following code snippet within the ``<link name=\"${prefix}_link\">`` tag of our wheel macros in our URDF."
+msgstr "接下来，让我们为我们的轮子宏做同样的操作。将以下代码段包含在URDF中我们轮子宏的 ``<link name=\"${prefix}_link\">`` 标签内。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:425
 msgid "Lastly, let us add the similar properties to our spherical caster wheels. Include the following in the ``<link name=\"front_caster\">`` tag of our caster wheel in the URDF."
-msgstr "Lastly, let us add the similar properties to our spherical caster wheels. Include the following in the ``<link name=\"front_caster\">`` tag of our caster wheel in the URDF."
+msgstr "最后，让我们为球形齿轮加入类似的属性。在 URDF 的齿轮``<link name=\"front_caster\">``标签中包含以下内容。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:439
 msgid "We did not add any inertial or collision properties to our ``base_footprint`` link since this is a virtual and non-physical link."
-msgstr "We did not add any inertial or collision properties to our ``base_footprint`` link since this is a virtual and non-physical link."
+msgstr "由于``base_footprint``是一个虚拟且非物理的链接，我们没有为其添加任何惯性或碰撞属性。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:441
 msgid "Build your project and then launch RViz using the same commands in the previous section."
-msgstr "Build your project and then launch RViz using the same commands in the previous section."
+msgstr "构建你的项目，然后使用前一节中的相同命令启动 RViz。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:449
 msgid "You can verify whether you have properly set up the collision areas by enabling ``Collision Enabled`` under ``RobotModel`` on the left pane (it may be easier to see if you also turn off ``Visual Enabled``). For this tutorial we defined a collision area which is similar to our visual properties. Note that this may not always be the case since you may opt for simpler collision areas based on how your robot looks."
-msgstr "You can verify whether you have properly set up the collision areas by enabling ``Collision Enabled`` under ``RobotModel`` on the left pane (it may be easier to see if you also turn off ``Visual Enabled``). For this tutorial we defined a collision area which is similar to our visual properties. Note that this may not always be the case since you may opt for simpler collision areas based on how your robot looks."
+msgstr "您可以通过在左侧窗格的“RobotModel”下启用“Collision Enabled”（如果您还关闭“Visual Enabled”可能更容易观察）来验证是否正确设置了碰撞区域。对于本教程，我们定义了一个与我们的视觉属性类似的碰撞区域。请注意，这并不总是这样，因为您可以根据机器人的外观选择更简单的碰撞区域。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:453
 msgid "For now, we will have to stop here since we will need to set up a lot more components to actually start simulating our robot in Gazebo. We will be coming back to this project during the course of these setup guides, and we will eventually see our robot move in a virtual environment once we get to the simulation sections. The major components that are missing from this work are the simulation plugins required to mimic your robot controllers. We will introduce those and add them to this URDF in the appropriate section."
-msgstr "For now, we will have to stop here since we will need to set up a lot more components to actually start simulating our robot in Gazebo. We will be coming back to this project during the course of these setup guides, and we will eventually see our robot move in a virtual environment once we get to the simulation sections. The major components that are missing from this work are the simulation plugins required to mimic your robot controllers. We will introduce those and add them to this URDF in the appropriate section."
+msgstr "目前为止，我们必须在这里停下，因为我们需要设置更多的组件才能开始在 Gazebo 中实际模拟我们的机器人。在这些设置指南的过程中，我们将回到这个项目，并最终在模拟部分看到我们的机器人在虚拟环境中移动。这项工作缺少的主要组件是用于模拟机器人控"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:458
 msgid "And that's it. In this tutorial, you have successfully created a URDF for a simple differential drive robot. You have also set up a ROS 2 project that launches a robot publisher node, which then uses your URDF to publish the robot's transforms. We have also used RViz to visualize our robot to verify whether our URDF is correct. Lastly, we have added in some physical properties to our URDF in order to prepare it for simulation."
-msgstr "And that's it. In this tutorial, you have successfully created a URDF for a simple differential drive robot. You have also set up a ROS 2 project that launches a robot publisher node, which then uses your URDF to publish the robot's transforms. We have also used RViz to visualize our robot to verify whether our URDF is correct. Lastly, we have added in some physical properties to our URDF in order to prepare it for simulation."
+msgstr "到此为止。在本教程中，您已成功为一个简单的差动驱动机器人创建了一个URDF。您还设置了一个ROS 2项目，启动了一个机器人发布节点，该节点使用您的URDF来发布机器人的变换。我们还使用RViz来可视化我们的机器人，以验证我们的URDF是否正确。最后，我们还向我们的URDF中添加了一些物理属性，以便为仿真做好准备。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:460

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../commander_api/index.rst:4
 msgid "Simple Commander API"
-msgstr "Simple Commander API"
+msgstr "简单指挥官API"
 
 
 #: ../../commander_api/index.rst:7
@@ -32,7 +32,7 @@ msgstr "概述"
 
 #: ../../commander_api/index.rst:9
 msgid "The goal of the Nav2 Simple (Python3) Commander is to provide a \"navigation as a library\" capability to Python3 users. We provide an API that handles all the ROS 2 and Action Server tasks for you such that you can focus on building an application leveraging the capabilities of Nav2 (after you've configured it to your liking with your plugins of choice). `We also provide you with demos and examples of API usage <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_ to build common basic capabilities in autonomous mobile robotics in the ``nav2_simple_commander`` package."
-msgstr "The goal of the Nav2 Simple (Python3) Commander is to provide a \"navigation as a library\" capability to Python3 users. We provide an API that handles all the ROS 2 and Action Server tasks for you such that you can focus on building an application leveraging the capabilities of Nav2 (after you've configured it to your liking with your plugins of choice). `We also provide you with demos and examples of API usage <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_ to build common basic capabilities in autonomous mobile robotics in the ``nav2_simple_commander`` package."
+msgstr "Nav2简单（Python3）指挥官的目标是为Python3用户提供“作为库的导航”能力。我们提供了一个处理ROS 2和动作服务器任务的API，以便您可以专注于构建应用程序，利用Nav2的功能（在您使用所选的插件进行配置后）。我们还为您提供了API用法的演示和示例，以构建自主移动机器人的常见基本功能，这些位于``nav2_simple_commander``软件包中。"
 
 
 #: ../../commander_api/index.rst:11
@@ -42,7 +42,7 @@ msgstr "A simple demonstration is shown below. Note: ``goToPose()``, ``goThrough
 
 #: ../../commander_api/index.rst:13
 msgid "You may use this simple commander preempt commands of the same type (e.g. you can preempt a ``goToPose()`` with another ``goToPose()``) but you must explicitly cancel a current command and issue a new one if switching between ``goToPose()``, ``goThroughPoses()``, or ``followWaypoints()``."
-msgstr "You may use this simple commander preempt commands of the same type (e.g. you can preempt a ``goToPose()`` with another ``goToPose()``) but you must explicitly cancel a current command and issue a new one if switching between ``goToPose()``, ``goThroughPoses()``, or ``followWaypoints()``."
+msgstr "您可以使用此简单指挥官来中断相同类型的命令（例如，您可以使用另一个``goToPose()``来中断``goToPose()``），但是如果在``goToPose()``、``goThroughPoses()``或``followWaypoints()``之间切换，您必须显式取消当前命令并发出新命令。"
 
 
 #: ../../commander_api/index.rst:53
@@ -52,7 +52,7 @@ msgstr "Commander API"
 
 #: ../../commander_api/index.rst:55
 msgid "The methods provided by the basic navigator are shown below, with inputs and expected returns. If a server fails, it may throw an exception or return a `None` object, so please be sure to properly wrap your navigation calls in try/catch and check returns for `None` type."
-msgstr "The methods provided by the basic navigator are shown below, with inputs and expected returns. If a server fails, it may throw an exception or return a `None` object, so please be sure to properly wrap your navigation calls in try/catch and check returns for `None` type."
+msgstr "基本导航器提供的方法如下所示，包括输入和预期返回值。如果服务器出现故障，可能会抛出异常或返回`None`对象，请确保在try/catch中正确包装您的导航调用，并检查返回值的`None`类型。"
 
 
 #: ../../commander_api/index.rst:59
