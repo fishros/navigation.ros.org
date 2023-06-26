@@ -2103,7 +2103,7 @@ msgstr "注意：可以以同样的方式设置用于其他 Navigation2 服务�
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:147
 msgid "2- Launch Navigation2"
-msgstr "2- Launch Navigation2"
+msgstr "2- 启动Navigation2"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:149
@@ -2113,7 +2113,7 @@ msgstr "按照 :ref:`getting_started` 中的相同过程，在 gazebo 中启动�
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:153
 msgid "3-  RVIZ"
-msgstr "3-  RVIZ"
+msgstr "3- RVIZ"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:155
@@ -2123,7 +2123,7 @@ msgstr "在打开 RViz 并设置 `publish_voxel_map: true` 后，可以使用 `{
 
 #: ../../tutorials/docs/using_collision_monitor.rst:4
 msgid "Using Collision Monitor"
-msgstr "Using Collision Monitor"
+msgstr "使用碰撞监视器"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:8
@@ -2133,7 +2133,7 @@ msgstr "`准备 Nav2 栈`_"
 
 #: ../../tutorials/docs/using_collision_monitor.rst:9
 msgid "`Configuring Collision Monitor`_"
-msgstr "`Configuring Collision Monitor`_"
+msgstr "`配置碰撞监视器`_"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:10 ../../tutorials/docs/using_shim_controller.rst:11
@@ -2143,7 +2143,7 @@ msgstr "`演示执行`_"
 
 #: ../../tutorials/docs/using_collision_monitor.rst:18
 msgid "This tutorial shows how to use a Collision Monitor with Nav2 stack. Based on this tutorial, you can setup it for your environment and needs."
-msgstr "This tutorial shows how to use a Collision Monitor with Nav2 stack. Based on this tutorial, you can setup it for your environment and needs."
+msgstr "本教程展示了如何在Nav2堆栈中使用碰撞监视器。基于本教程，您可以为您的环境和需求进行设置。"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:23
@@ -2153,77 +2153,77 @@ msgstr "假设已安装或在本地构建了 ROS2 和 Nav2 的依赖包。请确
 
 #: ../../tutorials/docs/using_collision_monitor.rst:27
 msgid "Configuring Collision Monitor"
-msgstr "Configuring Collision Monitor"
+msgstr "配置碰撞监视器"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:29
 msgid "The Collision Monitor node has its own ``collision_monitor_node.launch.py`` launch-file and preset parameters in the ``collision_monitor_params.yaml`` file for demonstration, though its trivial to add this to Nav2's main launch file if being used in practice. For the demonstration, two shapes will be created - an inner stop and a larger slowdown bounding boxes placed in the front of the robot:"
-msgstr "The Collision Monitor node has its own ``collision_monitor_node.launch.py`` launch-file and preset parameters in the ``collision_monitor_params.yaml`` file for demonstration, though its trivial to add this to Nav2's main launch file if being used in practice. For the demonstration, two shapes will be created - an inner stop and a larger slowdown bounding boxes placed in the front of the robot:"
+msgstr "碰撞监视器节点具有自己的``collision_monitor_node.launch.py``启动文件和``collision_monitor_params.yaml``文件中的预设参数，用于演示，但如果在实际应用中使用，将其添加到Nav2的主启动文件中非常简单。在演示中，将创建两个形状-一个内部停止框和一个较大的减速框，放置在机器人的前方："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:35
 msgid "If more than 3 points will appear inside a slowdown box, the robot will decrease its speed to ``30%`` from its value. For the cases when obstacles are dangerously close to the robot, inner stop zone will work. For this setup, the following lines should be added into ``collision_monitor_params.yaml`` parameters file. Stop box is named as ``PolygonStop`` and slowdown bounding box - as ``PolygonSlow``:"
-msgstr "If more than 3 points will appear inside a slowdown box, the robot will decrease its speed to ``30%`` from its value. For the cases when obstacles are dangerously close to the robot, inner stop zone will work. For this setup, the following lines should be added into ``collision_monitor_params.yaml`` parameters file. Stop box is named as ``PolygonStop`` and slowdown bounding box - as ``PolygonSlow``:"
+msgstr "如果在减速区域内出现超过3个点，机器人将将其速度降低到其值的``30%``。对于障碍物与机器人危险接近的情况，将启用内部停止区域。为了进行此设置，应将以下行添加到``collision_monitor_params.yaml``参数文件中。停止区域被命名为``PolygonStop``，减速包围盒被命名为``PolygonSlow``："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:59
 msgid "The circle shape could be used instead of polygon, e.g. for the case of omni-directional robots where the collision can occur from any direction. However, for the tutorial needs, let's focus our view on polygons. For the same reason, we leave out of scope the Approach model. Both of these cases could be easily enabled by referencing to the :ref:`configuring_collision_monitor` configuration guide."
-msgstr "The circle shape could be used instead of polygon, e.g. for the case of omni-directional robots where the collision can occur from any direction. However, for the tutorial needs, let's focus our view on polygons. For the same reason, we leave out of scope the Approach model. Both of these cases could be easily enabled by referencing to the :ref:`configuring_collision_monitor` configuration guide."
+msgstr "圆形形状可以替代多边形，例如对于全向机器人的情况，碰撞可能发生在任何方向。然而，对于教程的需要，让我们将视野集中在多边形上。出于同样的原因，我们不讨论Approach模型。可以通过参考:ref:`configuring_collision_monitor`配置指南轻松启用这两种情况。"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:62
 msgid "Both polygon shapes in the tutorial were set statically. However, there is an ability to dynamically adjust them over time using topic messages containing vertices points for polygons or footprints. For more information, please refer to the configuration guide."
-msgstr "Both polygon shapes in the tutorial were set statically. However, there is an ability to dynamically adjust them over time using topic messages containing vertices points for polygons or footprints. For more information, please refer to the configuration guide."
+msgstr "教程中的两个多边形形状都是静态设置的。然而，可以通过包含多边形或足迹的顶点点的主题消息来动态调整它们的时间。有关更多信息，请参阅配置指南。"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:64
 msgid "For the working configuration, at least one data source should be added. In current demonstration, it is used laser scanner (though ``PointCloud2`` and Range/Sonar/IR sensors are also possible), which is described by the following lines for Collision Monitor node:"
-msgstr "For the working configuration, at least one data source should be added. In current demonstration, it is used laser scanner (though ``PointCloud2`` and Range/Sonar/IR sensors are also possible), which is described by the following lines for Collision Monitor node:"
+msgstr "对于工作配置，至少应添加一个数据源。在当前演示中，使用激光扫描仪（虽然``PointCloud2``和范围/声纳/红外传感器也是可能的），它由以下行描述了碰撞监视器节点的情况："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:74
 msgid "Set topic names, frame ID-s and timeouts to work correctly with a default Nav2 setup. The whole ``nav2_collision_monitor/params/collision_monitor_params.yaml`` file in this case will look as follows:"
-msgstr "Set topic names, frame ID-s and timeouts to work correctly with a default Nav2 setup. The whole ``nav2_collision_monitor/params/collision_monitor_params.yaml`` file in this case will look as follows:"
+msgstr "设置主题名称、帧ID和超时时间，以便与默认的Nav2设置正确配合使用。在这种情况下，整个``nav2_collision_monitor/params/collision_monitor_params.yaml``文件将如下所示："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:111
 msgid "Preparing Nav2 stack"
-msgstr "Preparing Nav2 stack"
+msgstr "准备Nav2堆栈"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:113
 msgid "The Collision Monitor is designed to operate below Nav2 as an independent safety node. This acts as a filter on the ``cmd_vel`` topic coming out of the Controller Server. If no such zone is triggered, then the Controller's ``cmd_vel`` is used. Else, it is scaled or set to stop as appropriate. For correct operation of the Collision Monitor with the Controller, it is required to add the ``cmd_vel -> cmd_vel_raw`` remapping to the ``navigation_launch.py`` bringup script as presented below:"
-msgstr "The Collision Monitor is designed to operate below Nav2 as an independent safety node. This acts as a filter on the ``cmd_vel`` topic coming out of the Controller Server. If no such zone is triggered, then the Controller's ``cmd_vel`` is used. Else, it is scaled or set to stop as appropriate. For correct operation of the Collision Monitor with the Controller, it is required to add the ``cmd_vel -> cmd_vel_raw`` remapping to the ``navigation_launch.py`` bringup script as presented below:"
+msgstr "碰撞监视器被设计为在Nav2之下作为独立的安全节点运行。它作为对控制器服务器输出的``cmd_vel``主题的过滤器。如果没有触发这样的区域，则使用控制器的``cmd_vel``。否则，它将根据需要进行缩放或停止设置。为了使碰撞监视器与控制器正确运行，需要将``cmd_vel -> cmd_vel_raw``重映射添加到下面所示的``navigation_launch.py``启动脚本中："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:137
 msgid "Please note, that the remapped ``cmd_vel_raw`` topic should match to the input velocity ``cmd_vel_in_topic`` parameter value of the Collision Monitor node, and the output velocity ``cmd_vel_out_topic`` parameter value should be actual ``cmd_vel`` to fit the replacement."
-msgstr "Please note, that the remapped ``cmd_vel_raw`` topic should match to the input velocity ``cmd_vel_in_topic`` parameter value of the Collision Monitor node, and the output velocity ``cmd_vel_out_topic`` parameter value should be actual ``cmd_vel`` to fit the replacement."
+msgstr "请注意，重新映射的``cmd_vel_raw``话题应与碰撞监视器节点的输入速度``cmd_vel_in_topic``参数值匹配，输出速度``cmd_vel_out_topic``参数值应为实际的``cmd_vel``以适应替换。"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:140 ../../tutorials/docs/using_shim_controller.rst:115
 msgid "Demo Execution"
-msgstr "Demo Execution"
+msgstr "演示执行"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:142
 msgid "Once Collision Monitor node has been tuned and ``cmd_vel`` topics remapped, Collision Monitor node is ready to run. For that, run Nav2 stack as written in :ref:`getting_started`:"
-msgstr "Once Collision Monitor node has been tuned and ``cmd_vel`` topics remapped, Collision Monitor node is ready to run. For that, run Nav2 stack as written in :ref:`getting_started`:"
+msgstr "一旦调整了碰撞监视器节点和``cmd_vel``话题的映射，碰撞监视器节点就准备好运行了。为此，请按照:ref:`getting_started`中的说明运行Nav2堆栈："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:149
 msgid "In parallel console, launch Collision Monitor node by using its launch-file:"
-msgstr "In parallel console, launch Collision Monitor node by using its launch-file:"
+msgstr "在并行控制台中，使用其启动文件启动碰撞监视器节点："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:155
 msgid "Since both ``PolygonStop`` and ``PolygonSlow`` polygons will have their own publishers, they could be added to visualization as shown at the picture below:"
-msgstr "Since both ``PolygonStop`` and ``PolygonSlow`` polygons will have their own publishers, they could be added to visualization as shown at the picture below:"
+msgstr "由于``PolygonStop``和``PolygonSlow``多边形将有自己的发布器，可以将它们添加到可视化中，如下图所示："
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:160
 msgid "Set the initial pose and then put Nav2 goal on map. The robot will start its movement, slowing down while running near the obstacles, and stopping in close proximity to them:"
-msgstr "Set the initial pose and then put Nav2 goal on map. The robot will start its movement, slowing down while running near the obstacles, and stopping in close proximity to them:"
+msgstr "设置初始姿态，然后将Nav2目标放在地图上。机器人将开始移动，在靠近障碍物时减速，并在接近障碍物时停止："
 
 
 #: ../../tutorials/docs/using_groot.rst:4
@@ -2233,7 +2233,7 @@ msgstr "Groot - Interacting with Behavior Trees"
 
 #: ../../tutorials/docs/using_groot.rst:11
 msgid "`Visualize Behavior Trees`_"
-msgstr "`Visualize Behavior Trees`_"
+msgstr "可视化行为树"
 
 
 #: ../../tutorials/docs/using_groot.rst:12
