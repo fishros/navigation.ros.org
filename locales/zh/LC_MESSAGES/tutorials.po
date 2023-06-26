@@ -1257,7 +1257,7 @@ msgstr "可选地，您可以在rviz配置文件中重新映射此主题为``goa
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:143
 msgid "2- Run Dynamic Object Following in Nav2 Simulation"
-msgstr "2- Run Dynamic Object Following in Nav2 Simulation"
+msgstr "2- 在Nav2仿真中运行动态物体跟随"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:145
@@ -1277,37 +1277,37 @@ msgstr "打开RViz，在初始化机器人位置后，命令机器人导航到�
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:151
 msgid "When you have a detector detecting your obstacle at a higher rate (1 hz, 10 hz, 100 hz) you will see a far more reactive robot following your detected object of interest!"
-msgstr "When you have a detector detecting your obstacle at a higher rate (1 hz, 10 hz, 100 hz) you will see a far more reactive robot following your detected object of interest!"
+msgstr "当你的检测器以更高的频率（1 Hz、10 Hz、100 Hz）检测到障碍物时，你将看到一个更具反应性的机器人跟随你检测到的感兴趣的物体！"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:4
 msgid "Navigating with a Physical Turtlebot 3"
-msgstr "Navigating with a Physical Turtlebot 3"
+msgstr "使用实体Turtlebot 3导航"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:21
 msgid "This tutorial shows how to control and navigate Turtlebot 3 using the ROS 2 Nav2 on a physical Turtlebot 3 robot. Before completing this tutorials, completing :ref:`getting_started` is highly recommended especially if you are new to ROS and Nav2."
-msgstr "This tutorial shows how to control and navigate Turtlebot 3 using the ROS 2 Nav2 on a physical Turtlebot 3 robot. Before completing this tutorials, completing :ref:`getting_started` is highly recommended especially if you are new to ROS and Nav2."
+msgstr "本教程展示了如何使用ROS 2 Nav2在物理Turtlebot 3机器人上控制和导航。在完成本教程之前，强烈推荐完成 :ref:`getting_started`，特别是如果你对ROS和Nav2还不熟悉的话。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:24
 msgid "This tutorial may take about 1 hour to complete. It depends on your experience with ROS, robots, and what computer system you have."
-msgstr "This tutorial may take about 1 hour to complete. It depends on your experience with ROS, robots, and what computer system you have."
+msgstr "完成本教程可能需要大约1小时。这取决于您对ROS、机器人的经验以及您所拥有的计算机系统。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:30
 msgid "You must install Nav2, Turtlebot3. If you don't have them installed, please follow :ref:`getting_started`."
-msgstr "You must install Nav2, Turtlebot3. If you don't have them installed, please follow :ref:`getting_started`."
+msgstr "你必须安装Nav2和Turtlebot3。如果你尚未安装它们，请按照 :ref:`getting_started` 进行安装。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:37
 msgid "0- Setup Your Enviroment Variables"
-msgstr "0- Setup Your Enviroment Variables"
+msgstr "0- 设置环境变量"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:39 ../../tutorials/docs/navigation2_with_slam.rst:47
 msgid "Run the following commands first whenever you open a new terminal during this tutorial."
-msgstr "Run the following commands first whenever you open a new terminal during this tutorial."
+msgstr "在本教程中，每次打开新的终端时，请首先运行以下命令。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:41 ../../tutorials/docs/navigation2_with_slam.rst:49
@@ -1322,32 +1322,32 @@ msgstr "``export TURTLEBOT3_MODEL=waffle``"
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:45
 msgid "1- Launch Turtlebot 3"
-msgstr "1- Launch Turtlebot 3"
+msgstr "1- 启动Turtlebot 3"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:47
 msgid "You will need to launch your robot's interface,"
-msgstr "You will need to launch your robot's interface,"
+msgstr "你需要启动机器人的界面,"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:49
 msgid "``ros2 launch turtlebot3_bringup robot.launch.py  use_sim_time:=False``"
-msgstr "``ros2 launch turtlebot3_bringup robot.launch.py  use_sim_time:=False``"
+msgstr "``ros2 launch turtlebot3_bringup robot.launch.py use_sim_time:=False``"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:52
 msgid "2- Launch Nav2"
-msgstr "2- Launch Nav2"
+msgstr "2- 启动Nav2"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:54
 msgid "You need to have a map of the environment where you want to Navigate Turtlebot 3, or create one live with SLAM."
-msgstr "You need to have a map of the environment where you want to Navigate Turtlebot 3, or create one live with SLAM."
+msgstr "您需要拥有一个Turtlebot 3导航的环境地图，或者使用SLAM实时创建一个。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:56
 msgid "In case you are interested, there is a use case tutorial which shows how to use Nav2 with SLAM. :ref:`navigation2-with-slam`."
-msgstr "In case you are interested, there is a use case tutorial which shows how to use Nav2 with SLAM. :ref:`navigation2-with-slam`."
+msgstr "如果你感兴趣，这里有一个用例教程展示了如何使用带有SLAM的Nav2。:ref:`navigation2-with-slam`。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:59
@@ -1367,7 +1367,7 @@ msgstr "``your-map.yaml``"
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:64
 msgid "``<your_map>.yaml`` is the configuration file for the map we want to provide Nav2. In this case, it has the map resolution value, threshold values for obstacles and free spaces, and a map file location. You need to make sure these values are correct. More information about the map.yaml can be found `here <http://wiki.ros.org/map_server>`_."
-msgstr "``<your_map>.yaml`` is the configuration file for the map we want to provide Nav2. In this case, it has the map resolution value, threshold values for obstacles and free spaces, and a map file location. You need to make sure these values are correct. More information about the map.yaml can be found `here <http://wiki.ros.org/map_server>`_."
+msgstr "``<your_map>.yaml`` 是我们要提供给Nav2的地图的配置文件。在这种情况下，它包含地图分辨率值、障碍物和自由空间的阈值以及地图文件的位置。你需要确保这些值是正确的。关于map.yaml的更多信息可以在`这里 <http://wiki.ros.org/map_server>`_ 找到。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:69
