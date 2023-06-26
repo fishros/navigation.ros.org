@@ -143,7 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#writing-the-urdf">编写URDF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-and-launch">构建和启动</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#visualization-using-rviz">使用RVIZ进行可视化</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-physical-properties">Adding Physical Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-physical-properties">添加物理属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#conclusion">结论</a></li>
 </ul>
 </li>
@@ -885,7 +885,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../commander_api/index.html">Simple Commander API</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../commander_api/index.html">简单指挥官API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#overview">概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#id1">Commander API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../commander_api/index.html#costmap-api">Costmap API</a></li>
@@ -1247,19 +1247,19 @@ Visualization<span class="w"> </span>Manager:
 <h2>使用RVIZ进行可视化<a class="headerlink" href="#visualization-using-rviz" title="永久链接至标题"></a></h2>
 <p>RVIZ是一种机器人可视化工具，可以使用URDF查看机器人的3D模型。在上一节中使用的命令成功启动后，RVIZ现在应该在屏幕上可见，并且应该看起来像下面的图像。您可能需要移动和操作视图，以便更好地查看机器人。</p>
 <img alt="../../_images/base-bot_3.png" src="../../_images/base-bot_3.png" />
-<p>As you can see, we have successfully created a simple differential drive robot and visualized it in RVIz. It is not necessary to visualize your robot in RVIz, but it's a good step in order to see if you have properly defined your URDF. This helps you ensure that the robot state publisher is publishing the correct transformations.</p>
-<p>You may have noticed that another window was launched - this is a GUI for the joint state publisher. The joint state publisher is another ROS 2 package which publishes the state for our non-fixed joints. You can manipulate this publisher through the small GUI and the new pose of the joints will be reflected in RVIz. Sliding the bars for any of the two wheels will rotate these joints. You can see this in action by viewing RVIZ as you sweep the sliders in the Joint State Publisher GUI.</p>
+<p>正如您所见，我们成功创建了一个简单的差动驱动机器人并在RVIz中可视化它。在RVIz中可视化机器人并非必需，但这是一个很好的步骤，可以验证您是否正确定义了URDF。这有助于确保机器人状态发布器发布了正确的变换。</p>
+<p>你可能已经注意到另一个窗口被打开了 - 这是一个用于关节状态发布的图形用户界面(GUI)。关节状态发布器是另一个 ROS 2 包，用于发布非固定关节的状态。你可以通过这个小型 GUI 操作该发布器，关节的新姿态将在 RVIz 中得到反映。滑动任一两个轮子的滑块将会旋转这些关节。当你在关节状态发布器的 GUI 中滑动滑块时，你可以通过观察 RVIZ 来看到这一过程。</p>
 <img alt="../../_images/base-bot_4.png" src="../../_images/base-bot_4.png" />
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>We won't be interacting much with this package for Nav2, but if you would like to know more about the joint state publisher, feel free to have a look at the official <a class="reference external" href="http://wiki.ros.org/joint_state_publisher">Joint State Publisher Documentation</a>.</p>
+<p>对于Nav2，我们不会与此软件包进行太多的交互，但如果您想了解更多关于关节状态发布器的信息，请随时查看官方的“关节状态发布器文档&lt;<a class="reference external" href="http://wiki.ros.org/joint_state_publisher">http://wiki.ros.org/joint_state_publisher</a>&gt;`_”。</p>
 </div>
-<p>At this point, you may already decide to stop with this tutorial since we have already achieved our objective of creating a URDF for a simple differential drive robot. The robot state publisher is now publishing the transforms derived from the URDF. These transforms can now be used by other packages (such as Nav2) to get information regarding the shape and structure of your robot. However, to properly use this URDF in a simulation, we need physical properties so that the robot reacts to physical environments like a real robot would. The visualization fields are only for visualization, not collision, so your robot will drive straight through obstacles. We'll get into adding these properties in our URDF in the next section.</p>
+<p>此时，你可能已经决定停止本教程，因为我们已经实现了创建一个简单差动驱动机器人的目标。机器人状态发布器现在正在发布从 URDF 中导出的变换。其他软件包(例如Nav2)现在可以使用这些变换来获取有关机器人形状和结构的信息。然而，为了在仿真中正确使用这个 URDF，我们需要物理属性，以便机器人对物理环境作出反应，就像真实机器人一样。可视化字段仅用于可视化，而不是用于碰撞，所以你的机器人会直接穿过障碍物。我们将在下一节中介绍如何在我们的 URDF 中添加这些属性。</p>
 </div>
 <div class="section" id="adding-physical-properties">
-<h2>Adding Physical Properties<a class="headerlink" href="#adding-physical-properties" title="永久链接至标题"></a></h2>
-<p>As an additional section to this guide, we will be modifying our current URDF to include some of our robot's kinematic properties. This information may be used by physics simulators such as Gazebo to model and simulate how our robot will act in the virtual environment.</p>
-<p>Let us first define macros containing the inertial properties of the geometric primitives we used in our project. Place the snippet below after our constants section in the URDF:</p>
+<h2>添加物理属性<a class="headerlink" href="#adding-physical-properties" title="永久链接至标题"></a></h2>
+<p>作为本指南的额外部分，我们将修改当前的 URDF，以包含机器人的一些运动学属性。这些信息可以被物理仿真器(如Gazebo)用来建模和模拟机器人在虚拟环境中的行为。</p>
+<p>让我们首先定义包含我们项目中使用的几何基元的惯性属性的宏。将下面的代码段放置在URDF中常量部分之后：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">17</span><span class="w">  </span><span class="cm">&lt;!-- Define intertial property macros  --&gt;</span>
 <span class="linenos">18</span><span class="w">  </span><span class="nt">&lt;xacro:macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;box_inertia&quot;</span><span class="w"> </span><span class="na">params=</span><span class="s">&quot;m w h d&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">19</span><span class="w">    </span><span class="nt">&lt;inertial&gt;</span>
@@ -1285,7 +1285,7 @@ Visualization<span class="w"> </span>Manager:
 <span class="linenos">39</span><span class="w">  </span><span class="nt">&lt;/xacro:macro&gt;</span>
 </pre></div>
 </div>
-<p>Let us start by adding collision areas to our <code class="docutils literal notranslate"><span class="pre">base_link</span></code> using the <code class="docutils literal notranslate"><span class="pre">&lt;collision&gt;</span></code> tag. We will also be using the box_inertia macro we defined before to add some inertial properties to our <code class="docutils literal notranslate"><span class="pre">base_link</span></code>. Include the following code snippet within <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;base_link&quot;&gt;</span></code> tag of base_link in our URDF.</p>
+<p>让我们从使用 <code class="docutils literal notranslate"><span class="pre">&lt;collision&gt;</span></code> 标签为``base_link``添加碰撞区域开始。我们还将使用之前定义的 box_inertia 宏来为``base_link``添加一些惯性属性。在 URDF 的``&lt;link name=&quot;base_link&quot;&gt;``标签中包含以下代码片段。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">52</span><span class="w">    </span><span class="nt">&lt;collision&gt;</span>
 <span class="linenos">53</span><span class="w">      </span><span class="nt">&lt;geometry&gt;</span>
 <span class="linenos">54</span><span class="w">        </span><span class="nt">&lt;box</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;${base_length} ${base_width} ${base_height}&quot;</span><span class="nt">/&gt;</span>
@@ -1295,7 +1295,7 @@ Visualization<span class="w"> </span>Manager:
 <span class="linenos">58</span><span class="w">    </span><span class="nt">&lt;xacro:box_inertia</span><span class="w"> </span><span class="na">m=</span><span class="s">&quot;15&quot;</span><span class="w"> </span><span class="na">w=</span><span class="s">&quot;${base_width}&quot;</span><span class="w"> </span><span class="na">d=</span><span class="s">&quot;${base_length}&quot;</span><span class="w"> </span><span class="na">h=</span><span class="s">&quot;${base_height}&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>Next, let us do the same for our wheel macros. Include the following code snippet within the <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;${prefix}_link&quot;&gt;</span></code> tag of our wheel macros in our URDF.</p>
+<p>接下来，让我们为我们的轮子宏做同样的操作。将以下代码段包含在URDF中我们轮子宏的 <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;${prefix}_link&quot;&gt;</span></code> 标签内。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">83</span><span class="w">      </span><span class="nt">&lt;collision&gt;</span>
 <span class="linenos">84</span><span class="w">        </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;${pi/2} 0 0&quot;</span><span class="nt">/&gt;</span>
 <span class="linenos">85</span><span class="w">        </span><span class="nt">&lt;geometry&gt;</span>
@@ -1306,7 +1306,7 @@ Visualization<span class="w"> </span>Manager:
 <span class="linenos">90</span><span class="w">      </span><span class="nt">&lt;xacro:cylinder_inertia</span><span class="w"> </span><span class="na">m=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">r=</span><span class="s">&quot;${wheel_radius}&quot;</span><span class="w"> </span><span class="na">h=</span><span class="s">&quot;${wheel_width}&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>Lastly, let us add the similar properties to our spherical caster wheels. Include the following in the <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">name=&quot;front_caster&quot;&gt;</span></code> tag of our caster wheel in the URDF.</p>
+<p>最后，让我们为球形齿轮加入类似的属性。在 URDF 的齿轮``&lt;link name=&quot;front_caster&quot;&gt;``标签中包含以下内容。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">114</span><span class="w">    </span><span class="nt">&lt;collision&gt;</span>
 <span class="linenos">115</span><span class="w">      </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0 0 0&quot;</span><span class="nt">/&gt;</span>
 <span class="linenos">116</span><span class="w">      </span><span class="nt">&lt;geometry&gt;</span>
@@ -1319,21 +1319,21 @@ Visualization<span class="w"> </span>Manager:
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>We did not add any inertial or collision properties to our <code class="docutils literal notranslate"><span class="pre">base_footprint</span></code> link since this is a virtual and non-physical link.</p>
+<p>由于``base_footprint``是一个虚拟且非物理的链接，我们没有为其添加任何惯性或碰撞属性。</p>
 </div>
-<p>Build your project and then launch RViz using the same commands in the previous section.</p>
+<p>构建你的项目，然后使用前一节中的相同命令启动 RViz。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
 .<span class="w"> </span>install/setup.bash
 ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<span class="w"> </span>display.launch.py
 </pre></div>
 </div>
-<p>You can verify whether you have properly set up the collision areas by enabling <code class="docutils literal notranslate"><span class="pre">Collision</span> <span class="pre">Enabled</span></code> under <code class="docutils literal notranslate"><span class="pre">RobotModel</span></code> on the left pane (it may be easier to see if you also turn off <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Enabled</span></code>). For this tutorial we defined a collision area which is similar to our visual properties. Note that this may not always be the case since you may opt for simpler collision areas based on how your robot looks.</p>
+<p>您可以通过在左侧窗格的“RobotModel”下启用“Collision Enabled”（如果您还关闭“Visual Enabled”可能更容易观察）来验证是否正确设置了碰撞区域。对于本教程，我们定义了一个与我们的视觉属性类似的碰撞区域。请注意，这并不总是这样，因为您可以根据机器人的外观选择更简单的碰撞区域。</p>
 <img alt="../../_images/base-bot_5.png" src="../../_images/base-bot_5.png" />
-<p>For now, we will have to stop here since we will need to set up a lot more components to actually start simulating our robot in Gazebo. We will be coming back to this project during the course of these setup guides, and we will eventually see our robot move in a virtual environment once we get to the simulation sections. The major components that are missing from this work are the simulation plugins required to mimic your robot controllers. We will introduce those and add them to this URDF in the appropriate section.</p>
+<p>目前为止，我们必须在这里停下，因为我们需要设置更多的组件才能开始在 Gazebo 中实际模拟我们的机器人。在这些设置指南的过程中，我们将回到这个项目，并最终在模拟部分看到我们的机器人在虚拟环境中移动。这项工作缺少的主要组件是用于模拟机器人控</p>
 </div>
 <div class="section" id="conclusion">
 <h2>结论<a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
-<p>And that's it. In this tutorial, you have successfully created a URDF for a simple differential drive robot. You have also set up a ROS 2 project that launches a robot publisher node, which then uses your URDF to publish the robot's transforms. We have also used RViz to visualize our robot to verify whether our URDF is correct. Lastly, we have added in some physical properties to our URDF in order to prepare it for simulation.</p>
+<p>到此为止。在本教程中，您已成功为一个简单的差动驱动机器人创建了一个URDF。您还设置了一个ROS 2项目，启动了一个机器人发布节点，该节点使用您的URDF来发布机器人的变换。我们还使用RViz来可视化我们的机器人，以验证我们的URDF是否正确。最后，我们还向我们的URDF中添加了一些物理属性，以便为仿真做好准备。</p>
 <p>Feel free to use this tutorial as a template for your own robot. Remember that your main goal is to publish the correct transforms from your base_link up to your sensor_frames. Once these have been setup, then you may proceed to our other setup guides.</p>
 </div>
 </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Commander API &mdash; Navigation 2 1.0.0 文档</title>
+  <title>简单指挥官API &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -143,7 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../setup_guides/urdf/setup_urdf.html#writing-the-urdf">编写URDF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../setup_guides/urdf/setup_urdf.html#build-and-launch">构建和启动</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../setup_guides/urdf/setup_urdf.html#visualization-using-rviz">使用RVIZ进行可视化</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../setup_guides/urdf/setup_urdf.html#adding-physical-properties">Adding Physical Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup_guides/urdf/setup_urdf.html#adding-physical-properties">添加物理属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../setup_guides/urdf/setup_urdf.html#conclusion">结论</a></li>
 </ul>
 </li>
@@ -885,7 +885,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Simple Commander API</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">简单指挥官API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Commander API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-api">Costmap API</a></li>
@@ -928,7 +928,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Simple Commander API</li>
+      <li>简单指挥官API</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -938,12 +938,12 @@
            <div itemprop="articleBody">
              
   <div class="section" id="simple-commander-api">
-<span id="commander-api"></span><h1>Simple Commander API<a class="headerlink" href="#simple-commander-api" title="永久链接至标题"></a></h1>
+<span id="commander-api"></span><h1>简单指挥官API<a class="headerlink" href="#simple-commander-api" title="永久链接至标题"></a></h1>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>The goal of the Nav2 Simple (Python3) Commander is to provide a &quot;navigation as a library&quot; capability to Python3 users. We provide an API that handles all the ROS 2 and Action Server tasks for you such that you can focus on building an application leveraging the capabilities of Nav2 (after you've configured it to your liking with your plugins of choice). <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">We also provide you with demos and examples of API usage</a> to build common basic capabilities in autonomous mobile robotics in the <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> package.</p>
+<p>Nav2简单（Python3）指挥官的目标是为Python3用户提供“作为库的导航”能力。我们提供了一个处理ROS 2和动作服务器任务的API，以便您可以专注于构建应用程序，利用Nav2的功能（在您使用所选的插件进行配置后）。我们还为您提供了API用法的演示和示例，以构建自主移动机器人的常见基本功能，这些位于``nav2_simple_commander``软件包中。</p>
 <p>A simple demonstration is shown below. Note: <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code>, <code class="docutils literal notranslate"><span class="pre">goThroughPoses()</span></code>, <code class="docutils literal notranslate"><span class="pre">followWaypoints()</span></code> and similar are <strong>non-blocking</strong> such that you can receive and process feedback in a single-threaded application. As such while waiting for a task to be completed, the <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span> <span class="pre">nav.isTaskComplete()</span></code> design is necessary to poll for changes in the navigation completion, and if not complete some tasks of interest to your application (like processing feedback, doing something with the data the robot is collecting, or checking for faults).</p>
-<p>You may use this simple commander preempt commands of the same type (e.g. you can preempt a <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code> with another <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code>) but you must explicitly cancel a current command and issue a new one if switching between <code class="docutils literal notranslate"><span class="pre">goToPose()</span></code>, <code class="docutils literal notranslate"><span class="pre">goThroughPoses()</span></code>, or <code class="docutils literal notranslate"><span class="pre">followWaypoints()</span></code>.</p>
+<p>您可以使用此简单指挥官来中断相同类型的命令（例如，您可以使用另一个``goToPose()``来中断``goToPose()``），但是如果在``goToPose()``、<a href="#id1"><span class="problematic" id="id2">``</span></a>goThroughPoses()``或``followWaypoints()``之间切换，您必须显式取消当前命令并发出新命令。</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nav2_simple_commander.robot_navigator</span> <span class="kn">import</span> <span class="n">BasicNavigator</span>
 <span class="kn">import</span> <span class="nn">rclpy</span>
 
@@ -982,8 +982,7 @@
 </div>
 <div class="section" id="id1">
 <h2>Commander API<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
-<p>The methods provided by the basic navigator are shown below, with inputs and expected returns.
-If a server fails, it may throw an exception or return a <cite>None</cite> object, so please be sure to properly wrap your navigation calls in try/catch and check returns for <cite>None</cite> type.</p>
+<p>基本导航器提供的方法如下所示，包括输入和预期返回值。如果服务器出现故障，可能会抛出异常或返回`None`对象，请确保在try/catch中正确包装您的导航调用，并检查返回值的`None`类型。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
