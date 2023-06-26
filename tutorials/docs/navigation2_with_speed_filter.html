@@ -234,7 +234,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_with_stvl.html">(STVL) Using an External Costmap Plugin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_with_stvl.html">(STVL) 使用外部代价图插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_stvl.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_stvl.html#costmap2d-and-stvl">Costmap2D and STVL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_stvl.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -307,7 +307,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. 配置成本地图过滤器信息发布服务器</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enable-speed-filter">3. Enable Speed Filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-speed-filter">3. 启用速度过滤器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. 运行Nav2堆栈</a></li>
 </ul>
 </li>
@@ -994,7 +994,7 @@
 <p>另一个重要的事情是，不必使用整个 <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> 百分比范围。可以选择 <code class="docutils literal notranslate"><span class="pre">base</span></code> 和 <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> 系数，使速度限制值位于百分比范围的中间某处。例如，<code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">=</span> <span class="pre">40.0</span></code>，<code class="docutils literal notranslate"><span class="pre">multiplier</span> <span class="pre">=</span> <span class="pre">0.1</span></code> 将以步长为 <code class="docutils literal notranslate"><span class="pre">0.1%</span></code> 的速度限制值从 <code class="docutils literal notranslate"><span class="pre">[40.0%..50.0%]</span></code> 范围内获得。这对于精细调整可</p>
 </div>
 <p>在填充完所有的速度限制区域之后，保存``speed_mask.pgm``图像。</p>
-<p>Like all other maps, the filter mask should have its own YAML metadata file. Copy <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml">turtlebot3_world.yaml</a> to <code class="docutils literal notranslate"><span class="pre">speed_mask.yaml</span></code>. Open <code class="docutils literal notranslate"><span class="pre">speed_mask.yaml</span></code> and update the fields as shown below (as mentioned before for the <code class="docutils literal notranslate"><span class="pre">scale</span></code> mode to use whole color lightness range there should be no thresholds: <code class="docutils literal notranslate"><span class="pre">free_thresh</span> <span class="pre">=</span> <span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">occupied_thresh</span> <span class="pre">=</span> <span class="pre">1.0</span></code>):</p>
+<p>和其他地图一样，过滤器掩码应该有自己的YAML元数据文件。将 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml">turtlebot3_world.yaml</a> 复制到 <code class="docutils literal notranslate"><span class="pre">speed_mask.yaml</span></code> 中。打开 <code class="docutils literal notranslate"><span class="pre">speed_mask.yaml</span></code> 并按照下面所示的字段更新（如前面所述，对于 <code class="docutils literal notranslate"><span class="pre">scale</span></code> 模式，为了使用整个颜色亮度范围，不应该有阈值：<code class="docutils literal notranslate"><span class="pre">free_thresh</span> <span class="pre">=</span> <span class="pre">0.0</span></code> 和 <code class="docutils literal notranslate"><span class="pre">occupied_thresh</span> <span class="pre">=</span> <span class="pre">1.0</span></code>）：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">turtlebot3_world.pgm</span>
 <span class="l l-Scalar l-Scalar-Plain">-&gt;</span>
 <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">speed_mask.pgm</span>
@@ -1013,13 +1013,13 @@
 <p>由于Costmap2D不支持方向性，<code class="docutils literal notranslate"><span class="pre">origin``向量的最后一个分量``yaw``应该等于零（例如：``origin:</span> <span class="pre">[1.25,</span> <span class="pre">-5.18,</span> <span class="pre">0.0]</span></code>）。保存``speed_mask.yaml``文件，新的过滤器掩码已经准备就绪。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>World map itself and filter mask could have different sizes, origin and resolution which might be useful (e.g. for cases when filter mask is covering smaller areas on maps or when one filter mask is used repeatedly many times, like annotating a speed restricted area for same shape rooms in the hotel). For this case, you need to correct <code class="docutils literal notranslate"><span class="pre">resolution</span></code> and <code class="docutils literal notranslate"><span class="pre">origin</span></code> fields in YAML as well so that the filter mask is correctly laid on top of the original map. This example shows using the main map as a base, but that is not required.</p>
+<p>世界地图本身和过滤器掩码可以有不同的大小、原点和分辨率，这可能是有用的（例如，当过滤器掩码在地图上覆盖较小区域或当一个过滤器掩码被重复多次使用时，比如在酒店的相同形状房间中注释限速区域）。对于这种情况，您还需要在YAML文件中正确设置 <code class="docutils literal notranslate"><span class="pre">resolution</span></code> 和 <code class="docutils literal notranslate"><span class="pre">origin</span></code> 字段，以便将过滤器掩码正确放置在原始地图上。本示例显示了使用主地图作为基础，但这不是必需的。</p>
 </div>
 </div>
 <div class="section" id="configure-costmap-filter-info-publisher-server">
 <h3>2. 配置成本地图过滤器信息发布服务器<a class="headerlink" href="#configure-costmap-filter-info-publisher-server" title="永久链接至标题"></a></h3>
 <p>每个costmap过滤器通过``nav2_msgs/CostmapFilterInfo``类型的消息读取传入的元信息（例如过滤器类型或数据转换系数）。这些消息由`Costmap Filter Info Publisher Server &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info</a>&gt;`_发布。该服务器作为生命周期节点运行。根据设计文档&lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf</a>&gt;，<a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_msgs/CostmapFilterInfo``消息与``OccupancyGrid``过滤器掩码主题成对出现。因此，除了Costmap Filter Info Publisher Server外，还应启用新的Map Server实例，配置为发布过滤器掩码。</p>
-<p>In order to enable Speed Filter in your configuration, both servers should be enabled as lifecycle nodes in Python launch-file. For example, this might look as follows:</p>
+<p>为了在配置中启用速度过滤器，两个服务器都应该在Python launch文件中作为生命周期节点启用。例如，可以如下所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">from</span> <span class="nn">ament_index_python.packages</span> <span class="kn">import</span> <span class="n">get_package_share_directory</span>
@@ -1148,7 +1148,7 @@
 <div><ul class="simple">
 <li><p>对于Speed Filter中以最大速度的百分比设置速度限制，costmap过滤器的``type``应设置为``1``。可在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_map_server`页面找到所有可能的costmap过滤器类型。</p></li>
 <li><p>过滤器掩码主题名称应与成本地图过滤器信息发布服务器的``mask_topic``参数和地图服务器的``topic_name``参数相等。</p></li>
-<li><p>As was described in a previous chapter, <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">100.0</span></code> and <code class="docutils literal notranslate"><span class="pre">-1.0</span></code> accordingly for the purposes of this tutorial example.</p></li>
+<li><p>如前一章所述，为了本教程示例的目的，<code class="docutils literal notranslate"><span class="pre">base</span></code> 和 <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> 应该分别设置为 <code class="docutils literal notranslate"><span class="pre">100.0</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-1.0</span></code>。</p></li>
 </ul>
 </div></blockquote>
 <p>可在``navigation2_tutorials``存储库的`nav2_costmap_filters_demo &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo">https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo</a>&gt;`_目录中找到使用示例的独立的Python启动脚本、带有ROS参数的YAML文件和Speed Filter的过滤器掩码。要简单运行Filter Info Publisher Server和调整为在:ref:<cite>getting_started`中编写的Turtlebot3标准仿真上运行的Map Server，请构建示例并按以下方式启动``costmap_filter_info.launch.py`</cite>：</p>
@@ -1163,16 +1163,16 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
 </div>
 </div>
 <div class="section" id="enable-speed-filter">
-<h3>3. Enable Speed Filter<a class="headerlink" href="#enable-speed-filter" title="永久链接至标题"></a></h3>
+<h3>3. 启用速度过滤器<a class="headerlink" href="#enable-speed-filter" title="永久链接至标题"></a></h3>
 <p>Costmap Filters是Costmap2D插件。要在Costmap2D中启用``SpeedFilter``插件，需要将``speed_filter``添加到``nav2_params.yaml``中的``plugins``参数中。Speed Filter插件应定义以下参数：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: type of plugin. In our case <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::SpeedFilter</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code>: filter info topic name. This needs to be equal to <code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code> parameter of Costmap Filter Info Publisher Server from the chapter above.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">speed_limit_topic</span></code>: name of topic to publish speed limit to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: 插件的类型。在我们的例子中是 <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::SpeedFilter</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code>: 过滤器信息主题名称。这个值需要与上面章节中的 Costmap Filter Info Publisher Server 的 <code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code> 参数相等。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed_limit_topic</span></code>: 发布速度限制的主题名称。</p></li>
 </ul>
-<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> are listed at the <a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">速度过滤器参数</span></a> page.</p>
-<p>You can place the plugin either in the <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> section in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> to have speed restriction mask applied to global costmap or in the <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> to apply speed mask to the local costmap. However, <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> plugin should never be enabled simultaneously for global and local costmaps. Otherwise, it can lead to unwanted multiple &quot;speed restriction&quot; - &quot;no restriction&quot; message chains on speed restriction boundaries, that will cause jerking of the robot or another unpredictable behaviour.</p>
-<p>In this tutorial, we will enable Speed Filter for the global costmap. For this use the following configuration:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> 支持的参数完整列表在 <a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">速度过滤器参数</span></a> 页面中列出。</p>
+<p>您可以将插件放置在``nav2_params.yaml``文件中的``global_costmap``部分，以将速度限制蒙版应用于全局代价图，或者放置在``local_costmap``中，以将速度蒙版应用于局部代价图。然而，<a href="#id1"><span class="problematic" id="id2">``</span></a>SpeedFilter``插件不应同时启用全局和局部代价图。否则，可能会导致在速度限制边界上产生不需要的多个&quot;速度限制&quot; - &quot;无限制&quot;消息链，从而导致机器人的抖动或其他不可预测的行为。</p>
+<p>在本教程中，我们将为全局代价地图启用 Speed Filter。请使用以下配置：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>global_costmap:
   global_costmap:
     ros__parameters:
@@ -1187,8 +1187,8 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
         speed_limit_topic: &quot;/speed_limit&quot;
 </pre></div>
 </div>
-<p>As stated in the <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">design</a>, Speed Filter publishes speed restricting <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">messages</a> targeted for a Controller Server so that it could restrict maximum speed of the robot when it needed. Controller Server has a <code class="docutils literal notranslate"><span class="pre">speed_limit_topic</span></code> ROS parameter for that, which should be set to the same as in <code class="docutils literal notranslate"><span class="pre">speed_filter</span></code> plugin value. This topic in the map server could also be used to any number of other speed-restricted applications beyond the speed limiting zones, such as dynamically adjusting maximum speed by payload mass.</p>
-<p>Set <code class="docutils literal notranslate"><span class="pre">speed_limit_topic</span></code> parameter of a Controller Server to the same value as it set for <code class="docutils literal notranslate"><span class="pre">speed_filter</span></code> plugin:</p>
+<p>如`设计文档 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf</a>&gt;`_中所述，Speed Filter发布用于控制器服务器的速度限制`消息 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg</a>&gt;`_，以便在需要时限制机器人的最大速度。控制器服务器有一个名为``speed_limit_topic``的ROS参数，它应设置为与``speed_filter``插件值相同。该话题在地图服务器中还可用于除速度限制区域之外的任意数量的其他受速度限制的应用程序，例如根据负载质量动态调整最大速度。</p>
+<p>将 Controller Server 的 <code class="docutils literal notranslate"><span class="pre">speed_limit_topic</span></code> 参数设置为与 <code class="docutils literal notranslate"><span class="pre">speed_filter</span></code> 插件相同的值：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>controller_server:
   ros__parameters:
     ...
@@ -1198,12 +1198,11 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
 </div>
 <div class="section" id="run-nav2-stack">
 <h3>4. 运行Nav2堆栈<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
-<p>After Costmap Filter Info Publisher Server and Map Server were launched and Speed Filter was enabled for global/local costmap, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>:</p>
+<p>在启动Costmap Filter Info Publisher Server和Map Server，并为全局/局部代价图启用Speed Filter之后，按照:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>getting_started`中所述运行Nav2堆栈：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>
 </div>
-<p>For better visualization of speed filter mask, in RViz in the left <code class="docutils literal notranslate"><span class="pre">Displays</span></code> pane unfold <code class="docutils literal notranslate"><span class="pre">Map</span></code> and change <code class="docutils literal notranslate"><span class="pre">Topic</span></code> from <code class="docutils literal notranslate"><span class="pre">/map</span></code> -&gt; to <code class="docutils literal notranslate"><span class="pre">/speed_filter_mask</span></code>.
-Set the goal behind the speed restriction areas and check that the filter is working properly: robot should slow down when going through a speed restricting areas. Below is how it might look (first picture shows speed filter enabled for the global costmap, second - <code class="docutils literal notranslate"><span class="pre">speed_mask.pgm</span></code> filter mask):</p>
+<p>为了更好地可视化速度过滤器的遮罩，在 RViz 中，在左侧的 <code class="docutils literal notranslate"><span class="pre">Displays</span></code> 面板中展开 <code class="docutils literal notranslate"><span class="pre">Map</span></code> 并将 <code class="docutils literal notranslate"><span class="pre">Topic</span></code> 从 <code class="docutils literal notranslate"><span class="pre">/map</span></code> 更改为 <code class="docutils literal notranslate"><span class="pre">/speed_filter_mask</span></code>。设置目标在速度限制区域后面，并检查过滤器是否正常工作：机器人在通过速度限制区域时应该减速。下面是可能的效果（第一张图片显示了全局代价地图启用了速度过滤器，第二张图片是 <code class="docutils literal notranslate"><span class="pre">speed_mask.pgm</span></code> 过滤器遮罩）：</p>
 <a class="reference internal image-reference" href="../../_images/speed_global.gif"><img alt="../../_images/speed_global.gif" src="../../_images/speed_global.gif" style="height: 400px;" /></a>
 <a class="reference internal image-reference" href="../../_images/speed_mask.png"><img alt="../../_images/speed_mask.png" src="../../_images/speed_mask.png" style="height: 400px;" /></a>
 </div>
