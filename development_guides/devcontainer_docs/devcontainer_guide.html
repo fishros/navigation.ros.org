@@ -987,67 +987,67 @@
 <div class="section" id="starting-the-container">
 <h3>启动容器<a class="headerlink" href="#starting-the-container" title="永久链接至标题"></a></h3>
 <p>当首次创建 Dev Containers 时，任何支持工具或服务都将调用在选择的 <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> 配置文件中指定的一系列命令。这可能需要一些时间，但只需要执行一次，或者至少在重新构建容器之前不需要再次执行，可以通过更新 Dockerfile、基础镜像或 <code class="docutils literal notranslate"><span class="pre">.devcontainer/</span></code> 配置来触发重新构建。</p>
-<p>Specifically, for this project, the default <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> config executes the <code class="docutils literal notranslate"><span class="pre">onCreateCommand</span></code> to initially colcon cache, clean, and build the overlay workspace for the project. This ensures the workspace is precompiled and ready to use, while also ensuring any changes to the project's source code are reflected in the container. This is useful for:</p>
+<p>具体来说，对于这个项目，默认的<code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code>配置执行<code class="docutils literal notranslate"><span class="pre">onCreateCommand</span></code>，以便为项目的覆盖工作空间进行初始的colcon缓存、清理和构建。这确保了工作空间被预编译并准备就绪，同时还确保了对项目源代码的任何更改都会反映在容器中。这对于以下情况很有用：</p>
 <ul class="simple">
 <li><p>IntelliSense</p>
 <ul>
-<li><p>Enables VS Code extensions to parse auto generated code</p></li>
-<li><p>Applicable for ROS package defining messages and services files</p></li>
-<li><p>Necessary for code modeling, navigation, and syntax highlighting</p></li>
+<li><p>使得VS Code扩展能够解析自动生成的代码</p></li>
+<li><p>适用于定义消息和服务文件的ROS软件包</p></li>
+<li><p>在代码建模、导航和语法高亮方面是必需的</p></li>
 </ul>
 </li>
-<li><p>Caching</p>
+<li><p>缓存</p>
 <ul>
-<li><p>Enables Codespace Prebuilds to cache the workspace artifacts</p></li>
-<li><p>Applicable for reducing startup time when spawning new Codespaces</p></li>
-<li><p>Necessary for limiting costs from CPU and storage usage</p></li>
+<li><p>使得Codespace预构建能够缓存工作空间的构建产物</p></li>
+<li><p>适用于在生成新的Codespaces时减少启动时间</p></li>
+<li><p>限制CPU和存储使用的成本是必需的</p></li>
 </ul>
 </li>
 </ul>
-<p>While the colcon workspace is being built, VS Code will simultaneously install any specified extensions and settings. Next the <code class="docutils literal notranslate"><span class="pre">updateContentCommand</span></code> is executed, which reruns whenever the container is started or restarted. Specifically, for this project, this command re-cleans and re-builds the same colcon workspace as before, but only for invalidated packages detected by colcon cache using the lockfiles initialized during the <code class="docutils literal notranslate"><span class="pre">onCreateCommand</span></code>. This caching behavior also replicates the project's CI workflow. This is useful for:</p>
+<p>当构建colcon工作空间时，VS Code会同时安装任何指定的扩展和设置。接下来执行<code class="docutils literal notranslate"><span class="pre">updateContentCommand</span></code>命令，该命令在容器启动或重新启动时重新运行。具体来说，在这个项目中，该命令会重新清理和重新构建与之前相同的colcon工作空间，但仅适用于通过在<code class="docutils literal notranslate"><span class="pre">onCreateCommand</span></code>期间初始化的lockfiles检测到的无效包。这种缓存行为还复制了项目的CI工作流程。这对于以下情况非常有用：</p>
 <ul class="simple">
-<li><p>Branching</p>
+<li><p>分支管理</p>
 <ul>
-<li><p>Enables caching of workspace artifacts when switching between branches</p></li>
-<li><p>Applicable for reviewing pull requests without rebuilding entire container</p></li>
-<li><p>Necessary for reducing startup time when spawning new Codespaces</p></li>
+<li><p>在切换分支时启用工作空间构建的缓存</p></li>
+<li><p>适用于在不重新构建整个容器的情况下审核拉取请求</p></li>
+<li><p>在生成新的Codespaces时减少启动时间所必需</p></li>
 </ul>
 </li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">提示</p>
-<p>More documentation about these additional colcon verb extensions can be found here:</p>
+<p>这些额外的colcon动词扩展的更多文档可以在这里找到：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ruffsl/colcon-cache">colcon-cache</a></p>
 <ul>
-<li><p>A colcon extension to cache the processing of packages</p></li>
+<li><p>一个colcon扩展，用于缓存软件包的处理</p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://github.com/colcon/colcon-clean">colcon-clean</a></p>
 <ul>
-<li><p>A colcon extension to clean package workspaces</p></li>
+<li><p>一个colcon扩展，用于清理软件包工作空间</p></li>
 </ul>
 </li>
 </ul>
 </div>
 <p>Finally, the <code class="docutils literal notranslate"><span class="pre">postCreateCommand</span></code> is executed, which also reruns whenever the container is started or restarted. Specifically, for this project, this command makes a last few tweaks to the user's environment to improve the development experience.</p>
-<p>To speed up subsequent startups, volumes that are mounted to the container store a persistent ccache and colcon workspace, while the environment is set to enable <a class="reference external" href="https://ccache.dev/">ccache</a> via <a class="reference external" href="https://github.com/colcon/colcon-mixin-repository">colcon mixins</a>. These volumes are labeled using the <a class="reference external" href="https://containers.dev/implementors/json_reference/#variables-in-devcontainerjson"><code class="docutils literal notranslate"><span class="pre">devcontainerId</span></code></a> variable, which uniquely identify the dev container on a Docker host, allowing us to refer to a common identifier that is unique to the dev container, while remaining stable across rebuilds. This is useful for:</p>
+<p>为了加快后续的启动速度，被挂载到容器的卷会存储一个持久的ccache和colcon工作空间，同时环境被设置为通过colcon mixins启用<a class="reference external" href="https://ccache.dev/">ccache</a>（参见<a class="reference external" href="https://github.com/colcon/colcon-mixin-repository">colcon mixins</a>）。这些卷使用<a class="reference external" href="https://containers.dev/implementors/json_reference/#variables-in-devcontainerjson"><code class="docutils literal notranslate"><span class="pre">devcontainerId</span></code></a>变量进行标记，该变量在Docker主机上唯一标识开发容器，使我们能够引用一个对开发容器唯一且在重建过程中保持稳定的常见标识符。这对于以下情况很有用：</p>
 <ul class="simple">
-<li><p>Caching</p>
+<li><p>缓存</p>
 <ul>
 <li><p>Enables colcon workspaces and ccache to persist between container rebuilds</p></li>
-<li><p>Applicable for avoiding re-compilation when modifying dev container config files</p></li>
+<li><p>适用于修改开发容器配置文件时避免重新编译</p></li>
 <li><p>Necessary for quickly customizing image or features without rebuilding from scratch</p></li>
 </ul>
 </li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">小技巧</p>
-<p>While these volumes are uniquely named, you could rename them locally to further organize or segment works-in-progress. E.g. appending branch names to the volume name to quickly switch between pull requests and cached colcon workspaces.</p>
+<p>虽然这些卷具有唯一的名称，但您可以在本地将它们重命名，以进一步组织或分割正在进行中的工作。例如，将分支名称附加到卷名称，以快速切换不同的拉取请求和缓存的colcon工作空间。</p>
 </div>
 <p>Additionally, the container can be granted <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/run/#privileged">privileged</a> and non-default <a class="reference external" href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Linux capabilities</a>, connected using the <a class="reference external" href="https://docs.docker.com/network/host/">host</a> network mode and <a class="reference external" href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC</a> and <a class="reference external" href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID</a> spaces, with a relaxed <a class="reference external" href="https://docs.docker.com/engine/reference/run/#security-configuration">security configuration</a> and seccomp confinement for native debugging and external connectivity. This is useful for:</p>
 <ul class="simple">
-<li><p>Hybrid development</p>
+<li><p>混合式开发</p>
 <ul>
 <li><p>Enables connecting ROS nodes external to the container</p></li>
 <li><p>Applicable for debugging or visualizing distributed systems</p></li>
