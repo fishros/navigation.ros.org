@@ -612,7 +612,7 @@ msgstr "我们还需要安装 ``gazebo_ros_pkgs`` 包，以便在 Gazebo 中模�
 
 #: ../../setup_guides/odom/setup_odom.rst:82
 msgid "You can test if you have successfully set up your ROS 2 and Gazebo environments by following the instructions `given here <http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros#TestingGazeboandROS2integration>`_."
-msgstr "You can test if you have successfully set up your ROS 2 and Gazebo environments by following the instructions `given here <http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros#TestingGazeboandROS2integration>`_."
+msgstr "您可以按照此处的说明 `（链接：<http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros#TestingGazeboandROS2integration>`_）测试您是否成功设置了ROS 2和Gazebo环境。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:84
@@ -622,7 +622,7 @@ msgstr "请注意，我们使用 URDF 描述了 ``sam_bot``。然而，Gazebo �
 
 #: ../../setup_guides/odom/setup_odom.rst:87
 msgid "For more information on how to use URDF in Gazebo, see `Tutorial: Using a URDF in Gazebo <http://gazebosim.org/tutorials/?tut=ros_urdf>`_."
-msgstr "For more information on how to use URDF in Gazebo, see `Tutorial: Using a URDF in Gazebo <http://gazebosim.org/tutorials/?tut=ros_urdf>`_."
+msgstr "有关如何在Gazebo中使用URDF的更多信息，请参阅 `（链接：<http://gazebosim.org/tutorials/?tut=ros_urdf>`_）教程。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:90 ../../setup_guides/sensors/setup_sensors.rst:66
@@ -632,77 +632,77 @@ msgstr "向 URDF 添加 Gazebo 插件"
 
 #: ../../setup_guides/odom/setup_odom.rst:92
 msgid "We will now add the IMU sensor and the differential drive plugins of Gazebo to our URDF. For an overview of the different plugins available in Gazebo, have a look at `Tutorial: Using Gazebo plugins with ROS <http://gazebosim.org/tutorials?tut=ros_gzplugins>`_."
-msgstr "We will now add the IMU sensor and the differential drive plugins of Gazebo to our URDF. For an overview of the different plugins available in Gazebo, have a look at `Tutorial: Using Gazebo plugins with ROS <http://gazebosim.org/tutorials?tut=ros_gzplugins>`_."
+msgstr "现在，我们将向URDF添加Gazebo的IMU传感器和差动驱动插件。要了解Gazebo中可用的不同插件的概述，请查看 `（链接：<http://gazebosim.org/tutorials?tut=ros_gzplugins>`_）教程。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:94
 msgid "For our robot, we will be using the `GazeboRosImuSensor <http://gazebosim.org/tutorials?tut=ros_gzplugins#IMUsensor(GazeboRosImuSensor)>`_ which is a SensorPlugin. A SensorPlugin must be attached to a link, thus we will create an ``imu_link`` to which the IMU sensor will be attached. This link will be referenced under the ``<gazebo>`` element. Next, we will set ``/demo/imu`` as the topic to which the IMU will be publishing its information, and we will comply with `REP145 <https://www.ros.org/reps/rep-0145.html>`_ by setting ``initalOrientationAsReference`` to ``false``. We will also add some noise to the sensor configuration using Gazebo's `sensor noise model <http://gazebosim.org/tutorials?tut=sensor_noise>`_."
-msgstr "For our robot, we will be using the `GazeboRosImuSensor <http://gazebosim.org/tutorials?tut=ros_gzplugins#IMUsensor(GazeboRosImuSensor)>`_ which is a SensorPlugin. A SensorPlugin must be attached to a link, thus we will create an ``imu_link`` to which the IMU sensor will be attached. This link will be referenced under the ``<gazebo>`` element. Next, we will set ``/demo/imu`` as the topic to which the IMU will be publishing its information, and we will comply with `REP145 <https://www.ros.org/reps/rep-0145.html>`_ by setting ``initalOrientationAsReference`` to ``false``. We will also add some noise to the sensor configuration using Gazebo's `sensor noise model <http://gazebosim.org/tutorials?tut=sensor_noise>`_."
+msgstr "对于我们的机器人，我们将使用 `GazeboRosImuSensor <http://gazebosim.org/tutorials?tut=ros_gzplugins#IMUsensor(GazeboRosImuSensor)>`_，它是一个SensorPlugin。SensorPlugin必须附加到一个链接上，因此我们将创建一个``imu_link``，将IMU传感器附加到该链接上。这个链接将在``<gazebo>``元素下引用。接下来，我们将设置``/demo/imu``作为IMU将发布其信息的主题，并且我们将根据 `REP145 <https://www.ros.org/reps/rep-0145.html>`_ 设置``initalOrientationAsReference``为``false``。我们还将使用Gazebo的 `sensor noise model <http://gazebosim.org/tutorials?tut=sensor_noise>`_ 为传感器配置添加一些噪声。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:96
 msgid "Now, we will set up our IMU sensor plugin according to the description above by adding the following lines before the ``</robot>`` line in our URDF:"
-msgstr "Now, we will set up our IMU sensor plugin according to the description above by adding the following lines before the ``</robot>`` line in our URDF:"
+msgstr "现在，我们将按照上述说明设置IMU传感器插件，将以下行添加到URDF中的``</robot>``行之前："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:192
 msgid "Now, let us add the differential drive ModelPlugin. We will configure the plugin such that ``nav_msgs/Odometry`` messages are published on the ``/demo/odom`` topic. The joints of the left and right wheels will be set to the wheel joints of ``sam_bot``. The wheel separation and wheel diameter are set according to the values of the defined values of ``wheel_ygap`` and ``wheel_radius`` respectively."
-msgstr "Now, let us add the differential drive ModelPlugin. We will configure the plugin such that ``nav_msgs/Odometry`` messages are published on the ``/demo/odom`` topic. The joints of the left and right wheels will be set to the wheel joints of ``sam_bot``. The wheel separation and wheel diameter are set according to the values of the defined values of ``wheel_ygap`` and ``wheel_radius`` respectively."
+msgstr "现在，让我们添加差分驱动的ModelPlugin。我们将配置插件，以便在``/demo/odom``主题上发布``nav_msgs/Odometry``消息。左右轮的关节将设置为``sam_bot``的轮关节。轮子之间的距离和轮子的直径分别根据``wheel_ygap``和``wheel_radius``的定义值设置。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:194
 msgid "To include this plugin in our URDF, add the following lines after the ``</gazebo>`` tag of the IMU plugin:"
-msgstr "To include this plugin in our URDF, add the following lines after the ``</gazebo>`` tag of the IMU plugin:"
+msgstr "要在URDF中包含此插件，请在IMU插件的``</gazebo>``标签后添加以下行："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:229 ../../setup_guides/odom/setup_odom.rst:438 ../../setup_guides/sensors/setup_sensors.rst:219
 msgid "Launch and Build Files"
-msgstr "Launch and Build Files"
+msgstr "启动和构建文件"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:231
 msgid "We will now edit our launch file, `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_, to spawn ``sam_bot`` in Gazebo. Since we will be simulating our robot, we can remove the GUI for the joint state publisher by deleting the following lines inside the ``generate_launch_description()``:"
-msgstr "We will now edit our launch file, `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_, to spawn ``sam_bot`` in Gazebo. Since we will be simulating our robot, we can remove the GUI for the joint state publisher by deleting the following lines inside the ``generate_launch_description()``:"
+msgstr "现在，我们将编辑我们的启动文件 `（链接：<https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_）以在Gazebo中生成``sam_bot``。由于我们将模拟我们的机器人，可以通过删除``generate_launch_description()``内部的以下行来移除关节状态发布器的GUI："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:242
 msgid "Remove the following `gui` param:"
-msgstr "Remove the following `gui` param:"
+msgstr "移除以下的`gui`参数："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:249
 msgid "Remove the condition from the `joint_state_publisher_node`:"
-msgstr "Remove the condition from the `joint_state_publisher_node`:"
+msgstr "从`joint_state_publisher_node`中删除条件："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:260
 msgid "Next, open `package.xml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/package.xml>`_ and delete the line:"
-msgstr "Next, open `package.xml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/package.xml>`_ and delete the line:"
+msgstr "接下来，打开 `package.xml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/package.xml>`_ 并删除这行："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:266
 msgid "To launch Gazebo, add the following before the ``joint_state_publisher_node,`` line"
-msgstr "To launch Gazebo, add the following before the ``joint_state_publisher_node,`` line"
+msgstr "要启动 Gazebo，请在 ``joint_state_publisher_node`` 行之前添加以下内容"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:272
 msgid "We will now add a node that spawns ``sam_bot`` in Gazebo. Open `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_ again and paste the following lines before the ``return launch.LaunchDescription([`` line."
-msgstr "We will now add a node that spawns ``sam_bot`` in Gazebo. Open `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_ again and paste the following lines before the ``return launch.LaunchDescription([`` line."
+msgstr "现在，我们将在Gazebo中添加一个节点，用于生成``sam_bot``。再次打开 `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_ ，在``return launch.LaunchDescription([``行之前粘贴以下代码行。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:283
 msgid "Then add the line ``spawn_entity,`` before the ``rviz_node`` line, as shown below."
-msgstr "Then add the line ``spawn_entity,`` before the ``rviz_node`` line, as shown below."
+msgstr "然后在 ``rviz_node`` 行之前添加一行 ``spawn_entity``，如下所示"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:296
 msgid "Let us run our package to check if the ``/demo/imu`` and ``/demo/odom`` topics are active in the system."
-msgstr "Let us run our package to check if the ``/demo/imu`` and ``/demo/odom`` topics are active in the system."
+msgstr "让我们运行我们的包，检查系统中是否存在活动的``/demo/imu``和``/demo/odom``主题。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:298
 msgid "Navigate to the root of the project and execute the following lines:"
-msgstr "Navigate to the root of the project and execute the following lines:"
+msgstr "导航到项目的根目录并执行以下命令"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:306
@@ -712,7 +712,7 @@ msgstr "Gazebo should launch and you should see a 3D model of ``sam_bot``:"
 
 #: ../../setup_guides/odom/setup_odom.rst:312
 msgid "To see the active topics in the system, open a new terminal and execute:"
-msgstr "To see the active topics in the system, open a new terminal and execute:"
+msgstr "要查看系统中的活动话题，请打开一个新的终端并执行"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:318
@@ -722,7 +722,7 @@ msgstr "You should see ``/demo/imu`` and ``/demo/odom`` in the list of topics."
 
 #: ../../setup_guides/odom/setup_odom.rst:320
 msgid "To see more information about the topics, execute:"
-msgstr "To see more information about the topics, execute:"
+msgstr "要查看有关话题的更多信息，请执行"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:327
@@ -732,7 +732,7 @@ msgstr "You should see an output similar to below:"
 
 #: ../../setup_guides/odom/setup_odom.rst:341
 msgid "Observe that the ``/demo/imu`` topic publishes ``sensor_msgs/Imu`` type messages while the ``/demo/odom`` topic publishes ``nav_msgs/Odometry`` type messages. The information being published on these topics come from the gazebo simulation of the IMU sensor and the differential drive respectively. Also note that both topics currently have no subscribers. In the next section, we will create a ``robot_localization`` node that will subscribe to these two topics. It will then use the messages published on both topics to provide a fused, locally accurate and smooth odometry information for Nav2."
-msgstr "Observe that the ``/demo/imu`` topic publishes ``sensor_msgs/Imu`` type messages while the ``/demo/odom`` topic publishes ``nav_msgs/Odometry`` type messages. The information being published on these topics come from the gazebo simulation of the IMU sensor and the differential drive respectively. Also note that both topics currently have no subscribers. In the next section, we will create a ``robot_localization`` node that will subscribe to these two topics. It will then use the messages published on both topics to provide a fused, locally accurate and smooth odometry information for Nav2."
+msgstr "注意，``/demo/imu`` 话题发布的是 ``sensor_msgs/Imu`` 类型的消息，而 ``/demo/odom`` 话题发布的是 ``nav_msgs/Odometry`` 类型的消息。这些话题上发布的信息分别来自 IMU 传感器和差分驱动的 Gazebo 仿真。还请注意，这两个话题目前都没有订阅者。在下一节中，我们将创建一个 ``robot_localization`` 节点来订阅这两个话题。然后，它将使用这两个话题上发布的消息为 Nav2 提供融合的、本地准确且平滑的里程计信息。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:344
@@ -742,7 +742,7 @@ msgstr "Robot Localization Demo"
 
 #: ../../setup_guides/odom/setup_odom.rst:346
 msgid "The ``robot_localization`` package is used to provide a fused and locally accurate smooth odometry information from the data provided by ``N`` odometry sensor inputs. These information can be provided to the package through ``nav_msgs/Odometry``, ``sensor_msgs/Imu``, ``geometry_msgs/PoseWithCovarianceStamped``, and ``geometry_msgs/TwistWithCovarianceStamped`` messages."
-msgstr "The ``robot_localization`` package is used to provide a fused and locally accurate smooth odometry information from the data provided by ``N`` odometry sensor inputs. These information can be provided to the package through ``nav_msgs/Odometry``, ``sensor_msgs/Imu``, ``geometry_msgs/PoseWithCovarianceStamped``, and ``geometry_msgs/TwistWithCovarianceStamped`` messages."
+msgstr "``robot_localization`` 包用于从 ``N`` 个里程计传感器输入的数据中提供融合和本地准确的平滑里程计信息。这些信息可以通过 ``nav_msgs/Odometry``、``sensor_msgs/Imu``、``geometry_msgs/PoseWithCovarianceStamped`` 和 ``geometry_msgs/TwistWithCovarianceStamped`` 消息提供给该包。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:348
