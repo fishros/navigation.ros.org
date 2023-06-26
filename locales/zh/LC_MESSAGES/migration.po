@@ -1301,7 +1301,7 @@ msgstr "SmacPlanner2D和Theta*：修复目标方向被忽略的问题"
 
 #: ../../migration/Galactic.rst:184
 msgid "`This pull request 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ fixes `the  issue <https://github.com/ros-planning/navigation2/issues/2482>`_ of the goal pose orientation being ignored (the end path pose orientation was always set to 0)."
-msgstr "`This pull request 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ fixes `the  issue <https://github.com/ros-planning/navigation2/issues/2482>`_ of the goal pose orientation being ignored (the end path pose orientation was always set to 0)."
+msgstr "`这个拉取请求 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ 修复了忽略目标姿态方向的问题（结束路径姿态方向总是设置为0）。"
 
 
 #: ../../migration/Galactic.rst:187
@@ -1311,7 +1311,7 @@ msgstr "SmacPlanner2D、NavFn和Theta*：修复小路径的边界情况"
 
 #: ../../migration/Galactic.rst:189
 msgid "`This PR 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ ensures the planners are not failing when the distance between the start and the goal is small (i.e. when they are on the same costmap cell), and in that case the output path is constructed with a single pose."
-msgstr "`This PR 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ ensures the planners are not failing when the distance between the start and the goal is small (i.e. when they are on the same costmap cell), and in that case the output path is constructed with a single pose."
+msgstr "`这个PR 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ 确保当起点和目标之间的距离很小（即它们位于同一个代价地图单元格上）时，规划器不会失败，此时输出路径将由一个单独的姿态构成。"
 
 
 #: ../../migration/Galactic.rst:192
@@ -1321,77 +1321,77 @@ msgstr "更改和修复动态参数更改检测的行为"
 
 #: ../../migration/Galactic.rst:194
 msgid "`This <https://github.com/ros-planning/navigation2/pull/2576>`_ and `this PR <https://github.com/ros-planning/navigation2/pull/2585>`_ modify the method used to catch the changes of dynamic parameters. The motivation was to fix the issue that ``void on_parameter_event_callback(const rcl_interfaces::msg::ParameterEvent::SharedPtr event)`` was called for every parameter change of every node leading to unwanted parameter changes if 2 different nodes had the same parameter name."
-msgstr "`This <https://github.com/ros-planning/navigation2/pull/2576>`_ and `this PR <https://github.com/ros-planning/navigation2/pull/2585>`_ modify the method used to catch the changes of dynamic parameters. The motivation was to fix the issue that ``void on_parameter_event_callback(const rcl_interfaces::msg::ParameterEvent::SharedPtr event)`` was called for every parameter change of every node leading to unwanted parameter changes if 2 different nodes had the same parameter name."
+msgstr "`这个 <https://github.com/ros-planning/navigation2/pull/2576>`_ 和 `这个PR <https://github.com/ros-planning/navigation2/pull/2585>`_ 修改了捕捉动态参数更改的方法。动机是修复这样一个问题，即对于每个节点的每个参数更改，都会调用 ``void on_parameter_event_callback(const rcl_interfaces::msg::ParameterEvent::SharedPtr event)``，从而导致如果两个不同的节点具有相同的参数名，就会产生不必要的参数更改。"
 
 
 #: ../../migration/Galactic.rst:197
 msgid "Dynamic Parameters"
-msgstr "Dynamic Parameters"
+msgstr "动态参数"
 
 
 #: ../../migration/Galactic.rst:199
 msgid "Newly added dynamic parameters to:"
-msgstr "Newly added dynamic parameters to:"
+msgstr "新增的动态参数："
 
 
 #: ../../migration/Galactic.rst:201
 msgid "`This PR 2592 <https://github.com/ros-planning/navigation2/pull/2592>`_ makes most of the Costmap2DROS parameters dynamic"
-msgstr "`This PR 2592 <https://github.com/ros-planning/navigation2/pull/2592>`_ makes most of the Costmap2DROS parameters dynamic"
+msgstr "`This PR 2592 <https://github.com/ros-planning/navigation2/pull/2592>`_使大部分Costmap2DROS参数变为动态参数"
 
 
 #: ../../migration/Galactic.rst:202
 msgid "`This PR 2607 <https://github.com/ros-planning/navigation2/pull/2607>`_ makes most of the Regulated Pure Pursuit parameters dynamic"
-msgstr "`This PR 2607 <https://github.com/ros-planning/navigation2/pull/2607>`_ makes most of the Regulated Pure Pursuit parameters dynamic"
+msgstr "`这个PR 2607 <https://github.com/ros-planning/navigation2/pull/2607>`_ 使大多数受控纯追踪参数变为动态参数。"
 
 
 #: ../../migration/Galactic.rst:203
 msgid "`This PR 2665 <https://github.com/ros-planning/navigation2/pull/2665>`_ makes most of the Theta * Planner parameters dynamic"
-msgstr "`This PR 2665 <https://github.com/ros-planning/navigation2/pull/2665>`_ makes most of the Theta * Planner parameters dynamic"
+msgstr "`This PR 2665 <https://github.com/ros-planning/navigation2/pull/2665>`_使大部分Theta * Planner参数变为动态参数"
 
 
 #: ../../migration/Galactic.rst:204
 msgid "`This PR 2704 <https://github.com/ros-planning/navigation2/pull/2704>`_ makes Waypoint Follower, Planner Server, and Controller Server's params reconfigurable"
-msgstr "`This PR 2704 <https://github.com/ros-planning/navigation2/pull/2704>`_ makes Waypoint Follower, Planner Server, and Controller Server's params reconfigurable"
+msgstr "`这个PR 2704 <https://github.com/ros-planning/navigation2/pull/2704>`_ 使 Waypoint Follower、Planner Server 和 Controller Server 的参数可重新配置。"
 
 
 #: ../../migration/Galactic.rst:208
 msgid "BT Action Nodes Exception Changes"
-msgstr "BT Action Nodes Exception Changes"
+msgstr "BT Action节点异常变更"
 
 
 #: ../../migration/Galactic.rst:210
 msgid "When BT action nodes throw exceptions due to networking or action server failures, they now return a status code of ``FAILURE`` to fail that particular action in the behavior tree to react to. This is in contrast to prior where the exceptions thrown from networking were sent to the root tree which would count as a task-level failure that the tree could not react to."
-msgstr "When BT action nodes throw exceptions due to networking or action server failures, they now return a status code of ``FAILURE`` to fail that particular action in the behavior tree to react to. This is in contrast to prior where the exceptions thrown from networking were sent to the root tree which would count as a task-level failure that the tree could not react to."
+msgstr "当行为树动作节点由于网络或行为服务器故障引发异常时，现在它们会返回 ``FAILURE`` 状态码，以使行为树中的特定动作失败。与之前不同的是，网络引发的异常被发送到根行为树，这将导致任务级别的失败，行为树无法对其进行响应。"
 
 
 #: ../../migration/Galactic.rst:213
 msgid "BT Navigator Groot Multiple Navigators"
-msgstr "BT Navigator Groot Multiple Navigators"
+msgstr "BT Navigator Groot多导航器"
 
 
 #: ../../migration/Galactic.rst:215
 msgid "`This PR 2627 <https://github.com/ros-planning/navigation2/pull/2627>`_ creates separate parameters for groot monitoring for the NavToPose and NavThroughPoses navigator types so you can individually track the state of each behavior tree through the ZMQ publisher. This resolves a long-standing problem after we added multiple navigator types to BT Navigator that you could only view the nav to poses BT execution live. BT.CPP and Groot only support one static ZMQ stream at a time, so there is a bit of a quirk where you must locally reset Groot after switching trees in order to view the live stream of the Nav Through Poses BT, if in use. This is a state of the BT.CPP and Groot libraries and not something we can resolve withing Nav2."
-msgstr "`This PR 2627 <https://github.com/ros-planning/navigation2/pull/2627>`_ creates separate parameters for groot monitoring for the NavToPose and NavThroughPoses navigator types so you can individually track the state of each behavior tree through the ZMQ publisher. This resolves a long-standing problem after we added multiple navigator types to BT Navigator that you could only view the nav to poses BT execution live. BT.CPP and Groot only support one static ZMQ stream at a time, so there is a bit of a quirk where you must locally reset Groot after switching trees in order to view the live stream of the Nav Through Poses BT, if in use. This is a state of the BT.CPP and Groot libraries and not something we can resolve withing Nav2."
+msgstr "`这个 PR 2627 <https://github.com/ros-planning/navigation2/pull/2627>`_ 为 NavToPose 和 NavThroughPoses 导航器类型创建了独立的 groot 监控参数，因此您可以通过 ZMQ 发布者分别跟踪每个行为树的状态。在将多个导航器类型添加到 BT Navigator 后，这解决了一个长期存在的问题，您只能查看实时执行的 nav to poses BT。BT.CPP 和 Groot 一次只支持一个静态 ZMQ 流，所以在切换树之后，您必须在本地重置 Groot，以便查看正在使用的 Nav Through Poses BT 的实时流。这是 BT.CPP 和 Groot 库的一个状态，不是我们可以解决的问题。"
 
 
 #: ../../migration/Galactic.rst:217
 msgid "There is some thought into the future regarding complete deprecation of live BT monitoring using Groot due to this quirk and the almost-certain infux of tickets on the topic. Groot will however always be supported for visualizing behavior tree XML files and modifications, simply not visualizing the BT execution live during robot navigation."
-msgstr "There is some thought into the future regarding complete deprecation of live BT monitoring using Groot due to this quirk and the almost-certain infux of tickets on the topic. Groot will however always be supported for visualizing behavior tree XML files and modifications, simply not visualizing the BT execution live during robot navigation."
+msgstr "对于完全弃用使用Groot进行实时BT监控的未来，有一些考虑，这是由于此问题和几乎肯定的关于此问题的工单潮的存在。然而，Groot将始终支持可视化行为树XML文件和修改，只是在机器人导航期间不实时可视化BT执行。"
 
 
 #: ../../migration/Galactic.rst:220
 msgid "Removed Kinematic Limiting in RPP"
-msgstr "Removed Kinematic Limiting in RPP"
+msgstr "在 RPP 中移除了运动限制"
 
 
 #: ../../migration/Galactic.rst:222
 msgid "The parameters ``max_linear_accel`` and ``max_linear_decel`` were removed along with the kinematic limiting in the controller causing instabilities. Instead, use a velocity smoother available in the ROS ecosystem if you would like similar behavior."
-msgstr "The parameters ``max_linear_accel`` and ``max_linear_decel`` were removed along with the kinematic limiting in the controller causing instabilities. Instead, use a velocity smoother available in the ROS ecosystem if you would like similar behavior."
+msgstr "控制器中的参数``max_linear_accel``和``max_linear_decel``以及限制运动学的部分已被移除，导致不稳定。如果您想要类似的行为，请使用ROS生态系统中提供的速度平滑器。"
 
 
 #: ../../migration/Galactic.rst:225
 msgid "Added Smoother Task Server"
-msgstr "Added Smoother Task Server"
+msgstr "添加了更平滑的任务服务器"
 
 
 #: ../../migration/Galactic.rst:227
@@ -1401,7 +1401,7 @@ msgstr "A new task server was added which loads smoother plugins and executes th
 
 #: ../../migration/Galactic.rst:231
 msgid "Removed Use Approach Velocity Scaling Param in RPP"
-msgstr "Removed Use Approach Velocity Scaling Param in RPP"
+msgstr "在 RPP 中移除了使用接近速度缩放参数"
 
 
 #: ../../migration/Galactic.rst:233
@@ -1411,7 +1411,7 @@ msgstr "The parameter ``use_approach_linear_velocity_scaling`` is removed in fav
 
 #: ../../migration/Galactic.rst:236
 msgid "Refactored AMCL motion models as plugins"
-msgstr "Refactored AMCL motion models as plugins"
+msgstr "将 AMCL 运动模型重构为插件"
 
 
 #: ../../migration/Galactic.rst:238
@@ -1421,7 +1421,7 @@ msgstr "`This PR 2642 <https://github.com/ros-planning/navigation2/pull/2642>`_ 
 
 #: ../../migration/Galactic.rst:241
 msgid "Dropping Support for Live Groot Monitoring of Nav2"
-msgstr "Dropping Support for Live Groot Monitoring of Nav2"
+msgstr "停止支持 Nav2 的实时 Groot 监控"
 
 
 #: ../../migration/Galactic.rst:243
@@ -1431,7 +1431,7 @@ msgstr "https://github.com/ros-planning/navigation2/pull/2642"
 
 #: ../../migration/Galactic.rst:245
 msgid "It was a great feature idea but never quite panned out, especially after we introduced multiple navigator types in the BT Navigator server. The issue we run into primarily is that Zero-MQ prevents users from producing multiple logger types in the same process. Since BT nav has multiple servers, the swapping between them for viewing has never had a clean hand off causing folks to file tickets or have nasty logs appear or ZMQ crashes in the background. The BT.CPP client for this doesn't allow us to have a clean shutdown process so we're left with hoping that ZMQ properly handles the situation, which it rarely does. Further, Groot only supports visualizing one type of tree at a time so for applications often switching between navigator types, its not possible to use a single groot client, causing great frustration."
-msgstr "It was a great feature idea but never quite panned out, especially after we introduced multiple navigator types in the BT Navigator server. The issue we run into primarily is that Zero-MQ prevents users from producing multiple logger types in the same process. Since BT nav has multiple servers, the swapping between them for viewing has never had a clean hand off causing folks to file tickets or have nasty logs appear or ZMQ crashes in the background. The BT.CPP client for this doesn't allow us to have a clean shutdown process so we're left with hoping that ZMQ properly handles the situation, which it rarely does. Further, Groot only supports visualizing one type of tree at a time so for applications often switching between navigator types, its not possible to use a single groot client, causing great frustration."
+msgstr "这是一个很棒的功能想法，但在实践中并没有完全实现，特别是在我们引入 BT Navigator 服务器中的多个导航器类型之后。我们主要遇到的问题是 Zero-MQ 阻止用户在同一进程中产生多个记录器类型。由于 BT 导航有多个服务器，为了查看它们之间的切换，从未有过清晰的交接，这导致人们提交工单或出现糟糕的日志或 ZMQ 崩溃。BT.CPP 客户端不允许我们进行清理关闭过程，所以我们只能希望 ZMQ 能正确处理这种情况，但它很少能做到。此外，Groot 一次只支持可视化一种类型的树，因此对于经常在导航器类型之间切换的应用程序，无法使用单个 groot 客户端，这引起了很大的不便。"
 
 
 #: ../../migration/Galactic.rst:247
