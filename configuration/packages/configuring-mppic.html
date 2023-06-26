@@ -619,15 +619,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#goal-critic">目标评估器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#obstacles-critic">障碍物评估器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#path-align-critic">路径对齐评论家</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#path-angle-critic">Path Angle Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#path-follow-critic">Path Follow Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#prefer-forward-critic">Prefer Forward Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#twirling-critic">Twirling Critic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#path-angle-critic">路径角度评论器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#path-follow-critic">路径跟随评论家</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prefer-forward-critic">优先正向评论家</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#twirling-critic">旋转评论家</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#notes-to-users">Notes to Users</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#general-words-of-wisdom">General Words of Wisdom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-words-of-wisdom">智慧的一般性言论</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prediction-horizon-costmap-sizing-and-offsets">Prediction Horizon, Costmap Sizing, and Offsets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#obstacle-inflation-layer-and-path-following">Obstacle, Inflation Layer, and Path Following</a></li>
 </ul>
@@ -1764,7 +1764,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">cost_scaling_factor</dt>
+<dt class="field-even">cost_scaling_factor（成本缩放因子）</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1784,7 +1784,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">inflation_radius</dt>
+<dt class="field-odd">inflation_radius（膨胀半径）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1800,7 +1800,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Radius to inflate costmap around lethal obstacles. This should be the same as for your inflation layer (Humble only)</p>
+<dt>描述</dt><dd><p>在致命障碍物周围膨胀代价地图的半径。这应该与膨胀层的半径相同（仅适用于Humble版本）</p>
 </dd>
 </dl>
 </dd>
@@ -1865,11 +1865,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path alignment and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>机器人与目标之间的距离（米），<a href="#id1"><span class="problematic" id="id2">**</span></a>停止**考虑路径对齐并允许目标评论器接管。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">offset_from_furthest</dt>
+<dt class="field-even">offset_from_furthest（离最远处的偏移量）</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1885,11 +1885,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Checks that the candidate trajectories are sufficiently far along their way tracking the path to apply the alignment critic. This ensures that path alignment is only considered when actually tracking the path, preventing awkward initialization motions preventing the robot from leaving the path to achieve the appropriate heading.</p>
+<dt>描述</dt><dd><p>检查候选轨迹是否在其路径上足够远，以应用对齐评论器。这样可以确保只有在实际跟踪路径时才考虑路径对齐，防止尴尬的初始化动作阻止机器人离开路径以实现适当的航向。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">max_path_occupancy_ratio</dt>
+<dt class="field-odd">max_path_occupancy_ratio（最大路径占用比例）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1905,14 +1905,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum proportion of the path that can be occupied before this critic is not considered to allow the obstacle and path follow critics to avoid obstacles while following the path's intent in presence of dynamic objects in the scene. Between 0-1 for 0-100%.</p>
+<dt>描述</dt><dd><p>在存在场景中的动态物体的情况下，避障和路径跟随评估者避开障碍物并按照路径意图进行跟随之前，路径中可以被占用的最大比例。介于0-1之间，表示0-100%。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="path-angle-critic">
-<h3>Path Angle Critic<a class="headerlink" href="#path-angle-critic" title="永久链接至标题"></a></h3>
+<h3>路径角度评论器<a class="headerlink" href="#path-angle-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1970,11 +1970,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path angles and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>机器人与目标之间的距离（以米为单位），用于**停止**考虑路径角度并允许目标评估者接管。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">offset_from_furthest</dt>
+<dt class="field-even">offset_from_furthest（离最远处的偏移量）</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1990,11 +1990,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of path points after furthest one any trajectory achieves to compute path angle relative to.</p>
+<dt>描述</dt><dd><p>计算相对于路径角度时，任何轨迹实现的最远点之后的路径点数。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">max_angle_to_furthest</dt>
+<dt class="field-odd">max_angle_to_furthest（与最远处的最大角度）</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -2010,14 +2010,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Angular distance (rad) between robot and goal above which path angle cost starts being considered</p>
+<dt>描述</dt><dd><p>机器人与目标之间的角度距离（以弧度为单位），超过该距离开始考虑路径角度成本。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="path-follow-critic">
-<h3>Path Follow Critic<a class="headerlink" href="#path-follow-critic" title="永久链接至标题"></a></h3>
+<h3>路径跟随评论家<a class="headerlink" href="#path-follow-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -2075,11 +2075,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance (m) between robot and goal to <strong>stop</strong> considering path following and allow goal critics to take over.</p>
+<dt>描述</dt><dd><p>机器人与目标之间的距离（以米为单位），用于**停止**考虑路径跟随并允许目标评估者接管。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">offset_from_furthest</dt>
+<dt class="field-even">offset_from_furthest（离最远处的偏移量）</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -2102,7 +2102,7 @@
 </dl>
 </div>
 <div class="section" id="prefer-forward-critic">
-<h3>Prefer Forward Critic<a class="headerlink" href="#prefer-forward-critic" title="永久链接至标题"></a></h3>
+<h3>优先正向评论家<a class="headerlink" href="#prefer-forward-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -2167,7 +2167,7 @@
 </dl>
 </div>
 <div class="section" id="twirling-critic">
-<h3>Twirling Critic<a class="headerlink" href="#twirling-critic" title="永久链接至标题"></a></h3>
+<h3>旋转评论家<a class="headerlink" href="#twirling-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -2304,7 +2304,7 @@
 <div class="section" id="notes-to-users">
 <h2>Notes to Users<a class="headerlink" href="#notes-to-users" title="永久链接至标题"></a></h2>
 <div class="section" id="general-words-of-wisdom">
-<h3>General Words of Wisdom<a class="headerlink" href="#general-words-of-wisdom" title="永久链接至标题"></a></h3>
+<h3>智慧的一般性言论<a class="headerlink" href="#general-words-of-wisdom" title="永久链接至标题"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">model_dt</span></code> parameter generally should be set to the duration of your control frequency. So if your control frequency is 20hz, this should be <code class="docutils literal notranslate"><span class="pre">0.05</span></code>. However, you may also set it lower <strong>but not larger</strong>.</p>
 <p>Visualization of the trajectories using <code class="docutils literal notranslate"><span class="pre">visualize</span></code> uses compute resources to back out trajectories for visualization and therefore slows compute time. It is not suggested that this parameter is set to <code class="docutils literal notranslate"><span class="pre">true</span></code> during a deployed use, but is a useful debug instrument while tuning the system, but use sparingly. Visualizing 2000 batches &#64; 56 points at 30 hz is <em>alot</em>.</p>
 <p>The most common parameters you might want to start off changing are the velocity profiles (<code class="docutils literal notranslate"><span class="pre">vx_max</span></code>, <code class="docutils literal notranslate"><span class="pre">vx_min</span></code>, <code class="docutils literal notranslate"><span class="pre">wz_max</span></code>, and <code class="docutils literal notranslate"><span class="pre">vy_max</span></code> if holonomic) and the <code class="docutils literal notranslate"><span class="pre">motion_model</span></code> to correspond to your vehicle. Its wise to consider the <code class="docutils literal notranslate"><span class="pre">prune_distance</span></code> of the path plan in proportion to your maximum velocity and prediction horizon. The only deeper parameter that will likely need to be adjusted for your particular settings is the Obstacle critics' <code class="docutils literal notranslate"><span class="pre">repulsion_weight</span></code> since the tuning of this is proprtional to your inflation layer's radius. Higher radii should correspond to reduced <code class="docutils literal notranslate"><span class="pre">repulsion_weight</span></code> due to the penalty formation (e.g. <code class="docutils literal notranslate"><span class="pre">inflation_radius</span> <span class="pre">-</span> <span class="pre">min_dist_to_obstacle</span></code>). If this penalty is too high, the robot will slow significantly when entering cost-space from non-cost space or jitter in narrow corridors. It is noteworthy, but likely not necessary to be changed, that the Obstacle critic may use the full footprint information if <code class="docutils literal notranslate"><span class="pre">consider_footprint</span> <span class="pre">=</span> <span class="pre">true</span></code>, though comes at an increased compute cost.</p>
