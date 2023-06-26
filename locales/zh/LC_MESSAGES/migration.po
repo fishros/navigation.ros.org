@@ -1186,7 +1186,7 @@ msgstr "在``class LifecycleNode``中移除``rclcpp_node_``：`PR2993 <https://g
 
 #: ../../migration/Galactic.rst:110
 msgid "some APIs are changed in these PRs:"
-msgstr "some APIs are changed in these PRs:"
+msgstr "这些PR中有一些API发生了变化："
 
 
 #: ../../migration/Galactic.rst:109
@@ -1196,7 +1196,7 @@ msgstr "`PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_在``na
 
 #: ../../migration/Galactic.rst:110
 msgid "`PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_ removes argument ``use_rclcpp_node `` in the constructor of class ``nav2_util::LifecycleNode``."
-msgstr "`PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_ removes argument ``use_rclcpp_node `` in the constructor of class ``nav2_util::LifecycleNode``."
+msgstr "`PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_ 在 ``nav2_util::LifecycleNode`` 类的构造函数中删除了参数 ``use_rclcpp_node``。"
 
 
 #: ../../migration/Galactic.rst:113
@@ -1206,7 +1206,7 @@ msgstr "nav2_core的API更改"
 
 #: ../../migration/Galactic.rst:115
 msgid "`PR 2976 <https://github.com/ros-planning/navigation2/pull/2976>`_ changes the API for ``nav2_core::Controller`` and ``nav2_core::Smoother`` by replacing the use of shared pointer references ``(const shared_ptr<> &)`` to shared pointers ``(shared_ptr<>)``. Use of shared pointer references meant that the shared pointer counter was never incremented."
-msgstr "`PR 2976 <https://github.com/ros-planning/navigation2/pull/2976>`_ changes the API for ``nav2_core::Controller`` and ``nav2_core::Smoother`` by replacing the use of shared pointer references ``(const shared_ptr<> &)`` to shared pointers ``(shared_ptr<>)``. Use of shared pointer references meant that the shared pointer counter was never incremented."
+msgstr "`PR2976 <https://github.com/ros-planning/navigation2/pull/2976>`_ 更改了 ``nav2_core::Controller`` 和 ``nav2_core::Smoother`` 的API，将共享指针引用 ``(const shared_ptr<> &)`` 替换为共享指针 ``(shared_ptr<>)``。使用共享指针引用意味着共享指针计数器从未增加。"
 
 
 #: ../../migration/Galactic.rst:120
@@ -1216,7 +1216,7 @@ msgstr "扩展BtServiceNode以处理服务结果"
 
 #: ../../migration/Galactic.rst:122
 msgid "`This PR 2481 <https://github.com/ros-planning/navigation2/pull/2481>`_ and `PR 2992 <https://github.com/ros-planning/navigation2/pull/2992>`_  address `the ticket <https://github.com/ros-planning/navigation2/issues/2467>`_ and `this ticket <https://github.com/ros-planning/navigation2/issues/2968>`_ and adds a virtual ``on_completion()`` function to the ``BtServiceNode`` class (`can be found here <https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp>`_). Similar to the already existing virtual ``on_wait_for_result()`` function, it can be overwritten in the child class to react to a respective event with some user-defined operation. The added ``on_completion()`` function will be called after the service interaction of the ``BtServiceNode`` has been successfully completed."
-msgstr "`This PR 2481 <https://github.com/ros-planning/navigation2/pull/2481>`_ and `PR 2992 <https://github.com/ros-planning/navigation2/pull/2992>`_  address `the ticket <https://github.com/ros-planning/navigation2/issues/2467>`_ and `this ticket <https://github.com/ros-planning/navigation2/issues/2968>`_ and adds a virtual ``on_completion()`` function to the ``BtServiceNode`` class (`can be found here <https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp>`_). Similar to the already existing virtual ``on_wait_for_result()`` function, it can be overwritten in the child class to react to a respective event with some user-defined operation. The added ``on_completion()`` function will be called after the service interaction of the ``BtServiceNode`` has been successfully completed."
+msgstr "`PR2481 <https://github.com/ros-planning/navigation2/pull/2481>`_ 和 `PR2992 <https://github.com/ros-planning/navigation2/pull/2992>`_ 处理了 `该问题 <https://github.com/ros-planning/navigation2/issues/2467>`_ 和 `这个问题 <https://github.com/ros-planning/navigation2/issues/2968>`_，并为 ``BtServiceNode`` 类添加了一个虚拟的 ``on_completion()`` 函数（`可以在这里找到 <https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp>`_）。类似于已有的虚拟 ``on_wait_for_result()`` 函数，它可以在子类中进行重写，以对相应的事件做出用户定义的操作。添加的 ``on_completion()`` 函数将在 ``BtServiceNode`` 的服务交互成功完成后调用。"
 
 
 #: ../../migration/Galactic.rst:139
@@ -1226,17 +1226,17 @@ msgstr "返回的``BT::NodeStatus``将设置BT节点的当前状态。由于函�
 
 #: ../../migration/Galactic.rst:143
 msgid "Including new Rotation Shim Controller Plugin"
-msgstr "Including new Rotation Shim Controller Plugin"
+msgstr "包括新的旋转Shim控制器插件"
 
 
 #: ../../migration/Galactic.rst:145
 msgid "`This PR 2718 <https://github.com/ros-planning/navigation2/pull/2718>`_ introduces the new ``nav2_rotation_shim_controller``. This controller will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the primary controller to execute. If it is outside of the threshold, this controller will rotate the robot towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot is still going to be rotating, allowing the current plugin to take control for a smooth hand off into path tracking."
-msgstr "`This PR 2718 <https://github.com/ros-planning/navigation2/pull/2718>`_ introduces the new ``nav2_rotation_shim_controller``. This controller will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the primary controller to execute. If it is outside of the threshold, this controller will rotate the robot towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot is still going to be rotating, allowing the current plugin to take control for a smooth hand off into path tracking."
+msgstr "这个 PR 2718 <https://github.com/ros-planning/navigation2/pull/2718> 引入了新的 nav2_rotation_shim_controller。这个控制器将检查机器人与新接收到的路径之间的大致航向差异。如果在阈值范围内，它将将请求传递给主要控制器来执行。如果超出阈值范围，这个控制器将使机器人朝向该路径的航向旋转。一旦在容差范围内，它将把控制执行从这个旋转控制器转交给主要控制器插件。此时，机器人仍然会旋转，以便当前插件可以控制平稳过渡到路径跟踪。"
 
 
 #: ../../migration/Galactic.rst:148
 msgid "The Rotation Shim Controller is suitable for:"
-msgstr "The Rotation Shim Controller is suitable for:"
+msgstr "旋转Shim控制器适用于以下情况："
 
 
 #: ../../migration/Galactic.rst:150
@@ -1246,57 +1246,57 @@ msgstr "能够原地旋转的机器人，如差分驱动和全向驱动机器人
 
 #: ../../migration/Galactic.rst:151
 msgid "Preference to rotate in place rather than 'spiral out' when starting to track a new path that is at a significantly different heading than the robot's current heading."
-msgstr "Preference to rotate in place rather than 'spiral out' when starting to track a new path that is at a significantly different heading than the robot's current heading."
+msgstr "在开始跟踪一个与机器人当前方向明显不同的新路径时，更喜欢原地旋转而不是“螺旋外扩”。"
 
 
 #: ../../migration/Galactic.rst:152
 msgid "Using planners that are non-kinematically feasible, such as NavFn, Theta\\*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation)."
-msgstr "Using planners that are non-kinematically feasible, such as NavFn, Theta\\*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation)."
+msgstr "使用不可行的规划器（如 NavFn、Theta\* 或 Smac 2D）（可行的规划器如 Smac Hybrid-A* 和 State Lattice 将从机器人的实际起始航向开始搜索，无需旋转）。"
 
 
 #: ../../migration/Galactic.rst:155
 msgid "Spawning the robot in Gazebo"
-msgstr "Spawning the robot in Gazebo"
+msgstr "在Gazebo中生成机器人"
 
 
 #: ../../migration/Galactic.rst:157
 msgid "`This PR 2473 <https://github.com/ros-planning/navigation2/pull/2473>`_ deletes the pkg ``nav2_gazebo_spawner`` inside nav2_bringup directory. Instead of ``nav2_gazebo_spawner`` the Node `spawn_entity.py <https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py>`_ of ``gazebo_ros`` is recomended to spawn the robot in gazebo. Note that"
-msgstr "`This PR 2473 <https://github.com/ros-planning/navigation2/pull/2473>`_ deletes the pkg ``nav2_gazebo_spawner`` inside nav2_bringup directory. Instead of ``nav2_gazebo_spawner`` the Node `spawn_entity.py <https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py>`_ of ``gazebo_ros`` is recomended to spawn the robot in gazebo. Note that"
+msgstr "这个 PR 2473 <https://github.com/ros-planning/navigation2/pull/2473> 删除了 nav2_bringup 目录中的 pkg nav2_gazebo_spawner。推荐使用 gazebo_ros 的节点 spawn_entity.py <https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py> 在 gazebo 中生成机器人。注意"
 
 
 #: ../../migration/Galactic.rst:160
 msgid "gazebo should be started with both ``libgazebo_ros_init.so`` and ``libgazebo_ros_factory.so`` to work correctly."
-msgstr "gazebo should be started with both ``libgazebo_ros_init.so`` and ``libgazebo_ros_factory.so`` to work correctly."
+msgstr "要正确工作，必须同时启动``libgazebo_ros_init.so``和``libgazebo_ros_factory.so``的Gazebo。"
 
 
 #: ../../migration/Galactic.rst:162
 msgid "spawn_entity node could not remap /tf and /tf_static to tf and tf_static in the launch file yet, used only for multi-robot situations. This problem was overcame by adding remapping argument ``<remapping>/tf:=tf</remapping>``  ``<remapping>/tf_static:=tf_static</remapping>`` under ros2 tag in each plugin which publishs transforms in the SDF file. It is essential to differentiate the tf's of the different robot."
-msgstr "spawn_entity node could not remap /tf and /tf_static to tf and tf_static in the launch file yet, used only for multi-robot situations. This problem was overcame by adding remapping argument ``<remapping>/tf:=tf</remapping>``  ``<remapping>/tf_static:=tf_static</remapping>`` under ros2 tag in each plugin which publishs transforms in the SDF file. It is essential to differentiate the tf's of the different robot."
+msgstr "spawn_entity 节点尚不能在启动文件中将 /tf 和 /tf_static 重新映射为 tf 和 tf_static，仅用于多机器人情况。通过在每个在 SDF 文件中发布变换的插件下添加重映射参数 <remapping>/tf:=tf</remapping> <remapping>/tf_static:=tf_static</remapping> 在 ros2 标签下，克服了这个问题。区分不同机器人的 tf 是必不可少的。"
 
 
 #: ../../migration/Galactic.rst:165
 msgid "Recovery Behavior Timeout"
-msgstr "Recovery Behavior Timeout"
+msgstr "恢复行为超时"
 
 
 #: ../../migration/Galactic.rst:167
 msgid "Recoveries in Nav2, spin and backup, now have ``time_allowance`` ports in their BT nodes and request fields in their actions to specify a timeout. This helps ensure that the robot can exit a backup or spin primitive behavior in case it gets stuck or otherwise is unable to backup the full distance over a reasonable block of time."
-msgstr "Recoveries in Nav2, spin and backup, now have ``time_allowance`` ports in their BT nodes and request fields in their actions to specify a timeout. This helps ensure that the robot can exit a backup or spin primitive behavior in case it gets stuck or otherwise is unable to backup the full distance over a reasonable block of time."
+msgstr "Nav2 中的恢复（spin 和 backup）现在在它们的行为树节点和动作中具有 time_allowance 端口和请求字段，用于指定超时时间。这有助于确保机器人在备份或旋转原语行为中能够在一段合理的时间内退出，以防止被卡住或无法在合理的时间内完全备份。"
 
 
 #: ../../migration/Galactic.rst:170
 msgid "New parameter ``use_final_approach_orientation`` for the 3 2D planners"
-msgstr "New parameter ``use_final_approach_orientation`` for the 3 2D planners"
+msgstr "3个2D规划器的新参数``use_final_approach_orientation``"
 
 
 #: ../../migration/Galactic.rst:172
 msgid "`Pull request 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ adds a new parameter ``use_final_approach_orientation`` to the 3 2D planners (Theta*, SmacPlanner2D and NavFn), ``false`` by default. If ``true``, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path. It allows sending the robot to a position (x,y) instead of a pose (x,y,theta) by effectively ignoring the goal orientation. For example, below, for the same goal with an orientaton pointed left of the screen, ``use_final_approach_orientation=false`` (left) and ``use_final_approach_orientation=true`` (right)"
-msgstr "`Pull request 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ adds a new parameter ``use_final_approach_orientation`` to the 3 2D planners (Theta*, SmacPlanner2D and NavFn), ``false`` by default. If ``true``, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path. It allows sending the robot to a position (x,y) instead of a pose (x,y,theta) by effectively ignoring the goal orientation. For example, below, for the same goal with an orientaton pointed left of the screen, ``use_final_approach_orientation=false`` (left) and ``use_final_approach_orientation=true`` (right)"
+msgstr "Pull request 2488 <https://github.com/ros-planning/navigation2/pull/2488> 向 3 个 2D 规划器（Theta\*、SmacPlanner2D 和 NavFn）添加了一个新参数 use_final_approach_orientation，默认为 false。如果为 true，则规划器生成的路径的最后姿态将其方向设置为接近方向，即连接路径最后两个点的向量的方向。这允许将"
 
 
 #: ../../migration/Galactic.rst:182
 msgid "SmacPlanner2D and Theta*: fix goal orientation being ignored"
-msgstr "SmacPlanner2D and Theta*: fix goal orientation being ignored"
+msgstr "SmacPlanner2D和Theta*：修复目标方向被忽略的问题"
 
 
 #: ../../migration/Galactic.rst:184
@@ -1306,7 +1306,7 @@ msgstr "`This pull request 2488 <https://github.com/ros-planning/navigation2/pul
 
 #: ../../migration/Galactic.rst:187
 msgid "SmacPlanner2D, NavFn and Theta*: fix small path corner cases"
-msgstr "SmacPlanner2D, NavFn and Theta*: fix small path corner cases"
+msgstr "SmacPlanner2D、NavFn和Theta*：修复小路径的边界情况"
 
 
 #: ../../migration/Galactic.rst:189
@@ -1316,7 +1316,7 @@ msgstr "`This PR 2488 <https://github.com/ros-planning/navigation2/pull/2488>`_ 
 
 #: ../../migration/Galactic.rst:192
 msgid "Change and fix behavior of dynamic parameter change detection"
-msgstr "Change and fix behavior of dynamic parameter change detection"
+msgstr "更改和修复动态参数更改检测的行为"
 
 
 #: ../../migration/Galactic.rst:194
