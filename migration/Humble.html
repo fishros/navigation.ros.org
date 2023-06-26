@@ -972,41 +972,38 @@
 </div>
 <div class="section" id="parameterizable-collision-checking-in-rpp">
 <h2>可参数化的 RPP 碰撞检查<a class="headerlink" href="#parameterizable-collision-checking-in-rpp" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3204">PR 3204</a> adds makes collision checking for RPP optional (default on).</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3204">PR 3204</a> 添加了对RPP的碰撞检查的可选项（默认开启）。</p>
 </div>
 <div class="section" id="expanded-planner-benchmark-tests">
 <h2>扩展规划器基准测试<a class="headerlink" href="#expanded-planner-benchmark-tests" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3218">PR 3218</a> adds launch files and updated scripts for performing objective random planning tests across the planners in Nav2 for benchmarking and metric computation.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3218">PR 3218</a> 添加了用于在Nav2中对规划器进行基准测试和度量计算的启动文件和更新的脚本，以进行目标随机规划测试。</p>
 </div>
 <div class="section" id="smac-planner-path-tolerances">
 <h2>Smac 规划器路径容差<a class="headerlink" href="#smac-planner-path-tolerances" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3219">PR 3219</a> adds path tolerances to Hybrid-A* and State Lattice planners to return approximate paths if exact paths cannot be found, within a configurable tolerance aroun the goal pose.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3219">PR 3219</a> 在Hybrid-A*和State Lattice规划器中添加了路径容差，如果无法找到精确路径，则返回近似路径，容差范围可配置。</p>
 </div>
 <div class="section" id="costmap-2d-node-default-constructor">
 <h2>costmap_2d_node 默认构造函数<a class="headerlink" href="#costmap-2d-node-default-constructor" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3222">PR #3222</a> changes the constructor used by the standalone costmap node. The new constructor does not set a name and namespace internally so it can be set via the launch file.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3222">PR #3222</a> 更改了独立成本地图节点使用的构造函数。新的构造函数不会在内部设置名称和命名空间，因此可以通过启动文件进行设置。</p>
 </div>
 <div class="section" id="feedback-for-navigation-failures">
 <h2>导航失败的反馈<a class="headerlink" href="#feedback-for-navigation-failures" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3146">PR #3146</a> updates the global planners to throw exceptions on planning failures. These exceptions get reported back to the planner server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application.</p>
-<p>The following errors codes are supported (with more to come as necessary): Unknown, TF Error, Start or Goal Outside of Map, Start or Goal Occupied, Timeout, or No Valid Path Found.</p>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3248">PR #3248</a> updates the compute path through poses action to report planning failures. These exceptions get reported back to the planner server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application.</p>
-<p>The following errors codes are supported (with more to come as necessary): Unknown, TF Error, Start or Goal Outside of Map, Start or Goal Occupied, Timeout, No Valid Path Found and No Waypoints given.</p>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3227">PR #3227</a> updates the controllers to throw exceptions on failures. These exceptions get reported back to the controller server which in turn places a error code on the Behavior Tree Navigatior's blackboard for use in contextual error handling in the autonomy application.</p>
-<p>The following error codes are supported (with more to come as necessary): Unknown, TF Error, Invalid Path, Patience Exceeded, Failed To Make Progress, or No Valid Control.</p>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3251">PR #3251</a> pipes the highest priority error code through the bt_navigator and defines the error code structure.</p>
-<p>A new parameter for the the BT Navigator called &quot;error_code_id_names&quot; was added to the nav2_params.yaml to define the error codes to compare.
-The lowest error in the &quot;error_code_id_names&quot; is then returned in the action request (navigate to pose, navigate through poses waypoint follower), whereas the code enums increase the higher up in the software stack - giving higher priority to lower-level failures.</p>
-<p>The error codes produced from the servers follow the guidelines stated below.
-Error codes from 0 to 9999 are reserved for nav2 while error codes from 10000-65535 are reserved for external servers.
-Each server has two &quot;reserved&quot; error codes. 0 is reserved for NONE and the first error code in the sequence is reserved for UNKNOWN.</p>
-<p>The current implemented servers with error codes are:</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3146">PR #3146</a> 更新了全局规划器，在规划失败时抛出异常。这些异常会被报告给规划器服务器，进而在行为树导航器的黑板上放置错误代码，用于在自治应用中进行上下文错误处理。</p>
+<p>支持以下错误代码（随着需要会有更多）：Unknown（未知错误）、TF Error（TF错误）、Start or Goal Outside of Map（起点或目标点在地图外）、Start or Goal Occupied（起点或目标点被占用）、Timeout（超时）或者No Valid Path Found（未找到有效路径）。</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3248">PR #3248</a> 更新了通过姿态计算路径的操作，以报告规划失败。这些异常会被报告给规划器服务器，进而在行为树导航器的黑板上放置错误代码，用于在自治应用中进行上下文错误处理。</p>
+<p>支持以下错误代码（随着需要会有更多）：Unknown（未知错误）、TF Error（TF错误）、Start or Goal Outside of Map（起点或目标点在地图外）、Start or Goal Occupied（起点或目标点被占用）、Timeout（超时）、No Valid Path Found（未找到有效路径）和No Waypoints given（未给定路径点）。</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3227">PR #3227</a> 更新了控制器，在失败时抛出异常。这些异常会被报告给控制器服务器，进而在行为树导航器的黑板上放置错误代码，用于在自治应用中进行上下文错误处理。</p>
+<p>支持以下错误代码（随着需要会有更多）：Unknown（未知错误）、TF Error（TF错误）、Invalid Path（无效路径）、Patience Exceeded（耐心用尽）、Failed To Make Progress（无法取得进展）或者No Valid Control（无有效控制）。</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3251">PR #3251</a> 通过 bt_navigator 传递了最高优先级的错误代码，并定义了错误代码结构。</p>
+<p>为BT Navigator添加了一个名为&quot;error_code_id_names&quot;的新参数，以定义要比较的错误代码。在动作请求中，将返回&quot;error_code_id_names&quot;中最低的错误代码（导航到位姿、通过路径点进行导航），而代码枚举在软件堆栈中的位置越高，优先级越高，更低层的故障优先级更高。</p>
+<p>从服务器产生的错误代码遵循以下准则。错误代码从 0 到 9999 保留给 nav2，而错误代码从 10000 到 65535 保留给外部服务器。每个服务器有两个“保留”错误代码。0 保留给 NONE，序列中的第一个错误代码保留给 UNKNOWN。</p>
+<p>当前实现的带有错误代码的服务器有：</p>
 <ul class="simple">
-<li><p>Controller Server: NONE:0, UNKNOWN:100, server error codes: 101-199</p></li>
-<li><p>Planner Server(compute_path_to_pose): NONE:0, UNKNOWN:201, server error codes: 201-299</p></li>
-<li><p>Planner Server(compute_path_through_poses): NONE:0, UNKNOWN:301, server error codes: 301-399</p></li>
-<li><p>Smoother Server: NONE: 0, UNKNOWN: 501, server error codes: 501-599</p></li>
-<li><p>Waypoint Follower Server: NONE: 0, UNKNOWN: 601, server error codes: 601-699</p></li>
+<li><p>控制器服务器：NONE:0，UNKNOWN:100，服务器错误代码：101-199</p></li>
+<li><p>Planner Server（compute_path_to_pose）：NONE:0（无），UNKNOWN:201（未知错误），服务器错误代码：201-299</p></li>
+<li><p>规划器服务器（compute_path_through_poses）：NONE:0，UNKNOWN:301，服务器错误代码：301-399</p></li>
+<li><p>Smoother Server：NONE:0（无），UNKNOWN:501（未知错误），服务器错误代码：501-599</p></li>
+<li><p>路径点跟随服务器：NONE:0，UNKNOWN:601，服务器错误代码：601-699</p></li>
 </ul>
 <p>This pr also updates the waypoint follower server to throw exceptions on failures. These exceptions get reported back to the server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application.
 The following errors codes are supported (with more to come as necessary): Unknown and Task Executor Failed.
@@ -1014,12 +1011,12 @@ See <a class="reference internal" href="../tutorials/docs/adding_a_nav2_task_ser
 </div>
 <div class="section" id="costmap-filters">
 <h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
-<p>Costmap Filters now are have an ability to be enabled/disabled in run-time by calling <code class="docutils literal notranslate"><span class="pre">toggle_filter</span></code> service for appropriate filter (<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3229">PR #3229</a>).</p>
+<p>现在成本地图过滤器可以通过调用适当过滤器的 <code class="docutils literal notranslate"><span class="pre">toggle_filter</span></code> 服务在运行时启用/禁用（<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3229">PR #3229</a>）。</p>
 <p>Added new binary flip filter, allowing e.g. to turn off camera in sensitive areas, turn on headlights/leds/other safety things or switch operating mode when robot is inside marked on mask areas (<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3228">PR #3228</a>).</p>
 </div>
 <div class="section" id="savitzky-golay-smoother">
 <h2>Savitzky-Golay平滑器<a class="headerlink" href="#savitzky-golay-smoother" title="永久链接至标题"></a></h2>
-<p>Adding a new smoother algorithm, the Savitzky-Golay smoother to the smoother server plugin list. See the configuration guide <a class="reference internal" href="../configuration/packages/configuring-savitzky-golay-smoother.html#configuring-savitzky-golay-filter-smoother"><span class="std std-ref">Savitzky-Golay平滑器</span></a> for more details.</p>
+<p>将新的平滑算法 Savitzky-Golay 平滑器添加到平滑器服务器插件列表中。有关更多详细信息，请参阅配置指南 <a class="reference internal" href="../configuration/packages/configuring-savitzky-golay-smoother.html#configuring-savitzky-golay-filter-smoother"><span class="std std-ref">Savitzky-Golay平滑器</span></a>。</p>
 </div>
 <div class="section" id="changes-to-map-yaml-file-path-for-map-server-node-in-launch">
 <h2>Changes to Map yaml file path for map_server node in Launch<a class="headerlink" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch" title="永久链接至标题"></a></h2>
