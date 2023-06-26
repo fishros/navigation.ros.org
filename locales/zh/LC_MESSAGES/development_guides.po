@@ -607,7 +607,7 @@ msgstr "您可以将与 `devcontainer.json` 配置文件相同的脚本纳入到
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:115
 msgid "Terminals"
-msgstr "Terminals"
+msgstr "终端"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:117
@@ -637,7 +637,7 @@ msgstr "`docker exec -it <container-id> bash`"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:126
 msgid "Shell sessions spawned directly via `docker exec` do not set the same environment that `devcontainer exec` does using `userEnvProbe`. Additional environment variables include `REMOTE_CONTAINERS_IPC`, `REMOTE_CONTAINERS_SOCKETS` and are used by vscode, ssh and X11."
-msgstr "Shell sessions spawned directly via `docker exec` do not set the same environment that `devcontainer exec` does using `userEnvProbe`. Additional environment variables include `REMOTE_CONTAINERS_IPC`, `REMOTE_CONTAINERS_SOCKETS` and are used by vscode, ssh and X11."
+msgstr "通过直接使用 `docker exec` 生成的 Shell 会话不会设置与使用 `userEnvProbe` 的 `devcontainer exec` 相同的环境。其他环境变量包括 `REMOTE_CONTAINERS_IPC`、`REMOTE_CONTAINERS_SOCKETS`，并且会被 vscode、ssh 和 X11 使用。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:131
@@ -647,7 +647,7 @@ msgstr "可以手动获取由 `userEnvProbe` 提供的环境。例如，默认�
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:140
 msgid "Lifecycle"
-msgstr "Lifecycle"
+msgstr "生命周期"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:142
@@ -657,77 +657,77 @@ msgstr "在使用开发容器时，请记住容器本身的生命周期。具体
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:145
 msgid "This is particularly important when the host machine is inherently ephemeral as well, as the case may be when using cloud based environments such as Codespaces, so be sure to commit and push local changes to a remote repository:"
-msgstr "This is particularly important when the host machine is inherently ephemeral as well, as the case may be when using cloud based environments such as Codespaces, so be sure to commit and push local changes to a remote repository:"
+msgstr "当主机机器本身是暂时性的时候，这一点尤其重要，比如在使用云环境（如 Codespaces）时，请务必提交并推送本地更改到远程存储库："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:147
 msgid "[The codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/the-codespace-lifecycle)"
-msgstr "[The codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/the-codespace-lifecycle)"
+msgstr "[代码空间生命周期](https://docs.github.com/en/codespaces/getting-started/the-codespace-lifecycle)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:148
 msgid "Maintain your data throughout the entire codespace lifecycle"
-msgstr "Maintain your data throughout the entire codespace lifecycle"
+msgstr "在整个 Codespace 生命周期中维护您的数据"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:151
 msgid "Rebuilding"
-msgstr "Rebuilding"
+msgstr "重建中"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:153
 msgid "From time to time, you may need to rebuild the dev container, either because the base image, or `.devcontainer/` config was updated, or simply out of wanting a new fresh development environment. To do so, simply open the Command Palette (Ctrl+Shift+P) and select the `Remote-Containers: Rebuild Container` command."
-msgstr "From time to time, you may need to rebuild the dev container, either because the base image, or `.devcontainer/` config was updated, or simply out of wanting a new fresh development environment. To do so, simply open the Command Palette (Ctrl+Shift+P) and select the `Remote-Containers: Rebuild Container` command."
+msgstr "有时候，您可能需要重新构建开发容器，无论是因为基本镜像还是`.devcontainer/`配置文件的更新，或者仅仅是想要一个新的开发环境。要这样做，只需打开命令面板（Ctrl+Shift+P），然后选择`Remote-Containers: Rebuild Container`命令。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:156
 msgid "Rebuilding the container will destroy any changes made to the container itself, such as installing additional packages, or modifying the environment. However, the project's source directory, and any mounted volumes, will remain unaffected."
-msgstr "Rebuilding the container will destroy any changes made to the container itself, such as installing additional packages, or modifying the environment. However, the project's source directory, and any mounted volumes, will remain unaffected."
+msgstr "重建容器将会销毁对容器本身所做的任何更改，如安装附加软件包或修改环境。但项目的源目录和任何挂载的卷将保持不受影响。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:159
 msgid "For example, you may need to rebuild the dev container when:"
-msgstr "For example, you may need to rebuild the dev container when:"
+msgstr "例如，当以下情况发生时，您可能需要重新构建开发容器："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:161
 msgid "Pulling newer images from a container registry"
-msgstr "Pulling newer images from a container registry"
+msgstr "从容器注册表拉取更新的镜像"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:162
 msgid "specifically, image tags built `FROM` in the Dockerfile"
-msgstr "specifically, image tags built `FROM` in the Dockerfile"
+msgstr "具体而言，是在 Dockerfile 中构建的图像标签 `FROM`"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:163
 msgid "or tags listed under `cacheFrom` in `devcontainer.json`"
-msgstr "or tags listed under `cacheFrom` in `devcontainer.json`"
+msgstr "或在 `devcontainer.json` 中的 `cacheFrom` 下列出的标签"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:164
 msgid "periodically done manually to ensure local environment reflects CI"
-msgstr "periodically done manually to ensure local environment reflects CI"
+msgstr "定期手动执行以确保本地环境反映 CI"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:165
 msgid "Updating the dev container configuration"
-msgstr "Updating the dev container configuration"
+msgstr "更新开发容器配置"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:166
 msgid "specifically when modifying dependent stages in the `Dockerfile`"
-msgstr "specifically when modifying dependent stages in the `Dockerfile`"
+msgstr "具体而言，是在 `Dockerfile` 中修改依赖阶段时"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:167
 msgid "or when modifying `./devcontainer` files and commands"
-msgstr "or when modifying `./devcontainer` files and commands"
+msgstr "或在修改 `./devcontainer` 文件和命令时"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:168
 msgid "where build cache reuse correlates with severity of changes made"
-msgstr "where build cache reuse correlates with severity of changes made"
+msgstr "构建缓存重用与所做更改的严重程度相关"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:170
@@ -737,7 +737,7 @@ msgstr "When necessary, you can also rebuild the container from scratch, e.i. wi
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:173
 msgid "Rebuilding the container without cache may likely pull newer images from a container registry or install newer packages, as is common when developing for ROS 2 Rolling. You may then want to clean your overlay volume to avoid ABI incompatibilities or stale artifacts."
-msgstr "Rebuilding the container without cache may likely pull newer images from a container registry or install newer packages, as is common when developing for ROS 2 Rolling. You may then want to clean your overlay volume to avoid ABI incompatibilities or stale artifacts."
+msgstr "重新构建容器时，可能会从容器注册表中拉取更新的镜像或安装更新的软件包，这在开发 ROS 2 Rolling 时很常见。然后，您可能需要清理覆盖卷，以避免ABI不兼容或过时的构件。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:176
