@@ -614,11 +614,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#trajectory-visualization">轨迹可视化</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#path-handler">路径处理器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ackermann-motion-model">阿克曼运动模型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#constraint-critic">Constraint Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#goal-angle-critic">Goal Angle Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#goal-critic">Goal Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#obstacles-critic">Obstacles Critic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#path-align-critic">Path Align Critic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constraint-critic">约束评估器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#goal-angle-critic">目标角度评价器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#goal-critic">目标评估器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#obstacles-critic">障碍物评估器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#path-align-critic">路径对齐评论家</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#path-angle-critic">Path Angle Critic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#path-follow-critic">Path Follow Critic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prefer-forward-critic">Prefer Forward Critic</a></li>
@@ -1424,7 +1424,7 @@
 <div class="section" id="ackermann-motion-model">
 <h3>阿克曼运动模型<a class="headerlink" href="#ackermann-motion-model" title="永久链接至标题"></a></h3>
 <dl class="field-list">
-<dt class="field-odd">min_turning_r</dt>
+<dt class="field-odd">最小转向半径</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1447,7 +1447,7 @@
 </dl>
 </div>
 <div class="section" id="constraint-critic">
-<h3>Constraint Critic<a class="headerlink" href="#constraint-critic" title="永久链接至标题"></a></h3>
+<h3>约束评估器<a class="headerlink" href="#constraint-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1465,7 +1465,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1485,14 +1485,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="goal-angle-critic">
-<h3>Goal Angle Critic<a class="headerlink" href="#goal-angle-critic" title="永久链接至标题"></a></h3>
+<h3>目标角度评价器<a class="headerlink" href="#goal-angle-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1510,7 +1510,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1530,11 +1530,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">threshold_to_consider</dt>
+<dt class="field-odd">考虑的阈值</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1550,14 +1550,14 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimal distance (m) between robot and goal above which angle goal cost considered.</p>
+<dt>描述</dt><dd><p>机器人与目标之间的最小距离（米），超过该距离将考虑角度目标成本。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="goal-critic">
-<h3>Goal Critic<a class="headerlink" href="#goal-critic" title="永久链接至标题"></a></h3>
+<h3>目标评估器<a class="headerlink" href="#goal-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1575,7 +1575,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1595,11 +1595,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">threshold_to_consider</dt>
+<dt class="field-odd">考虑的阈值</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1615,16 +1615,16 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimal distance (m) between robot and goal above which goal distance cost considered.</p>
+<dt>描述</dt><dd><p>机器人与目标之间的最小距离（米），超过该距离将考虑目标距离成本。</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </div>
 <div class="section" id="obstacles-critic">
-<h3>Obstacles Critic<a class="headerlink" href="#obstacles-critic" title="永久链接至标题"></a></h3>
+<h3>障碍物评估器<a class="headerlink" href="#obstacles-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
-<dt class="field-odd">critical_weight</dt>
+<dt class="field-odd">关键权重</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1640,11 +1640,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic for near collisions closer than <code class="docutils literal notranslate"><span class="pre">collision_margin_distance</span></code> to prevent near collisions <strong>only</strong> as a method of virtually inflating the footprint. This should not be used to generally influence obstacle avoidance away from critical collisions.</p>
+<dt>描述</dt><dd><p>在距离小于``collision_margin_distance``的近距离碰撞中，为了仅仅作为虚拟扩大足迹的方法防止近距离碰撞，应用于评论家的权重。这不应该被用于一般性地影响避障行为，使其远离关键性碰撞。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">repulsion_weight</dt>
+<dt class="field-even">排斥权重</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1660,7 +1660,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic for generally preferring routes in lower cost space. This is separated from the critical term to allow for fine tuning of obstacle behaviors with path alignment for dynamic scenes without impacting actions which may directly lead to near-collisions. This is applied within the <code class="docutils literal notranslate"><span class="pre">inflation_radius</span></code> distance from obstacles.</p>
+<dt>描述</dt><dd><p>在一般情况下更喜欢低成本空间中的路径的评论家的权重。这与关键术语分开，以便在动态场景中通过路径对齐对障碍物行为进行微调，而不影响可能直接导致近距离碰撞的动作。这在与障碍物的``inflation_radius``距离内应用。</p>
 </dd>
 </dl>
 </dd>
@@ -1680,11 +1680,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">consider_footprint</dt>
+<dt class="field-even">考虑足迹</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1700,11 +1700,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to use point cost (if robot is circular or low compute power) or compute SE2 footprint cost.</p>
+<dt>描述</dt><dd><p>是否使用点成本（如果机器人是圆形的或计算能力较低）或计算SE2足迹成本。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">collision_cost</dt>
+<dt class="field-odd">碰撞成本</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1720,7 +1720,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Cost to apply to a true collision in a trajectory.</p>
+<dt>描述</dt><dd><p>在轨迹中应用于真实碰撞的成本。</p>
 </dd>
 </dl>
 </dd>
@@ -1740,7 +1740,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Margin distance (m) from collision to apply severe penalty, similar to footprint inflation. Between 0.05-0.2 is reasonable. Note that it will highly influence the controller not to enter spaces more confined than this, so ensure this parameter is set lower than the narrowest you expect the robot to need to traverse through.</p>
+<dt>描述</dt><dd><p>从碰撞到施加严厉惩罚的边缘距离（米），类似于足迹扩大。0.05-0.2之间是合理的范围。请注意，它将极大地影响控制器不进入比此更狭窄的空间，因此确保该参数设置为比机器人预计需要穿越的最窄空间更低的值。</p>
 </dd>
 </dl>
 </dd>
@@ -1760,7 +1760,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance (m) near goal to stop applying preferential obstacle term to allow robot to smoothly converge to goal pose in close proximity to obstacles.</p>
+<dt>描述</dt><dd><p>距离目标附近的距离（米），用于停止应用偏好障碍项，以便机器人能够在靠近障碍物的情况下平稳地收敛到目标姿态。</p>
 </dd>
 </dl>
 </dd>
@@ -1780,7 +1780,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Exponential decay factor across inflation radius. This should be the same as for your inflation layer (Humble only)</p>
+<dt>描述</dt><dd><p>膨胀半径的指数衰减因子。这应该与膨胀层的设置相同（仅适用于Humble）。</p>
 </dd>
 </dl>
 </dd>
@@ -1807,7 +1807,7 @@
 </dl>
 </div>
 <div class="section" id="path-align-critic">
-<h3>Path Align Critic<a class="headerlink" href="#path-align-critic" title="永久链接至标题"></a></h3>
+<h3>路径对齐评论家<a class="headerlink" href="#path-align-critic" title="永久链接至标题"></a></h3>
 <dl class="field-list">
 <dt class="field-odd">cost_weight</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -1825,7 +1825,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1845,11 +1845,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">threshold_to_consider</dt>
+<dt class="field-odd">考虑的阈值</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1930,7 +1930,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -1950,11 +1950,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">threshold_to_consider</dt>
+<dt class="field-odd">考虑的阈值</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -2035,7 +2035,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -2055,11 +2055,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">threshold_to_consider</dt>
+<dt class="field-odd">考虑的阈值</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -2120,7 +2120,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -2140,11 +2140,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">threshold_to_consider</dt>
+<dt class="field-odd">考虑的阈值</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -2185,7 +2185,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to critic term.</p>
+<dt>描述</dt><dd><p>应用于评估器项的权重</p>
 </dd>
 </dl>
 </dd>
@@ -2205,7 +2205,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Power order to apply to term.</p>
+<dt>描述</dt><dd><p>应用于项的幂次</p>
 </dd>
 </dl>
 </dd>
