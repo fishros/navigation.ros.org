@@ -585,7 +585,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-dwb-controller.html#plugins">插件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../dwb-plugins/limited_accel_generator.html">LimitedAccelGenerator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dwb-plugins/standard_traj_generator.html">StandardTrajectoryGenerator（标准轨迹生成器）</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-dwb-controller.html#trajectory-critics">轨迹评论家</a><ul>
@@ -944,7 +944,7 @@
 <p>Checks whether the robot has made progress.</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;nav2_controller</span> <span class="pre">plugin&gt;</span></code>: nav2_controller plugin name defined in the <strong>progress_checker_plugin_id</strong> parameter in <a class="reference internal" href="../configuring-controller-server.html#configuring-controller-server"><span class="std std-ref">控制器服务器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;nav2_controller插件&gt;</span></code>: 在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_controller_server`中的**progress_checker_plugin_id**参数中定义的nav2_controller插件名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;nav2_controller</span> <span class="pre">plugin&gt;</span></code>.required_movement_radius</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum amount a robot must move to be progressing to goal (m).</p>
+<dt>描述</dt><dd><p>机器人必须移动的最小距离才能向目标前进（米）。</p>
 </dd>
 </dl>
 </dd>
