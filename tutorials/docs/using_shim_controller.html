@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using Rotation Shim Controller &mdash; Navigation 2 1.0.0 文档</title>
+  <title>使用旋转垫片控制器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -251,7 +251,7 @@
 <li class="toctree-l3"><a class="reference internal" href="using_groot.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="using_groot.html#visualize-behavior-trees">可视化行为树</a></li>
 <li class="toctree-l3"><a class="reference internal" href="using_groot.html#edit-behavior-trees">编辑行为树</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using_groot.html#adding-a-custom-node">Adding A Custom Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_groot.html#adding-a-custom-node">添加自定义节点</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="camera_calibration.html">相机校准</a><ul>
@@ -313,10 +313,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Rotation Shim Controller</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用旋转垫片控制器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-the-rotation-shim-controller">What is the Rotation Shim Controller?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-rotation-shim-controller">Configuring Rotation Shim Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-rotation-shim-controller">什么是旋转垫片控制器？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-rotation-shim-controller">配置旋转垫片控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-primary-controller">Configuring Primary Controller</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demo-execution">演示执行</a></li>
 </ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Using Rotation Shim Controller</li>
+      <li>使用旋转垫片控制器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,23 +939,23 @@
            <div itemprop="articleBody">
              
   <div class="section" id="using-rotation-shim-controller">
-<span id="shim-tutorial"></span><h1>Using Rotation Shim Controller<a class="headerlink" href="#using-rotation-shim-controller" title="永久链接至标题"></a></h1>
+<span id="shim-tutorial"></span><h1>使用旋转垫片控制器<a class="headerlink" href="#using-rotation-shim-controller" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
-<li><p><a class="reference internal" href="#what-is-the-rotation-shim-controller">What is the Rotation Shim Controller?</a></p></li>
-<li><p><a class="reference internal" href="#configuring-rotation-shim-controller">Configuring Rotation Shim Controller</a></p></li>
-<li><p><a class="reference internal" href="#configuring-primary-controller">Configuring Primary Controller</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-rotation-shim-controller">旋转衬垫控制器是什么？</a></p></li>
+<li><p><a class="reference internal" href="#configuring-rotation-shim-controller">配置旋转垫片控制器</a></p></li>
+<li><p><a class="reference internal" href="#configuring-primary-controller">配置主控制器</a></p></li>
 <li><p><a class="reference internal" href="#demo-execution">演示执行</a></p></li>
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial will discuss how to set up your robot to use the <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> to help create intuitive, rotate-in-place, behavior for your robot while starting out to track a path. The goal of this tutorial is to explain to the reader the value of the controller, how to configure it, how to configure the primary controller with it, and finally an example of it in use.</p>
-<p>Before starting this tutorial, completing the <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> is highly recommended especially if you are new to ROS and Nav2. The requirements are having the latest install of Nav2 / ROS 2 containing this package.</p>
+<p>本教程将讨论如何设置机器人以使用``RotationShimController``来帮助创建直观、原地旋转的行为，以便在追踪路径时起到辅助作用。本教程的目标是向读者解释控制器的价值，如何进行配置，如何与主控制器进行配置，并最后给出一个使用示例。</p>
+<p>在开始本教程之前，强烈建议完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>，特别是如果您对ROS和Nav2不熟悉的话。要求是安装最新版本的Nav2 / ROS 2，并包含此软件包。</p>
 </div>
 <div class="section" id="what-is-the-rotation-shim-controller">
-<h2>What is the Rotation Shim Controller?<a class="headerlink" href="#what-is-the-rotation-shim-controller" title="永久链接至标题"></a></h2>
-<p>This was developed due to quirks in TEB and DWB, but applicable to any other controller plugin type that you'd like to have rotation in place behavior with. <code class="docutils literal notranslate"><span class="pre">TEB</span></code>'s behavior tends to whip the robot around with small turns, or when the path is starting at a very different heading than current, in a somewhat surprising way due to the elastic band approach. <code class="docutils literal notranslate"><span class="pre">DWB</span></code> can be tuned to have any type of behavior, but typically to tune it to be an excellent path follower also makes it less optimally capable of smooth transitions to new paths at far away headings -- there are always trade offs. Giving both TEB and DWB a better starting point to start tracking a path makes tuning the controllers significantly easier and creates more intuitive results for on-lookers.</p>
-<p>Note that it is not required to use this with <strong>any</strong> plugin. Many users are perfectly successful without using this controller, but if a robot may rotate in place before beginning its path tracking task (or others), it can be advantageous to do so.</p>
+<h2>什么是旋转垫片控制器？<a class="headerlink" href="#what-is-the-rotation-shim-controller" title="永久链接至标题"></a></h2>
+<p>这是由于TEB和DWB中的一些问题而开发的，但适用于您希望具有旋转行为的任何其他控制器插件类型。<code class="docutils literal notranslate"><span class="pre">TEB</span></code> 的行为倾向于通过小的转弯将机器人扭转，或者当路径的起始朝向与当前朝向非常不同时，以一种令人惊讶的方式进行，这是由于弹性带方法。<code class="docutils literal notranslate"><span class="pre">DWB</span></code> 可以被调节为具有任何类型的行为，但通常将其调节为出色的路径跟踪器也会使其在远离头部的新路径上的平滑过渡能力不够理想-总是存在权衡。给予TEB和DWB更好的起点以开始跟踪路径将显著简化控制器的调节，并为旁观者创造更直观的结果。</p>
+<p>请注意，并不需要与**任何**插件一起使用。许多用户在不使用该控制器的情况下也能取得很好的效果，但如果机器人在开始追踪路径（或其他任务）之前需要进行原地旋转，使用该控制器可能会有优势。</p>
 <p>“nav2_rotation_shim_controller”将检查与机器人和新接收的路径之间的大致方向差异。如果在一个阈值内，它将将请求传递给“primary_controller”来执行任务。如果超出阈值，该控制器将原地旋转机器人朝向该路径方向。一旦在容差范围内，它将从此旋转适配器控制器转移到主要控制器插件上执行控制。此时，机器人的主要插件将接管控制权，以平稳地过渡到任务。</p>
 <p><code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 最适用于以下情况：</p>
 <ul class="simple">
@@ -965,13 +965,13 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Regulated Pure Pursuit has this built in so it is not necessary to pair with RPP. However, it is applicable to all others. See <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> for a full list of current controller plugins.</p>
+<p>规则纯追踪已内置此功能，因此不需要与RPP配对。然而，它适用于所有其他插件。有关当前控制器插件的完整列表，请参阅 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a>。</p>
 </div>
 </div>
 <div class="section" id="configuring-rotation-shim-controller">
-<h2>Configuring Rotation Shim Controller<a class="headerlink" href="#configuring-rotation-shim-controller" title="永久链接至标题"></a></h2>
+<h2>配置旋转垫片控制器<a class="headerlink" href="#configuring-rotation-shim-controller" title="永久链接至标题"></a></h2>
 <p>This controller is a <em>shim</em> because it is placed between the primary controller plugin and the controller server. It takes commands and pre-processes them to rotate to the heading and then passes off execution-control to the primary plugin once that condition is met - acting as a simple pass through.</p>
-<p>As such, its configuration looks very similar to that of any other plugin. In the code block below, you can see that we've added the <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> as the plugin for path tracking in the controller server. You can see that we've also configured it below with its internal parameters, <code class="docutils literal notranslate"><span class="pre">angular_dist_threshold</span></code> through <code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code>.</p>
+<p>因此，它的配置与任何其他插件的配置非常相似。在下面的代码块中，您可以看到我们将``RotationShimController``作为控制器服务器中路径追踪的插件添加进去了。您还可以看到我们通过下面的内部参数``angular_dist_threshold``到``max_angular_accel``对其进行了配置。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">use_sim_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>

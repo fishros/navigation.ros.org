@@ -251,7 +251,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#visualize-behavior-trees">可视化行为树</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#edit-behavior-trees">编辑行为树</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-a-custom-node">Adding A Custom Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-custom-node">添加自定义节点</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="camera_calibration.html">相机校准</a><ul>
@@ -313,10 +313,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="using_shim_controller.html">Using Rotation Shim Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using_shim_controller.html">使用旋转垫片控制器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#what-is-the-rotation-shim-controller">What is the Rotation Shim Controller?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#configuring-rotation-shim-controller">Configuring Rotation Shim Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#what-is-the-rotation-shim-controller">什么是旋转垫片控制器？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#configuring-rotation-shim-controller">配置旋转垫片控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#configuring-primary-controller">Configuring Primary Controller</a></li>
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#demo-execution">演示执行</a></li>
 </ul>
@@ -994,7 +994,7 @@ These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Con
 </tr>
 </tbody>
 </table>
-<p>If you select the default tree <cite>navigate_w_replanning_and_recovery.xml</cite>, then a Groot editor should look like <a class="reference internal" href="#groot-nav2-default-bt"><span class="std std-numref">Figure 3</span></a>.</p>
+<p>如果选择默认的树`navigate_w_replanning_and_recovery.xml`，那么Groot编辑器应该如图所示：见图`groot_nav2_default_bt`。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -1010,18 +1010,16 @@ These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Con
 </table>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>If a tree cannot be visualized because some nodes are missing in the pallet, you might need to add it to your pallet. While we try to keep Nav2's BT nodes and pallets in sync, if you notice one is missing, please file a ticket or pull request and we should have that updated quickly.</p>
+<p>如果因为在面板中缺少一些节点而无法可视化树，则可能需要将其添加到面板中。尽管我们尽力使Nav2的BT节点和面板保持同步，但如果您注意到有一个节点缺失，请提交工单或拉取请求，我们将迅速进行更新。</p>
 </div>
 </div>
 <div class="section" id="edit-behavior-trees">
 <h2>编辑行为树<a class="headerlink" href="#edit-behavior-trees" title="永久链接至标题"></a></h2>
-<p>Now that you have a Nav2 BT open in Groot in editor mode, you should be able to trivially modify it using the GUI.
-Starting from a screen like that shown in <a class="reference internal" href="#groot-nav2-default-bt"><span class="std std-numref">Figure 3</span></a>, you can pull in new nodes from the side panel to add them to the workspace.
-You may then connect the nodes using a &quot;drag and drop&quot; motion between the node's input and output ports to assemble the new nodes into the tree.</p>
+<p>现在，在Groot中以编辑模式打开Nav2 BT后，您可以轻松使用GUI进行修改。从类似于:numref:<a href="#id1"><span class="problematic" id="id2">`</span></a>groot_nav2_default_bt`中显示的屏幕开始，您可以从侧边栏中拖入新节点并将其添加到工作区。然后，您可以使用“拖放”动作将节点的输入和输出端口连接起来，以将新节点组装成树形结构。</p>
 <p>如果选择给定节点，您可以更改其元数据，例如名称或参数化端口的值。修改完成后，只需保存新的配置文件，并在下次使用机器人时使用该文件！</p>
 </div>
 <div class="section" id="adding-a-custom-node">
-<h2>Adding A Custom Node<a class="headerlink" href="#adding-a-custom-node" title="永久链接至标题"></a></h2>
+<h2>添加自定义节点<a class="headerlink" href="#adding-a-custom-node" title="永久链接至标题"></a></h2>
 <p>行为树中的每个节点都具有特定的功能。有时，在设计过程中（实现本身存在之前），创建新节点并将其添加到您的调色板中是很有用的。这有助于设计人员将节点的实现细节从树本身的高级逻辑和与给定节点交互的方式（例如类型、端口等）中抽象出来。在Groot中，您可以创建新的自定义节点并将这些新节点导出到您的调色板。节点本身的实现需要与Groot分开进行，其方法在 <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 中进行了描述。</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1030,14 +1028,14 @@ You may then connect the nodes using a &quot;drag and drop&quot; motion between 
 <tbody>
 <tr class="row-odd"><td><div class="figure align-default" id="groot-create-custom-node">
 <img alt="../../_images/groot_create_custom_node.png" src="../../_images/groot_create_custom_node.png" />
-<p class="caption"><span class="caption-number">Figure 4 </span><span class="caption-text">Create a new Custom Node</span><a class="headerlink" href="#groot-create-custom-node" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 4 </span><span class="caption-text">创建一个新的自定义节点</span><a class="headerlink" href="#groot-create-custom-node" title="永久链接至图片"></a></p>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>通过在Groot处于编辑器模式时单击 <a class="reference internal" href="#groot-create-custom-node"><span class="std std-numref">Figure 4</span></a> 中标记为橙色的图标来创建新的自定义节点。这将加载一个类似于 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 的新窗口。在这个新窗口中，它要求您填写关于这个新节点的元数据，以便创建它。它会要求您提供标准信息，如名称（绿色框），节点类型（橙色框），以及用于参数化或访问黑板变量的任何可选端口（蓝色框）。</p>
-<p>After completing, select <cite>OK</cite> in <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a>, the new custom node should appear in blue in the <cite>TreeNode Palette</cite> as in <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a>.</p>
+<p>完成后，在:numref:<cite>groot_interactive_node_creation`中选择`OK</cite>，新的自定义节点应该以蓝色出现在`TreeNode Palette`中，如图所示：见图`groot_export_new_node`。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -1046,21 +1044,18 @@ You may then connect the nodes using a &quot;drag and drop&quot; motion between 
 <tbody>
 <tr class="row-odd"><td><div class="figure align-default" id="groot-interactive-node-creation">
 <img alt="../../_images/groot_interactive_node_creation.png" src="../../_images/groot_interactive_node_creation.png" />
-<p class="caption"><span class="caption-number">Figure 5 </span><span class="caption-text">UI to describing new Nodes</span><a class="headerlink" href="#groot-interactive-node-creation" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 5 </span><span class="caption-text">用于描述新节点的用户界面</span><a class="headerlink" href="#groot-interactive-node-creation" title="永久链接至图片"></a></p>
 </div>
 </td>
 <td><div class="figure align-default" id="groot-export-new-node">
 <a class="reference internal image-reference" href="../../_images/groot_export_new_node.png"><img alt="../../_images/groot_export_new_node.png" src="../../_images/groot_export_new_node.png" style="width: 180%;" /></a>
-<p class="caption"><span class="caption-number">Figure 6 </span><span class="caption-text">Exporting the new Custom Node</span><a class="headerlink" href="#groot-export-new-node" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 6 </span><span class="caption-text">导出新的自定义节点</span><a class="headerlink" href="#groot-export-new-node" title="永久链接至图片"></a></p>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Before starting to create a new BT based on the new custom nodes, it is recommend to export the newly created nodes to save in case of Groot crashing.
-This can be performed with the icon highlighted in green from <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a>.
-The resulting XML output from the node created in <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> can be seen below.
-You can see more examples in <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml">Nav2's BT Node Pallet XML</a>.</p>
+<p>在开始基于新自定义节点创建新BT之前，建议将新创建的节点导出以便在Groot崩溃时保存。可以使用 <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a> 中突出显示为绿色的图标来执行此操作。可以在 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 中创建的节点的XML输出如下所示。您可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml">Nav2的BT节点面板XML</a> 中查看更多示例。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root&gt;</span>
 <span class="w">    </span><span class="nt">&lt;TreeNodesModel&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Action</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MyAwesomeNewNode&quot;</span><span class="nt">&gt;</span>
