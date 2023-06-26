@@ -302,7 +302,7 @@ msgstr "如消息中所述，错误的优先级顺序应与消息顺序匹配，
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:183
 msgid "In order to propigate your server's error code to the rest of the system it must be added to the nav2_params.yaml file. The `error_code_id_names` inside of the BT Navigator define what error codes to look for on the blackboard by the server. The lowest error code of the sequence is then returned - whereas the code enums increase the higher up in the software stack - giving higher priority to lower-level failures."
-msgstr "In order to propigate your server's error code to the rest of the system it must be added to the nav2_params.yaml file. The `error_code_id_names` inside of the BT Navigator define what error codes to look for on the blackboard by the server. The lowest error code of the sequence is then returned - whereas the code enums increase the higher up in the software stack - giving higher priority to lower-level failures."
+msgstr "为了将服务器的错误代码传播到系统的其他部分，必须将其添加到nav2_params.yaml文件中。BT导航器中的`error_code_id_names`定义了服务器在黑板上要查找的错误代码。然后返回序列中最低的错误代码 - 而代码枚举会随着软件堆栈的增加而增加 - 为较低级别的故障提供更高的优先级。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:196
@@ -317,7 +317,7 @@ msgstr "在本指南的这个部分中，我们讨论了ROS 2中的生命周期�
 
 #: ../../tutorials/docs/adding_smoother.rst:4
 msgid "Adding a Smoother to a BT"
-msgstr "Adding a Smoother to a BT"
+msgstr "向BT添加平滑器"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:6 ../../tutorials/docs/camera_calibration.rst:6 ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:6 ../../tutorials/docs/get_backtrace.rst:6 ../../tutorials/docs/get_profile.rst:7 ../../tutorials/docs/navigation2_dynamic_point_following.rst:6 ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:6 ../../tutorials/docs/navigation2_with_keepout_filter.rst:6 ../../tutorials/docs/navigation2_with_slam.rst:6 ../../tutorials/docs/navigation2_with_speed_filter.rst:6 ../../tutorials/docs/navigation2_with_stvl.rst:6 ../../tutorials/docs/using_collision_monitor.rst:6 ../../tutorials/docs/using_groot.rst:10 ../../tutorials/docs/using_shim_controller.rst:7
@@ -352,7 +352,7 @@ msgstr "要求"
 
 #: ../../tutorials/docs/adding_smoother.rst:23
 msgid "You must install Nav2, Turtlebot3. If you don't have them installed, please follow :ref:`getting_started`. You must also have a working behavior tree, such as those provided by the Nav2 BT Navigator package, for editing. You should also have a copy of the ``nav2_params.yaml`` file for your system to edit as well."
-msgstr "You must install Nav2, Turtlebot3. If you don't have them installed, please follow :ref:`getting_started`. You must also have a working behavior tree, such as those provided by the Nav2 BT Navigator package, for editing. You should also have a copy of the ``nav2_params.yaml`` file for your system to edit as well."
+msgstr "您必须安装Nav2和Turtlebot3。如果您尚未安装它们，请参照：ref:`getting_started` 进行安装。您还必须拥有一个工作的行为树，例如Nav2 BT Navigator包提供的行为树，以供编辑。您还应该有一个 ``nav2_params.yaml`` 文件的副本，用于编辑您的系统。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:29 ../../tutorials/docs/camera_calibration.rst:42 ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:26 ../../tutorials/docs/navigation2_dynamic_point_following.rst:49 ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:34 ../../tutorials/docs/navigation2_with_keepout_filter.rst:29 ../../tutorials/docs/navigation2_with_slam.rst:38 ../../tutorials/docs/navigation2_with_speed_filter.rst:29 ../../tutorials/docs/navigation2_with_stvl.rst:50
@@ -362,92 +362,92 @@ msgstr "`教程步骤`"
 
 #: ../../tutorials/docs/adding_smoother.rst:32
 msgid "0- Familiarization with the Smoother BT Node"
-msgstr "0- Familiarization with the Smoother BT Node"
+msgstr "0- 熟悉平滑器BT节点"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:34
 msgid "The :ref:`bt_smooth_action` BT node is a behavior tree node that interacts with the smoother task server similar to that which you may expect to find for the planner or controller servers. It contains the action client to call the server and specifies its arguments and return types as BT ports. It too calls the server via an action interface that may be seperately interacted with via other servers and client library languages."
-msgstr "The :ref:`bt_smooth_action` BT node is a behavior tree node that interacts with the smoother task server similar to that which you may expect to find for the planner or controller servers. It contains the action client to call the server and specifies its arguments and return types as BT ports. It too calls the server via an action interface that may be seperately interacted with via other servers and client library languages."
+msgstr " :ref:`bt_smooth_action` BT节点是一个行为树节点，与规划器或控制器服务器类似地与平滑器任务服务器进行交互。它包含调用服务器的动作客户端，并将其参数和返回类型指定为BT端口。它也通过动作接口调用服务器，可以通过其他服务器和客户端库语言单独与之交互。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:36
 msgid "Please see the BT node's configuration page to familiarize yourself with all aspects, but the core ports to note are the ``unsmoothed_path`` input port and the ``smoothed_path`` output port. The first takes in a raw path from a planning algorithm and the latter will set the value of the smoothed output path post-smoothing. Other ports are available that fully implements the Smoother Server's action API."
-msgstr "Please see the BT node's configuration page to familiarize yourself with all aspects, but the core ports to note are the ``unsmoothed_path`` input port and the ``smoothed_path`` output port. The first takes in a raw path from a planning algorithm and the latter will set the value of the smoothed output path post-smoothing. Other ports are available that fully implements the Smoother Server's action API."
+msgstr "请参阅BT节点的配置页面，以熟悉所有方面，但要注意的核心端口是 ``unsmoothed_path`` 输入端口和 ``smoothed_path`` 输出端口。前者接收来自规划算法的原始路径，后者设置平滑后输出路径的值。还提供了其他端口，完全实现了平滑器服务器的操作API。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:39
 msgid "1- Specifying a Smoother Plugin"
-msgstr "1- Specifying a Smoother Plugin"
+msgstr "1- 指定平滑器插件"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:41
 msgid "In order to use a smoother in your BT node, you must first configure the smoother server itself to contain the smoother plugins of interest. These plugins implement the specific algorithms that you would like to use."
-msgstr "In order to use a smoother in your BT node, you must first configure the smoother server itself to contain the smoother plugins of interest. These plugins implement the specific algorithms that you would like to use."
+msgstr "为了在BT节点中使用平滑器，首先必须配置平滑器服务器本身，以包含感兴趣的平滑器插件。这些插件实现了您想要使用的特定算法。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:43
 msgid "For each smoother plugin you would like to use, a name must be given to it (e.g. ``simple_smoother``, ``curvature_smoother``). This name is its ``smoother_id`` for other servers to interact with this algorithm from a request to the Smoother Server's action interface."
-msgstr "For each smoother plugin you would like to use, a name must be given to it (e.g. ``simple_smoother``, ``curvature_smoother``). This name is its ``smoother_id`` for other servers to interact with this algorithm from a request to the Smoother Server's action interface."
+msgstr "对于每个您想使用的平滑器插件，必须为其指定一个名称（例如 ``simple_smoother``，``curvature_smoother``）。这个名称是其他服务器通过请求与平滑器服务器的动作接口交互时使用的 ``smoother_id``。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:45
 msgid "Under each name, the parameters for that particular algorithm must be specified along with the ``plugin`` name for pluginlib to load a given algorithm's library. An example configuration of 2 smoother plugins is shown below that could be used in the ``nav2_params.yaml`` for your robot."
-msgstr "Under each name, the parameters for that particular algorithm must be specified along with the ``plugin`` name for pluginlib to load a given algorithm's library. An example configuration of 2 smoother plugins is shown below that could be used in the ``nav2_params.yaml`` for your robot."
+msgstr "在每个名称下，必须指定特定算法的参数，以及用于加载给定算法库的 ``plugin`` 名称。下面显示了一个示例配置，其中包含两个平滑器插件，可用于您机器人的 ``nav2_params.yaml``。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:65
 msgid "2- Modifying your BT XML"
-msgstr "2- Modifying your BT XML"
+msgstr "2- 修改您的BT XML"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:67
 msgid "Now that you have selected and configured the smoother server for your given plugin(s), it is time to use those smoother(s) in your behavior tree for navigation behavior. While there are many places / ways to use this in a BT, what is shown below is probably the most likely situation you would want to use the smoother in (to smooth a path returned by the path planner and then using that smoothed path for path tracking)."
-msgstr "Now that you have selected and configured the smoother server for your given plugin(s), it is time to use those smoother(s) in your behavior tree for navigation behavior. While there are many places / ways to use this in a BT, what is shown below is probably the most likely situation you would want to use the smoother in (to smooth a path returned by the path planner and then using that smoothed path for path tracking)."
+msgstr "现在，您已经选择并配置了给定插件的平滑服务器，是时候在导航行为的行为树中使用这些平滑器了。虽然在BT中有许多使用平滑器的地方/方法，但下面显示的可能是您最有可能使用平滑器的情况（平滑路径规划返回的路径，然后使用平滑后的路径进行路径跟踪）。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:69
 msgid "Note: If you use only a single type of smoothing algorithm, there is no need to specify the ``smoother_id`` in the BT XML entry. Since there is only a single option, that will be used for any request that does not specifically request a smoother plugin. However, if you leverage multiple smoother plugins, you **must** populate the ``smoother_id`` XML port."
-msgstr "Note: If you use only a single type of smoothing algorithm, there is no need to specify the ``smoother_id`` in the BT XML entry. Since there is only a single option, that will be used for any request that does not specifically request a smoother plugin. However, if you leverage multiple smoother plugins, you **must** populate the ``smoother_id`` XML port."
+msgstr "注意：如果您只使用一种类型的平滑算法，则无需在BT XML条目中指定 ``smoother_id``。由于只有一个选项，对于未明确请求平滑器插件的任何请求，都将使用该选项。但是，如果您使用多个平滑器插件，则**必须**填充 ``smoother_id`` XML端口。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:71
 msgid "A given behavior tree will have a line:"
-msgstr "A given behavior tree will have a line:"
+msgstr "给定的行为树将有一行："
 
 
 #: ../../tutorials/docs/adding_smoother.rst:77
 msgid "This line calls the planner server and return a path to the ``path`` blackboard variable in the behavior tree. We are  going to replace that line with the following to compute the path, smooth the path, and finally replace the ``path`` blackboard variable with the new smoothed path that the system will now interact with:"
-msgstr "This line calls the planner server and return a path to the ``path`` blackboard variable in the behavior tree. We are  going to replace that line with the following to compute the path, smooth the path, and finally replace the ``path`` blackboard variable with the new smoothed path that the system will now interact with:"
+msgstr "这行代码调用规划器服务器并将路径返回到行为树的 ``path`` 黑板变量中。我们将使用以下代码替换该行，以计算路径、平滑路径，并最后用新的平滑路径替换系统将要与之交互的 ``path`` 黑板变量："
 
 
 #: ../../tutorials/docs/adding_smoother.rst:86
 msgid "If you wish to have recoveries for the smoother error codes, such as triggering the system recoveries branch of a behavior tree:"
-msgstr "If you wish to have recoveries for the smoother error codes, such as triggering the system recoveries branch of a behavior tree:"
+msgstr "如果您希望对平滑器错误代码进行恢复，例如触发行为树的系统恢复分支："
 
 
 #: ../../tutorials/docs/adding_smoother.rst:96
 msgid "And its as simple as that! You can now compile or use this behavior tree in your system and see that the plans are now smoothed and the controllers are now tracking this smoothed path. The image at the top of the tutorial shows the unsmoothed path from NavFn (red) and the smoothed path (black). Note the smoother approach to goal, turns, and transitions in the straight-line segments."
-msgstr "And its as simple as that! You can now compile or use this behavior tree in your system and see that the plans are now smoothed and the controllers are now tracking this smoothed path. The image at the top of the tutorial shows the unsmoothed path from NavFn (red) and the smoothed path (black). Note the smoother approach to goal, turns, and transitions in the straight-line segments."
+msgstr "就是这么简单！您现在可以在系统中编译或使用这个行为树，并观察到计划路径已经平滑，控制器现在正在跟踪这条平滑路径。教程顶部的图像显示了来自NavFn的未平滑路径（红色）和平滑路径（黑色）。请注意在直线段中朝目标、转弯和过渡方面的平滑性。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:98
 msgid "If you wish to see the difference, but not track the smoothed path, you may wish to remove the ``smoothed_path=\"{path}\"`` portion to compute the smoothed path, but not replace the original path with it. Instead, the topic ``/smoothed_path`` contains this information published by the smoother server for visualization or use by other parts of the system. You may also remap the smoothed path to another blackboard variable to interact with it in other parts of the behavior tree (e.g. ``smoothed_path=\"{smoothed_path}\"``)."
-msgstr "If you wish to see the difference, but not track the smoothed path, you may wish to remove the ``smoothed_path=\"{path}\"`` portion to compute the smoothed path, but not replace the original path with it. Instead, the topic ``/smoothed_path`` contains this information published by the smoother server for visualization or use by other parts of the system. You may also remap the smoothed path to another blackboard variable to interact with it in other parts of the behavior tree (e.g. ``smoothed_path=\"{smoothed_path}\"``)."
+msgstr "如果您希望看到差异，但不跟踪平滑后的路径，您可能希望删除``smoothed_path=\"{path}\"``部分以计算平滑后的路径，但不用它替换原始路径。相反，主题``/smoothed_path``包含由平滑服务器发布的此信息，用于可视化或系统的其他部分使用。您还可以将平滑路径重新映射到另一个黑板变量，以在行为树的其他部分与其交互（例如``smoothed_path=\"{smoothed_path}\"``）。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:4
 msgid "Camera Calibration"
-msgstr "Camera Calibration"
+msgstr "相机校准"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:14
 msgid "This tutorial shows how to obtain calibration parameters for monocular camera."
-msgstr "This tutorial shows how to obtain calibration parameters for monocular camera."
+msgstr "本教程演示了如何获取单目相机的校准参数。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:19
 msgid "1- Install Camera Calibration Parser, Camera Info Manager and Launch Testing Ament Cmake using operating system’s package manager:"
-msgstr "1- Install Camera Calibration Parser, Camera Info Manager and Launch Testing Ament Cmake using operating system’s package manager:"
+msgstr "1- 使用操作系统的软件包管理器安装相机校准解析器、相机信息管理器和启动测试 Ament Cmake："
 
 
 #: ../../tutorials/docs/camera_calibration.rst:21
@@ -467,7 +467,7 @@ msgstr "``sudo apt install ros-<ros2-distro>-launch-testing-ament-cmake``"
 
 #: ../../tutorials/docs/camera_calibration.rst:28
 msgid "2- Image Pipeline need to be built from source in your workspace with:"
-msgstr "2- Image Pipeline need to be built from source in your workspace with:"
+msgstr "2- 需要从源代码在你的工作空间中构建图像处理管线："
 
 
 #: ../../tutorials/docs/camera_calibration.rst:30
@@ -477,7 +477,7 @@ msgstr "``git clone – b <ros2-distro> git@github.com:ros-perception/image_pipe
 
 #: ../../tutorials/docs/camera_calibration.rst:33
 msgid "**Also, make sure you have the following:**"
-msgstr "**Also, make sure you have the following:**"
+msgstr "**另外，请确保你有以下内容：**"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:35
@@ -487,7 +487,7 @@ msgstr "A large checkerboard with known dimensions. This tutorial uses a 7x9 che
 
 #: ../../tutorials/docs/camera_calibration.rst:36
 msgid "A well-lit area clear of obstructions and other check board patterns"
-msgstr "A well-lit area clear of obstructions and other check board patterns"
+msgstr "一个光线充足、没有遮挡物和其他棋盘图案的区域"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:38
@@ -497,7 +497,7 @@ msgstr "A monocular camera publishing images over ROS"
 
 #: ../../tutorials/docs/camera_calibration.rst:44
 msgid "1- Start a terminal in your GUI"
-msgstr "1- Start a terminal in your GUI"
+msgstr "1- 在图形用户界面中启动终端"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:46
