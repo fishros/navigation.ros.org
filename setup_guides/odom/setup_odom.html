@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setting Up Odometry &mdash; Navigation 2 1.0.0 文档</title>
+  <title>设置里程计 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -147,9 +147,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../urdf/setup_urdf.html#conclusion">结论</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting Up Odometry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#odometry-introduction">Odometry Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-odometry-on-your-robot">Setting Up Odometry on your Robot</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">设置里程计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#odometry-introduction">里程计简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-odometry-on-your-robot">设置机器人的里程计</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulating-an-odometry-system-using-gazebo">Simulating an Odometry System using Gazebo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#setup-and-prerequisites">Setup and Prerequisites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-gazebo-plugins-to-a-urdf">Adding Gazebo Plugins to a URDF</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">首次机器人设置指南</a> &raquo;</li>
-      <li>Setting Up Odometry</li>
+      <li>设置里程计</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,18 +939,18 @@
            <div itemprop="articleBody">
              
   <div class="section" id="setting-up-odometry">
-<h1>Setting Up Odometry<a class="headerlink" href="#setting-up-odometry" title="永久链接至标题"></a></h1>
-<p>In this guide, we will be looking at how to integrate our robot's odometry system with Nav2. First we will provide a brief introduction on odometry, plus the necessary messages and transforms that need to be published for Nav2 to function correctly. Next, we will show how to setup odometry with two different cases. In the first case, we will show how to setup an odometry system for a robot with already available wheel encoders. In the second case, we will build a demo that simulates a functioning odometry system on <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> (the robot that we built in the previous section) using Gazebo. Afterwards, we will discuss how various sources of odometry can be fused to provide a smoothed odometry using the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package. Lastly, we will also show how to publish the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform using <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>.</p>
+<h1>设置里程计<a class="headerlink" href="#setting-up-odometry" title="永久链接至标题"></a></h1>
+<p>在本指南中，我们将介绍如何将我们机器人的里程计系统与Nav2集成。首先，我们将简要介绍里程计，以及需要发布的消息和变换，以确保Nav2的正常运行。接下来，我们将展示如何设置两种不同情况下的里程计。在第一种情况下，我们将展示如何为已有轮式编码器的机器人设置里程计系统。在第二种情况下，我们将在Gazebo中构建一个演示，模拟使用``sam_bot``（我们在上一节中构建的机器人）的正常运行的里程计系统。然后，我们将讨论如何将各种里程计来源融合，以提供平滑的里程计，使用``robot_localization``软件包。最后，我们还将展示如何使用``robot_localization``发布``odom`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的变换。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
 <p>The complete source code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description">navigation2_tutorials</a> repository under the <code class="docutils literal notranslate"><span class="pre">sam_bot_description</span></code> package. Note that the repository contains the full code after accomplishing all the tutorials in this guide.</p>
 </div>
 <div class="section" id="odometry-introduction">
-<h2>Odometry Introduction<a class="headerlink" href="#odometry-introduction" title="永久链接至标题"></a></h2>
+<h2>里程计简介<a class="headerlink" href="#odometry-introduction" title="永久链接至标题"></a></h2>
 <p>The odometry system provides a locally accurate estimate of a robot's pose and velocity based on its motion. The odometry information can be obtained from various sources such as IMU, LIDAR, RADAR, VIO, and wheel encoders. One thing to note is that IMUs drift over time while wheel encoders drift over distance traveled, thus they are often used together to counter each other's negative characteristics.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">odom</span></code> frame and the transformation associated with it use a robot's odometry system to publish localization information that is continuous but becomes less accurate over time or distance (depending on the sensor modalities and drift). In spite of this, the information can still be used by the robot to navigate its immediate vicinity (e.g collision avoidance). To obtain consistently accurate odometry information over time, the <code class="docutils literal notranslate"><span class="pre">map</span></code> frame provides globally accurate information that is used to correct the <code class="docutils literal notranslate"><span class="pre">odom</span></code> frame.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>odom``坐标系及其相关变换使用机器人的里程计系统发布连续但随时间或距离准确性逐渐降低的定位信息（取决于传感器模态和漂移情况）。尽管如此，机器人仍然可以使用这些信息来导航其周围的环境（例如避免碰撞）。为了获得一致准确的里程计信息，<a href="#id3"><span class="problematic" id="id4">``</span></a>map``坐标系提供了全局准确的信息，用于校正``odom``坐标系。</p>
 <p>As discussed in the previous guides and in <a class="reference external" href="https://www.ros.org/reps/rep-0105.html">REP 105</a>, the <code class="docutils literal notranslate"><span class="pre">odom</span></code> frame is connected to the rest of the system and Nav2 through the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform. This transform is published by a tf2 broadcaster or by frameworks such as <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>, which also provide additional functionalities. We will be talking more about <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> in a following section.</p>
-<p>In addition to the required <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform, Nav2 also requires the publishing of <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> message because this message provides the velocity information of the robot. In detail, the <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> message contains the following information:</p>
+<p>除了必需的``odom`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``变换之外，Nav2还需要发布``nav_msgs/Odometry``消息，因为该消息提供了机器人的速度信息。具体而言，<a href="#id3"><span class="problematic" id="id4">``</span></a>nav_msgs/Odometry``消息包含以下信息：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># This represents estimates of position and velocity in free space.</span>
 <span class="c1"># The pose in this message should be specified in the coordinate frame given by header.frame_id</span>
 <span class="c1"># The twist in this message should be specified in the coordinate frame given by the child_frame_id</span>
@@ -971,7 +971,7 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 <p>This message tells us the estimates for the pose and velocity of the robot. The <code class="docutils literal notranslate"><span class="pre">header</span></code> message provides the timestamped data in a given coordinate frame. The <code class="docutils literal notranslate"><span class="pre">pose</span></code> message provides the position and orientation of the robot relative to the frame specified in <code class="docutils literal notranslate"><span class="pre">header.frame_id</span></code>. The <code class="docutils literal notranslate"><span class="pre">twist</span></code> message gives the linear and angular velocity relative to the frame defined in <code class="docutils literal notranslate"><span class="pre">child_frame_id</span></code>.</p>
 </div>
 <div class="section" id="setting-up-odometry-on-your-robot">
-<h2>Setting Up Odometry on your Robot<a class="headerlink" href="#setting-up-odometry-on-your-robot" title="永久链接至标题"></a></h2>
+<h2>设置机器人的里程计<a class="headerlink" href="#setting-up-odometry-on-your-robot" title="永久链接至标题"></a></h2>
 <p>Setting up the odometry system for Nav2 for your physical robot depends a lot on which odometry sensors are available with your robot. Due to the large number of configurations your robot may have, specific setup instructions will not be within the scope of this tutorial. Instead, we will provide some basic examples and useful resources to help you configure your robot for Nav2.</p>
 <p>To start, we will use an example of a robot with wheel encoders as its odometry source. Note that wheel encoders are not required for Nav2 but it is common in most setups. The goal in setting up the odometry is to compute the odometry information and publish the <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> message and <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform over ROS 2. To calculate this information, you will need to setup some code that will translate wheel encoder information into odometry information, similar to the snippet below:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">linear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>right_wheel_est_vel<span class="w"> </span>+<span class="w"> </span>left_wheel_est_vel<span class="o">)</span><span class="w"> </span>/<span class="w"> </span><span class="m">2</span>

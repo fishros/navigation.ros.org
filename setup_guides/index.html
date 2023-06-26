@@ -147,9 +147,9 @@
 <li class="toctree-l3"><a class="reference internal" href="urdf/setup_urdf.html#conclusion">结论</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="odom/setup_odom.html">Setting Up Odometry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="odom/setup_odom.html#odometry-introduction">Odometry Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="odom/setup_odom.html#setting-up-odometry-on-your-robot">Setting Up Odometry on your Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="odom/setup_odom.html">设置里程计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="odom/setup_odom.html#odometry-introduction">里程计简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="odom/setup_odom.html#setting-up-odometry-on-your-robot">设置机器人的里程计</a></li>
 <li class="toctree-l3"><a class="reference internal" href="odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">Simulating an Odometry System using Gazebo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="odom/setup_odom.html#setup-and-prerequisites">Setup and Prerequisites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="odom/setup_odom.html#adding-gazebo-plugins-to-a-urdf">Adding Gazebo Plugins to a URDF</a></li>
@@ -939,33 +939,33 @@
              
   <div class="section" id="first-time-robot-setup-guide">
 <span id="setup-guides"></span><h1>首次机器人设置指南<a class="headerlink" href="#first-time-robot-setup-guide" title="永久链接至标题"></a></h1>
-<p>This section is a collection of guides that aims to provide readers a good resource for setting up Nav2. The objectives for this section are as follows:</p>
+<p>本部分是一系列指南，旨在为读者提供一个很好的资源，用于设置Nav2。本部分的目标如下：</p>
 <ul class="simple">
 <li><p>帮助新用户设置带有新机器人的 Navigation2</p></li>
-<li><p>Help people with custom built robots to properly set up their robots to be used in ROS/Navigation2</p></li>
-<li><p>Act as a checklist, template or boilerplate reference for more experienced readers</p></li>
-<li><p>Provide examples which can be run on simulators/tools like Gazebo or RViz to guide readers on the Nav2 setup process even without a physical robot.</p></li>
-<li><p>Broad strokes, tips, and tricks for configuring certain packages and integrating different components of the robot platform (sensors, odometry, etc.)</p></li>
+<li><p>帮助使用自定义构建的机器人的人们正确设置其机器人以在ROS/Navigation2中使用</p></li>
+<li><p>作为一个检查清单、模板或样板参考，供更有经验的读者使用</p></li>
+<li><p>提供可以在模拟器/工具（如Gazebo或RViz）上运行的示例，以指导读者进行Nav2设置过程，即使没有物理机器人。</p></li>
+<li><p>用于配置特定软件包和集成机器人平台的不同组件（传感器、里程计等）的基本信息、技巧和窍门</p></li>
 </ul>
-<p>To guide you through the first-time setup of your robot, we will be tackling the following topics:</p>
+<p>为了指导您完成机器人的首次设置，我们将涉及以下主题：</p>
 <ul class="simple">
-<li><p>Introduce TF2 and setup your robot URDF</p></li>
-<li><p>Setup sensor sources for robot odometry</p></li>
-<li><p>Setup sensor sources for perception</p></li>
-<li><p>Configure round or arbitrary shaped footprints for your robot</p></li>
-<li><p>Select and set up planner and controller navigation plugins for your robot's navigation tasks</p></li>
-<li><p>Lifecycle node management for easy bringup of other related sensors or nodes</p></li>
+<li><p>介绍TF2并设置机器人URDF</p></li>
+<li><p>为机器人里程计设置传感器源</p></li>
+<li><p>设置感知的传感器源</p></li>
+<li><p>为您的机器人配置圆形或任意形状的足迹</p></li>
+<li><p>为机器人的导航任务选择和设置规划器和控制器导航插件</p></li>
+<li><p>生命周期节点管理，方便引入其他相关传感器或节点</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>These tutorials are not meant to be full tuning and configuration guides since they only aim to help you get your robot up and running with a basic configuration. For more detailed discussions and guides on how to customize and tune Nav2 for your robot, head on to the <a class="reference internal" href="../configuration/index.html#configuration"><span class="std std-ref">配置指南</span></a> section.</p>
+<p>这些教程不旨在成为完整的调优和配置指南，因为它们只旨在帮助您使用基本配置启动和运行机器人。如需有关如何自定义和调优适用于您的机器人的Nav2的详细讨论和指南，请参阅 <a class="reference internal" href="../configuration/index.html#configuration"><span class="std std-ref">配置指南</span></a> 部分。</p>
 </div>
-<p><strong>Table of Contents:</strong></p>
+<p><strong>目录：</strong></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="transformation/setup_transforms.html">Setting Up Transformations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="urdf/setup_urdf.html">Setting Up The URDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="odom/setup_odom.html">Setting Up Odometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odom/setup_odom.html">设置里程计</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors/setup_sensors.html">Setting Up Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="footprint/setup_footprint.html">设置机器人的轮廓</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm/select_algorithm.html">设置导航插件</a></li>
