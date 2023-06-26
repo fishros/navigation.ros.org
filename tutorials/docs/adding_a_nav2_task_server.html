@@ -1054,7 +1054,7 @@
 <td><p>NONE=0，UNKNOWN=100</p></td>
 <td><p>101-199</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_planner/src/planner_server.cpp">Planner Server</a> (compute_path_to_pose)</p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_planner/src/planner_server.cpp">计划器服务器</a> (计算路径到姿态)</p></td>
 <td><p>NONE=0，UNKNOWN=200</p></td>
 <td><p>201-299</p></td>
 </tr>
@@ -1066,29 +1066,29 @@
 <td><p>...</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_smoother/src/nav2_smoother.cpp">Smoother Server</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_smoother/src/nav2_smoother.cpp">平滑器服务器</a></p></td>
 <td><p>NONE=0，UNKNOWN=500</p></td>
 <td><p>501-599</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_waypoint_follower/src/waypoint_follower.cpp">Waypoint Follower Server</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_waypoint_follower/src/waypoint_follower.cpp">路径点跟随服务器</a></p></td>
 <td><p>NONE=0, UNKNOWN=600</p></td>
 <td><p>601-699</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_behaviors/src/behavior_server.cpp">Behavior Server</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_behaviors/src/behavior_server.cpp">行为服务器</a></p></td>
 <td><p>NONE=0</p></td>
-<td><p>701-799</p></td>
+<td><p>701 - 799</p></td>
 </tr>
 <tr class="row-even"><td><p>...</p></td>
 <td><p>...</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Last Nav2 Server</p></td>
-<td><p>NONE=0, UNKNOWN=9900</p></td>
+<tr class="row-odd"><td><p>上一个 Nav2 服务器</p></td>
+<td><p>NONE = 0，UNKNOWN = 9900</p></td>
 <td><p>9901-9999</p></td>
 </tr>
-<tr class="row-even"><td><p>First External Server</p></td>
-<td><p>NONE=0, UNKNOWN=10000</p></td>
-<td><p>10001-10099</p></td>
+<tr class="row-even"><td><p>第一个外部服务器</p></td>
+<td><p>NONE=0，UNKNOWN=10000</p></td>
+<td><p>10001 - 10099</p></td>
 </tr>
 <tr class="row-odd"><td><p>...</p></td>
 <td><p>...</p></td>
@@ -1096,7 +1096,7 @@
 </tr>
 </tbody>
 </table>
-<p>Error codes are attached to the response of the action message. An example can be seen below for the route server. Note that by convention we set the error code field within the message definition to <code class="docutils literal notranslate"><span class="pre">error_code</span></code>.</p>
+<p>错误码附加在动作消息的响应中。下面是一个路由服务器的示例。请注意，根据约定，我们在消息定义中将错误码字段设置为 <code class="docutils literal notranslate"><span class="pre">error_code</span></code>。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error codes</span>
 <span class="c1"># Note: The expected priority order of the errors should match the message order</span>
 uint16<span class="w"> </span><span class="nv">NONE</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="c1"># 0 is reserved for NONE</span>
@@ -1118,8 +1118,7 @@ uint16<span class="w"> </span>error_code
 ---
 </pre></div>
 </div>
-<p>As stated in the message, the priority order of the errors should match the message order, 0 is reserved for NONE and the first error code in the sequence is reserved for UNKNOWN.
-Since the the route server is a external server, the errors codes start at 10000 and go up to 10099.</p>
+<p>如消息中所述，错误的优先级顺序应与消息顺序匹配，0 保留为NONE，序列中的第一个错误代码保留为UNKNOWN。由于路由服务器是外部服务器，错误代码从10000开始，一直增加到10099。</p>
 <p>In order to propigate your server's error code to the rest of the system it must be added to the nav2_params.yaml file.
 The <cite>error_code_id_names</cite> inside of the BT Navigator define what error codes to look for on the blackboard by the server. The lowest error code of the sequence is then returned - whereas the code enums increase the higher up in the software stack - giving higher priority to lower-level failures.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">error_code_id_names</span><span class="p">:</span>
@@ -1131,7 +1130,7 @@ The <cite>error_code_id_names</cite> inside of the BT Navigator define what erro
 </div>
 <div class="section" id="conclusion">
 <h2>结论<a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
-<p>In this section of the guide, we have discussed Lifecycle Nodes, Composition and Error Codes which are new and important concepts in ROS 2. We also showed how to implement Lifecycle Nodes, Composition and Error Codes to your newly created nodes/servers with Nav2. These three concepts are helpful to efficiently run your system and therefore are encouraged to be used throughout Nav2.</p>
+<p>在本指南的这个部分中，我们讨论了ROS 2中的生命周期节点、组合和错误代码，这些是新的重要概念。我们还展示了如何将生命周期节点、组合和错误代码应用于使用Nav2创建的新节点/服务器。这三个概念有助于有效地运行您的系统，因此鼓励在Nav2中广泛使用它们。</p>
 </div>
 </div>
 
