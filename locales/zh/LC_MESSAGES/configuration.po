@@ -8067,7 +8067,7 @@ msgstr "``<dwb插件>``。\\ ``<名称>``。oscillation_reset_angle"
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:36
 msgid "Minimum angular distance to move to reset watchdog (rad)."
-msgstr "Minimum angular distance to move to reset watchdog (rad)."
+msgstr "移动以重置看门狗的最小角度距离（弧度）。"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst
@@ -8087,7 +8087,7 @@ msgstr "重置可能被调用的持续时间。如果为-1，则不能重置。"
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.x_only_threshold"
-msgstr "``<dwb plugin>``.\\ ``<name>``.x_only_threshold"
+msgstr "``<dwb插件>``。\\ ``<name>``.x_only_threshold"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:59
@@ -8107,7 +8107,7 @@ msgstr "根据与全局规划器提供的路径对齐程度对轨迹进行评分
 
 #: ../../configuration/packages/trajectory_critics/path_align.rst:11
 msgid "``<name>``: PathAlignCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: PathAlignCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``: 在 :ref:`dwb_controller` 中定义的 **<dwb插件>.critics** 参数中定义的PathAlignCritic评价器名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/path_dist.rst:4
@@ -8117,7 +8117,7 @@ msgstr "PathDistCritic"
 
 #: ../../configuration/packages/trajectory_critics/path_dist.rst:11
 msgid "``<name>``: PathDistCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: PathDistCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``: 在 :ref:`dwb_controller` 中定义的 **<dwb插件>.critics** 参数中定义的PathDistCritic评价器名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:4
@@ -8127,52 +8127,52 @@ msgstr "PreferForwardCritic"
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:6
 msgid "Scores trajectories that move the robot forwards more highly."
-msgstr "Scores trajectories that move the robot forwards more highly."
+msgstr "对将机器人向前移动的轨迹给予更高分的评分。"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:13
 msgid "``<name>``: PreferForwardCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: PreferForwardCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``: 在 :ref:`dwb_controller` 中定义的 **<dwb plugin>.critics** 参数中定义的 PreferForwardCritic 评判器名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.penalty"
-msgstr "``<dwb plugin>``.\\ ``<name>``.penalty"
+msgstr "``<dwb插件>``.\\ ``<名称>``.惩罚"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:25
 msgid "Penalty to apply to backward motion."
-msgstr "Penalty to apply to backward motion."
+msgstr "应用于后向运动的惩罚。"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.strafe_x"
-msgstr "``<dwb plugin>``.\\ ``<name>``.strafe_x"
+msgstr "``<dwb插件>``.\\ ``<名称>``.横向平移_x"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:36
 msgid "Minimum X velocity before penalty."
-msgstr "Minimum X velocity before penalty."
+msgstr "在施加惩罚之前的最小 X 轴速度。"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.strafe_theta"
-msgstr "``<dwb plugin>``.\\ ``<name>``.strafe_theta"
+msgstr "``<dwb插件>``.\\ ``<名称>``.横向平移_θ"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:47
 msgid "Minimum angular velocity before applying penalty."
-msgstr "Minimum angular velocity before applying penalty."
+msgstr "在施加惩罚之前的最小角速度。"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.theta_scale"
-msgstr "``<dwb plugin>``.\\ ``<name>``.theta_scale"
+msgstr "``<dwb插件>``.\\ ``<名称>``.θ缩放"
 
 
 #: ../../configuration/packages/trajectory_critics/prefer_forward.rst:58
 msgid "Weight for angular velocity component."
-msgstr "Weight for angular velocity component."
+msgstr "角速度分量的权重。"
 
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:4
@@ -8182,12 +8182,12 @@ msgstr "RotateToGoalCritic"
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:6
 msgid "Only allows the robot to rotate to the goal orientation when it is sufficiently close to the goal location."
-msgstr "Only allows the robot to rotate to the goal orientation when it is sufficiently close to the goal location."
+msgstr "只有在机器人距离目标位置足够近时，才允许其旋转到目标方向。"
 
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:13
 msgid "``<name>``: RotateToGoalCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: RotateToGoalCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<名称>``：RotateToGoalCritic评价器名称，在:ref:`dwb_controller`中定义的**<dwb插件>.critics**参数中定义。"
 
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst
@@ -8197,7 +8197,7 @@ msgstr "``<dwb plugin>``.xy_goal_tolerance"
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst
 msgid "``<dwb plugin>``.trans_stopped_velocity"
-msgstr "``<dwb plugin>``.trans_stopped_velocity"
+msgstr "``<dwb插件>``.停止转换速度"
 
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst
@@ -8232,5 +8232,5 @@ msgstr "Prevents holonomic robots from spinning as they make their way to the go
 
 #: ../../configuration/packages/trajectory_critics/twirling.rst:13
 msgid "``<name>``: TwirlingCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: TwirlingCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``: TwirlingCritic 是在 :ref:`dwb_controller` 的 **<dwb plugin>.critics** 参数中定义的批评家名称。"
 

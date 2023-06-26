@@ -27,7 +27,7 @@ msgstr "Setting Up Navigation Plugins"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:6
 msgid "In this part of the guide, we discuss how your robot can utilize different planner and controller algorithms to complete navigation tasks. We will discuss some of the available algorithm plugins you can use based on your robot type and environment."
-msgstr "In this part of the guide, we discuss how your robot can utilize different planner and controller algorithms to complete navigation tasks. We will discuss some of the available algorithm plugins you can use based on your robot type and environment."
+msgstr "在本指南的这部分中，我们将讨论如何利用不同的规划器和控制器算法来完成导航任务。我们将根据机器人类型和环境讨论一些可用的算法插件。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:9
