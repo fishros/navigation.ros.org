@@ -221,7 +221,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_with_slam.html">(SLAM) Navigating While Mapping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_with_slam.html">（SLAM）在制图时导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -294,9 +294,9 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_keepout_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_keepout_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#prepare-filter-mask">1. 准备过滤掩模</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#enable-keepout-filter">3. Enable Keepout Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#configure-costmap-filter-info-publisher-server">2. 配置成本地图过滤器信息发布服务器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#enable-keepout-filter">3. 启用Keepout过滤器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#run-nav2-stack">4. 运行Nav2堆栈</a></li>
 </ul>
 </li>
 </ul>
@@ -306,9 +306,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. 准备过滤掩模</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. 配置成本地图过滤器信息发布服务器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enable-speed-filter">3. Enable Speed Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. 运行Nav2堆栈</a></li>
 </ul>
 </li>
 </ul>
@@ -1019,7 +1019,7 @@ We will use <code class="docutils literal notranslate"><span class="pre">scale</
 </div>
 </div>
 <div class="section" id="configure-costmap-filter-info-publisher-server">
-<h3>2. Configure Costmap Filter Info Publisher Server<a class="headerlink" href="#configure-costmap-filter-info-publisher-server" title="永久链接至标题"></a></h3>
+<h3>2. 配置成本地图过滤器信息发布服务器<a class="headerlink" href="#configure-costmap-filter-info-publisher-server" title="永久链接至标题"></a></h3>
 <p>Each costmap filter reads incoming meta-information (such as filter type or data conversion coefficients) in messages of <code class="docutils literal notranslate"><span class="pre">nav2_msgs/CostmapFilterInfo</span></code> type. These messages are being published by <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">Costmap Filter Info Publisher Server</a>. The server is running as a lifecycle node. According to the <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">design document</a>, <code class="docutils literal notranslate"><span class="pre">nav2_msgs/CostmapFilterInfo</span></code> messages are going in a pair with <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> filter mask topic. Therefore, along with Costmap Filter Info Publisher Server there should be enabled a new instance of Map Server configured to publish filter masks.</p>
 <p>In order to enable Speed Filter in your configuration, both servers should be enabled as lifecycle nodes in Python launch-file. For example, this might look as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -1145,11 +1145,11 @@ We will use <code class="docutils literal notranslate"><span class="pre">scale</
 <span class="w">    </span><span class="nt">yaml_filename</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;speed_mask.yaml&quot;</span>
 </pre></div>
 </div>
-<p>Note, that:</p>
+<p>请注意：</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>For Speed Filter setting speed restrictions in a percent from maximum speed, the <code class="docutils literal notranslate"><span class="pre">type</span></code> of costmap filter should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code>. All possible costmap filter types could be found at <a class="reference internal" href="../../configuration/packages/configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> page.</p></li>
-<li><p>Filter mask topic name should be the equal for <code class="docutils literal notranslate"><span class="pre">mask_topic</span></code> parameter of Costmap Filter Info Publisher Server and <code class="docutils literal notranslate"><span class="pre">topic_name</span></code> parameter of Map Server.</p></li>
+<li><p>过滤器掩码主题名称应与成本地图过滤器信息发布服务器的``mask_topic``参数和地图服务器的``topic_name``参数相等。</p></li>
 <li><p>As was described in a previous chapter, <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">100.0</span></code> and <code class="docutils literal notranslate"><span class="pre">-1.0</span></code> accordingly for the purposes of this tutorial example.</p></li>
 </ul>
 </div></blockquote>
@@ -1199,7 +1199,7 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
 </div>
 </div>
 <div class="section" id="run-nav2-stack">
-<h3>4. Run Nav2 stack<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
+<h3>4. 运行Nav2堆栈<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
 <p>After Costmap Filter Info Publisher Server and Map Server were launched and Speed Filter was enabled for global/local costmap, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>

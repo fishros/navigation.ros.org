@@ -221,7 +221,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_with_slam.html">(SLAM) Navigating While Mapping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_with_slam.html">（SLAM）在制图时导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -294,9 +294,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. 准备过滤掩模</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enable-keepout-filter">3. Enable Keepout Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. 配置成本地图过滤器信息发布服务器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-keepout-filter">3. 启用Keepout过滤器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. 运行Nav2堆栈</a></li>
 </ul>
 </li>
 </ul>
@@ -306,9 +306,9 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#prepare-filter-mask">1. 准备过滤掩模</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#configure-costmap-filter-info-publisher-server">2. 配置成本地图过滤器信息发布服务器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#enable-speed-filter">3. Enable Speed Filter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#run-nav2-stack">4. 运行Nav2堆栈</a></li>
 </ul>
 </li>
 </ul>
@@ -979,10 +979,10 @@
 </div>
 <p>对于Keepout过滤器，“OccupancyGrid”值与与此单元格对应的区域的可通行性成比例：较高的值表示不可通过的区域更多。具有占用值的单元格覆盖了机器人永远不会进入或通过的禁止区域。通过将“OccupancyGrid”设置为介于“[1-99]”之间的非占用值，Keepout过滤器也可以作为“加权区域层”。机器人被允许在这些区域中移动，但是它在那里的存在将是“不可取的”（值越高，规划器越早尝试将机器人移出该区域）。</p>
 <p>Keepout Filter还涵盖了首选车道的情况，即机器人只能在预定义的车道和允许的区域内移动，例如在仓库中。要使用此功能，您需要准备一个掩膜图像，在该图像中车道和允许的区域将被标记为可通行的值，而所有其他区域将被占用。在``trinary``或``scale``模式下绘制掩膜的提示：通常，属于车道的像素数量远少于覆盖其他区域的像素。在这种情况下，最初可以使用黑色铅笔在白色背景上绘制所有车道数据，然后（在保存PGM之前）可以使用图像光栅编辑器中的“颜色反转”工具。</p>
-<p>For simplicity, in the example fill the areas with black color (in <code class="docutils literal notranslate"><span class="pre">trinary</span></code> mode this means occupied map) that you are going to mark as a keep-out zones:</p>
+<p>为简化起见，在示例中使用黑色填充区域（在``trinary``模式下表示占用地图）来标记为禁止区域：</p>
 <a class="reference internal image-reference" href="../../_images/drawing_keepout_mask.png"><img alt="../../_images/drawing_keepout_mask.png" src="../../_images/drawing_keepout_mask.png" style="width: 500px;" /></a>
 <p>填充所有保留区域后保存``keepout_mask.pgm``图像。</p>
-<p>Like all other maps, filter mask should have its own YAML metadata file. Copy <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml">turtlebot3_world.yaml</a> to <code class="docutils literal notranslate"><span class="pre">keepout_mask.yaml</span></code>. Open <code class="docutils literal notranslate"><span class="pre">keepout_mask.yaml</span></code> and correct <code class="docutils literal notranslate"><span class="pre">image</span></code> field to a newly made PGM mask:</p>
+<p>与所有其他地图一样，过滤器掩码应具有自己的YAML元数据文件。将`turtlebot3_world.yaml &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml">https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml</a>&gt;`_复制到``keepout_mask.yaml``中。打开``keepout_mask.yaml``并将``image``字段更正为新创建的PGM掩码：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>image: turtlebot3_world.pgm
 -&gt;
 image: keepout_mask.pgm
@@ -991,7 +991,7 @@ image: keepout_mask.pgm
 <p>由于过滤器掩膜图像是主地图的副本，因此不需要更改YAML文件的其他字段。保存``keepout_mask.yaml``，新的过滤器掩膜已准备好使用。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>World map itself and filter mask could have different sizes, origin and resolution which might be useful e.g. for cases when filter mask is covering smaller areas on maps or when one filter mask is used repeatedly many times (like annotating a keepout zone for same shape rooms in the hotel). For this case, you need to correct <code class="docutils literal notranslate"><span class="pre">resolution</span></code> and <code class="docutils literal notranslate"><span class="pre">origin</span></code> fields in YAML as well so that the filter mask is correctly laid on top of the original map.</p>
+<p>世界地图本身和过滤器掩码可能具有不同的大小、原点和分辨率，这在以下情况下可能很有用：当过滤器掩码覆盖地图上较小区域时，或者当一个过滤器掩码重复多次使用时（例如，在酒店的相同形状房间中注释禁止区域）。对于这种情况，您还需要在YAML中正确设置``resolution``和``origin``字段，以便将过滤器掩码正确放置在原始地图上。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -999,9 +999,9 @@ image: keepout_mask.pgm
 </div>
 </div>
 <div class="section" id="configure-costmap-filter-info-publisher-server">
-<h3>2. Configure Costmap Filter Info Publisher Server<a class="headerlink" href="#configure-costmap-filter-info-publisher-server" title="永久链接至标题"></a></h3>
+<h3>2. 配置成本地图过滤器信息发布服务器<a class="headerlink" href="#configure-costmap-filter-info-publisher-server" title="永久链接至标题"></a></h3>
 <p>每个costmap过滤器在``nav2_msgs/CostmapFilterInfo``类型的消息中读取传入的元信息（例如过滤器类型或数据转换系数）。这些消息由`Costmap Filter Info Publisher Server &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info</a>&gt;`_发布。服务器作为生命周期节点运行。根据`设计文档 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf</a>&gt;`_，<a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_msgs/CostmapFilterInfo``消息与``OccupancyGrid``过滤器掩膜主题成对出现。因此，在启用Costmap Filter Info Publisher Server的同时，应启用一个新的Map Server实例，并配置它来发布过滤器掩膜。</p>
-<p>In order to enable Keepout Filter in your configuration, both servers should be enabled as a lifecycle nodes in Python launch-file. For example, this might look as follows:</p>
+<p>为了在配置中启用禁止区域过滤器，两个服务器都应作为Python启动文件中的生命周期节点启用。例如，可能如下所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">from</span> <span class="nn">ament_index_python.packages</span> <span class="kn">import</span> <span class="n">get_package_share_directory</span>
@@ -1125,15 +1125,15 @@ image: keepout_mask.pgm
 <span class="w">    </span><span class="nt">yaml_filename</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;keepout_mask.yaml&quot;</span>
 </pre></div>
 </div>
-<p>Note, that:</p>
+<p>请注意：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>For Keepout Filter the <code class="docutils literal notranslate"><span class="pre">type</span></code> of costmap filter should be set to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
-<li><p>Filter mask topic name should be the equal for <code class="docutils literal notranslate"><span class="pre">mask_topic</span></code> parameter of Costmap Filter Info Publisher Server and <code class="docutils literal notranslate"><span class="pre">topic_name</span></code> parameter of Map Server.</p></li>
-<li><p>According to the Costmap Filters design, <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values are being linearly transformed into feature map in a filter space. For a Keepout Filter these values are directly passed as a filter space values without a linear conversion. Even though <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> coefficients are not used in Keepout Filter, they should be set to <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> accordingly in order to explicitly show that we have one-to-one conversion from <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values -&gt; to a filter value space.</p></li>
+<li><p>对于Keepout过滤器，costmap过滤器的“type”应设置为“0”。</p></li>
+<li><p>过滤器掩码主题名称应与成本地图过滤器信息发布服务器的``mask_topic``参数和地图服务器的``topic_name``参数相等。</p></li>
+<li><p>根据Costmap过滤器的设计，OccupancyGrid的值在过滤器空间中被线性转换为特征图。对于Keepout过滤器，这些值直接作为过滤器空间的值传递，而不进行线性转换。即使在Keepout过滤器中未使用基础（base）和乘数（multiplier）系数，它们应分别设置为“0.0”和“1.0”，以明确表示我们从OccupancyGrid的值转换为过滤器值空间时是一对一的关系。</p></li>
 </ul>
 </div></blockquote>
-<p>Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Keepout Filter could be found in a <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo">nav2_costmap_filters_demo</a> directory of <code class="docutils literal notranslate"><span class="pre">navigation2_tutorials</span></code> repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>, build the demo and launch <code class="docutils literal notranslate"><span class="pre">costmap_filter_info.launch.py</span></code> as follows:</p>
+<p>可在``navigation2_tutorials``存储库的``nav2_costmap_filters_demo``目录中找到完全可用的独立Python启动脚本、带有ROS参数和Keepout Filter示例的YAML文件。要简单运行Filter Info Publisher服务器和Map服务器以及在Turtlebot3标准仿真中进行调优，按照:ref:<cite>getting_started`中的说明构建演示并启动``costmap_filter_info.launch.py`</cite>：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/tutorials_ws/src
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/tutorials_ws/src
 $<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ros-planning/navigation2_tutorials.git
@@ -1145,15 +1145,15 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
 </div>
 </div>
 <div class="section" id="enable-keepout-filter">
-<h3>3. Enable Keepout Filter<a class="headerlink" href="#enable-keepout-filter" title="永久链接至标题"></a></h3>
-<p>Costmap Filters are Costamp2D plugins. You can enable the <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> plugin in Costmap2D by adding <code class="docutils literal notranslate"><span class="pre">keepout_filter</span></code> to the <code class="docutils literal notranslate"><span class="pre">plugins</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code>. You can place it in the <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> for planning with keepouts and <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> to make sure the robot won't attempt to drive through a keepout zone. The KeepoutFilter plugin should have the following parameters defined:</p>
+<h3>3. 启用Keepout过滤器<a class="headerlink" href="#enable-keepout-filter" title="永久链接至标题"></a></h3>
+<p>Costmap Filters是Costamp2D插件。您可以通过在``nav2_params.yaml``的``plugins``参数中添加``keepout_filter``来启用Costmap2D中的``KeepoutFilter``插件。您可以将其放置在``global_costmap``中以便进行带有禁区的规划，将其放置在``local_costmap``中以确保机器人不会试图穿越禁区。KeepoutFilter插件应定义以下参数：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: type of plugin. In our case <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::KeepoutFilter</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code>: filter info topic name. This need to be equal to <code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code> parameter of Costmap Filter Info Publisher Server from the chapter above.</p></li>
+<li><p>“plugin”：插件的类型。在我们的例子中为“nav2_costmap_2d::KeepoutFilter”。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code>：过滤器信息主题名称。这个参数需要与上面章节中的Costmap Filter Info Publisher Server的``filter_info_topic``参数相等。</p></li>
 </ul>
-<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> are listed at <a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html#keepout-filter"><span class="std std-ref">保护区过滤器参数</span></a> page.</p>
-<p>It is important to note that enabling <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> for <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> only will cause the path planner to build plans bypassing keepout zones. Enabling <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> for <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> only will cause the robot to not enter keepout zones, but the path may still go through them. So, the best practice is to enable <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> for global and local costmaps simultaneously by adding it both in <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> and <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code>. However it does not always have to be true. In some cases keepout zones don't have to be the same for global and local costmaps, e.g. if the robot doesn't allowed to intentionally go inside keepout zones, but if its there, the robot can drive in and out really quick if it clips an edge or corner. For this case, there is not need to use extra resources of the local costmap copy.</p>
-<p>To enable <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> with same mask for both global and local costmaps, use the following configuration:</p>
+<p>“KeepoutFilter”支持的参数的完整列表请参考:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>keepout_filter`页面。</p>
+<p>重要的是要注意，仅在``global_costmap``中启用``KeepoutFilter``将导致路径规划器在绕过禁区时建立计划。仅在``local_costmap``中启用``KeepoutFilter``将导致机器人不进入禁区，但路径仍然可能穿过禁区。因此，最佳做法是在``nav2_params.yaml``中同时将其添加到``global_costmap``和``local_costmap``中，以同时启用全局和局部costmap的``KeepoutFilter``。然而，并不总是必须如此。在某些情况下，全局costmap和局部costmap的禁区可能不同，例如，如果机器人不允许有意进入禁区，但如果在禁区内，机器人可以非常快速地进入和离开，只要它碰到一个边缘或角落。对于这种情况，不需要使用局部costmap副本的额外资源。</p>
+<p>要为全局和局部costmap使用相同的掩码启用“KeepoutFilter”，请使用以下配置：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>global_costmap:
   global_costmap:
     ros__parameters:
@@ -1181,12 +1181,12 @@ local_costmap:
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>All costmap filters should be enabled through a <code class="docutils literal notranslate"><span class="pre">filters</span></code> parameter -- though it is technically possible to include in the layered costmap itself. This is separated from the layer plugins to prevent interference in the layers, particularly the  inflation layer.</p>
+<p>所有costmap过滤器都应通过``filters``参数启用-尽管在分层costmap中包含它们也是可行的。这是为了防止干扰层，尤其是膨胀层。</p>
 </div>
 </div>
 <div class="section" id="run-nav2-stack">
-<h3>4. Run Nav2 stack<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
-<p>After Costmap Filter Info Publisher Server and Map Server were launched and Keepout Filter was enabled for global/local costmaps, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>:</p>
+<h3>4. 运行Nav2堆栈<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
+<p>在启动Costmap Filter Info Publisher Server和Map Server并为全局/局部costmap启用Keepout Filter后，按照:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>getting_started`中的说明运行Nav2堆栈：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>
 </div>
