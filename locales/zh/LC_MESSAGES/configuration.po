@@ -6035,7 +6035,7 @@ msgstr "4 - 相邻障碍物在水平和垂直方向上连接。"
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "8 - adjacent obstacles are connected horizontally, vertically and diagonally."
-msgstr "8 - adjacent obstacles are connected horizontally, vertically and diagonally."
+msgstr "8 - 相邻障碍物在水平、垂直和对角线方向上相连。"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:4
@@ -6045,7 +6045,7 @@ msgstr "膨胀层参数"
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:6
 msgid "``<inflation layer>`` is the corresponding plugin name selected for this type."
-msgstr "``<inflation layer>`` is the corresponding plugin name selected for this type."
+msgstr "``<inflation layer>`` 是为此类型选择的相应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst
@@ -6080,7 +6080,7 @@ msgstr "``<inflation layer>``.inflate_unknown"
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:52
 msgid "Whether to inflate unknown cells as if lethal."
-msgstr "Whether to inflate unknown cells as if lethal."
+msgstr "是否将未知的单元格视为致命而进行膨胀。"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst
@@ -6090,62 +6090,62 @@ msgstr "``<inflation layer>``.inflate_around_unknown"
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:64
 msgid "Whether to inflate unknown cells."
-msgstr "Whether to inflate unknown cells."
+msgstr "是否将未知的单元格进行膨胀。"
 
 
 #: ../../configuration/packages/costmap-plugins/keepout_filter.rst:4
 msgid "Keepout Filter Parameters"
-msgstr "Keepout Filter Parameters"
+msgstr "保护区过滤器参数"
 
 
 #: ../../configuration/packages/costmap-plugins/keepout_filter.rst:6
 msgid "Keepout Filter - is a Costmap Filter that enforces robot to avoid keepout areas or stay on preferred lanes, by updating corresponding costmap layer using filter mask information."
-msgstr "Keepout Filter - is a Costmap Filter that enforces robot to avoid keepout areas or stay on preferred lanes, by updating corresponding costmap layer using filter mask information."
+msgstr "Keepout Filter - 是一个 Costmap Filter，通过使用过滤器掩码信息更新相应的 Costmap 图层，强制机器人避开限制区域或保持在首选车道上。"
 
 
 #: ../../configuration/packages/costmap-plugins/keepout_filter.rst:8
 msgid "Note: As Costmap Filters does not have the inflation layer applied to them (since inflation is not sensible for a speed or other non-occupation zone type), it may be beneficial to add a separate inflation layer into the vector of filters when using only a keepout zone. Some planners (e.g. Smac Feasible) will use the cost of the center point for a collision checking optimization before doing full SE2 footprint checks. Without inflation, the planner will not respect the Keepout Zone on it extremities -- but will still respect it for the robot centers. If you wish to have a Keepout Zone for any part of the robot base while using a feasible planner, please enable the inflation layer."
-msgstr "Note: As Costmap Filters does not have the inflation layer applied to them (since inflation is not sensible for a speed or other non-occupation zone type), it may be beneficial to add a separate inflation layer into the vector of filters when using only a keepout zone. Some planners (e.g. Smac Feasible) will use the cost of the center point for a collision checking optimization before doing full SE2 footprint checks. Without inflation, the planner will not respect the Keepout Zone on it extremities -- but will still respect it for the robot centers. If you wish to have a Keepout Zone for any part of the robot base while using a feasible planner, please enable the inflation layer."
+msgstr "注意：由于成本地图过滤器没有应用膨胀层（因为对于速度或其他非占用区域类型来说，膨胀是不可行的），在仅使用禁止区域时，将向过滤器向量中添加一个单独的膨胀层可能是有益的。一些规划器（例如 Smac Feasible）在执行完整的 SE2 足迹检查之前，会使用中心点的成本进行碰撞检查优化。如果没有膨胀层，规划器将不会在其边缘上尊重禁止区域，但仍会对机器人中心尊重该区域。如果您希望在使用可行规划器时为机器人底座的任何部分设置禁止区域，请启用膨胀层。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:4
 msgid "Obstacle Layer Parameters"
-msgstr "Obstacle Layer Parameters"
+msgstr "障碍物图层参数"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:6
 msgid "``<obstacle layer>`` is the corresponding plugin name selected for this type."
-msgstr "``<obstacle layer>`` is the corresponding plugin name selected for this type."
+msgstr "``<障碍物图层>`` 是所选类型的相应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:8 ../../configuration/packages/costmap-plugins/voxel.rst:8
 msgid "``<data source>`` is the corresponding observation source name for that sources parameters."
-msgstr "``<data source>`` is the corresponding observation source name for that sources parameters."
+msgstr "``<数据源>`` 是该数据源参数的相应观测源名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``.enabled"
-msgstr "``<obstacle layer>``.enabled"
+msgstr "``<障碍物图层>``.enabled"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``.footprint_clearing_enabled"
-msgstr "``<obstacle layer>``.footprint_clearing_enabled"
+msgstr "``<障碍物图层>``.footprint_clearing_enabled"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:30 ../../configuration/packages/costmap-plugins/voxel.rst:30
 msgid "Clear any occupied cells under robot footprint."
-msgstr "Clear any occupied cells under robot footprint."
+msgstr "清除机器人足迹下的任何占用单元格。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``.max_obstacle_height"
-msgstr "``<obstacle layer>``.max_obstacle_height"
+msgstr "``<障碍物图层>``.max_obstacle_height"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:41 ../../configuration/packages/costmap-plugins/obstacle.rst:140 ../../configuration/packages/costmap-plugins/voxel.rst:41 ../../configuration/packages/costmap-plugins/voxel.rst:206
 msgid "Maximum height to add return to occupancy grid."
-msgstr "Maximum height to add return to occupancy grid."
+msgstr "添加到占用格网的最大高度。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6155,7 +6155,7 @@ msgstr "``<obstacle layer>``.combination_method"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:52 ../../configuration/packages/costmap-plugins/voxel.rst:107
 msgid "Enum for method to add data to master costmap, default to maximum."
-msgstr "Enum for method to add data to master costmap, default to maximum."
+msgstr "用于将数据添加到主成本地图的方法的枚举，默认为最大值。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6170,7 +6170,7 @@ msgstr "{\"\"}"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:63 ../../configuration/packages/costmap-plugins/voxel.rst:129
 msgid "namespace of sources of data."
-msgstr "namespace of sources of data."
+msgstr "数据源的命名空间。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6180,7 +6180,7 @@ msgstr "``<obstacle layer>``. ``<data source>``.topic"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:74 ../../configuration/packages/costmap-plugins/voxel.rst:140
 msgid "Topic of data."
-msgstr "Topic of data."
+msgstr "数据的主题。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6190,7 +6190,7 @@ msgstr "``<obstacle layer>``. ``<data source>``.sensor_frame"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:85 ../../configuration/packages/costmap-plugins/voxel.rst:151
 msgid "Frame of sensor, to use if not provided by message. If empty, uses message frame_id."
-msgstr "Frame of sensor, to use if not provided by message. If empty, uses message frame_id."
+msgstr "传感器的帧，如果消息中没有提供。如果为空，则使用消息的帧标识。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6200,7 +6200,7 @@ msgstr "``<obstacle layer>``. ``<data source>``.observation_persistence"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:96 ../../configuration/packages/costmap-plugins/voxel.rst:162
 msgid "How long to store messages in a buffer to add to costmap before removing them (s)."
-msgstr "How long to store messages in a buffer to add to costmap before removing them (s)."
+msgstr "在将消息添加到代价地图之前，将其存储在缓冲区中的时间长度（以秒为单位）。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6210,7 +6210,7 @@ msgstr "``<obstacle layer>``. ``<data source>``.expected_update_rate"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:107 ../../configuration/packages/costmap-plugins/voxel.rst:173
 msgid "Expected rate to get new data from sensor."
-msgstr "Expected rate to get new data from sensor."
+msgstr "从传感器获取新数据的预期速率。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
