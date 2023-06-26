@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Create New Planner and Controller Plugins &mdash; Navigation 2 1.0.0 文档</title>
+  <title>2. 创建新的规划器和控制器插件 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>2. Create New Planner and Controller Plugins</li>
+      <li>2. 创建新的规划器和控制器插件</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,36 +936,36 @@
            <div itemprop="articleBody">
              
   <div class="section" id="create-new-planner-and-controller-plugins">
-<span id="create-plugins"></span><h1>2. Create New Planner and Controller Plugins<a class="headerlink" href="#create-new-planner-and-controller-plugins" title="永久链接至标题"></a></h1>
+<span id="create-plugins"></span><h1>2. 创建新的规划器和控制器插件<a class="headerlink" href="#create-new-planner-and-controller-plugins" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
-<p>The ROS 2 Navigation Stack has a number of plugin interfaces to help users create or select specific plugins for planning, control, and behaviors for their applications. Two specific areas that the Nav2 stack could use more algorithm plugins for is for path planning (referred to as a planner plugin) and local trajectory generation (referred to as controller plugins). A simple tutorial for creating a <a class="reference external" href="https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html">planner plugin can be found here.</a> Currently, we have one planner, NavFn which implements an A* and Dijkstra's planner. It also has two controllers, DWB and TEB which implement a DWA and timed elastic-band optimization techniques. There is also a Hybrid-A* and OMPL planner in development.</p>
-<p>Your task will be to create a high-quality implementation of one of the following algorithms for the Nav2 plugin interfaces. Alternative algorithms may also be considered upon approval, please ask &#64;steve in the application phase. Please select only one to discuss.</p>
+<p>ROS 2 导航堆栈具有多个插件接口，帮助用户为其应用程序创建或选择特定的规划、控制和行为插件。Nav2 堆栈中需要更多算法插件的两个具体领域是路径规划（称为规划器插件）和局部轨迹生成（称为控制器插件）。创建`规划器插件的简单教程可以在这里找到。&lt;<a class="reference external" href="https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html">https://navigation.ros.org/tutorials/docs/writing_new_nav2planner_plugin.html</a>&gt;`_ 目前，我们有一个规划器，NavFn，它实现了 A* 和 Dijkstra 规划器。还有两个控制器，DWB 和 TEB，它们实现了 DWA 和定时弹性带优化技术。还在开发中的有 Hybrid-A* 和 OMPL 规划器。</p>
+<p>您的任务是为Nav2插件接口之一创建高质量的算法实现。经批准后，也可以考虑其他替代算法，请在申请阶段咨询&#64;steve。请只选择一个进行讨论。</p>
 <ul class="simple">
-<li><p>Planner Plugin Options: D* or variant, Vornoi planner, Navigation graph route planner, State Lattice planner, kinodynamic planner, and any planning method given a set of dynamic and static obstacles.</p></li>
-<li><p>Controller Plugin Options: CiLQR, iLQR, MPC, Splines, path following or dynamic obstacle following controllers.</p></li>
-<li><p>Additional options: helping in completing the OMPL or Hybrid-A* planner.</p></li>
+<li><p>规划器插件选项: D* 或其变种、Vornoi 规划器、导航图路线规划器、状态格规划器、动力学规划器以及根据一组动态和静态障碍物给出的任何规划方法。</p></li>
+<li><p>控制器插件选项：CiLQR、iLQR、MPC、Splines、路径跟踪或动态障碍物跟踪控制器。</p></li>
+<li><p>其他选项: 帮助完成 OMPL 或 Hybrid-A* 规划器。</p></li>
 </ul>
 <p><strong>项目难度：高</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
 <p><strong>项目输出要求</strong></p>
 <ul class="simple">
-<li><p>A functional planner or controller plugin for the Nav2 stack</p></li>
-<li><p>Plugin should be optimized for run-time performance with 50% or greater test coverage</p></li>
+<li><p>Nav2堆栈的功能规划器或控制器插件</p></li>
+<li><p>插件应优化运行时性能，并具有 50% 或更高的测试覆盖率</p></li>
 </ul>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
 <li><p>C++</p></li>
-<li><p>Path planning or motion planning</p></li>
-<li><p>Algorithm optimization</p></li>
+<li><p>路径规划或运动规划</p></li>
+<li><p>算法优化</p></li>
 <li><p>ROS / Pluginlib</p></li>
-<li><p>Recommended: Gazebo simulation and Navigation experience</p></li>
+<li><p>推荐：Gazebo仿真和导航经验</p></li>
 </ul>
 <p><strong>相关开源软件仓库和参考资料列表</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1710">Github issue page</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1710">Github问题页面</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Nav2</a></p></li>
 </ul>
 <p><strong>许可</strong> - 所有贡献将在Apache 2.0许可下进行。 - 不需要其他CLA。</p>
