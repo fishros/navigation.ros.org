@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denoise Layer Parameters &mdash; Navigation 2 1.0.0 文档</title>
+  <title>降噪层参数 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -515,11 +515,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-costmaps.html#plugin-parameters">插件参数</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="static.html">Static Layer Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="inflation.html">Inflation Layer Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inflation.html">膨胀层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="obstacle.html">Obstacle Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="voxel.html">Voxel Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="range.html">Range Sensor Parameters</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Denoise Layer Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">降噪层参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../configuring-costmaps.html">二维代价地图</a> &raquo;</li>
-      <li>Denoise Layer Parameters</li>
+      <li>降噪层参数</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,10 +940,10 @@
            <div itemprop="articleBody">
              
   <div class="section" id="denoise-layer-parameters">
-<span id="denoise"></span><h1>Denoise Layer Parameters<a class="headerlink" href="#denoise-layer-parameters" title="永久链接至标题"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;denoise</span> <span class="pre">layer&gt;</span></code> is the corresponding plugin name selected for this type.</p>
+<span id="denoise"></span><h1>降噪层参数<a class="headerlink" href="#denoise-layer-parameters" title="永久链接至标题"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;denoise</span> <span class="pre">layer&gt;</span></code> 是选择此类型的对应插件名称。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;denoise</span> <span class="pre">layer&gt;</span></code>.enabled</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;降噪层&gt;</span></code>.enabled</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -979,16 +979,16 @@
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>The minimum number of adjacent obstacles that should not be discarded as noise.</p>
+<dt>描述</dt><dd><p>应视为噪声而不应被丢弃的相邻障碍物的最小数量。</p>
 <div class="line-block">
-<div class="line">If 1 or less, all obstacles will be kept.</div>
-<div class="line">If 2, standalone obstacles (without neighbors in adjacent cells) will be removed.</div>
-<div class="line">If N, obstacles groups smaller than N will be removed.</div>
+<div class="line">如果为1或更少，将保留所有障碍物。</div>
+<div class="line">如果为2，则会删除独立的障碍物（没有相邻单元格中的邻居）。</div>
+<div class="line">如果为N，将删除小于N的障碍物组。</div>
 </div>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;denoise</span> <span class="pre">layer&gt;</span></code>.group_connectivity_type</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;去噪层&gt;</span></code>.group_connectivity_type</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1004,10 +1004,9 @@
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>Obstacles connectivity type (is the way in which obstacles relate to their neighbors).
-Must be 4 or 8.</p>
+<dt>描述</dt><dd><p>障碍物的连通性类型（障碍物与其邻居之间的关系方式）。必须为4或8。</p>
 <div class="line-block">
-<div class="line">4 - adjacent obstacles are connected horizontally and vertically.</div>
+<div class="line">4 - 相邻障碍物在水平和垂直方向上连接。</div>
 <div class="line">8 - adjacent obstacles are connected horizontally, vertically and diagonally.</div>
 </div>
 </dd>
