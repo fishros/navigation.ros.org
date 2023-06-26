@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8. Convert Twist to TwistStamped in Ecosystem and Run-Time Configuration &mdash; Navigation 2 1.0.0 文档</title>
+  <title>8. 将生态系统和运行时配置中的Twist转换为TwistStamped &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -338,9 +338,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_collision_monitor.html#demo-execution">Demo Execution</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html">Adding a New Nav2 Task Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html#lifecycle-nodes">Lifecycle Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html#composition">Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html">添加一个新的Nav2任务服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html#lifecycle-nodes">生命周期节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html#composition">组合</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html#error-codes">Error codes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/adding_a_nav2_task_server.html#conclusion">结论</a></li>
 </ul>
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>8. Convert Twist to TwistStamped in Ecosystem and Run-Time Configuration</li>
+      <li>8. 将生态系统和运行时配置中的Twist转换为TwistStamped</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,32 +936,29 @@
            <div itemprop="articleBody">
              
   <div class="section" id="convert-twist-to-twiststamped-in-ecosystem-and-run-time-configuration">
-<span id="twist"></span><h1>8. Convert Twist to TwistStamped in Ecosystem and Run-Time Configuration<a class="headerlink" href="#convert-twist-to-twiststamped-in-ecosystem-and-run-time-configuration" title="永久链接至标题"></a></h1>
+<span id="twist"></span><h1>8. 将生态系统和运行时配置中的Twist转换为TwistStamped<a class="headerlink" href="#convert-twist-to-twiststamped-in-ecosystem-and-run-time-configuration" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
-<p>This project is comprised of 2 smaller projects that can be easily worked on in parallel.</p>
-<p>Subproject A: Convert Twist to TwistStamped in Ecosystem</p>
-<p>The aim of this project is to identify places in the ROS 2 ecosystem that make use of <code class="docutils literal notranslate"><span class="pre">Twist</span></code> in the context of <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> coming out of Navigation. This includes things like Nav2, ROS 2 Control, Gazebo ROS Plugins, Yuk's Velocity Filter, major robot drivers, etc. A set of previously identified places is shown in the ticket linked below.</p>
-<p>Once you've created a list of places in the ecosystem where it is used, your project will be to submit PRs on their ROS 2 branches to change the interface to make use of a <code class="docutils literal notranslate"><span class="pre">TwistStamped</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">Twist</span></code>.</p>
-<p>Subproject B: Run-time Reconfiguration of Parameters</p>
-<p>In the meantime while you're waiting for PRs to be merged or blocked by reviews on converting all of the ecosystems <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> use of <code class="docutils literal notranslate"><span class="pre">Twist</span></code> to <code class="docutils literal notranslate"><span class="pre">TwistStamped</span></code>, your project will be to enable run-time reconfiguration of the major parameters in Nav2. In ROS 2 this is done via the parameter change event callbacks. See tickets below for a list of plugins or servers needing dynamically reconfigurable parameter support added.</p>
+<p>这个项目由2个较小的项目组成，可以很容易地并行开展工作。</p>
+<p>子项目A：将生态系统中的Twist转换为TwistStamped</p>
+<p>该项目的目标是在ROS 2生态系统中识别使用``Twist``在导航出口的``cmd_vel``上下文中的位置。这包括Nav2、ROS 2 Control、Gazebo ROS插件、Yuk的速度滤波器、主要的机器人驱动等。一组先前确定的位置在下面链接的票据中显示。</p>
+<p>一旦你在生态系统中创建了一个使用Twist的地方列表，你的项目将是在它们的ROS 2分支上提交PR，将接口改为使用``TwistStamped``而不是``Twist``。</p>
+<p>子项目B：参数的运行时重新配置。</p>
+<p>同时，在等待所有生态系统中的``cmd_vel``使用``Twist``转换为``TwistStamped``的PR被合并或通过审核的过程中，你的项目将是在Nav2中启用运行时重新配置主要参数。在ROS 2中，这是通过参数变更事件回调来实现的。请参阅下面的票证列表，了解需要添加动态可重配置参数支持的插件或服务器。</p>
 <p><strong>项目难度：中等</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
-<p><strong>Project output requirements</strong>
-- Convert all the major ecosystem projects into TwistStamped
-- Enable run-time reconfiguration of the remaining plugins and servers in Nav2 missing
-- Ensure that reconfiguration is thread-safe by using locks, atomic variables, or callback groups</p>
+<p><strong>项目输出要求</strong> - 将所有重要的生态系统项目转换为TwistStamped - 使Nav2中剩余的插件和服务器能够在运行时重新配置 - 通过使用锁、原子变量或回调组确保重新配置是线程安全的。</p>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
-<li><p>C++, Python3</p></li>
+<li><p>C++，Python3</p></li>
 <li><p>ROS 2</p></li>
 </ul>
 <p><strong>相关开源软件仓库和参考资料列表</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/956">Github ticket</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1594">Github ticket2</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/956">Github票证</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1594">Github票据2</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 <li><p><a class="reference external" href="https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf">一些相关作品</a></p></li>
 </ul>
