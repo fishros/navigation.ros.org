@@ -672,7 +672,7 @@ msgstr "还有更多功能，但这是一般信息。有关详细信息，请参
 
 #: ../../migration/Foxy.rst:186
 msgid "Costmap2D ``current_`` Usage"
-msgstr "Costmap2D ``current_`` Usage"
+msgstr "Costmap2D ``current_`` 使用方法"
 
 
 #: ../../migration/Foxy.rst:188
@@ -682,7 +682,7 @@ msgstr "在costmap2D中，ROS 1中使用``current_``表示一个代价地图层�
 
 #: ../../migration/Foxy.rst:190
 msgid "In galactic, that will remain turn, however it will also add additional capabilities. It is also now set to ``false`` when a costmap is reset due to clearing or other navigation recoveries. That stops the robot from creating a plan or control effort until after the costmap has been updated at least once after a reset. This enables us to make sure we cannot ever create a path or control with a completely empty costmap, potentially leading to collisions, due to clearing the costmap and then immediately requesting an algorithm to run."
-msgstr "In galactic, that will remain turn, however it will also add additional capabilities. It is also now set to ``false`` when a costmap is reset due to clearing or other navigation recoveries. That stops the robot from creating a plan or control effort until after the costmap has been updated at least once after a reset. This enables us to make sure we cannot ever create a path or control with a completely empty costmap, potentially leading to collisions, due to clearing the costmap and then immediately requesting an algorithm to run."
+msgstr "在galactic版本中，这将保持不变，但它还将增加额外的功能。当由于清除或其他导航恢复而重置代价地图时，现在将其设置为``false``。这会阻止机器人在代价地图至少在重置后更新一次之前创建计划或控制。这样我们可以确保我们永远不会使用完全空的代价地图创建路径或控制，从而避免可能导致碰撞的情况，因为清除代价地图后立即请求运行算法。"
 
 
 #: ../../migration/Foxy.rst:193
@@ -692,122 +692,122 @@ msgstr "参数中的标准时间单位"
 
 #: ../../migration/Foxy.rst:194
 msgid "To follow the SI units outlined in REP-103 to the \"T\" nodes below were modified to use seconds consistently in every parameter. Under each node name you can see which parameters changed to seconds instead of using milliseconds."
-msgstr "To follow the SI units outlined in REP-103 to the \"T\" nodes below were modified to use seconds consistently in every parameter. Under each node name you can see which parameters changed to seconds instead of using milliseconds."
+msgstr "为了遵循REP-103中概述的国际单位制，以下节点已经修改为在每个参数中始终使用秒。在每个节点名称下面，您可以看到哪些参数改为使用秒而不是使用毫秒。"
 
 
 #: ../../migration/Foxy.rst:196
 msgid "lifecycle manager"
-msgstr "lifecycle manager"
+msgstr "生命周期管理器"
 
 
 #: ../../migration/Foxy.rst:198
 msgid "``bond_timeout_ms`` became ``bond_timeout`` in seconds"
-msgstr "``bond_timeout_ms`` became ``bond_timeout`` in seconds"
+msgstr "``bond_timeout_ms`` 改为以秒为单位的 ``bond_timeout``"
 
 
 #: ../../migration/Foxy.rst:200
 msgid "smac planner"
-msgstr "smac planner"
+msgstr "SMAC规划器"
 
 
 #: ../../migration/Foxy.rst:202
 msgid "``max_planning_time_ms`` became ``max_planning_time`` in seconds"
-msgstr "``max_planning_time_ms`` became ``max_planning_time`` in seconds"
+msgstr "``max_planning_time_ms`` 改为以秒为单位的 ``max_planning_time``"
 
 
 #: ../../migration/Foxy.rst:204
 msgid "map saver"
-msgstr "map saver"
+msgstr "地图保存器"
 
 
 #: ../../migration/Foxy.rst:206
 msgid "``save_map_timeout`` in seconds"
-msgstr "``save_map_timeout`` in seconds"
+msgstr "``save_map_timeout`` 以秒为单位"
 
 
 #: ../../migration/Foxy.rst:209
 msgid "Ray Tracing Parameters"
-msgstr "Ray Tracing Parameters"
+msgstr "光线追踪参数"
 
 
 #: ../../migration/Foxy.rst:210
 msgid "Raytracing functionality was modified to include a minimum range parameter from which ray tracing starts to clear obstacles to avoid incorrectly clearing obstacles too close to the robot. This issue was mentioned in `ROS Answers <https://answers.ros.org/question/355150/obstacles-in-sensor-deadzone/>`_. An existing parameter ``raytrace_range`` was renamed to ``raytrace_max_range`` to reflect the functionality it affects. The renamed parameters and the plugins that they belong to are mentioned below. The changes were introduced in this `pull request <https://github.com/ros-planning/navigation2/pull/2126>`_."
-msgstr "Raytracing functionality was modified to include a minimum range parameter from which ray tracing starts to clear obstacles to avoid incorrectly clearing obstacles too close to the robot. This issue was mentioned in `ROS Answers <https://answers.ros.org/question/355150/obstacles-in-sensor-deadzone/>`_. An existing parameter ``raytrace_range`` was renamed to ``raytrace_max_range`` to reflect the functionality it affects. The renamed parameters and the plugins that they belong to are mentioned below. The changes were introduced in this `pull request <https://github.com/ros-planning/navigation2/pull/2126>`_."
+msgstr "射线跟踪功能被修改以包括一个最小范围参数，该参数从射线跟踪开始以清除障碍物，以避免错误地清除距离机器人太近的障碍物。这个问题在 `ROS Answers <https://answers.ros.org/question/355150/obstacles-in-sensor-deadzone/>`_ 中提到。现有的参数``raytrace_range``被重命名为``raytrace_max_range``以反映它所影响的功能。重命名的参数及其所属的插件如下所示。这些更改在这个 `pull request <https://github.com/ros-planning/navigation2/pull/2126>`_ 中引入。"
 
 
 #: ../../migration/Foxy.rst:212 ../../migration/Foxy.rst:228
 msgid "obstacle_layer plugin"
-msgstr "obstacle_layer plugin"
+msgstr "障碍物层插件"
 
 
 #: ../../migration/Foxy.rst:214 ../../migration/Foxy.rst:220
 msgid "``raytrace_min_range`` controls the minimum range from which ray tracing clears obstacles from the costmap"
-msgstr "``raytrace_min_range`` controls the minimum range from which ray tracing clears obstacles from the costmap"
+msgstr "``raytrace_min_range`` 控制射线追踪从代价地图中清除障碍物的最小范围"
 
 
 #: ../../migration/Foxy.rst:216 ../../migration/Foxy.rst:222
 msgid "``raytrace_max_range`` controls the maximum range to which ray tracing clears obstacles from the costmap"
-msgstr "``raytrace_max_range`` controls the maximum range to which ray tracing clears obstacles from the costmap"
+msgstr "``raytrace_max_range`` 控制光线追踪从代价地图中清除障碍物的最大范围"
 
 
 #: ../../migration/Foxy.rst:218 ../../migration/Foxy.rst:234
 msgid "voxel_layer plugin"
-msgstr "voxel_layer plugin"
+msgstr "voxel_layer 插件"
 
 
 #: ../../migration/Foxy.rst:225
 msgid "Obstacle Marking Parameters"
-msgstr "Obstacle Marking Parameters"
+msgstr "障碍物标记参数"
 
 
 #: ../../migration/Foxy.rst:226
 msgid "Obstacle marking was modified to include a minimum range parameter from which obstacles are marked on the costmap to prevent addition of obstacles in the costmap due to noisy and incorrect measurements. This modification is related to the change with the raytracing parameters. The renamed parameters, newly added parameters and the plugins they belong to are given below."
-msgstr "Obstacle marking was modified to include a minimum range parameter from which obstacles are marked on the costmap to prevent addition of obstacles in the costmap due to noisy and incorrect measurements. This modification is related to the change with the raytracing parameters. The renamed parameters, newly added parameters and the plugins they belong to are given below."
+msgstr "障碍物标记已修改，包括一个最小范围参数，用于在代价地图上标记障碍物，以防止由于嘈杂和错误的测量而添加代价地图中的障碍物。此修改与射线追踪参数的更改相关。以下是已重命名的参数、新添加的参数以及它们所属的插件。"
 
 
 #: ../../migration/Foxy.rst:230 ../../migration/Foxy.rst:236
 msgid "``obstacle_min_range`` controls the minimum range from which obstacle are marked on the costmap"
-msgstr "``obstacle_min_range`` controls the minimum range from which obstacle are marked on the costmap"
+msgstr "``obstacle_min_range`` 控制障碍物在代价地图上被标记的最小范围"
 
 
 #: ../../migration/Foxy.rst:232 ../../migration/Foxy.rst:238
 msgid "``obstacle_max_range`` controls the maximum range to which obstacles are marked on the costmap"
-msgstr "``obstacle_max_range`` controls the maximum range to which obstacles are marked on the costmap"
+msgstr "``obstacle_max_range`` 控制在代价地图上标记障碍物的最大范围"
 
 
 #: ../../migration/Foxy.rst:241
 msgid "Recovery Action Changes"
-msgstr "Recovery Action Changes"
+msgstr "恢复动作变更"
 
 
 #: ../../migration/Foxy.rst:242
 msgid "The recovery actions, ``Spin`` and ``BackUp`` were modified to correctly return ``FAILURE`` if the recovery action is aborted due to a potential collision. Previously, these actions incorrectly always returned ``SUCCESS``. Changes to this resulted in downstream action clients, such as the default behavior tree. The changes were introduced in this `pull request 1855 <https://github.com/ros-planning/navigation2/pull/1855>`_."
-msgstr "The recovery actions, ``Spin`` and ``BackUp`` were modified to correctly return ``FAILURE`` if the recovery action is aborted due to a potential collision. Previously, these actions incorrectly always returned ``SUCCESS``. Changes to this resulted in downstream action clients, such as the default behavior tree. The changes were introduced in this `pull request 1855 <https://github.com/ros-planning/navigation2/pull/1855>`_."
+msgstr "修复了恢复动作 ``Spin`` 和 ``BackUp`` 的问题，现在如果恢复动作由于潜在碰撞而中止，将正确返回 ``FAILURE``。之前，这些动作错误地始终返回 ``SUCCESS``。对此进行的更改影响了后续的动作客户端，例如默认行为树。这些更改在此 `pull request 1855 <https://github.com/ros-planning/navigation2/pull/1855>`_ 中引入。"
 
 
 #: ../../migration/Foxy.rst:245
 msgid "Default Behavior Tree Changes"
-msgstr "Default Behavior Tree Changes"
+msgstr "默认行为树变更"
 
 
 #: ../../migration/Foxy.rst:246
 msgid "The default behavior tree (BT) ``navigate_w_replanning_and_recovery.xml`` has been updated to allow for replanning in between recoveries. The changes were introduced in this `PR 1855 <https://github.com/ros-planning/navigation2/pull/1855>`_. Additionally, an alternative BT ``navigate_w_replanning_and_round_robin_recovery.xml`` was removed due to similarity with the updated default BT."
-msgstr "The default behavior tree (BT) ``navigate_w_replanning_and_recovery.xml`` has been updated to allow for replanning in between recoveries. The changes were introduced in this `PR 1855 <https://github.com/ros-planning/navigation2/pull/1855>`_. Additionally, an alternative BT ``navigate_w_replanning_and_round_robin_recovery.xml`` was removed due to similarity with the updated default BT."
+msgstr "默认行为树 (BT) ``navigate_w_replanning_and_recovery.xml`` 已更新，允许在恢复过程中进行重新规划。这些更改在此 `PR 1855 <https://github.com/ros-planning/navigation2/pull/1855>`_ 中引入。此外，由于与更新后的默认行为树相似，另外一个行为树 ``navigate_w_replanning_and_round_robin_recovery.xml`` 已被删除。"
 
 
 #: ../../migration/Foxy.rst:249
 msgid "NavFn Planner Parameters"
-msgstr "NavFn Planner Parameters"
+msgstr "NavFn规划器参数"
 
 
 #: ../../migration/Foxy.rst:250
 msgid "The NavFn Planner has now its 3 parameters reconfigurable at runtime (``tolerance``, ``use_astar`` and ``allow_unknown``). The changes were introduced in this `pull request 2181 <https://github.com/ros-planning/navigation2/pull/2181>`_."
-msgstr "The NavFn Planner has now its 3 parameters reconfigurable at runtime (``tolerance``, ``use_astar`` and ``allow_unknown``). The changes were introduced in this `pull request 2181 <https://github.com/ros-planning/navigation2/pull/2181>`_."
+msgstr "NavFn 路径规划器现在可以在运行时重新配置其 3 个参数（``tolerance``、``use_astar`` 和 ``allow_unknown``）。这些更改在此 `pull request 2181 <https://github.com/ros-planning/navigation2/pull/2181>`_ 中引入。"
 
 
 #: ../../migration/Foxy.rst:253
 msgid "New ClearCostmapExceptRegion and ClearCostmapAroundRobot BT-nodes"
-msgstr "New ClearCostmapExceptRegion and ClearCostmapAroundRobot BT-nodes"
+msgstr "新的 ClearCostmapExceptRegion 和 ClearCostmapAroundRobot BT 节点"
 
 
 #: ../../migration/Foxy.rst:254
@@ -817,7 +817,7 @@ msgstr "The ClearEntireCostmap action node was already implemented but the Clear
 
 #: ../../migration/Foxy.rst:257
 msgid "New Behavior Tree Nodes"
-msgstr "New Behavior Tree Nodes"
+msgstr "新的行为树节点"
 
 
 #: ../../migration/Foxy.rst:258
