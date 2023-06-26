@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camera Calibration &mdash; Navigation 2 1.0.0 文档</title>
+  <title>相机校准 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -254,7 +254,7 @@
 <li class="toctree-l3"><a class="reference internal" href="using_groot.html#adding-a-custom-node">Adding A Custom Node</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Camera Calibration</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">相机校准</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a></li>
@@ -321,13 +321,13 @@
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#demo-execution">Demo Execution</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="adding_smoother.html">Adding a Smoother to a BT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adding_smoother.html">向BT添加平滑器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="adding_smoother.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_smoother.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_smoother.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#familiarization-with-the-smoother-bt-node">0- Familiarization with the Smoother BT Node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#specifying-a-smoother-plugin">1- Specifying a Smoother Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#modifying-your-bt-xml">2- Modifying your BT XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#familiarization-with-the-smoother-bt-node">0- 熟悉平滑器BT节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#specifying-a-smoother-plugin">1- 指定平滑器插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#modifying-your-bt-xml">2- 修改您的BT XML</a></li>
 </ul>
 </li>
 </ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Camera Calibration</li>
+      <li>相机校准</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="camera-calibration">
-<span id="id1"></span><h1>Camera Calibration<a class="headerlink" href="#camera-calibration" title="永久链接至标题"></a></h1>
+<span id="id1"></span><h1>相机校准<a class="headerlink" href="#camera-calibration" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -947,32 +947,32 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial shows how to obtain calibration parameters for monocular camera.</p>
+<p>本教程演示了如何获取单目相机的校准参数。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>1- Install Camera Calibration Parser, Camera Info Manager and Launch Testing Ament Cmake using operating system’s package manager:</p>
+<p>1- 使用操作系统的软件包管理器安装相机校准解析器、相机信息管理器和启动测试 Ament Cmake：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-camera-calibration-parsers</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-camera-info-manager</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-launch-testing-ament-cmake</span></code></p>
 </div></blockquote>
-<p>2- Image Pipeline need to be built from source in your workspace with:</p>
+<p>2- 需要从源代码在你的工作空间中构建图像处理管线：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–</span> <span class="pre">b</span> <span class="pre">&lt;ros2-distro&gt;</span> <span class="pre">git&#64;github.com:ros-perception/image_pipeline.git</span></code></p>
 </div></blockquote>
-<p><strong>Also, make sure you have the following:</strong></p>
+<p><strong>另外，请确保你有以下内容：</strong></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>A large checkerboard with known dimensions. This tutorial uses a 7x9 checkerboard with 20mm squares. <strong>Calibration uses the interior vertex points of the checkerboard, so an &quot;8x10&quot; board uses the interior vertex parameter &quot;7x9&quot; as in the example below.</strong> The checkerboard with set dimensions can be downloaded from <a class="reference external" href="https://calib.io/pages/camera-calibration-pattern-generator">here</a>.</p></li>
-<li><p>A well-lit area clear of obstructions and other check board patterns</p></li>
+<li><p>一个光线充足、没有遮挡物和其他棋盘图案的区域</p></li>
 <li><p>A monocular camera publishing images over ROS</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
-<p>1- Start a terminal in your GUI</p>
+<p>1- 在图形用户界面中启动终端</p>
 <p>2- Launch the ROS driver for your specific camera.</p>
 <p>3- Make sure camera is publishing images over ROS. This can be tested by running:</p>
 <blockquote>

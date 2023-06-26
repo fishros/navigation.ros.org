@@ -254,7 +254,7 @@
 <li class="toctree-l3"><a class="reference internal" href="using_groot.html#adding-a-custom-node">Adding A Custom Node</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="camera_calibration.html">Camera Calibration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camera_calibration.html">相机校准</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="camera_calibration.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="camera_calibration.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="camera_calibration.html#tutorial-steps"><cite>教程步骤</cite></a></li>
@@ -321,13 +321,13 @@
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#demo-execution">Demo Execution</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="adding_smoother.html">Adding a Smoother to a BT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adding_smoother.html">向BT添加平滑器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="adding_smoother.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_smoother.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_smoother.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#familiarization-with-the-smoother-bt-node">0- Familiarization with the Smoother BT Node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#specifying-a-smoother-plugin">1- Specifying a Smoother Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#modifying-your-bt-xml">2- Modifying your BT XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#familiarization-with-the-smoother-bt-node">0- 熟悉平滑器BT节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#specifying-a-smoother-plugin">1- 指定平滑器插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adding_smoother.html#modifying-your-bt-xml">2- 修改您的BT XML</a></li>
 </ul>
 </li>
 </ul>
@@ -1119,8 +1119,7 @@ uint16<span class="w"> </span>error_code
 </pre></div>
 </div>
 <p>如消息中所述，错误的优先级顺序应与消息顺序匹配，0 保留为NONE，序列中的第一个错误代码保留为UNKNOWN。由于路由服务器是外部服务器，错误代码从10000开始，一直增加到10099。</p>
-<p>In order to propigate your server's error code to the rest of the system it must be added to the nav2_params.yaml file.
-The <cite>error_code_id_names</cite> inside of the BT Navigator define what error codes to look for on the blackboard by the server. The lowest error code of the sequence is then returned - whereas the code enums increase the higher up in the software stack - giving higher priority to lower-level failures.</p>
+<p>为了将服务器的错误代码传播到系统的其他部分，必须将其添加到nav2_params.yaml文件中。BT导航器中的`error_code_id_names`定义了服务器在黑板上要查找的错误代码。然后返回序列中最低的错误代码 - 而代码枚举会随着软件堆栈的增加而增加 - 为较低级别的故障提供更高的优先级。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">error_code_id_names</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compute_path_error_code_id</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">follow_path_error_code_id</span>
