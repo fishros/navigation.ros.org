@@ -56,7 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/index.html#navigating">导航</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development Guides</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">开发指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../build_docs/index.html">构建和安装</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../build_docs/index.html#install">安装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../build_docs/index.html#build">构建</a><ul>
@@ -85,12 +85,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">前提条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security">安全性</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../involvement_docs/index.html">Getting Involved</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../involvement_docs/index.html#id1">Getting Involved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../involvement_docs/index.html">参与进来</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../involvement_docs/index.html#id1">参与进来</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../involvement_docs/index.html#process">Process</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../involvement_docs/index.html#licensing">Licensing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../involvement_docs/index.html#developer-certification-of-origin-dco">Developer Certification of Origin (DCO)</a></li>
@@ -928,7 +928,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">Development Guides</a> &raquo;</li>
+          <li><a href="../index.html">开发指南</a> &raquo;</li>
       <li>开发容器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -1020,20 +1020,20 @@
 <h2>前提条件<a class="headerlink" href="#prerequisites" title="永久链接至标题"></a></h2>
 <p>要使用开发容器，您需要以下内容：</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker Engine</a> installed and running on the host machine</p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker Engine</a> 已安装并在主机上运行</p></li>
 <li><p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> 安装在任何远程机器上</p></li>
-<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a> extension installed in VS Code</p></li>
+<li><p>在 VS Code 中安装了 <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a> 扩展</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>或者，您可以直接从项目仓库或任何其他远程主机上使用GitHub Codespaces：</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository?tool=webui">Creating a codespace for a repository</a></p>
+<li><p>在<a class="reference external" href="https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository?tool=webui">创建用于存储库的 codespace</a></p>
 <ul>
 <li><p>如何通过GitHub CLI、VS Code或Web浏览器为存储库创建一个codespace</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host">Develop on a remote Docker host</a></p>
+<li><p><a class="reference external" href="https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host">在远程 Docker 主机上开发</a></p>
 <ul>
 <li><p>如何使用SSH隧道或TCP套接字将VS Code连接到远程Docker主机</p></li>
 </ul>
@@ -1042,35 +1042,35 @@
 </div>
 </div>
 <div class="section" id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="永久链接至标题"></a></h2>
+<h2>入门<a class="headerlink" href="#getting-started" title="永久链接至标题"></a></h2>
 <p>使用开发容器的入门方法就是通过以下方式在VS Code中打开项目：要么按照通知提示重新打开容器中的项目，要么显式地打开命令面板（Crtl+Shift+P），然后选择 <code class="docutils literal notranslate"><span class="pre">Remote-Containers:</span> <span class="pre">Reopen</span> <span class="pre">in</span> <span class="pre">Container</span></code>。这将创建一个新的容器，在项目的默认 <code class="docutils literal notranslate"><span class="pre">.devcontainer/devcontainer.json</span></code> 配置文件中安装指定的扩展，并将项目的根目录挂载为工作区文件夹。容器创建完成后，VS Code将连接到容器，您可以开始开发。</p>
 <div class="admonition tip">
 <p class="admonition-title">小技巧</p>
-<p>Clicking the <code class="docutils literal notranslate"><span class="pre">Starting</span> <span class="pre">Dev</span> <span class="pre">Container</span> <span class="pre">(show</span> <span class="pre">log)</span></code> notification in VS Code allows you to observe in live time how the sausage is made, while typing <code class="docutils literal notranslate"><span class="pre">Dev</span> <span class="pre">Containers:</span> <span class="pre">Show</span> <span class="pre">Log</span></code> into the command palette will list all the available commands to review and revisit these log files later.</p>
+<p>在 VS Code 中单击<code class="docutils literal notranslate"><span class="pre">启动</span> <span class="pre">Dev</span> <span class="pre">Container</span> <span class="pre">(显示日志)</span></code>通知，可以实时观察制作过程，同时在命令面板中输入<code class="docutils literal notranslate"><span class="pre">Dev</span> <span class="pre">Containers:</span> <span class="pre">Show</span> <span class="pre">Log</span></code>将列出所有可用的命令以供查看和重新访问这些日志文件。</p>
 </div>
-<p>While waiting for the initial setup, feel free to stretch your legs, grab a coffee, or continue to read the following guides to learn more about creating and using dev containers, or how to visualize and leverage graphical user interfaces from a headless development environment.</p>
+<p>在等待初始设置的同时，可以随意活动一下，喝杯咖啡，或者继续阅读以下指南，了解有关创建和使用开发容器，或如何从无头开发环境中可视化和利用图形用户界面的更多信息。</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="devcontainer_guide.html"><span class="doc std std-doc">开发容器指南</span></a></strong></p>
 <ul>
-<li><p>How to develop Nav2 using dev containers and supporting tools</p></li>
+<li><p>如何使用开发容器和支持工具开发Nav2</p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="security">
-<h2>Security<a class="headerlink" href="#security" title="永久链接至标题"></a></h2>
+<h2>安全性<a class="headerlink" href="#security" title="永久链接至标题"></a></h2>
 <div class="admonition caution">
 <p class="admonition-title">小心</p>
-<p>Ensure you trust the authors and contents of workspaces before launching derived dev containers.</p>
+<p>在启动衍生的开发容器之前，请确保信任工作区的作者和内容。</p>
 </div>
-<p>A word of caution when using dev containers: they are powerful tools, but can be a security concern, as the capability of arbitrary code execution facilitated by IDE extensions to enable such automation and convenience remains inherently dual use. Before launching a dev container, ensure you trust the workspaces and authors. For example, when reviewing a pull request, verify patches remain benign and do not introduce any malicious code. Although such vigilance is merited whenever compiling and running patched code, using containers with either elevated privileges or filesystem access renders this diligence even more prudent.</p>
+<p>在使用开发容器时需要谨慎：它们是强大的工具，但可能存在安全问题，因为由IDE扩展实现的任意代码执行功能为自动化和便利性提供了双重用途。在启动开发容器之前，请确保信任工作区和作者。例如，在审查拉取请求时，请验证补丁是否仍然是良性的，不会引入任何恶意代码。尽管在编译和运行修补代码时需要保持警惕，但使用具有提升权限或文件系统访问权限的容器则需要更加谨慎。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>More info on trusting workspaces and extensions in general can be found here:</p>
+<p>有关信任工作区和扩展的更多信息可以在此处找到：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://code.visualstudio.com/docs/editor/workspace-trust">Workspace Trust</a></p>
 <ul>
-<li><p>VS Code user guid on trusting and configure workspaces</p></li>
+<li><p>VS Code用户指南：信任和配置工作区</p></li>
 </ul>
 </li>
 </ul>
