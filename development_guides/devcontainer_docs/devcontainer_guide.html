@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dev Container Guide &mdash; Navigation 2 1.0.0 文档</title>
+  <title>开发容器指南 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -65,16 +65,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../build_docs/index.html#docker-container-images">Docker 容器映像</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../build_docs/index.html#generate-doxygen">Generate Doxygen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../build_docs/index.html#help">Help</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build_docs/index.html#generate-doxygen">生成 Doxygen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build_docs/index.html#help">帮助</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../build_docs/build_troubleshooting_guide.html">构建故障排除指南</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Dev Containers</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Dev Container Guide</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#creating-dev-containers">Creating Dev Containers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">开发容器指南</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-dev-containers">创建开发容器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#using-dev-containers">Using Dev Containers</a></li>
 </ul>
 </li>
@@ -930,7 +930,7 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Development Guides</a> &raquo;</li>
           <li><a href="index.html">Dev Containers</a> &raquo;</li>
-      <li>Dev Container Guide</li>
+      <li>开发容器指南</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,53 +940,53 @@
            <div itemprop="articleBody">
              
   <div class="section" id="dev-container-guide">
-<span id="devcontainer-guide"></span><h1>Dev Container Guide<a class="headerlink" href="#dev-container-guide" title="永久链接至标题"></a></h1>
+<span id="devcontainer-guide"></span><h1>开发容器指南<a class="headerlink" href="#dev-container-guide" title="永久链接至标题"></a></h1>
 <p>在本指南中，我们将逐步介绍为该项目创建和使用dev容器的过程。尽管包含的子部分将提供有关该过程各个方面的更详细信息，但并非必须完全理解整个指南即可开始使用，但对于那些对dev容器的工作原理、如何自定义和优化它们以适应自己的个人工作流程感兴趣的人来说，建议阅读完整的指南。</p>
 <div class="section" id="creating-dev-containers">
-<h2>Creating Dev Containers<a class="headerlink" href="#creating-dev-containers" title="永久链接至标题"></a></h2>
+<h2>创建开发容器<a class="headerlink" href="#creating-dev-containers" title="永久链接至标题"></a></h2>
 <p>在创建dev容器之前，您需要选择要使用的确切配置。默认情况下选择<code class="docutils literal notranslate"><span class="pre">.devcontainer/devcontainer.json</span></code>配置，但您也可以选择<code class="docutils literal notranslate"><span class="pre">.devcontainer/</span></code>目录中的任何其他<code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code>文件，这样可以嵌套这样的配置以提供更大的自定义：可以通过针对不同的Dockerfile内的不同阶段，覆盖任何已合并的元数据或默认属性，或包含其他扩展和备用命令来进行自定义。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>The specification, reference, and schema for the <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> config file format can be found here:</p>
+<p>有关 <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> 配置文件格式的规范、参考和模式，请参阅此处：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://containers.dev/implementors/spec">规范</a></p>
 <ul>
-<li><p>Development Container Specification</p></li>
+<li><p>开发容器规范</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://containers.dev/implementors/json_reference">Reference</a></p>
+<li><p><a class="reference external" href="https://containers.dev/implementors/json_reference">参考</a></p>
 <ul>
-<li><p>Metadata and properties reference</p></li>
+<li><p>元数据和属性参考</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://containers.dev/implementors/json_schema">Schema</a></p>
+<li><p><a class="reference external" href="https://containers.dev/implementors/json_schema">模式</a></p>
 <ul>
-<li><p>JSON schema for <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code></p></li>
+<li><p>用于 <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> 的 JSON 模式</p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="building-the-image">
-<h3>Building the image<a class="headerlink" href="#building-the-image" title="永久链接至标题"></a></h3>
-<p>When first creating Dev Containers, any supporting tool or service used will download and build the docker images needed to run the container. This includes pulling any parent images the project's Dockerfile builds <code class="docutils literal notranslate"><span class="pre">FROM</span></code>, as well as any tags or layers declared via <code class="docutils literal notranslate"><span class="pre">cacheFrom</span></code>, as specified in the chosen <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> config file. This can take a while, but only needs to be done once, or at least not again until such layers are updated and pushed to the image registry.</p>
-<p>Specifically, for this project, the default <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> file targets the <code class="docutils literal notranslate"><span class="pre">dever</span></code> stage within the project's root Dockerfile, the stage that also includes handy tools for developing the project, such as bash auto completion. This stage is in turn built <code class="docutils literal notranslate"><span class="pre">FROM</span></code> the <code class="docutils literal notranslate"><span class="pre">builder</span></code> stage, the stage that only includes the dependencies needed for building the project, as reused by the project's CI. For example, the <code class="docutils literal notranslate"><span class="pre">dever</span></code> stage modifies <code class="docutils literal notranslate"><span class="pre">/etc/bash.bashrc</span></code> to automatically source <code class="docutils literal notranslate"><span class="pre">install/setup.bash</span></code> from the underlay workspace, ensuring all VS Code extensions are loaded with the correct environment, while avoiding any race conditions during installation and startup.</p>
-<p>To speed up the initial build, images layers from this <code class="docutils literal notranslate"><span class="pre">builder</span></code> stage are cached by pulling the same image tag used by the project's CI, hosted from the image registry. This ensures your local dev container replicates our CI environment as close as possible, while benefiting from any cached work preemptively performed by the CI. Yet, this still allows you to customize the project's Dockerfile and rebuild the container, without needing to update CI images to reflect your local modifications.</p>
+<h3>构建镜像<a class="headerlink" href="#building-the-image" title="永久链接至标题"></a></h3>
+<p>当首次创建 Dev Containers 时，任何使用的支持工具或服务将下载并构建所需的 Docker 镜像以运行容器。这包括拉取项目的 Dockerfile 构建中所声明的任何父镜像（<code class="docutils literal notranslate"><span class="pre">FROM</span></code>），以及通过 <code class="docutils literal notranslate"><span class="pre">cacheFrom</span></code> 在选择的 <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> 配置文件中声明的任何标签或层。这可能需要一些时间，但只需要执行一次，或者至少在这些层被更新并推送到镜像注册表之前不需要再次执行。</p>
+<p>特别是对于这个项目，默认的<code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code>文件针对项目根目录中的<code class="docutils literal notranslate"><span class="pre">dever</span></code>阶段的Dockerfile进行了配置，该阶段还包括用于开发项目的实用工具，如bash自动完成。而这个阶段是从<code class="docutils literal notranslate"><span class="pre">builder</span></code>阶段构建的，<code class="docutils literal notranslate"><span class="pre">builder</span></code>阶段仅包括构建项目所需的依赖项，由项目的CI重复使用。例如，<code class="docutils literal notranslate"><span class="pre">dever</span></code>阶段修改了<code class="docutils literal notranslate"><span class="pre">/etc/bash.bashrc</span></code>以自动从基础工作区中源<code class="docutils literal notranslate"><span class="pre">install/setup.bash</span></code>，确保所有VS Code扩展都以正确的环境加载，同时避免安装和启动期间的任何竞争条件。</p>
+<p>为了加快初始构建速度，从这个 <code class="docutils literal notranslate"><span class="pre">builder</span></code> 阶段的镜像层通过拉取与项目的 CI 使用的相同镜像标签进行缓存，该标签从镜像注册表中托管。这确保您的本地开发容器尽可能地复制我们的 CI 环境，同时从 CI 预先执行的任何缓存工作中获益。然而，这仍然允许您自定义项目的 Dockerfile 并重新构建容器，而无需更新 CI 镜像以反映您的本地修改。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>More details on the project's CI and related docker image registry can be found here:</p>
+<p>可以在这里找到关于该项目的CI和相关的Docker镜像注册表的更多详细信息：</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://vimeo.com/649647161/5b0c278e6c">Chronicles of Caching and Containerising CI for Nav2</a></p>
+<li><p><a class="reference external" href="https://vimeo.com/649647161/5b0c278e6c">缓存和为 Nav2 创建容器化 CI 的编年史</a></p>
 <ul>
-<li><p>Video presentation from ROS World 2021 - Ruffin White</p></li>
+<li><p>ROS World 2021 - Ruffin White的视频演示</p></li>
 </ul>
 </li>
 </ul>
 </div>
-<p>Once the base image from the target stage is built, the supporting tool or service may then add additional layers to the image, such as installing additional <a class="reference external" href="https://containers.dev/features">features</a> or customizations. For VS Code, this also includes some fancy file caching for any extensions to install later. Once this custom image is built, it is then used to start the dev container.</p>
+<p>一旦构建了目标阶段的基础镜像，支持工具或服务可以向镜像添加其他层，例如安装其他<a class="reference external" href="https://containers.dev/features">功能</a>或定制内容。对于 VS Code，这还包括一些用于稍后安装的扩展的文件缓存。构建此自定义镜像后，将使用它来启动开发容器。</p>
 </div>
 <div class="section" id="starting-the-container">
-<h3>Starting the container<a class="headerlink" href="#starting-the-container" title="永久链接至标题"></a></h3>
-<p>When first creating Dev Containers, any supporting tool or service will invoke a sequence of commands specified in the chosen <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> config file. This can take a while, but only needs to be done once, or at least not again until the container is rebuilt, triggered by either updating the Dockerfile, base image, or <code class="docutils literal notranslate"><span class="pre">.devcontainer/</span></code> config.</p>
+<h3>启动容器<a class="headerlink" href="#starting-the-container" title="永久链接至标题"></a></h3>
+<p>当首次创建 Dev Containers 时，任何支持工具或服务都将调用在选择的 <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> 配置文件中指定的一系列命令。这可能需要一些时间，但只需要执行一次，或者至少在重新构建容器之前不需要再次执行，可以通过更新 Dockerfile、基础镜像或 <code class="docutils literal notranslate"><span class="pre">.devcontainer/</span></code> 配置来触发重新构建。</p>
 <p>Specifically, for this project, the default <code class="docutils literal notranslate"><span class="pre">devcontainer.json</span></code> config executes the <code class="docutils literal notranslate"><span class="pre">onCreateCommand</span></code> to initially colcon cache, clean, and build the overlay workspace for the project. This ensures the workspace is precompiled and ready to use, while also ensuring any changes to the project's source code are reflected in the container. This is useful for:</p>
 <ul class="simple">
 <li><p>IntelliSense</p>
