@@ -5471,7 +5471,7 @@ msgstr "max_its"
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:59
 msgid "Maximum number of iterations to attempt smoothing before termination"
-msgstr "Maximum number of iterations to attempt smoothing before termination"
+msgstr "在终止之前尝试平滑的最大迭代次数"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst
@@ -5481,7 +5481,7 @@ msgstr "w_data"
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:70
 msgid "Weight to apply to path data given (bounds it)"
-msgstr "Weight to apply to path data given (bounds it)"
+msgstr "应用于路径数据的权重（限定范围）"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:81
@@ -5491,7 +5491,7 @@ msgstr "应用于平滑路径的权重（平滑路径）"
 
 #: ../../configuration/packages/configuring-smac-planner.rst:4
 msgid "Smac Planner"
-msgstr "Smac Planner"
+msgstr "Smac规划器"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:6
@@ -5501,7 +5501,7 @@ msgstr "源代码和“README”包含了设计、说明和指标，可以在 Gi
 
 #: ../../configuration/packages/configuring-smac-planner.rst:10
 msgid "The Smac Planner plugin implements three A* based planning algorithms: 2D A*, Hybrid-A*, and State Lattice path planners. It is important to know that in June 2021 and December 2021, the package received a several **major** updates both improving path quality and run-times by 2-3x."
-msgstr "The Smac Planner plugin implements three A* based planning algorithms: 2D A*, Hybrid-A*, and State Lattice path planners. It is important to know that in June 2021 and December 2021, the package received a several **major** updates both improving path quality and run-times by 2-3x."
+msgstr "Smac规划器插件实现了三种基于A*的规划算法：2D A*、Hybrid-A*和State Lattice路径规划器。重要的是要知道，在2021年6月和2021年12月，该软件包经历了多次**重大**更新，既改善了路径质量，又将运行时间提高了2-3倍。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:15
@@ -5511,62 +5511,62 @@ msgstr "下面列出的插件包含在“nav2_smac_planner”包中。有关各�
 
 #: ../../configuration/packages/configuring-smac-planner.rst:27
 msgid "The ``nav2_smac_planner`` package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. It uses template node types to develop different search-based planners."
-msgstr "The ``nav2_smac_planner`` package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. It uses template node types to develop different search-based planners."
+msgstr "``nav2_smac_planner``软件包包含了一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的规划器。它使用模板节点类型来开发不同的基于搜索的规划器。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:29
 msgid "We support circular differential-drive and omni-directional drive robots using the ``SmacPlanner2D`` planner which implements a cost-aware A* planner. We support car-like (ackermann) and legged vehicles using the ``SmacPlannerHybrid`` plugin which implements a Hybrid-A* planner. We support non-circular, arbitrary shaped, any model vehicles using the ``SmacPlannerLattice`` plugin which implements a State Lattice planner (e.g. omni, diff, ackermann, legged, custom). It contains control sets and generators for ackermann, legged, differential drive and omnidirectional vehicles, but you may provide your own for another robot type or to have different planning behaviors."
-msgstr "We support circular differential-drive and omni-directional drive robots using the ``SmacPlanner2D`` planner which implements a cost-aware A* planner. We support car-like (ackermann) and legged vehicles using the ``SmacPlannerHybrid`` plugin which implements a Hybrid-A* planner. We support non-circular, arbitrary shaped, any model vehicles using the ``SmacPlannerLattice`` plugin which implements a State Lattice planner (e.g. omni, diff, ackermann, legged, custom). It contains control sets and generators for ackermann, legged, differential drive and omnidirectional vehicles, but you may provide your own for another robot type or to have different planning behaviors."
+msgstr "我们支持使用“SmacPlanner2D”规划器的圆形差分驱动和全向驱动机器人。该规划器实现了一个成本感知的A*规划器。我们支持使用“SmacPlannerHybrid”插件的类似汽车（Ackermann）和腿部车辆。该插件实现了一个混合A*规划器。我们支持非圆形、任意形状、任意模型的车辆，使用“SmacPlannerLattice”插件，该插件实现了一个状态格规划器（例如全向、差分、Ackermann、腿部、自定义）。它包含了用于Ackermann、腿部、差分驱动和全向驱动车辆的控制集和生成器，但您也可以为另一种机器人类型提供自己的控制集和生成器，或者使用不同的规划行为。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:31
 msgid "The last two plugins are both **kinematically feasible** and support **reversing**. They have performance similar to its 2D counter parts like 2D-A* and NavFn via highly optimized heuristic functions and efficient programming. An example of the 3 planners can be seen below, planning a roughly 75 m path."
-msgstr "The last two plugins are both **kinematically feasible** and support **reversing**. They have performance similar to its 2D counter parts like 2D-A* and NavFn via highly optimized heuristic functions and efficient programming. An example of the 3 planners can be seen below, planning a roughly 75 m path."
+msgstr "最后两个插件都是**运动可行**的，并支持**后退**。它们通过高度优化的启发式函数和高效的编程，具有与其2D对应物（如2D-A*和NavFn）类似的性能。下面是三个规划器的示例，规划一个大约75米的路径。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:33
 msgid "Hybrid-A* computed the path in 144ms"
-msgstr "Hybrid-A* computed the path in 144ms"
+msgstr "混合A*在144毫秒内计算出路径。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:34
 msgid "State Lattice computed the path in 113ms"
-msgstr "State Lattice computed the path in 113ms"
+msgstr "State Lattice在113毫秒内计算出路径"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:35
 msgid "2D A* computed the path in 243ms"
-msgstr "2D A* computed the path in 243ms"
+msgstr "2D A*在243毫秒内计算出路径。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:36
 msgid "For reference: NavFn compute the path in 146ms, including some nasty path discontinuity artifacts"
-msgstr "For reference: NavFn compute the path in 146ms, including some nasty path discontinuity artifacts"
+msgstr "供参考：NavFn在146毫秒内计算出路径，包括一些不好的路径不连续性的痕迹"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:39
 msgid "Usual planning times are below 100ms for some environments, occasionally approaching up to 200ms. The performance of all 3 planners is roughly comparable with naive 2D search algorithms that have long been mainstays of the ROS Navigation ecosystem, but also achieving kinematic feasibility, support for reversing, and using modern state of the art techniques."
-msgstr "Usual planning times are below 100ms for some environments, occasionally approaching up to 200ms. The performance of all 3 planners is roughly comparable with naive 2D search algorithms that have long been mainstays of the ROS Navigation ecosystem, but also achieving kinematic feasibility, support for reversing, and using modern state of the art techniques."
+msgstr "对于某些环境，通常的规划时间低于100毫秒，偶尔会接近200毫秒。所有三个规划器的性能与ROS导航生态系统中长期以来一直存在的简单2D搜索算法大致相当，同时实现了运动学可行性、倒车支持，并使用了现代的最新技术。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:45
 msgid "Paths generated by the Smac Planners"
-msgstr "Paths generated by the Smac Planners"
+msgstr "Smac规划器生成的路径"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:45
 msgid "2D A* (Panel 1),  Hybrid-A* (Panel 2), State Lattice (Panel 3)"
-msgstr "2D A* (Panel 1),  Hybrid-A* (Panel 2), State Lattice (Panel 3)"
+msgstr "2D A*（面板1），混合A*（面板2），状态格（面板3）。"
 
 
 #: ../../configuration/packages/configuring-smoother-server.rst:4
 msgid "Smoother Server"
-msgstr "Smoother Server"
+msgstr "平滑服务器"
 
 
 #: ../../configuration/packages/configuring-smoother-server.rst:10
 msgid "The Smoother Server implements the server for handling smooth path requests and hosting a vector of plugins implementing various C++ smoothers. The server exposes an action interface for smoothing with multiple smoothers that share resources such as costmaps and TF buffers."
-msgstr "The Smoother Server implements the server for handling smooth path requests and hosting a vector of plugins implementing various C++ smoothers. The server exposes an action interface for smoothing with multiple smoothers that share resources such as costmaps and TF buffers."
+msgstr "平滑器服务器实现了用于处理平滑路径请求的服务器，并托管一个包含多个C++平滑器插件的向量。该服务器通过一个操作接口公开了多个平滑器的功能，这些平滑器共享资源，例如代价图和TF缓冲区。"
 
 
 #: ../../configuration/packages/configuring-smoother-server.rst
@@ -5576,7 +5576,7 @@ msgstr "costmap_topic"
 
 #: ../../configuration/packages/configuring-smoother-server.rst:25
 msgid "Raw costmap topic for collision checking."
-msgstr "Raw costmap topic for collision checking."
+msgstr "用于碰撞检测的原始代价图主题。"
 
 
 #: ../../configuration/packages/configuring-smoother-server.rst
@@ -5606,7 +5606,7 @@ msgstr "Theta Star Planner"
 
 #: ../../configuration/packages/configuring-thetastar.rst:10
 msgid "Theta Star Planner implements the Theta* path planner meant to plan any-angled paths using A*."
-msgstr "Theta Star Planner implements the Theta* path planner meant to plan any-angled paths using A*."
+msgstr "Theta Star Planner实现了Theta*路径规划器，可使用A*算法规划任意角度的路径。"
 
 
 #: ../../configuration/packages/configuring-thetastar.rst:12
