@@ -312,7 +312,7 @@ msgstr "lifecycleStartup()"
 
 #: ../../commander_api/index.rst:126
 msgid "Sends a request to all lifecycle management servers to bring them into the active state, to be used if autostart is ``False`` and you want this program to control Nav2's lifecycle."
-msgstr "Sends a request to all lifecycle management servers to bring them into the active state, to be used if autostart is ``False`` and you want this program to control Nav2's lifecycle."
+msgstr "向所有生命周期管理服务器发送请求，将它们带入活动状态。如果 ``autostart`` 为 ``False``，且您希望此程序控制 Nav2 的生命周期，则使用此功能。"
 
 
 #: ../../commander_api/index.rst:130
@@ -322,7 +322,7 @@ msgstr "lifecycleShutdown()"
 
 #: ../../commander_api/index.rst:130
 msgid "Sends a request to all lifecycle management servers to shut them down."
-msgstr "Sends a request to all lifecycle management servers to shut them down."
+msgstr "向所有生命周期管理服务器发送请求，关闭它们。"
 
 
 #: ../../commander_api/index.rst:132
@@ -332,7 +332,7 @@ msgstr "destroyNode()"
 
 #: ../../commander_api/index.rst:132
 msgid "Releases the resources used by the object."
-msgstr "Releases the resources used by the object."
+msgstr "释放对象使用的资源。"
 
 
 #: ../../commander_api/index.rst:136
@@ -342,7 +342,7 @@ msgstr "Costmap API"
 
 #: ../../commander_api/index.rst:137
 msgid "This is a Python3 API for costmap 2d messages from the stack. It provides the basic conversion, get/set, and handling semantics found in the costmap 2d C++ API."
-msgstr "This is a Python3 API for costmap 2d messages from the stack. It provides the basic conversion, get/set, and handling semantics found in the costmap 2d C++ API."
+msgstr "这是针对堆栈中 costmap 2d 消息的 Python3 API。它提供了在 costmap 2d C++ API 中找到的基本转换、获取/设置和处理语义。"
 
 
 #: ../../commander_api/index.rst:140
@@ -357,7 +357,7 @@ msgstr "getSizeInCellsX()"
 
 #: ../../commander_api/index.rst:142
 msgid "Get map width in cells."
-msgstr "Get map width in cells."
+msgstr "获取地图的单元格宽度。"
 
 
 #: ../../commander_api/index.rst:144
@@ -367,7 +367,7 @@ msgstr "getSizeInCellsY()"
 
 #: ../../commander_api/index.rst:144
 msgid "Get map height in cells."
-msgstr "Get map height in cells."
+msgstr "获取地图高度（以单元格为单位）。"
 
 
 #: ../../commander_api/index.rst:146
@@ -377,7 +377,7 @@ msgstr "getSizeInMetersX()"
 
 #: ../../commander_api/index.rst:146
 msgid "Get x axis map size in meters."
-msgstr "Get x axis map size in meters."
+msgstr "获取地图在 x 轴上的尺寸（以米为单位）。"
 
 
 #: ../../commander_api/index.rst:148
@@ -387,7 +387,7 @@ msgstr "getSizeInMetersY()"
 
 #: ../../commander_api/index.rst:148
 msgid "Get y axis map size in meters."
-msgstr "Get y axis map size in meters."
+msgstr "获取地图在 y 轴上的尺寸（以米为单位）。"
 
 
 #: ../../commander_api/index.rst:150
@@ -397,7 +397,7 @@ msgstr "getOriginX()"
 
 #: ../../commander_api/index.rst:150
 msgid "Get the origin x axis of the map [m]."
-msgstr "Get the origin x axis of the map [m]."
+msgstr "获取地图的 x 轴原点位置 [m]。"
 
 
 #: ../../commander_api/index.rst:152
@@ -407,7 +407,7 @@ msgstr "getOriginY()"
 
 #: ../../commander_api/index.rst:152
 msgid "Get the origin y axis of the map [m]."
-msgstr "Get the origin y axis of the map [m]."
+msgstr "获取地图的 y 轴原点位置 [m]。"
 
 
 #: ../../commander_api/index.rst:154
@@ -417,7 +417,7 @@ msgstr "getResolution()"
 
 #: ../../commander_api/index.rst:154
 msgid "Get map resolution [m/cell]."
-msgstr "Get map resolution [m/cell]."
+msgstr "获取地图分辨率 [m/单元格]。"
 
 
 #: ../../commander_api/index.rst:156
@@ -427,7 +427,7 @@ msgstr "getGlobalFrameID()"
 
 #: ../../commander_api/index.rst:156
 msgid "Get global frame_id."
-msgstr "Get global frame_id."
+msgstr "获取全局 frame_id。"
 
 
 #: ../../commander_api/index.rst:158
