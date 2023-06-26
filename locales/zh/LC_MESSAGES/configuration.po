@@ -5940,7 +5940,7 @@ msgstr "``<过滤器名称>``.default_state"
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:57
 msgid "Default state of binary filter."
-msgstr "Default state of binary filter."
+msgstr "二进制过滤器的默认状态。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst
@@ -5960,7 +5960,7 @@ msgstr "以``std_msgs::msg::Bool``类型发布二进制过滤器状态的主题�
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst
 msgid "``<filter name>``.flip_threshold"
-msgstr "``<filter name>``.flip_threshold"
+msgstr "``<过滤器名称>``.flip_threshold"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:75
@@ -5970,27 +5970,27 @@ msgstr "50.0"
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:79
 msgid "Descrioption"
-msgstr "Descrioption"
+msgstr "描述"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:79
 msgid "Threshold for binary state flipping. Filter values higher than this threshold, will set binary state to non-default."
-msgstr "Threshold for binary state flipping. Filter values higher than this threshold, will set binary state to non-default."
+msgstr "二进制状态翻转的阈值。过滤超过此阈值的值，将将二进制状态设置为非默认状态。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst:4
 msgid "Denoise Layer Parameters"
-msgstr "Denoise Layer Parameters"
+msgstr "降噪层参数"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst:6
 msgid "``<denoise layer>`` is the corresponding plugin name selected for this type."
-msgstr "``<denoise layer>`` is the corresponding plugin name selected for this type."
+msgstr "``<denoise layer>`` 是选择此类型的对应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "``<denoise layer>``.enabled"
-msgstr "``<denoise layer>``.enabled"
+msgstr "``<降噪层>``.enabled"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
@@ -6000,37 +6000,37 @@ msgstr "``<denoise layer>``.minimal_group_size"
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst:28
 msgid "The minimum number of adjacent obstacles that should not be discarded as noise."
-msgstr "The minimum number of adjacent obstacles that should not be discarded as noise."
+msgstr "应视为噪声而不应被丢弃的相邻障碍物的最小数量。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "If 1 or less, all obstacles will be kept."
-msgstr "If 1 or less, all obstacles will be kept."
+msgstr "如果为1或更少，将保留所有障碍物。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "If 2, standalone obstacles (without neighbors in adjacent cells) will be removed."
-msgstr "If 2, standalone obstacles (without neighbors in adjacent cells) will be removed."
+msgstr "如果为2，则会删除独立的障碍物（没有相邻单元格中的邻居）。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "If N, obstacles groups smaller than N will be removed."
-msgstr "If N, obstacles groups smaller than N will be removed."
+msgstr "如果为N，将删除小于N的障碍物组。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "``<denoise layer>``.group_connectivity_type"
-msgstr "``<denoise layer>``.group_connectivity_type"
+msgstr "``<去噪层>``.group_connectivity_type"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst:43
 msgid "Obstacles connectivity type (is the way in which obstacles relate to their neighbors). Must be 4 or 8."
-msgstr "Obstacles connectivity type (is the way in which obstacles relate to their neighbors). Must be 4 or 8."
+msgstr "障碍物的连通性类型（障碍物与其邻居之间的关系方式）。必须为4或8。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
 msgid "4 - adjacent obstacles are connected horizontally and vertically."
-msgstr "4 - adjacent obstacles are connected horizontally and vertically."
+msgstr "4 - 相邻障碍物在水平和垂直方向上连接。"
 
 
 #: ../../configuration/packages/costmap-plugins/denoise.rst
@@ -6040,7 +6040,7 @@ msgstr "8 - adjacent obstacles are connected horizontally, vertically and diagon
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:4
 msgid "Inflation Layer Parameters"
-msgstr "Inflation Layer Parameters"
+msgstr "膨胀层参数"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:6
@@ -6050,7 +6050,7 @@ msgstr "``<inflation layer>`` is the corresponding plugin name selected for this
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst
 msgid "``<inflation layer>``.enabled"
-msgstr "``<inflation layer>``.enabled"
+msgstr "``<膨胀层>``.enabled"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst
@@ -6060,7 +6060,7 @@ msgstr "``<inflation layer>``.inflation_radius"
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:29
 msgid "Radius to inflate costmap around lethal obstacles."
-msgstr "Radius to inflate costmap around lethal obstacles."
+msgstr "扩展致命障碍物周围的代价地图半径。"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst
@@ -6070,7 +6070,7 @@ msgstr "``<inflation layer>``.cost_scaling_factor"
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst:40
 msgid "Exponential decay factor across inflation radius."
-msgstr "Exponential decay factor across inflation radius."
+msgstr "在膨胀半径上的指数衰减因子。"
 
 
 #: ../../configuration/packages/costmap-plugins/inflation.rst
