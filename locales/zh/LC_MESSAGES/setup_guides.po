@@ -297,7 +297,7 @@ msgstr "上一指南中的一节， :ref:`配置nav2_costmap_2d<configuring_nav2
 
 #: ../../setup_guides/footprint/setup_footprint.rst:18
 msgid "For the global costmap footprint, the decision to choose between the ``robot_radius`` (circular) or ``footprint`` (polygon) parameter depends on the robot, its environment, and the path planning algorithm you will use. Even if you are working with a non-circular robot, there may be situations where a circular footprint is acceptable. For example, path planning algorithms like `NavFn <https://navigation.ros.org/configuration/packages/configuring-navfn.html>`_ assume that the robot is circular since it only checks for collision per grid cell, so it will not be necessary to outline the robot's exact shape for its footprint. On the other hand, algorithms such as `Smac Planner's Hybrid-A* <https://navigation.ros.org/configuration/packages/configuring-smac-planner.html>`_ perform collision checking on the robot's polygon-shaped footprint if possible and necessary. Hence, it might be useful to use a polygon-shaped footprint. Another example is having a small RC car sized robot roaming a warehouse. This robot is so small it won't need to make confined maneuvers -- thusly approximating it with the largest cross-sectional radius is a good time-saving optimization."
-msgstr "For the global costmap footprint, the decision to choose between the ``robot_radius`` (circular) or ``footprint`` (polygon) parameter depends on the robot, its environment, and the path planning algorithm you will use. Even if you are working with a non-circular robot, there may be situations where a circular footprint is acceptable. For example, path planning algorithms like `NavFn <https://navigation.ros.org/configuration/packages/configuring-navfn.html>`_ assume that the robot is circular since it only checks for collision per grid cell, so it will not be necessary to outline the robot's exact shape for its footprint. On the other hand, algorithms such as `Smac Planner's Hybrid-A* <https://navigation.ros.org/configuration/packages/configuring-smac-planner.html>`_ perform collision checking on the robot's polygon-shaped footprint if possible and necessary. Hence, it might be useful to use a polygon-shaped footprint. Another example is having a small RC car sized robot roaming a warehouse. This robot is so small it won't need to make confined maneuvers -- thusly approximating it with the largest cross-sectional radius is a good time-saving optimization."
+msgstr "对于全局代价地图的轮廓，选择使用“robot_radius”（圆形）还是“footprint”（多边形）参数取决于机器人、其环境以及您将使用的路径规划算法。即使您使用的是非圆形机器人，也可能存在接受圆形轮廓的情况。例如，像`NavFn <https://navigation.ros.org/configuration/packages/configuring-navfn.html>`_ 这样的路径规划算法假设机器人是圆形的，因为它只在每个栅格单元格中检查碰撞，因此不需要为机器人的轮廓描绘出准确的形状。另一方面，如果可能和必要的话，像`Smac Planner's Hybrid-A* <https://navigation.ros.org/configuration/packages/configuring-smac-planner.html>`_ 这样的算法会对机器人的多边形轮廓进行碰撞检查。因此，使用多边形轮廓可能会很有用。另一个例子是有一个大小为小型遥控汽车的机器人在仓库里漫游。这个机器人非常小，不需要进行局限的机动操作，因此用最大的横截面半径来近似它是一个节省时间的优化方法。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:20
@@ -307,7 +307,7 @@ msgstr "对于局部代价地图足迹，非圆形机器人通常使用“足迹
 
 #: ../../setup_guides/footprint/setup_footprint.rst:23
 msgid "Configuring the Robot's Footprint"
-msgstr "Configuring the Robot's Footprint"
+msgstr "配置机器人的轮廓"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:24
@@ -317,7 +317,7 @@ msgstr "在本节中，我们将配置“sam_bot”的足迹，以便局部代�
 
 #: ../../setup_guides/footprint/setup_footprint.rst:26
 msgid "The complete source code for ``sam_bot`` can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description>`_ repository."
-msgstr "The complete source code for ``sam_bot`` can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description>`_ repository."
+msgstr "完整的 ``sam_bot`` 源代码可以在 `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description>`_ 存储库中找到。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:28
@@ -327,7 +327,7 @@ msgstr "在“config”目录下，创建一个名为“nav2_params.yaml”的�
 
 #: ../../setup_guides/footprint/setup_footprint.rst:31
 msgid "The default configuration file for Nav2 can be found in the official `Navigation2 repository <https://github.com/ros-planning/navigation2/blob/galactic/nav2_bringup/bringup/params/nav2_params.yaml>`_."
-msgstr "The default configuration file for Nav2 can be found in the official `Navigation2 repository <https://github.com/ros-planning/navigation2/blob/galactic/nav2_bringup/bringup/params/nav2_params.yaml>`_."
+msgstr "Nav2的默认配置文件可以在官方的 `Navigation2存储库 <https://github.com/ros-planning/navigation2/blob/galactic/nav2_bringup/bringup/params/nav2_params.yaml>`_ 中找到。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:33
@@ -337,77 +337,77 @@ msgstr "以下是来自“nav2_params.yaml”的代码片段，定义了局部�
 
 #: ../../setup_guides/footprint/setup_footprint.rst:42
 msgid "For the global costmap, we have already set the ``robot_radius`` parameter to create a circular footprint that matches ``sam_bot``'s size and centered at ``base_link``. The parameter that was modified is shown in the code snippet below."
-msgstr "For the global costmap, we have already set the ``robot_radius`` parameter to create a circular footprint that matches ``sam_bot``'s size and centered at ``base_link``. The parameter that was modified is shown in the code snippet below."
+msgstr "对于全局代价地图，我们已经将 ``robot_radius`` 参数设置为创建一个与 ``sam_bot`` 大小匹配且以 ``base_link`` 为中心的圆形轮廓。下面的代码片段显示了被修改的参数。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:52 ../../setup_guides/odom/setup_odom.rst:294 ../../setup_guides/odom/setup_odom.rst:486 ../../setup_guides/sensors/setup_sensors.rst:248 ../../setup_guides/sensors/setup_sensors.rst:435
 msgid "Build, Run and Verification"
-msgstr "Build, Run and Verification"
+msgstr "构建、运行和验证"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:53
 msgid "We will now confirm that we have properly set up ``sam_bot``'s footprint."
-msgstr "We will now confirm that we have properly set up ``sam_bot``'s footprint."
+msgstr "现在我们将确认我们已正确设置了 ``sam_bot`` 的轮廓。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:55
 msgid "First, we launch `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_ to launch the robot state publisher, spawn ``sam_bot`` in Gazebo, and visualize ``sam_bot`` and its footprint in Rviz. The robot state publisher publishes the ``base_link`` => ``sensors`` transforms defined in ``sam_bot``'s URDF, while Gazebo's differential drive plugin publishes the ``odom`` => ``base_link`` transform. Open a new terminal and execute the lines below."
-msgstr "First, we launch `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_ to launch the robot state publisher, spawn ``sam_bot`` in Gazebo, and visualize ``sam_bot`` and its footprint in Rviz. The robot state publisher publishes the ``base_link`` => ``sensors`` transforms defined in ``sam_bot``'s URDF, while Gazebo's differential drive plugin publishes the ``odom`` => ``base_link`` transform. Open a new terminal and execute the lines below."
+msgstr "首先，我们启动 `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_，启动机器人状态发布器，在Gazebo中生成 ``sam_bot``，并在Rviz中可视化 ``sam_bot`` 及其足迹。机器人状态发布器发布了 ``sam_bot`` URDF 中定义的 ``base_link`` => ``sensors`` 转换，而Gazebo的差动驱动插件发布了 ``odom`` => ``base_link`` 转换。打开一个新的终端并执行以下命令行。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:63
 msgid "After launching ``display.launch.py``, RViz and Gazebo should open. RViz should show ``sam_bot``, the frames of ``sam_bot``'s parts, and the ``odom`` frame without errors. Gazebo should show ``sam_bot`` with a sphere and a cube detectable by ``sambot``'s lidar sensor."
-msgstr "After launching ``display.launch.py``, RViz and Gazebo should open. RViz should show ``sam_bot``, the frames of ``sam_bot``'s parts, and the ``odom`` frame without errors. Gazebo should show ``sam_bot`` with a sphere and a cube detectable by ``sambot``'s lidar sensor."
+msgstr "在启动 ``display.launch.py`` 后，RViz 和 Gazebo 应该会打开。RViz 应该显示 ``sam_bot``、``sam_bot`` 零件的坐标系以及 ``odom`` 坐标系，而且不应出现错误。Gazebo 应该显示具有一个球体和一个立方体的 ``sam_bot``，这些物体可以被 ``sambot`` 的激光雷达传感器检测到。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:65
 msgid "Next, we will publish the ``map`` => ``odom`` transform using the ``static_transform_publisher``. We publish the ``map`` => ``odom`` transform as static in this guide as a simple way to publish the transform and visualize the footprint. Open a new terminal and execute the lines below."
-msgstr "Next, we will publish the ``map`` => ``odom`` transform using the ``static_transform_publisher``. We publish the ``map`` => ``odom`` transform as static in this guide as a simple way to publish the transform and visualize the footprint. Open a new terminal and execute the lines below."
+msgstr "接下来，我们将使用 ``static_transform_publisher`` 发布 ``map`` => ``odom`` 转换。在本指南中，我们将 ``map`` => ``odom`` 转换设置为静态转换，作为一种简单的方式来发布转换和可视化足迹。打开一个新的终端并执行以下命令行。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:71
 msgid "The ``map`` => ``odom`` transform should now be being published and the ``map`` frame should be added in RViz without errors."
-msgstr "The ``map`` => ``odom`` transform should now be being published and the ``map`` frame should be added in RViz without errors."
+msgstr "现在应该正在发布 ``map`` => ``odom`` 的变换，并且在 RViz 中添加 ``map`` 帧时不会出现错误。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:73
 msgid "Lastly, we will launch Nav2 using the ``nav2_params.yaml`` configuration file we just made and ``navigation_launch.py``, the built-in launch file of ``nav2_bringup``. Open a new terminal and execute the following:"
-msgstr "Lastly, we will launch Nav2 using the ``nav2_params.yaml`` configuration file we just made and ``navigation_launch.py``, the built-in launch file of ``nav2_bringup``. Open a new terminal and execute the following:"
+msgstr "最后，我们将使用刚刚创建的 ``nav2_params.yaml`` 配置文件和 ``nav2_bringup`` 的内置启动文件 ``navigation_launch.py`` 启动Nav2。打开一个新的终端并执行以下命令："
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:79
 msgid "We should now be able to visualize the footprints in RViz, which will be discussed in the next section."
-msgstr "We should now be able to visualize the footprints in RViz, which will be discussed in the next section."
+msgstr "现在我们应该能够在 RViz 中可视化机器人的足迹，在下一节中将对此进行讨论。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:82
 msgid "Visualizing Footprint in RViz"
-msgstr "Visualizing Footprint in RViz"
+msgstr "在RViz中可视化足迹"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:83
 msgid "To visualize the footprint of the local costmap, click the add button at the bottom-left part of the RViz window. Under the ``By topic`` tab, select the ``Polygon`` under the ``/local_costmap/published_footprint`` topic, as shown below."
-msgstr "To visualize the footprint of the local costmap, click the add button at the bottom-left part of the RViz window. Under the ``By topic`` tab, select the ``Polygon`` under the ``/local_costmap/published_footprint`` topic, as shown below."
+msgstr "要可视化局部代价地图的足迹，请单击 RViz 窗口左下角的添加按钮。在``按主题``选项卡下，选择``/local_costmap/published_footprint`` 主题下的 ``Polygon``，如下所示。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:89
 msgid "Set the fixed frame in RViz to ``odom`` and you should see the rectangular-shaped footprint of ``sam_bot``:"
-msgstr "Set the fixed frame in RViz to ``odom`` and you should see the rectangular-shaped footprint of ``sam_bot``:"
+msgstr "将RViz中的固定坐标系设置为 ``odom``，您应该看到 ``sam_bot`` 的矩形足迹："
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:94
 msgid "On the other hand, for the global costmap, click the add button at the bottom-left part of the RViz window. Go to ``By topic`` tab then select the ``Polygon`` under the ``/global_costmap/published_footprint`` topic, as shown below."
-msgstr "On the other hand, for the global costmap, click the add button at the bottom-left part of the RViz window. Go to ``By topic`` tab then select the ``Polygon`` under the ``/global_costmap/published_footprint`` topic, as shown below."
+msgstr "另一方面，要在全局代价地图中进行可视化，请单击 RViz 窗口左下角的添加按钮。转到``按主题``选项卡，然后选择 ``/global_costmap/published_footprint`` 主题下的 ``Polygon``，如下所示。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:100
 msgid "Set the fixed frame in RViz to ``map`` and you should see the circular footprint of ``sam_bot``:"
-msgstr "Set the fixed frame in RViz to ``map`` and you should see the circular footprint of ``sam_bot``:"
+msgstr "将RViz中的固定坐标系设置为 ``map``，您应该看到 ``sam_bot`` 的圆形足迹："
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:107
 msgid "In this guide, we have shown how to configure a circular and polygon-shaped footprint for your robot. This footprint is important since it plays a major role in Nav2's pathfinding algorithms function."
-msgstr "In this guide, we have shown how to configure a circular and polygon-shaped footprint for your robot. This footprint is important since it plays a major role in Nav2's pathfinding algorithms function."
+msgstr "在本指南中，我们展示了如何为您的机器人配置圆形和多边形足迹。这个足迹非常重要，因为它在 Nav2 的路径规划算法中起着重要作用。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:109
@@ -417,7 +417,7 @@ msgstr "As a demo, we have configured the costmap footprint parameters of  ``sam
 
 #: ../../setup_guides/index.rst:4
 msgid "First-Time Robot Setup Guide"
-msgstr "First-Time Robot Setup Guide"
+msgstr "首次机器人设置指南"
 
 
 #: ../../setup_guides/index.rst:6
@@ -427,7 +427,7 @@ msgstr "This section is a collection of guides that aims to provide readers a go
 
 #: ../../setup_guides/index.rst:8
 msgid "Help new users with setting up Navigation2 with a new robot"
-msgstr "Help new users with setting up Navigation2 with a new robot"
+msgstr "帮助新用户设置带有新机器人的 Navigation2"
 
 
 #: ../../setup_guides/index.rst:9
