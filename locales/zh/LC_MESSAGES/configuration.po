@@ -7857,7 +7857,7 @@ msgstr "如果无法找到精确路径，则可以接受与所请求姿态的距
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:62
 msgid "Maximum number of iterations once a visited node is within the goal tolerances to continue to try to find an exact match before returning the best path solution within tolerances."
-msgstr "Maximum number of iterations once a visited node is within the goal tolerances to continue to try to find an exact match before returning the best path solution within tolerances."
+msgstr "一旦访问的节点在目标容差范围内，继续尝试寻找精确匹配的最佳路径解，直到返回最佳路径解。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:84
@@ -7867,7 +7867,7 @@ msgstr "SE2节点将尝试按比例于该值和最小启发式频繁地完成分
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:106
 msgid "Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in ``allow_reverse_expansion = true``."
-msgstr "Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in ``allow_reverse_expansion = true``."
+msgstr "如果在反向搜索中，对SE2节点应用启发式惩罚。仅在``allow_reverse_expansion = true``时使用。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:117
@@ -7897,7 +7897,7 @@ msgstr "对于原地旋转而言，要应用的惩罚，如果最小控制集包
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:161
 msgid "Heuristic penalty to apply to SE2 node penalty. Causes State Lattice to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be >= 0.0 and <= 1.0. Must be `0.0` to be fully admissible."
-msgstr "Heuristic penalty to apply to SE2 node penalty. Causes State Lattice to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be >= 0.0 and <= 1.0. Must be `0.0` to be fully admissible."
+msgstr "对SE2节点应用启发式惩罚。使状态网络在路径上更喜欢较晚的操作而不是较早的操作。这样可以节省搜索时间，因为较早（较短）的分支直到必要时才会被展开。必须 >= 0.0 并且 <= 1.0。必须为 `0.0` 才能完全符合要求。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7907,7 +7907,7 @@ msgstr "``<name>``.lattice_filepath"
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:172
 msgid "The filepath to the state lattice minimum control set graph, this will default to a 16 bin, 0.5m turning radius control set located in ``test/`` for basic testing and evaluation (opposed to Hybrid-A*'s default of 0.5m)."
-msgstr "The filepath to the state lattice minimum control set graph, this will default to a 16 bin, 0.5m turning radius control set located in ``test/`` for basic testing and evaluation (opposed to Hybrid-A*'s default of 0.5m)."
+msgstr "状态网络最小控制集图的文件路径，默认为一个16个bin、0.5m转弯半径的控制集，位于 ``test/`` 用于基本测试和评估（与Hybrid-A*默认的0.5m相对）。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7917,12 +7917,12 @@ msgstr "``<name>``.allow_reverse_expansion"
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:205
 msgid "If true, allows the robot to use the primitives to expand in the mirrored opposite direction of the current robot's orientation (to reverse)."
-msgstr "If true, allows the robot to use the primitives to expand in the mirrored opposite direction of the current robot's orientation (to reverse)."
+msgstr "如果为真，则允许机器人使用基元在当前机器人方向的镜像相反方向（即反向）进行扩展。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:271
 msgid "Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner but can be helpful on the state lattice planner to reduce the \"blocky\" movements in State Lattice caused by the limited number of headings."
-msgstr "Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner but can be helpful on the state lattice planner to reduce the \"blocky\" movements in State Lattice caused by the limited number of headings."
+msgstr "执行额外的细化平滑运行。实质上，这将递归地调用平滑器，使用上一次平滑循环的输出进一步平滑宏观趋势的路径。这通常在混合A*规划器中特别改善质量，但在状态格规划器中也可以帮助减少由有限方向数导致的\"块状\"运动。"
 
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst:4
@@ -7932,32 +7932,32 @@ msgstr "BaseObstacleCritic"
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst:6
 msgid "Scores a trajectory based on where the path passes over the costmap. To use this properly, you must use the inflation layer in costmap to expand obstacles by the robot's radius."
-msgstr "Scores a trajectory based on where the path passes over the costmap. To use this properly, you must use the inflation layer in costmap to expand obstacles by the robot's radius."
+msgstr "基于路径在代价地图上的通过位置对轨迹进行评分。要正确使用此功能，您必须在代价地图中使用膨胀层，将机器人的半径扩展为障碍物。"
 
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst:14
 msgid "``<name>``: BaseObstacleCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: BaseObstacleCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``：BaseObstacleCritic是在**:ref:`dwb_controller`**中定义的**<dwb plugin>.critics**参数中定义的评判者名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst ../../configuration/packages/trajectory_critics/obstacle_footprint.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.sum_scores"
-msgstr "``<dwb plugin>``.\\ ``<name>``.sum_scores"
+msgstr "``<dwb插件>``.``<name>``.sum_scores"
 
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst:25 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:25
 msgid "Whether to allow for scores to be summed up."
-msgstr "Whether to allow for scores to be summed up."
+msgstr "是否允许对分数进行求和。"
 
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst ../../configuration/packages/trajectory_critics/goal_align.rst ../../configuration/packages/trajectory_critics/goal_dist.rst ../../configuration/packages/trajectory_critics/obstacle_footprint.rst ../../configuration/packages/trajectory_critics/oscillation.rst ../../configuration/packages/trajectory_critics/path_align.rst ../../configuration/packages/trajectory_critics/path_dist.rst ../../configuration/packages/trajectory_critics/prefer_forward.rst ../../configuration/packages/trajectory_critics/rotate_to_goal.rst ../../configuration/packages/trajectory_critics/twirling.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.scale"
-msgstr "``<dwb plugin>``.\\ ``<name>``.scale"
+msgstr "``<dwb插件>``.``<name>``.scale"
 
 
 #: ../../configuration/packages/trajectory_critics/base_obstacle.rst:36 ../../configuration/packages/trajectory_critics/goal_align.rst:46 ../../configuration/packages/trajectory_critics/goal_dist.rst:36 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:36 ../../configuration/packages/trajectory_critics/oscillation.rst:70 ../../configuration/packages/trajectory_critics/path_align.rst:45 ../../configuration/packages/trajectory_critics/path_dist.rst:34 ../../configuration/packages/trajectory_critics/prefer_forward.rst:69 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:69 ../../configuration/packages/trajectory_critics/twirling.rst:24
 msgid "Weighed scale for critic."
-msgstr "Weighed scale for critic."
+msgstr "评判者的加权比例。"
 
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst:4
@@ -7967,7 +7967,7 @@ msgstr "GoalAlignCritic"
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst:6
 msgid "Scores a trajectory based on how well aligned the trajectory is with the goal pose."
-msgstr "Scores a trajectory based on how well aligned the trajectory is with the goal pose."
+msgstr "根据轨迹与目标姿态的对齐程度对轨迹进行评分。"
 
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst:13
@@ -7987,7 +7987,7 @@ msgstr "0.325"
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst:24 ../../configuration/packages/trajectory_critics/path_align.rst:23
 msgid "Point in front of robot to look ahead to compute angular change from."
-msgstr "Point in front of robot to look ahead to compute angular change from."
+msgstr "机器人前方的点，用于计算角度变化。"
 
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst ../../configuration/packages/trajectory_critics/goal_dist.rst ../../configuration/packages/trajectory_critics/path_align.rst ../../configuration/packages/trajectory_critics/path_dist.rst
