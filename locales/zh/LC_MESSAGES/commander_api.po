@@ -172,7 +172,7 @@ msgstr "getFeedback（trackingRoute=False）"
 
 #: ../../commander_api/index.rst:88
 msgid "Gets feedback from task, returns action server feedback msg. If getting feedback on a tracking task, set default argument to ``True``."
-msgstr "Gets feedback from task, returns action server feedback msg. If getting feedback on a tracking task, set default argument to ``True``."
+msgstr "从任务获取反馈，返回操作服务器的反馈消息。如果在跟踪任务中获取反馈，请将默认参数设置为 ``True``。"
 
 
 #: ../../commander_api/index.rst:91
@@ -182,7 +182,7 @@ msgstr "getResult（）"
 
 #: ../../commander_api/index.rst:91
 msgid "Gets final result of task, to be called after ``isTaskComplete`` returns ``True``. Returns action server result msg."
-msgstr "Gets final result of task, to be called after ``isTaskComplete`` returns ``True``. Returns action server result msg."
+msgstr "获取任务的最终结果，在 ``isTaskComplete`` 返回 ``True`` 后调用。返回操作服务器的结果消息。"
 
 
 #: ../../commander_api/index.rst:94
@@ -192,7 +192,7 @@ msgstr "getPath（start，goal，planner_id=''，use_start=False）"
 
 #: ../../commander_api/index.rst:94
 msgid "Gets a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``."
-msgstr "Gets a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``."
+msgstr "获取从起始点到目标点的路径，类型为 ``PoseStamped``，返回类型为 ``nav_msgs/Path``。"
 
 
 #: ../../commander_api/index.rst:97
@@ -202,7 +202,7 @@ msgstr "getPathThroughPoses（start，goals，planner_id=''，use_start=False）
 
 #: ../../commander_api/index.rst:97
 msgid "Gets a path through a starting to a set of goals, a list of ``PoseStamped``, ``nav_msgs/Path``."
-msgstr "Gets a path through a starting to a set of goals, a list of ``PoseStamped``, ``nav_msgs/Path``."
+msgstr "获取从起始点到一组目标点的路径，类型为一组 ``PoseStamped``，返回类型为 ``nav_msgs/Path``。"
 
 
 #: ../../commander_api/index.rst:100
@@ -212,7 +212,7 @@ msgstr "getRoute（start，goal，use_start=False）"
 
 #: ../../commander_api/index.rst:100
 msgid "Gets a sparse route and dense path from start to goal, where start and goal may be of type ``PoseStamped`` or ``int`` for known NodeIDs."
-msgstr "Gets a sparse route and dense path from start to goal, where start and goal may be of type ``PoseStamped`` or ``int`` for known NodeIDs."
+msgstr "获取从起始点到目标点的稀疏路线和稠密路径，其中起始点和目标点可以是 ``PoseStamped`` 或已知节点ID的 ``int`` 类型。"
 
 
 #: ../../commander_api/index.rst:103
@@ -222,7 +222,7 @@ msgstr "getandTrackRoute（start，goal，use_start=False）"
 
 #: ../../commander_api/index.rst:103
 msgid "Gets and tracks a sparse route and dense path from start to goal, where start & goal may be of type ``PoseStamped`` or ``int`` for known NodeIDs."
-msgstr "Gets and tracks a sparse route and dense path from start to goal, where start & goal may be of type ``PoseStamped`` or ``int`` for known NodeIDs."
+msgstr "获取并跟踪从起始点到目标点的稀疏路线和稠密路径，其中起始点和目标点可以是 ``PoseStamped`` 或已知节点ID的 ``int`` 类型。"
 
 
 #: ../../commander_api/index.rst:106
@@ -232,7 +232,7 @@ msgstr "smoothPath(path, smoother_id='', max_duration=2.0, check_for_collision=F
 
 #: ../../commander_api/index.rst:106
 msgid "Smooths a given path of type ``nav_msgs/Path``."
-msgstr "Smooths a given path of type ``nav_msgs/Path``."
+msgstr "平滑给定类型为 ``nav_msgs/Path`` 的路径。"
 
 
 #: ../../commander_api/index.rst:110
@@ -242,7 +242,7 @@ msgstr "changeMap(map_filepath)"
 
 #: ../../commander_api/index.rst:110
 msgid "Requests a change from the current map to `map_filepath`'s yaml."
-msgstr "Requests a change from the current map to `map_filepath`'s yaml."
+msgstr "请求从当前地图切换到 `map_filepath` 的 YAML 地图。"
 
 
 #: ../../commander_api/index.rst:112
@@ -252,7 +252,7 @@ msgstr "clearAllCostmaps()"
 
 #: ../../commander_api/index.rst:112
 msgid "Clears both the global and local costmaps."
-msgstr "Clears both the global and local costmaps."
+msgstr "清除全局和本地代价地图。"
 
 
 #: ../../commander_api/index.rst:114
@@ -262,7 +262,7 @@ msgstr "clearLocalCostmap()"
 
 #: ../../commander_api/index.rst:114
 msgid "Clears the local costmap."
-msgstr "Clears the local costmap."
+msgstr "清除本地代价地图。"
 
 
 #: ../../commander_api/index.rst:116
@@ -272,7 +272,7 @@ msgstr "clearGlobalCostmap()"
 
 #: ../../commander_api/index.rst:116
 msgid "Clears the global costmap."
-msgstr "Clears the global costmap."
+msgstr "清除全局代价地图。"
 
 
 #: ../../commander_api/index.rst:118
@@ -282,7 +282,7 @@ msgstr "getGlobalCostmap()"
 
 #: ../../commander_api/index.rst:118
 msgid "Returns the global costmap, ``nav2_msgs/Costmap``."
-msgstr "Returns the global costmap, ``nav2_msgs/Costmap``."
+msgstr "返回全局代价地图，``nav2_msgs/Costmap``。"
 
 
 #: ../../commander_api/index.rst:120
@@ -292,7 +292,7 @@ msgstr "getLocalCostmap()"
 
 #: ../../commander_api/index.rst:120
 msgid "Returns the local costmap, ``nav2_msgs/Costmap``."
-msgstr "Returns the local costmap, ``nav2_msgs/Costmap``."
+msgstr "返回本地代价地图，``nav2_msgs/Costmap``。"
 
 
 #: ../../commander_api/index.rst:122
@@ -302,7 +302,7 @@ msgstr "waitUntilNav2Active( navigator='bt_navigator', localizer='amcl')"
 
 #: ../../commander_api/index.rst:122
 msgid "Blocks until Nav2 is completely online and lifecycle nodes are in the active state. To be used in conjunction with autostart or external lifecycle bringup. Custom navigator and localizer nodes can be specified"
-msgstr "Blocks until Nav2 is completely online and lifecycle nodes are in the active state. To be used in conjunction with autostart or external lifecycle bringup. Custom navigator and localizer nodes can be specified"
+msgstr "阻塞直到 Nav2 完全在线并且生命周期节点处于活动状态。与自动启动或外部生命周期引导一起使用。可以指定自定义导航器和定位器节点。"
 
 
 #: ../../commander_api/index.rst:126
