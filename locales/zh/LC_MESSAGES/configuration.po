@@ -6780,7 +6780,7 @@ msgstr "``<dwb插件>``.trajectory_generator_name"
 
 #: ../../configuration/packages/dwb-params/controller.rst:93
 msgid "\"dwb_plugins::StandardTrajectoryGenerator\""
-msgstr "\"dwb_plugins::StandardTrajectoryGenerator\""
+msgstr "“dwb_plugins::StandardTrajectoryGenerator”"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:97
@@ -6800,77 +6800,77 @@ msgstr "\"dwb_plugins::SimpleGoalChecker\""
 
 #: ../../configuration/packages/dwb-params/controller.rst:108
 msgid "Goal checker plugin name."
-msgstr "Goal checker plugin name."
+msgstr "目标检查插件名称。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.transform_tolerance"
-msgstr "``<dwb plugin>``.transform_tolerance"
+msgstr "``<dwb插件>``.transform_tolerance"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:119
 msgid "TF transform tolerance (s)."
-msgstr "TF transform tolerance (s)."
+msgstr "TF 变换容差（秒）。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.short_circuit_trajectory_evaluation"
-msgstr "``<dwb plugin>``.short_circuit_trajectory_evaluation"
+msgstr "``<dwb插件>``.short_circuit_trajectory_evaluation"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:130
 msgid "Stop evaluating scores after best score is found."
-msgstr "Stop evaluating scores after best score is found."
+msgstr "找到最佳分数后停止评估分数。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.path_distance_bias (Legacy)"
-msgstr "``<dwb plugin>``.path_distance_bias (Legacy)"
+msgstr "``<dwb插件>``.path_distance_bias（传统）"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:141
 msgid "Old version of PathAlign.scale, use that instead."
-msgstr "Old version of PathAlign.scale, use that instead."
+msgstr "PathAlign.scale 的旧版本，请使用该版本。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.goal_distance_bias (Legacy)"
-msgstr "``<dwb plugin>``.goal_distance_bias (Legacy)"
+msgstr "``<dwb插件>``.goal_distance_bias（传统）"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:152
 msgid "Old version of GoalAlign.scale, use that instead."
-msgstr "Old version of GoalAlign.scale, use that instead."
+msgstr "GoalAlign.scale 的旧版本，请使用该版本。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.occdist_scale (Legacy)"
-msgstr "``<dwb plugin>``.occdist_scale (Legacy)"
+msgstr "``<dwb插件>``.occdist_scale（传统）"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:163
 msgid "Old version of ObstacleFootprint.scale, use that instead."
-msgstr "Old version of ObstacleFootprint.scale, use that instead."
+msgstr "ObstacleFootprint.scale 的旧版本，请使用它代替。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.max_scaling_factor (Legacy)"
-msgstr "``<dwb plugin>``.max_scaling_factor (Legacy)"
+msgstr "``<dwb插件>``.max_scaling_factor（传统）"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:174
 msgid "Old version of ObstacleFootprint.max_scaling_factor, use that instead."
-msgstr "Old version of ObstacleFootprint.max_scaling_factor, use that instead."
+msgstr "ObstacleFootprint.max_scaling_factor 的旧版本，请使用它代替。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.scaling_speed (Legacy)"
-msgstr "``<dwb plugin>``.scaling_speed (Legacy)"
+msgstr "``<dwb插件>``.scaling_speed（传统）"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:185
 msgid "Old version of ObstacleFootprint.scaling_speed, use that instead."
-msgstr "Old version of ObstacleFootprint.scaling_speed, use that instead."
+msgstr "ObstacleFootprint.scaling_speed 的旧版本，请使用它代替。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
@@ -6900,7 +6900,7 @@ msgstr "24.0"
 
 #: ../../configuration/packages/dwb-params/controller.rst:207
 msgid "Scale for goal align critic, overriding local default."
-msgstr "Scale for goal align critic, overriding local default."
+msgstr "目标对齐评论家的缩放比例，覆盖本地默认值。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
@@ -6910,7 +6910,7 @@ msgstr "``<dwb plugin>``.PathDist.scale"
 
 #: ../../configuration/packages/dwb-params/controller.rst:218
 msgid "Scale for path distance critic, overriding local default."
-msgstr "Scale for path distance critic, overriding local default."
+msgstr "路径距离评论家的缩放比例，覆盖本地默认值。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
