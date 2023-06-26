@@ -22,12 +22,12 @@ msgstr ""
 
 #: ../../roadmap/roadmap.rst:4
 msgid "Roadmaps"
-msgstr "Roadmaps"
+msgstr "路线图"
 
 
 #: ../../roadmap/roadmap.rst:6
 msgid "This is the list of major issues and features the Nav2 maintainers are committing for completion for various ROS 2 releases. This is *not* an exhaustive list of planned features or what changes may be found in the new distribution. It represents only the items of direct commitment to give insight into commitments for REP-2005 repositories in the `ROS 2 Roadmap <https://docs.ros.org/en/rolling/Roadmap.html>`_. For a full list of important completed changes in the project, see the Migration Guides :ref:`migration`."
-msgstr "This is the list of major issues and features the Nav2 maintainers are committing for completion for various ROS 2 releases. This is *not* an exhaustive list of planned features or what changes may be found in the new distribution. It represents only the items of direct commitment to give insight into commitments for REP-2005 repositories in the `ROS 2 Roadmap <https://docs.ros.org/en/rolling/Roadmap.html>`_. For a full list of important completed changes in the project, see the Migration Guides :ref:`migration`."
+msgstr "这是Nav2维护者为各个ROS 2发行版承诺完成的重大问题和功能列表。这 *不是* 计划功能或新发行版中可能发现的更改的详尽列表。它仅代表对REP-2005仓库在 `ROS 2 Roadmap <https://docs.ros.org/en/rolling/Roadmap.html>`_ 中直接承诺的项目，以便了解对于迁移指南中的承诺有何深入了解。有关项目中重要的已完成更改的完整列表，请参阅迁移指南 :ref:`migration`。"
 
 
 #: ../../roadmap/roadmap.rst:12
@@ -42,7 +42,7 @@ msgstr "插件名称"
 
 #: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
 msgid "Size"
-msgstr "Size"
+msgstr "大小"
 
 
 #: ../../roadmap/roadmap.rst:17

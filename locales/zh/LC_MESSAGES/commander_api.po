@@ -522,7 +522,7 @@ msgstr "footprintCost(footprint)"
 
 #: ../../commander_api/index.rst:188
 msgid "Checks the footprint (``Polygon``) for collision at its implicit provided coordinate pose."
-msgstr "Checks the footprint (``Polygon``) for collision at its implicit provided coordinate pose."
+msgstr "检查隐含提供的坐标姿态处的足迹（``Polygon``）是否发生碰撞。"
 
 
 #: ../../commander_api/index.rst:190
@@ -532,7 +532,7 @@ msgstr "lineCost(x0, x1, y0, y1, step_size=0.5)"
 
 #: ../../commander_api/index.rst:190
 msgid "Iterate over all the points along a line and check for collision. The line is defined by x0, y0, x1, y1, step_size (``int``) or (``float``)."
-msgstr "Iterate over all the points along a line and check for collision. The line is defined by x0, y0, x1, y1, step_size (``int``) or (``float``)."
+msgstr "沿着一条线迭代所有点，并检查是否发生碰撞。该线由 x0、y0、x1、y1、step_size（``int``）或（``float``）定义。"
 
 
 #: ../../commander_api/index.rst:193
@@ -572,12 +572,12 @@ msgstr "在地图坐标中获取特定姿态处足迹的成本。x，y，theta�
 
 #: ../../commander_api/index.rst:207
 msgid "Examples and Demos"
-msgstr "Examples and Demos"
+msgstr "示例和演示"
 
 
 #: ../../commander_api/index.rst:209
 msgid "All of these can be found in the `package <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_."
-msgstr "All of these can be found in the `package <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_."
+msgstr "所有这些内容都可以在`package <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_中找到。"
 
 
 msgid "Alternative text"
@@ -586,55 +586,55 @@ msgstr "替代文本"
 
 #: ../../commander_api/index.rst:216
 msgid "The ``nav2_simple_commander`` has a few examples to highlight the API functions available to you as a user:"
-msgstr "The ``nav2_simple_commander`` has a few examples to highlight the API functions available to you as a user:"
+msgstr "``nav2_simple_commander`` 提供了一些示例，以突出显示作为用户可用的 API 函数："
 
 
 #: ../../commander_api/index.rst:218
 msgid "``example_nav_to_pose.py`` - Demonstrates the navigate to pose capabilities of the navigator, as well as a number of auxiliary methods."
-msgstr "``example_nav_to_pose.py`` - Demonstrates the navigate to pose capabilities of the navigator, as well as a number of auxiliary methods."
+msgstr "``example_nav_to_pose.py`` - 演示导航器的导航到位姿功能，以及一些辅助方法。"
 
 
 #: ../../commander_api/index.rst:219
 msgid "``example_nav_through_poses.py`` - Demonstrates the navigate through poses capabilities of the navigator, as well as a number of auxiliary methods."
-msgstr "``example_nav_through_poses.py`` - Demonstrates the navigate through poses capabilities of the navigator, as well as a number of auxiliary methods."
+msgstr "``example_nav_through_poses.py`` - 演示导航器通过姿势导航的能力，以及一些辅助方法。"
 
 
 #: ../../commander_api/index.rst:220
 msgid "``example_waypoint_follower.py`` - Demonstrates the waypoint following capabilities of the navigator, as well as a number of auxiliary methods."
-msgstr "``example_waypoint_follower.py`` - Demonstrates the waypoint following capabilities of the navigator, as well as a number of auxiliary methods."
+msgstr "``example_waypoint_follower.py`` - 演示导航器的路径点跟随功能，以及一些辅助方法。"
 
 
 #: ../../commander_api/index.rst:221
 msgid "``example_follow_path.py`` - Demonstrates the path following capabilities of the navigator, as well as a number of auxiliary methods like path smoothing."
-msgstr "``example_follow_path.py`` - Demonstrates the path following capabilities of the navigator, as well as a number of auxiliary methods like path smoothing."
+msgstr "``example_follow_path.py`` - 演示导航器的路径跟随能力，以及一些辅助方法，如路径平滑。"
 
 
 #: ../../commander_api/index.rst:222
 msgid "``example_assisted_teleop.py`` - Demonstrates the assisted teleop capabilities of the navigator."
-msgstr "``example_assisted_teleop.py`` - Demonstrates the assisted teleop capabilities of the navigator."
+msgstr "``example_assisted_teleop.py`` - 演示导航器的辅助遥控功能。"
 
 
 #: ../../commander_api/index.rst:223
 msgid "``example_route.py`` - Demonstrates the Route server capabilities of the navigator."
-msgstr "``example_route.py`` - Demonstrates the Route server capabilities of the navigator."
+msgstr "``example_route.py`` - 演示导航器的路由服务器功能。"
 
 
 #: ../../commander_api/index.rst:225
 msgid "The ``nav2_simple_commander`` has a few demonstrations to highlight a couple of simple autonomy applications you can build using the API:"
-msgstr "The ``nav2_simple_commander`` has a few demonstrations to highlight a couple of simple autonomy applications you can build using the API:"
+msgstr "``nav2_simple_commander``有几个演示，可以突出使用API构建的几个简单自主应用程序："
 
 
 #: ../../commander_api/index.rst:227
 msgid "``demo_security.py`` - A simple security robot application, showing how to have a robot follow a security route using Navigate Through Poses to do a patrol route, indefinitely."
-msgstr "``demo_security.py`` - A simple security robot application, showing how to have a robot follow a security route using Navigate Through Poses to do a patrol route, indefinitely."
+msgstr "``demo_security.py`` - 一个简单的安保机器人应用程序，展示了如何使用导航通过姿势进行巡逻路线。"
 
 
 #: ../../commander_api/index.rst:228
 msgid "``demo_picking.py`` - A simple item picking application, showing how to have a robot drive to a specific shelf in a warehouse to either pick an item or have a person place an item into a basket and deliver it to a destination for shipping using Navigate To Pose."
-msgstr "``demo_picking.py`` - A simple item picking application, showing how to have a robot drive to a specific shelf in a warehouse to either pick an item or have a person place an item into a basket and deliver it to a destination for shipping using Navigate To Pose."
+msgstr "``demo_picking.py`` - 一个简单的物品拾取应用程序，展示了如何让机器人驶向仓库中的特定货架，要么拾取物品，要么让人员将物品放入篮子并将其送到目的地以供发货，使用导航到位姿功能。"
 
 
 #: ../../commander_api/index.rst:229
 msgid "``demo_inspection.py`` - A simple shelf inspection application, showing how to use the Waypoint Follower and task executors to take pictures, RFID scans, etc of shelves to analyze the current shelf statuses and locate items in the warehouse."
-msgstr "``demo_inspection.py`` - A simple shelf inspection application, showing how to use the Waypoint Follower and task executors to take pictures, RFID scans, etc of shelves to analyze the current shelf statuses and locate items in the warehouse."
+msgstr "``demo_inspection.py`` - 一个简单的货架检查应用程序，展示了如何使用Waypoint Follower和任务执行器来拍照、RFID扫描等，以分析当前货架状态并定位仓库中的物品。"
 
