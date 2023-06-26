@@ -77,7 +77,7 @@ msgstr "The algorithm plugins you can use are not limited to the ones mentioned 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:30
 msgid "Planner Server"
-msgstr "Planner Server"
+msgstr "规划器服务器"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:32

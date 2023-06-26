@@ -4876,7 +4876,7 @@ msgstr "障碍物、膨胀层和路径跟踪"
 
 #: ../../configuration/packages/configuring-mppic.rst:847
 msgid "There also exists a relationship between the costmap configurations and the Obstacle critic configurations. If the Obstacle critic is not well tuned with the costmap parameters (inflation radius, scale) it can cause the robot to wobble significantly as it attempts to take finitely lower-cost trajectories with a slightly lower cost in exchange for jerky motion. It may also perform awkward maneuvers when in free-space to try to maximize time in a small pocket of 0-cost over a more natural motion which involves moving into some low-costed region. Finally, it may generally refuse to go into costed space at all when starting in a free 0-cost space if the gain is set disproportionately higher than the Path Follow scoring to encourage the robot to move along the path. This is due to the critic cost of staying in free space becoming more attractive than entering even lightly costed space in exchange for progression along the task."
-msgstr "There also exists a relationship between the costmap configurations and the Obstacle critic configurations. If the Obstacle critic is not well tuned with the costmap parameters (inflation radius, scale) it can cause the robot to wobble significantly as it attempts to take finitely lower-cost trajectories with a slightly lower cost in exchange for jerky motion. It may also perform awkward maneuvers when in free-space to try to maximize time in a small pocket of 0-cost over a more natural motion which involves moving into some low-costed region. Finally, it may generally refuse to go into costed space at all when starting in a free 0-cost space if the gain is set disproportionately higher than the Path Follow scoring to encourage the robot to move along the path. This is due to the critic cost of staying in free space becoming more attractive than entering even lightly costed space in exchange for progression along the task."
+msgstr "还存在着成本地图配置和障碍物批评者配置之间的关系。如果障碍物批评者没有与成本地图参数（膨胀半径、比例）进行良好的调整，当机器人试图采取略微更低成本的轨迹以换取颠簸的运动时，它会导致机器人明显摇晃。在自由空间中，它也可能执行尴尬的机动，以尝试在一个无成本的小区域中最大化时间，而不是采取更自然的运动，这涉及移动到某个低成本区域。最后，如果增益设置远高于路径跟随评分以鼓励机器人沿着路径移动，当在一个自由的0成本空间中开始时，它可能完全拒绝进入有成本的空间。这是因为在自由空间停留的批评成本比进入即使是轻度成本的空间来推进任务更具吸引力。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:849
@@ -4886,7 +4886,7 @@ msgstr "因此，在选择障碍物评估函数的权重时，应注意与代价
 
 #: ../../configuration/packages/configuring-mppic.rst:851
 msgid "As you increase or decrease your weights on the Obstacle, you may notice the aforementioned behaviors (e.g. won't overcome free to non-free threshold). To overcome them, increase the FollowPath critic cost to increase the desire for the trajectory planner to continue moving towards the goal. Make sure to not overshoot this though, keep them balanced. A desirable outcome is smooth motion roughly in the center of spaces without significant close interactions with obstacles. It shouldn't be perfectly following a path yet nor should the output velocity be wobbling jaggedly."
-msgstr "As you increase or decrease your weights on the Obstacle, you may notice the aforementioned behaviors (e.g. won't overcome free to non-free threshold). To overcome them, increase the FollowPath critic cost to increase the desire for the trajectory planner to continue moving towards the goal. Make sure to not overshoot this though, keep them balanced. A desirable outcome is smooth motion roughly in the center of spaces without significant close interactions with obstacles. It shouldn't be perfectly following a path yet nor should the output velocity be wobbling jaggedly."
+msgstr "当你增加或减小对障碍物的权重时，你可能会注意到上述行为（例如无法克服从无成本到非无成本的阈值）。为了克服这些问题，增加FollowPath批评者的成本以增加轨迹规划器继续朝着目标移动的欲望。但要确保不过度调整，保持平衡。理想的结果是平滑的运动，大致位于空间的中心，与障碍物没有显著的近距离交互。它不应完全按照路径移动，输出速度也不应摇摆不定。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:853
@@ -4901,67 +4901,67 @@ msgstr "NavFn规划器"
 
 #: ../../configuration/packages/configuring-navfn.rst:10
 msgid "The Navfn Planner plugin implements a wavefront Dijkstra or A* expanded planner."
-msgstr "The Navfn Planner plugin implements a wavefront Dijkstra or A* expanded planner."
+msgstr "Navfn规划器插件实现了波前Dijkstra或A*扩展规划器。"
 
 
 #: ../../configuration/packages/configuring-navfn.rst:12 ../../configuration/packages/configuring-thetastar.rst:20 ../../configuration/packages/smac/configuring-smac-2d.rst:11 ../../configuration/packages/smac/configuring-smac-hybrid.rst:11 ../../configuration/packages/smac/configuring-smac-lattice.rst:11
 msgid "``<name>`` is the corresponding planner plugin ID selected for this type."
-msgstr "``<name>`` is the corresponding planner plugin ID selected for this type."
+msgstr "``<name>`` 是为此类型选择的相应规划插件的标识符。"
 
 
 #: ../../configuration/packages/configuring-navfn.rst ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
 msgid "``<name>``.tolerance"
-msgstr "``<name>``.tolerance"
+msgstr "``<name>``.容差"
 
 
 #: ../../configuration/packages/configuring-navfn.rst:26 ../../configuration/packages/smac/configuring-smac-2d.rst:25
 msgid "Tolerance in meters between requested goal pose and end of path."
-msgstr "Tolerance in meters between requested goal pose and end of path."
+msgstr "请求的目标姿势和路径结束点之间的距离容差（以米为单位）。"
 
 
 #: ../../configuration/packages/configuring-navfn.rst
 msgid "``<name>``.use_astar"
-msgstr "``<name>``.use_astar"
+msgstr "``<name>``.使用A*算法"
 
 
 #: ../../configuration/packages/configuring-navfn.rst:37
 msgid "Whether to use A*. If false, uses Dijkstra's expansion."
-msgstr "Whether to use A*. If false, uses Dijkstra's expansion."
+msgstr "是否使用A*。如果为false，则使用Dijkstra的扩展算法。"
 
 
 #: ../../configuration/packages/configuring-navfn.rst ../../configuration/packages/configuring-thetastar.rst ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
 msgid "``<name>``.allow_unknown"
-msgstr "``<name>``.allow_unknown"
+msgstr "``<name>``.允许未知区域"
 
 
 #: ../../configuration/packages/configuring-navfn.rst:48 ../../configuration/packages/configuring-thetastar.rst:82
 msgid "Whether to allow planning in unknown space."
-msgstr "Whether to allow planning in unknown space."
+msgstr "是否允许在未知空间中进行规划。"
 
 
 #: ../../configuration/packages/configuring-navfn.rst ../../configuration/packages/configuring-thetastar.rst ../../configuration/packages/smac/configuring-smac-2d.rst
 msgid "``<name>``.use_final_approach_orientation"
-msgstr "``<name>``.use_final_approach_orientation"
+msgstr "``<name>``.使用最终接近方向"
 
 
 #: ../../configuration/packages/configuring-navfn.rst:59 ../../configuration/packages/configuring-thetastar.rst:71 ../../configuration/packages/smac/configuring-smac-2d.rst:113
 msgid "If true, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path"
-msgstr "If true, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path"
+msgstr "如果为true，则由规划器生成的路径的最后姿势的方向将设置为接近方向，即连接路径的最后两个点的向量的方向。"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:4
 msgid "Planner Server"
-msgstr "Planner Server"
+msgstr "规划器服务器"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:10
 msgid "The Planner Server implements the server for handling the planner requests for the stack and host a map of plugin implementations. It will take in a goal and a planner plugin name to use and call the appropriate plugin to compute a path to the goal."
-msgstr "The Planner Server implements the server for handling the planner requests for the stack and host a map of plugin implementations. It will take in a goal and a planner plugin name to use and call the appropriate plugin to compute a path to the goal."
+msgstr "规划服务器实现了用于处理堆栈的规划请求的服务器，并托管插件实现的地图。它将接收一个目标和要使用的规划插件名称，并调用适当的插件来计算到目标的路径。"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst
 msgid "planner_plugins"
-msgstr "planner_plugins"
+msgstr "规划器插件"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:21
@@ -4971,12 +4971,12 @@ msgstr "['GridBased']"
 
 #: ../../configuration/packages/configuring-planner-server.rst:25
 msgid "List of Mapped plugin names for parameters and processing requests."
-msgstr "List of Mapped plugin names for parameters and processing requests."
+msgstr "映射到参数和处理请求的插件名称列表。"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst
 msgid "expected_planner_frequency"
-msgstr "expected_planner_frequency"
+msgstr "预期规划器频率"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:46
@@ -4986,17 +4986,17 @@ msgstr "[20.0]"
 
 #: ../../configuration/packages/configuring-planner-server.rst:50
 msgid "Expected planner frequency. If the current frequency is less than the expected frequency, display the warning message."
-msgstr "Expected planner frequency. If the current frequency is less than the expected frequency, display the warning message."
+msgstr "预期的规划器频率。如果当前频率低于预期频率，则显示警告消息。"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:55
 msgid "When the :code:`planner_plugins` parameter is not overridden, the following default plugins are loaded:"
-msgstr "When the :code:`planner_plugins` parameter is not overridden, the following default plugins are loaded:"
+msgstr "当未覆盖:code:`planner_plugins`参数时，将加载以下默认插件:"
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:60
 msgid "\"GridBased\""
-msgstr "\"GridBased\""
+msgstr "\"基于网格\""
 
 
 #: ../../configuration/packages/configuring-planner-server.rst:60
@@ -5006,17 +5006,17 @@ msgstr "\"nav2_navfn_planner/NavfnPlanner\""
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:4
 msgid "Regulated Pure Pursuit"
-msgstr "Regulated Pure Pursuit"
+msgstr "规定纯追踪"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:10
 msgid "The Regulated Pure Pursuit controller implements a variation on the Pure Pursuit controller that specifically targeting service / industrial robot needs. It regulates the linear velocities by curvature of the path to help reduce overshoot at high speeds around blind corners allowing operations to be much more safe. It also better follows paths than any other variation currently available of Pure Pursuit. It also has heuristics to slow in proximity to other obstacles so that you can slow the robot automatically when nearby potential collisions. It also implements the Adaptive lookahead point features to be scaled by velocities to enable more stable behavior in a larger range of translational speeds."
-msgstr "The Regulated Pure Pursuit controller implements a variation on the Pure Pursuit controller that specifically targeting service / industrial robot needs. It regulates the linear velocities by curvature of the path to help reduce overshoot at high speeds around blind corners allowing operations to be much more safe. It also better follows paths than any other variation currently available of Pure Pursuit. It also has heuristics to slow in proximity to other obstacles so that you can slow the robot automatically when nearby potential collisions. It also implements the Adaptive lookahead point features to be scaled by velocities to enable more stable behavior in a larger range of translational speeds."
+msgstr "规定纯追踪控制器是Pure Pursuit控制器的一种变体，专门针对服务/工业机器人的需求。它通过路径的曲率调节线速度，以帮助减少在高速环境中盲区拐角处的超调，从而使操作更加安全。它还比Pure Pursuit的其他变体更好地跟随路径。它还具有在接近其他障碍物时减速的启发式算法，这样当机器人接近潜在碰撞物体时，可以自动降低机器人的速度。它还实现了根据速度缩放的自适应前视点功能，以在更大范围的平移速度下实现更稳定的行为。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:18
 msgid "If you use the Regulated Pure Pursuit Controller algorithm or software from this repository, please cite this work in your papers:"
-msgstr "If you use the Regulated Pure Pursuit Controller algorithm or software from this repository, please cite this work in your papers:"
+msgstr "如果您使用了此存储库中的规定纯追踪控制器算法或软件，请在您的论文中引用此工作："
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:20
@@ -5026,7 +5026,7 @@ msgstr "Macenski, S. Singh, F. Martin, J. Gines, `Regulated Pure Pursuit for Rob
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:23
 msgid "Regulated Pure Pursuit Parameters"
-msgstr "Regulated Pure Pursuit Parameters"
+msgstr "规定纯追踪参数"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5036,7 +5036,7 @@ msgstr "desired_linear_vel"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:34
 msgid "The desired maximum linear velocity (m/s) to use."
-msgstr "The desired maximum linear velocity (m/s) to use."
+msgstr "要使用的期望最大线性速度（m/s）。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst

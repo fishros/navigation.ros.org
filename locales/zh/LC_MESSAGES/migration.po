@@ -162,12 +162,12 @@ msgstr "controller_plugins"
 
 #: ../../migration/Eloquent.rst:43
 msgid "Planner Server"
-msgstr "Planner Server"
+msgstr "规划器服务器"
 
 
 #: ../../migration/Eloquent.rst:43
 msgid "planner_plugins"
-msgstr "planner_plugins"
+msgstr "规划器插件"
 
 
 #: ../../migration/Eloquent.rst:45
