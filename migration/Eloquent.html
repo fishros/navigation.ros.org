@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Foxy to Galactic" href="Foxy.html" />
+    <link rel="next" title="Foxy到Galactic" href="Foxy.html" />
     <link rel="prev" title="从Dashing到Eloquent" href="Dashing.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
@@ -776,15 +776,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#new-particle-filter-messages">新的粒子滤波器消息</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#selection-of-behavior-tree-in-each-navigation-action">每个导航动作中的行为树选择</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#followpoint-capability">FollowPoint功能</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-costmap-layer">New Costmap Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-costmap-layer">新的Costmap图层</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Foxy.html">Foxy to Galactic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#navigatetopose-action-feedback-updates">NavigateToPose Action Feedback updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#navigatetopose-bt-node-interface-changes">NavigateToPose BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#navigatethroughposes-and-computepaththroughposes-actions-added">NavigateThroughPoses and ComputePathThroughPoses Actions Added</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#computepathtopose-bt-node-interface-changes">ComputePathToPose BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#computepathtopose-action-interface-changes">ComputePathToPose Action Interface Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Foxy.html">Foxy到Galactic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#navigatetopose-action-feedback-updates">NavigateToPose动作反馈更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#navigatetopose-bt-node-interface-changes">NavigateToPose BT节点接口更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#navigatethroughposes-and-computepaththroughposes-actions-added">新增了NavigateThroughPoses和ComputePathThroughPoses动作。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#computepathtopose-bt-node-interface-changes">ComputePathToPose BT节点接口更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#computepathtopose-action-interface-changes">ComputePathToPose Action接口变更</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#backup-bt-node-interface-changes">BackUp BT-node Interface Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#backup-recovery-interface-changes">BackUp Recovery Interface Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#nav2-controllers-and-goal-checker-plugin-interface-changes">Nav2 Controllers and Goal Checker Plugin Interface Changes</a></li>
@@ -1035,11 +1035,11 @@
 </div>
 <div class="section" id="followpoint-capability">
 <h2>FollowPoint功能<a class="headerlink" href="#followpoint-capability" title="永久链接至标题"></a></h2>
-<p>A new behavior tree <code class="docutils literal notranslate"><span class="pre">followpoint.xml</span></code> has added. This behavior tree makes a robot follow a dynamically generated point, keeping a certain distance from the target. This can be used for moving target following maneuvers.</p>
+<p>添加了一个新的行为树``followpoint.xml``。该行为树使机器人跟随一个动态生成的点，并保持与目标的一定距离。这可用于移动目标跟踪操纵。</p>
 <p>此功能已在`票号1660 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1660">https://github.com/ros-planning/navigation2/issues/1660</a>&gt;`_ 中讨论，并在`拉取请求号1859 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1859">https://github.com/ros-planning/navigation2/issues/1859</a>&gt;`_ 中实现。</p>
 </div>
 <div class="section" id="new-costmap-layer">
-<h2>New Costmap Layer<a class="headerlink" href="#new-costmap-layer" title="永久链接至标题"></a></h2>
+<h2>新的Costmap图层<a class="headerlink" href="#new-costmap-layer" title="永久链接至标题"></a></h2>
 <p>范围传感器代价地图在navigation2中尚未迁移为``nav2_costmap_2d::RangeSensorLayer``。它使用与`ROS1 &lt;<a class="reference external" href="http://wiki.ros.org/range_sensor_layer">http://wiki.ros.org/range_sensor_layer</a>&gt;`_层相同的概率模型，以及大部分相同的接口。参数的文档已添加到docs/parameters和navigation.ros.org的``配置指南``下。</p>
 </div>
 </div>

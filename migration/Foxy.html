@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foxy to Galactic &mdash; Navigation 2 1.0.0 文档</title>
+  <title>Foxy到Galactic &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -776,15 +776,15 @@
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-particle-filter-messages">新的粒子滤波器消息</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#selection-of-behavior-tree-in-each-navigation-action">每个导航动作中的行为树选择</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#followpoint-capability">FollowPoint功能</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-costmap-layer">New Costmap Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-costmap-layer">新的Costmap图层</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Foxy to Galactic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#navigatetopose-action-feedback-updates">NavigateToPose Action Feedback updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#navigatetopose-bt-node-interface-changes">NavigateToPose BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#navigatethroughposes-and-computepaththroughposes-actions-added">NavigateThroughPoses and ComputePathThroughPoses Actions Added</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#computepathtopose-bt-node-interface-changes">ComputePathToPose BT-node Interface Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#computepathtopose-action-interface-changes">ComputePathToPose Action Interface Changes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Foxy到Galactic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#navigatetopose-action-feedback-updates">NavigateToPose动作反馈更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigatetopose-bt-node-interface-changes">NavigateToPose BT节点接口更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigatethroughposes-and-computepaththroughposes-actions-added">新增了NavigateThroughPoses和ComputePathThroughPoses动作。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computepathtopose-bt-node-interface-changes">ComputePathToPose BT节点接口更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computepathtopose-action-interface-changes">ComputePathToPose Action接口变更</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backup-bt-node-interface-changes">BackUp BT-node Interface Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backup-recovery-interface-changes">BackUp Recovery Interface Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nav2-controllers-and-goal-checker-plugin-interface-changes">Nav2 Controllers and Goal Checker Plugin Interface Changes</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Migration Guides</a> &raquo;</li>
-      <li>Foxy to Galactic</li>
+      <li>Foxy到Galactic</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,44 +939,44 @@
            <div itemprop="articleBody">
              
   <div class="section" id="foxy-to-galactic">
-<span id="foxy-migration"></span><h1>Foxy to Galactic<a class="headerlink" href="#foxy-to-galactic" title="永久链接至标题"></a></h1>
+<span id="foxy-migration"></span><h1>Foxy到Galactic<a class="headerlink" href="#foxy-to-galactic" title="永久链接至标题"></a></h1>
 <p>从ROS 2 Foxy迁移到Galactic，我们添加了许多稳定性改进，这里不会具体说明。</p>
 <div class="section" id="navigatetopose-action-feedback-updates">
-<h2>NavigateToPose Action Feedback updates<a class="headerlink" href="#navigatetopose-action-feedback-updates" title="永久链接至标题"></a></h2>
+<h2>NavigateToPose动作反馈更新<a class="headerlink" href="#navigatetopose-action-feedback-updates" title="永久链接至标题"></a></h2>
 <p>NavigateToPose动作反馈有两个改进：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">distance_remaining</span></code> now integrates path poses to report accurate distance remaining to go. Previously, this field reported the euclidean distance between the current pose and the goal pose.</p></li>
-<li><p>Addition of <code class="docutils literal notranslate"><span class="pre">estimated_time_remaining</span></code> field. This field reports the estimated time remaining by dividing the remaining distance by the current speed.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>distance_remaining``现在整合了路径姿势以报告准确的剩余距离。先前，该字段报告当前姿势和目标姿势之间的欧几里德距离。</p></li>
+<li><p>新增了``estimated_time_remaining``字段。该字段通过将剩余距离除以当前速度来报告预计剩余时间。</p></li>
 </ul>
 </div>
 <div class="section" id="navigatetopose-bt-node-interface-changes">
-<h2>NavigateToPose BT-node Interface Changes<a class="headerlink" href="#navigatetopose-bt-node-interface-changes" title="永久链接至标题"></a></h2>
-<p>The NavigateToPose input port has been changed to PoseStamped instead of Point and Quaternion.</p>
-<p>See <a class="reference internal" href="../configuration/packages/bt-plugins/actions/NavigateToPose.html#bt-navigate-to-pose-action"><span class="std std-ref">NavigateToPose</span></a> for more information.</p>
+<h2>NavigateToPose BT节点接口更改<a class="headerlink" href="#navigatetopose-bt-node-interface-changes" title="永久链接至标题"></a></h2>
+<p>NavigateToPose输入端口已更改为PoseStamped，而不是Point和Quaternion。</p>
+<p>更多信息请参阅:ref:<cite>bt_navigate_to_pose_action</cite>。</p>
 </div>
 <div class="section" id="navigatethroughposes-and-computepaththroughposes-actions-added">
-<h2>NavigateThroughPoses and ComputePathThroughPoses Actions Added<a class="headerlink" href="#navigatethroughposes-and-computepaththroughposes-actions-added" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">NavigateThroughPoses</span></code> action has been added analog to the <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code>. Rather than going to a single position, this Action will allow a user to specify a number of hard intermediary pose constraints between the start and final pose to plan through. The new <code class="docutils literal notranslate"><span class="pre">ComputePathThroughPoses</span></code> action has been added to the <code class="docutils literal notranslate"><span class="pre">planner_server</span></code> to process these requests through <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">goal_poses</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">ComputePathThroughPoses</span></code> action server will take in a set of <code class="docutils literal notranslate"><span class="pre">N</span></code> goals to achieve, plan through each pose and concatenate the output path for use in navigation. The controller and navigator know nothing about the semantics of the generated path, so the robot will not stop or slow on approach to these goals. It will rather continue through each pose as it were any other point on the path continuously. When paired with the <code class="docutils literal notranslate"><span class="pre">SmacPlanner</span></code>, this feature can be used to generate <strong>completely kinematically feasible trajectories through pose constraints</strong>.</p>
-<p>If you wish to stop at each goal pose, consider using the waypoint follower instead, which will stop and allow a user to optionally execute a task plugin at each pose.</p>
+<h2>新增了NavigateThroughPoses和ComputePathThroughPoses动作。<a class="headerlink" href="#navigatethroughposes-and-computepaththroughposes-actions-added" title="永久链接至标题"></a></h2>
+<p>新增了``NavigateThroughPoses``动作，类似于``NavigateToPose``。与前者只到达一个位置不同，这个动作允许用户在起始姿态和目标姿态之间指定多个硬约束的中间姿态。新增了``ComputePathThroughPoses``动作，用于在``planner_server``中处理这些通过``N个目标姿态``的请求。</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>ComputePathThroughPoses``动作服务器将接收一组``N``个目标以实现，通过每个姿势进行规划，并连接输出路径以供导航使用。控制器和导航器对生成路径的语义一无所知，因此机器人不会在接近这些目标时停止或减速。相反，它将像处理路径上的任何其他点一样持续通过每个姿势。与``SmacPlanner``配对使用时，此功能可用于生成**完全符合运动约束的轨迹**。</p>
+<p>如果您希望在每个目标姿态处停下来，请考虑使用航点跟随器（waypoint follower），它会停下来，并允许用户在每个姿态上选择性地执行任务插件。</p>
 </div>
 <div class="section" id="computepathtopose-bt-node-interface-changes">
-<h2>ComputePathToPose BT-node Interface Changes<a class="headerlink" href="#computepathtopose-bt-node-interface-changes" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> input port has been added to optionally allow the request of a path from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">goal</span></code>  instead of from the current position of the robot to <code class="docutils literal notranslate"><span class="pre">goal</span></code>.</p>
-<p>See <a class="reference internal" href="../configuration/packages/bt-plugins/actions/ComputePathToPose.html#bt-compute-path-to-pose-action"><span class="std std-ref">ComputePathToPose（计算路径到位姿）</span></a> for more information.</p>
+<h2>ComputePathToPose BT节点接口更改<a class="headerlink" href="#computepathtopose-bt-node-interface-changes" title="永久链接至标题"></a></h2>
+<p>新增了``start``输入端口，可选择性地请求从``start``到``goal``的路径，而不是从机器人的当前位置到``goal``的路径。</p>
+<p>有关详细信息，请参见：<a class="reference internal" href="../configuration/packages/bt-plugins/actions/ComputePathToPose.html#bt-compute-path-to-pose-action"><span class="std std-ref">ComputePathToPose（计算路径到位姿）</span></a>。</p>
 </div>
 <div class="section" id="computepathtopose-action-interface-changes">
-<h2>ComputePathToPose Action Interface Changes<a class="headerlink" href="#computepathtopose-action-interface-changes" title="永久链接至标题"></a></h2>
+<h2>ComputePathToPose Action接口变更<a class="headerlink" href="#computepathtopose-action-interface-changes" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>The goal pose field <code class="docutils literal notranslate"><span class="pre">pose</span></code> was changed to <code class="docutils literal notranslate"><span class="pre">goal</span></code>.</p></li>
-<li><p>The PoseStamped field <code class="docutils literal notranslate"><span class="pre">start</span></code> has been added.</p></li>
+<li><p>目标姿势字段``pose``已更改为``goal``。</p></li>
+<li><p>新增了PoseStamped字段``start``。</p></li>
 <li><p>The bool field <code class="docutils literal notranslate"><span class="pre">use_start</span></code> has been added.</p></li>
 </ul>
-<p>These two additional fields have been added to optionally allow, when <code class="docutils literal notranslate"><span class="pre">use_start</span></code> is true, the request of a path from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">goal</span></code> instead of from the current position of the robot to <code class="docutils literal notranslate"><span class="pre">goal</span></code>. Corresponding changes have been done of the Planner Server.</p>
+<p>这两个附加字段可选择性地在``use_start``为true时，允许请求从``start``到``goal``的路径，而不是从机器人的当前位置到``goal``的路径。相应的变更已在Planner Server上进行。</p>
 </div>
 <div class="section" id="backup-bt-node-interface-changes">
 <h2>BackUp BT-node Interface Changes<a class="headerlink" href="#backup-bt-node-interface-changes" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">backup_dist</span></code> and <code class="docutils literal notranslate"><span class="pre">backup_speed</span></code> input ports should both be positive values indicating the distance to go backward respectively the speed with which the robot drives backward.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>backup_dist``和``backup_speed``输入端口应为正值，分别指示后退距离和机器人后退时的速度。</p>
 </div>
 <div class="section" id="backup-recovery-interface-changes">
 <h2>BackUp Recovery Interface Changes<a class="headerlink" href="#backup-recovery-interface-changes" title="永久链接至标题"></a></h2>
