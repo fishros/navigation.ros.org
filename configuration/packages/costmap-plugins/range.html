@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Range Sensor Parameters &mdash; Navigation 2 1.0.0 文档</title>
+  <title>范围传感器参数 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -518,7 +518,7 @@
 <li class="toctree-l4"><a class="reference internal" href="inflation.html">膨胀层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="obstacle.html">障碍物图层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="voxel.html">Voxel Layer Parameters</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Range Sensor Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">范围传感器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="denoise.html">降噪层参数</a></li>
 </ul>
 </li>
@@ -930,7 +930,7 @@
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../configuring-costmaps.html">二维代价地图</a> &raquo;</li>
-      <li>Range Sensor Parameters</li>
+      <li>范围传感器参数</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,8 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="range-sensor-parameters">
-<h1>Range Sensor Parameters<a class="headerlink" href="#range-sensor-parameters" title="永久链接至标题"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;range</span> <span class="pre">layer&gt;</span></code> is the corresponding plugin name selected for this type.</p>
+<h1>范围传感器参数<a class="headerlink" href="#range-sensor-parameters" title="永久链接至标题"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;range</span> <span class="pre">layer&gt;</span></code> 是为此类型选择的相应插件名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;range</span> <span class="pre">layer&gt;</span></code>.enabled</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -970,7 +970,7 @@
 <col style="width: 33%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Type Default</p></td>
+<tr class="row-odd"><td><p>类型 默认值</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>字符串向量</p></td>
@@ -979,7 +979,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Range topics to subscribe to.</p>
+<dt>描述</dt><dd><p>订阅的范围主题</p>
 </dd>
 </dl>
 </dd>
@@ -999,7 +999,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Phi value.</p>
+<dt>描述</dt><dd><p>Phi 值</p>
 </dd>
 </dl>
 </dd>
@@ -1019,7 +1019,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Inflate the triangular area covered by the sensor (percentage).</p>
+<dt>描述</dt><dd><p>扩大传感器覆盖的三角区域（百分比）</p>
 </dd>
 </dl>
 </dd>
@@ -1039,9 +1039,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>If zero, this parameter has no effect. Otherwise if the layer does
-not receive sensor data for this amount of time,
-the layer will warn the user and the layer will be marked as not current.</p>
+<dt>描述</dt><dd><p>如果为零，此参数无效。否则，如果该层在此时间段内未接收到传感器数据，则该层将向用户发出警告，并将该层标记为非当前层。</p>
 </dd>
 </dl>
 </dd>
@@ -1061,7 +1059,7 @@ the layer will warn the user and the layer will be marked as not current.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Probability below which cells are marked as free.</p>
+<dt>描述</dt><dd><p>将概率低于此值的单元格标记为可通行。</p>
 </dd>
 </dl>
 </dd>
@@ -1081,7 +1079,7 @@ the layer will warn the user and the layer will be marked as not current.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Probability above which cells are marked as occupied.</p>
+<dt>描述</dt><dd><p>被标记为占用的单元格的概率上限。</p>
 </dd>
 </dl>
 </dd>
@@ -1101,7 +1099,7 @@ the layer will warn the user and the layer will be marked as not current.</p>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to clear the sensor readings on max range.</p>
+<dt>描述</dt><dd><p>是否在最大范围上清除传感器读数。</p>
 </dd>
 </dl>
 </dd>
@@ -1116,12 +1114,12 @@ the layer will warn the user and the layer will be marked as not current.</p>
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>string</p></td>
-<td><p>ALL</p></td>
+<td><p>全部</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Input sensor type is either ALL (automatic selection), VARIABLE (min range != max range), or FIXED (min range == max range).</p>
+<dt>描述</dt><dd><p>输入传感器类型可以是ALL（自动选择）、VARIABLE（最小范围!=最大范围）或FIXED（最小范围==最大范围）。</p>
 </dd>
 </dl>
 </dd>
