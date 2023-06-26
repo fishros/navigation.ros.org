@@ -8207,7 +8207,7 @@ msgstr "``<dwb plugin>``.\\ ``<name>``.slowing_factor"
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:47
 msgid "Factor to slow robot motion by while rotating to goal."
-msgstr "Factor to slow robot motion by while rotating to goal."
+msgstr "旋转到目标位置时减慢机器人运动的因子。"
 
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst
@@ -8217,7 +8217,7 @@ msgstr "``<dwb plugin>``.\\ ``<name>``.lookahead_time"
 
 #: ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:58
 msgid "If > 0, amount of time to look forward for a collision for.."
-msgstr "If > 0, amount of time to look forward for a collision for.."
+msgstr "如果大于0，则为检测碰撞的向前查看时间。"
 
 
 #: ../../configuration/packages/trajectory_critics/twirling.rst:4
@@ -8227,7 +8227,7 @@ msgstr "TwirlingCritic"
 
 #: ../../configuration/packages/trajectory_critics/twirling.rst:6
 msgid "Prevents holonomic robots from spinning as they make their way to the goal."
-msgstr "Prevents holonomic robots from spinning as they make their way to the goal."
+msgstr "防止全向移动机器人在前往目标位置时旋转。"
 
 
 #: ../../configuration/packages/trajectory_critics/twirling.rst:13
