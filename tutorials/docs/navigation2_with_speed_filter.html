@@ -514,7 +514,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap2d-ros-parameters">二维代价地图 ROS 参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#plugin-parameters">插件参数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/static.html">Static Layer Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/static.html">静态层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/inflation.html">膨胀层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/obstacle.html">障碍物图层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/voxel.html">Voxel Layer Parameters</a></li>
@@ -524,7 +524,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html">保护区过滤器参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html">Speed Filter Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html">速度过滤器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/binary_filter.html">二值过滤器参数</a></li>
 </ul>
 </li>
@@ -1172,7 +1172,7 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
 <li><p><code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code>: filter info topic name. This needs to be equal to <code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code> parameter of Costmap Filter Info Publisher Server from the chapter above.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speed_limit_topic</span></code>: name of topic to publish speed limit to.</p></li>
 </ul>
-<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> are listed at the <a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">Speed Filter Parameters</span></a> page.</p>
+<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> are listed at the <a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html#speed-filter"><span class="std std-ref">速度过滤器参数</span></a> page.</p>
 <p>You can place the plugin either in the <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> section in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> to have speed restriction mask applied to global costmap or in the <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> to apply speed mask to the local costmap. However, <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> plugin should never be enabled simultaneously for global and local costmaps. Otherwise, it can lead to unwanted multiple &quot;speed restriction&quot; - &quot;no restriction&quot; message chains on speed restriction boundaries, that will cause jerking of the robot or another unpredictable behaviour.</p>
 <p>In this tutorial, we will enable Speed Filter for the global costmap. For this use the following configuration:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>global_costmap:

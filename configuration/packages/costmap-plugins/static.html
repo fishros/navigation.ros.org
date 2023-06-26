@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Static Layer Parameters &mdash; Navigation 2 1.0.0 文档</title>
+  <title>静态层参数 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -514,7 +514,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#costmap2d-ros-parameters">二维代价地图 ROS 参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-costmaps.html#plugin-parameters">插件参数</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Static Layer Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">静态层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="inflation.html">膨胀层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="obstacle.html">障碍物图层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="voxel.html">Voxel Layer Parameters</a></li>
@@ -524,7 +524,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="keepout_filter.html">保护区过滤器参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="speed_filter.html">Speed Filter Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="speed_filter.html">速度过滤器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="binary_filter.html">二值过滤器参数</a></li>
 </ul>
 </li>
@@ -930,7 +930,7 @@
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../configuring-costmaps.html">二维代价地图</a> &raquo;</li>
-      <li>Static Layer Parameters</li>
+      <li>静态层参数</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,8 +940,8 @@
            <div itemprop="articleBody">
              
   <div class="section" id="static-layer-parameters">
-<h1>Static Layer Parameters<a class="headerlink" href="#static-layer-parameters" title="永久链接至标题"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;static</span> <span class="pre">layer&gt;</span></code> is the corresponding plugin name selected for this type.</p>
+<h1>静态层参数<a class="headerlink" href="#static-layer-parameters" title="永久链接至标题"></a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>&lt;static layer&gt;``是为此类型选择的相应插件名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;static</span> <span class="pre">layer&gt;</span></code>.enabled</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -979,7 +979,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Subscribe to static map updates after receiving first.</p>
+<dt>描述</dt><dd><p>在接收到第一个静态地图更新后订阅。</p>
 </dd>
 </dl>
 </dd>
@@ -999,7 +999,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>QoS settings for map topic.</p>
+<dt>描述</dt><dd><p>用于地图话题的QoS设置。</p>
 </dd>
 </dl>
 </dd>
@@ -1019,7 +1019,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>TF tolerance.</p>
+<dt>描述</dt><dd><p>TF容差。</p>
 </dd>
 </dl>
 </dd>
@@ -1039,7 +1039,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Map topic to subscribe to. If left empty the map topic will default to the global <cite>map_topic</cite> parameter in <cite>costmap_2d_ros</cite>.</p>
+<dt>描述</dt><dd><p>要订阅的地图话题。如果留空，地图话题将默认使用`costmap_2d_ros`中的全局`map_topic`参数。</p>
 </dd>
 </dl>
 </dd>
