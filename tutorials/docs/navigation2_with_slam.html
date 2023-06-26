@@ -225,11 +225,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#launch-robot-interfaces">0- Launch Robot Interfaces</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-navigation2">1- Launch Navigation2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-slam">2- Launch SLAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#working-with-slam">3- Working with SLAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#getting-started-simplification">4- Getting Started Simplification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-robot-interfaces">0- 启动机器人接口</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-navigation2">1- 启动 Navigation2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-slam">2- 启动 SLAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-slam">3- 使用 SLAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started-simplification">4- 快速入门简化</a></li>
 </ul>
 </li>
 </ul>
@@ -301,7 +301,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_with_speed_filter.html">Navigating with Speed Limits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_with_speed_filter.html">带速度限制的导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -947,21 +947,18 @@
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This document explains how to use Nav2 with SLAM.
-The following steps show ROS 2 users how to generate occupancy grid maps and use Nav2 to move their robot around.
-This tutorial applies to both simulated and physical robots, but will be completed here on physical robot.</p>
-<p>Before completing this tutorial, completing the <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> is highly recommended especially if you are new to ROS and Navigation2.</p>
-<p>In this tutorial we'll be using SLAM Toolbox. More information can be found in the <a class="reference external" href="https://vimeo.com/378682207">ROSCon talk for SLAM Toolbox</a></p>
+<p>本文档解释了如何将Nav2与SLAM配合使用。以下步骤展示了ROS 2用户如何生成占据栅格地图并使用Nav2来移动他们的机器人。本教程适用于仿真和实体机器人，但本文将在实体机器人上完成。</p>
+<p>在完成本教程之前，强烈建议您先完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>，特别是如果您对ROS和Navigation2还不熟悉的话。</p>
+<p>在本教程中，我们将使用SLAM工具箱。更多信息可以在`ROSCon关于SLAM工具箱的演讲 &lt;<a class="reference external" href="https://vimeo.com/378682207">https://vimeo.com/378682207</a>&gt;`_中找到。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>You must install Navigation2, Turtlebot3, and SLAM Toolbox.
-If you don't have them installed, please follow <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>.</p>
-<p>SLAM Toolbox can be installed via:</p>
+<p>您必须安装Navigation2、Turtlebot3和SLAM Toolbox。如果您还没有安装它们，请按照 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> 进行安装。</p>
+<p>可以通过以下方式安装SLAM工具箱：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-slam-toolbox</span></code></p>
 </div></blockquote>
-<p>or from built from source in your workspace with:</p>
+<p>或者从工作空间构建源代码：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">&lt;ros2-distro&gt;-devel</span> <span class="pre">git&#64;github.com:stevemacenski/slam_toolbox.git</span></code></p>
 </div></blockquote>
@@ -969,55 +966,47 @@ If you don't have them installed, please follow <a class="reference internal" hr
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="launch-robot-interfaces">
-<h3>0- Launch Robot Interfaces<a class="headerlink" href="#launch-robot-interfaces" title="永久链接至标题"></a></h3>
-<p>For this tutorial, we will use the turtlebot3.
-If you have another robot, replace with your robot specific interfaces.
-Typically, this includes the robot state publisher of the URDF, simulated or physical robot interfaces, controllers, safety nodes, and the like.</p>
+<h3>0- 启动机器人接口<a class="headerlink" href="#launch-robot-interfaces" title="永久链接至标题"></a></h3>
+<p>在本教程中，我们将使用turtlebot3。如果您有其他机器人，请将其替换为您的机器人特定接口。通常，这包括URDF的机器人状态发布器、模拟或物理机器人接口、控制器、安全节点等。</p>
 <p>在本教程中，每次打开新的终端时，请首先运行以下命令。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/ros/&lt;ros2-distro&gt;/setup.bash</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle</span></code></p></li>
 </ul>
-<p>Launch your robot's interface and robot state publisher,</p>
+<p>启动机器人的接口和机器人状态发布器，</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span></code></p>
 </div></blockquote>
 </div>
 <div class="section" id="launch-navigation2">
-<h3>1- Launch Navigation2<a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
-<p>Launch Navigation without nav2_amcl and nav2_map_server.
-It is assumed that the SLAM node(s) will publish to /map topic and provide the map-&gt;odom transform.</p>
+<h3>1- 启动 Navigation2<a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
+<p>启动Navigation，但不包括nav2_amcl和nav2_map_server。假设SLAM节点将发布到/map主题，并提供map-&gt;odom的变换。</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">navigation_launch.py</span></code></p>
 </div></blockquote>
 </div>
 <div class="section" id="launch-slam">
-<h3>2- Launch SLAM<a class="headerlink" href="#launch-slam" title="永久链接至标题"></a></h3>
-<p>Bring up your choice of SLAM implementation.
-Make sure it provides the map-&gt;odom transform and /map topic.
-Run Rviz and add the topics you want to visualize such as /map, /tf, /laserscan etc.
-For this tutorial, we will use <a class="reference external" href="https://github.com/SteveMacenski/slam_toolbox">SLAM Toolbox</a>.</p>
+<h3>2- 启动 SLAM<a class="headerlink" href="#launch-slam" title="永久链接至标题"></a></h3>
+<p>启动您选择的 SLAM 实现。确保它提供了 map-&gt;odom 变换和 /map 主题。运行 Rviz 并添加您想要可视化的主题，例如 /map，/tf，/laserscan 等。对于本教程，我们将使用 <a class="reference external" href="https://github.com/SteveMacenski/slam_toolbox">SLAM Toolbox</a>。</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">slam_toolbox</span> <span class="pre">online_async_launch.py</span></code></p>
 </div></blockquote>
 </div>
 <div class="section" id="working-with-slam">
-<h3>3- Working with SLAM<a class="headerlink" href="#working-with-slam" title="永久链接至标题"></a></h3>
-<p>Move your robot by requesting a goal through RViz or the ROS 2 CLI, ie:</p>
+<h3>3- 使用 SLAM<a class="headerlink" href="#working-with-slam" title="永久链接至标题"></a></h3>
+<p>通过 RViz 或 ROS 2 CLI 请求一个目标来移动你的机器人，例如：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </span>/goal_pose<span class="w"> </span>geometry_msgs/PoseStamped<span class="w"> </span><span class="s2">&quot;{header: {stamp: {sec: 0}, frame_id: &#39;map&#39;}, pose: {position: {x: 0.2, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}&quot;</span>
 </pre></div>
 </div>
-<p>You should see the map update live! To save this map to file:</p>
+<p>您应该可以看到实时更新的地图！要将此地图保存到文件中：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">nav2_map_server</span> <span class="pre">map_saver_cli</span> <span class="pre">-f</span> <span class="pre">~/map</span></code></p>
 </div></blockquote>
-<a class="reference internal image-reference" href="../../_images/navigation2_with_slam.gif"><img alt="Navigation2 with SLAM" class="align-center" src="../../_images/navigation2_with_slam.gif" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/navigation2_with_slam.gif"><img alt="带 SLAM 的 Navigation2" class="align-center" src="../../_images/navigation2_with_slam.gif" style="width: 700px;" /></a>
 </div>
 <div class="section" id="getting-started-simplification">
-<h3>4- Getting Started Simplification<a class="headerlink" href="#getting-started-simplification" title="永久链接至标题"></a></h3>
-<p>If you're only interested in running SLAM in the turtlebot3 getting started sandbox world, we also provide a simple way to enable SLAM as a launch configuration.
-Rather than individually launching the interfaces, navigation, and SLAM, you can continue to use the <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> with <code class="docutils literal notranslate"><span class="pre">slam</span></code> config set to true.
-We provide the instructions above with the assumption that you'd like to run SLAM on your own robot which would have separated simulation / robot interfaces and navigation launch files that are combined in <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> for the purposes of easy testing.</p>
+<h3>4- 快速入门简化<a class="headerlink" href="#getting-started-simplification" title="永久链接至标题"></a></h3>
+<p>如果您只对在 turtlebot3 入门沙盒世界中运行 SLAM 感兴趣，我们还提供了一种简单的方法来将 SLAM 启用为启动配置。您可以继续使用 <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code>，并将 <code class="docutils literal notranslate"><span class="pre">slam</span></code> 配置设置为 true，而不是单独启动界面、导航和 SLAM。我们提供的上述说明是基于您希望在自己的机器人上运行 SLAM，该机器人具有分离的仿真/机器人接口和导航启动文件，这些文件在 <code class="docutils literal notranslate"><span class="pre">tb3_simulation_launch.py</span></code> 中合并，以便进行简单的测试。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>slam:<span class="o">=</span>True
 </pre></div>
 </div>

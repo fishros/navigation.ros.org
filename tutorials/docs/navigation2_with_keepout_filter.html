@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Navigating with Speed Limits" href="navigation2_with_speed_filter.html" />
+    <link rel="next" title="带速度限制的导航" href="navigation2_with_speed_filter.html" />
     <link rel="prev" title="动态对象跟随" href="navigation2_dynamic_point_following.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -225,11 +225,11 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_slam.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#launch-robot-interfaces">0- Launch Robot Interfaces</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#launch-navigation2">1- Launch Navigation2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#launch-slam">2- Launch SLAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#working-with-slam">3- Working with SLAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#getting-started-simplification">4- Getting Started Simplification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#launch-robot-interfaces">0- 启动机器人接口</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#launch-navigation2">1- 启动 Navigation2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#launch-slam">2- 启动 SLAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#working-with-slam">3- 使用 SLAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_slam.html#getting-started-simplification">4- 快速入门简化</a></li>
 </ul>
 </li>
 </ul>
@@ -301,7 +301,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_with_speed_filter.html">Navigating with Speed Limits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_with_speed_filter.html">带速度限制的导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -1190,7 +1190,7 @@ local_costmap:
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py
 </pre></div>
 </div>
-<p>And check that filter is working properly as in the pictures below (first picture shows keepout filter enabled for the global costmap, second - differently-sized <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> filter mask):</p>
+<p>请确保过滤器按照下面的图片正确工作（第一张图片显示全局代价地图启用了keepout过滤器，第二张图片显示大小不同的`keepout_mask.pgm`过滤器掩码）：</p>
 <a class="reference internal image-reference" href="../../_images/keepout_global.gif"><img alt="../../_images/keepout_global.gif" src="../../_images/keepout_global.gif" style="height: 400px;" /></a>
 <a class="reference internal image-reference" href="../../_images/keepout_mask.png"><img alt="../../_images/keepout_mask.png" src="../../_images/keepout_mask.png" style="height: 400px;" /></a>
 </div>
