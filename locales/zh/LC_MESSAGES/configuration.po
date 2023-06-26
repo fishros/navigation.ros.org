@@ -7972,7 +7972,7 @@ msgstr "根据轨迹与目标姿态的对齐程度对轨迹进行评分。"
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst:13
 msgid "``<name>``: GoalAlignCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: GoalAlignCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``：在 :ref:`dwb_controller` 中定义的 **<dwb plugin>.critics** 参数中定义的 GoalAlignCritic 评论者名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst ../../configuration/packages/trajectory_critics/path_align.rst
@@ -8002,7 +8002,7 @@ msgstr "\"last\""
 
 #: ../../configuration/packages/trajectory_critics/goal_align.rst:35 ../../configuration/packages/trajectory_critics/goal_dist.rst:25 ../../configuration/packages/trajectory_critics/path_align.rst:34 ../../configuration/packages/trajectory_critics/path_dist.rst:23
 msgid "last, sum, or product combination methods."
-msgstr "last, sum, or product combination methods."
+msgstr "最后，求和或乘积组合方法。"
 
 
 #: ../../configuration/packages/trajectory_critics/goal_dist.rst:4
@@ -8012,12 +8012,12 @@ msgstr "GoalDistCritic"
 
 #: ../../configuration/packages/trajectory_critics/goal_dist.rst:6
 msgid "Scores a trajectory based on how close the trajectory gets the robot to the goal pose."
-msgstr "Scores a trajectory based on how close the trajectory gets the robot to the goal pose."
+msgstr "根据轨迹将机器人接近目标姿态的程度评分。"
 
 
 #: ../../configuration/packages/trajectory_critics/goal_dist.rst:13
 msgid "``<name>``: GoalDistCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: GoalDistCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``：GoalDistCritic是在**:ref:`dwb_controller`**中定义的**<dwb plugin>.critics**参数中定义的批评者名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:4
@@ -8027,12 +8027,12 @@ msgstr "ObstacleFootprintCritic"
 
 #: ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:6
 msgid "Scores a trajectory based on verifying all points along the robot's footprint don't touch an obstacle marked in the costmap."
-msgstr "Scores a trajectory based on verifying all points along the robot's footprint don't touch an obstacle marked in the costmap."
+msgstr "根据验证机器人轮廓上的所有点是否不接触在代价地图中标记的障碍物来评分轨迹。"
 
 
 #: ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:13
 msgid "``<name>``: ObstacleFootprintCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: ObstacleFootprintCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``：在 :ref:`dwb_controller` 中定义的 **<dwb plugin>.critics** 参数中定义的 ObstacleFootprintCritic 评论者名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:4
@@ -8042,27 +8042,27 @@ msgstr "OscillationCritic"
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:6
 msgid "Prevents the robot from just moving backwards and forwards."
-msgstr "Prevents the robot from just moving backwards and forwards."
+msgstr "防止机器人只是前后移动。"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:13
 msgid "``<name>``: OscillationCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
-msgstr "``<name>``: OscillationCritic critic name defined in the **<dwb plugin>.critics** parameter defined in :ref:`dwb_controller`."
+msgstr "``<name>``：OscillationCritic是在**:ref:`dwb_controller`**中定义的**<dwb plugin>.critics**参数中定义的批评者名称。"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.oscillation_reset_dist"
-msgstr "``<dwb plugin>``.\\ ``<name>``.oscillation_reset_dist"
+msgstr "``<dwb插件>``。\\ ``<名称>``。oscillation_reset_dist"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:25
 msgid "Minimum distance to move to reset oscillation watchdog (m)."
-msgstr "Minimum distance to move to reset oscillation watchdog (m)."
+msgstr "重置振荡监控器所需的最小移动距离（米）。"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.oscillation_reset_angle"
-msgstr "``<dwb plugin>``.\\ ``<name>``.oscillation_reset_angle"
+msgstr "``<dwb插件>``。\\ ``<名称>``。oscillation_reset_angle"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:36
@@ -8072,7 +8072,7 @@ msgstr "Minimum angular distance to move to reset watchdog (rad)."
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst
 msgid "``<dwb plugin>``.\\ ``<name>``.oscillation_reset_time"
-msgstr "``<dwb plugin>``.\\ ``<name>``.oscillation_reset_time"
+msgstr "``<dwb插件>``。\\ ``<名称>``。oscillation_reset_time"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:43 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:54
@@ -8082,7 +8082,7 @@ msgstr "-1"
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:47
 msgid "Duration when a reset may be called. If -1, cannot be reset.."
-msgstr "Duration when a reset may be called. If -1, cannot be reset.."
+msgstr "重置可能被调用的持续时间。如果为-1，则不能重置。"
 
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst
@@ -8092,7 +8092,7 @@ msgstr "``<dwb plugin>``.\\ ``<name>``.x_only_threshold"
 
 #: ../../configuration/packages/trajectory_critics/oscillation.rst:59
 msgid "Threshold to check in the X velocity direction."
-msgstr "Threshold to check in the X velocity direction."
+msgstr "检查X轴速度方向的阈值。"
 
 
 #: ../../configuration/packages/trajectory_critics/path_align.rst:4
@@ -8102,7 +8102,7 @@ msgstr "PathAlignCritic"
 
 #: ../../configuration/packages/trajectory_critics/path_align.rst:6 ../../configuration/packages/trajectory_critics/path_dist.rst:6
 msgid "Scores a trajectory based on how well it is aligned to the path provided by the global planner."
-msgstr "Scores a trajectory based on how well it is aligned to the path provided by the global planner."
+msgstr "根据与全局规划器提供的路径对齐程度对轨迹进行评分。"
 
 
 #: ../../configuration/packages/trajectory_critics/path_align.rst:11
