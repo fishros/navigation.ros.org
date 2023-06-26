@@ -1396,7 +1396,7 @@ msgstr "添加了更平滑的任务服务器"
 
 #: ../../migration/Galactic.rst:227
 msgid "A new task server was added which loads smoother plugins and executes them to improve quality of an existing planned path. Smoothing action can be called from a behavior tree using SmoothPath action node. `PR 2569 <https://github.com/ros-planning/navigation2/pull/2569>`_ implements and `PR 2875 <https://github.com/ros-planning/navigation2/pull/2875>`_ adds in the first of the plugins using it with a simple smoother. Other smoothers are in development and will be added in the future."
-msgstr "A new task server was added which loads smoother plugins and executes them to improve quality of an existing planned path. Smoothing action can be called from a behavior tree using SmoothPath action node. `PR 2569 <https://github.com/ros-planning/navigation2/pull/2569>`_ implements and `PR 2875 <https://github.com/ros-planning/navigation2/pull/2875>`_ adds in the first of the plugins using it with a simple smoother. Other smoothers are in development and will be added in the future."
+msgstr "添加了一个新的任务服务器，它加载更平滑的插件并执行它们，以改进现有的计划路径的质量。平滑动作可以通过使用SmoothPath行为节点在行为树中调用。`PR 2569 <https://github.com/ros-planning/navigation2/pull/2569>`_ 实现了这一功能，`PR 2875 <https://github.com/ros-planning/navigation2/pull/2875>`_ 添加了第一个使用简单平滑器的插件。其他平滑器正在开发中，并将在将来添加。"
 
 
 #: ../../migration/Galactic.rst:231
@@ -1406,7 +1406,7 @@ msgstr "在 RPP 中移除了使用接近速度缩放参数"
 
 #: ../../migration/Galactic.rst:233
 msgid "The parameter ``use_approach_linear_velocity_scaling`` is removed in favor of always on to help in smooth transitions to the goal. `This PR 2701 <https://github.com/ros-planning/navigation2/pull/2701>`_ implements."
-msgstr "The parameter ``use_approach_linear_velocity_scaling`` is removed in favor of always on to help in smooth transitions to the goal. `This PR 2701 <https://github.com/ros-planning/navigation2/pull/2701>`_ implements."
+msgstr "参数``use_approach_linear_velocity_scaling``已被移除，始终处于打开状态，以帮助实现平滑过渡到目标。`这个 PR 2701 <https://github.com/ros-planning/navigation2/pull/2701>`_ 实现了这一功能。"
 
 
 #: ../../migration/Galactic.rst:236
@@ -1416,7 +1416,7 @@ msgstr "将 AMCL 运动模型重构为插件"
 
 #: ../../migration/Galactic.rst:238
 msgid "`This PR 2642 <https://github.com/ros-planning/navigation2/pull/2642>`_ creates plugins for the different motion models currently used in AMCL. This functionality enables users to use any custom motion model by creating it as a plugin and changing the robot_model_type parameter to the name of the plugin in nav2_params.yaml file. This helps to use custom motion models without the need to modify the AMCL source code."
-msgstr "`This PR 2642 <https://github.com/ros-planning/navigation2/pull/2642>`_ creates plugins for the different motion models currently used in AMCL. This functionality enables users to use any custom motion model by creating it as a plugin and changing the robot_model_type parameter to the name of the plugin in nav2_params.yaml file. This helps to use custom motion models without the need to modify the AMCL source code."
+msgstr "`这个 PR 2642 <https://github.com/ros-planning/navigation2/pull/2642>`_ 创建了当前在 AMCL 中使用的不同运动模型的插件。这个功能使用户可以通过创建插件并将 robot_model_type 参数更改为 nav2_params.yaml 文件中插件的名称来使用任何自定义运动模型。这有助于在不修改 AMCL 源代码的情况下使用自定义运动模型。"
 
 
 #: ../../migration/Galactic.rst:241
@@ -1436,62 +1436,62 @@ msgstr "这是一个很棒的功能想法，但在实践中并没有完全实现
 
 #: ../../migration/Galactic.rst:247
 msgid "So, what I propose here is to remove live monitoring of the BT from Nav2. **We can still use Groot to modify, visualize, and generally work with behavior trees**, the only thing being removed is to live view the executing behavior tree as Nav2 is currently executing it (it used to light up the boxes of the current nodes). This was of dubious value anyhow, since the tree ticks so fast its difficult to visualize and get meaningful insights into things as the system is moving so quickly."
-msgstr "So, what I propose here is to remove live monitoring of the BT from Nav2. **We can still use Groot to modify, visualize, and generally work with behavior trees**, the only thing being removed is to live view the executing behavior tree as Nav2 is currently executing it (it used to light up the boxes of the current nodes). This was of dubious value anyhow, since the tree ticks so fast its difficult to visualize and get meaningful insights into things as the system is moving so quickly."
+msgstr "因此，我在这里建议将对行为树的实时监控从 Nav2 中移除。**我们仍然可以使用 Groot 来修改、可视化和处理行为树**，唯一被移除的是在 Nav2 当前执行行为树时的实时视图（它曾经会点亮当前节点的框）。这本身就是可疑的价值，因为树的执行速度非常快，很难在系统移动得如此迅速时进行可视化并得到有意义的见解。"
 
 
 #: ../../migration/Galactic.rst:250
 msgid "Replanning Only if Path is Invalid"
-msgstr "Replanning Only if Path is Invalid"
+msgstr "仅在路径无效时重新规划"
 
 
 #: ../../migration/Galactic.rst:252
 msgid "`This PR 2591 <https://github.com/ros-planning/navigation2/pull/2591>`_ creates two new condition BT node to facilitate replanning only if path becomes invalid rather than constantly replanning. These new nodes were integrated into the default BT."
-msgstr "`This PR 2591 <https://github.com/ros-planning/navigation2/pull/2591>`_ creates two new condition BT node to facilitate replanning only if path becomes invalid rather than constantly replanning. These new nodes were integrated into the default BT."
+msgstr "`这个 PR 2591 <https://github.com/ros-planning/navigation2/pull/2591>`_ 创建了两个新的条件行为树节点，以便仅在路径变为无效时进行重新规划，而不是不断地重新规划。这些新节点已集成到默认的行为树中。"
 
 
 #: ../../migration/Galactic.rst:255
 msgid "Fix CostmapLayer clearArea invert param logic"
-msgstr "Fix CostmapLayer clearArea invert param logic"
+msgstr "修复 CostmapLayer 清除区域的反转参数逻辑"
 
 
 #: ../../migration/Galactic.rst:256
 msgid "`This PR 2772 <https://github.com/ros-planning/navigation2/pull/2772>`_ fixes the invert paramlogic of the CostmapLayer clearArea fonction. Hence correcting the behavior of the clearAroundRobot and clearExceptRegion services and their corresponding BT actions."
-msgstr "`This PR 2772 <https://github.com/ros-planning/navigation2/pull/2772>`_ fixes the invert paramlogic of the CostmapLayer clearArea fonction. Hence correcting the behavior of the clearAroundRobot and clearExceptRegion services and their corresponding BT actions."
+msgstr "`这个 PR 2772 <https://github.com/ros-planning/navigation2/pull/2772>`_ 修复了 CostmapLayer clearArea 函数的反向参数逻辑。从而修正了 clearAroundRobot 和 clearExceptRegion 服务及其相应的行为树动作的行为。"
 
 
 #: ../../migration/Galactic.rst:259
 msgid "Dynamic Composition"
-msgstr "Dynamic Composition"
+msgstr "动态组合"
 
 
 #: ../../migration/Galactic.rst:261
 msgid "`This PR 2750 <https://github.com/ros-planning/navigation2/pull/2750>`_ provides a optional bringup based on ROS2 dynamic composition for users. It can be used to compose all Nav2 nodes in a single process instead of launching these nodes separately, which is useful for embedded systems users that need to make optimizations due to harsh resource constraints. it's used by default, but can be disabled by using the launch argument ``use_composition:=False``."
-msgstr "`This PR 2750 <https://github.com/ros-planning/navigation2/pull/2750>`_ provides a optional bringup based on ROS2 dynamic composition for users. It can be used to compose all Nav2 nodes in a single process instead of launching these nodes separately, which is useful for embedded systems users that need to make optimizations due to harsh resource constraints. it's used by default, but can be disabled by using the launch argument ``use_composition:=False``."
+msgstr "`这个PR 2750 <https://github.com/ros-planning/navigation2/pull/2750>`_ 为用户提供了基于ROS2动态组合的可选引导。它可以用于将所有Nav2节点组合在一个单独的进程中，而不是分别启动这些节点，这对于需要根据严格的资源限制进行优化的嵌入式系统用户非常有用。它默认情况下启用，但可以通过使用启动参数``use_composition:=False``来禁用。"
 
 
 #: ../../migration/Galactic.rst:263
 msgid "Some experiments to show performance improvement of dynamic composition, and the cpu and memory are captured by ``psutil`` :"
-msgstr "Some experiments to show performance improvement of dynamic composition, and the cpu and memory are captured by ``psutil`` :"
+msgstr "一些实验展示了动态组合的性能改进，CPU 和内存由 ``psutil`` 捕获："
 
 
 #: ../../migration/Galactic.rst:266
 msgid "CPU: Intel(R) i7-8700 (6Cores 12Threads), Memory: 32GB"
-msgstr "CPU: Intel(R) i7-8700 (6Cores 12Threads), Memory: 32GB"
+msgstr "CPU：Intel(R) i7-8700 (6核12线程)，内存：32GB"
 
 
 #: ../../migration/Galactic.rst:266
 msgid "cpu(%)"
-msgstr "cpu(%)"
+msgstr "CPU(%)"
 
 
 #: ../../migration/Galactic.rst:266
 msgid "memory(%)"
-msgstr "memory(%)"
+msgstr "内存（%）"
 
 
 #: ../../migration/Galactic.rst:268
 msgid "normal multiple processes"
-msgstr "normal multiple processes"
+msgstr "正常的多进程"
 
 
 #: ../../migration/Galactic.rst:268
@@ -1506,7 +1506,7 @@ msgstr "0.76"
 
 #: ../../migration/Galactic.rst:269
 msgid "dynamic composition (use ``component_container_isolated``)"
-msgstr "dynamic composition (use ``component_container_isolated``)"
+msgstr "动态组合（使用``component_container_isolated``）"
 
 
 #: ../../migration/Galactic.rst:269
@@ -1526,7 +1526,7 @@ msgstr "The way of dynamic composition consumes lower memory(saves ~70%),  and l
 
 #: ../../migration/Galactic.rst:275
 msgid "BT Cancel Node"
-msgstr "BT Cancel Node"
+msgstr "BT取消节点"
 
 
 #: ../../migration/Galactic.rst:276
