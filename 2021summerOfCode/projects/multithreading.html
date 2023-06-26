@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. Navigation MultiThreading &mdash; Navigation 2 1.0.0 文档</title>
+  <title>4. 导航多线程化 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>4. Navigation MultiThreading</li>
+      <li>4. 导航多线程化</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,38 +936,28 @@
            <div itemprop="articleBody">
              
   <div class="section" id="navigation-multithreading">
-<span id="multhrreading"></span><h1>4. Navigation MultiThreading<a class="headerlink" href="#navigation-multithreading" title="永久链接至标题"></a></h1>
+<span id="multhrreading"></span><h1>4. 导航多线程化<a class="headerlink" href="#navigation-multithreading" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
-<p>The aim of this project is the significantly improve the run-time performance of Nav2 making sure to leverage the full capabilities of multi-processor core CPUs. We seek to identify areas in the Nav2 stack that could leverage multi-threading or parallel processing to speed up computations and improve overall user performance on a broad range of compute platforms.</p>
-<p>Some examples include:
-- AMCL particle cloud updates
-- Costmap layer updates
-- Costmap sensor data population
-- Controller critic evalulation
-- Collision checking
-- Voxel grid ray casting
-- and more.</p>
-<p>We are seeking a student interested in learning about multi-threading and parallel processing, ideally with some exposure to these concepts and libraries already, to analyze potential areas for parallel computing. Then, select the top candidates and implement them with parallel processing and benchmark the improvements to the Nav2 stack they provide.</p>
-<p>This will be an excellent chance to apply (or obtain) C++ parallel computing skills while also learning a great deal about how to build mobile robot navigation systems -- both very valuable skillsets.</p>
+<p>该项目的目标是显著提高Nav2的运行时性能，确保充分利用多处理器核心CPU的全部功能。我们寻求在Nav2堆栈中确定可以利用多线程或并行处理加速计算并改善在各种计算平台上的整体用户性能的领域。</p>
+<p>一些例子包括: - AMCL粒子云更新 - Costmap图层更新 - Costmap传感器数据填充 - 控制器评估 - 碰撞检测 - Voxel网格光线投射 - 等等。</p>
+<p>我们正在寻找一位对多线程和并行处理感兴趣的学生，最好已经接触过这些概念和库，以分析可能的并行计算领域。然后，选择最佳候选项，并使用并行处理对它们进行实现，并对其提供的Nav2堆栈的改进进行基准测试。</p>
+<p>这将是一个很好的机会，可以应用（或获得）C++并行计算技能，同时还可以学到很多关于如何构建移动机器人导航系统的知识 - 这两个技能都非常有价值。</p>
 <p><strong>项目难度：中等</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
-<p><strong>Project output requirements</strong>
-- Analysis of potential areas in the Nav2 stack that can benefit from parallel processing
-- Integrations of 3-5 areas in the Nav2 stack that non-trivially improves run-time performance of the stack using multithreading
-- Benchmark performance improvements</p>
+<p><strong>项目输出要求</strong> - 分析Nav2堆栈中可以从并行处理中受益的潜在领域 - 集成3-5个Nav2堆栈中利用多线程非常显著地改善堆栈运行时性能的领域 - 基准测试性能改进</p>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
-<li><p>C++, ROS</p></li>
+<li><p>C++，ROS</p></li>
 <li><p>移动机器人导航经验</p></li>
-<li><p>Working knowledge (or ability to quickly obtain) on one or more of: TBB, OpenMP, OpenCL, Cuda, and similar</p></li>
-<li><p>Recommended: Gazebo simulation, ROS navigation</p></li>
+<li><p>对以下一个或多个领域具备工作知识（或能够迅速获得）：TBB、OpenMP、OpenCL、Cuda等类似领域</p></li>
+<li><p>推荐：Gazebo模拟，ROS导航</p></li>
 </ul>
 <p><strong>相关开源软件仓库和参考资料列表</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2042">Github ticket</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2042">Github票证</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>
 <p><strong>许可</strong> - 所有贡献将在Apache 2.0许可下进行。 - 不需要其他CLA。</p>
