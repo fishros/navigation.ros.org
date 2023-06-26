@@ -938,24 +938,21 @@
   <div class="section" id="d-3d-localization-improvements">
 <span id="localization"></span><h1>6. 2D/3D Localization Improvements<a class="headerlink" href="#d-3d-localization-improvements" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
-<p>The Navigation2 stack uses AMCL as its primary localization engine. Over the last 10 years, essentially no updates to AMCL has been made. This is due to the code base for this implementation of an Adaptive Monte Carlo Localizer is written in embedded C, not well structured, and very sensitive to changes. A-MCL implementations have been a hallmark of localization for over a decade but this particular implementation should be deprecated.</p>
+<p>Navigation2 堆栈使用 AMCL 作为其主要定位引擎。在过去的10年中，几乎没有对 AMCL 进行任何更新。这是由于此自适应蒙特卡罗定位器的实现代码是用嵌入式 C 编写的，结构不好，并且对变化非常敏感。A-MCL 实现已经是定位的标志性方法超过十年，但应该废弃这个特定的实现。</p>
 <p>Your target involves designing and creating a new localization engine for the Nav2 stack. The requirements of this are:
 - Support 2D laser scanners
 - Support 3D laser scanners, where 2D case could potentially be a simplified case
 - Accurately track the localization of a robot in a given occupancy grid</p>
-<p>The reason that specific method is left open-ended is to allow for creativity, novelty, or reimplementation of a what you feel is best. We have, however, analyzed other MCL variants as being good options. This may include reimplementing an A-MCL that is designed to be modified with modular components and support sampling from a 3D lidar. Another option is a NDT-MCL using NDT 2D/3D scan matching. Other options may be proposed and discussed with mentors during the application phase. The task involves 3D as well since there is no standard 3D localizer in ROS 2 yet and more and more robust 3D SLAM libraries have emerged over the last 2 years.</p>
+<p>保留该特定方法的原因是为了允许创造性、新颖性或重新实现您认为最好的方法。然而，我们已经分析了其他 MCL 变体作为好的选择。这可能包括重新实现一个设计用于可修改的模块化组件并支持从3D激光雷达采样的 A-MCL。另一个选择是使用 NDT 2D/3D 扫描匹配的 NDT-MCL。其他选项可以在申请阶段与导师提出和讨论。这个任务还涉及到3D，因为ROS 2中还没有标准的3D定位器，并且在过去的2年中出现了越来越多的强大的3D SLAM库。</p>
 <p>An optional but recommended feature of this work would be to also accept the inputs from multiple laser scanners. However it is not strictly required.</p>
 <p><strong>项目难度：高</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
-<p><strong>Project output requirements</strong>
-- 2D and 3D localization system based on laser scanners
-- 65% or higher test coverage
-- Designed with modular components that can be reliably modified over time</p>
+<p><strong>项目输出要求</strong> - 基于激光扫描仪的2D和3D定位系统 - 65%或更高的测试覆盖率 - 设计有可靠地随时间修改的模块化组件</p>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
 <li><p>C/C++</p></li>
-<li><p>Localization, particle filter, or SLAM techniques</p></li>
+<li><p>定位、粒子滤波或SLAM技术</p></li>
 <li><p>Ability to read and implement academic works</p></li>
 <li><p>推荐：Gazebo仿真和导航经验</p></li>
 </ul>

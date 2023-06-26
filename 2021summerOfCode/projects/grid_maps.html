@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Port Grid Maps to ROS 2 and Environmental Model &mdash; Navigation 2 1.0.0 文档</title>
+  <title>3. 将Grid Maps移植到ROS 2和环境模型 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>3. Port Grid Maps to ROS 2 and Environmental Model</li>
+      <li>3. 将Grid Maps移植到ROS 2和环境模型</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,25 +936,24 @@
            <div itemprop="articleBody">
              
   <div class="section" id="port-grid-maps-to-ros-2-and-environmental-model">
-<span id="grid-maps"></span><h1>3. Port Grid Maps to ROS 2 and Environmental Model<a class="headerlink" href="#port-grid-maps-to-ros-2-and-environmental-model" title="永久链接至标题"></a></h1>
-<p><strong>Task description</strong>
-Grid Maps was created by ETH Zurich and later transferred to ANYbotics. It is a universal grid map library for mobile robotic mapping that can be used as the basis of environmental models and various forms of grid maps available in ROS 1. This library is one of the top downloaded ROS packages. Your task will be to work with the community and the mentor to port grid_maps metapackage from ROS 1 to ROS 2 and help develop the next generation environment model in ROS 2 to replace costmap_2d.</p>
-<p>This will involve porting code from ROS 1 to ROS 2, analyzing uses of the environmental model to define an abstract interface to allow replacement of costmap_2d with grid_map, and building up the basic grid-operations for costmaps. It is not expected to complete the full new model with sensor processing over the course of the summer. If completed early, you may be able to help design a gradient model to complement your implemented costmap model using grid_maps. This will allow robots to select a gradient or a costmap model on startup.</p>
+<span id="grid-maps"></span><h1>3. 将Grid Maps移植到ROS 2和环境模型<a class="headerlink" href="#port-grid-maps-to-ros-2-and-environmental-model" title="永久链接至标题"></a></h1>
+<p><strong>任务描述</strong> Grid Maps是由苏黎世联邦理工学院（ETH Zurich）创建并后来转移到ANYbotics的通用网格地图库，可用作环境模型和ROS 1中各种形式的网格地图的基础。该库是ROS包中下载次数最多的之一。您的任务将是与社区和导师合作，将grid_maps metapackage从ROS 1迁移到ROS 2，并帮助开发ROS 2中的下一代环境模型，以取代costmap_2d。</p>
+<p>这将涉及将代码从ROS 1移植到ROS 2，分析环境模型的使用情况，定义一个抽象接口，以允许用grid_map替换costmap_2d，并构建用于代价地图的基本网格操作。不希望在夏季完成完整的新模型和传感器处理。如果提前完成，您可以帮助设计一个梯度模型，以补充您实现的代价地图模型。这将允许机器人在启动时选择梯度或代价地图模型。</p>
 <p><strong>项目难度：高</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
 <p><strong>项目输出要求</strong></p>
 <ul class="simple">
-<li><p>Grid Maps ported to ROS 2 and merged into the main ROS 2 branch</p></li>
-<li><p>Defined plugin interfaces to replace costmap 2D with grid maps</p></li>
-<li><p>Implementing low-level operations on top of grid_maps to replace the base costmap_2d object.</p></li>
-<li><p>You will not be expected to reimplement the full sensor processing mechanics of costmap_2d.</p></li>
+<li><p>Grid Maps迁移到ROS 2并合并到主要的ROS 2分支中</p></li>
+<li><p>定义用于用grid maps替换costmap 2D的插件接口</p></li>
+<li><p>在grid_maps上实现低级操作，以替换基本的costmap_2d对象。</p></li>
+<li><p>您不需要重新实现costmap_2d的完整传感器处理机制。</p></li>
 </ul>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
-<li><p>C++ and Git</p></li>
-<li><p>ROS recommended ROS 2, but you can pick it up before starting</p></li>
-<li><p>Coordinate transformations and basic geometry</p></li>
+<li><p>C++ 和 Git</p></li>
+<li><p>ROS推荐ROS 2，但您可以在开始之前学习它。</p></li>
+<li><p>坐标转换和基本几何</p></li>
 <li><p>推荐：Gazebo仿真和导航经验</p></li>
 </ul>
 <p><strong>相关开源软件仓库和参考资料列表</strong></p>
@@ -962,7 +961,7 @@ Grid Maps was created by ETH Zurich and later transferred to ANYbotics. It is a 
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1278">Original github issue 1</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1517">Original github issue 2</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1517">原始 github 问题 2</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>
 <p><strong>许可</strong> - 所有贡献将在Apache 2.0许可下进行。 - 不需要其他CLA。</p>
