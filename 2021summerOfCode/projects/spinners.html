@@ -938,18 +938,15 @@
   <div class="section" id="reduce-ros-2-nodes-and-determinism">
 <span id="spinners"></span><h1>7. 减少ROS 2节点和确定性<a class="headerlink" href="#reduce-ros-2-nodes-and-determinism" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
-<p>This project is admittedly abstract to explain to someone unfamiliar with the inner-details of ROS 2 and its layers. If you're interested in working on this, you will become one of the few that truly understand the inner workings of it and be a very marketable skill. We do not expect anyone applying for this project to have that knowledge beforehand and we will help you learn the necessary items.</p>
-<p>ROS 2 architecturally was changed before Foxy in order to ensure that any single process containing multiple ROS 2 node objects will share the same DDS participant on the network. This is important due to the overhead that each additional DDS participant has on the system.</p>
-<p>In order for nav2 to leverage this the best, we need to adjust our usage of ROS 2 nodes and executors to further minimize the number of node objects in existance. In the early days of ROS 2 when Nav2 was being built, we were required to have many nodes in a single server in order to handle action requests and other callbacks. Now, we can make use of multi-threaded spinners, callback groups, and individual executors for specific tasks.</p>
-<p>This project will involve identifying all of the Node objects in the stack (control+F makes this easy) and work with mentors to ensure by the end of the summer each server contains only a single node. Additionally, the behavior tree plugins should be updated to leverage callback groups to ensure that any single BT node spinning to check if any new messages are on its callback will <strong>only</strong> trigger its own callback by the same mechanisms.</p>
-<p>More details about this project can be supplied if interested, but the tickets linked below also provide more context. Trust me to say this is a very achievable goal over the course of the summer and will also let you look under the hood of both Nav2 and rclcpp, giving you valuable insight future in your career (and put you in the top 10% of ROS 2 developers that know it to this degree).</p>
+<p>必须承认，对于不熟悉ROS 2及其层次结构的人来说，这个项目确实有些抽象。如果你对此感兴趣，你将成为为数不多真正了解其内部工作原理的人，并拥有非常有市场价值的技能。我们并不要求申请该项目的人事先具备这些知识，我们将帮助你学习必要的内容。</p>
+<p>在Foxy之前，ROS 2在架构上进行了更改，以确保任何包含多个ROS 2节点对象的单个进程将在网络上共享相同的DDS参与者。这是因为每个额外的DDS参与者对系统的开销很重要。</p>
+<p>为了让Nav2能够充分利用这一点，我们需要调整ROS 2节点和执行器的使用方式，进一步减少存在的节点对象数量。在ROS 2刚开始发展时，Nav2正在构建，我们需要在一个单一的服务器中拥有许多节点来处理动作请求和其他回调。现在，我们可以利用多线程的spinners、回调组和针对特定任务的独立执行器。</p>
+<p>该项目将涉及识别堆栈中的所有节点对象（使用Ctrl+F可以轻松完成此操作），并与导师合作，以确保在夏季结束时，每个服务器仅包含一个节点。此外，应更新行为树插件，以利用回调组，以确保任何单个BT节点在自己的回调中**仅仅**通过相同的机制触发其自身的回调，以检查是否有任何新消息。</p>
+<p>如果感兴趣，可以提供有关该项目的更多详细信息，但下面链接的票据也提供了更多背景。相信我说，这是一个非常可实现的目标，在整个夏季期间，它还将让您深入了解Nav2和rclcpp的内部工作，为您的职业生涯提供宝贵的洞察力（并使您成为了解ROS 2到这个程度的前10％开发人员）。</p>
 <p><strong>项目难度：中等</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
-<p><strong>Project output requirements</strong>
-- Remove excess ROS 2 nodes from stack and replace with executors and multi-threaded executors
-- Replace Behavior Tree node spinners with local executors to ensure deterministic execution &amp; processing only callback groups of the current BT node
-- If time allots, create a single <code class="docutils literal notranslate"><span class="pre">main()</span></code> function Nav2 executable composing all Nav2 processes and benchmarking improvements in performance</p>
+<p><strong>项目产出要求</strong> - 从堆栈中删除多余的ROS 2节点，并替换为执行器和多线程执行器 - 将行为树节点旋转器替换为本地执行器，以确保确定性执行和处理当前BT节点的回调组 - 如果时间允许，在性能改进方面，创建一个单一的``main()``函数Nav2可执行文件，将所有Nav2进程组合在一起，并进行基准测试。</p>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
 <li><p>C++，ROS</p></li>
@@ -958,7 +955,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2251">Github ticket</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2251">Github票据</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/816">Github ticket2</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 <li><p><a class="reference external" href="https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf">一些相关作品</a></p></li>
