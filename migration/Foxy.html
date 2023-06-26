@@ -796,7 +796,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#thetastarplanner">ThetaStarPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#regulatedpurepursuitcontroller">RegulatedPurePursuitController</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap2d-current-usage">Costmap2D <code class="docutils literal notranslate"><span class="pre">current_</span></code> Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#standard-time-units-in-parameters">Standard time units in parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-time-units-in-parameters">参数中的标准时间单位</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ray-tracing-parameters">Ray Tracing Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#obstacle-marking-parameters">Obstacle Marking Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#recovery-action-changes">Recovery Action Changes</a></li>
@@ -1020,7 +1020,7 @@
 <h2>新插件<a class="headerlink" href="#new-plugins" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 具有一个动作服务器，接收一个要按顺序跟随的路径点列表。在某些情况下，我们可能希望机器人在到达这些路径点时执行某些任务/行为。为了执行这些任务，已经在 <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code> 中添加了一个通用插件接口 <cite>WaypointTaskExecutor</cite>。用户可以从该接口继承，以实现自己的插件，以满足其特定需求下路径点到达时执行更具体任务的需要。</p>
 <p><code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower``中包含了几个示例实现。``WaitAtWaypoint``和``PhotoAtWaypoint``插件包含在``nav2_waypoint_follower``中作为运行时可加载插件。``WaitAtWaypoint``允许机器人在到达航点时暂停指定的时间（以毫秒为单位）。而``PhotoAtWaypoint``在到达航点时拍照并将拍摄的照片保存到指定目录，拍摄的照片格式也可以通过参数进行配置。支持所有主要的图像格式，如``png</span></code>、<code class="docutils literal notranslate"><span class="pre">jpeg</span></code>、<code class="docutils literal notranslate"><span class="pre">jpg``等，默认格式为``png</span></code>。</p>
-<p>Loading a plugin of this type is done through <code class="docutils literal notranslate"><span class="pre">nav2_bringup/params/nav2_param.yaml</span></code>, by specifying plugin's name, type and it's used parameters.</p>
+<p>通过``nav2_bringup/params/nav2_param.yaml``加载此类型的插件，需要指定插件的名称、类型和使用的参数。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">waypoint_follower</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">loop_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
@@ -1043,45 +1043,39 @@
 <div class="section" id="costmap-filters">
 <h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
 <p>Galactic引入了一个与空间相关对象进行交互的新概念，称为&quot;Costmap Filters&quot;（成本地图过滤器）（有关该概念的更多信息可在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>concepts`页面找到）。Costmap过滤器作为成本地图插件，应用于一个独立于常规插件的单独成本地图上。为了创建一个经过过滤的成本地图并在标注区域改变机器人的行为，过滤器插件读取来自过滤器掩码的数据。然后，这些数据被线性转换为过滤空间中的特征图。这可以是区域的可通过性、最大速度限制（以米/秒为单位）、机器人期望的方向（以度为单位）或其他任何内容。转换后的特征图与地图/成本地图、传感器数据和当前机器人位置一起用于插件算法中，以对结果成本地图和机器人行为进行必要的更新。</p>
-<p>Architecturally, costmap filters consists from <code class="docutils literal notranslate"><span class="pre">CostmapFilter</span></code> class which is a basic class incorporating much common of its inherited filter plugins:</p>
+<p>从架构上看，代价地图过滤器由``CostmapFilter``类组成，它是一个基本类，集成了大部分常见的过滤器插件特性：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code>：禁止进入/安全区域过滤器插件。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code>: slow/speed-restricted areas filter.</p></li>
-<li><p>Preferred lanes in industries. This plugin is covered by <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> (see discussion in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1522">corresponding PR</a> for more details).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code>：慢速/限速区域过滤器。</p></li>
+<li><p>行业中的首选车道。此插件由``KeepoutFilter``（有关详细信息，请参见`对应PR的讨论 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1522">https://github.com/ros-planning/navigation2/issues/1522</a>&gt;`_）覆盖。</p></li>
 </ul>
-<p>Each costmap filter subscribes to filter info topic (publishing by <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">Costmap Filter Info Publisher Server</a>) having all necessary information for loaded costmap filter and filter mask topic.
-<code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> additionally publishes maximum speed restricting <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">messages</a> targeted for a Controller to enforce robot won't exceed given limit.</p>
-<p>High-level design of this concept could be found <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf">here</a>. The functionality of costmap filters is being disscussed in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1263">the ticket #1263</a> and carried out by <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1882">PR #1882</a>. The following tutorials: <a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">使用禁止区域进行导航</span></a> and <a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#navigation2-with-speed-filter"><span class="std std-ref">带速度限制的导航</span></a> will help to easily get involved with <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> and <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> functionalities.</p>
+<p>每个代价地图过滤器订阅过滤器信息主题（由`Costmap Filter Info Publisher Server &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info</a>&gt;`_发布），该主题包含加载的代价地图过滤器和过滤器掩码主题所需的所有信息。<a href="#id1"><span class="problematic" id="id2">``</span></a>SpeedFilter``还发布最大速度限制的 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">消息</a>，用于控制器强制机器人不超过给定的限制。</p>
+<p>可以在`此处 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf">https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf</a>&gt;`_ 找到这个概念的高级设计。有关代价图滤波器的功能正在`票号＃1263 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1263">https://github.com/ros-planning/navigation2/issues/1263</a>&gt;`_进行讨论，并由`PR＃1882 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1882">https://github.com/ros-planning/navigation2/pull/1882</a>&gt;`_ 执行。以下教程：<a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">使用禁止区域进行导航</span></a> 和 <a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#navigation2-with-speed-filter"><span class="std std-ref">带速度限制的导航</span></a> 将帮助您轻松了解 <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> 和 <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> 的功能。</p>
 </div>
 <div class="section" id="smacplanner">
 <h2>SmacPlanner<a class="headerlink" href="#smacplanner" title="永久链接至标题"></a></h2>
-<p>A new package, <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> was added containing 4 or 8 connected 2D A*, and Dubin and Reed-shepp model hybrid-A* with smoothing, multi-resolution query, and more.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. We support differential-drive and omni-directional drive robots using the <code class="docutils literal notranslate"><span class="pre">SmacPlanner2D</span></code> planner which implements a cost-aware A* planner. We support cars, car-like, and ackermann vehicles using the <code class="docutils literal notranslate"><span class="pre">SmacPlanner</span></code> plugin which implements a Hybrid-A* planner. This plugin is also useful for curvature constrained planning, like when planning robot at high speeds to make sure they don't flip over or otherwise skid out of control.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">SmacPlanner</span></code> fully-implements the Hybrid-A* planner as proposed in <a class="reference external" href="https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf">Practical Search Techniques in Path Planning for Autonomous Driving</a>, including hybrid searching, CG smoothing, analytic expansions and hueristic functions.</p>
+<p>添加了一个新的包，<code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code>，其中包含4或8个连通的2D A*，Dubin和Reed-shepp模型混合-A*，具有平滑、多分辨率查询等功能。</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_smac_planner``软件包包含一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的规划器。我们支持使用``SmacPlanner2D``规划器的差分驱动和全向驱动机器人，该规划器实现了一种考虑成本的A*规划器。我们支持使用``SmacPlanner``插件的汽车、类汽车和阿克曼车辆，该插件实现了混合A*规划器。该插件还可用于曲率约束规划，例如在高速规划机器人时，确保它们不会翻转或失控打滑。</p>
+<p><code class="docutils literal notranslate"><span class="pre">SmacPlanner</span></code> 完全实现了 <a class="reference external" href="https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf">Practical Search Techniques in Path Planning for Autonomous Driving</a> 中提出的 Hybrid-A* 路径规划器，包括混合搜索、CG平滑、解析扩展和启发式函数。</p>
 </div>
 <div class="section" id="thetastarplanner">
 <h2>ThetaStarPlanner<a class="headerlink" href="#thetastarplanner" title="永久链接至标题"></a></h2>
-<p>A new package, <code class="docutils literal notranslate"><span class="pre">nav2_theta_star_planner</span></code> was added containing 4 or 8 connected Theta* implementation for 2D maps.</p>
-<p>This package implements an optimized version of the Theta* Path Planner (specifically the <a class="reference external" href="http://idm-lab.org/bib/abstracts/papers/aaai10b.pdf">Lazy Theta* P</a> variant) to plan any-angled paths for differential-drive and omni-directional robots, while also taking into account the costmap costs. This plugin is useful for the cases where you might want to plan a path at a higher rate but without requiring extremely smooth paths around the corners which, for example, could be handled by a local planner/controller.</p>
+<p>添加了一个新的包，<code class="docutils literal notranslate"><span class="pre">nav2_theta_star_planner</span></code>，其中包含4或8个连通的Theta*实现，适用于2D地图。</p>
+<p>该软件包实现了Theta*路径规划器的优化版本（特别是`Lazy Theta* P &lt;<a class="reference external" href="http://idm-lab.org/bib/abstracts/papers/aaai10b.pdf">http://idm-lab.org/bib/abstracts/papers/aaai10b.pdf</a>&gt;`_ 变体），用于规划差分驱动和全向驱动机器人的任意角度路径，并考虑到代价地图的代价。该插件适用于那些可能希望以较高速率规划路径但不需要非常平滑路径的情况，例如局部规划器/控制器可以处理角落处的路径平滑。</p>
 </div>
 <div class="section" id="regulatedpurepursuitcontroller">
 <h2>RegulatedPurePursuitController<a class="headerlink" href="#regulatedpurepursuitcontroller" title="永久链接至标题"></a></h2>
-<p>A new package, <code class="docutils literal notranslate"><span class="pre">nav2_regulated_pure_pursuit_controller</span></code> was added containing a novel varient of the Pure Pursuit algorithm.
-It also includes configurations to enable Pure Pursuit and Adaptive Pure Pursuit variations as well.</p>
-<p>This variation is specifically targeting service / industrial robot needs.
-It regulates the linear velocities by curvature of the path to help reduce overshoot at high speeds around blind corners allowing operations to be much more safe.
-It also better follows paths than any other variation currently available of Pure Pursuit.
-It also has heuristics to slow in proximity to other obstacles so that you can slow the robot automatically when nearby potential collisions.
-It also implements the Adaptive lookahead point features to be scaled by velocities to enable more stable behavior in a larger range of translational speeds.</p>
-<p>There's more this does, that that's the general information. See the package's <code class="docutils literal notranslate"><span class="pre">README</span></code> for more.</p>
+<p>新增了一个名为``nav2_regulated_pure_pursuit_controller``的软件包，其中包含一种新颖的Pure Pursuit算法变体。它还包括配置以启用Pure Pursuit和Adaptive Pure Pursuit的不同变体。</p>
+<p>这个变体专门针对服务/工业机器人的需求。它通过路径曲率来调节线速度，以帮助减少在高速绕盲角时的超调，从而使操作更加安全。它还比目前可用的任何其他Pure Pursuit变体更好地跟随路径。它还具有在靠近其他障碍物时放慢速度的启发式功能，以便在附近潜在碰撞时自动减速机器人。它还实现了通过速度缩放来启用更大范围的平移速度下更稳定行为的自适应前瞻点特性。</p>
+<p>还有更多功能，但这是一般信息。有关详细信息，请参阅软件包的``README``。</p>
 </div>
 <div class="section" id="costmap2d-current-usage">
 <h2>Costmap2D <code class="docutils literal notranslate"><span class="pre">current_</span></code> Usage<a class="headerlink" href="#costmap2d-current-usage" title="永久链接至标题"></a></h2>
-<p>In costmap2D, <code class="docutils literal notranslate"><span class="pre">current_</span></code> was used in ROS1 to represent whether a costmap layer was still enabled and actively processing data. It would be turned to <code class="docutils literal notranslate"><span class="pre">false</span></code> only under the situation that the expected update rate of a sensor was not met, so it was getting stale or no messages. It acts as a fail-safe for if a navigation sensor stops publishing.</p>
+<p>在costmap2D中，ROS 1中使用``current_``表示一个代价地图层是否仍处于启用状态并且正在主动处理数据。只有在传感器的预期更新速率未达到时，它才会变为``false``，因此它变得过时或没有消息。它作为一种故障安全机制，以防导航传感器停止发布。</p>
 <p>In galactic, that will remain turn, however it will also add additional capabilities. It is also now set to <code class="docutils literal notranslate"><span class="pre">false</span></code> when a costmap is reset due to clearing or other navigation recoveries. That stops the robot from creating a plan or control effort until after the costmap has been updated at least once after a reset. This enables us to make sure we cannot ever create a path or control with a completely empty costmap, potentially leading to collisions, due to clearing the costmap and then immediately requesting an algorithm to run.</p>
 </div>
 <div class="section" id="standard-time-units-in-parameters">
-<h2>Standard time units in parameters<a class="headerlink" href="#standard-time-units-in-parameters" title="永久链接至标题"></a></h2>
+<h2>参数中的标准时间单位<a class="headerlink" href="#standard-time-units-in-parameters" title="永久链接至标题"></a></h2>
 <p>To follow the SI units outlined in REP-103 to the &quot;T&quot; nodes below were modified to use seconds consistently in every parameter. Under each node name you can see which parameters changed to seconds instead of using milliseconds.</p>
 <ul class="simple">
 <li><p>lifecycle manager</p>
