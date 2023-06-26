@@ -437,7 +437,7 @@ msgstr "getCostmapTimestamp()"
 
 #: ../../commander_api/index.rst:158
 msgid "Get costmap timestamp."
-msgstr "Get costmap timestamp."
+msgstr "获取代价地图的时间戳。"
 
 
 #: ../../commander_api/index.rst:160
@@ -447,72 +447,72 @@ msgstr "getCostXY(mx, my)"
 
 #: ../../commander_api/index.rst:160
 msgid "Get the cost (``np.uint8``) of a cell in the costmap using mx (``int``) , my (``int``) of Map Coordinate."
-msgstr "Get the cost (``np.uint8``) of a cell in the costmap using mx (``int``) , my (``int``) of Map Coordinate."
+msgstr "使用地图坐标中的mx（``int``）和my（``int``）获取代价地图中单元格的代价（``np.uint8``）。"
 
 
 #: ../../commander_api/index.rst:163
 msgid "getCostIdx(index)"
-msgstr "getCostIdx(index)"
+msgstr "getCostIdx（index）"
 
 
 #: ../../commander_api/index.rst:163
 msgid "Get the cost (``np.uint8``) of a cell in the costmap using index (``int``)"
-msgstr "Get the cost (``np.uint8``) of a cell in the costmap using index (``int``)"
+msgstr "使用索引（``int``）获取代价地图中单元格的代价（``np.uint8``）。"
 
 
 #: ../../commander_api/index.rst:165
 msgid "setCost(mx, my, cost)"
-msgstr "setCost(mx, my, cost)"
+msgstr "setCost（mx，my，cost）"
 
 
 #: ../../commander_api/index.rst:165
 msgid "Set the cost (``np.uint8``) of a cell in the costmap using mx (``int``) , my (``int``) of Map Coordinate."
-msgstr "Set the cost (``np.uint8``) of a cell in the costmap using mx (``int``) , my (``int``) of Map Coordinate."
+msgstr "使用地图坐标中的mx（``int``）和my（``int``）设置代价地图中单元格的代价（``np.uint8``）。"
 
 
 #: ../../commander_api/index.rst:168
 msgid "mapToWorld(mx, my)"
-msgstr "mapToWorld(mx, my)"
+msgstr "mapToWorld（mx，my）"
 
 
 #: ../../commander_api/index.rst:168
 msgid "Get the wx (``float``) [m], wy (``float``) [m] of world coordinate XY using mx (``int``), my (``int``) of map coordinate XY"
-msgstr "Get the wx (``float``) [m], wy (``float``) [m] of world coordinate XY using mx (``int``), my (``int``) of map coordinate XY"
+msgstr "使用地图坐标中的mx（``int``）和my（``int``）获取世界坐标XY上的wx（``float``）[m]和wy（``float``）[m]。"
 
 
 #: ../../commander_api/index.rst:171 ../../commander_api/index.rst:193
 msgid "worldToMapValidated(wx, wy)"
-msgstr "worldToMapValidated(wx, wy)"
+msgstr "worldToMapValidated（wx，wy）"
 
 
 #: ../../commander_api/index.rst:171
 msgid "Get the mx (``int``), my (``int``) of map coordinate XY using wx (``float``) [m], wy (``float``) [m] of world coordinate XY. If wx wy coordinates are invalid, (None,None) is returned."
-msgstr "Get the mx (``int``), my (``int``) of map coordinate XY using wx (``float``) [m], wy (``float``) [m] of world coordinate XY. If wx wy coordinates are invalid, (None,None) is returned."
+msgstr "使用世界坐标XY上的wx（``float``）[m]和wy（``float``）[m]获取地图坐标XY中的mx（``int``）和my（``int``）。如果wx和wy坐标无效，则返回（None，None）。"
 
 
 #: ../../commander_api/index.rst:175
 msgid "getIndex(mx, my)"
-msgstr "getIndex(mx, my)"
+msgstr "getIndex（mx，my）"
 
 
 #: ../../commander_api/index.rst:175
 msgid "Get the index (``int``) of the cell using mx (``int``), my (``int``) of map coordinate XY"
-msgstr "Get the index (``int``) of the cell using mx (``int``), my (``int``) of map coordinate XY"
+msgstr "使用地图坐标XY中的mx（``int``）和my（``int``）获取单元格的索引（``int``）。"
 
 
 #: ../../commander_api/index.rst:180
 msgid "Footprint Collision Checker API"
-msgstr "Footprint Collision Checker API"
+msgstr "足迹碰撞检查器 API"
 
 
 #: ../../commander_api/index.rst:181
 msgid "This is a Python3 API for a Footprint Collision Checker. It provides the needed methods to manipulate the coordinates and calculate the cost of a Footprint in a given map."
-msgstr "This is a Python3 API for a Footprint Collision Checker. It provides the needed methods to manipulate the coordinates and calculate the cost of a Footprint in a given map."
+msgstr "这是一个用于足迹碰撞检测的Python3 API。它提供了操纵坐标和计算给定地图中足迹成本所需的方法。"
 
 
 #: ../../commander_api/index.rst:186
 msgid "Footprint Collision Checker Method"
-msgstr "Footprint Collision Checker Method"
+msgstr "足迹碰撞检查器方法"
 
 
 #: ../../commander_api/index.rst:188
@@ -537,7 +537,7 @@ msgstr "Iterate over all the points along a line and check for collision. The li
 
 #: ../../commander_api/index.rst:193
 msgid "Get the mx (``int``), my (``int``) of map coordinate XY using wx (``float``) [m], wy (``float``) [m] of world coordinate XY. If wx wy coordinates are invalid, (None,None) is returned. Returns None if costmap is not defined yet through  (``setCostmap(costmap)``)."
-msgstr "Get the mx (``int``), my (``int``) of map coordinate XY using wx (``float``) [m], wy (``float``) [m] of world coordinate XY. If wx wy coordinates are invalid, (None,None) is returned. Returns None if costmap is not defined yet through  (``setCostmap(costmap)``)."
+msgstr "使用世界坐标XY的wx（浮点数）[m]和wy（浮点数）[m]获取地图坐标XY的mx（整数）和my（整数）。如果wx和wy坐标无效，则返回（None，None）。如果尚未通过（setCostmap（costmap））定义costmap，则返回None。"
 
 
 #: ../../commander_api/index.rst:198
@@ -547,7 +547,7 @@ msgstr "pointCost(x, y)"
 
 #: ../../commander_api/index.rst:198
 msgid "Get the cost of a point in the costmap using map coordinates XY. (``int``)"
-msgstr "Get the cost of a point in the costmap using map coordinates XY. (``int``)"
+msgstr "使用地图坐标XY获取costmap中某一点的成本。（整数）"
 
 
 #: ../../commander_api/index.rst:200
@@ -557,7 +557,7 @@ msgstr "setCostmap(costmap)"
 
 #: ../../commander_api/index.rst:200
 msgid "Specify which costmap to use with the footprint collision checker. (``PyCostmap2D``)"
-msgstr "Specify which costmap to use with the footprint collision checker. (``PyCostmap2D``)"
+msgstr "指定足迹碰撞检测使用的costmap。（PyCostmap2D）"
 
 
 #: ../../commander_api/index.rst:202
@@ -567,7 +567,7 @@ msgstr "footprintCostAtPose(x, y, theta, footprint)"
 
 #: ../../commander_api/index.rst:202
 msgid "Get the cost of a footprint at a specific Pose in map coordinates. x, y, theta (``float``) footprint (``Polygon``)."
-msgstr "Get the cost of a footprint at a specific Pose in map coordinates. x, y, theta (``float``) footprint (``Polygon``)."
+msgstr "在地图坐标中获取特定姿态处足迹的成本。x，y，theta（浮点数）足迹（多边形）。"
 
 
 #: ../../commander_api/index.rst:207
