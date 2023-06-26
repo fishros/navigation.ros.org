@@ -634,8 +634,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-rotation-shim-controller.html">Rotation Shim Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-rotation-shim-controller.html#rotation-shim-controller-parameters">Rotation Shim Controller Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-rotation-shim-controller.html">旋转增益控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-rotation-shim-controller.html#rotation-shim-controller-parameters">旋转适配器控制器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-rotation-shim-controller.html#example">示例</a></li>
 </ul>
 </li>
@@ -671,8 +671,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-simple-smoother.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-savitzky-golay-smoother.html">Savitzky-Golay Smoother</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#savitzky-golay-smoother-parameters">Savitzky-Golay Smoother Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-savitzky-golay-smoother.html">Savitzky-Golay平滑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#savitzky-golay-smoother-parameters">Savitzky-Golay平滑器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#example">示例</a></li>
 </ul>
 </li>
@@ -861,7 +861,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#costmap-filters">代价地图过滤器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#savitzky-golay-smoother">Savitzky-Golay Smoother</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#savitzky-golay-smoother">Savitzky-Golay平滑器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#smootherselector-bt-node">SmootherSelector BT Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#publish-costmap-layers">Publish Costmap Layers</a></li>
@@ -1330,7 +1330,7 @@
 </table>
 <dl>
 <dt>描述</dt><dd><p>在使用全向规划器时，是否启用旋转到粗略朝向和目标朝向。建议对所有可以原地旋转的机器人类型进行启用。</p>
-<p>Note: both <code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading</span></code> and <code class="docutils literal notranslate"><span class="pre">allow_reversing</span></code> cannot be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> at the same time as it would result in ambiguous situations.</p>
+<p>注意：<code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading``和``allow_reversing``不能同时设置为``true</span></code>，否则会导致歧义情况。</p>
 </dd>
 </dl>
 </dd>
@@ -1350,8 +1350,8 @@
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>Enables the robot to drive in the reverse direction, when the path planned involves reversing (which is represented by orientation cusps). Variants of the smac_planner comes with the support of reversing. Checkout the <a class="reference internal" href="configuring-smac-planner.html#configuring-smac-planner"><span class="std std-ref">Smac Planner</span></a> to know more.</p>
-<p>Note: both <code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading</span></code> and <code class="docutils literal notranslate"><span class="pre">allow_reversing</span></code> cannot be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> at the same time as it would result in ambiguous situations.</p>
+<dt>描述</dt><dd><p>允许机器人在路径规划需要倒车时倒车行驶（通过方向拐点表示）。smac_planner的变种支持倒车。请查看:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_smac_planner`了解更多信息。</p>
+<p>注意：<code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading``和``allow_reversing``不能同时设置为``true</span></code>，否则会导致歧义情况。</p>
 </dd>
 </dl>
 </dd>
@@ -1371,7 +1371,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The difference in the path orientation and the starting robot orientation (radians) to trigger a rotate in place, if <code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<dt>描述</dt><dd><p>如果“use_rotate_to_heading”为“true”，则路径方向和起始机器人方向之间的差异（以弧度表示），触发原地旋转。</p>
 </dd>
 </dl>
 </dd>
@@ -1391,7 +1391,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum allowable angular acceleration (rad/s/s) while rotating to heading, if <code class="docutils literal notranslate"><span class="pre">use_rotate_to_heading</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<dt>描述</dt><dd><p>如果“use_rotate_to_heading”为“true”，则旋转到目标方向时的最大允许角加速度（弧度/秒²）。</p>
 </dd>
 </dl>
 </dd>
@@ -1406,12 +1406,12 @@
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>双精度</p></td>
-<td><p>Local costmap max extent (max(width, height) / 2)</p></td>
+<td><p>局部代价地图最大范围（最大宽度或高度的一半）</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Upper bound on integrated distance along the global plan to search for the closest pose to the robot pose. This should be left as the default unless there are paths with loops and intersections that do not leave the local costmap, in which case making this value smaller is necessary to prevent shortcutting. If set to <code class="docutils literal notranslate"><span class="pre">-1</span></code>, it will use the maximum distance possible to search every point on the path for the nearest path point.</p>
+<dt>描述</dt><dd><p>在全局规划路径上沿着积分距离搜索最接近机器人姿态的位姿的上界。除非存在不离开局部代价地图的具有循环和交叉的路径，否则应保留此默认值，否则必须将该值设小以防止捷径。如果设置为“-1”，将使用最大可能距离，在路径上搜索最近的路径点。</p>
 </dd>
 </dl>
 </dd>
@@ -1431,7 +1431,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Enable linear interpolation between poses for lookahead point selection. Leads to smoother commanded linear and angular velocities.</p>
+<dt>描述</dt><dd><p>启用在前瞻点选择时对姿态进行线性插值。导致产生更平滑的线性和角速度命令。</p>
 </dd>
 </dl>
 </dd>

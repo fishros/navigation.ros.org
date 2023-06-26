@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rotation Shim Controller &mdash; Navigation 2 1.0.0 文档</title>
+  <title>旋转增益控制器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -634,8 +634,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Rotation Shim Controller</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rotation-shim-controller-parameters">Rotation Shim Controller Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">旋转增益控制器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rotation-shim-controller-parameters">旋转适配器控制器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -671,8 +671,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-simple-smoother.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-savitzky-golay-smoother.html">Savitzky-Golay Smoother</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#savitzky-golay-smoother-parameters">Savitzky-Golay Smoother Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-savitzky-golay-smoother.html">Savitzky-Golay平滑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#savitzky-golay-smoother-parameters">Savitzky-Golay平滑器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-savitzky-golay-smoother.html#example">示例</a></li>
 </ul>
 </li>
@@ -861,7 +861,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#costmap-filters">代价地图过滤器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#savitzky-golay-smoother">Savitzky-Golay Smoother</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#savitzky-golay-smoother">Savitzky-Golay平滑器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#smootherselector-bt-node">SmootherSelector BT Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Humble.html#publish-costmap-layers">Publish Costmap Layers</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Rotation Shim Controller</li>
+      <li>旋转增益控制器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,14 +939,14 @@
            <div itemprop="articleBody">
              
   <div class="section" id="rotation-shim-controller">
-<span id="configuring-rotation-shim"></span><h1>Rotation Shim Controller<a class="headerlink" href="#rotation-shim-controller" title="永久链接至标题"></a></h1>
+<span id="configuring-rotation-shim"></span><h1>旋转增益控制器<a class="headerlink" href="#rotation-shim-controller" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_rotation_shim_controller">在Github上的源代码</a></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code> will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> is most suitable for:</p>
+<p>“nav2_rotation_shim_controller”将检查与机器人和新接收的路径之间的大致方向差异。如果在一个阈值内，它将将请求传递给“primary_controller”来执行任务。如果超出阈值，该控制器将原地旋转机器人朝向该路径方向。一旦在容差范围内，它将从此旋转适配器控制器转移到主要控制器插件上执行控制。此时，机器人的主要插件将接管控制权，以平稳地过渡到任务。</p>
+<p><code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> 最适用于以下情况：</p>
 <ul class="simple">
 <li><p>能够原地旋转的机器人，如差分驱动和全向驱动机器人。</p></li>
-<li><p>Preference to rotate in place when starting to track a new path that is at a significantly different heading than the robot's current heading -- or when tuning your controller for its task makes tight rotations difficult.</p></li>
-<li><p>Using planners that are non-kinematically feasible, such as NavFn, Theta*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation since their paths are guaranteed drivable by physical constraints).</p></li>
+<li><p>在开始跟踪一个与机器人当前朝向显著不同的新路径时，或者在为任务调整控制器时，进行原地旋转的首选。</p></li>
+<li><p>使用非运动学可行的规划器，如 NavFn、Theta* 或 Smac 2D（可行的规划器如 Smac Hybrid-A* 和 State Lattice 将从机器人的实际起始方向开始搜索，不需要旋转，因为它们的路径在物理约束下是可行的）。</p></li>
 </ul>
 <p>请参阅软件包的“README”以获取更完整的信息。</p>
 <h1 align="center">
@@ -954,7 +954,7 @@
     <iframe width="708" height="400" src="https://www.youtube.com/embed/t-g2CBGByEw?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
   </div>
 </h1><div class="section" id="rotation-shim-controller-parameters">
-<h2>Rotation Shim Controller Parameters<a class="headerlink" href="#rotation-shim-controller-parameters" title="永久链接至标题"></a></h2>
+<h2>旋转适配器控制器参数<a class="headerlink" href="#rotation-shim-controller-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">angular_dist_threshold</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -972,7 +972,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum angular distance, in radians, away from the path heading to trigger rotation until within.</p>
+<dt>描述</dt><dd><p>最大角度偏离路径航向的弧度，触发旋转直到在范围内。</p>
 </dd>
 </dl>
 </dd>
@@ -992,7 +992,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Forward distance, in meters, along path to select a sampling point to use to approximate path heading</p>
+<dt>描述</dt><dd><p>沿路径选择采样点以近似路径航向的前向距离，单位为米。</p>
 </dd>
 </dl>
 </dd>
@@ -1012,11 +1012,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Angular rotational velocity, in rad/s, to rotate to the path heading</p>
+<dt>描述</dt><dd><p>以弧度/秒表示的角度旋转速度，用于旋转到路径方向</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">primary_controller</dt>
+<dt class="field-even">主控制器</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -1032,7 +1032,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Internal controller plugin to use for actual control behavior after rotating to heading</p>
+<dt>描述</dt><dd><p>旋转到方向后用于实际控制行为的内部控制器插件</p>
 </dd>
 </dl>
 </dd>
@@ -1052,7 +1052,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum angular acceleration for rotation to heading (rad/s/s)</p>
+<dt>描述</dt><dd><p>旋转到航向的最大角加速度（弧度/秒/秒）。</p>
 </dd>
 </dl>
 </dd>
@@ -1072,7 +1072,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time in seconds to forward simulate a rotation command to check for collisions. If a collision is found, forwards control back to the primary controller plugin.</p>
+<dt>描述</dt><dd><p>以秒为单位的时间，用于前向模拟旋转命令以检查碰撞。如果发现碰撞，则将控制权返回给主控制器插件。</p>
 </dd>
 </dl>
 </dd>
