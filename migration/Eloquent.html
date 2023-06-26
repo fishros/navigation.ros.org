@@ -772,10 +772,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#general">常规</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#server-updates">服务器更新</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-plugins">新插件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#map-server-re-work">Map Server Re-Work</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-particle-filter-messages">New Particle Filter Messages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#selection-of-behavior-tree-in-each-navigation-action">Selection of Behavior Tree in each navigation action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#followpoint-capability">FollowPoint Capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map-server-re-work">地图服务器重构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-particle-filter-messages">新的粒子滤波器消息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selection-of-behavior-tree-in-each-navigation-action">每个导航动作中的行为树选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#followpoint-capability">FollowPoint功能</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-costmap-layer">New Costmap Layer</a></li>
 </ul>
 </li>
@@ -1015,38 +1015,32 @@
 </ul>
 </div>
 <div class="section" id="map-server-re-work">
-<h2>Map Server Re-Work<a class="headerlink" href="#map-server-re-work" title="永久链接至标题"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">map_saver</span></code> was re-worked and divided into 2 parts: CLI and server.
-CLI part is a command-line tool that listens incoming map topic, saves map once into a file and finishes its work. This part is remained to be almost untouched: CLI executable was renamed from <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> to <code class="docutils literal notranslate"><span class="pre">map_saver_cli</span></code> without changing its functionality.
-Server is a new part. It spins in the background and can be used to save map continuously through a <code class="docutils literal notranslate"><span class="pre">save_map</span></code> service. By each service request it tries to listen incoming map topic, receive a message from it and write obtained map into a file.</p>
-<p><code class="docutils literal notranslate"><span class="pre">map_server</span></code> was dramatically simplified and cleaned-up. <code class="docutils literal notranslate"><span class="pre">OccGridLoader</span></code> was merged with <code class="docutils literal notranslate"><span class="pre">MapServer</span></code> class as it is intended to work only with one <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> type of messages in foreseeable future.</p>
-<p>Map Server now has new <code class="docutils literal notranslate"><span class="pre">map_io</span></code> dynamic library. All functions saving/loading <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> messages were moved from <code class="docutils literal notranslate"><span class="pre">map_server</span></code> and <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> here. These functions could be easily called from any part of external ROS 2 code even if Map Server node was not started.</p>
-<p><code class="docutils literal notranslate"><span class="pre">map_loader</span></code> was completely removed from <code class="docutils literal notranslate"><span class="pre">nav2_util</span></code>. All its functionality already present in <code class="docutils literal notranslate"><span class="pre">map_io</span></code>. Please use it in your code instead.</p>
-<p>Please refer to the <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1010">original GitHub ticket</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_map_server/README.md">Map Server README</a> for more information.</p>
+<h2>地图服务器重构<a class="headerlink" href="#map-server-re-work" title="永久链接至标题"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">map_saver</span></code> 被重新设计并分为两部分：CLI 和服务器。CLI 部分是一个命令行工具，它监听传入的地图主题，将地图保存到文件中并完成其工作。这部分几乎没有改动：CLI 可执行文件的名称从 <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> 更改为 <code class="docutils literal notranslate"><span class="pre">map_saver_cli</span></code>，但其功能没有改变。服务器是一个新的部分。它在后台运行，可用于通过 <code class="docutils literal notranslate"><span class="pre">save_map</span></code> 服务连续保存地图。每次服务请求时，它会尝试监听传入的地图主题，接收来自其中的消息，并将获取到的地图写入文件。</p>
+<p><code class="docutils literal notranslate"><span class="pre">map_server</span></code> 已经大幅简化和清理。<code class="docutils literal notranslate"><span class="pre">OccGridLoader</span></code> 已经与 <code class="docutils literal notranslate"><span class="pre">MapServer</span></code> 类合并，因为在可预见的未来它只能与一种``OccupancyGrid``类型的消息一起使用。</p>
+<p>地图服务器现在有一个新的 <code class="docutils literal notranslate"><span class="pre">map_io</span></code> 动态库。将从 <code class="docutils literal notranslate"><span class="pre">map_server</span></code> 和 <code class="docutils literal notranslate"><span class="pre">map_saver</span></code> 移动的所有保存/加载 <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> 消息的函数都放在这里。即使没有启动地图服务器节点，这些函数也可以从外部 ROS 2 代码的任何部分轻松调用。</p>
+<p><code class="docutils literal notranslate"><span class="pre">map_loader</span></code> 已经从 <code class="docutils literal notranslate"><span class="pre">nav2_util</span></code> 中完全移除。所有功能已经在 <code class="docutils literal notranslate"><span class="pre">map_io</span></code> 中存在。请在您的代码中使用它。</p>
+<p>有关更多信息，请参阅 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1010">原始 GitHub 提交</a> 和 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_map_server/README.md">地图服务器自述文件</a>。</p>
 </div>
 <div class="section" id="new-particle-filter-messages">
-<h2>New Particle Filter Messages<a class="headerlink" href="#new-particle-filter-messages" title="永久链接至标题"></a></h2>
-<p>New particle filter messages for particle clouds were added to include the particle weights along with their poses.
-<code class="docutils literal notranslate"><span class="pre">nav2_msgs/Particle</span></code> defines a single particle with a pose and a weight in a particle cloud.
-<code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> defines a set of particles, each with a pose and a weight.</p>
-<p><code class="docutils literal notranslate"><span class="pre">AMCL</span></code> now publishes its particle cloud as a <code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseArray</span></code>.</p>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1677">See here for more information.</a></p>
+<h2>新的粒子滤波器消息<a class="headerlink" href="#new-particle-filter-messages" title="永久链接至标题"></a></h2>
+<p>为粒子云添加了新的粒子滤波器消息，包括粒子权重和姿态。<code class="docutils literal notranslate"><span class="pre">nav2_msgs/Particle</span></code> 定义了一个带有姿态和权重的单个粒子。<code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> 定义了一组具有姿态和权重的粒子。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AMCL</span></code> 现在将其粒子云发布为 <code class="docutils literal notranslate"><span class="pre">nav2_msgs/ParticleCloud</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseArray</span></code>。</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1677">更多信息请参见此处</a></p>
 </div>
 <div class="section" id="selection-of-behavior-tree-in-each-navigation-action">
-<h2>Selection of Behavior Tree in each navigation action<a class="headerlink" href="#selection-of-behavior-tree-in-each-navigation-action" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> action allows now to select in the action request the behavior tree to be used by <code class="docutils literal notranslate"><span class="pre">bt_navigator</span></code> for carrying out the navigation action through the <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">behavior_tree</span></code> field. This field indicates the absolute path of the xml file that will be used to use to carry out the action. If no file is specified, leaving this field empty, the default behavior tree specified in the <code class="docutils literal notranslate"><span class="pre">default_bt_xml_filename</span> <span class="pre">parameter</span></code> will be used.</p>
-<p>This functionality has been discussed in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1780">the ticket #1780</a>, and carried out in <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1784">the pull request #1784</a>.</p>
+<h2>每个导航动作中的行为树选择<a class="headerlink" href="#selection-of-behavior-tree-in-each-navigation-action" title="永久链接至标题"></a></h2>
+<p>现在``NavigateToPose``动作可以在动作请求中选择``bt_navigator``用于执行导航动作的行为树，通过``string behavior_tree``字段。该字段指示将用于执行该动作的xml文件的绝对路径。如果未指定文件，即将该字段留空，则将使用``default_bt_xml_filename``参数中指定的默认行为树。</p>
+<p>此功能已在 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1780">ticket #1780</a> 中讨论，并在 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1784">pull request #1784</a> 中实施。</p>
 </div>
 <div class="section" id="followpoint-capability">
-<h2>FollowPoint Capability<a class="headerlink" href="#followpoint-capability" title="永久链接至标题"></a></h2>
+<h2>FollowPoint功能<a class="headerlink" href="#followpoint-capability" title="永久链接至标题"></a></h2>
 <p>A new behavior tree <code class="docutils literal notranslate"><span class="pre">followpoint.xml</span></code> has added. This behavior tree makes a robot follow a dynamically generated point, keeping a certain distance from the target. This can be used for moving target following maneuvers.</p>
-<p>This functionality has been discussed in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1660">the ticket #1660</a>, and carried out in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1859">the pull request #1859</a>.</p>
+<p>此功能已在`票号1660 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1660">https://github.com/ros-planning/navigation2/issues/1660</a>&gt;`_ 中讨论，并在`拉取请求号1859 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1859">https://github.com/ros-planning/navigation2/issues/1859</a>&gt;`_ 中实现。</p>
 </div>
 <div class="section" id="new-costmap-layer">
 <h2>New Costmap Layer<a class="headerlink" href="#new-costmap-layer" title="永久链接至标题"></a></h2>
-<p>The range sensor costmap has not been ported to navigation2 as <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::RangeSensorLayer&quot;</span></code>. It uses the same
-probabilistic model as the <a class="reference external" href="http://wiki.ros.org/range_sensor_layer">ROS1</a> layer as well as much of the
-same interface. Documentation on parameters has been added to docs/parameters and the navigation.ros.org under <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">Guide</span></code>.</p>
+<p>范围传感器代价地图在navigation2中尚未迁移为``nav2_costmap_2d::RangeSensorLayer``。它使用与`ROS1 &lt;<a class="reference external" href="http://wiki.ros.org/range_sensor_layer">http://wiki.ros.org/range_sensor_layer</a>&gt;`_层相同的概率模型，以及大部分相同的接口。参数的文档已添加到docs/parameters和navigation.ros.org的``配置指南``下。</p>
 </div>
 </div>
 

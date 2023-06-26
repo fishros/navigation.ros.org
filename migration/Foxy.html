@@ -772,10 +772,10 @@
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#general">常规</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#server-updates">服务器更新</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-plugins">新插件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#map-server-re-work">Map Server Re-Work</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-particle-filter-messages">New Particle Filter Messages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#selection-of-behavior-tree-in-each-navigation-action">Selection of Behavior Tree in each navigation action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#followpoint-capability">FollowPoint Capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#map-server-re-work">地图服务器重构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-particle-filter-messages">新的粒子滤波器消息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#selection-of-behavior-tree-in-each-navigation-action">每个导航动作中的行为树选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#followpoint-capability">FollowPoint功能</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-costmap-layer">New Costmap Layer</a></li>
 </ul>
 </li>
@@ -940,10 +940,10 @@
              
   <div class="section" id="foxy-to-galactic">
 <span id="foxy-migration"></span><h1>Foxy to Galactic<a class="headerlink" href="#foxy-to-galactic" title="永久链接至标题"></a></h1>
-<p>Moving from ROS 2 Foxy to Galactic, a number of stability improvements were added that we will not specifically address here.</p>
+<p>从ROS 2 Foxy迁移到Galactic，我们添加了许多稳定性改进，这里不会具体说明。</p>
 <div class="section" id="navigatetopose-action-feedback-updates">
 <h2>NavigateToPose Action Feedback updates<a class="headerlink" href="#navigatetopose-action-feedback-updates" title="永久链接至标题"></a></h2>
-<p>The NavigateToPose action feedback has two improvements:</p>
+<p>NavigateToPose动作反馈有两个改进：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">distance_remaining</span></code> now integrates path poses to report accurate distance remaining to go. Previously, this field reported the euclidean distance between the current pose and the goal pose.</p></li>
 <li><p>Addition of <code class="docutils literal notranslate"><span class="pre">estimated_time_remaining</span></code> field. This field reports the estimated time remaining by dividing the remaining distance by the current speed.</p></li>
