@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Using Rotation Shim Controller" href="using_shim_controller.html" />
-    <link rel="prev" title="Navigating with Keepout Zones" href="navigation2_with_keepout_filter.html" />
+    <link rel="prev" title="使用禁止区域进行导航" href="navigation2_with_keepout_filter.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -289,11 +289,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_with_keepout_filter.html">Navigating with Keepout Zones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_with_keepout_filter.html">使用禁止区域进行导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_keepout_filter.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_keepout_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_keepout_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#prepare-filter-mask">1. Prepare filter mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#enable-keepout-filter">3. Enable Keepout Filter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_keepout_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
@@ -305,7 +305,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. Prepare filter mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enable-speed-filter">3. Enable Speed Filter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. Run Nav2 stack</a></li>
@@ -960,8 +960,8 @@
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="prepare-filter-mask">
-<h3>1. Prepare filter mask<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
-<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>, any Costmap Filter (including Speed Filter) is reading the data marked in a filter mask file. All information about filter masks, their types, detailed structure and how to make a new one is written in a <a class="reference internal" href="navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">Navigating with Keepout Zones</span></a> tutorial at <code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">Prepare</span> <span class="pre">filter</span> <span class="pre">masks</span></code> chapter. The principal of drawing the filter mask for Speed Filter is the same as for Keepout Filter (to annotate a map with the requested zones), except that <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask values have another meaning: these values are encoded speed limits for the areas corresponding to the cell on map.</p>
+<h3>1. 准备过滤掩模<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
+<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>, any Costmap Filter (including Speed Filter) is reading the data marked in a filter mask file. All information about filter masks, their types, detailed structure and how to make a new one is written in a <a class="reference internal" href="navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">使用禁止区域进行导航</span></a> tutorial at <code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">Prepare</span> <span class="pre">filter</span> <span class="pre">masks</span></code> chapter. The principal of drawing the filter mask for Speed Filter is the same as for Keepout Filter (to annotate a map with the requested zones), except that <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> mask values have another meaning: these values are encoded speed limits for the areas corresponding to the cell on map.</p>
 <p>Let's look, how it is being decoded. As we know, <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values are belonging to the <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> range. For Speed Filter <code class="docutils literal notranslate"><span class="pre">0</span></code> value means no speed limit in the area corresponding zero-cell on mask. Values from <code class="docutils literal notranslate"><span class="pre">[1..100]</span></code> range are being linearly converted into a speed limit value by the following formula:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">speed_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filter_mask_data</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">multiplier</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">base</span><span class="p">;</span>
 </pre></div>
@@ -1128,7 +1128,7 @@ We will use <code class="docutils literal notranslate"><span class="pre">scale</
     <span class="k">return</span> <span class="n">ld</span>
 </pre></div>
 </div>
-<p>where the <code class="docutils literal notranslate"><span class="pre">params_file</span></code> variable should be set to a YAML-file having ROS parameters for Costmap Filter Info Publisher Server and Map Server nodes. These parameters and their meaning are listed at <a class="reference internal" href="../../configuration/packages/configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> page. Please, refer to it for more information. The example of <code class="docutils literal notranslate"><span class="pre">params_file</span></code> could be found below:</p>
+<p>其中``params_file``变</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">costmap_filter_info_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">use_sim_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

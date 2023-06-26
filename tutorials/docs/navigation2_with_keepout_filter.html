@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navigating with Keepout Zones &mdash; Navigation 2 1.0.0 文档</title>
+  <title>使用禁止区域进行导航 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -289,11 +289,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Navigating with Keepout Zones</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用禁止区域进行导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. Prepare filter mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enable-keepout-filter">3. Enable Keepout Filter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">4. Run Nav2 stack</a></li>
@@ -305,7 +305,7 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_with_speed_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#prepare-filter-mask">1. Prepare filter mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#enable-speed-filter">3. Enable Speed Filter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_speed_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Navigating with Keepout Zones</li>
+      <li>使用禁止区域进行导航</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="navigating-with-keepout-zones">
-<span id="navigation2-with-keepout-filter"></span><h1>Navigating with Keepout Zones<a class="headerlink" href="#navigating-with-keepout-zones" title="永久链接至标题"></a></h1>
+<span id="navigation2-with-keepout-filter"></span><h1>使用禁止区域进行导航<a class="headerlink" href="#navigating-with-keepout-zones" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -960,47 +960,47 @@
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="prepare-filter-mask">
-<h3>1. Prepare filter mask<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
+<h3>1. 准备过滤掩模<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
 <p>如在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>概念`中所述，任何代价地图过滤器（包括Keepout过滤器）都会读取过滤掩码文件中标记的数据。过滤掩码是一个通常通过PGM、PNG或BMP栅格文件进行分发的Nav2 2D地图，其元数据包含在一个YAML文件中。以下步骤有助于理解如何制作新的过滤掩码：</p>
-<p>Create a new image with a PGM/PNG/BMP format: copy <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.pgm">turtlebot3_world.pgm</a> main map which will be used in a world simulation from a <code class="docutils literal notranslate"><span class="pre">Nav2</span></code> repository to a new <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> file.</p>
-<p>Open <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> in your favourite raster graphics editor (as an example could be taken GIMP editor). The lightness of each pixel on the mask means an encoded information for the specific costmap filter you are going to use. Color lightness of each pixel belongs to the <code class="docutils literal notranslate"><span class="pre">[0..255]</span></code> range (or <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> in percent scale), where <code class="docutils literal notranslate"><span class="pre">0</span></code> means black color and <code class="docutils literal notranslate"><span class="pre">255</span></code> - white. Another term &quot;darkness&quot; will be understood as the exact opposite of lightness. In other words <code class="docutils literal notranslate"><span class="pre">color_darkness</span> <span class="pre">=</span> <span class="pre">100%</span> <span class="pre">-</span> <span class="pre">color_lightness</span></code>.</p>
-<p>In the GIMP lightness is expressed through color components value (e.g. <code class="docutils literal notranslate"><span class="pre">R</span></code> in percent scale) and might be set by moving <code class="docutils literal notranslate"><span class="pre">L</span></code> slider in color changing tool:</p>
+<p>创建一个新的图像，格式为PGM/PNG/BMP：从``Nav2``存储库中复制用于世界模拟中的主地图``turtlebot3_world.pgm``到新的``keepout_mask.pgm``文件中。</p>
+<p>在您喜欢的栅格图形编辑器中打开“keepout_mask.pgm”（例如，可以使用GIMP编辑器作为示例）。掩码上每个像素的亮度代表您将要使用的特定代价地图过滤器的编码信息。每个像素的颜色亮度属于“[0..255]”范围（或者百分比刻度下的“[0..100]”），其中“0”表示黑色，而“255”表示白色。另一个术语“黑暗”将被理解为亮度的确切相反。换句话说，“颜色黑暗度 = 100% - 颜色亮度”。</p>
+<p>在GIMP中，亮度通过颜色分量值（例如，百分比比例中的``R``）来表示，并可以通过移动颜色更改工具中的``L``滑块来设置：</p>
 <img alt="../../_images/ligtness_in_GIMP.png" src="../../_images/ligtness_in_GIMP.png" />
-<p>The incoming mask file is being read by the Map Server and converted into <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> values from <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> range (where <code class="docutils literal notranslate"><span class="pre">0</span></code> means free cell, <code class="docutils literal notranslate"><span class="pre">100</span></code> - occupied, anything in between - less or more occupied cells on map) or be equal to <code class="docutils literal notranslate"><span class="pre">-1</span></code> for unknown value. In Nav2 stack each map has <code class="docutils literal notranslate"><span class="pre">mode</span></code> attribute which could be <code class="docutils literal notranslate"><span class="pre">trinary</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code> or <code class="docutils literal notranslate"><span class="pre">raw</span></code>. Depending on <code class="docutils literal notranslate"><span class="pre">mode</span></code> selected, the color lightness of PGM/PNG/BMP is being converted to <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> by one of the following principles:</p>
+<p>地图服务器正在读取传入的掩码文件，并将其转换为来自“[0..100]”范围的“OccupancyGrid”值（其中“0”表示空闲单元格，“100”表示占用单元格，介于两者之间的任何值表示地图上更少或更多的占用单元格），或等于未知值的“-1”。在Nav2堆栈中，每个地图都具有“mode”属性，可以是“trinary”、“scale”或“raw”。根据所选的“mode”，PGM/PNG/BMP的颜色亮度将按照以下原则之一转换为“OccupancyGrid”：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">trinary</span></code> (default mode): Darkness &gt;= <code class="docutils literal notranslate"><span class="pre">occupied_thresh</span></code> means that map occupied (<code class="docutils literal notranslate"><span class="pre">100</span></code>). Darkness &lt;= <code class="docutils literal notranslate"><span class="pre">free_thresh</span></code> - map free (<code class="docutils literal notranslate"><span class="pre">0</span></code>). Anything in between - unknown status on map (<code class="docutils literal notranslate"><span class="pre">-1</span></code>).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: Alpha &lt; <code class="docutils literal notranslate"><span class="pre">1.0</span></code> - unknown. Darkness &gt;= <code class="docutils literal notranslate"><span class="pre">occupied_thresh</span></code> means that map occupied (<code class="docutils literal notranslate"><span class="pre">100</span></code>). Darkness &lt;= <code class="docutils literal notranslate"><span class="pre">free_thresh</span></code> - map free (<code class="docutils literal notranslate"><span class="pre">0</span></code>). Anything in between - linearly interpolate to nearest integer from <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> range.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code>: Lightness = <code class="docutils literal notranslate"><span class="pre">0</span></code> (dark color) means that map is free (<code class="docutils literal notranslate"><span class="pre">0</span></code>). Lightness = <code class="docutils literal notranslate"><span class="pre">100</span></code> (in absolute value)  - map is occupied (<code class="docutils literal notranslate"><span class="pre">100</span></code>). Anything in between - <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> value = lightness. Lightness &gt;= <code class="docutils literal notranslate"><span class="pre">101</span></code> - unknown (<code class="docutils literal notranslate"><span class="pre">-1</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trinary``（默认模式）：暗度大于等于``occupied_thresh``表示地图被占用（``100</span></code>）。暗度小于等于``free_thresh``表示地图为空闲（<code class="docutils literal notranslate"><span class="pre">0</span></code>）。两者之间的值表示地图上的未知状态（<code class="docutils literal notranslate"><span class="pre">-1</span></code>）。</p></li>
+<li><p>“scale”：Alpha &lt; 1.0 - 未知。黑暗度 &gt;= “occupied_thresh”表示地图已占用（“100”）。黑暗度 &lt;= “free_thresh” - 地图为空闲（“0”）。介于两者之间 - 线性插值到“[0..100]”范围内最近的整数。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code>：亮度为``0``（暗色）表示地图为空闲（<code class="docutils literal notranslate"><span class="pre">0</span></code>）。亮度为``100``（绝对值）表示地图被占用（<code class="docutils literal notranslate"><span class="pre">100</span></code>）。两者之间的值表示``OccupancyGrid``的值等于亮度。亮度大于等于``101``表示未知（<code class="docutils literal notranslate"><span class="pre">-1</span></code>）。</p></li>
 </ul>
-<p>where <code class="docutils literal notranslate"><span class="pre">free_thresh</span></code> and <code class="docutils literal notranslate"><span class="pre">occupied_thresh</span></code> thresholds are expressed in percentage of maximum lightness/darkness level (<code class="docutils literal notranslate"><span class="pre">255</span></code>). Map mode and thresholds are placed in YAML metadata file (see below) as <code class="docutils literal notranslate"><span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">free_thresh</span></code> and <code class="docutils literal notranslate"><span class="pre">occupied_thresh</span></code> fields.</p>
+<p>其中“free_thresh”和“occupied_thresh”阈值以最大亮度/黑暗度级别（“255”）的百分比表示。地图模式和阈值放置在YAML元数据文件中（见下文），作为“mode”、“free_thresh”和“occupied_thresh”字段。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>There is another parameter in a YAML metadata file called <code class="docutils literal notranslate"><span class="pre">negate</span></code>. By default it is set to <code class="docutils literal notranslate"><span class="pre">false</span></code>. When it is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, blacker pixels will be considered as free, whiter pixels - as occupied. In this case we should count color lightness instead of darkness for <code class="docutils literal notranslate"><span class="pre">trinary</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code> modes. <code class="docutils literal notranslate"><span class="pre">negate</span></code> has no effect on <code class="docutils literal notranslate"><span class="pre">raw</span></code> mode.</p>
+<p>在YAML元数据文件中还有另一个参数叫做``negate``。默认情况下，它被设置为``false``。当它被设置为``true``时，较黑的像素将被视为可通行的，较白的像素将被视为占用的。在这种情况下，对于``trinary``和``scale``模式，我们应该计算颜色的亮度而不是暗度。<a href="#id1"><span class="problematic" id="id2">``</span></a>negate``对``raw``模式没有影响。</p>
 </div>
-<p>For Keepout Filter <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> value is proportional to the passibility of area corresponting to this cell: higher values means more impassable areas. Cells with occupied values covers keep-out zones where robot will never enter or pass through. <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> can also act as a &quot;weighted areas layer&quot; by setting the <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> to something between <code class="docutils literal notranslate"><span class="pre">[1-99]</span></code> non-occupied values. Robot is allowed to move in these areas, however its presence there would be &quot;undesirable&quot; there (the higher the value, the sooner planners will try to get the robot out of this area).</p>
-<p>Keepout Filter also covers preferred lanes case, where robots should moving only on pre-defined lanes and permitted areas e.g. in warehouses. To use this feaure you need to prepare the mask image where the lanes and permitted areas will be marked with free values while all other areas will be occupied. TIP for drawing the mask in a <code class="docutils literal notranslate"><span class="pre">trinary</span></code> or <code class="docutils literal notranslate"><span class="pre">scale</span></code> mode: typically, amount of pixels belonging to lanes are much less than pixels covering other areas. In this case initially all lanes data might be drawn with a black pencil over white background and then (just before saving a PGM) &quot;color inversion&quot; tool in a image raster editor might be used.</p>
+<p>对于Keepout过滤器，“OccupancyGrid”值与与此单元格对应的区域的可通行性成比例：较高的值表示不可通过的区域更多。具有占用值的单元格覆盖了机器人永远不会进入或通过的禁止区域。通过将“OccupancyGrid”设置为介于“[1-99]”之间的非占用值，Keepout过滤器也可以作为“加权区域层”。机器人被允许在这些区域中移动，但是它在那里的存在将是“不可取的”（值越高，规划器越早尝试将机器人移出该区域）。</p>
+<p>Keepout Filter还涵盖了首选车道的情况，即机器人只能在预定义的车道和允许的区域内移动，例如在仓库中。要使用此功能，您需要准备一个掩膜图像，在该图像中车道和允许的区域将被标记为可通行的值，而所有其他区域将被占用。在``trinary``或``scale``模式下绘制掩膜的提示：通常，属于车道的像素数量远少于覆盖其他区域的像素。在这种情况下，最初可以使用黑色铅笔在白色背景上绘制所有车道数据，然后（在保存PGM之前）可以使用图像光栅编辑器中的“颜色反转”工具。</p>
 <p>For simplicity, in the example fill the areas with black color (in <code class="docutils literal notranslate"><span class="pre">trinary</span></code> mode this means occupied map) that you are going to mark as a keep-out zones:</p>
 <a class="reference internal image-reference" href="../../_images/drawing_keepout_mask.png"><img alt="../../_images/drawing_keepout_mask.png" src="../../_images/drawing_keepout_mask.png" style="width: 500px;" /></a>
-<p>After all keepout areas will be filled save the <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> image.</p>
+<p>填充所有保留区域后保存``keepout_mask.pgm``图像。</p>
 <p>Like all other maps, filter mask should have its own YAML metadata file. Copy <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.yaml">turtlebot3_world.yaml</a> to <code class="docutils literal notranslate"><span class="pre">keepout_mask.yaml</span></code>. Open <code class="docutils literal notranslate"><span class="pre">keepout_mask.yaml</span></code> and correct <code class="docutils literal notranslate"><span class="pre">image</span></code> field to a newly made PGM mask:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>image: turtlebot3_world.pgm
 -&gt;
 image: keepout_mask.pgm
 </pre></div>
 </div>
-<p>Since filter mask image was created as a copy of main map, other fields of YAML-file do not need to be changed. Save <code class="docutils literal notranslate"><span class="pre">keepout_mask.yaml</span></code> and new filter mask is ready to use.</p>
+<p>由于过滤器掩膜图像是主地图的副本，因此不需要更改YAML文件的其他字段。保存``keepout_mask.yaml``，新的过滤器掩膜已准备好使用。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>World map itself and filter mask could have different sizes, origin and resolution which might be useful e.g. for cases when filter mask is covering smaller areas on maps or when one filter mask is used repeatedly many times (like annotating a keepout zone for same shape rooms in the hotel). For this case, you need to correct <code class="docutils literal notranslate"><span class="pre">resolution</span></code> and <code class="docutils literal notranslate"><span class="pre">origin</span></code> fields in YAML as well so that the filter mask is correctly laid on top of the original map.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Another important note is that since Costmap2D does not support orientation, the last third &quot;yaw&quot; component of the <code class="docutils literal notranslate"><span class="pre">origin</span></code> vector should be equal to zero. For example: <code class="docutils literal notranslate"><span class="pre">origin:</span> <span class="pre">[1.25,</span> <span class="pre">-5.18,</span> <span class="pre">0.0]</span></code>.</p>
+<p>另一个重要说明是，由于Costmap2D不支持方向性，<code class="docutils literal notranslate"><span class="pre">origin``向量的最后一个``yaw``分量应该等于零。例如：``origin:</span> <span class="pre">[1.25,</span> <span class="pre">-5.18,</span> <span class="pre">0.0]</span></code>。</p>
 </div>
 </div>
 <div class="section" id="configure-costmap-filter-info-publisher-server">
 <h3>2. Configure Costmap Filter Info Publisher Server<a class="headerlink" href="#configure-costmap-filter-info-publisher-server" title="永久链接至标题"></a></h3>
-<p>Each costmap filter reads incoming meta-information (such as filter type or data conversion coefficients) in a messages of <code class="docutils literal notranslate"><span class="pre">nav2_msgs/CostmapFilterInfo</span></code> type. These messages are being published by <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">Costmap Filter Info Publisher Server</a>. The server is running as a lifecycle node. According to the <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">design document</a>, <code class="docutils literal notranslate"><span class="pre">nav2_msgs/CostmapFilterInfo</span></code> messages are going in a pair with <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> filter mask topic. Therefore, along with Costmap Filter Info Publisher Server there should be enabled a new instance of Map Server configured to publish filter mask.</p>
+<p>每个costmap过滤器在``nav2_msgs/CostmapFilterInfo``类型的消息中读取传入的元信息（例如过滤器类型或数据转换系数）。这些消息由`Costmap Filter Info Publisher Server &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info</a>&gt;`_发布。服务器作为生命周期节点运行。根据`设计文档 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf">https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf</a>&gt;`_，<a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_msgs/CostmapFilterInfo``消息与``OccupancyGrid``过滤器掩膜主题成对出现。因此，在启用Costmap Filter Info Publisher Server的同时，应启用一个新的Map Server实例，并配置它来发布过滤器掩膜。</p>
 <p>In order to enable Keepout Filter in your configuration, both servers should be enabled as a lifecycle nodes in Python launch-file. For example, this might look as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
@@ -1108,7 +1108,7 @@ image: keepout_mask.pgm
     <span class="k">return</span> <span class="n">ld</span>
 </pre></div>
 </div>
-<p>where the <code class="docutils literal notranslate"><span class="pre">params_file</span></code> variable should be set to a YAML-file having ROS parameters for Costmap Filter Info Publisher Server and Map Server nodes. These parameters and their meaning are listed at <a class="reference internal" href="../../configuration/packages/configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> page. Please, refer to it for more information. The example of <code class="docutils literal notranslate"><span class="pre">params_file</span></code> could be found below:</p>
+<p>其中``params_file``变</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">costmap_filter_info_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">use_sim_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

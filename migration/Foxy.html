@@ -289,11 +289,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html">Navigating with Keepout Zones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html">使用禁止区域进行导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#prepare-filter-mask">1. Prepare filter mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#enable-keepout-filter">3. Enable Keepout Filter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
@@ -305,7 +305,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#prepare-filter-mask">1. Prepare filter mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#prepare-filter-mask">1. 准备过滤掩模</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#configure-costmap-filter-info-publisher-server">2. Configure Costmap Filter Info Publisher Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#enable-speed-filter">3. Enable Speed Filter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#run-nav2-stack">4. Run Nav2 stack</a></li>
@@ -1061,7 +1061,7 @@ All major image formats such as <code class="docutils literal notranslate"><span
 </ul>
 <p>Each costmap filter subscribes to filter info topic (publishing by <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info">Costmap Filter Info Publisher Server</a>) having all necessary information for loaded costmap filter and filter mask topic.
 <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> additionally publishes maximum speed restricting <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg">messages</a> targeted for a Controller to enforce robot won't exceed given limit.</p>
-<p>High-level design of this concept could be found <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf">here</a>. The functionality of costmap filters is being disscussed in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1263">the ticket #1263</a> and carried out by <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1882">PR #1882</a>. The following tutorials: <a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">Navigating with Keepout Zones</span></a> and <a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#navigation2-with-speed-filter"><span class="std std-ref">Navigating with Speed Limits</span></a> will help to easily get involved with <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> and <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> functionalities.</p>
+<p>High-level design of this concept could be found <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf">here</a>. The functionality of costmap filters is being disscussed in <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1263">the ticket #1263</a> and carried out by <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1882">PR #1882</a>. The following tutorials: <a class="reference internal" href="../tutorials/docs/navigation2_with_keepout_filter.html#navigation2-with-keepout-filter"><span class="std std-ref">使用禁止区域进行导航</span></a> and <a class="reference internal" href="../tutorials/docs/navigation2_with_speed_filter.html#navigation2-with-speed-filter"><span class="std std-ref">Navigating with Speed Limits</span></a> will help to easily get involved with <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> and <code class="docutils literal notranslate"><span class="pre">SpeedFilter</span></code> functionalities.</p>
 </div>
 <div class="section" id="smacplanner">
 <h2>SmacPlanner<a class="headerlink" href="#smacplanner" title="永久链接至标题"></a></h2>
