@@ -552,7 +552,7 @@ msgstr "``nav2_waypoint_follower``中包含了几个示例实现。``WaitAtWaypo
 
 #: ../../migration/Foxy.rst:119
 msgid "Loading a plugin of this type is done through ``nav2_bringup/params/nav2_param.yaml``, by specifying plugin's name, type and it's used parameters."
-msgstr "Loading a plugin of this type is done through ``nav2_bringup/params/nav2_param.yaml``, by specifying plugin's name, type and it's used parameters."
+msgstr "通过``nav2_bringup/params/nav2_param.yaml``加载此类型的插件，需要指定插件的名称、类型和使用的参数。"
 
 
 #: ../../migration/Foxy.rst:135
@@ -587,7 +587,7 @@ msgstr "Galactic引入了一个与空间相关对象进行交互的新概念，�
 
 #: ../../migration/Foxy.rst:145
 msgid "Architecturally, costmap filters consists from ``CostmapFilter`` class which is a basic class incorporating much common of its inherited filter plugins:"
-msgstr "Architecturally, costmap filters consists from ``CostmapFilter`` class which is a basic class incorporating much common of its inherited filter plugins:"
+msgstr "从架构上看，代价地图过滤器由``CostmapFilter``类组成，它是一个基本类，集成了大部分常见的过滤器插件特性："
 
 
 #: ../../migration/Foxy.rst:147
@@ -597,22 +597,22 @@ msgstr "``KeepoutFilter``：禁止进入/安全区域过滤器插件。"
 
 #: ../../migration/Foxy.rst:148
 msgid "``SpeedFilter``: slow/speed-restricted areas filter."
-msgstr "``SpeedFilter``: slow/speed-restricted areas filter."
+msgstr "``SpeedFilter``：慢速/限速区域过滤器。"
 
 
 #: ../../migration/Foxy.rst:149
 msgid "Preferred lanes in industries. This plugin is covered by ``KeepoutFilter`` (see discussion in `corresponding PR <https://github.com/ros-planning/navigation2/issues/1522>`_ for more details)."
-msgstr "Preferred lanes in industries. This plugin is covered by ``KeepoutFilter`` (see discussion in `corresponding PR <https://github.com/ros-planning/navigation2/issues/1522>`_ for more details)."
+msgstr "行业中的首选车道。此插件由``KeepoutFilter``（有关详细信息，请参见`对应PR的讨论 <https://github.com/ros-planning/navigation2/issues/1522>`_）覆盖。"
 
 
 #: ../../migration/Foxy.rst:151
 msgid "Each costmap filter subscribes to filter info topic (publishing by `Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_) having all necessary information for loaded costmap filter and filter mask topic. ``SpeedFilter`` additionally publishes maximum speed restricting `messages <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg>`_ targeted for a Controller to enforce robot won't exceed given limit."
-msgstr "Each costmap filter subscribes to filter info topic (publishing by `Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_) having all necessary information for loaded costmap filter and filter mask topic. ``SpeedFilter`` additionally publishes maximum speed restricting `messages <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg>`_ targeted for a Controller to enforce robot won't exceed given limit."
+msgstr "每个代价地图过滤器订阅过滤器信息主题（由`Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_发布），该主题包含加载的代价地图过滤器和过滤器掩码主题所需的所有信息。``SpeedFilter``还发布最大速度限制的 `消息 <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/SpeedLimit.msg>`_，用于控制器强制机器人不超过给定的限制。"
 
 
 #: ../../migration/Foxy.rst:154
 msgid "High-level design of this concept could be found `here <https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf>`_. The functionality of costmap filters is being disscussed in `the ticket #1263 <https://github.com/ros-planning/navigation2/issues/1263>`_ and carried out by `PR #1882 <https://github.com/ros-planning/navigation2/pull/1882>`_. The following tutorials: :ref:`navigation2_with_keepout_filter` and :ref:`navigation2_with_speed_filter` will help to easily get involved with ``KeepoutFilter`` and ``SpeedFilter`` functionalities."
-msgstr "High-level design of this concept could be found `here <https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf>`_. The functionality of costmap filters is being disscussed in `the ticket #1263 <https://github.com/ros-planning/navigation2/issues/1263>`_ and carried out by `PR #1882 <https://github.com/ros-planning/navigation2/pull/1882>`_. The following tutorials: :ref:`navigation2_with_keepout_filter` and :ref:`navigation2_with_speed_filter` will help to easily get involved with ``KeepoutFilter`` and ``SpeedFilter`` functionalities."
+msgstr "可以在`此处 <https://github.com/ros-planning/navigation2/tree/main/doc/design/CostmapFilters_design.pdf>`_ 找到这个概念的高级设计。有关代价图滤波器的功能正在`票号＃1263 <https://github.com/ros-planning/navigation2/issues/1263>`_进行讨论，并由`PR＃1882 <https://github.com/ros-planning/navigation2/pull/1882>`_ 执行。以下教程：:ref:`navigation2_with_keepout_filter` 和 :ref:`navigation2_with_speed_filter` 将帮助您轻松了解 ``KeepoutFilter`` 和 ``SpeedFilter`` 的功能。"
 
 
 #: ../../migration/Foxy.rst:157
@@ -622,17 +622,17 @@ msgstr "SmacPlanner"
 
 #: ../../migration/Foxy.rst:159
 msgid "A new package, ``nav2_smac_planner`` was added containing 4 or 8 connected 2D A*, and Dubin and Reed-shepp model hybrid-A* with smoothing, multi-resolution query, and more."
-msgstr "A new package, ``nav2_smac_planner`` was added containing 4 or 8 connected 2D A*, and Dubin and Reed-shepp model hybrid-A* with smoothing, multi-resolution query, and more."
+msgstr "添加了一个新的包，``nav2_smac_planner``，其中包含4或8个连通的2D A*，Dubin和Reed-shepp模型混合-A*，具有平滑、多分辨率查询等功能。"
 
 
 #: ../../migration/Foxy.rst:161
 msgid "The ``nav2_smac_planner`` package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. We support differential-drive and omni-directional drive robots using the ``SmacPlanner2D`` planner which implements a cost-aware A* planner. We support cars, car-like, and ackermann vehicles using the ``SmacPlanner`` plugin which implements a Hybrid-A* planner. This plugin is also useful for curvature constrained planning, like when planning robot at high speeds to make sure they don't flip over or otherwise skid out of control."
-msgstr "The ``nav2_smac_planner`` package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. We support differential-drive and omni-directional drive robots using the ``SmacPlanner2D`` planner which implements a cost-aware A* planner. We support cars, car-like, and ackermann vehicles using the ``SmacPlanner`` plugin which implements a Hybrid-A* planner. This plugin is also useful for curvature constrained planning, like when planning robot at high speeds to make sure they don't flip over or otherwise skid out of control."
+msgstr "``nav2_smac_planner``软件包包含一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的规划器。我们支持使用``SmacPlanner2D``规划器的差分驱动和全向驱动机器人，该规划器实现了一种考虑成本的A*规划器。我们支持使用``SmacPlanner``插件的汽车、类汽车和阿克曼车辆，该插件实现了混合A*规划器。该插件还可用于曲率约束规划，例如在高速规划机器人时，确保它们不会翻转或失控打滑。"
 
 
 #: ../../migration/Foxy.rst:163
 msgid "The ``SmacPlanner`` fully-implements the Hybrid-A* planner as proposed in `Practical Search Techniques in Path Planning for Autonomous Driving <https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf>`_, including hybrid searching, CG smoothing, analytic expansions and hueristic functions."
-msgstr "The ``SmacPlanner`` fully-implements the Hybrid-A* planner as proposed in `Practical Search Techniques in Path Planning for Autonomous Driving <https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf>`_, including hybrid searching, CG smoothing, analytic expansions and hueristic functions."
+msgstr "``SmacPlanner`` 完全实现了 `Practical Search Techniques in Path Planning for Autonomous Driving <https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf>`_ 中提出的 Hybrid-A* 路径规划器，包括混合搜索、CG平滑、解析扩展和启发式函数。"
 
 
 #: ../../migration/Foxy.rst:166
@@ -642,12 +642,12 @@ msgstr "ThetaStarPlanner"
 
 #: ../../migration/Foxy.rst:167
 msgid "A new package, ``nav2_theta_star_planner`` was added containing 4 or 8 connected Theta* implementation for 2D maps."
-msgstr "A new package, ``nav2_theta_star_planner`` was added containing 4 or 8 connected Theta* implementation for 2D maps."
+msgstr "添加了一个新的包，``nav2_theta_star_planner``，其中包含4或8个连通的Theta*实现，适用于2D地图。"
 
 
 #: ../../migration/Foxy.rst:169
 msgid "This package implements an optimized version of the Theta* Path Planner (specifically the `Lazy Theta\\* P <http://idm-lab.org/bib/abstracts/papers/aaai10b.pdf>`_ variant) to plan any-angled paths for differential-drive and omni-directional robots, while also taking into account the costmap costs. This plugin is useful for the cases where you might want to plan a path at a higher rate but without requiring extremely smooth paths around the corners which, for example, could be handled by a local planner/controller."
-msgstr "This package implements an optimized version of the Theta* Path Planner (specifically the `Lazy Theta\\* P <http://idm-lab.org/bib/abstracts/papers/aaai10b.pdf>`_ variant) to plan any-angled paths for differential-drive and omni-directional robots, while also taking into account the costmap costs. This plugin is useful for the cases where you might want to plan a path at a higher rate but without requiring extremely smooth paths around the corners which, for example, could be handled by a local planner/controller."
+msgstr "该软件包实现了Theta*路径规划器的优化版本（特别是`Lazy Theta\\* P <http://idm-lab.org/bib/abstracts/papers/aaai10b.pdf>`_ 变体），用于规划差分驱动和全向驱动机器人的任意角度路径，并考虑到代价地图的代价。该插件适用于那些可能希望以较高速率规划路径但不需要非常平滑路径的情况，例如局部规划器/控制器可以处理角落处的路径平滑。"
 
 
 #: ../../migration/Foxy.rst:172
@@ -657,17 +657,17 @@ msgstr "RegulatedPurePursuitController"
 
 #: ../../migration/Foxy.rst:174
 msgid "A new package, ``nav2_regulated_pure_pursuit_controller`` was added containing a novel varient of the Pure Pursuit algorithm. It also includes configurations to enable Pure Pursuit and Adaptive Pure Pursuit variations as well."
-msgstr "A new package, ``nav2_regulated_pure_pursuit_controller`` was added containing a novel varient of the Pure Pursuit algorithm. It also includes configurations to enable Pure Pursuit and Adaptive Pure Pursuit variations as well."
+msgstr "新增了一个名为``nav2_regulated_pure_pursuit_controller``的软件包，其中包含一种新颖的Pure Pursuit算法变体。它还包括配置以启用Pure Pursuit和Adaptive Pure Pursuit的不同变体。"
 
 
 #: ../../migration/Foxy.rst:177
 msgid "This variation is specifically targeting service / industrial robot needs. It regulates the linear velocities by curvature of the path to help reduce overshoot at high speeds around blind corners allowing operations to be much more safe. It also better follows paths than any other variation currently available of Pure Pursuit. It also has heuristics to slow in proximity to other obstacles so that you can slow the robot automatically when nearby potential collisions. It also implements the Adaptive lookahead point features to be scaled by velocities to enable more stable behavior in a larger range of translational speeds."
-msgstr "This variation is specifically targeting service / industrial robot needs. It regulates the linear velocities by curvature of the path to help reduce overshoot at high speeds around blind corners allowing operations to be much more safe. It also better follows paths than any other variation currently available of Pure Pursuit. It also has heuristics to slow in proximity to other obstacles so that you can slow the robot automatically when nearby potential collisions. It also implements the Adaptive lookahead point features to be scaled by velocities to enable more stable behavior in a larger range of translational speeds."
+msgstr "这个变体专门针对服务/工业机器人的需求。它通过路径曲率来调节线速度，以帮助减少在高速绕盲角时的超调，从而使操作更加安全。它还比目前可用的任何其他Pure Pursuit变体更好地跟随路径。它还具有在靠近其他障碍物时放慢速度的启发式功能，以便在附近潜在碰撞时自动减速机器人。它还实现了通过速度缩放来启用更大范围的平移速度下更稳定行为的自适应前瞻点特性。"
 
 
 #: ../../migration/Foxy.rst:183
 msgid "There's more this does, that that's the general information. See the package's ``README`` for more."
-msgstr "There's more this does, that that's the general information. See the package's ``README`` for more."
+msgstr "还有更多功能，但这是一般信息。有关详细信息，请参阅软件包的``README``。"
 
 
 #: ../../migration/Foxy.rst:186
@@ -677,7 +677,7 @@ msgstr "Costmap2D ``current_`` Usage"
 
 #: ../../migration/Foxy.rst:188
 msgid "In costmap2D, ``current_`` was used in ROS1 to represent whether a costmap layer was still enabled and actively processing data. It would be turned to ``false`` only under the situation that the expected update rate of a sensor was not met, so it was getting stale or no messages. It acts as a fail-safe for if a navigation sensor stops publishing."
-msgstr "In costmap2D, ``current_`` was used in ROS1 to represent whether a costmap layer was still enabled and actively processing data. It would be turned to ``false`` only under the situation that the expected update rate of a sensor was not met, so it was getting stale or no messages. It acts as a fail-safe for if a navigation sensor stops publishing."
+msgstr "在costmap2D中，ROS 1中使用``current_``表示一个代价地图层是否仍处于启用状态并且正在主动处理数据。只有在传感器的预期更新速率未达到时，它才会变为``false``，因此它变得过时或没有消息。它作为一种故障安全机制，以防导航传感器停止发布。"
 
 
 #: ../../migration/Foxy.rst:190
@@ -687,7 +687,7 @@ msgstr "In galactic, that will remain turn, however it will also add additional 
 
 #: ../../migration/Foxy.rst:193
 msgid "Standard time units in parameters"
-msgstr "Standard time units in parameters"
+msgstr "参数中的标准时间单位"
 
 
 #: ../../migration/Foxy.rst:194
