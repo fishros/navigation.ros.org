@@ -950,39 +950,39 @@
 <li><p>零拷贝碰撞检测对象</p></li>
 <li><p>预先计算碰撞检查足迹的方向，运行时不需要三角函数计算</p></li>
 <li><p>只有在机器人位于可能被内接区域时才检查完整的SE2足迹</p></li>
-<li><p>Computing the possibly inscribed zones, or the cost over which some part of the footprint may be in collision with a boundary to check the full footprint. Else, check center cost since promised to not be in a potential collision state</p></li>
+<li><p>计算可能的内切区域，或者某些足迹部分可能与边界发生碰撞以检查完整的足迹。否则，检查中心成本，因为承诺不处于潜在的碰撞状态</p></li>
 <li><p>将Hybrid-A*规划器重命名为SmacPlannerHybrid</p></li>
-<li><p>Precomputing the Reedshepp and Dubin paths offline so at runtime its just a lookup table</p></li>
+<li><p>离线预先计算Reedshepp和Dubin路径，使得在运行时只需查找表</p></li>
 <li><p>用名为障碍启发式的新启发式替换了波前启发式。该启发式使用差分A*搜索计算Dijkstra路径，考虑了8个连接空间，并在位置的成本上引入权重以指导启发式进入走廊中心。它还对代价图进行降采样，可以将扩展次数减少75%，并且在启发式中引入的误差非常小，最多仅为单个单元距离的部分分数。</p></li>
-<li><p>Improvements to the analytic expansion algorithm to remove the possibility of loops at the end of paths, whenever possible to remove</p></li>
+<li><p>改进分析扩展算法，以消除路径末尾可能存在的循环，尽可能地消除</p></li>
 <li><p>改进分析性扩展以提供最大路径长度，以防止靠近障碍物</p></li>
-<li><p>2D A* travel cost and heuristic improvements to speed up planning times and also increase the path quality significantly</p></li>
+<li><p>改进2D A*的行进成本和启发式算法，以加快规划时间并显著提高路径质量</p></li>
 <li><p>用定制的梯度下降实现替换了平滑器</p></li>
-<li><p>Abstract out common utilities of planners into a utils file</p></li>
-<li><p>tuned cost functions</p></li>
-<li><p>precomputed obstacle heuristic using dynamic programming to expand only the minimum number of nodes</p></li>
-<li><p>A caching heuristic setting to enable 25hz planning rates using cached obstacle heuristic values when the goal remains the same</p></li>
-<li><p>Leveraging the symmetry in the dubin and reeds-sheep space to reduce cache size by 50% to increase the window size available for heuristic lookup.</p></li>
-<li><p>Precompute primitives at all orientation bins</p></li>
-<li><p>SmacPlanner2D parameters are now all reconfigurable</p></li>
-<li><p>Both Hybrid-A* and State Lattice planners are now fully admissible</p></li>
-<li><p>Hybrid-A* and State Lattice have had their parameterization for path smoothing readded.</p></li>
-<li><p>The smoother now enables kinematically feasible boundary conditions.</p></li>
-<li><p>State Lattice supports turning in place primitive types</p></li>
-<li><p>Retrospective penalty added to speed up the planner, making it prioritize later search branches before earlier ones, which have negligible chance to improve path in vast majority of situations</p></li>
+<li><p>将规划器的常用工具抽象为一个工具文件</p></li>
+<li><p>优化的成本函数</p></li>
+<li><p>使用动态规划预先计算障碍启发式算法，只扩展最小数量的节点</p></li>
+<li><p>一个缓存启发式设置，当目标保持不变时，使用缓存的障碍启发式值来实现25Hz的规划速率</p></li>
+<li><p>利用Dubin和Reeds-Sheep空间中的对称性，将缓存大小减少50%，增加可用于启发式查找的窗口大小</p></li>
+<li><p>在所有方向分箱中预计算基本元素</p></li>
+<li><p>SmacPlanner2D参数现在全部可重新配置</p></li>
+<li><p>混合A*和状态格子规划器现在都是完全可接受的</p></li>
+<li><p>混合A*和状态网格路径平滑化的参数化已重新添加</p></li>
+<li><p>平滑器现在启用了运动学可行的边界条件</p></li>
+<li><p>状态网格支持原地旋转原始类型</p></li>
+<li><p>回顾性惩罚添加到加速规划器，使其优先考虑后续搜索分支，而不是先前的分支，在绝大多数情况下这些分支几乎没有改善路径的机会</p></li>
 </ul>
 </div></blockquote>
 <dl class="simple">
-<dt>The tl;dr of these improvements is:</dt><dd><ul class="simple">
-<li><p>Plans are 2-3x as fast as they were before, well under 200ms for nearly all situations, making it as fast as NavFn and Global Planner (but now kinematically feasible). Typical planning times are sub-100ms without even making use of the caching or downsampling features.</p></li>
-<li><p>Paths are of significantly higher quality via improved smoothers and a novel heuristic that steers the robot towards the center of aisleways implicitly. This makes smoother paths that are also further from obstacles whenever possible.</p></li>
+<dt>这些改进的要点是：</dt><dd><ul class="simple">
+<li><p>规划速度比以前快2-3倍，在几乎所有情况下都在200毫秒以下，使其与NavFn和全局规划器一样快（但现在是运动学可行的）。典型的规划时间在不使用缓存或降采样功能的情况下都在100毫秒以下。</p></li>
+<li><p>通过改进的平滑器和一种新颖的启发式算法，路径质量显著提高，使机器人在可能的情况下朝向通道中心。这样可以生成更平滑、尽可能远离障碍物的路径。</p></li>
 <li><p>Using caching or downsampler parameterizations, can easily achieve path planning with sub-50ms in nearly any sized space.</p></li>
-<li><p>Smoother is now able to do more refinements and can create kinematically feasible boundary conditions, even while reversing.</p></li>
+<li><p>平滑器现在可以进行更多的细化操作，即使在倒车时也可以创建运动学上可行的边界条件。</p></li>
 </ul>
 </dd>
 </dl>
 <p>Additional improvements were made to include a <code class="docutils literal notranslate"><span class="pre">analytic_expansion_max_length</span></code> parameter such that analytic expansions are limited in their potential length. If the length is too far, reject this expansion. This prevents unsafe shortcutting of paths into higher cost areas far out from the goal itself, let search to the work of getting close before the analytic expansion brings it home. This should never be smaller than 4-5x the minimum turning radius being used, or planning times will begin to spike.</p>
-<p>Further, the traversal cost and heuristic cost computations were updated <strong>requiring retuning of your penalty functions</strong> if you have a previously existing configuration. Defaults of the algorithm were also retuned appropriately to the change for similar our of the box behavior as before (to use as a reference).</p>
+<p>此外，遍历成本和启发式成本计算已经更新**，如果您之前有现有配置，则需要重新调整惩罚函数**。算法的默认设置也相应调整以适应这一变化，以实现类似以前的开箱即用行为（作为参考使用）。</p>
 </div>
 <div class="section" id="simple-python-commander">
 <h2>Simple (Python) Commander<a class="headerlink" href="#simple-python-commander" title="永久链接至标题"></a></h2>
