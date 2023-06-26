@@ -102,7 +102,7 @@ msgstr "另一个规划器插件是Smac Hybrid-A*规划器，它支持任意形�
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:40
 msgid "There is also the ``Smac Lattice planner`` plugin which is based on a State Lattice planner. This plugin functions by expanding the robot state space while ensuring the path complies with the robot's kinematic constraints. The algorithm provides minimum control sets which allows it to support **differential, omnidirectional, and ackermann** vehicles of any shape and size with minimal reconfiguration."
-msgstr "There is also the ``Smac Lattice planner`` plugin which is based on a State Lattice planner. This plugin functions by expanding the robot state space while ensuring the path complies with the robot's kinematic constraints. The algorithm provides minimum control sets which allows it to support **differential, omnidirectional, and ackermann** vehicles of any shape and size with minimal reconfiguration."
+msgstr "还有基于状态格的``Smac Lattice planner``插件。该插件通过扩展机器人状态空间，确保路径符合机器人的运动约束。该算法提供了最小控制集，使其能够支持**微分、全向和阿克曼**型车辆的任何形状和尺寸，并且最小程度上需要重新配置。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:43 ../../setup_guides/algorithm/select_algorithm.rst:85
@@ -162,7 +162,7 @@ msgstr "非圆形差动，非圆形全向"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:61 ../../setup_guides/algorithm/select_algorithm.rst:100
 msgid "Example Configuration"
-msgstr "Example Configuration"
+msgstr "示例配置"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:71
@@ -177,22 +177,22 @@ msgstr "控制器服务器"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:76
 msgid "The default controller plugin is the `DWB controller <https://navigation.ros.org/configuration/packages/configuring-dwb-controller.html>`_. It implements a modified Dynamic Window Approach (DWA) algorithm with configurable plugins to compute the control commands for the robot. This controller makes use of a ``Trajectory Generator plugin`` that generates the set of possible trajectories. These are then evaluated by one or more ``Critic plugins``, each of which may give a different score based on how they are configured. The sum of the scores from these ``Critic plugins`` determine the overall score of a trajectory. The best scoring trajectory then determines the output command velocity."
-msgstr "The default controller plugin is the `DWB controller <https://navigation.ros.org/configuration/packages/configuring-dwb-controller.html>`_. It implements a modified Dynamic Window Approach (DWA) algorithm with configurable plugins to compute the control commands for the robot. This controller makes use of a ``Trajectory Generator plugin`` that generates the set of possible trajectories. These are then evaluated by one or more ``Critic plugins``, each of which may give a different score based on how they are configured. The sum of the scores from these ``Critic plugins`` determine the overall score of a trajectory. The best scoring trajectory then determines the output command velocity."
+msgstr "默认的控制器插件是`DWB controller <https://navigation.ros.org/configuration/packages/configuring-dwb-controller.html>`_。它实现了一种改进的动态窗口方法（DWA）算法，通过可配置的插件计算机器人的控制命令。该控制器使用一个生成可能轨迹集的``Trajectory Generator插件``。然后，这些轨迹由一个或多个``Critic插件``进行评估，每个插件根据其配置给出不同的评分。这些``Critic插件``的评分之和确定了轨迹的整体评分。评分最高的轨迹确定了输出的命令速度。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:78
 msgid "The ``DWB controller`` can be used on **circular or non-circular differential, and circular or non-circular omnidirectional** robots. It may also be configured for **ackerman and legged** robots if it is given a ``Trajectory Generation plugin`` that produces a set of possible trajectories that considers the robot's minimum curvature constraint."
-msgstr "The ``DWB controller`` can be used on **circular or non-circular differential, and circular or non-circular omnidirectional** robots. It may also be configured for **ackerman and legged** robots if it is given a ``Trajectory Generation plugin`` that produces a set of possible trajectories that considers the robot's minimum curvature constraint."
+msgstr "``DWB控制器``可以用于**圆形或非圆形差动和全向**机器人。如果给它一个产生考虑到机器人最小曲率约束的可能轨迹集的``轨迹生成插件``，它还可以配置为**阿克曼和腿式**机器人。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:80
 msgid "Another example of a controller server plugin is the `TEB controller <https://github.com/rst-tu-dortmund/teb_local_planner>`_ which is an MPC time optimal controller. It implements the Timed Elastic Band (TEB) approach which optimizes the robot's trajectory based on its execution time, distance from obstacles, and feasibility with respect to the robot's kinematic constraints. This controller can be used on **differential, omnidirectional, ackermann, and legged** robots."
-msgstr "Another example of a controller server plugin is the `TEB controller <https://github.com/rst-tu-dortmund/teb_local_planner>`_ which is an MPC time optimal controller. It implements the Timed Elastic Band (TEB) approach which optimizes the robot's trajectory based on its execution time, distance from obstacles, and feasibility with respect to the robot's kinematic constraints. This controller can be used on **differential, omnidirectional, ackermann, and legged** robots."
+msgstr "另一个控制器服务器插件的例子是`TEB controller <https://github.com/rst-tu-dortmund/teb_local_planner>`_，它是一种MPC最优控制器。它实现了基于执行时间、障碍物距离和符合机器人运动约束的时间弹性带（TEB）方法来优化机器人的轨迹。该控制器可以用于**微分、全向、阿克曼和腿式**机器人。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:82
 msgid "The last example for this section is the `Regulated Pure Pursuit controller (RPP) <https://navigation.ros.org/configuration/packages/configuring-regulated-pp.html>`_ . This controller implements a variant of the pure pursuit algorithm with added regulation heuristic functions to manage collision and velocity constraints. This variation is implemented to target the needs of service or industrial robots and is suitable for use with **differential, ackermann, and legged** robots."
-msgstr "The last example for this section is the `Regulated Pure Pursuit controller (RPP) <https://navigation.ros.org/configuration/packages/configuring-regulated-pp.html>`_ . This controller implements a variant of the pure pursuit algorithm with added regulation heuristic functions to manage collision and velocity constraints. This variation is implemented to target the needs of service or industrial robots and is suitable for use with **differential, ackermann, and legged** robots."
+msgstr "本节的最后一个示例是 `Regulated Pure Pursuit控制器（RPP）<https://navigation.ros.org/configuration/packages/configuring-regulated-pp.html>`_ 。该控制器实现了一种变体的纯追踪算法，并添加了调节启发式函数来管理碰撞和速度约束。此变体是为满足服务或工业机器人的需求而实现的，并适用于**差动、阿克曼和腿式**机器人。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:88
@@ -242,57 +242,57 @@ msgstr "精确路径跟随"
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:97
 msgid "All of these algorithms work for both circular and non-circular robots."
-msgstr "All of these algorithms work for both circular and non-circular robots."
+msgstr "所有这些算法都适用于圆形和非圆形机器人。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:110
 msgid "Shown above is a sample basic configuration of the controller server. The list of mapped names for controller plugins are defined in the ``controller_plugins`` parameter. Similar to the planner server, each namespace defined in the ``controller_plugins`` (``FollowPath`` in our example) must define the type of plugin it will use in the ``plugin`` parameter. Additional configurations must also be made for the selected algorithm in the namespace. Please see the `Configuration Guide <https://navigation.ros.org/configuration/index.html>`_ for more details."
-msgstr "Shown above is a sample basic configuration of the controller server. The list of mapped names for controller plugins are defined in the ``controller_plugins`` parameter. Similar to the planner server, each namespace defined in the ``controller_plugins`` (``FollowPath`` in our example) must define the type of plugin it will use in the ``plugin`` parameter. Additional configurations must also be made for the selected algorithm in the namespace. Please see the `Configuration Guide <https://navigation.ros.org/configuration/index.html>`_ for more details."
+msgstr "上图显示了控制器服务器的一个示例基本配置。控制器插件的映射名称列表在``controller_plugins``参数中定义。与规划器服务器类似，``controller_plugins``中定义的每个命名空间（在我们的示例中为``FollowPath``）必须在``plugin``参数中定义它将使用的插件类型。还必须对命名空间中选择的算法进行其他配置。有关详细信息，请参阅`配置指南<https://navigation.ros.org/configuration/index.html>`_。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:113
 msgid "The planner and controller servers, along with the other servers of Nav2, are launched in ROS 2 through lifecycle nodes. Lifecycle nodes allow for easier bringup and teardown of the servers. Lifecycle node management will be discussed in the next tutorial."
-msgstr "The planner and controller servers, along with the other servers of Nav2, are launched in ROS 2 through lifecycle nodes. Lifecycle nodes allow for easier bringup and teardown of the servers. Lifecycle node management will be discussed in the next tutorial."
+msgstr "规划器和控制器服务器以及Nav2的其他服务器通过生命周期节点在ROS 2中启动。生命周期节点可以更轻松地启动和关闭服务器。生命周期节点管理将在下一个教程中讨论。"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:116 ../../setup_guides/footprint/setup_footprint.rst:106 ../../setup_guides/odom/setup_odom.rst:565 ../../setup_guides/sensors/setup_sensors.rst:548 ../../setup_guides/transformation/setup_transforms.rst:109 ../../setup_guides/urdf/setup_urdf.rst:456
 msgid "Conclusion"
-msgstr "Conclusion"
+msgstr "结论"
 
 
 #: ../../setup_guides/algorithm/select_algorithm.rst:117
 msgid "In this tutorial, we have discussed the roles and configuration of Nav2's planner and controller servers. To summarize, these servers host a map of one or more algorithm plugins which are selected depending on your robot's structure and surroundings. We also described a few of the available plugins for the planner and controller servers to help you identify which plugins are suitable for your robot. Lastly, we also provided some simple configuration examples to show how these plugins are instantiated on the servers. You can refer to the configuration guide of the algorithm plugin you will select for more details on its configuration parameters."
-msgstr "In this tutorial, we have discussed the roles and configuration of Nav2's planner and controller servers. To summarize, these servers host a map of one or more algorithm plugins which are selected depending on your robot's structure and surroundings. We also described a few of the available plugins for the planner and controller servers to help you identify which plugins are suitable for your robot. Lastly, we also provided some simple configuration examples to show how these plugins are instantiated on the servers. You can refer to the configuration guide of the algorithm plugin you will select for more details on its configuration parameters."
+msgstr "在本教程中，我们讨论了Nav2规划器和控制器服务器的角色和配置。总结一下，这些服务器托管一个或多个算法插件的地图，选择插件取决于您的机器人结构和周围环境。我们还描述了一些可用于规划器和控制器服务器的插件，以帮助您确定哪些插件适合您的机器人。最后，我们还提供了一些简单的配置示例，以展示这些插件如何在服务器上实例化。有关所选算法插件的配置参数的详细信息，请参阅其配置指南。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:4
 msgid "Setting Up the Robot's Footprint"
-msgstr "Setting Up the Robot's Footprint"
+msgstr "设置机器人的轮廓"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:6
 msgid "In this guide, we will discuss how to configure the footprint of your robot for the navigation algorithms used by Nav2. We will also show a sample footprint configuration on ``sam_bot``, the simulated robot that we have been building in this series of setup guides. Lastly, we will also show the visualization of ``sam_bot``'s footprint in RViz to ensure that we have set it up correctly."
-msgstr "In this guide, we will discuss how to configure the footprint of your robot for the navigation algorithms used by Nav2. We will also show a sample footprint configuration on ``sam_bot``, the simulated robot that we have been building in this series of setup guides. Lastly, we will also show the visualization of ``sam_bot``'s footprint in RViz to ensure that we have set it up correctly."
+msgstr "在本指南中，我们将讨论如何配置机器人的足迹，以便Nav2使用的导航算法能够正常运行。我们还将在这一系列设置指南中一直在构建的仿真机器人“sam_bot”上展示一个样本足迹配置。最后，我们还将在RViz中显示“sam_bot”的足迹可视化，以确保我们设置正确。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:9
 msgid "Footprint Introduction"
-msgstr "Footprint Introduction"
+msgstr "轮廓介绍"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:11
 msgid "The footprint outlines the robot's 2D shape when projected to the ground and is primarily used by Nav2 to avoid collisions during planning. The algorithms involved in this task makes sure that the robot does not collide with the obstacles in the costmap while it computes the robot's paths or plans."
-msgstr "The footprint outlines the robot's 2D shape when projected to the ground and is primarily used by Nav2 to avoid collisions during planning. The algorithms involved in this task makes sure that the robot does not collide with the obstacles in the costmap while it computes the robot's paths or plans."
+msgstr "足迹描述了机器人在投射到地面时的二维形状，主要用于Nav2在规划过程中避免碰撞。参与此任务的算法确保机器人在计算路径或规划过程中不会与代价地图中的障碍物发生碰撞。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:13
 msgid "The footprint is set up using the ``footprint`` or ``robot_radius`` parameter of the global and local costmaps which we tackled in the previous tutorials (:ref:`Setting Up Sensors Guide<setup_sensors>`). The value defined in the ``footprint`` parameter is an ordered vector of 2-D points defining the robot's footprint with the ``base_link`` frame as the origin. The first and last points in the vector are joined into the last line segment to close the footprint's shape. As an alternative, you may also use the ``robot_radius`` parameter wherein circular footprint is automatically generated and centered at ``base_link``.  In cases both the ``footprint`` and ``robot_radius`` parameters have been defined in the configuration, the ``footprint`` is used."
-msgstr "The footprint is set up using the ``footprint`` or ``robot_radius`` parameter of the global and local costmaps which we tackled in the previous tutorials (:ref:`Setting Up Sensors Guide<setup_sensors>`). The value defined in the ``footprint`` parameter is an ordered vector of 2-D points defining the robot's footprint with the ``base_link`` frame as the origin. The first and last points in the vector are joined into the last line segment to close the footprint's shape. As an alternative, you may also use the ``robot_radius`` parameter wherein circular footprint is automatically generated and centered at ``base_link``.  In cases both the ``footprint`` and ``robot_radius`` parameters have been defined in the configuration, the ``footprint`` is used."
+msgstr "通过在全局和局部成本地图的``footprint``或``robot_radius``参数中设置机器人的轮廓，我们可以设置机器人的轮廓。在前面的教程中我们已经介绍了这两个参数(:ref:`设置传感器指南<setup_sensors>`)。``footprint``参数中定义的值是一个有序的二维点向量，用于定义以``base_link``帧为原点的机器人轮廓。向量中的第一个和最后一个点被连接成最后一个线段以闭合轮廓的形状。作为替代，您还可以使用``robot_radius``参数，其中圆形轮廓会自动生成，并以``base_link``为中心。如果配置中同时定义了``footprint``和``robot_radius``参数，则使用``footprint``参数。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:16
 msgid "A section in the previous guide, :ref:`Configuring nav2_costmap_2d<configuring_nav2_costmap_2d>`, explains how to configure basic costmap parameters. Please refer to that guide for more details on costmap configuration."
-msgstr "A section in the previous guide, :ref:`Configuring nav2_costmap_2d<configuring_nav2_costmap_2d>`, explains how to configure basic costmap parameters. Please refer to that guide for more details on costmap configuration."
+msgstr "上一指南中的一节， :ref:`配置nav2_costmap_2d<configuring_nav2_costmap_2d>`，解释了如何配置基本代价地图参数。请参考该指南了解有关代价地图配置的更多细节。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:18
@@ -302,7 +302,7 @@ msgstr "For the global costmap footprint, the decision to choose between the ``r
 
 #: ../../setup_guides/footprint/setup_footprint.rst:20
 msgid "For the local costmap footprint, it is typical for non-circular robots to be set up with ``footprint`` (polygon). Some situations where this is not recommended is when you do not have enough computing resources to implement collision avoidance algorithms on a polygon-shaped footprint. Another possible reason to use ``robot_radius`` (circular) for the local costmap is when the robot is very small relative to its environment such that precise collision avoidance is not necessary. However, generally the local trajectory planner should use the actual footprint polygon of the robot."
-msgstr "For the local costmap footprint, it is typical for non-circular robots to be set up with ``footprint`` (polygon). Some situations where this is not recommended is when you do not have enough computing resources to implement collision avoidance algorithms on a polygon-shaped footprint. Another possible reason to use ``robot_radius`` (circular) for the local costmap is when the robot is very small relative to its environment such that precise collision avoidance is not necessary. However, generally the local trajectory planner should use the actual footprint polygon of the robot."
+msgstr "对于局部代价地图足迹，非圆形机器人通常使用“足迹”（多边形）进行设置。不推荐使用多边形足迹的情况包括计算资源不足以实现多边形足迹上的碰撞避免算法，或者机器人相对其环境非常小以至于不需要精确的碰撞避免。然而，通常情况下，局部轨迹规划器应使用机器人的实际足迹多边形。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:23
@@ -312,7 +312,7 @@ msgstr "Configuring the Robot's Footprint"
 
 #: ../../setup_guides/footprint/setup_footprint.rst:24
 msgid "In this section, we will configure the footprint of ``sam_bot`` such that ``footprint`` (polygon) is used for the local costmap and ``robot_radius`` (circular) is used for the global costmap. We will utilize the default configuration file of Nav2 with a modified footprint parameter for the global and local costmaps."
-msgstr "In this section, we will configure the footprint of ``sam_bot`` such that ``footprint`` (polygon) is used for the local costmap and ``robot_radius`` (circular) is used for the global costmap. We will utilize the default configuration file of Nav2 with a modified footprint parameter for the global and local costmaps."
+msgstr "在本节中，我们将配置“sam_bot”的足迹，以便局部代价地图使用“足迹”（多边形），而全局代价地图使用“机器人半径”（圆形）。我们将利用Nav2的默认配置文件，并修改全局和局部代价地图的足迹参数。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:26
@@ -322,7 +322,7 @@ msgstr "The complete source code for ``sam_bot`` can be found in `navigation2_tu
 
 #: ../../setup_guides/footprint/setup_footprint.rst:28
 msgid "Under the ``config`` directory, create a new file named  ``nav2_params.yaml``. Next, copy the contents of `config/nav2_params.yaml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/config/nav2_params.yaml>`_ and paste them into the newly created file. The contents of `config/nav2_params.yaml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/config/nav2_params.yaml>`_ are copied from the default configuration file of Nav2 but with changes in the ``footprint`` and  ``robot_radius`` parameters to match the shape of ``sam_bot``."
-msgstr "Under the ``config`` directory, create a new file named  ``nav2_params.yaml``. Next, copy the contents of `config/nav2_params.yaml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/config/nav2_params.yaml>`_ and paste them into the newly created file. The contents of `config/nav2_params.yaml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/config/nav2_params.yaml>`_ are copied from the default configuration file of Nav2 but with changes in the ``footprint`` and  ``robot_radius`` parameters to match the shape of ``sam_bot``."
+msgstr "在“config”目录下，创建一个名为“nav2_params.yaml”的新文件。然后，将`config/nav2_params.yaml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/config/nav2_params.yaml>`_的内容复制并粘贴到新创建的文件中。`config/nav2_params.yaml <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/config/nav2_params.yaml>`_的内容是从Nav2的默认配置文件复制而来，但对“足迹”和“机器人半径”参数进行了修改，以匹配“sam_bot”的形状。"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:31
@@ -332,7 +332,7 @@ msgstr "The default configuration file for Nav2 can be found in the official `Na
 
 #: ../../setup_guides/footprint/setup_footprint.rst:33
 msgid "Below is the code snippet from ``nav2_params.yaml`` defining the local costmap footprint. In this configuration file, the ``footprint`` parameter of the local costmap has already been set with a rectangular-shaped footprint. This box is centered at the ``base_link`` frame of ``sam_bot``."
-msgstr "Below is the code snippet from ``nav2_params.yaml`` defining the local costmap footprint. In this configuration file, the ``footprint`` parameter of the local costmap has already been set with a rectangular-shaped footprint. This box is centered at the ``base_link`` frame of ``sam_bot``."
+msgstr "以下是来自“nav2_params.yaml”的代码片段，定义了局部代价地图的足迹。在此配置文件中，局部代价地图"
 
 
 #: ../../setup_guides/footprint/setup_footprint.rst:42

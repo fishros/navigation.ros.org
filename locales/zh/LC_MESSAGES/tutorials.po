@@ -307,7 +307,7 @@ msgstr "In order to propigate your server's error code to the rest of the system
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:196
 msgid "Conclusion"
-msgstr "Conclusion"
+msgstr "结论"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:198
