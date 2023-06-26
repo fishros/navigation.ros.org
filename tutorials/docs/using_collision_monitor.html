@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using Collision Monitor &mdash; Navigation 2 1.0.0 文档</title>
+  <title>使用碰撞监视器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -241,8 +241,8 @@
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#setup">0- 设置</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#install-stvl">1- 安装 STVL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#modify-navigation2-parameter">1- 修改Navigation2参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#launch-navigation2">2- Launch Navigation2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#rviz">3-  RVIZ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#launch-navigation2">2- 启动Navigation2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_with_stvl.html#rviz">3- RVIZ</a></li>
 </ul>
 </li>
 </ul>
@@ -318,7 +318,7 @@
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#what-is-the-rotation-shim-controller">What is the Rotation Shim Controller?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#configuring-rotation-shim-controller">Configuring Rotation Shim Controller</a></li>
 <li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#configuring-primary-controller">Configuring Primary Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#demo-execution">Demo Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_shim_controller.html#demo-execution">演示执行</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="adding_smoother.html">向BT添加平滑器</a><ul>
@@ -332,12 +332,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Collision Monitor</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用碰撞监视器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-collision-monitor">Configuring Collision Monitor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preparing-nav2-stack">Preparing Nav2 stack</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#demo-execution">Demo Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-collision-monitor">配置碰撞监视器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preparing-nav2-stack">准备Nav2堆栈</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-execution">演示执行</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="adding_a_nav2_task_server.html">添加一个新的Nav2任务服务器</a><ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Using Collision Monitor</li>
+      <li>使用碰撞监视器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,31 +939,28 @@
            <div itemprop="articleBody">
              
   <div class="section" id="using-collision-monitor">
-<span id="collision-monitor-tutorial"></span><h1>Using Collision Monitor<a class="headerlink" href="#using-collision-monitor" title="永久链接至标题"></a></h1>
+<span id="collision-monitor-tutorial"></span><h1>使用碰撞监视器<a class="headerlink" href="#using-collision-monitor" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
 <li><p><a class="reference internal" href="#preparing-nav2-stack">准备 Nav2 栈</a></p></li>
-<li><p><a class="reference internal" href="#configuring-collision-monitor">Configuring Collision Monitor</a></p></li>
+<li><p><a class="reference internal" href="#configuring-collision-monitor">配置碰撞监视器</a></p></li>
 <li><p><a class="reference internal" href="#demo-execution">演示执行</a></p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/collision_monitor.gif"><img alt="../../_images/collision_monitor.gif" src="../../_images/collision_monitor.gif" style="width: 800px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial shows how to use a Collision Monitor with Nav2 stack. Based on this tutorial, you can setup it for your environment and needs.</p>
+<p>本教程展示了如何在Nav2堆栈中使用碰撞监视器。基于本教程，您可以为您的环境和需求进行设置。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
 <p>假设已安装或在本地构建了 ROS2 和 Nav2 的依赖包。请确保 Nav2 项目也在本地构建，就像 <a class="reference internal" href="../../development_guides/build_docs/index.html#build-instructions"><span class="std std-ref">Build and Install</span></a> 中所述。</p>
 </div>
 <div class="section" id="configuring-collision-monitor">
-<h2>Configuring Collision Monitor<a class="headerlink" href="#configuring-collision-monitor" title="永久链接至标题"></a></h2>
-<p>The Collision Monitor node has its own <code class="docutils literal notranslate"><span class="pre">collision_monitor_node.launch.py</span></code> launch-file and preset parameters in the <code class="docutils literal notranslate"><span class="pre">collision_monitor_params.yaml</span></code> file for demonstration, though its trivial to add this to Nav2's main launch file if being used in practice.
-For the demonstration, two shapes will be created - an inner stop and a larger slowdown bounding boxes placed in the front of the robot:</p>
+<h2>配置碰撞监视器<a class="headerlink" href="#configuring-collision-monitor" title="永久链接至标题"></a></h2>
+<p>碰撞监视器节点具有自己的``collision_monitor_node.launch.py``启动文件和``collision_monitor_params.yaml``文件中的预设参数，用于演示，但如果在实际应用中使用，将其添加到Nav2的主启动文件中非常简单。在演示中，将创建两个形状-一个内部停止框和一个较大的减速框，放置在机器人的前方：</p>
 <a class="reference internal image-reference" href="../../_images/polygons.png"><img alt="../../_images/polygons.png" src="../../_images/polygons.png" style="width: 800px;" /></a>
-<p>If more than 3 points will appear inside a slowdown box, the robot will decrease its speed to <code class="docutils literal notranslate"><span class="pre">30%</span></code> from its value.
-For the cases when obstacles are dangerously close to the robot, inner stop zone will work.
-For this setup, the following lines should be added into <code class="docutils literal notranslate"><span class="pre">collision_monitor_params.yaml</span></code> parameters file. Stop box is named as <code class="docutils literal notranslate"><span class="pre">PolygonStop</span></code> and slowdown bounding box - as <code class="docutils literal notranslate"><span class="pre">PolygonSlow</span></code>:</p>
+<p>如果在减速区域内出现超过3个点，机器人将将其速度降低到其值的``30%``。对于障碍物与机器人危险接近的情况，将启用内部停止区域。为了进行此设置，应将以下行添加到``collision_monitor_params.yaml``参数文件中。停止区域被命名为``PolygonStop``，减速包围盒被命名为``PolygonSlow``：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">polygons</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;PolygonStop&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;PolygonSlow&quot;</span><span class="p p-Indicator">]</span>
 <span class="nt">PolygonStop</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;polygon&quot;</span>
@@ -984,22 +981,20 @@ For this setup, the following lines should be added into <code class="docutils l
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>The circle shape could be used instead of polygon, e.g. for the case of omni-directional robots where the collision can occur from any direction. However, for the tutorial needs, let's focus our view on polygons. For the same reason, we leave out of scope the Approach model. Both of these cases could be easily enabled by referencing to the <a class="reference internal" href="../../configuration/packages/configuring-collision-monitor.html#configuring-collision-monitor"><span class="std std-ref">碰撞监控</span></a> configuration guide.</p>
+<p>圆形形状可以替代多边形，例如对于全向机器人的情况，碰撞可能发生在任何方向。然而，对于教程的需要，让我们将视野集中在多边形上。出于同样的原因，我们不讨论Approach模型。可以通过参考:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_collision_monitor`配置指南轻松启用这两种情况。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Both polygon shapes in the tutorial were set statically. However, there is an ability to dynamically adjust them over time using topic messages containing vertices points for polygons or footprints. For more information, please refer to the configuration guide.</p>
+<p>教程中的两个多边形形状都是静态设置的。然而，可以通过包含多边形或足迹的顶点点的主题消息来动态调整它们的时间。有关更多信息，请参阅配置指南。</p>
 </div>
-<p>For the working configuration, at least one data source should be added.
-In current demonstration, it is used laser scanner (though <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> and Range/Sonar/IR sensors are also possible), which is described by the following lines for Collision Monitor node:</p>
+<p>对于工作配置，至少应添加一个数据源。在当前演示中，使用激光扫描仪（虽然``PointCloud2``和范围/声纳/红外传感器也是可能的），它由以下行描述了碰撞监视器节点的情况：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">observation_sources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;scan&quot;</span><span class="p p-Indicator">]</span>
 <span class="nt">scan</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;scan&quot;</span>
 <span class="w">  </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;scan&quot;</span>
 </pre></div>
 </div>
-<p>Set topic names, frame ID-s and timeouts to work correctly with a default Nav2 setup.
-The whole <code class="docutils literal notranslate"><span class="pre">nav2_collision_monitor/params/collision_monitor_params.yaml</span></code> file in this case will look as follows:</p>
+<p>设置主题名称、帧ID和超时时间，以便与默认的Nav2设置正确配合使用。在这种情况下，整个``nav2_collision_monitor/params/collision_monitor_params.yaml``文件将如下所示：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">collision_monitor</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">use_sim_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1034,12 +1029,8 @@ The whole <code class="docutils literal notranslate"><span class="pre">nav2_coll
 </div>
 </div>
 <div class="section" id="preparing-nav2-stack">
-<h2>Preparing Nav2 stack<a class="headerlink" href="#preparing-nav2-stack" title="永久链接至标题"></a></h2>
-<p>The Collision Monitor is designed to operate below Nav2 as an independent safety node.
-This acts as a filter on the <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> topic coming out of the Controller Server.
-If no such zone is triggered, then the Controller's <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> is used.
-Else, it is scaled or set to stop as appropriate.
-For correct operation of the Collision Monitor with the Controller, it is required to add the <code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">-&gt;</span> <span class="pre">cmd_vel_raw</span></code> remapping to the <code class="docutils literal notranslate"><span class="pre">navigation_launch.py</span></code> bringup script as presented below:</p>
+<h2>准备Nav2堆栈<a class="headerlink" href="#preparing-nav2-stack" title="永久链接至标题"></a></h2>
+<p>碰撞监视器被设计为在Nav2之下作为独立的安全节点运行。它作为对控制器服务器输出的``cmd_vel``主题的过滤器。如果没有触发这样的区域，则使用控制器的``cmd_vel``。否则，它将根据需要进行缩放或停止设置。为了使碰撞监视器与控制器正确运行，需要将``cmd_vel -&gt; cmd_vel_raw``重映射添加到下面所示的``navigation_launch.py``启动脚本中：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span><span class="p">(</span>
     <span class="n">package</span><span class="o">=</span><span class="s1">&#39;nav2_controller&#39;</span><span class="p">,</span>
     <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;controller_server&#39;</span><span class="p">,</span>
@@ -1057,23 +1048,21 @@ For correct operation of the Collision Monitor with the Controller, it is requir
 <span class="o">+</span>   <span class="n">remappings</span><span class="o">=</span><span class="n">remappings</span> <span class="o">+</span> <span class="p">[(</span><span class="s1">&#39;cmd_vel&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd_vel_raw&#39;</span><span class="p">)]),</span>
 </pre></div>
 </div>
-<p>Please note, that the remapped <code class="docutils literal notranslate"><span class="pre">cmd_vel_raw</span></code> topic should match to the input velocity <code class="docutils literal notranslate"><span class="pre">cmd_vel_in_topic</span></code> parameter value of the Collision Monitor node, and the output velocity <code class="docutils literal notranslate"><span class="pre">cmd_vel_out_topic</span></code> parameter value should be actual <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> to fit the replacement.</p>
+<p>请注意，重新映射的``cmd_vel_raw``话题应与碰撞监视器节点的输入速度``cmd_vel_in_topic``参数值匹配，输出速度``cmd_vel_out_topic``参数值应为实际的``cmd_vel``以适应替换。</p>
 </div>
 <div class="section" id="demo-execution">
-<h2>Demo Execution<a class="headerlink" href="#demo-execution" title="永久链接至标题"></a></h2>
-<p>Once Collision Monitor node has been tuned and <code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> topics remapped, Collision Monitor node is ready to run.
-For that, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>:</p>
+<h2>演示执行<a class="headerlink" href="#demo-execution" title="永久链接至标题"></a></h2>
+<p>一旦调整了碰撞监视器节点和``cmd_vel``话题的映射，碰撞监视器节点就准备好运行了。为此，请按照:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>getting_started`中的说明运行Nav2堆栈：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>headless:<span class="o">=</span>False
 </pre></div>
 </div>
-<p>In parallel console, launch Collision Monitor node by using its launch-file:</p>
+<p>在并行控制台中，使用其启动文件启动碰撞监视器节点：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_collision_monitor<span class="w"> </span>collision_monitor_node.launch.py
 </pre></div>
 </div>
-<p>Since both <code class="docutils literal notranslate"><span class="pre">PolygonStop</span></code> and <code class="docutils literal notranslate"><span class="pre">PolygonSlow</span></code> polygons will have their own publishers, they could be added to visualization as shown at the picture below:</p>
+<p>由于``PolygonStop``和``PolygonSlow``多边形将有自己的发布器，可以将它们添加到可视化中，如下图所示：</p>
 <a class="reference internal image-reference" href="../../_images/polygons_visualization.png"><img alt="../../_images/polygons_visualization.png" src="../../_images/polygons_visualization.png" style="width: 800px;" /></a>
-<p>Set the initial pose and then put Nav2 goal on map.
-The robot will start its movement, slowing down while running near the obstacles, and stopping in close proximity to them:</p>
+<p>设置初始姿态，然后将Nav2目标放在地图上。机器人将开始移动，在靠近障碍物时减速，并在接近障碍物时停止：</p>
 <a class="reference internal image-reference" href="../../_images/collision.png"><img alt="../../_images/collision.png" src="../../_images/collision.png" style="width: 800px;" /></a>
 </div>
 </div>
