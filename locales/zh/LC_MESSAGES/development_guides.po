@@ -477,7 +477,7 @@ msgstr "一个colcon扩展，用于清理软件包工作空间"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:68
 msgid "Finally, the `postCreateCommand` is executed, which also reruns whenever the container is started or restarted. Specifically, for this project, this command makes a last few tweaks to the user's environment to improve the development experience."
-msgstr "Finally, the `postCreateCommand` is executed, which also reruns whenever the container is started or restarted. Specifically, for this project, this command makes a last few tweaks to the user's environment to improve the development experience."
+msgstr "最后，执行`postCreateCommand`，每当容器启动或重新启动时都会重新运行该命令。对于这个项目，该命令对用户的环境进行最后的微调，以提高开发体验。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:70
@@ -487,7 +487,7 @@ msgstr "为了加快后续的启动速度，被挂载到容器的卷会存储一
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:73
 msgid "Enables colcon workspaces and ccache to persist between container rebuilds"
-msgstr "Enables colcon workspaces and ccache to persist between container rebuilds"
+msgstr "使colcon工作空间和ccache在容器重建之间持久存在"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:74
@@ -497,7 +497,7 @@ msgstr "适用于修改开发容器配置文件时避免重新编译"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:75
 msgid "Necessary for quickly customizing image or features without rebuilding from scratch"
-msgstr "Necessary for quickly customizing image or features without rebuilding from scratch"
+msgstr "在不必从头开始重新构建的情况下快速自定义映像或功能所必需的"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:78
@@ -507,7 +507,7 @@ msgstr "虽然这些卷具有唯一的名称，但您可以在本地将它们重
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:81
 msgid "Additionally, the container can be granted [privileged](https://docs.docker.com/engine/reference/commandline/run/#privileged) and non-default [Linux capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities), connected using the [host](https://docs.docker.com/network/host/) network mode and [IPC](https://docs.docker.com/engine/reference/run/#ipc-settings---ipc) and [PID](https://docs.docker.com/engine/reference/run/#pid-settings---pid) spaces, with a relaxed [security configuration](https://docs.docker.com/engine/reference/run/#security-configuration) and seccomp confinement for native debugging and external connectivity. This is useful for:"
-msgstr "Additionally, the container can be granted [privileged](https://docs.docker.com/engine/reference/commandline/run/#privileged) and non-default [Linux capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities), connected using the [host](https://docs.docker.com/network/host/) network mode and [IPC](https://docs.docker.com/engine/reference/run/#ipc-settings---ipc) and [PID](https://docs.docker.com/engine/reference/run/#pid-settings---pid) spaces, with a relaxed [security configuration](https://docs.docker.com/engine/reference/run/#security-configuration) and seccomp confinement for native debugging and external connectivity. This is useful for:"
+msgstr "此外，容器可以被授予[privileged](https://docs.docker.com/engine/reference/commandline/run/#privileged)和非默认的[Linux capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)，使用[host](https://docs.docker.com/network/host/)网络模式以及[IPC](https://docs.docker.com/engine/reference/run/#ipc-settings---ipc)和[PID](https://docs.docker.com/engine/reference/run/#pid-settings---pid)空间进行连接，具有放宽的[security configuration](https://docs.docker.com/engine/reference/run/#security-configuration)和seccomp限制，用于本机调试和外部连接。这对于以下情况非常有用："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:83
@@ -517,92 +517,92 @@ msgstr "混合式开发"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:84
 msgid "Enables connecting ROS nodes external to the container"
-msgstr "Enables connecting ROS nodes external to the container"
+msgstr "使ROS节点可以连接到容器外部"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:85
 msgid "Applicable for debugging or visualizing distributed systems"
-msgstr "Applicable for debugging or visualizing distributed systems"
+msgstr "适用于调试或可视化分布式系统"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:86
 msgid "Necessary for DDS discovery and shared memory transport"
-msgstr "Necessary for DDS discovery and shared memory transport"
+msgstr "DDS发现和共享内存传输所必需的"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:87
 msgid "Device connectivity"
-msgstr "Device connectivity"
+msgstr "设备连接性"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:88
 msgid "Enables hardware forwarding from host machine to container"
-msgstr "Enables hardware forwarding from host machine to container"
+msgstr "允许从主机向容器进行硬件转发"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:89
 msgid "Applicable for ROS package using sensors and actuators"
-msgstr "Applicable for ROS package using sensors and actuators"
+msgstr "适用于使用传感器和执行器的ROS软件包"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:90
 msgid "Necessary for some GPU drivers and USB devices"
-msgstr "Necessary for some GPU drivers and USB devices"
+msgstr "对于一些GPU驱动程序和USB设备是必需的"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:93
 msgid "Such `runArgs` in the `devcontainer.json` config can be enabled or customized, either expanded or or narrowed in scope, to better suit your desired development environment. The default configuration merely comments out these parameters, to limit unintended side effects or cross talk between containers, but can be uncommented to accommodate the widest range of development use cases."
-msgstr "Such `runArgs` in the `devcontainer.json` config can be enabled or customized, either expanded or or narrowed in scope, to better suit your desired development environment. The default configuration merely comments out these parameters, to limit unintended side effects or cross talk between containers, but can be uncommented to accommodate the widest range of development use cases."
+msgstr "在`devcontainer.json`配置中，可以启用或自定义`runArgs`，可以扩展或限制范围，以更好地适应您所需的开发环境。默认配置仅仅注释掉这些参数，以限制意外的副作用或容器之间的交互，但可以取消注释以适应最广泛的开发用例。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:97
 msgid "More details on using DDS, debuggers, or devices with Docker containers can be found here:"
-msgstr "More details on using DDS, debuggers, or devices with Docker containers can be found here:"
+msgstr "关于在Docker容器中使用DDS、调试器或设备的更多详细信息可以在这里找到："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:99
 msgid "[How to Communicate Across Docker Containers Using the Host Driver](https://community.rti.com/kb/how-use-rti-connext-dds-communicate-across-docker-containers-using-host-driver)"
-msgstr "[How to Communicate Across Docker Containers Using the Host Driver](https://community.rti.com/kb/how-use-rti-connext-dds-communicate-across-docker-containers-using-host-driver)"
+msgstr "[如何使用主机驱动程序在Docker容器之间通信](https://community.rti.com/kb/how-use-rti-connext-dds-communicate-across-docker-containers-using-host-driver)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:100
 msgid "Using the `host` network driver to access all network interfaces of the host machine from the Docker container"
-msgstr "Using the `host` network driver to access all network interfaces of the host machine from the Docker container"
+msgstr "使用“host”网络驱动程序从Docker容器访问主机机器的所有网络接口"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:101
 msgid "[Communicate between two Docker containers using DDS and shared memory](https://community.rti.com/kb/communicate-between-two-docker-containers-using-rti-connext-dds-and-shared-memory)"
-msgstr "[Communicate between two Docker containers using DDS and shared memory](https://community.rti.com/kb/communicate-between-two-docker-containers-using-rti-connext-dds-and-shared-memory)"
+msgstr "[使用DDS和共享内存在两个Docker容器之间通信](https://community.rti.com/kb/communicate-between-two-docker-containers-using-rti-connext-dds-and-shared-memory)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:102
 msgid "Enabling containers to communicate with one another and with the host machine using interprocess communication (IPC)"
-msgstr "Enabling containers to communicate with one another and with the host machine using interprocess communication (IPC)"
+msgstr "使用进程间通信（IPC）使容器之间和容器与主机机器之间进行通信"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:103
 msgid "[Debugging programs running inside Docker containers, in production](https://nvartolomei.com/debugging-programs-running-inside-docker-containers--in-production/)"
-msgstr "[Debugging programs running inside Docker containers, in production](https://nvartolomei.com/debugging-programs-running-inside-docker-containers--in-production/)"
+msgstr "[在生产环境中调试运行在Docker容器中的程序](https://nvartolomei.com/debugging-programs-running-inside-docker-containers--in-production/)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:104
 msgid "Using tools like strace, perf, gdb when debugging programs running inside containers"
-msgstr "Using tools like strace, perf, gdb when debugging programs running inside containers"
+msgstr "在调试运行在容器内的程序时使用strace、perf、gdb等工具"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:107
 msgid "Using Dev Containers"
-msgstr "Using Dev Containers"
+msgstr "使用 Dev Containers"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:109
 msgid "Once the dev container has been created and setup completed, VS Code will open a new workspace directly from the project's root directory, which itself is mounted within the source directory in the overlay colcon workspace. From here you can build, test, and debug the project as you normally would, with the added benefit of having the project's dependencies, intellisense, linters, and other extensions pre-configured and ready to use. Simply open a new terminal (Crtl+Shift+`), cd to the root of the colcon workspace, and run the usual colcon commands."
-msgstr "Once the dev container has been created and setup completed, VS Code will open a new workspace directly from the project's root directory, which itself is mounted within the source directory in the overlay colcon workspace. From here you can build, test, and debug the project as you normally would, with the added benefit of having the project's dependencies, intellisense, linters, and other extensions pre-configured and ready to use. Simply open a new terminal (Crtl+Shift+`), cd to the root of the colcon workspace, and run the usual colcon commands."
+msgstr "一旦开发容器被创建并设置完成，VS Code将直接从项目的根目录打开一个新的工作区，该工作区本身在覆盖colcon工作空间中的源目录中挂载。从这里，您可以像通常一样构建、测试和调试项目，同时还可以享受项目的依赖项、智能感知、代码检查器和其他扩展的预配置和准备就绪。只需打开一个新的终端（Ctrl+Shift+`），cd到colcon工作空间的根目录，然后运行常规的colcon命令。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:112
 msgid "You can incorporate the same scripts used by the `devcontainer.json` config file to further automate your local development workflow."
-msgstr "You can incorporate the same scripts used by the `devcontainer.json` config file to further automate your local development workflow."
+msgstr "您可以将与 `devcontainer.json` 配置文件相同的脚本纳入到您的本地开发工作流程中，以进一步自动化。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:115
@@ -612,7 +612,7 @@ msgstr "Terminals"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:117
 msgid "If you prefer using an alternate terminal emulator, rather than the built-in VS Code terminal, you can open a separate shell session by simply using the Dev Container CLI or directly using the Docker CLI via the `exec` subcommands."
-msgstr "If you prefer using an alternate terminal emulator, rather than the built-in VS Code terminal, you can open a separate shell session by simply using the Dev Container CLI or directly using the Docker CLI via the `exec` subcommands."
+msgstr "如果您喜欢使用替代的终端模拟器，而不是内置的 VS Code 终端，您可以通过使用 Dev Container CLI 或直接使用 Docker CLI 的 `exec` 子命令来打开一个单独的 shell 会话。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:119
@@ -642,7 +642,7 @@ msgstr "Shell sessions spawned directly via `docker exec` do not set the same en
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:131
 msgid "The environment provided by `userEnvProbe` can be sourced manually. E.g. for the default `loginInteractiveShell` probe:"
-msgstr "The environment provided by `userEnvProbe` can be sourced manually. E.g. for the default `loginInteractiveShell` probe:"
+msgstr "可以手动获取由 `userEnvProbe` 提供的环境。例如，默认的 `loginInteractiveShell` 探测器："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:140
@@ -652,7 +652,7 @@ msgstr "Lifecycle"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:142
 msgid "While using the dev container, try and keep in mind the lifecycle of the container itself. Specifically, containers are ephemeral, meaning they are normally destroyed and recreated whenever the dev environment is rebuilt or updated. Subsequently, a best practice is to avoid storing any persistent data within the container, and instead utilize the project's source directory, or a separate mounted volume. When altering the development environment inside the container, try to remember to codify your changes into the Dockerfile, or the `devcontainer.json` config file, so that they can be easily reproduced and shared with others."
-msgstr "While using the dev container, try and keep in mind the lifecycle of the container itself. Specifically, containers are ephemeral, meaning they are normally destroyed and recreated whenever the dev environment is rebuilt or updated. Subsequently, a best practice is to avoid storing any persistent data within the container, and instead utilize the project's source directory, or a separate mounted volume. When altering the development environment inside the container, try to remember to codify your changes into the Dockerfile, or the `devcontainer.json` config file, so that they can be easily reproduced and shared with others."
+msgstr "在使用开发容器时，请记住容器本身的生命周期。具体来说，容器是暂时的，意味着它们通常在重建或更新开发环境时被销毁和重新创建。因此，最佳实践是避免在容器内存储任何持久数据，而是利用项目的源目录或单独的挂载卷。在容器内修改开发环境时，尽量记住将更改编码到 Dockerfile 或 `devcontainer.json` 配置文件中，以便轻松地复制和共享给他人。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:145
