@@ -1075,22 +1075,20 @@ localizer='amcl')</p></td>
 <td><p>阻塞直到 Nav2 完全在线并且生命周期节点处于活动状态。与自动启动或外部生命周期引导一起使用。可以指定自定义导航器和定位器节点。</p></td>
 </tr>
 <tr class="row-even"><td><p>lifecycleStartup()</p></td>
-<td><p>Sends a request to all lifecycle management servers to bring them into
-the active state, to be used if autostart is <code class="docutils literal notranslate"><span class="pre">False</span></code> and you want this
-program to control Nav2's lifecycle.</p></td>
+<td><p>向所有生命周期管理服务器发送请求，将它们带入活动状态。如果 <code class="docutils literal notranslate"><span class="pre">autostart</span></code> 为 <code class="docutils literal notranslate"><span class="pre">False</span></code>，且您希望此程序控制 Nav2 的生命周期，则使用此功能。</p></td>
 </tr>
 <tr class="row-odd"><td><p>lifecycleShutdown()</p></td>
-<td><p>Sends a request to all lifecycle management servers to shut them down.</p></td>
+<td><p>向所有生命周期管理服务器发送请求，关闭它们。</p></td>
 </tr>
 <tr class="row-even"><td><p>destroyNode()</p></td>
-<td><p>Releases the resources used by the object.</p></td>
+<td><p>释放对象使用的资源。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="costmap-api">
 <h2>Costmap API<a class="headerlink" href="#costmap-api" title="永久链接至标题"></a></h2>
-<p>This is a Python3 API for costmap 2d messages from the stack. It provides the basic conversion, get/set, and handling semantics found in the costmap 2d C++ API.</p>
+<p>这是针对堆栈中 costmap 2d 消息的 Python3 API。它提供了在 costmap 2d C++ API 中找到的基本转换、获取/设置和处理语义。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1103,28 +1101,28 @@ program to control Nav2's lifecycle.</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>getSizeInCellsX()</p></td>
-<td><p>Get map width in cells.</p></td>
+<td><p>获取地图的单元格宽度。</p></td>
 </tr>
 <tr class="row-odd"><td><p>getSizeInCellsY()</p></td>
-<td><p>Get map height in cells.</p></td>
+<td><p>获取地图高度（以单元格为单位）。</p></td>
 </tr>
 <tr class="row-even"><td><p>getSizeInMetersX()</p></td>
-<td><p>Get x axis map size in meters.</p></td>
+<td><p>获取地图在 x 轴上的尺寸（以米为单位）。</p></td>
 </tr>
 <tr class="row-odd"><td><p>getSizeInMetersY()</p></td>
-<td><p>Get y axis map size in meters.</p></td>
+<td><p>获取地图在 y 轴上的尺寸（以米为单位）。</p></td>
 </tr>
 <tr class="row-even"><td><p>getOriginX()</p></td>
-<td><p>Get the origin x axis of the map [m].</p></td>
+<td><p>获取地图的 x 轴原点位置 [m]。</p></td>
 </tr>
 <tr class="row-odd"><td><p>getOriginY()</p></td>
-<td><p>Get the origin y axis of the map [m].</p></td>
+<td><p>获取地图的 y 轴原点位置 [m]。</p></td>
 </tr>
 <tr class="row-even"><td><p>getResolution()</p></td>
-<td><p>Get map resolution [m/cell].</p></td>
+<td><p>获取地图分辨率 [m/单元格]。</p></td>
 </tr>
 <tr class="row-odd"><td><p>getGlobalFrameID()</p></td>
-<td><p>Get global frame_id.</p></td>
+<td><p>获取全局 frame_id。</p></td>
 </tr>
 <tr class="row-even"><td><p>getCostmapTimestamp()</p></td>
 <td><p>Get costmap timestamp.</p></td>
