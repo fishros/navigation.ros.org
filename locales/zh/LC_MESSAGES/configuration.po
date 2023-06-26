@@ -4696,7 +4696,7 @@ msgstr "距离目标附近的距离（米），用于停止应用偏好障碍项
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "cost_scaling_factor"
-msgstr "cost_scaling_factor"
+msgstr "cost_scaling_factor（成本缩放因子）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:494
@@ -4706,7 +4706,7 @@ msgstr "膨胀半径的指数衰减因子。这应该与膨胀层的设置相同
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "inflation_radius"
-msgstr "inflation_radius"
+msgstr "inflation_radius（膨胀半径）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:501 ../../configuration/packages/costmap-plugins/inflation.rst:25
@@ -4716,7 +4716,7 @@ msgstr "0.55"
 
 #: ../../configuration/packages/configuring-mppic.rst:505
 msgid "Radius to inflate costmap around lethal obstacles. This should be the same as for your inflation layer (Humble only)"
-msgstr "Radius to inflate costmap around lethal obstacles. This should be the same as for your inflation layer (Humble only)"
+msgstr "在致命障碍物周围膨胀代价地图的半径。这应该与膨胀层的半径相同（仅适用于Humble版本）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:508
@@ -4726,22 +4726,22 @@ msgstr "路径对齐评论家"
 
 #: ../../configuration/packages/configuring-mppic.rst:541
 msgid "Distance (m) between robot and goal to **stop** considering path alignment and allow goal critics to take over."
-msgstr "Distance (m) between robot and goal to **stop** considering path alignment and allow goal critics to take over."
+msgstr "机器人与目标之间的距离（米），**停止**考虑路径对齐并允许目标评论器接管。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "offset_from_furthest"
-msgstr "offset_from_furthest"
+msgstr "offset_from_furthest（离最远处的偏移量）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:552
 msgid "Checks that the candidate trajectories are sufficiently far along their way tracking the path to apply the alignment critic. This ensures that path alignment is only considered when actually tracking the path, preventing awkward initialization motions preventing the robot from leaving the path to achieve the appropriate heading."
-msgstr "Checks that the candidate trajectories are sufficiently far along their way tracking the path to apply the alignment critic. This ensures that path alignment is only considered when actually tracking the path, preventing awkward initialization motions preventing the robot from leaving the path to achieve the appropriate heading."
+msgstr "检查候选轨迹是否在其路径上足够远，以应用对齐评论器。这样可以确保只有在实际跟踪路径时才考虑路径对齐，防止尴尬的初始化动作阻止机器人离开路径以实现适当的航向。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "max_path_occupancy_ratio"
-msgstr "max_path_occupancy_ratio"
+msgstr "max_path_occupancy_ratio（最大路径占用比例）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:559
@@ -4751,27 +4751,27 @@ msgstr "0.07"
 
 #: ../../configuration/packages/configuring-mppic.rst:563
 msgid "Maximum proportion of the path that can be occupied before this critic is not considered to allow the obstacle and path follow critics to avoid obstacles while following the path's intent in presence of dynamic objects in the scene. Between 0-1 for 0-100%."
-msgstr "Maximum proportion of the path that can be occupied before this critic is not considered to allow the obstacle and path follow critics to avoid obstacles while following the path's intent in presence of dynamic objects in the scene. Between 0-1 for 0-100%."
+msgstr "在存在场景中的动态物体的情况下，避障和路径跟随评估者避开障碍物并按照路径意图进行跟随之前，路径中可以被占用的最大比例。介于0-1之间，表示0-100%。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:566
 msgid "Path Angle Critic"
-msgstr "Path Angle Critic"
+msgstr "路径角度评论器"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:599
 msgid "Distance (m) between robot and goal to **stop** considering path angles and allow goal critics to take over."
-msgstr "Distance (m) between robot and goal to **stop** considering path angles and allow goal critics to take over."
+msgstr "机器人与目标之间的距离（以米为单位），用于**停止**考虑路径角度并允许目标评估者接管。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:610
 msgid "Number of path points after furthest one any trajectory achieves to compute path angle relative to."
-msgstr "Number of path points after furthest one any trajectory achieves to compute path angle relative to."
+msgstr "计算相对于路径角度时，任何轨迹实现的最远点之后的路径点数。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst
 msgid "max_angle_to_furthest"
-msgstr "max_angle_to_furthest"
+msgstr "max_angle_to_furthest（与最远处的最大角度）"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:617 ../../configuration/packages/costmap-plugins/range.rst:35
@@ -4781,17 +4781,17 @@ msgstr "1.2"
 
 #: ../../configuration/packages/configuring-mppic.rst:621
 msgid "Angular distance (rad) between robot and goal above which path angle cost starts being considered"
-msgstr "Angular distance (rad) between robot and goal above which path angle cost starts being considered"
+msgstr "机器人与目标之间的角度距离（以弧度为单位），超过该距离开始考虑路径角度成本。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:624
 msgid "Path Follow Critic"
-msgstr "Path Follow Critic"
+msgstr "路径跟随评论家"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:657
 msgid "Distance (m) between robot and goal to **stop** considering path following and allow goal critics to take over."
-msgstr "Distance (m) between robot and goal to **stop** considering path following and allow goal critics to take over."
+msgstr "机器人与目标之间的距离（以米为单位），用于**停止**考虑路径跟随并允许目标评估者接管。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:664
@@ -4806,7 +4806,7 @@ msgstr "Number of path points after furthest one any trajectory achieves to driv
 
 #: ../../configuration/packages/configuring-mppic.rst:671
 msgid "Prefer Forward Critic"
-msgstr "Prefer Forward Critic"
+msgstr "优先正向评论家"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:704
@@ -4816,7 +4816,7 @@ msgstr "Distance (m) between robot and goal to **stop** considering preferring f
 
 #: ../../configuration/packages/configuring-mppic.rst:707
 msgid "Twirling Critic"
-msgstr "Twirling Critic"
+msgstr "旋转评论家"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:822
@@ -4826,7 +4826,7 @@ msgstr "Notes to Users"
 
 #: ../../configuration/packages/configuring-mppic.rst:825
 msgid "General Words of Wisdom"
-msgstr "General Words of Wisdom"
+msgstr "智慧的一般性言论"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:827
