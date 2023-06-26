@@ -5376,7 +5376,7 @@ msgstr "Savitzky-Golay平滑器"
 
 #, python-format
 msgid "The Savitzky-Golay Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique based on `Savitzky Golay Filters <https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter>`_. It uses a digital signal processing technique designed to reduce noise distorting a reference signal, in this case, a path."
-msgstr "The Savitzky-Golay Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique based on `Savitzky Golay Filters <https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter>`_. It uses a digital signal processing technique designed to reduce noise distorting a reference signal, in this case, a path."
+msgstr "Savitzky-Golay平滑器是一个平滑器服务器插件，它接收输入路径并使用基于`Savitzky Golay Filters <https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter>`_的简单且快速的平滑技术进行平滑处理。它使用数字信号处理技术来减少噪音对参考信号（在本例中为路径）的扭曲。"
 
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:12
@@ -5386,7 +5386,7 @@ msgstr "它适用于所有类型的规划器，但在NavFn中特别有用，可�
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:14
 msgid "This algorithm is deterministic and low-parameter. In the below image, some odd points from NavFn's gradient descent are smoothed out by the smoother in the middle and end of a given path, while otherwise retaining the exact character of the path."
-msgstr "This algorithm is deterministic and low-parameter. In the below image, some odd points from NavFn's gradient descent are smoothed out by the smoother in the middle and end of a given path, while otherwise retaining the exact character of the path."
+msgstr "该算法是确定性的和低参数的。在下图中，NavFn的梯度下降中的一些奇点被平滑器平滑处理，而路径的整体特性保持不变。"
 
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:20
@@ -5401,7 +5401,7 @@ msgstr "do_refinement"
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:31
 msgid "Whether to smooth the smoothed results ``refinement_num`` times to get an improved result."
-msgstr "Whether to smooth the smoothed results ``refinement_num`` times to get an improved result."
+msgstr "是否对平滑结果进行 ``refinement_num`` 次平滑，以获得改进的结果。"
 
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst ../../configuration/packages/configuring-simple-smoother.rst
@@ -5416,32 +5416,32 @@ msgstr "2"
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:42
 msgid "Number of times to recursively smooth a segment"
-msgstr "Number of times to recursively smooth a segment"
+msgstr "递归平滑路径的次数"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:4
 msgid "Simple Smoother"
-msgstr "Simple Smoother"
+msgstr "简单平滑器"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:10
 msgid "The Simple Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique. It weights the initial path points and the smoothed path points to create a balanced result where the path retains its high level characteristics but reduces oscillations or jagged features."
-msgstr "The Simple Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique. It weights the initial path points and the smoothed path points to create a balanced result where the path retains its high level characteristics but reduces oscillations or jagged features."
+msgstr "简单平滑器是一个平滑器服务器插件，它接收输入路径并使用简单且快速的平滑技术进行平滑处理。它对初始路径点和平滑路径点进行加权，以创建一个平衡的结果，使路径保留其高级特征，同时减少震荡或锯齿特性。"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:12
 msgid "It is recommended this is paired ONLY with infeasible (e.g. 2D) planners, since this algorithm will break any kinematically feasible conditions. It is recommended users use the Constrained Smoother plugin instead with feasible plans."
-msgstr "It is recommended this is paired ONLY with infeasible (e.g. 2D) planners, since this algorithm will break any kinematically feasible conditions. It is recommended users use the Constrained Smoother plugin instead with feasible plans."
+msgstr "建议仅与不可行的（例如 2D）规划器配对使用，因为该算法会破坏任何运动可行的条件。建议用户改用可行路径的约束平滑器插件（Constrained Smoother plugin）。"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:15
 msgid "Simple Smoother Parameters"
-msgstr "Simple Smoother Parameters"
+msgstr "简单平滑器参数"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst
 msgid "tolerance"
-msgstr "tolerance"
+msgstr "公差"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:22
@@ -5451,17 +5451,17 @@ msgstr "1.0e-10"
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:26
 msgid "Change in parameter values across path to terminate smoothing"
-msgstr "Change in parameter values across path to terminate smoothing"
+msgstr "在路径上参数值的变化量，用于终止平滑过程"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:37
 msgid "Whether to smooth the smoothed path recursively to refine the quality further"
-msgstr "Whether to smooth the smoothed path recursively to refine the quality further"
+msgstr "是否递归平滑平滑路径以进一步改善质量"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:48 ../../configuration/packages/smac/configuring-smac-hybrid.rst:311 ../../configuration/packages/smac/configuring-smac-lattice.rst:282
 msgid "Number of times to recursively attempt to smooth, must be ``>= 1``."
-msgstr "Number of times to recursively attempt to smooth, must be ``>= 1``."
+msgstr "递归尝试平滑的次数，必须 ``>= 1``。"
 
 
 #: ../../configuration/packages/configuring-simple-smoother.rst
@@ -5486,7 +5486,7 @@ msgstr "Weight to apply to path data given (bounds it)"
 
 #: ../../configuration/packages/configuring-simple-smoother.rst:81
 msgid "Weight to apply to smooth the path (smooths it)"
-msgstr "Weight to apply to smooth the path (smooths it)"
+msgstr "应用于平滑路径的权重（平滑路径）"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:4
@@ -5496,7 +5496,7 @@ msgstr "Smac Planner"
 
 #: ../../configuration/packages/configuring-smac-planner.rst:6
 msgid "Source code and ``README`` with design, explanations, and metrics can be found on Github_. A brief explanation can be found below, but the ``README`` contains the most detailed overview of the framework and planner implementations."
-msgstr "Source code and ``README`` with design, explanations, and metrics can be found on Github_. A brief explanation can be found below, but the ``README`` contains the most detailed overview of the framework and planner implementations."
+msgstr "源代码和“README”包含了设计、说明和指标，可以在 Github_ 上找到。下面是一个简要解释，但是“README”包含了对框架和规划器实现的最详细概述。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:10
@@ -5506,7 +5506,7 @@ msgstr "The Smac Planner plugin implements three A* based planning algorithms: 2
 
 #: ../../configuration/packages/configuring-smac-planner.rst:15
 msgid "The plugins listed below are inside the ``nav2_smac_planner`` package. See the pages for individual configuration information."
-msgstr "The plugins listed below are inside the ``nav2_smac_planner`` package. See the pages for individual configuration information."
+msgstr "下面列出的插件包含在“nav2_smac_planner”包中。有关各个配置信息，请参阅各个页面。"
 
 
 #: ../../configuration/packages/configuring-smac-planner.rst:27
