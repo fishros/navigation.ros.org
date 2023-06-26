@@ -696,7 +696,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-collision-monitor.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-waypoint-follower.html">Waypoint Follower</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-waypoint-follower.html">路径点跟随器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-waypoint-follower.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-waypoint-follower.html#provided-plugins">Provided Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nav2_waypoint_follower-plugins/wait_at_waypoint.html">WaitAtWaypoint</a></li>
@@ -1022,7 +1022,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum velocities (m/s) in <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code> axes.</p>
+<dt>描述</dt><dd><p>最大速度（m/s），分别对应``[x, y, theta]``轴。</p>
 </dd>
 </dl>
 </dd>
@@ -1046,7 +1046,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">deadband_velocity</dt>
+<dt class="field-even">死区速度</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1062,7 +1062,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum velocities (m/s) to send to the robot hardware controllers, to prevent small commands from damaging hardware controllers if that speed cannot be achieved due to stall torque.</p>
+<dt>描述</dt><dd><p>最小速度（m/s），用于发送给机器人硬件控制器，以防止由于堵转力矩而无法实现该速度时，小指令损坏硬件控制器。</p>
 </dd>
 </dl>
 </dd>
@@ -1082,7 +1082,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Timeout (s) after which the velocity smoother will send a zero-ed out <code class="docutils literal notranslate"><span class="pre">Twist</span></code> command and stop publishing.</p>
+<dt>描述</dt><dd><p>超时时间（秒），在此时间之后，速度平滑器将发送一个零化的``Twist``指令并停止发布。</p>
 </dd>
 </dl>
 </dd>
@@ -1102,11 +1102,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum acceleration to apply to each axis <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code>.</p>
+<dt>描述</dt><dd><p>每个轴（<code class="docutils literal notranslate"><span class="pre">x，y，theta</span></code>）应用的最大加速度。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">max_decel</dt>
+<dt class="field-odd">最大减速度</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1122,7 +1122,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum acceleration to apply to each axis <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code>. This is <strong>signed</strong> and thus these should generally all be <strong>negative</strong>.</p>
+<dt>描述</dt><dd><p>将应用于每个轴``[x，y，theta]``的最小加速度。这是**有符号的**，因此通常应该全部为**负值**。</p>
 </dd>
 </dl>
 </dd>
@@ -1142,7 +1142,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic to find robot odometry, if in <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code> operational mode.</p>
+<dt>描述</dt><dd><p>如果处于``CLOSED_LOOP``操作模式，则用于查找机器人里程计的主题。</p>
 </dd>
 </dl>
 </dd>
@@ -1162,7 +1162,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time (s) to buffer odometry commands to estimate the robot speed, if in <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code> operational mode.</p>
+<dt>描述</dt><dd><p>将里程计命令缓冲以估计机器人速度的时间（秒），如果处于``CLOSED_LOOP``操作模式。</p>
 </dd>
 </dl>
 </dd>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waypoint Follower &mdash; Navigation 2 1.0.0 文档</title>
+  <title>路径点跟随器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -696,7 +696,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-collision-monitor.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Waypoint Follower</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">路径点跟随器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#provided-plugins">Provided Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nav2_waypoint_follower-plugins/wait_at_waypoint.html">WaitAtWaypoint</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Waypoint Follower</li>
+      <li>路径点跟随器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="waypoint-follower">
-<span id="configuring-waypoint-follower"></span><h1>Waypoint Follower<a class="headerlink" href="#waypoint-follower" title="永久链接至标题"></a></h1>
+<span id="configuring-waypoint-follower"></span><h1>路径点跟随器<a class="headerlink" href="#waypoint-follower" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower">在Github上的源代码</a></p>
 <p>The Waypoint Follower module implements a way of doing waypoint following using the NavigateToPose action server.
 It will take in a set of ordered waypoints to follow and then try to navigate to them in order.
@@ -948,7 +948,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">stop_on_failure</dt>
+<dt class="field-odd">失败时停止</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -968,7 +968,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 </dd>
 </dl>
 </dd>
-<dt class="field-even">loop_rate</dt>
+<dt class="field-even">循环频率</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -988,7 +988,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">waypoint_task_executor_plugin</dt>
+<dt class="field-odd">路径点任务执行器插件</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 37%" />
@@ -1004,7 +1004,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 </tbody>
 </table>
 <dl>
-<dt>描述</dt><dd><p>A plugin to define tasks to be executed when robot arrives to a waypoint.</p>
+<dt>描述</dt><dd><p>一个插件，用于在机器人到达路径点时定义要执行的任务。</p>
 </dd>
 <dt>注意</dt><dd><p>定义的插件命名空间需要有一个 <code class="code docutils literal notranslate"><span class="pre">plugin</span></code> 参数来定义要在命名空间中加载的插件类型。</p>
 <p>示例：</p>
