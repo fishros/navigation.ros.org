@@ -27,7 +27,7 @@ msgstr "Dashing to Eloquent"
 
 #: ../../migration/Dashing.rst:6
 msgid "Moving from ROS 2 Dashing to Eloquent, a number of stability improvements were added that we will not specifically address here."
-msgstr "Moving from ROS 2 Dashing to Eloquent, a number of stability improvements were added that we will not specifically address here."
+msgstr "从 ROS 2 Dashing 到 Eloquent 的迁移中，我们添加了一些稳定性改进，这里不会具体讨论。"
 
 
 #: ../../migration/Dashing.rst:9
@@ -37,7 +37,7 @@ msgstr "New Packages"
 
 #: ../../migration/Dashing.rst:11
 msgid "Navigation2 now includes a new package ``nav2_waypoint_follower``. The waypoint follower is an action server that will take in a list of waypoints to follow and follow them in order. There is a parameter ``stop_on_failure`` whether the robot should continue to the next waypoint on a single waypoint failure, or to return fail to the action client. The waypoint follower is also a reference application for how to use the Navigation2 action server to complete a basic autonomy task."
-msgstr "Navigation2 now includes a new package ``nav2_waypoint_follower``. The waypoint follower is an action server that will take in a list of waypoints to follow and follow them in order. There is a parameter ``stop_on_failure`` whether the robot should continue to the next waypoint on a single waypoint failure, or to return fail to the action client. The waypoint follower is also a reference application for how to use the Navigation2 action server to complete a basic autonomy task."
+msgstr "Navigation2 现在包含一个新包 ``nav2_waypoint_follower``。Waypoint 跟随者是一个行动服务器，它将接收一个要跟随的 waypoint 列表，并按顺序跟随它们。有一个参数 ``stop_on_failure``，用于控制在单个 waypoint 失败时机器人是继续前往下一个 waypoint，还是向行动客户端返回失败。Waypoint 跟随者还是一个参考应用程序，演示了如何使用 Navigation2 行动服务器完成基本自主任务。"
 
 
 #: ../../migration/Dashing.rst:18

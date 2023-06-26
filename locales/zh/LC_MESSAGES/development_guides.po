@@ -1087,7 +1087,7 @@ msgstr "本文档说明了如何参与项目讨论，记录和跟踪错误和改
 
 #: ../../development_guides/involvement_docs/index.rst:18
 msgid "If you're interested in getting involved in Navigation 2, first of all, welcome! We encourage everyone to get involved from students, to junior developers, to senior developers, and executives. There's something to do for everyone from bug fixes, to feature development, new algorithms, and refactoring."
-msgstr "If you're interested in getting involved in Navigation 2, first of all, welcome! We encourage everyone to get involved from students, to junior developers, to senior developers, and executives. There's something to do for everyone from bug fixes, to feature development, new algorithms, and refactoring."
+msgstr "如果您有兴趣参与Navigation 2，首先，欢迎您！我们鼓励各个层次的人员参与，包括学生、初级开发者、高级开发者和管理人员。无论是修复错误、开发新功能、设计新算法还是重构代码，每个人都可以找到适合自己的任务。"
 
 
 #, python-format
@@ -1097,77 +1097,77 @@ msgstr "所有ROS 2 TSC工作组都在`工作组日历<https://calendar.google.c
 
 #: ../../development_guides/involvement_docs/index.rst:27
 msgid "Further, `ROS Discourse <https://discourse.ros.org/>`_ is a good place to follow larger discussions happening in the community and announcements. This is **not** the correct place to post questions or ask for assistance. Please visit `ROS Answers <https://answers.ros.org/>`_ for Q&A."
-msgstr "Further, `ROS Discourse <https://discourse.ros.org/>`_ is a good place to follow larger discussions happening in the community and announcements. This is **not** the correct place to post questions or ask for assistance. Please visit `ROS Answers <https://answers.ros.org/>`_ for Q&A."
+msgstr "此外，`ROS Discourse <https://discourse.ros.org/>`_ 是一个跟进社区中的大型讨论和公告的好地方。但**不是**提问或寻求帮助的正确地点。请访问 `ROS Answers <https://answers.ros.org/>`_ 进行问答。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:29
 msgid "Lastly, we have a `Community Slack <https://join.slack.com/t/navigation2/shared_invite/zt-uj428p0x-jKx8U7OzK1IOWp5TnDS2rA>`_ where we chat in real-time about topics in public channels or sidebar maintainers on individual projects via PMs. If you're interested in contributing to Nav2, this is a great place to join!"
-msgstr "Lastly, we have a `Community Slack <https://join.slack.com/t/navigation2/shared_invite/zt-uj428p0x-jKx8U7OzK1IOWp5TnDS2rA>`_ where we chat in real-time about topics in public channels or sidebar maintainers on individual projects via PMs. If you're interested in contributing to Nav2, this is a great place to join!"
+msgstr "最后，我们有一个`Community Slack <https://join.slack.com/t/navigation2/shared_invite/zt-uj428p0x-jKx8U7OzK1IOWp5TnDS2rA>`_，在这里我们可以通过公共频道实时交流，或者通过私信与侧边栏维护者在各个项目上进行交流。如果您有兴趣为Nav2做出贡献，这是一个很好的加入地点！"
 
 
 #: ../../development_guides/involvement_docs/index.rst:31
 msgid "If you're looking to contribute code or bugs, please see the Process section below."
-msgstr "If you're looking to contribute code or bugs, please see the Process section below."
+msgstr "如果您想贡献代码或报告错误，请参考下面的过程部分。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:33
 msgid "Over time, for developers that have an interest and have shown technical competence in an area of the stack, we elevate developers to a maintainers status. That allows push rights to our protected branches, first-reviewers rights, and getting your name on :ref:`about`. There currently is not a clear process for getting to be a maintainer, but if you've been involved and contributing over a duration of several months, you may be a good candidate and should email the project lead listed on :ref:`about`."
-msgstr "Over time, for developers that have an interest and have shown technical competence in an area of the stack, we elevate developers to a maintainers status. That allows push rights to our protected branches, first-reviewers rights, and getting your name on :ref:`about`. There currently is not a clear process for getting to be a maintainer, but if you've been involved and contributing over a duration of several months, you may be a good candidate and should email the project lead listed on :ref:`about`."
+msgstr "随着时间的推移，对于对堆栈的某个领域表现出兴趣和技术能力的开发人员，我们将其提升为维护者的身份。这样可以获得对我们受保护的分支的推送权限、第一审核者权限，并将您的名字添加到 :ref:`about` 中。目前还没有明确的成为维护者的流程，但是如果您在数月的时间内一直参与并做出贡献，您可能是一个合适的候选人，并且应该发送电子邮件给 :ref:`about` 中列出的项目负责人。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:38
 msgid "Process"
-msgstr "Process"
+msgstr "过程"
 
 
 #: ../../development_guides/involvement_docs/index.rst:40
 msgid "After you've introduced yourself in a working group meeting (recommended, not required), you're ready to get started! We recommend a typical open-source project flow and value detail and transparency. If you commit to something and need to pull back, say so. We all know priorities change and appreciate the heads up so that task can go into the open queue of tasks."
-msgstr "After you've introduced yourself in a working group meeting (recommended, not required), you're ready to get started! We recommend a typical open-source project flow and value detail and transparency. If you commit to something and need to pull back, say so. We all know priorities change and appreciate the heads up so that task can go into the open queue of tasks."
+msgstr "在工作组会议中介绍自己之后（推荐但不是必需的），您就可以开始了！我们建议采用典型的开源项目流程，并重视细节和透明度。如果您承诺了某件事并且需要撤回，要说出来。我们都知道优先级会发生变化，我们也很感谢您提前告知，以便该任务可以放入开放的任务队列。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:45
 msgid "The process is simple and is as follow:"
-msgstr "The process is simple and is as follow:"
+msgstr "该过程简单明了，如下所示："
 
 
 #: ../../development_guides/involvement_docs/index.rst:47
 msgid "Create a ticket for any issues or features you'd like to see. You are not required to fix / implement patches required, but it would be helpful. Reporting bugs is also a valuable contribution."
-msgstr "Create a ticket for any issues or features you'd like to see. You are not required to fix / implement patches required, but it would be helpful. Reporting bugs is also a valuable contribution."
+msgstr "创建一个问题票，列出您想要看到的任何问题或功能。您不必修复/实现所需的补丁，但这将非常有帮助。报告错误也是有价值的贡献。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:49
 msgid "If this ticket, or another existing ticket, is something you would like to work on, comment in the ticket claiming ownership over it. It would be helpful at this time if you declared a strategy and a timeline for planning purposes of other folks working around you. Over time, update the ticket with progress of key markers and engage in any constructive feedback maintainers or other users may have."
-msgstr "If this ticket, or another existing ticket, is something you would like to work on, comment in the ticket claiming ownership over it. It would be helpful at this time if you declared a strategy and a timeline for planning purposes of other folks working around you. Over time, update the ticket with progress of key markers and engage in any constructive feedback maintainers or other users may have."
+msgstr "如果您希望处理这个问题，或者是其他已存在的问题，请在问题中评论声明您对其的拥有权。同时，为了其他协作人员的计划安排，宣布您的策略和时间表将非常有帮助。随着时间的推移，更新问题的进展，与维护人员或其他用户进行建设性的反馈交流。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:51
 msgid "Once you've completed the task you set out to complete, submit a PR! Please fill out the PR template in complete to ensure that we have a full understanding of your work. At that point, 1-2 reviewers will take a look at your work and give it some feedback to be merged into the codebase. For trivial changes, a single maintainer may merge it after review if they're happy with it, up to their discretion. Any substantial changes should be approved by at least 1 maintainer and 1 other community member."
-msgstr "Once you've completed the task you set out to complete, submit a PR! Please fill out the PR template in complete to ensure that we have a full understanding of your work. At that point, 1-2 reviewers will take a look at your work and give it some feedback to be merged into the codebase. For trivial changes, a single maintainer may merge it after review if they're happy with it, up to their discretion. Any substantial changes should be approved by at least 1 maintainer and 1 other community member."
+msgstr "完成您设定的任务后，提交一个 PR！请填写完整的 PR 模板，以确保我们对您的工作有全面的了解。此时，1-2 位审查者将查看您的工作并提供一些反馈，以便将其合并到代码库中。对于微小的更改，如果单个维护者对其满意，他们可以在审核后直接合并，视情况而定。任何重大的更改都应该得到至少1个维护者和1个其他社区成员的批准。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:53
 msgid "Note: We take code quality seriously and strive for high-quality and consistent code. We make use of the linting and static analysis tools provided in ROS 2 (``ament_cpplint``, ``ament_uncrustify``, ``ament_cppcheck``, etc). All PRs are built in CI with the appropriate ROS distributions and run through a set of unit and system level tests including static analysis. You can see the results of these tests in the pull request. It is expected for feature development for tests to cover this work to be added. If any documentation must be updated due to your changes, that should be included in your pull request."
-msgstr "Note: We take code quality seriously and strive for high-quality and consistent code. We make use of the linting and static analysis tools provided in ROS 2 (``ament_cpplint``, ``ament_uncrustify``, ``ament_cppcheck``, etc). All PRs are built in CI with the appropriate ROS distributions and run through a set of unit and system level tests including static analysis. You can see the results of these tests in the pull request. It is expected for feature development for tests to cover this work to be added. If any documentation must be updated due to your changes, that should be included in your pull request."
+msgstr "注意：我们非常重视代码质量，并追求高质量和一致的代码。我们使用ROS 2中提供的代码检查和静态分析工具（``ament_cpplint``、``ament_uncrustify``、``ament_cppcheck``等）。所有的PR都会在CI中构建，并通过一组单元测试和系统级测试，包括静态分析。您可以在pull request中看到这些测试的结果。我们期望对于功能开发，测试工作也要进行相应的覆盖。如果您的更改需要更新文档，请在pull request中包含相应的更新。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:61
 msgid "Licensing"
-msgstr "Licensing"
+msgstr "许可证"
 
 
 #: ../../development_guides/involvement_docs/index.rst:63
 msgid "Licensing is very important to open source projects. It helps ensure the software continues to be available under the terms that the author desired."
-msgstr "Licensing is very important to open source projects. It helps ensure the software continues to be available under the terms that the author desired."
+msgstr "开源项目非常重视许可证。它有助于确保软件在作者所期望的条款下继续可用。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:67
 msgid "Because much of the source code is ported from other ROS 1 projects, each package has it's own license. Contributions should be made under the predominant license of that package. Entirely new packages should be made available under the `Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0>`_."
-msgstr "Because much of the source code is ported from other ROS 1 projects, each package has it's own license. Contributions should be made under the predominant license of that package. Entirely new packages should be made available under the `Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0>`_."
+msgstr "由于许多源代码是从其他ROS 1项目移植过来的，每个软件包都有自己的许可证。贡献应该在该软件包的主要许可证下进行。全新"
 
 
 #: ../../development_guides/involvement_docs/index.rst:72
 msgid "A license tells you what rights you have as a developer, as provided by the copyright holder. It is important that the contributor fully understands the licensing rights and agrees to them. Sometimes the copyright holder isn't the contributor, such as when the contributor is doing work on behalf of a company."
-msgstr "A license tells you what rights you have as a developer, as provided by the copyright holder. It is important that the contributor fully understands the licensing rights and agrees to them. Sometimes the copyright holder isn't the contributor, such as when the contributor is doing work on behalf of a company."
+msgstr "许可证告诉开发者作为版权持有人提供的权利。重要的是，贡献者完全了解许可权并同意它们。有时版权持有人并非贡献者本人，比如当贡献者代表公司工作时。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:78
@@ -1177,7 +1177,7 @@ msgstr "If for some reason Apache 2.0 or BSD licenses are not appropriate for yo
 
 #: ../../development_guides/involvement_docs/index.rst:84
 msgid "Developer Certification of Origin (DCO)"
-msgstr "Developer Certification of Origin (DCO)"
+msgstr "开发者原产地认证（DCO）"
 
 
 #: ../../development_guides/involvement_docs/index.rst:86
@@ -1187,7 +1187,7 @@ msgstr "To make a good faith effort to ensure licensing criteria are met, |LPN| 
 
 #: ../../development_guides/involvement_docs/index.rst:90
 msgid "The DCO is an attestation attached to every contribution made by a developer. In the commit message of the contribution, (described more fully later in this document), the developer simply adds a ``Signed-off-by`` statement and thereby agrees to the DCO."
-msgstr "The DCO is an attestation attached to every contribution made by a developer. In the commit message of the contribution, (described more fully later in this document), the developer simply adds a ``Signed-off-by`` statement and thereby agrees to the DCO."
+msgstr "DCO 是开发者在每次贡献中附加的证明。在贡献的提交信息中（稍后在本文档中更详细地描述），开发者只需添加一个“已签署”（Signed-off-by）声明，即表示同意 DCO。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:95
@@ -1197,5 +1197,5 @@ msgstr "In practice, its easier to just ``git commit -s -m \"commit messsage.\"`
 
 #: ../../development_guides/involvement_docs/index.rst:99
 msgid "When a developer submits a patch, it is a commitment that the contributor has the right to submit the patch per the license.  The DCO agreement is shown below and at http://developercertificate.org/."
-msgstr "When a developer submits a patch, it is a commitment that the contributor has the right to submit the patch per the license.  The DCO agreement is shown below and at http://developercertificate.org/."
+msgstr "当开发者提交补丁时，这意味着贡献者有权根据许可证提交补丁。下面是 DCO 协议的内容，也可以在 http://developercertificate.org/ 上查看。"
 
