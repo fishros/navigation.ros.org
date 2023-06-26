@@ -264,8 +264,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#preliminaries">准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-a-node">从一个节点开始</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-a-launch-file">From a Launch File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-large-project">From Large Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-a-launch-file">从启动文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-large-project">从大型项目</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#automatic-backtrace-on-crash">Automatic backtrace on crash</a></li>
 </ul>
@@ -967,27 +967,22 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>ex<span class="w"> </span>run<span class="w"> </span>--args<span class="w"> </span>/path/to/exe/program
 </pre></div>
 </div>
-<p>Below are sections to describe the 3 major situations you could run into with ROS 2-based systems.
-Read the section that best describes the problem you're attempting to solve.</p>
+<p>下面是描述使用基于ROS 2的系统可能遇到的三种主要情况的部分。请阅读最能描述你尝试解决的问题的部分。</p>
 </div>
 <div class="section" id="from-a-node">
 <h2>从一个节点开始<a class="headerlink" href="#from-a-node" title="永久链接至标题"></a></h2>
-<p>Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 node.
-While we could set this up through the commandline with some knowledge of the ROS 2 file system, we can instead use the launch <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option the kind folks at Open Robotics provided for us.</p>
+<p>就像在我们的非ROS示例中一样，我们需要在启动ROS 2节点之前设置一个GDB会话。虽然我们可以通过命令行和对ROS 2文件系统的一些了解来设置这个会话，但我们可以使用Open Robotics提供的launch <a href="#id1"><span class="problematic" id="id2">``</span></a>--prefix``选项。</p>
 <p><code class="docutils literal notranslate"><span class="pre">--prefix``将在我们的``ros2``命令之前执行一些代码，以便插入一些信息。如果您尝试执行类似于我们在前言中的示例的``gdb</span> <span class="pre">ex</span> <span class="pre">run</span> <span class="pre">--args</span> <span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">&lt;pkg&gt;</span> <span class="pre">&lt;node&gt;</span></code>，您会发现它找不到``ros2``命令。如果您更聪明一些，您会发现尝试源化您的工作空间也会因类似的原因而失败。</p>
-<p>Rather than having to revert to finding the install path of the executable and typing it all out, we can instead use <code class="docutils literal notranslate"><span class="pre">--prefix</span></code>.
-This allows us to use the same <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> syntax you're used to without having to worry about some of the GDB details.</p>
+<p>我们不必回到查找可执行文件的安装路径并将其全部输入的状态，而可以使用``--prefix``。这样我们就可以使用你熟悉的``ros2 run``语法，而不必担心一些GDB的细节。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>--prefix<span class="w"> </span><span class="s1">&#39;gdb -ex run --args&#39;</span><span class="w"> </span>&lt;pkg&gt;<span class="w"> </span>&lt;node&gt;<span class="w"> </span>--all-other-launch<span class="w"> </span>arguments
 </pre></div>
 </div>
 <p>与之前一样，此前缀将启动一个GDB会话，并使用所有附加的命令行参数运行您请求的节点。现在，您的节点应该正在运行，并且应该带有一些调试输出。</p>
-<p>Once your server crashes, you'll see a prompt like below. At this point you can now get a backtrace.</p>
+<p>一旦你的服务器崩溃，你会看到下面这样的提示。此时你现在可以获得一个回溯。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>In this session, type <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> and it will provide you with a backtrace.
-Copy this for your needs.
-For example:</p>
+<p>在这个会话中，输入``backtrace``，它会为您提供一个回溯。根据您的需要进行复制。例如：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>backtrace
 <span class="c1">#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:50</span>
 <span class="c1">#1  0x00007ffff79cc859 in __GI_abort () at abort.c:79</span>
@@ -1006,29 +1001,18 @@ For example:</p>
 <span class="w">    </span>at<span class="w"> </span>/home/steve/Documents/nav2_ws/src/gdb_test_pkg/src/main.cpp:25
 </pre></div>
 </div>
-<p>In this example you should read this in the following way, starting at the bottom:</p>
+<p>在这个例子中，你应该按以下方式阅读，从底部开始：</p>
 <ul class="simple">
-<li><p>In the main function, on line 25 we call a function VectorCrash.</p></li>
-<li><p>In VectorCrash, on line 44, we crashed in the Vector's <code class="docutils literal notranslate"><span class="pre">at()</span></code> method with input <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p></li>
-<li><p>It crashed in <code class="docutils literal notranslate"><span class="pre">at()</span></code> on STL vector line 1091 after throwing an exception from a range check failure.</p></li>
+<li><p>在主函数中，第25行我们调用了一个名为VectorCrash的函数。</p></li>
+<li><p>在VectorCrash中，第44行，我们在Vector的``at()``方法中以输入``100``崩溃。</p></li>
+<li><p>在STL向量的第1091行的``at()``函数中发生了崩溃，并在范围检查失败后抛出了异常。</p></li>
 </ul>
-<p>These traces take some time to get used to reading, but in general, start at the bottom and follow it up the stack until you see the line it crashed on.
-Then you can deduce why it crashed.
-When you are done with GDB, type <code class="docutils literal notranslate"><span class="pre">quit</span></code> and it will exit the session and kill any processes still up.
-It may ask you if you want to kill some threads at the end, say yes.</p>
+<p>这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。</p>
 </div>
 <div class="section" id="from-a-launch-file">
-<h2>From a Launch File<a class="headerlink" href="#from-a-launch-file" title="永久链接至标题"></a></h2>
-<p>Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 launch file.
-While we could set this up through the commandline, we can instead make use of the same mechanics that we did in the <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> node example, now using a launch file.</p>
-<p>In your launch file, find the node that you're interested in debugging.
-For this section, we assume that your launch file contains only a single node (and potentially other information as well).
-The <code class="docutils literal notranslate"><span class="pre">Node</span></code> function used in the <code class="docutils literal notranslate"><span class="pre">launch_ros</span></code> package will take in a field <code class="docutils literal notranslate"><span class="pre">prefix</span></code> taking a list of prefix arguments.
-We will insert the GDB snippet here with one change from our node example, use of <code class="docutils literal notranslate"><span class="pre">xterm</span></code>.
-<code class="docutils literal notranslate"><span class="pre">xterm</span></code> will pop up a new terminal window to show and interact with GDB.
-We do this because of issues handling <code class="docutils literal notranslate"><span class="pre">stdin</span></code> on launch files (e.g. if you hit control+C, are you talking to GDB or launch?).
-See <a class="reference external" href="https://github.com/ros2/launch_ros/issues/165">this ticket</a> for more information.
-See below for an example debugging SLAM Toolbox.</p>
+<h2>从启动文件<a class="headerlink" href="#from-a-launch-file" title="永久链接至标题"></a></h2>
+<p>与我们非ROS示例一样，在启动ROS 2启动文件之前，我们需要设置一个GDB会话。虽然我们可以通过命令行设置，但我们可以利用与``ros2 run``节点示例中相同的机制来实现，现在使用一个启动文件。</p>
+<p>在您的启动文件中，找到您想要调试的节点。在本节中，我们假设您的启动文件只包含一个单独的节点（以及其他可能的信息）。<code class="docutils literal notranslate"><span class="pre">launch_ros``包中使用的``Node``函数将接受一个名为``prefix``的字段，它需要一个前缀参数的列表。我们将在此处插入包含</span> <span class="pre">GDB</span> <span class="pre">代码片段的示例，与我们的节点示例相比有一个变化，即使用``xterm</span></code>。<a href="#id1"><span class="problematic" id="id2">``</span></a>xterm``将弹出一个新的终端窗口，用于显示和与 GDB 交互。我们之所以这样做，是因为处理启动文件上的``stdin``存在问题（例如，如果您按下Ctrl+C，您是在与GDB 还是启动进行交互？）。有关更多信息，请参阅`此票证&lt;<a class="reference external" href="https://github.com/ros2/launch_ros/issues/165">https://github.com/ros2/launch_ros/issues/165</a>&gt;`_。以下是一个关于调试 SLAM 工具箱的示例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start_sync_slam_toolbox_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
     <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
       <span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;slam_toolbox&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/config/mapper_params_online_sync.yaml&#39;</span><span class="p">,</span>
@@ -1041,36 +1025,29 @@ See below for an example debugging SLAM Toolbox.</p>
     <span class="n">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Just as before, this prefix will launch a GDB session, now in <code class="docutils literal notranslate"><span class="pre">xterm</span></code> and run the launch file you requested with all the additional launch arguments defined.</p>
-<p>Once your server crashes, you'll see a prompt like below, now in the <code class="docutils literal notranslate"><span class="pre">xterm</span></code> session. At this point you can now get a backtrace.</p>
+<p>与之前一样，此前缀将启动一个GDB会话，现在使用``xterm``并运行您请求的启动文件以及所有定义的附加启动参数。</p>
+<p>一旦服务器崩溃，您会在``xterm``会话中看到如下提示。此时，您可以获取一个回溯。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>In this session, type <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> and it will provide you with a backtrace.
-Copy this for your needs.
-See the example trace in the section above for an example.</p>
-<p>These traces take some time to get used to reading, but in general, start at the bottom and follow it up the stack until you see the line it crashed on.
-Then you can deduce why it crashed.
-When you are done with GDB, type <code class="docutils literal notranslate"><span class="pre">quit</span></code> and it will exit the session and kill any processes still up.
-It may ask you if you want to kill some threads at the end, say yes.</p>
+<p>在此会话中，键入``backtrace``，它将为您提供一个回溯。根据您的需求进行复制。请参考上面的示例跟踪。</p>
+<p>这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。</p>
 </div>
 <div class="section" id="from-large-project">
-<h2>From Large Project<a class="headerlink" href="#from-large-project" title="永久链接至标题"></a></h2>
-<p>Working with launch files with multiple nodes is a little different so you can interact with your GDB session without being bogged down by other logging in the same terminal.
-For this reason, when working with larger launch files, its good to pull out the specific server you're interested in and launching it seperately.
-These instructions are targeting Nav2, but are applicable to any large project with many nodes of any type in a series of launch file(s).</p>
+<h2>从大型项目<a class="headerlink" href="#from-large-project" title="永久链接至标题"></a></h2>
+<p>使用包含多个节点的启动文件的工作方式有所不同，这样您就可以在同一个终端中进行GDB会话而不受其他日志的干扰。因此，在使用较大的启动文件时，最好将您感兴趣的特定服务器提取出来并单独启动。这些说明针对Nav2，但适用于任何具有多个节点类型的大型项目的一系列启动文件。</p>
 <p>As such, for this case, when you see a crash you'd like to investigate, its beneficial to separate this server from the others.</p>
-<p>If your server of interest is being launched from a nested launch file (e.g. an included launch file) you may want to do the following:</p>
+<p>如果您感兴趣的服务器是从嵌套的启动文件（例如，一个包含的启动文件）启动的，您可能需要执行以下操作：</p>
 <ul class="simple">
 <li><p>Comment out the launch file inclusion from the parent launch file</p></li>
-<li><p>Recompile the package of interest with <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag for debug symbols</p></li>
+<li><p>使用``-g``标志为调试符号重新编译感兴趣的软件包。</p></li>
 <li><p>Launch the parent launch file in a terminal</p></li>
-<li><p>Launch the server's launch file in another terminal following the instructions in <a class="reference internal" href="#from-a-launch-file">From a Launch File</a>.</p></li>
+<li><p>在另一个终端中按照`从启动文件启动`_中的说明启动服务器的启动文件。</p></li>
 </ul>
 <p>Alternatively, if you server of interest is being launched in these files directly (e.g. you see a <code class="docutils literal notranslate"><span class="pre">Node</span></code>, <code class="docutils literal notranslate"><span class="pre">LifecycleNode</span></code>, or inside a <code class="docutils literal notranslate"><span class="pre">ComponentContainer</span></code>), you will need to seperate this from the others:</p>
 <ul class="simple">
 <li><p>Comment out the node's inclusion from the parent launch file</p></li>
-<li><p>Recompile the package of interest with <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag for debug symbols</p></li>
+<li><p>使用``-g``标志为调试符号重新编译感兴趣的软件包。</p></li>
 <li><p>Launch the parent launch file in a terminal</p></li>
 <li><p>Launch the server's node in another terminal following the instructions in <a class="reference internal" href="#from-a-node">From a Node</a>.</p></li>
 </ul>
@@ -1083,13 +1060,8 @@ These instructions are targeting Nav2, but are applicable to any large project w
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>In this session, type <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> and it will provide you with a backtrace.
-Copy this for your needs.
-See the example trace in the section above for an example.</p>
-<p>These traces take some time to get used to reading, but in general, start at the bottom and follow it up the stack until you see the line it crashed on.
-Then you can deduce why it crashed.
-When you are done with GDB, type <code class="docutils literal notranslate"><span class="pre">quit</span></code> and it will exit the session and kill any processes still up.
-It may ask you if you want to kill some threads at the end, say yes.</p>
+<p>在此会话中，键入``backtrace``，它将为您提供一个回溯。根据您的需求进行复制。请参考上面的示例跟踪。</p>
+<p>这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。</p>
 </div>
 <div class="section" id="from-nav2-bringup">
 <h2>From Nav2 Bringup<a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
@@ -1107,13 +1079,8 @@ It may ask you if you want to kill some threads at the end, say yes.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
-<p>In this session, type <code class="docutils literal notranslate"><span class="pre">backtrace</span></code> and it will provide you with a backtrace.
-Copy this for your needs.
-See the example trace in the section above for an example.</p>
-<p>These traces take some time to get used to reading, but in general, start at the bottom and follow it up the stack until you see the line it crashed on.
-Then you can deduce why it crashed.
-When you are done with GDB, type <code class="docutils literal notranslate"><span class="pre">quit</span></code> and it will exit the session and kill any processes still up.
-It may ask you if you want to kill some threads at the end, say yes.</p>
+<p>在此会话中，键入``backtrace``，它将为您提供一个回溯。根据您的需求进行复制。请参考上面的示例跟踪。</p>
+<p>这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。</p>
 </div>
 <div class="section" id="automatic-backtrace-on-crash">
 <h2>Automatic backtrace on crash<a class="headerlink" href="#automatic-backtrace-on-crash" title="永久链接至标题"></a></h2>
