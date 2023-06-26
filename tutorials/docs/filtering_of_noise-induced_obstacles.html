@@ -260,10 +260,10 @@
 <li class="toctree-l3"><a class="reference internal" href="camera_calibration.html#tutorial-steps"><cite>教程步骤</cite></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="get_backtrace.html">Get Backtrace in ROS 2 / Nav2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_backtrace.html">在ROS 2 / Nav2中获取回溯</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#preliminaries">Preliminaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-node">From a Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#preliminaries">准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-node">从一个节点开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-launch-file">From a Launch File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-large-project">From Large Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-nav2-bringup">From Nav2 Bringup</a></li>
@@ -272,7 +272,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="get_profile.html">Profiling in ROS 2 / Nav2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_profile.html#preliminaries">Preliminaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_profile.html#preliminaries">准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-node">Profile from a Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-launch-file">Profile from a Launch File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#from-nav2-bringup">From Nav2 Bringup</a></li>
@@ -1008,22 +1008,13 @@ local_costmap:
 </div>
 <div class="section" id="how-it-works">
 <h2>工作原理<a class="headerlink" href="#how-it-works" title="永久链接至标题"></a></h2>
-<p>The plugin is based on two algorithms.</p>
+<p>该插件基于两种算法。</p>
 <p>当参数“minimal_group_size”= 2时，第一个算法启动。它将`erosion &lt;<a class="reference external" href="https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html">https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html</a>&gt;`_ 函数应用于下方图片中的内核（如果“group_connectivity_type”= 4，则使用左侧内核；如果“group_connectivity_type”= 8，则使用右侧内核），作用于costmap上。内核像素的白色表示使用该值，黑色表示忽略该值。</p>
 <a class="reference internal image-reference" href="../../_images/3x3_kernels.png"><img alt="../../_images/3x3_kernels.png" src="../../_images/3x3_kernels.png" style="width: 222px;" /></a>
-<p>As a result of erosion function the neighbors image is created. Each possible position of the kernel on the costmap corresponds to one pixel of the neighbors image. The pixel value of this image is equal to the maximum of 4/8 costmap pixels corresponding to the white pixels of the mask.
-In other words, the pixel of the neighbors image is equal to the obstacle code if there is an obstacle nearby, the free space code in other case.
-After that, obstacles corresponding to free space code on neighbors image are removed.</p>
+<p>通过腐蚀函数生成了邻居图像。内核在代价图上的每个可能位置对应于邻居图像的一个像素。该图像的像素值等于与掩码的白色像素对应的4/8个代价图像素的最大值。换句话说，如果附近有障碍物，则邻居图像的像素等于障碍物代码；否则为自由空间代码。然后，将邻居图像上对应自由空间代码的障碍物移除。</p>
 <p>该过程如下图所示。图像的左侧是costmap，右侧是邻居图像。白色像素表示自由空间，黑色像素表示障碍物，“group_connectivity_type”= 4。动画结束时标记的障碍物将被移除。</p>
 <a class="reference internal image-reference" href="../../_images/dilate.gif"><img alt="../../_images/dilate.gif" src="../../_images/dilate.gif" style="width: 600px;" /></a>
-<p>When parameter <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code> &gt; 2, the second algorithm is executed.
-This is a generalized solution that allows you to remove groups of adjacent obstacles if their total number is less than <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code>.
-To select groups of adjacent obstacles, the algorithm performs their segmentation.
-The type of cell connectivity in one segment is determined by the parameter <code class="docutils literal notranslate"><span class="pre">group_connectivity_type</span></code>.
-Next, the size of each segment is calculated.
-Obstacles segments with size less than the <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code> are replaced with empty cells.
-This algorithm is about 10 times slower than first, so use it with caution and only when necessary.
-Its execution time depends on the size of the processed map fragment (and not depend on the value of <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code>).</p>
+<p>当参数``minimal_group_size`` &gt; 2时，执行第二种算法。这是一种通用解决方案，可以删除邻近障碍物组，如果它们的总数小于``minimal_group_size``。为了选择相邻障碍物组，算法执行它们的分割。一个段中的细胞连接类型由参数``group_connectivity_type``确定。然后计算每个段的大小。大小小于``minimal_group_size``的障碍物段将被替换为空细胞。该算法比第一种算法慢大约10倍，因此请谨慎使用，仅在必要时使用。它的执行时间取决于处理地图片段的大小（而不取决于``minimal_group_size``的值）。</p>
 <p>该算法如下动画所示（“group_connectivity_type”= 8）。动画结束时标记的障碍物将被移除（大小小于3的组）。</p>
 <a class="reference internal image-reference" href="../../_images/connected_components.gif"><img alt="../../_images/connected_components.gif" src="../../_images/connected_components.gif" style="width: 600px;" /></a>
 </div>

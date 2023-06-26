@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Dynamic Object Following" href="navigation2_dynamic_point_following.html" />
-    <link rel="prev" title="Get Backtrace in ROS 2 / Nav2" href="get_backtrace.html" />
+    <link rel="prev" title="在ROS 2 / Nav2中获取回溯" href="get_backtrace.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -260,10 +260,10 @@
 <li class="toctree-l3"><a class="reference internal" href="camera_calibration.html#tutorial-steps"><cite>教程步骤</cite></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="get_backtrace.html">Get Backtrace in ROS 2 / Nav2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_backtrace.html">在ROS 2 / Nav2中获取回溯</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#preliminaries">Preliminaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-node">From a Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#preliminaries">准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-node">从一个节点开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-launch-file">From a Launch File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-large-project">From Large Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-nav2-bringup">From Nav2 Bringup</a></li>
@@ -272,7 +272,7 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Profiling in ROS 2 / Nav2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preliminaries">Preliminaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preliminaries">准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#profile-from-a-node">Profile from a Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#profile-from-a-launch-file">Profile from a Launch File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></li>
@@ -942,10 +942,10 @@
 <span id="get-profile"></span><h1>Profiling in ROS 2 / Nav2<a class="headerlink" href="#profiling-in-ros-2-nav2" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
-<li><p><a class="reference internal" href="#preliminaries">Preliminaries</a></p></li>
+<li><p><a class="reference internal" href="#preliminaries">准备工作</a></p></li>
 <li><p><a class="reference internal" href="#profile-from-a-node">Profile from a Node</a></p></li>
 <li><p><a class="reference internal" href="#profile-from-a-launch-file">Profile from a Launch File</a></p></li>
-<li><p><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></p></li>
+<li><p><a class="reference internal" href="#from-nav2-bringup">从Nav2启动</a></p></li>
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
@@ -953,7 +953,7 @@
 <p>The following steps show ROS 2 users how to modify the Nav2 stack to get profiling information about a particular server / algorithm when they encounter a situation they'd like to understand better. This tutorial applies to both simulated and physical robots.</p>
 </div>
 <div class="section" id="preliminaries">
-<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
+<h2>准备工作<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
 <p>This tutorial makes use of two tools, callgrind from the <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code> set of tools and <code class="docutils literal notranslate"><span class="pre">kcachegrind</span></code>. Valgrind is used to get the profiling information about the program and kcachegrind is the visualization engine used to interprete this information to do useful work.</p>
 <p>Thus, we must install them.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>valgrind<span class="w"> </span>kcachegrind

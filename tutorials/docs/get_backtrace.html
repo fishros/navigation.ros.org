@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Backtrace in ROS 2 / Nav2 &mdash; Navigation 2 1.0.0 文档</title>
+  <title>在ROS 2 / Nav2中获取回溯 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -260,10 +260,10 @@
 <li class="toctree-l3"><a class="reference internal" href="camera_calibration.html#tutorial-steps"><cite>教程步骤</cite></a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Get Backtrace in ROS 2 / Nav2</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">在ROS 2 / Nav2中获取回溯</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preliminaries">Preliminaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-a-node">From a Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preliminaries">准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-a-node">从一个节点开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-a-launch-file">From a Launch File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-large-project">From Large Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></li>
@@ -272,7 +272,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="get_profile.html">Profiling in ROS 2 / Nav2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_profile.html#preliminaries">Preliminaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_profile.html#preliminaries">准备工作</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-node">Profile from a Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-launch-file">Profile from a Launch File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#from-nav2-bringup">From Nav2 Bringup</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Get Backtrace in ROS 2 / Nav2</li>
+      <li>在ROS 2 / Nav2中获取回溯</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,51 +939,31 @@
            <div itemprop="articleBody">
              
   <div class="section" id="get-backtrace-in-ros-2-nav2">
-<span id="get-backtrace"></span><h1>Get Backtrace in ROS 2 / Nav2<a class="headerlink" href="#get-backtrace-in-ros-2-nav2" title="永久链接至标题"></a></h1>
+<span id="get-backtrace"></span><h1>在ROS 2 / Nav2中获取回溯<a class="headerlink" href="#get-backtrace-in-ros-2-nav2" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
-<li><p><a class="reference internal" href="#preliminaries">Preliminaries</a></p></li>
-<li><p><a class="reference internal" href="#from-a-node">From a Node</a></p></li>
-<li><p><a class="reference internal" href="#from-a-launch-file">From a Launch File</a></p></li>
-<li><p><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></p></li>
-<li><p><a class="reference internal" href="#automatic-backtrace-on-crash">Automatic backtrace on crash</a></p></li>
+<li><p><a class="reference internal" href="#preliminaries">准备工作</a></p></li>
+<li><p><a class="reference internal" href="#from-a-node">从节点</a></p></li>
+<li><p><a class="reference internal" href="#from-a-launch-file">来自启动文件</a></p></li>
+<li><p><a class="reference internal" href="#from-nav2-bringup">从Nav2启动</a></p></li>
+<li><p><a class="reference internal" href="#automatic-backtrace-on-crash">崩溃时自动回溯</a></p></li>
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This document explains one set of methods for getting backtraces for ROS 2 and Nav2.
-There are many ways to accomplish this, but this is a good starting point for new C++ developers without GDB experience.</p>
-<p>The following steps show ROS 2 users how to modify the Nav2 stack to get traces from specific servers when they encounter a problem.
-This tutorial applies to both simulated and physical robots.</p>
-<p>This will cover how to get a backtrace from a specific node using <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code>, from a launch file representing a single node using <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span></code>, and from a more complex orchestration of nodes.
-By the end of this tutorial, you should be able to get a backtrace when you notice a server crashing in ROS 2.</p>
+<p>本文档介绍了在ROS 2和Nav2中获取回溯的一组方法。有许多实现此目标的方法，但对于没有GDB经验的新C++开发人员来说，这是一个很好的起点。</p>
+<p>以下步骤向ROS 2用户展示如何修改Nav2堆栈，以便在遇到问题时从特定服务器获取跟踪信息。本教程适用于仿真和物理机器人。</p>
+<p>本教程将介绍如何使用``ros2 run``从特定节点获取回溯信息，如何使用代表单个节点的启动文件``ros2 launch``，以及如何从更复杂的节点编排中获取回溯信息。通过完成本教程，您应该能够在注意到ROS 2中的服务器崩溃时获取回溯信息。</p>
 </div>
 <div class="section" id="preliminaries">
-<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
-<p>GDB is the most popular debugger for C++ on Unix systems.
-It can be used to determine the reason for a crash and track threads.
-It may also be used to add breakpoints in your code to check values in memory a particular points in your software.</p>
-<p>Using GDB is a critical skill for all software developers working on C/C++.
-Many IDEs will have some kind of debugger or profiler built in, but with ROS, there are few IDEs to choose.
-Therefore it's important to understand how to use these raw tools you have available rather than relying on an IDE to provide them.
-Further, understanding these tools is a fundamental skill of C/C++ development and leaving it up to your IDE can be problematic if you change roles and no longer have access to it or are doing development on the fly through an ssh session to a remote asset.</p>
-<p>Using GDB luckily is fairly simple after you have the basics under your belt.
-The first step is to add <code class="docutils literal notranslate"><span class="pre">-g</span></code> to your compiler flags for the ROS package you want to profile / debug.
-This flag builds debug symbols that GDB and valgrind can read to tell you specific lines of code in your project are failing and why.
-If you do not set this flag, you can still get backtraces but it will not provide line numbers for failures.
-Be sure to remove this flag after debugging, it will slow down performance at run-time.</p>
-<p>Adding the following line to your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> for your project should do the trick.
-If your project already has a <code class="docutils literal notranslate"><span class="pre">add_compile_options()</span></code>, you can simply add <code class="docutils literal notranslate"><span class="pre">-g</span></code> to it.
-Then simply rebuild your workspace with this package <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--packages-select</span> <span class="pre">&lt;package-name&gt;</span></code>.
-It may take a little longer than usual to compile.</p>
+<h2>准备工作<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
+<p>GDB是Unix系统上最流行的C++调试器。它可用于确定崩溃的原因并跟踪线程。它还可以在代码中添加断点，以便在软件中特定位置检查内存中的值。</p>
+<p>使用GDB是所有在C/C++上工作的软件开发人员的关键技能。许多集成开发环境（IDE）都内置了一些调试器或性能分析工具，但是在ROS中，可供选择的IDE很少。因此，重要的是了解如何使用这些可用的原始工具，而不是依赖IDE来提供它们。此外，了解这些工具是C/C++开发的基本技能，如果您改变角色并且不再可以访问IDE，或者通过ssh会话到远程资源进行开发，依赖IDE可能会带来问题。</p>
+<p>幸运的是，一旦掌握了基础知识，使用GDB相当简单。第一步是在要分析/调试的ROS软件包的编译器标志中添加``-g``。此标志会构建调试符号，供GDB和valgrind读取，以告诉您项目中的具体代码行失败的原因。如果不设置此标志，仍然可以获取回溯信息，但不会提供失败的行号。在调试完成后，务必删除此标志，否则会降低运行时性能。</p>
+<p>将以下行添加到项目的``CMakeLists.txt``文件中应该就可以解决问题。如果您的项目已经有一个``add_compile_options()``，您只需添加``-g``即可。然后使用此包重新构建工作空间``colcon build --packages-select &lt;package-name&gt;``。编译过程可能比平常稍长一些。</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-g</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now you're ready to debug your code!
-If this was a non-ROS project, at this point you might do something like below.
-Here we're launching a GDB session and telling our program to immediately run.
-Once your program crashes, it will return a gdb session prompt denoted by <code class="docutils literal notranslate"><span class="pre">(gdb)</span></code>.
-At this prompt you can access the information you're interested in.
-However, since this is a ROS project with lots of node configurations and other things going on, this isn't a great option for beginners or those that don't like tons of commandline work and understanding the filesystem.</p>
+<p>现在，您已经准备好调试代码了！如果这是一个非ROS项目，此时您可能会执行以下操作。这里我们启动了一个GDB会话，并告诉我们的程序立即运行。一旦程序崩溃，它将返回一个以 <code class="docutils literal notranslate"><span class="pre">(gdb)</span></code> 标识的gdb会话提示符。在此提示符下，您可以访问您感兴趣的信息。然而，由于这是一个涉及大量节点配置和其他操作的ROS项目，对于初学者或不喜欢大量命令行操作和理解文件系统的人来说，这不是一个很好的选择。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>ex<span class="w"> </span>run<span class="w"> </span>--args<span class="w"> </span>/path/to/exe/program
 </pre></div>
 </div>
@@ -991,19 +971,16 @@ However, since this is a ROS project with lots of node configurations and other 
 Read the section that best describes the problem you're attempting to solve.</p>
 </div>
 <div class="section" id="from-a-node">
-<h2>From a Node<a class="headerlink" href="#from-a-node" title="永久链接至标题"></a></h2>
+<h2>从一个节点开始<a class="headerlink" href="#from-a-node" title="永久链接至标题"></a></h2>
 <p>Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 node.
 While we could set this up through the commandline with some knowledge of the ROS 2 file system, we can instead use the launch <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option the kind folks at Open Robotics provided for us.</p>
-<p><code class="docutils literal notranslate"><span class="pre">--prefix</span></code> will execute some bits of code before our <code class="docutils literal notranslate"><span class="pre">ros2</span></code> command allowing us to insert some information.
-If you attempted to do <code class="docutils literal notranslate"><span class="pre">gdb</span> <span class="pre">ex</span> <span class="pre">run</span> <span class="pre">--args</span> <span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">&lt;pkg&gt;</span> <span class="pre">&lt;node&gt;</span></code> as analog to our example in the preliminaries, you'd find that it couldn't find the <code class="docutils literal notranslate"><span class="pre">ros2</span></code> command.
-If you're even more clever, you'd find that trying to source your workspace would also fail for similar reasons.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--prefix``将在我们的``ros2``命令之前执行一些代码，以便插入一些信息。如果您尝试执行类似于我们在前言中的示例的``gdb</span> <span class="pre">ex</span> <span class="pre">run</span> <span class="pre">--args</span> <span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">&lt;pkg&gt;</span> <span class="pre">&lt;node&gt;</span></code>，您会发现它找不到``ros2``命令。如果您更聪明一些，您会发现尝试源化您的工作空间也会因类似的原因而失败。</p>
 <p>Rather than having to revert to finding the install path of the executable and typing it all out, we can instead use <code class="docutils literal notranslate"><span class="pre">--prefix</span></code>.
 This allows us to use the same <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span></code> syntax you're used to without having to worry about some of the GDB details.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>--prefix<span class="w"> </span><span class="s1">&#39;gdb -ex run --args&#39;</span><span class="w"> </span>&lt;pkg&gt;<span class="w"> </span>&lt;node&gt;<span class="w"> </span>--all-other-launch<span class="w"> </span>arguments
 </pre></div>
 </div>
-<p>Just as before, this prefix will launch a GDB session and run the node you requested with all the additional commandline arguments.
-You should now have your node running and should be chugging along with some debug printing.</p>
+<p>与之前一样，此前缀将启动一个GDB会话，并使用所有附加的命令行参数运行您请求的节点。现在，您的节点应该正在运行，并且应该带有一些调试输出。</p>
 <p>Once your server crashes, you'll see a prompt like below. At this point you can now get a backtrace.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
