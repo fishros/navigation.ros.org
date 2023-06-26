@@ -941,14 +941,13 @@
              
   <div class="section" id="baseobstaclecritic">
 <span id="configuring-dwb-base-obstacle"></span><h1>BaseObstacleCritic<a class="headerlink" href="#baseobstaclecritic" title="永久链接至标题"></a></h1>
-<p>Scores a trajectory based on where the path passes over the costmap.
-To use this properly, you must use the inflation layer in costmap to expand obstacles by the robot's radius.</p>
+<p>基于路径在代价地图上的通过位置对轨迹进行评分。要正确使用此功能，您必须在代价地图中使用膨胀层，将机器人的半径扩展为障碍物。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>: BaseObstacleCritic critic name defined in the <strong>&lt;dwb plugin&gt;.critics</strong> parameter defined in <a class="reference internal" href="../dwb-params/controller.html#dwb-controller"><span class="std std-ref">DWB控制器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>：BaseObstacleCritic是在**:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>dwb_controller`**中定义的**&lt;dwb plugin&gt;.critics**参数中定义的评判者名称。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.sum_scores</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.``&lt;name&gt;``.sum_scores</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -965,12 +964,12 @@ To use this properly, you must use the inflation layer in costmap to expand obst
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Whether to allow for scores to be summed up.</p>
+<dt>描述</dt><dd><p>是否允许对分数进行求和。</p>
 </dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.scale</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.``&lt;name&gt;``.scale</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -987,7 +986,7 @@ To use this properly, you must use the inflation layer in costmap to expand obst
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Weighed scale for critic.</p>
+<dt>描述</dt><dd><p>评判者的加权比例。</p>
 </dd>
 </dl>
 </div></blockquote>
