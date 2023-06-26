@@ -117,7 +117,7 @@ msgstr "生命周期管理器现在还包含与每个生命周期服务器的``B
 
 #: ../../migration/Eloquent.rst:23
 msgid "A fix to the BT navigator was added to remove a rare issue where it may crash due to asynchronous issues. As a result, a behavior tree is created for each navigation request rather than resetting an existing tree. The creation of this tree will add a small amount of latency. Proposals to reduce this latency will be considered before the next release."
-msgstr "A fix to the BT navigator was added to remove a rare issue where it may crash due to asynchronous issues. As a result, a behavior tree is created for each navigation request rather than resetting an existing tree. The creation of this tree will add a small amount of latency. Proposals to reduce this latency will be considered before the next release."
+msgstr "修复了BT导航器的一个问题，该问题可能由于异步问题而导致导航器崩溃。因此，每次导航请求都会创建一个行为树，而不是重置现有的树。创建该树会增加一小段延迟。在下一个版本发布之前，将考虑减少这种延迟的建议。"
 
 
 #: ../../migration/Eloquent.rst:29
@@ -127,7 +127,7 @@ msgstr "服务器更新"
 
 #: ../../migration/Eloquent.rst:30
 msgid "All plugin servers (controller, planner, recovery) now supports the use of multiple plugins. This can be done by loading a map of plugins, mapping the name of the plugin to its intended use-case. Each server defines a parameter where the list of names for the plugins to be loaded can be defined."
-msgstr "All plugin servers (controller, planner, recovery) now supports the use of multiple plugins. This can be done by loading a map of plugins, mapping the name of the plugin to its intended use-case. Each server defines a parameter where the list of names for the plugins to be loaded can be defined."
+msgstr "现在，所有插件服务器（控制器、规划器、恢复器）都支持使用多个插件。可以通过加载插件映射表，将插件的名称映射到其预期的用例来实现。每个服务器都定义了一个参数，可以在其中定义要加载的插件名称列表。"
 
 
 #: ../../migration/Eloquent.rst:35
@@ -137,7 +137,7 @@ msgstr "服务器名称"
 
 #: ../../migration/Eloquent.rst:35
 msgid "Plugin Parameter"
-msgstr "Plugin Parameter"
+msgstr "插件参数"
 
 
 #: ../../migration/Eloquent.rst:37 ../../migration/Eloquent.rst:39 ../../migration/Eloquent.rst:41
@@ -172,7 +172,7 @@ msgstr "规划器插件"
 
 #: ../../migration/Eloquent.rst:45
 msgid "Recovery Server"
-msgstr "Recovery Server"
+msgstr "恢复服务器"
 
 
 #: ../../migration/Eloquent.rst:45
@@ -182,7 +182,7 @@ msgstr "recovery_plugins"
 
 #: ../../migration/Eloquent.rst:47
 msgid "Costmap Node"
-msgstr "Costmap Node"
+msgstr "成本地图节点"
 
 
 #: ../../migration/Eloquent.rst:47
@@ -192,32 +192,32 @@ msgstr "plugins"
 
 #: ../../migration/Eloquent.rst:50
 msgid "The type of plugin to be mapped to a particular name has to be defined using the ``plugin`` parameter in the plugin namespace for each name defined in the server plugin list. Each name in the plugin parameter list is expected to have the ``plugin`` parameter defined."
-msgstr "The type of plugin to be mapped to a particular name has to be defined using the ``plugin`` parameter in the plugin namespace for each name defined in the server plugin list. Each name in the plugin parameter list is expected to have the ``plugin`` parameter defined."
+msgstr "将特定名称映射到特定插件的类型必须在每个服务器插件列表的插件命名空间中使用“plugin”参数进行定义。预期插件参数列表中的每个名称都应该有“plugin”参数定义。"
 
 
 #: ../../migration/Eloquent.rst:53
 msgid "An example: ``controller_server`` defines the parameter ``controller_plugins`` where a list of plugin names can be defined:"
-msgstr "An example: ``controller_server`` defines the parameter ``controller_plugins`` where a list of plugin names can be defined:"
+msgstr "一个例子：``controller_server`` 定义了参数``controller_plugins``，可以在其中定义插件名称的列表："
 
 
 #: ../../migration/Eloquent.rst:68
 msgid "``FollowPath`` controller is of type ``dwb_local_planner/DWBLocalPlanner`` and ``DynamicFollowPath`` of type ``teb_local_planner/TEBLocalPlanner``. Each plugin will load the parameters in their namespace, e.g. ``FollowPath.max_vel_x``, rather than globally in the server namespace. This will allow multiple plugins of the same type with different parameters and reduce conflicting parameter names."
-msgstr "``FollowPath`` controller is of type ``dwb_local_planner/DWBLocalPlanner`` and ``DynamicFollowPath`` of type ``teb_local_planner/TEBLocalPlanner``. Each plugin will load the parameters in their namespace, e.g. ``FollowPath.max_vel_x``, rather than globally in the server namespace. This will allow multiple plugins of the same type with different parameters and reduce conflicting parameter names."
+msgstr "``FollowPath`` 控制器的类型为 ``dwb_local_planner/DWBLocalPlanner``，而 ``DynamicFollowPath`` 的类型为 ``teb_local_planner/TEBLocalPlanner``。每个插件都将在其命名空间中加载参数，例如 ``FollowPath.max_vel_x``，而不是在服务器命名空间中全局加载。这将允许具有不同参数的多个相同类型的插件，并减少参数名称冲突。"
 
 
 #: ../../migration/Eloquent.rst:72
 msgid "DWB Contains new parameters as an update relative to the ROS 1 updates, `see here for more information <https://github.com/ros-planning/navigation2/pull/1501>`_. Additionally, the controller and planner interfaces were updated to include a ``std::string name`` parameter on initialization. This was added to the interfaces to allow the plugins to know the namespace it should load its parameters in. E.g. for a controller to find the parameter ``FollowPath.max_vel_x``, it must be given its name, ``FollowPath`` to get this parameter. All plugins will be expected to look up parameters in the namespace of its given name."
-msgstr "DWB Contains new parameters as an update relative to the ROS 1 updates, `see here for more information <https://github.com/ros-planning/navigation2/pull/1501>`_. Additionally, the controller and planner interfaces were updated to include a ``std::string name`` parameter on initialization. This was added to the interfaces to allow the plugins to know the namespace it should load its parameters in. E.g. for a controller to find the parameter ``FollowPath.max_vel_x``, it must be given its name, ``FollowPath`` to get this parameter. All plugins will be expected to look up parameters in the namespace of its given name."
+msgstr "DWB 相对于 ROS 1 更新，新增了一些参数，详见 `这里的更多信息 <https://github.com/ros-planning/navigation2/pull/1501>`_。此外，控制器和规划器接口在初始化时更新，包括一个 ``std::string name`` 参数。这个参数被添加到接口中，以便插件知道应该在哪个命名空间中加载其参数。例如，要查找参数 ``FollowPath.max_vel_x``，控制器必须给出它的名称 ``FollowPath``。所有插件都应该在其给定名称的命名空间中查找参数。"
 
 
 #: ../../migration/Eloquent.rst:81
 msgid "Many new behavior tree nodes were added. These behavior tree nodes are now BT plugins and dynamically loadable at run-time using behavior tree cpp v3. The default behavior trees have been upgraded to stop the recovery behaviours and trigger a replanning when the navigation goal is preempted. See ``nav2_behavior_tree`` for a full listing, or :ref:`plugins` for the current list of behavior tree plugins and their descriptions. These plugins are set as default in the ``nav2_bt_navigator`` but may be overridden by the ``bt_plugins`` parameter to include your specific plugins."
-msgstr "Many new behavior tree nodes were added. These behavior tree nodes are now BT plugins and dynamically loadable at run-time using behavior tree cpp v3. The default behavior trees have been upgraded to stop the recovery behaviours and trigger a replanning when the navigation goal is preempted. See ``nav2_behavior_tree`` for a full listing, or :ref:`plugins` for the current list of behavior tree plugins and their descriptions. These plugins are set as default in the ``nav2_bt_navigator`` but may be overridden by the ``bt_plugins`` parameter to include your specific plugins."
+msgstr "添加了许多新的行为树节点。这些行为树节点现在是行为树插件，可以在运行时使用行为树 cpp v3 进行动态加载。默认的行为树已经升级，停止了恢复行为，并在导航目标被中止时触发重新规划。请参阅 ``nav2_behavior_tree`` 获取完整列表，或者参阅 :ref:`plugins` 查看当前的行为树插件列表及其描述。这些插件在 ``nav2_bt_navigator`` 中设置为默认值，但可以通过 ``bt_plugins`` 参数覆盖以包含您特定的插件。"
 
 
 #: ../../migration/Eloquent.rst:87 ../../migration/Foxy.rst:133 ../../migration/Foxy.rst:262
 msgid "Original GitHub tickets:"
-msgstr "Original GitHub tickets:"
+msgstr "原始的 GitHub 问题："
 
 
 #: ../../migration/Eloquent.rst:89
