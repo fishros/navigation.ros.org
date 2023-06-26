@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dynamic Object Following &mdash; Navigation 2 1.0.0 文档</title>
+  <title>动态对象跟随 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -276,14 +276,14 @@
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-node">来自节点的配置文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-launch-file">从启动文件中进行分析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#from-nav2-bringup">来自Nav2 Bringup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_profile.html#interpreting-results">Interpreting Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_profile.html#interpreting-results">解释结果</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Dynamic Object Following</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">动态对象跟随</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-the-behavior-tree">0- Create the Behavior Tree</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#setup-rviz-clicked-point">1- Setup Rviz clicked point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-the-behavior-tree">0- 创建行为树</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-rviz-clicked-point">1- 设置 Rviz 点击点</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-dynamic-object-following-in-nav2-simulation">2- Run Dynamic Object Following in Nav2 Simulation</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Dynamic Object Following</li>
+      <li>动态对象跟随</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="dynamic-object-following">
-<span id="navigation2-dynamic-point-following"></span><h1>Dynamic Object Following<a class="headerlink" href="#dynamic-object-following" title="永久链接至标题"></a></h1>
+<span id="navigation2-dynamic-point-following"></span><h1>动态对象跟随<a class="headerlink" href="#dynamic-object-following" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#tutorial-steps">教程步骤</a></p></li>
@@ -951,7 +951,7 @@
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
 <p>本教程演示了如何在Nav2中执行与从点A到点B的不同任务。在本例中，我们将使用Nav2来无限跟随一个移动对象的距离。</p>
-<p>This task is useful in cases such as following a person or another robot. Below are some sample videos of applications that could be created using this capability. The &quot;Carry My Luggage&quot; RoboCup &#64; Home test, in which the <a class="reference external" href="https://robotics.catie.fr/">CATIE Robotics</a> team performs the test successfully and this real (future) world application:</p>
+<p>这个任务在追踪一个人或另一个机器人的情况下非常有用。以下是一些可以使用这种能力创建的应用程序的示例视频。<code class="docutils literal notranslate"><span class="pre">Carry</span> <span class="pre">My</span> <span class="pre">Luggage</span></code> RoboCup &#64; Home 测试，其中 <a class="reference external" href="https://robotics.catie.fr/">CATIE Robotics</a> 团队成功进行了测试，这是一个真实（未来）世界的应用程序：</p>
 <h1 align="center">
   <div>
     <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
@@ -959,21 +959,20 @@
       <iframe width="450" height="300" src="https://www.youtube.com/embed/KgRKyzsja9Q?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
     </div>
   </div>
-</h1><p>The requirements for this task are as follows:</p>
+</h1><p>该任务的要求如下：</p>
 <ul class="simple">
-<li><p>Changes are limited to the behavior tree used to navigate. This behavior tree can be selected in the <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> action when required, or it can be the default behavior tree. It is made up of run-time configurable plugins.</p></li>
-<li><p>The configuration of the planner and the controller will not be modified.</p></li>
-<li><p>The action will indefinitely run until it is canceled by who initiated it.</p></li>
+<li><p>更改限于用于导航的行为树。此行为树可以在需要时在``NavigateToPose``动作中选择，或者它可以是默认的行为树。它由运行时可配置的插件组成。</p></li>
+<li><p>规划器和控制器的配置不会被修改。</p></li>
+<li><p>该动作将一直运行，直到由启动它的人取消为止。</p></li>
 </ul>
-<p>The detection of the dynamic object (like a person) to follow is outside the scope of this tutorial. As shown in the following diagram, your application should provide a detector for the object(s) of interest,
-send the initial pose to the <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> action, and update it on a topic for the duration of the task. Many different types of detectors exist that you can leverage for this application:</p>
+<p>检测要跟随的动态物体（例如人）超出了本教程的范围。如下图所示，您的应用程序应提供一个用于检测感兴趣物体的探测器，将初始姿态发送到“NavigateToPose”动作，并在任务的整个过程中通过话题进行更新。有许多不同类型的探测器可供您在此应用程序中使用：</p>
 <a class="reference internal image-reference" href="../../_images/main_diagram.png"><img alt="../../_images/main_diagram.png" src="../../_images/main_diagram.png" style="width: 48%;" /></a>
 </div>
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="create-the-behavior-tree">
-<h3>0- Create the Behavior Tree<a class="headerlink" href="#create-the-behavior-tree" title="永久链接至标题"></a></h3>
-<p>Let's start from this simple behavior tree. This behavior tree replans a new path at 1 hz and passes that path to the controller to follow:</p>
+<h3>0- 创建行为树<a class="headerlink" href="#create-the-behavior-tree" title="永久链接至标题"></a></h3>
+<p>让我们从这个简单的行为树开始。该行为树以1赫兹的频率重新规划新路径，并将该路径传递给控制器进行跟随：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -986,7 +985,7 @@ send the initial pose to the <code class="docutils literal notranslate"><span cl
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>First, let's make this behavior run until there's a failure. For this purpose, we will use the <code class="docutils literal notranslate"><span class="pre">KeepRunningUntilFailure</span></code> control node.</p>
+<p>首先，让我们让这个行为一直运行，直到出现故障。为此，我们将使用``KeepRunningUntilFailure``控制节点。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -1001,7 +1000,7 @@ send the initial pose to the <code class="docutils literal notranslate"><span cl
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>We will then use the decorator <code class="docutils literal notranslate"><span class="pre">GoalUpdater</span></code> to accept updates of the dynamic object pose we're trying to follow. This node takes as input the current goal and subscribes to the topic <code class="docutils literal notranslate"><span class="pre">/goal_update</span></code>. It sets the new goal as <code class="docutils literal notranslate"><span class="pre">updated_goal</span></code> if a new goal on that topic is received.</p>
+<p>然后，我们将使用修饰器“GoalUpdater”来接受我们要跟随的动态物体姿态的更新。该节点以当前目标作为输入，并订阅主题“/goal_update”。如果在该主题上接收到新目标，它将将新目标设置为“updated_goal”。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -1018,7 +1017,7 @@ send the initial pose to the <code class="docutils literal notranslate"><span cl
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>To stay at a certain distance from the target, we will use the action node <code class="docutils literal notranslate"><span class="pre">TruncatePath</span></code>. This node modifies a path making it shorter so we don't try to navigate into the object of interest. We can set up the desired distance to the goal using the input port <code class="docutils literal notranslate"><span class="pre">distance</span></code>.</p>
+<p>为了保持与目标的一定距离，我们将使用动作节点``TruncatePath``。该节点会修改路径，使其变短，以便我们不会试图进入感兴趣的对象。我们可以使用输入端口``distance``来设置到目标的期望距离。</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;root</span><span class="w"> </span><span class="na">main_tree_to_execute=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;BehaviorTree</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;MainTree&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;PipelineSequence</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;NavigateWithReplanning&quot;</span><span class="nt">&gt;</span>
@@ -1038,22 +1037,20 @@ send the initial pose to the <code class="docutils literal notranslate"><span cl
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 </div>
-<p>Now, you may save this behavior tree and use it in our navigation task.</p>
-<p>For reference, this exact behavior tree is <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml">made available</a> to you batteries included in the <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> package.</p>
+<p>现在，您可以保存这个行为树并在我们的导航任务中使用它。</p>
+<p>供您使用的确切行为树可以在``nav2_bt_navigator``包中找到，链接在`此处 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml">https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml</a>&gt;`_。</p>
 </div>
 <div class="section" id="setup-rviz-clicked-point">
-<h3>1- Setup Rviz clicked point<a class="headerlink" href="#setup-rviz-clicked-point" title="永久链接至标题"></a></h3>
-<p>We are going to use RViz instead of a full application so you can test at home without finding a detector to get started. We will use the &quot;clicked point&quot; button on the toolbar to substitute object detections to provide goal updates to Nav2. This button allows you to
-publish coordinates in the topic <code class="docutils literal notranslate"><span class="pre">/clicked_point</span></code>. This point needs to be sent to the behavior tree, using the program <code class="docutils literal notranslate"><span class="pre">clicked_point_to_pose</span></code>, from <a class="reference external" href="https://github.com/fmrico/nav2_test_utils">this repo</a>. Clone
-this repo in your workspace, build, and type in a terminal.</p>
+<h3>1- 设置 Rviz 点击点<a class="headerlink" href="#setup-rviz-clicked-point" title="永久链接至标题"></a></h3>
+<p>我们将使用RViz而不是完整的应用程序，这样您就可以在家中进行测试，而无需找到一个探测器来开始。我们将使用工具栏上的“clicked point”按钮，用来替代对象检测，以向Nav2提供目标更新。该按钮允许您在主题``/clicked_point``中发布坐标。这个点需要通过程序``clicked_point_to_pose``发送到行为树，从`此存储库 &lt;<a class="reference external" href="https://github.com/fmrico/nav2_test_utils">https://github.com/fmrico/nav2_test_utils</a>&gt;`_中获取。在您的工作空间中克隆此存储库，构建并在终端中输入命令。</p>
 <p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">nav2_test_utils</span> <span class="pre">clicked_point_to_pose</span></code></p>
-<p>Optionally, you can remap this topic in your rviz configuration file to <code class="docutils literal notranslate"><span class="pre">goal_updates</span></code>.</p>
+<p>可选地，您可以在rviz配置文件中重新映射此主题为``goal_updates``。</p>
 </div>
 <div class="section" id="run-dynamic-object-following-in-nav2-simulation">
 <h3>2- Run Dynamic Object Following in Nav2 Simulation<a class="headerlink" href="#run-dynamic-object-following-in-nav2-simulation" title="永久链接至标题"></a></h3>
-<p>Start Nav2 in one terminal:</p>
+<p>在一个终端中启动Nav2：</p>
 <p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">tb3_simulation_launch.py</span> <span class="pre">default_bt_xml_filename:=/path/to/bt.xml</span></code></p>
-<p>Open RViz and, after initialize the robot position, command the robot to navigate to any position. Use the button clicked point to simulate a new detection of the object of interest, as shown in the video in the head of this tutorial.</p>
+<p>打开RViz，在初始化机器人位置后，命令机器人导航到任意位置。使用点击点按钮模拟对感兴趣对象的新检测，如本教程开头的视频所示。</p>
 <p>When you have a detector detecting your obstacle at a higher rate (1 hz, 10 hz, 100 hz) you will see a far more reactive robot following your detected object of interest!</p>
 <h1 align="center">
   <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">

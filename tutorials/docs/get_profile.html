@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Dynamic Object Following" href="navigation2_dynamic_point_following.html" />
+    <link rel="next" title="动态对象跟随" href="navigation2_dynamic_point_following.html" />
     <link rel="prev" title="在ROS 2 / Nav2中获取回溯" href="get_backtrace.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -276,14 +276,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#profile-from-a-node">来自节点的配置文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#profile-from-a-launch-file">从启动文件中进行分析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">来自Nav2 Bringup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#interpreting-results">Interpreting Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpreting-results">解释结果</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="navigation2_dynamic_point_following.html">Dynamic Object Following</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_dynamic_point_following.html">动态对象跟随</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_dynamic_point_following.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_dynamic_point_following.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#create-the-behavior-tree">0- Create the Behavior Tree</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#setup-rviz-clicked-point">1- Setup Rviz clicked point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#create-the-behavior-tree">0- 创建行为树</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#setup-rviz-clicked-point">1- 设置 Rviz 点击点</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#run-dynamic-object-following-in-nav2-simulation">2- Run Dynamic Object Following in Nav2 Simulation</a></li>
 </ul>
 </li>
@@ -1027,12 +1027,12 @@ kcachegrind<span class="w"> </span>callgrind.out.XXX
 <p>重要的是在Nav2之前启动分析器节点，这样它可以接收生命周期管理器发出的信号以进行状态转换。</p>
 </div>
 <div class="section" id="interpreting-results">
-<h2>Interpreting Results<a class="headerlink" href="#interpreting-results" title="永久链接至标题"></a></h2>
+<h2>解释结果<a class="headerlink" href="#interpreting-results" title="永久链接至标题"></a></h2>
 <p>一旦您获得了``callgrind``结果，无论您是通过节点、启动文件、Nav2还是其他方式进行分析，现在我们可以通过分析分析器的结果来识别性能瓶颈或潜在改进的领域。使用``kcachegrind``:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kcachegrind<span class="w"> </span>callgrind.out.XXX
 </pre></div>
 </div>
-<p>This should open a window looking like below. The left side shows all of the calls and their relative percentages of compute time they and their children functions utilized.</p>
+<p>这将打开一个看起来如下图所示的窗口。左侧显示了所有调用及其所使用的计算时间及其子函数所占的相对比例。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/kcachegrind.png"><img alt="../../_images/kcachegrind.png" class="align-center" src="../../_images/kcachegrind.png" style="width: 600px; height: 450px;" /></a>
 </div></blockquote>
