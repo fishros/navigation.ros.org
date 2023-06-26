@@ -6225,7 +6225,7 @@ msgstr "\"LaserScan\""
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:118 ../../configuration/packages/costmap-plugins/voxel.rst:184
 msgid "Data type of input, LaserScan or PointCloud2."
-msgstr "Data type of input, LaserScan or PointCloud2."
+msgstr "输入数据的类型，可以是LaserScan或PointCloud2。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6235,7 +6235,7 @@ msgstr "``<obstacle layer>``. ``<data source>``.min_obstacle_height"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:129 ../../configuration/packages/costmap-plugins/voxel.rst:195
 msgid "Minimum height to add return to occupancy grid."
-msgstr "Minimum height to add return to occupancy grid."
+msgstr "添加到占据栅格的最小高度值。"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
@@ -6245,47 +6245,47 @@ msgstr "``<obstacle layer>``. ``<data source>``.max_obstacle_height"
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.inf_is_valid"
-msgstr "``<obstacle layer>``. ``<data source>``.inf_is_valid"
+msgstr "``<障碍物图层>``. ``<数据源>``.inf_is_valid"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:151 ../../configuration/packages/costmap-plugins/voxel.rst:217
 msgid "Are infinite returns from laser scanners valid measurements to raycast."
-msgstr "Are infinite returns from laser scanners valid measurements to raycast."
+msgstr "激光扫描仪返回的无穷远处障碍物是否有效"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.marking"
-msgstr "``<obstacle layer>``. ``<data source>``.marking"
+msgstr "``<障碍物图层>``. ``<数据源>``.marking"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:162 ../../configuration/packages/costmap-plugins/voxel.rst:228
 msgid "Whether source should mark in costmap."
-msgstr "Whether source should mark in costmap."
+msgstr "是否在代价地图中标记来源"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.clearing"
-msgstr "``<obstacle layer>``. ``<data source>``.clearing"
+msgstr "``<障碍物图层>``. ``<数据源>``.clearing"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:173 ../../configuration/packages/costmap-plugins/voxel.rst:239
 msgid "Whether source should raytrace clear in costmap."
-msgstr "Whether source should raytrace clear in costmap."
+msgstr "是否在代价地图中进行光线追踪清除"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.obstacle_max_range"
-msgstr "``<obstacle layer>``. ``<data source>``.obstacle_max_range"
+msgstr "``<障碍物图层>``. ``<数据源>``.obstacle_max_range"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:184 ../../configuration/packages/costmap-plugins/voxel.rst:250
 msgid "Maximum range to mark obstacles in costmap."
-msgstr "Maximum range to mark obstacles in costmap."
+msgstr "在代价地图中标记障碍物的最大范围"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.obstacle_min_range"
-msgstr "``<obstacle layer>``. ``<data source>``.obstacle_min_range"
+msgstr "``<障碍物图层>``. ``<数据源>``.obstacle_min_range"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:195 ../../configuration/packages/costmap-plugins/voxel.rst:261
@@ -6295,7 +6295,7 @@ msgstr "Minimum range to mark obstacles in costmap."
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.raytrace_max_range"
-msgstr "``<obstacle layer>``. ``<data source>``.raytrace_max_range"
+msgstr "``<障碍物图层>``. ``<数据源>``.raytrace_max_range"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:206 ../../configuration/packages/costmap-plugins/voxel.rst:272
@@ -6305,7 +6305,7 @@ msgstr "Maximum range to raytrace clear obstacles from costmap."
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst
 msgid "``<obstacle layer>``. ``<data source>``.raytrace_min_range"
-msgstr "``<obstacle layer>``. ``<data source>``.raytrace_min_range"
+msgstr "``<障碍物图层>``. ``<数据源>``.raytrace_min_range"
 
 
 #: ../../configuration/packages/costmap-plugins/obstacle.rst:217 ../../configuration/packages/costmap-plugins/voxel.rst:283
