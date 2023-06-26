@@ -507,7 +507,7 @@ msgstr "在本指南中，我们将介绍如何将我们机器人的里程计系
 
 #: ../../setup_guides/odom/setup_odom.rst:7 ../../setup_guides/urdf/setup_urdf.rst:9
 msgid "The complete source code in this tutorial can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description>`_ repository under the ``sam_bot_description`` package. Note that the repository contains the full code after accomplishing all the tutorials in this guide."
-msgstr "The complete source code in this tutorial can be found in `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description>`_ repository under the ``sam_bot_description`` package. Note that the repository contains the full code after accomplishing all the tutorials in this guide."
+msgstr "本教程中的完整源代码可以在 `navigation2_tutorials <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description>`_ 存储库的 ``sam_bot_description`` 包中找到。请注意，该存储库包含完成本指南中所有教程后的完整代码。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:10
@@ -517,7 +517,7 @@ msgstr "里程计简介"
 
 #: ../../setup_guides/odom/setup_odom.rst:12
 msgid "The odometry system provides a locally accurate estimate of a robot's pose and velocity based on its motion. The odometry information can be obtained from various sources such as IMU, LIDAR, RADAR, VIO, and wheel encoders. One thing to note is that IMUs drift over time while wheel encoders drift over distance traveled, thus they are often used together to counter each other's negative characteristics."
-msgstr "The odometry system provides a locally accurate estimate of a robot's pose and velocity based on its motion. The odometry information can be obtained from various sources such as IMU, LIDAR, RADAR, VIO, and wheel encoders. One thing to note is that IMUs drift over time while wheel encoders drift over distance traveled, thus they are often used together to counter each other's negative characteristics."
+msgstr "里程计系统根据机器人的运动提供局部精确的姿态和速度估计。里程计信息可以从各种来源获取，例如惯性测量单元 (IMU)、激光雷达 (LIDAR)、雷达 (RADAR)、视觉惯性里程计 (VIO) 和轮子编码器。需要注意的是，IMU会随时间漂移，而轮子编码器会随行驶距离漂移，因此通常将它们结合使用以抵消彼此的负面特征。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:14
@@ -527,7 +527,7 @@ msgstr "``odom``坐标系及其相关变换使用机器人的里程计系统发�
 
 #: ../../setup_guides/odom/setup_odom.rst:16
 msgid "As discussed in the previous guides and in `REP 105 <https://www.ros.org/reps/rep-0105.html>`_, the ``odom`` frame is connected to the rest of the system and Nav2 through the ``odom`` => ``base_link`` transform. This transform is published by a tf2 broadcaster or by frameworks such as ``robot_localization``, which also provide additional functionalities. We will be talking more about ``robot_localization`` in a following section."
-msgstr "As discussed in the previous guides and in `REP 105 <https://www.ros.org/reps/rep-0105.html>`_, the ``odom`` frame is connected to the rest of the system and Nav2 through the ``odom`` => ``base_link`` transform. This transform is published by a tf2 broadcaster or by frameworks such as ``robot_localization``, which also provide additional functionalities. We will be talking more about ``robot_localization`` in a following section."
+msgstr "如前面的指南和 `REP 105 <https://www.ros.org/reps/rep-0105.html>`_ 中所讨论的那样，``odom`` 坐标系与系统的其余部分和 Nav2 通过 ``odom`` => ``base_link`` 变换相连。这个变换由 tf2 发布器或像 ``robot_localization`` 这样的框架发布。``robot_localization`` 还提供额外的功能。我们将在后面的章节中详细讨论 ``robot_localization``。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:18
@@ -537,7 +537,7 @@ msgstr "除了必需的``odom`` => ``base_link``变换之外，Nav2还需要发�
 
 #: ../../setup_guides/odom/setup_odom.rst:38
 msgid "This message tells us the estimates for the pose and velocity of the robot. The ``header`` message provides the timestamped data in a given coordinate frame. The ``pose`` message provides the position and orientation of the robot relative to the frame specified in ``header.frame_id``. The ``twist`` message gives the linear and angular velocity relative to the frame defined in ``child_frame_id``."
-msgstr "This message tells us the estimates for the pose and velocity of the robot. The ``header`` message provides the timestamped data in a given coordinate frame. The ``pose`` message provides the position and orientation of the robot relative to the frame specified in ``header.frame_id``. The ``twist`` message gives the linear and angular velocity relative to the frame defined in ``child_frame_id``."
+msgstr "该消息告诉我们机器人的姿态和速度估计值。``header`` 消息在给定坐标系中提供时间戳数据。``pose`` 消息提供机器人相对于 ``header.frame_id`` 指定的坐标系的位置和方向。``twist`` 消息提供相对于 ``child_frame_id`` 中定义的坐标系的线速度和角速度。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:42
@@ -547,67 +547,67 @@ msgstr "设置机器人的里程计"
 
 #: ../../setup_guides/odom/setup_odom.rst:44
 msgid "Setting up the odometry system for Nav2 for your physical robot depends a lot on which odometry sensors are available with your robot. Due to the large number of configurations your robot may have, specific setup instructions will not be within the scope of this tutorial. Instead, we will provide some basic examples and useful resources to help you configure your robot for Nav2."
-msgstr "Setting up the odometry system for Nav2 for your physical robot depends a lot on which odometry sensors are available with your robot. Due to the large number of configurations your robot may have, specific setup instructions will not be within the scope of this tutorial. Instead, we will provide some basic examples and useful resources to help you configure your robot for Nav2."
+msgstr "为 Nav2 设置物理机器人的里程计系统主要取决于机器人可用的里程计传感器。由于您的机器人可能有大量的配置，特定的设置说明不在本教程的范围内。相反，我们将提供一些基本示例和有用的资源，以帮助您为 Nav2 配置机器人。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:46
 msgid "To start, we will use an example of a robot with wheel encoders as its odometry source. Note that wheel encoders are not required for Nav2 but it is common in most setups. The goal in setting up the odometry is to compute the odometry information and publish the ``nav_msgs/Odometry`` message and ``odom`` => ``base_link`` transform over ROS 2. To calculate this information, you will need to setup some code that will translate wheel encoder information into odometry information, similar to the snippet below:"
-msgstr "To start, we will use an example of a robot with wheel encoders as its odometry source. Note that wheel encoders are not required for Nav2 but it is common in most setups. The goal in setting up the odometry is to compute the odometry information and publish the ``nav_msgs/Odometry`` message and ``odom`` => ``base_link`` transform over ROS 2. To calculate this information, you will need to setup some code that will translate wheel encoder information into odometry information, similar to the snippet below:"
+msgstr "首先，我们将使用一个带有轮式编码器作为里程计来源的机器人示例。请注意，轮式编码器在Nav2中并不是必需的，但在大多数设置中很常见。设置里程计的目标是计算里程计信息，并通过ROS 2发布``nav_msgs/Odometry``消息和``odom`` => ``base_link``转换。为了计算这些信息，您需要设置一些代码，将轮式编码器信息转换为里程计信息，类似下面的代码片段："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:53
 msgid "The ``right_wheel_est_vel`` and ``left_wheel_est_vel`` are the estimated velocities of the right and left wheels respectively, and the ``wheel separation`` is the distance between the wheels. The values of ``right_wheel_est_vel`` and ``left_wheel_est_vel`` can be obtained by simply getting the changes in the positions of the wheel joints over time. This information can then be used to publish the Nav2 requirements. A basic example on how to do this can be found in the Navigation documentation on odometry `located here <http://wiki.ros.org/navigation/Tutorials/RobotSetup/Odom/>`_"
-msgstr "The ``right_wheel_est_vel`` and ``left_wheel_est_vel`` are the estimated velocities of the right and left wheels respectively, and the ``wheel separation`` is the distance between the wheels. The values of ``right_wheel_est_vel`` and ``left_wheel_est_vel`` can be obtained by simply getting the changes in the positions of the wheel joints over time. This information can then be used to publish the Nav2 requirements. A basic example on how to do this can be found in the Navigation documentation on odometry `located here <http://wiki.ros.org/navigation/Tutorials/RobotSetup/Odom/>`_"
+msgstr "``right_wheel_est_vel`` 和 ``left_wheel_est_vel`` 分别是右轮和左轮的估计速度，而 ``wheel separation`` 是轮子之间的距离。可以通过简单地获取轮子关节随时间的位置变化来获得 ``right_wheel_est_vel`` 和 ``left_wheel_est_vel`` 的值。然后可以使用这些信息来发布 Nav2 的要求。有关如何执行此操作的基本示例，请参阅里程计导航文档中的 `此处 <http://wiki.ros.org/navigatio"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:55
 msgid "An alternative to manually publishing this information that we recommend is through the ``ros2_control`` framework. The ``ros2_control`` framework contains various packages for real-time control of robots in ROS 2. For wheel encoders, ``ros2_control`` has a ``diff_drive_controller`` (differential drive controller) under the ``ros2_controller`` package. The ``diff_drive_controller`` takes in the ``geometry_msgs/Twist`` messages published on ``cmd_vel`` topic, computes odometry information, and publishes ``nav_msgs/Odometry`` messages on ``odom`` topic. Other packages that deal with different kind of sensors are also available in ``ros2_control``."
-msgstr "An alternative to manually publishing this information that we recommend is through the ``ros2_control`` framework. The ``ros2_control`` framework contains various packages for real-time control of robots in ROS 2. For wheel encoders, ``ros2_control`` has a ``diff_drive_controller`` (differential drive controller) under the ``ros2_controller`` package. The ``diff_drive_controller`` takes in the ``geometry_msgs/Twist`` messages published on ``cmd_vel`` topic, computes odometry information, and publishes ``nav_msgs/Odometry`` messages on ``odom`` topic. Other packages that deal with different kind of sensors are also available in ``ros2_control``."
+msgstr "我们建议的一种手动发布此信息的替代方法是通过``ros2_control``框架。``ros2_control``框架包含了用于在ROS 2中实时控制机器人的各种软件包。对于轮式编码器，``ros2_control``在``ros2_controller``软件包中提供了一个``diff_drive_controller``（差动驱动控制器）。``diff_drive_controller``接收在``cmd_vel``话题上发布的``geometry_msgs/Twist``消息，计算里程计信息，并在``odom``话题上发布``nav_msgs/Odometry``消息。``ros2_control``还提供了处理不同类型传感器的其他软件包。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:58
 msgid "For more information, see the `ros2_control documentation <https://ros-controls.github.io/control.ros.org/>`_ and the `Github repository of diff_drive_controller <https://github.com/ros-controls/ros2_controllers/tree/master/diff_drive_controller/>`_."
-msgstr "For more information, see the `ros2_control documentation <https://ros-controls.github.io/control.ros.org/>`_ and the `Github repository of diff_drive_controller <https://github.com/ros-controls/ros2_controllers/tree/master/diff_drive_controller/>`_."
+msgstr "要获取更多信息，请参阅 `ros2_control 文档 <https://ros-controls.github.io/control.ros.org/>`_ 和 `diff_drive_controller 的 Github 存储库 <https://github.com/ros-controls/ros2_controllers/tree/master/diff_drive_controller/>`_。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:60
 msgid "For other types of sensors such as IMU, VIO, etc, their respective ROS drivers should have documentation on how publish the odometry information. Keep in mind that Nav2 requires the ``nav_msgs/Odometry`` message and ``odom`` => ``base_link`` transforms to be published and this should be your goal when setting up your odometry system."
-msgstr "For other types of sensors such as IMU, VIO, etc, their respective ROS drivers should have documentation on how publish the odometry information. Keep in mind that Nav2 requires the ``nav_msgs/Odometry`` message and ``odom`` => ``base_link`` transforms to be published and this should be your goal when setting up your odometry system."
+msgstr "对于其他类型的传感器（如IMU、VIO等），它们各自的ROS驱动程序应该有关于如何发布里程计信息的文档。请记住，Nav2要求发布``nav_msgs/Odometry``消息和``odom`` => ``base_link``转换，这应该是您在设置里程计系统时的目标。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:63
 msgid "Simulating an Odometry System using Gazebo"
-msgstr "Simulating an Odometry System using Gazebo"
+msgstr "使用 Gazebo 模拟 Odometry 系统"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:65
 msgid "In this section, we will be using Gazebo to simulate the odometry system of ``sam_bot``, the robot that we built in the previous section of this tutorial series. You may go through that guide first or grab the `complete source here  <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description/>`_."
-msgstr "In this section, we will be using Gazebo to simulate the odometry system of ``sam_bot``, the robot that we built in the previous section of this tutorial series. You may go through that guide first or grab the `complete source here  <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description/>`_."
+msgstr "在本节中，我们将使用Gazebo模拟``sam_bot``的里程计系统，这是我们在本教程系列的上一节中构建的机器人。您可以先阅读那个指南或在 `此处获取完整源代码 <https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description/>`_。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:67
 msgid "If you are working on your own physical robot and have already set up your odometry sensors, you may opt to skip this section and head onto the next one where we fuse IMU and odometry messages to provide a smooth ``odom`` => ``base_link`` transformation."
-msgstr "If you are working on your own physical robot and have already set up your odometry sensors, you may opt to skip this section and head onto the next one where we fuse IMU and odometry messages to provide a smooth ``odom`` => ``base_link`` transformation."
+msgstr "如果您正在使用自己的物理机器人并已经设置好了里程计传感器，您可以选择跳过本节，直接进入下一节，在那里我们将融合 IMU 和里程计消息以提供平滑的 ``odom`` => ``base_link`` 转换。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:69
 msgid "As an overview for this section, we will first setup Gazebo and the necessary packages required to make it work with ROS 2. Next, we will be adding Gazebo plugins, which simulate an IMU sensor and a differential drive odometry system, in order to publish ``sensor_msgs/Imu`` and ``nav_msgs/Odometry`` messages respectively. Lastly, we will spawn ``sam_bot`` in a Gazebo environment and verify the published ``sensor_msgs/Imu`` and ``nav_msgs/Odometry`` messages over ROS 2."
-msgstr "As an overview for this section, we will first setup Gazebo and the necessary packages required to make it work with ROS 2. Next, we will be adding Gazebo plugins, which simulate an IMU sensor and a differential drive odometry system, in order to publish ``sensor_msgs/Imu`` and ``nav_msgs/Odometry`` messages respectively. Lastly, we will spawn ``sam_bot`` in a Gazebo environment and verify the published ``sensor_msgs/Imu`` and ``nav_msgs/Odometry`` messages over ROS 2."
+msgstr "作为本节的概述，我们将首先设置Gazebo和必要的软件包，使其与ROS 2配合工作。接下来，我们将添加Gazebo插件，分别模拟IMU传感器和差动驱动里程计系统，以发布``sensor_msgs/Imu``和``nav_msgs/Odometry``消息。最后，我们将在Gazebo环境中生成``sam_bot``并通过ROS 2验证发布的``sensor_msgs/Imu``和``nav_msgs/Odometry``消息。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:72
 msgid "Setup and Prerequisites"
-msgstr "Setup and Prerequisites"
+msgstr "设置和先决条件"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:74
 msgid "`Gazebo <http://gazebosim.org/>`_ is a 3D simulator that allows us to observe how our virtual robot will function in a simulated environment. To start using Gazebo with ROS 2, follow the installation instructions in the `Gazebo Installation Documentation <http://gazebosim.org/tutorials?cat=install>`_."
-msgstr "`Gazebo <http://gazebosim.org/>`_ is a 3D simulator that allows us to observe how our virtual robot will function in a simulated environment. To start using Gazebo with ROS 2, follow the installation instructions in the `Gazebo Installation Documentation <http://gazebosim.org/tutorials?cat=install>`_."
+msgstr "``Gazebo <http://gazebosim.org/>``_是一个3D模拟器，可以让我们观察虚拟机器人在模拟环境中的运行情况。要开始使用Gazebo和ROS 2，请按照`Gazebo安装文档 <http://ga"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:76
 msgid "We also need to install the ``gazebo_ros_pkgs`` package to simulate odometry and control the robot with ROS 2 in Gazebo:"
-msgstr "We also need to install the ``gazebo_ros_pkgs`` package to simulate odometry and control the robot with ROS 2 in Gazebo:"
+msgstr "我们还需要安装 ``gazebo_ros_pkgs`` 包，以便在 Gazebo 中模拟里程计并使用 ROS 2 控制机器人："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:82
@@ -617,7 +617,7 @@ msgstr "You can test if you have successfully set up your ROS 2 and Gazebo envir
 
 #: ../../setup_guides/odom/setup_odom.rst:84
 msgid "Note that we described ``sam_bot`` using URDF. However, Gazebo uses `Simulation Description Format (SDF) <http://sdformat.org/>`_ to describe a robot in its simulated environment. Fortunately, Gazebo automatically translates compatible URDF files into SDF. The main requirement for the URDF to be compatible with Gazebo is to have an ``<inertia>`` element within each ``<link>`` element. This requirement is already satisfied in the URDF file of ``sam_bot``, so it can already be used in Gazebo."
-msgstr "Note that we described ``sam_bot`` using URDF. However, Gazebo uses `Simulation Description Format (SDF) <http://sdformat.org/>`_ to describe a robot in its simulated environment. Fortunately, Gazebo automatically translates compatible URDF files into SDF. The main requirement for the URDF to be compatible with Gazebo is to have an ``<inertia>`` element within each ``<link>`` element. This requirement is already satisfied in the URDF file of ``sam_bot``, so it can already be used in Gazebo."
+msgstr "请注意，我们使用 URDF 描述了 ``sam_bot``。然而，Gazebo 使用 `Simulation Description Format (SDF) <http://sdformat.org/>`_ 来描述机器人在模拟环境中的情况。幸运的是，Gazebo 可以自动将兼容的 URDF 文件转换为 SDF。使 URDF 与 Gazebo 兼容的主要要求是在每个 ``<link>`` 元素中具有一个 ``<inertia>`` 元素。``sam_bot`` 的 URDF 文件已经满足了这个要求，因此它可以直接在 Gazebo 中使用。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:87
@@ -627,7 +627,7 @@ msgstr "For more information on how to use URDF in Gazebo, see `Tutorial: Using 
 
 #: ../../setup_guides/odom/setup_odom.rst:90 ../../setup_guides/sensors/setup_sensors.rst:66
 msgid "Adding Gazebo Plugins to a URDF"
-msgstr "Adding Gazebo Plugins to a URDF"
+msgstr "向 URDF 添加 Gazebo 插件"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:92
