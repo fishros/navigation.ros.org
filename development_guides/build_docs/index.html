@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build and Install &mdash; Navigation 2 1.0.0 文档</title>
+  <title>构建和安装 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Build Troubleshooting Guide" href="build_troubleshooting_guide.html" />
+    <link rel="next" title="构建故障排除指南" href="build_troubleshooting_guide.html" />
     <link rel="prev" title="Development Guides" href="../index.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -57,9 +57,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development Guides</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Build and Install</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build">Build</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">构建和安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build">构建</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#released-distribution-binaries">Released Distribution Binaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rolling-development-source">Rolling Development Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#docker-container-images">Docker Container Images</a></li>
@@ -67,7 +67,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#generate-doxygen">Generate Doxygen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#help">Help</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build_troubleshooting_guide.html">Build Troubleshooting Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build_troubleshooting_guide.html">构建故障排除指南</a></li>
 </ul>
 </li>
 </ul>
@@ -206,7 +206,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">General Tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">常规教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html">使用实体Turtlebot 3导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#requirements">要求</a></li>
@@ -317,7 +317,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#what-is-the-rotation-shim-controller">什么是旋转垫片控制器？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-rotation-shim-controller">配置旋转垫片控制器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-primary-controller">Configuring Primary Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-primary-controller">配置主控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#demo-execution">演示执行</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Development Guides</a> &raquo;</li>
-      <li>Build and Install</li>
+      <li>构建和安装</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,9 +939,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="build-and-install">
-<span id="build-instructions"></span><h1>Build and Install<a class="headerlink" href="#build-and-install" title="永久链接至标题"></a></h1>
+<span id="build-instructions"></span><h1>构建和安装<a class="headerlink" href="#build-and-install" title="永久链接至标题"></a></h1>
 <div class="section" id="install">
-<h2>Install<a class="headerlink" href="#install" title="永久链接至标题"></a></h2>
+<h2>安装<a class="headerlink" href="#install" title="永久链接至标题"></a></h2>
 <p>Nav2 and its dependencies are released as binaries.
 You may install it via the following to get the latest stable released version:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/ros/&lt;distro&gt;/setup.bash
@@ -953,7 +953,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </div>
 </div>
 <div class="section" id="build">
-<h2>Build<a class="headerlink" href="#build" title="永久链接至标题"></a></h2>
+<h2>构建<a class="headerlink" href="#build" title="永久链接至标题"></a></h2>
 <p>There are a few ways to build Nav2 using:</p>
 <ul class="simple">
 <li><p>Released Distribution Binaries</p>
@@ -1078,7 +1078,7 @@ The documentation entrypoint in a browser is index.html.</p>
 <hr class="docutils" />
 <div class="section" id="help">
 <h2>Help<a class="headerlink" href="#help" title="永久链接至标题"></a></h2>
-<p><a class="reference internal" href="build_troubleshooting_guide.html#build-troubleshooting-guide"><span class="std std-ref">Build Troubleshooting Guide</span></a></p>
+<p><a class="reference internal" href="build_troubleshooting_guide.html#build-troubleshooting-guide"><span class="std std-ref">构建故障排除指南</span></a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

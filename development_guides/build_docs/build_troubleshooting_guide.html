@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Troubleshooting Guide &mdash; Navigation 2 1.0.0 文档</title>
+  <title>构建故障排除指南 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Dev Containers" href="../devcontainer_docs/index.html" />
-    <link rel="prev" title="Build and Install" href="index.html" />
+    <link rel="prev" title="构建和安装" href="index.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -57,9 +57,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development Guides</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Build and Install</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="index.html#install">Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#build">Build</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">构建和安装</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#install">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#build">构建</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="index.html#released-distribution-binaries">Released Distribution Binaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index.html#rolling-development-source">Rolling Development Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index.html#docker-container-images">Docker Container Images</a></li>
@@ -67,7 +67,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#generate-doxygen">Generate Doxygen</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#help">Help</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Build Troubleshooting Guide</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">构建故障排除指南</a></li>
 </ul>
 </li>
 </ul>
@@ -206,7 +206,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">General Tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">常规教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html">使用实体Turtlebot 3导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/navigation2_on_real_turtlebot3.html#requirements">要求</a></li>
@@ -317,7 +317,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#what-is-the-rotation-shim-controller">什么是旋转垫片控制器？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-rotation-shim-controller">配置旋转垫片控制器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-primary-controller">Configuring Primary Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#configuring-primary-controller">配置主控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tutorials/docs/using_shim_controller.html#demo-execution">演示执行</a></li>
 </ul>
 </li>
@@ -929,8 +929,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Development Guides</a> &raquo;</li>
-          <li><a href="index.html">Build and Install</a> &raquo;</li>
-      <li>Build Troubleshooting Guide</li>
+          <li><a href="index.html">构建和安装</a> &raquo;</li>
+      <li>构建故障排除指南</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,27 +940,26 @@
            <div itemprop="articleBody">
              
   <div class="section" id="build-troubleshooting-guide">
-<span id="id1"></span><h1>Build Troubleshooting Guide<a class="headerlink" href="#build-troubleshooting-guide" title="永久链接至标题"></a></h1>
+<span id="id1"></span><h1>构建故障排除指南<a class="headerlink" href="#build-troubleshooting-guide" title="永久链接至标题"></a></h1>
 <div class="section" id="common-nav2-dependencies-build-failures">
-<h2>Common Nav2 Dependencies Build Failures<a class="headerlink" href="#common-nav2-dependencies-build-failures" title="永久链接至标题"></a></h2>
+<h2>常见Nav2依赖项构建失败<a class="headerlink" href="#common-nav2-dependencies-build-failures" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>Make sure that .bashrc file has no ROS environment variables in it. Open new terminals and try to build the packages again.</p></li>
-<li><p>Make sure to run rosdep for the correct ROS 2 distribution.
-<code class="docutils literal notranslate"><span class="pre">rosdep</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-r</span> <span class="pre">-q</span> <span class="pre">--from-paths</span> <span class="pre">src</span> <span class="pre">--ignore-src</span> <span class="pre">--rosdistro</span> <span class="pre">&lt;ros2-distro&gt;</span></code></p></li>
-<li><p>Make sure that the <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> is sourced in the ROS 2 installation or ROS 2 main build workspace, if applicable. Check if you can run talker and listener nodes.</p></li>
-<li><p>Make sure that the <code class="docutils literal notranslate"><span class="pre">setup.bash</span></code> in <code class="docutils literal notranslate"><span class="pre">nav2_depend_ws/install</span></code> is sourced.</p></li>
-<li><p>Check if you have the correct ROS version and distribution. <code class="docutils literal notranslate"><span class="pre">printenv</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">ROS</span></code></p></li>
-<li><p>If you see a bunch of errors on startup about <code class="docutils literal notranslate"><span class="pre">map</span></code> or <code class="docutils literal notranslate"><span class="pre">odom</span></code> frame not existing, remember to activate drivers (or gazebo for simulation) and set an initial pose in <code class="docutils literal notranslate"><span class="pre">map</span></code> frame. Costmap2D will block activation until a full TF tree is available.</p></li>
-<li><p>Make sure you've activated the lifecycle nodes if you're not seeing transforms or servers running.</p></li>
-<li><p>Search <a class="reference external" href="https://github.com/ros-planning/navigation2/issues">GitHub Issues</a></p></li>
-<li><p>Make sure you're using the correct branch for your distribution. There is no cross support from branch for <code class="docutils literal notranslate"><span class="pre">DistroA</span></code> in <code class="docutils literal notranslate"><span class="pre">DistroB</span></code>. The main development branch uses the rolling distribution.</p></li>
+<li><p>确保.bashrc文件中没有ROS环境变量。打开新的终端并尝试重新构建软件包。</p></li>
+<li><p>确保对正确的ROS 2发行版运行rosdep。<code class="docutils literal notranslate"><span class="pre">rosdep</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-r</span> <span class="pre">-q</span> <span class="pre">--from-paths</span> <span class="pre">src</span> <span class="pre">--ignore-src</span> <span class="pre">--rosdistro</span> <span class="pre">&lt;ros2-distro&gt;</span></code></p></li>
+<li><p>确保在ROS 2安装或ROS 2主要构建工作区中（如果适用），已加载``setup.bash``文件。检查是否可以运行talker和listener节点。</p></li>
+<li><p>确保在``nav2_depend_ws/install``目录中的``setup.bash``已被引用。</p></li>
+<li><p>检查是否使用了正确的ROS版本和发行版。<code class="docutils literal notranslate"><span class="pre">printenv</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">ROS</span></code></p></li>
+<li><p>如果在启动时看到关于``map``或``odom``坐标系不存在的错误，请记得激活驱动程序（或用于仿真的gazebo）并在``map``坐标系中设置初始姿态。只有在完整的TF树可用时，Costmap2D才会阻止激活。</p></li>
+<li><p>如果未看到转换或服务器运行，请确保已激活生命周期节点。</p></li>
+<li><p>在`GitHub Issues &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues">https://github.com/ros-planning/navigation2/issues</a>&gt;`_中进行搜索。</p></li>
+<li><p>确保为您的发行版使用正确的分支。在``DistroB``中，没有来自``DistroA``的跨支持。主要开发分支使用rolling发行版。</p></li>
 </ul>
-<p>Still can't solve it? Let us know about your issue. <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">Open a ticket</a>.</p>
+<p>仍然无法解决？告诉我们您的问题。<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">提交工单</a>。</p>
 </div>
 <div class="section" id="reporting-issue">
-<h2>Reporting Issue<a class="headerlink" href="#reporting-issue" title="永久链接至标题"></a></h2>
+<h2>报告问题<a class="headerlink" href="#reporting-issue" title="永久链接至标题"></a></h2>
 <ul class="simple">
-<li><p>If you run into any issues when building Navigation2, you can use the search tool in the issues tab on <a class="reference external" href="https://github.com/ros-planning/navigation2/issues">GitHub</a> and always feel free to <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">open a ticket</a>.</p></li>
+<li><p>如果在构建Navigation2时遇到任何问题，您可以在`GitHub &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues">https://github.com/ros-planning/navigation2/issues</a>&gt;`_的问题选项卡中使用搜索工具，并随时`提交工单 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/issues/new">https://github.com/ros-planning/navigation2/issues/new</a>&gt;`_。</p></li>
 </ul>
 </div>
 </div>

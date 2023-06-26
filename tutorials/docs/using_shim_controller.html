@@ -57,9 +57,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../development_guides/index.html">Development Guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../development_guides/build_docs/index.html">Build and Install</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../development_guides/build_docs/index.html#install">Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../development_guides/build_docs/index.html#build">Build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_guides/build_docs/index.html">构建和安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_guides/build_docs/index.html#install">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_guides/build_docs/index.html#build">构建</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../development_guides/build_docs/index.html#released-distribution-binaries">Released Distribution Binaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../development_guides/build_docs/index.html#rolling-development-source">Rolling Development Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../development_guides/build_docs/index.html#docker-container-images">Docker Container Images</a></li>
@@ -67,7 +67,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_guides/build_docs/index.html#generate-doxygen">Generate Doxygen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_guides/build_docs/index.html#help">Help</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../development_guides/build_docs/build_troubleshooting_guide.html">Build Troubleshooting Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_guides/build_docs/build_troubleshooting_guide.html">构建故障排除指南</a></li>
 </ul>
 </li>
 </ul>
@@ -206,7 +206,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">General Tutorials</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">常规教程</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="navigation2_on_real_turtlebot3.html">使用实体Turtlebot 3导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#requirements">要求</a></li>
@@ -317,7 +317,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-is-the-rotation-shim-controller">什么是旋转垫片控制器？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-rotation-shim-controller">配置旋转垫片控制器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-primary-controller">Configuring Primary Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-primary-controller">配置主控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demo-execution">演示执行</a></li>
 </ul>
 </li>
@@ -928,7 +928,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">General Tutorials</a> &raquo;</li>
+          <li><a href="../index.html">常规教程</a> &raquo;</li>
       <li>使用旋转垫片控制器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -970,7 +970,7 @@
 </div>
 <div class="section" id="configuring-rotation-shim-controller">
 <h2>配置旋转垫片控制器<a class="headerlink" href="#configuring-rotation-shim-controller" title="永久链接至标题"></a></h2>
-<p>This controller is a <em>shim</em> because it is placed between the primary controller plugin and the controller server. It takes commands and pre-processes them to rotate to the heading and then passes off execution-control to the primary plugin once that condition is met - acting as a simple pass through.</p>
+<p>该控制器是一个*shim*，因为它位于主控制器插件和控制器服务器之间。它接收命令并对其进行预处理以旋转到指定的航向，一旦满足该条件，就将执行控制转交给主插件-充当简单的传递通道。</p>
 <p>因此，它的配置与任何其他插件的配置非常相似。在下面的代码块中，您可以看到我们将``RotationShimController``作为控制器服务器中路径追踪的插件添加进去了。您还可以看到我们通过下面的内部参数``angular_dist_threshold``到``max_angular_accel``对其进行了配置。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1000,18 +1000,18 @@
 <span class="w">      </span><span class="nt">simulate_ahead_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
 </pre></div>
 </div>
-<p>The Rotation Shim Controller is very simple and only has a couple of parameters to dictate the conditions it should be enacted.</p>
+<p>旋转shim控制器非常简单，只有几个参数用于规定其应被激活的条件。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">angular_dist_threshold</span></code>: The angular distance (in radians) apart from the robot's current heading and the approximated path heading to trigger the rotation behavior. Once the robot is within this threshold, control is handed over to the primary controller plugin.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">forward_sampling_distance</span></code>: The distance (in meters) away from the robot to select a point on the path to approximate the path's starting heading at. This is analogous to a &quot;lookahead&quot; point.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rotate_to_heading_angular_vel</span></code>: The angular velocity (in rad/s) to have the robot rotate to heading by, when the behavior is enacted.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code>: The angular acceleration (in rad/s/s) to have the robot rotate to heading by, when the behavior is enacted.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">simulate_ahead_time</span></code>: The Time (s) to forward project the rotation command to check for collision</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angular_dist_threshold</span></code>：机器人当前航向与近似路径航向之间的角度距离（以弧度表示），以触发旋转行为。一旦机器人处于此阈值内，控制权将移交给主要控制器插件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forward_sampling_distance</span></code>: 离机器人一定距离（以米为单位），选择路径上的一点来近似路径的起始航向。这类似于“前瞻”点。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rotate_to_heading_angular_vel</span></code>：行为执行时，使机器人旋转到目标航向所需的角速度（以弧度/秒表示）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code>: 当激活该行为时，使机器人旋转到指定航向所需的角加速度（以弧度/秒²为单位）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">simulate_ahead_time</span></code>：前向投影旋转命令以检查碰撞的时间（以秒为单位）。</p></li>
 </ul>
 </div>
 <div class="section" id="configuring-primary-controller">
-<h2>Configuring Primary Controller<a class="headerlink" href="#configuring-primary-controller" title="永久链接至标题"></a></h2>
-<p>There is one more remaining parameter of the <code class="docutils literal notranslate"><span class="pre">RotationShimController</span></code> not mentioned above, the <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code>. This is the type of controller that your application would like to use as the primary modus operandi. It will share the same name and yaml namespace as the shim plugin. You can observe this below with the primary controller set the <code class="docutils literal notranslate"><span class="pre">DWB</span></code> (with the progress and goal checkers removed for brevity).</p>
+<h2>配置主控制器<a class="headerlink" href="#configuring-primary-controller" title="永久链接至标题"></a></h2>
+<p>还有一个未在上述提及的``RotationShimController``参数，即``primary_controller``。这是您的应用程序想要用作主要操作模式的控制器类型。它将与shim插件共享相同的名称和yaml命名空间。您可以在下面观察到这一点，其中主要控制器设置为``DWB``（为简洁起见，已删除进度和目标检查器）。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">use_sim_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1035,7 +1035,7 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
-<p>An important note is that <strong>within the same yaml namespace</strong>, you may also include any <code class="docutils literal notranslate"><span class="pre">primary_controller</span></code> specific parameters required for a robot. Thusly, after <code class="docutils literal notranslate"><span class="pre">max_angular_accel</span></code>, you can include any of <code class="docutils literal notranslate"><span class="pre">DWB</span></code>'s parameters for your platform.</p>
+<p>重要提示是，在**同一yaml命名空间**中，您还可以包含任何所需的“primary_controller”特定参数以配置机器人。因此，在``max_angular_accel``之后，您可以包含任何适用于您平台的``DWB``参数。</p>
 </div>
 <div class="section" id="demo-execution">
 <h2>演示执行<a class="headerlink" href="#demo-execution" title="永久链接至标题"></a></h2>
