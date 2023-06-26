@@ -707,7 +707,7 @@ msgstr "导航到项目的根目录并执行以下命令"
 
 #: ../../setup_guides/odom/setup_odom.rst:306
 msgid "Gazebo should launch and you should see a 3D model of ``sam_bot``:"
-msgstr "Gazebo should launch and you should see a 3D model of ``sam_bot``:"
+msgstr "Gazebo 应该会启动，您应该会看到一个名为 ``sam_bot`` 的三维模型:"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:312
@@ -717,7 +717,7 @@ msgstr "要查看系统中的活动话题，请打开一个新的终端并执行
 
 #: ../../setup_guides/odom/setup_odom.rst:318
 msgid "You should see ``/demo/imu`` and ``/demo/odom`` in the list of topics."
-msgstr "You should see ``/demo/imu`` and ``/demo/odom`` in the list of topics."
+msgstr "您应该在话题列表中看到 ``/demo/imu`` 和 ``/demo/odom``。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:320
@@ -727,7 +727,7 @@ msgstr "要查看有关话题的更多信息，请执行"
 
 #: ../../setup_guides/odom/setup_odom.rst:327
 msgid "You should see an output similar to below:"
-msgstr "You should see an output similar to below:"
+msgstr "您应该会看到类似下面的输出:"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:341
@@ -737,7 +737,7 @@ msgstr "注意，``/demo/imu`` 话题发布的是 ``sensor_msgs/Imu`` 类型的�
 
 #: ../../setup_guides/odom/setup_odom.rst:344
 msgid "Robot Localization Demo"
-msgstr "Robot Localization Demo"
+msgstr "机器人定位演示"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:346
@@ -747,77 +747,77 @@ msgstr "``robot_localization`` 包用于从 ``N`` 个里程计传感器输入的
 
 #: ../../setup_guides/odom/setup_odom.rst:348
 msgid "A usual robot setup consists of at least the wheel encoders and IMU as its odometry sensor sources. When multiple sources are provided to ``robot_localization``, it is able to fuse the odometry information given by the sensors through the use of state estimation nodes. These nodes make use of either an Extended Kalman filter (``ekf_node``) or an Unscented Kalman Filter (``ukf_node``) to implement this fusion. In addition, the package also implements a ``navsat_transform_node`` which transforms geographic coordinates into the robot’s world frame when working with GPS."
-msgstr "A usual robot setup consists of at least the wheel encoders and IMU as its odometry sensor sources. When multiple sources are provided to ``robot_localization``, it is able to fuse the odometry information given by the sensors through the use of state estimation nodes. These nodes make use of either an Extended Kalman filter (``ekf_node``) or an Unscented Kalman Filter (``ukf_node``) to implement this fusion. In addition, the package also implements a ``navsat_transform_node`` which transforms geographic coordinates into the robot’s world frame when working with GPS."
+msgstr "通常的机器人设置至少包括轮编码器和惯性测量单元 (IMU) 作为其里程计传感器来源。当``robot_localization``接收到多个传感器提供的里程计信息时，它可以通过使用状态估计节点来融合传感器提供的里程计信息。这些节点使用扩展卡尔曼滤波器(``ekf_node``)或无迹卡尔曼滤波器(``ukf_node``)来实现融合。此外，该软件包还实现了一个``navsat_transform_node``，在使用GPS时将地理坐标转换为机器人的世界坐标系。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:350
 msgid "Fused sensor data is published by the ``robot_localization`` package through the ``odometry/filtered`` and the ``accel/filtered`` topics, if enabled in its configuration. In addition, it can also publish the ``odom`` => ``base_link`` transform on the ``/tf`` topic."
-msgstr "Fused sensor data is published by the ``robot_localization`` package through the ``odometry/filtered`` and the ``accel/filtered`` topics, if enabled in its configuration. In addition, it can also publish the ``odom`` => ``base_link`` transform on the ``/tf`` topic."
+msgstr "如果在配置中启用了``robot_localization``软件包，它将通过``odometry/filtered``和``accel/filtered``主题发布融合的传感器数据。此外，它还可以在``/tf``主题上发布``odom`` => ``base_link``的变换。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:353
 msgid "More details on ``robot_localization`` can be found in the official `Robot Localization Documentation <http://docs.ros.org/en/noetic/api/robot_localization/html/index.html>`_."
-msgstr "More details on ``robot_localization`` can be found in the official `Robot Localization Documentation <http://docs.ros.org/en/noetic/api/robot_localization/html/index.html>`_."
+msgstr "有关``robot_localization``的更多详细信息，请参阅官方的 `Robot Localization 文档 <http://docs.ros.org/en/noetic/api/robot_localization/html/index.html>`_。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:355
 msgid "If your robot is only able to provide one odometry source, the use of ``robot_localization`` would have minimal effects aside from smoothing. In this case, an alternative approach is to publish transforms through a tf2 broadcaster in your single source of odometry node. Nevertheless, you can still opt to use ``robot_localization`` to publish the transforms and some smoothing properties may still be observed in the output."
-msgstr "If your robot is only able to provide one odometry source, the use of ``robot_localization`` would have minimal effects aside from smoothing. In this case, an alternative approach is to publish transforms through a tf2 broadcaster in your single source of odometry node. Nevertheless, you can still opt to use ``robot_localization`` to publish the transforms and some smoothing properties may still be observed in the output."
+msgstr "如果您的机器人只能提供一个里程计源，使用``robot_localization``除了平滑效果外，几乎没有其他影响。在这种情况下，另一种方法是通过单个里程计源节点使用tf2广播器发布变换。然而，您仍然可以选择使用``robot_localization``来发布变换，输出结果可能仍然具有一定的平滑效果。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:358
 msgid "For more information on how to write a tf2 broadcaster, you can check Writing a tf2 broadcaster `(C++)  <https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Cpp.html>`_  `(Python)  <https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Py.html>`_."
-msgstr "For more information on how to write a tf2 broadcaster, you can check Writing a tf2 broadcaster `(C++)  <https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Cpp.html>`_  `(Python)  <https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Py.html>`_."
+msgstr "有关如何编写 tf2 广播器的更多信息，请查阅如下链接: Writing a tf2 broadcaster `(C++)  <https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Cpp.html>`_  `(Python)  <https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Py.html>`_。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:360
 msgid "For the rest of this section, we will show how to use ``robot_localization`` to fuse the sensors of ``sam_bot``. It will use the ``sensor_msgs/Imu`` messages published on ``/demo/Imu`` and the ``nav_msgs/Odometry`` message published on ``/demo/odom`` and then it will publish data on ``odometry/filtered``,  ``accel/filtered``, and ``/tf`` topics."
-msgstr "For the rest of this section, we will show how to use ``robot_localization`` to fuse the sensors of ``sam_bot``. It will use the ``sensor_msgs/Imu`` messages published on ``/demo/Imu`` and the ``nav_msgs/Odometry`` message published on ``/demo/odom`` and then it will publish data on ``odometry/filtered``,  ``accel/filtered``, and ``/tf`` topics."
+msgstr "在本节的其余部分中，我们将展示如何使用``robot_localization``来融合``sam_bot``的传感器。它将使用发布在``/demo/Imu``上的``sensor_msgs/Imu``消息和发布在``/demo/odom``上的``nav_msgs/Odometry``消息，然后在``odometry/filtered``、``accel/filtered``和``/tf``主题上发布数据。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:363
 msgid "Configuring Robot Localization"
-msgstr "Configuring Robot Localization"
+msgstr "配置机器人定位"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:365
 msgid "Let us now configure the ``robot_localization`` package to use an Extended Kalman Filter (``ekf_node``) to fuse odometry information and publish the ``odom`` => ``base_link`` transform."
-msgstr "Let us now configure the ``robot_localization`` package to use an Extended Kalman Filter (``ekf_node``) to fuse odometry information and publish the ``odom`` => ``base_link`` transform."
+msgstr "现在让我们配置``robot_localization``软件包，使用扩展卡尔曼滤波器（``ekf_node``）来融合里程计信息，并发布``odom`` => ``base_link``的变换。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:367
 msgid "First, install the ``robot_localization`` package using your machines package manager or by executing the following command:"
-msgstr "First, install the ``robot_localization`` package using your machines package manager or by executing the following command:"
+msgstr "首先，使用您的机器的软件包管理器安装``robot_localization``软件包，或者执行以下命令进行安装："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:373
 msgid "Next, we specify the parameters of the ``ekf_node`` using a YAML file. Create a directory named ``config`` at the root of your project and create a file named ``ekf.yaml``. Copy the following lines of code into your ``ekf.yaml`` file."
-msgstr "Next, we specify the parameters of the ``ekf_node`` using a YAML file. Create a directory named ``config`` at the root of your project and create a file named ``ekf.yaml``. Copy the following lines of code into your ``ekf.yaml`` file."
+msgstr "接下来，我们使用一个YAML文件来指定``ekf_node``的参数。在您的项目根目录下创建一个名为``config``的目录，并创建一个名为``ekf.yaml``的文件。将以下代码复制到``ekf.yaml``文件中。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:425
 msgid "In this configuration, we defined the parameter values of ``frequency``, ``two_d_mode``, ``publish_acceleration``, ``publish_tf``, ``map_frame``, ``odom_frame``, ``base_link_frame``, and ``world_frame``. For more information on the other parameters you can modify, see `Parameters of state estimation nodes <http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters>`_, and a sample ``efk.yaml`` can be found `here <https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml>`_."
-msgstr "In this configuration, we defined the parameter values of ``frequency``, ``two_d_mode``, ``publish_acceleration``, ``publish_tf``, ``map_frame``, ``odom_frame``, ``base_link_frame``, and ``world_frame``. For more information on the other parameters you can modify, see `Parameters of state estimation nodes <http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters>`_, and a sample ``efk.yaml`` can be found `here <https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml>`_."
+msgstr "在这个配置中，我们定义了``frequency``、``two_d_mode``、``publish_acceleration``、``publish_tf``、``map_frame``、``odom_frame``、``base_link_frame``和``world_frame``的参数值。有关您可以修改的其他参数的详细信息，请参阅`状态估计节点的参数 <http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters>`_，以及示例``efk.yaml``可以在`这里找到 <https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml>`_。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:427
 msgid "To add a sensor input to the ``ekf_filter_node``, add the next number in the sequence to its base name (odom, imu, pose, twist). In our case, we have one ``nav_msgs/Odometry`` and one ``sensor_msgs/Imu`` as inputs to the filter, thus we use ``odom0`` and ``imu0``. We set the value of ``odom0`` to ``demo/odom``, which is the topic that publishes the ``nav_msgs/Odometry``. Similarly, we set the value of ``imu0`` to the topic that publishes ``sensor_msgs/Imu``, which is ``demo/imu``."
-msgstr "To add a sensor input to the ``ekf_filter_node``, add the next number in the sequence to its base name (odom, imu, pose, twist). In our case, we have one ``nav_msgs/Odometry`` and one ``sensor_msgs/Imu`` as inputs to the filter, thus we use ``odom0`` and ``imu0``. We set the value of ``odom0`` to ``demo/odom``, which is the topic that publishes the ``nav_msgs/Odometry``. Similarly, we set the value of ``imu0`` to the topic that publishes ``sensor_msgs/Imu``, which is ``demo/imu``."
+msgstr "要将传感器输入添加到``ekf_filter_node``，请将序列中的下一个数字添加到其基本名称（odom、imu、pose、twist）。在我们的例子中，我们有一个``nav_msgs/Odometry``和一个``sensor_msgs/Imu``作为滤波器的输入，因此我们使用``odom0``和``imu0``。我们将``odom0``的值设置为``demo/odom``，它是发布``nav_msgs/Odometry``的主题。类似地，我们将``imu0``的值设置为发布``sensor_msgs/Imu``的主题，即``demo/imu``。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:429
 msgid "You can specify which values from a sensor are to be used by the filter using the ``_config`` parameter. The order of the values of this parameter is x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az. In our example, we set everything in ``odom0_config`` to ``false`` except the 1st, 2nd, 3rd, and 12th entries, which means the filter will only use the x, y, z, and the vyaw values of ``odom0``."
-msgstr "You can specify which values from a sensor are to be used by the filter using the ``_config`` parameter. The order of the values of this parameter is x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az. In our example, we set everything in ``odom0_config`` to ``false`` except the 1st, 2nd, 3rd, and 12th entries, which means the filter will only use the x, y, z, and the vyaw values of ``odom0``."
+msgstr "您可以使用``_config``参数指定要由滤波器使用的传感器的值。该参数的值的顺序是x、y、z、roll、pitch、yaw、vx、vy、vz、vroll、vpitch、vyaw、ax、ay、az。在我们的例子中，我们将``odom0_config``中除了第1、2、3和12个条目以外的所有条目都设置为``false``，这意味着滤波器只会使用``odom0``的x、y、z和vyaw的值。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:431
 msgid "In the ``imu0_config`` matrix, you'll notice that only roll, pitch, and yaw are used. Typical mobile robot-grade IMUs will also provide angular velocities and linear accelerations. For ``robot_localization`` to work properly, you should not fuse in multiple fields that are derivative of each other. Since angular velocity is fused internally to the IMU to provide the roll, pitch and yaw estimates, we should not fuse in the angular velocities used to derive that information. We also do not fuse in angular velocity due to the noisy characteristics it has when not using exceptionally high quality (and expensive) IMUs."
-msgstr "In the ``imu0_config`` matrix, you'll notice that only roll, pitch, and yaw are used. Typical mobile robot-grade IMUs will also provide angular velocities and linear accelerations. For ``robot_localization`` to work properly, you should not fuse in multiple fields that are derivative of each other. Since angular velocity is fused internally to the IMU to provide the roll, pitch and yaw estimates, we should not fuse in the angular velocities used to derive that information. We also do not fuse in angular velocity due to the noisy characteristics it has when not using exceptionally high quality (and expensive) IMUs."
+msgstr "在``imu0_config``矩阵中，您会注意到只使用了滚转、俯仰和偏航。典型的移动机器人级别的IMU还会提供角速度和线性加速度。为了使``robot_localization``正常工作，您不应该融合多个彼此有导数关系的字段。由于角速度在IMU内部被融合以提供滚转、俯仰和偏航的估计，我们不应该融合用"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:434
 msgid "For more advise on configuration of input data to ``robot_localization``, see `Preparing Your Data for Use with robot_localization <http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html#odometry>`_, and `Configuring robot_localization <http://docs.ros.org/en/melodic/api/robot_localization/html/configuring_robot_localization.html>`_."
-msgstr "For more advise on configuration of input data to ``robot_localization``, see `Preparing Your Data for Use with robot_localization <http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html#odometry>`_, and `Configuring robot_localization <http://docs.ros.org/en/melodic/api/robot_localization/html/configuring_robot_localization.html>`_."
+msgstr "有关将输入数据配置为``robot_localization``的更多建议，请参阅`准备用于robot_localization的数据 <http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html#odometry>`_，以及`配置robot_localization <http://docs.ros.org/en/melodic/api/robot_localization/html/configuring_robot_localization.html>`_。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:440
@@ -827,7 +827,7 @@ msgstr "Now, let us add the ``ekf_node`` into the launch file. Open ``launch/dis
 
 #: ../../setup_guides/odom/setup_odom.rst:452
 msgid "Next, add the following launch arguments within the ``return launch.LaunchDescription([`` block."
-msgstr "Next, add the following launch arguments within the ``return launch.LaunchDescription([`` block."
+msgstr "接下来，在``return launch.LaunchDescription([``块中添加以下启动参数。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:459
@@ -837,7 +837,7 @@ msgstr "Lastly, add ``robot_localization_node,`` above the ``rviz_node`` line to
 
 #: ../../setup_guides/odom/setup_odom.rst:469
 msgid "Next, we need to add the ``robot_localization`` dependency to our package definition. Open ``package.xml`` and add the following line below the last ``<exec_depend>`` tag."
-msgstr "Next, we need to add the ``robot_localization`` dependency to our package definition. Open ``package.xml`` and add the following line below the last ``<exec_depend>`` tag."
+msgstr "接下来，我们需要将``robot_localization``依赖项添加到我们的软件包定义中。打开``package.xml``，并在最后一个``<exec_depend>``标签下面添加以下行。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:475
