@@ -582,7 +582,7 @@ msgstr "因此，我们希望启动一项重新品牌的工作，以便与其创
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:21
 msgid "**Project output requirements** - Work with maintainers to come up with a new name, logo, and color scheme - Develop a new landing package using these elements and developed graphics - Migrate the existing website to the new one - Add a blog feature and document the structure and editing process for future developers"
-msgstr "**Project output requirements** - Work with maintainers to come up with a new name, logo, and color scheme - Develop a new landing package using these elements and developed graphics - Migrate the existing website to the new one - Add a blog feature and document the structure and editing process for future developers"
+msgstr "**项目输出要求** - 与维护者合作，提出一个新的名称、标志和配色方案 - 使用这些元素和开发的图形开发一个新的入口页面 - 将现有网站迁移到新网站 - 添加博客功能并为未来的开发人员记录结构和编辑过程"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:29
@@ -592,77 +592,77 @@ msgstr "设计和图形包"
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:30
 msgid "Web technologies"
-msgstr "Web technologies"
+msgstr "Web 技术"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:31
 msgid "Creative thinking"
-msgstr "Creative thinking"
+msgstr "创造性思维"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:35
 msgid "`Github issue <https://github.com/ros-planning/navigation2/issues/1485>`_"
-msgstr "`Github issue <https://github.com/ros-planning/navigation2/issues/1485>`_"
+msgstr "`Github 问题 <https://github.com/ros-planning/navigation2/issues/1485>`_"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:5
 msgid "5. Navigation Safety Node"
-msgstr "5. Navigation Safety Node"
+msgstr "5. 导航安全节点"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:9
 msgid "The aim of this project is to create a safety watchdog node to ensure the robot is acting properly and not about to collide with an obstacle. Typical safety-rated lidars will contain \"safety zones\" whereas if any sensor points are located in a box around the lidar, then the lidar will send a signal to the robot to stop due to a potential collision. However, less and less people are using safety-rated lidars as consumer available lidars are dropping in cost and 3D lidars are seeing more use in mobile robotics."
-msgstr "The aim of this project is to create a safety watchdog node to ensure the robot is acting properly and not about to collide with an obstacle. Typical safety-rated lidars will contain \"safety zones\" whereas if any sensor points are located in a box around the lidar, then the lidar will send a signal to the robot to stop due to a potential collision. However, less and less people are using safety-rated lidars as consumer available lidars are dropping in cost and 3D lidars are seeing more use in mobile robotics."
+msgstr "该项目的目标是创建一个安全监控节点，以确保机器人的行为正常，不会与障碍物发生碰撞。通常安全级别的激光雷达会包含\"安全区域\"，即如果任何传感器点位于激光雷达周围的一个框中，那么激光雷达将向机器人发送信号，要求其停止以避免潜在的碰撞。然而，随着消费者可用的激光雷达成本降低和3D激光雷达在移动机器人领域的应用增多，使用安全级别的激光雷达的人越来越少。"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:11
 msgid "Your project will be to re-create this logic at the Navigation level. While this wouldn't be \"safety certified\", this is a significant functional improvement on safety that could potentially safe real people from real injuries in the real-world. The project will be to create a node that sits below the navigation stack but above the robot controller to do the following:"
-msgstr "Your project will be to re-create this logic at the Navigation level. While this wouldn't be \"safety certified\", this is a significant functional improvement on safety that could potentially safe real people from real injuries in the real-world. The project will be to create a node that sits below the navigation stack but above the robot controller to do the following:"
+msgstr "你的项目是在导航层级上重新创建这个逻辑。虽然这不会得到“安全认证”，但它对安全性是一个重大的功能改进，有可能在现实世界中保护真实的人们免受真实的伤害。该项目的目标是创建一个位于导航栈下方但位于机器人控制器上方的节点，完成以下任务："
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:13
 msgid "Take in the current command velocity from navigation and the most recent laser or RGBD scan"
-msgstr "Take in the current command velocity from navigation and the most recent laser or RGBD scan"
+msgstr "接收来自导航的当前命令速度和最近的激光扫描或RGBD扫描"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:14
 msgid "Projecting the velocity forward in time ``N`` seconds, check if that velocity will result in a collision with any sensor measurements"
-msgstr "Projecting the velocity forward in time ``N`` seconds, check if that velocity will result in a collision with any sensor measurements"
+msgstr "预测将来 ``N`` 秒内的速度，并检查该速度是否会与任何传感器测量结果发生碰撞"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:15
 msgid "If not, allow the velocity command through to the base"
-msgstr "If not, allow the velocity command through to the base"
+msgstr "如果没有问题，将速度命令传递到底盘"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:16
 msgid "If it does collide, scale back the velocity such that the robot will always be at minimum ``N`` seconds from a collision"
-msgstr "If it does collide, scale back the velocity such that the robot will always be at minimum ``N`` seconds from a collision"
+msgstr "如果发生碰撞，降低速度，使得机器人始终与碰撞至少相隔 ``N`` 秒"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:17
 msgid "Optionally if a flag is set, if ``M`` or more points are in defined bounding boxes around the robot, send only ``0`` commands to enact an emergency stop."
-msgstr "Optionally if a flag is set, if ``M`` or more points are in defined bounding boxes around the robot, send only ``0`` commands to enact an emergency stop."
+msgstr "可选地，如果设置了标志，并且定义的边界框中有``M``个或更多点位于机器人周围，只发送``0``命令以执行紧急停止操作。"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:19
 msgid "This will be an excellent chance to make mobile robots and Nav2 users significantly safer and run at higher speeds in their production or research environments. It goes a long way for functional safety for those not using safety-rated lidars which contain similar features."
-msgstr "This will be an excellent chance to make mobile robots and Nav2 users significantly safer and run at higher speeds in their production or research environments. It goes a long way for functional safety for those not using safety-rated lidars which contain similar features."
+msgstr "这将是使移动机器人和Nav2用户在生产或研究环境中显著提高安全性和运行速度的绝佳机会。对于那些不使用具备类似功能的安全级激光雷达的用户而言，这在功能安全方面起到了很大的作用。"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:27
 msgid "**Project output requirements** - Creation of a ROS 2 node that will prevent robot collision based on lidar and/or RGBD data - Node should be able to run at lidar data speed (40hz+) and adjust velocity commands accordingly - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box"
-msgstr "**Project output requirements** - Creation of a ROS 2 node that will prevent robot collision based on lidar and/or RGBD data - Node should be able to run at lidar data speed (40hz+) and adjust velocity commands accordingly - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box"
+msgstr "**项目输出要求** - 创建一个基于激光雷达和/或RGBD数据的ROS 2节点，用于防止机器人碰撞 - 节点应能够以激光雷达数据的速度运行（40赫兹以上），并相应地调整速度指令 - 如果时间允许，可以调整/添加新的批评者到DWB本地规划器，以改进其性能对用户的安全性能"
 
 
 #: ../../2021summerOfCode/projects/safety_node.rst:43
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/1899>`_"
-msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/1899>`_"
+msgstr "`Github问题单 <https://github.com/ros-planning/navigation2/issues/1899>`_"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:5
 msgid "6. Semantic Integration"
-msgstr "6. Semantic Integration"
+msgstr "6. 语义集成"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:9
@@ -672,7 +672,7 @@ msgstr "This project is to create a semantics library and integrate it into the 
 
 #: ../../2021summerOfCode/projects/semantics.rst:11
 msgid "After creating the generic representation, your project will be to create demonstrations within Nav2 using this capability including a route planning server to replace the planner server in situations where you have a pre-defined set of potential locales (non-free space planning) and another demonstration of your choice."
-msgstr "After creating the generic representation, your project will be to create demonstrations within Nav2 using this capability including a route planning server to replace the planner server in situations where you have a pre-defined set of potential locales (non-free space planning) and another demonstration of your choice."
+msgstr "在创建通用表示后，您的项目将是在Nav2中使用此功能创建演示，包括一个路线规划服务器，用于在您有一个预定义的潜在场所集合（非自由空间规划）的情况下替代规划服务器，并提供另一种您选择的演示。"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:13
@@ -682,7 +682,7 @@ msgstr "**Project difficulty: Hard**"
 
 #: ../../2021summerOfCode/projects/semantics.rst:19
 msgid "**Project output requirements** - Generic semantics standard added to Nav2 documentation - Generic semantics ROS 2 library that implements the standard and makes it easy for applications to get, retreive, or analyze semantic data for custom purposes - A route server to enable navigation-graph and/or route following capabilities - 1 more demonstration using the semantics library of your choice (could be costmap layer with different rules in different rooms or with different objects, a multi-story building demo using semantic info to allow a robot to plan and execute multi-story trajectories, etc)"
-msgstr "**Project output requirements** - Generic semantics standard added to Nav2 documentation - Generic semantics ROS 2 library that implements the standard and makes it easy for applications to get, retreive, or analyze semantic data for custom purposes - A route server to enable navigation-graph and/or route following capabilities - 1 more demonstration using the semantics library of your choice (could be costmap layer with different rules in different rooms or with different objects, a multi-story building demo using semantic info to allow a robot to plan and execute multi-story trajectories, etc)"
+msgstr "**项目输出要求** - 在Nav2文档中添加通用语义标准 - 实现该标准并使应用程序能够轻松获取、检索或分析用于自定义目的的语义数据的通用语义ROS 2库 - 一个路线服务器，用于实现导航图和/或路线跟踪功能 - 使用您选择的语义库的另一个演示（可以是具有不同规则的代价地图层，具有不同房间或不同对象的多层建筑演示，利用语义信息允许机器人规划和执行多层轨迹等）"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:27
@@ -692,7 +692,7 @@ msgstr "C++, Python, ROS 2"
 
 #: ../../2021summerOfCode/projects/semantics.rst:28
 msgid "Mobile robot navigation or manipulation experience"
-msgstr "Mobile robot navigation or manipulation experience"
+msgstr "移动机器人导航或操作经验"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:29
@@ -702,7 +702,7 @@ msgstr "Perception, semantic information motivation, or similar."
 
 #: ../../2021summerOfCode/projects/semantics.rst:36
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/1595>`_"
-msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/1595>`_"
+msgstr "`Github工单 <https://github.com/ros-planning/navigation2/issues/1595>`_"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:37
@@ -712,7 +712,7 @@ msgstr "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/2229
 
 #: ../../2021summerOfCode/projects/spinners.rst:6
 msgid "7. Reduce ROS 2 Nodes and Determinism"
-msgstr "7. Reduce ROS 2 Nodes and Determinism"
+msgstr "7. 减少ROS 2节点和确定性"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:10
