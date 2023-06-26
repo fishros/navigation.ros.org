@@ -150,9 +150,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../odom/setup_odom.html">设置里程计</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#odometry-introduction">里程计简介</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#setting-up-odometry-on-your-robot">设置机器人的里程计</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">Simulating an Odometry System using Gazebo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#setup-and-prerequisites">Setup and Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#adding-gazebo-plugins-to-a-urdf">Adding Gazebo Plugins to a URDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">使用 Gazebo 模拟 Odometry 系统</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#setup-and-prerequisites">设置和先决条件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#adding-gazebo-plugins-to-a-urdf">向 URDF 添加 Gazebo 插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#launch-and-build-files">Launch and Build Files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#simulating-sensors-using-gazebo">Simulating Sensors using Gazebo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#adding-gazebo-plugins-to-a-urdf">Adding Gazebo Plugins to a URDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#adding-gazebo-plugins-to-a-urdf">向 URDF 添加 Gazebo 插件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#launch-and-build-files">Launch and Build Files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
@@ -943,7 +943,7 @@
 <p>For this guide, we will be creating the Unified Robot Description Format (URDF) file for a simple differential drive robot to give you hands-on experience on working with URDF. We will also setup the robot state publisher and visualize our model in RVIZ. Lastly, we will be adding some kinematic properties to our robot URDF to prepare it for simulation purposes. These steps are necessary to represent all the sensor, hardware, and robot transforms of your robot for use in navigation.</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>The complete source code in this tutorial can be found in <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description">navigation2_tutorials</a> repository under the <code class="docutils literal notranslate"><span class="pre">sam_bot_description</span></code> package. Note that the repository contains the full code after accomplishing all the tutorials in this guide.</p>
+<p>本教程中的完整源代码可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/tree/master/sam_bot_description">navigation2_tutorials</a> 存储库的 <code class="docutils literal notranslate"><span class="pre">sam_bot_description</span></code> 包中找到。请注意，该存储库包含完成本指南中所有教程后的完整代码。</p>
 </div>
 <div class="section" id="urdf-and-the-robot-state-publisher">
 <h2>URDF and the Robot State Publisher<a class="headerlink" href="#urdf-and-the-robot-state-publisher" title="永久链接至标题"></a></h2>
