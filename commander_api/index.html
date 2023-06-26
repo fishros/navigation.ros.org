@@ -889,7 +889,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">指挥官 API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-api">Costmap API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#footprint-collision-checker-api">Footprint Collision Checker API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#footprint-collision-checker-api">足迹碰撞检查器 API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examples-and-demos">Examples and Demos</a></li>
 </ul>
 </li>
@@ -1125,47 +1125,39 @@ localizer='amcl')</p></td>
 <td><p>获取全局 frame_id。</p></td>
 </tr>
 <tr class="row-even"><td><p>getCostmapTimestamp()</p></td>
-<td><p>Get costmap timestamp.</p></td>
+<td><p>获取代价地图的时间戳。</p></td>
 </tr>
 <tr class="row-odd"><td><p>getCostXY(mx, my)</p></td>
-<td><p>Get the cost (<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>) of a cell in the costmap using mx (<code class="docutils literal notranslate"><span class="pre">int</span></code>)
-, my (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of Map Coordinate.</p></td>
+<td><p>使用地图坐标中的mx（<code class="docutils literal notranslate"><span class="pre">int</span></code>）和my（<code class="docutils literal notranslate"><span class="pre">int</span></code>）获取代价地图中单元格的代价（<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>）。</p></td>
 </tr>
-<tr class="row-even"><td><p>getCostIdx(index)</p></td>
-<td><p>Get the cost (<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>) of a cell in the costmap using index (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</p></td>
+<tr class="row-even"><td><p>getCostIdx（index）</p></td>
+<td><p>使用索引（<code class="docutils literal notranslate"><span class="pre">int</span></code>）获取代价地图中单元格的代价（<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>）。</p></td>
 </tr>
-<tr class="row-odd"><td><p>setCost(mx, my, cost)</p></td>
-<td><p>Set the cost (<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>) of a cell in the costmap using mx (<code class="docutils literal notranslate"><span class="pre">int</span></code>)
-, my (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of Map Coordinate.</p></td>
+<tr class="row-odd"><td><p>setCost（mx，my，cost）</p></td>
+<td><p>使用地图坐标中的mx（<code class="docutils literal notranslate"><span class="pre">int</span></code>）和my（<code class="docutils literal notranslate"><span class="pre">int</span></code>）设置代价地图中单元格的代价（<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>）。</p></td>
 </tr>
-<tr class="row-even"><td><p>mapToWorld(mx, my)</p></td>
-<td><p>Get the wx (<code class="docutils literal notranslate"><span class="pre">float</span></code>) [m], wy (<code class="docutils literal notranslate"><span class="pre">float</span></code>) [m] of world coordinate XY using
-mx (<code class="docutils literal notranslate"><span class="pre">int</span></code>), my (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of map coordinate XY</p></td>
+<tr class="row-even"><td><p>mapToWorld（mx，my）</p></td>
+<td><p>使用地图坐标中的mx（<code class="docutils literal notranslate"><span class="pre">int</span></code>）和my（<code class="docutils literal notranslate"><span class="pre">int</span></code>）获取世界坐标XY上的wx（<code class="docutils literal notranslate"><span class="pre">float</span></code>）[m]和wy（<code class="docutils literal notranslate"><span class="pre">float</span></code>）[m]。</p></td>
 </tr>
-<tr class="row-odd"><td><p>worldToMapValidated(wx, wy)</p></td>
-<td><p>Get the mx (<code class="docutils literal notranslate"><span class="pre">int</span></code>), my (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of map coordinate XY using
-wx (<code class="docutils literal notranslate"><span class="pre">float</span></code>) [m], wy (<code class="docutils literal notranslate"><span class="pre">float</span></code>) [m] of world coordinate XY.
-If wx wy coordinates are invalid, (None,None) is returned.</p></td>
+<tr class="row-odd"><td><p>worldToMapValidated（wx，wy）</p></td>
+<td><p>使用世界坐标XY上的wx（<code class="docutils literal notranslate"><span class="pre">float</span></code>）[m]和wy（<code class="docutils literal notranslate"><span class="pre">float</span></code>）[m]获取地图坐标XY中的mx（<code class="docutils literal notranslate"><span class="pre">int</span></code>）和my（<code class="docutils literal notranslate"><span class="pre">int</span></code>）。如果wx和wy坐标无效，则返回（None，None）。</p></td>
 </tr>
-<tr class="row-even"><td><p>getIndex(mx, my)</p></td>
-<td><p>Get the index (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of the cell using mx (<code class="docutils literal notranslate"><span class="pre">int</span></code>), my (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of
-map coordinate XY</p></td>
+<tr class="row-even"><td><p>getIndex（mx，my）</p></td>
+<td><p>使用地图坐标XY中的mx（<code class="docutils literal notranslate"><span class="pre">int</span></code>）和my（<code class="docutils literal notranslate"><span class="pre">int</span></code>）获取单元格的索引（<code class="docutils literal notranslate"><span class="pre">int</span></code>）。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="footprint-collision-checker-api">
-<h2>Footprint Collision Checker API<a class="headerlink" href="#footprint-collision-checker-api" title="永久链接至标题"></a></h2>
-<p>This is a Python3 API for a Footprint Collision Checker.
-It provides the needed methods to manipulate the coordinates
-and calculate the cost of a Footprint in a given map.</p>
+<h2>足迹碰撞检查器 API<a class="headerlink" href="#footprint-collision-checker-api" title="永久链接至标题"></a></h2>
+<p>这是一个用于足迹碰撞检测的Python3 API。它提供了操纵坐标和计算给定地图中足迹成本所需的方法。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 67%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Footprint Collision Checker Method</p></th>
+<tr class="row-odd"><th class="head"><p>足迹碰撞检查器方法</p></th>
 <th class="head"><p>描述</p></th>
 </tr>
 </thead>
@@ -1177,21 +1169,17 @@ and calculate the cost of a Footprint in a given map.</p>
 <td><p>Iterate over all the points along a line and check for collision.
 The line is defined by x0, y0, x1, y1, step_size (<code class="docutils literal notranslate"><span class="pre">int</span></code>) or (<code class="docutils literal notranslate"><span class="pre">float</span></code>).</p></td>
 </tr>
-<tr class="row-even"><td><p>worldToMapValidated(wx, wy)</p></td>
-<td><p>Get the mx (<code class="docutils literal notranslate"><span class="pre">int</span></code>), my (<code class="docutils literal notranslate"><span class="pre">int</span></code>) of map coordinate XY using
-wx (<code class="docutils literal notranslate"><span class="pre">float</span></code>) [m], wy (<code class="docutils literal notranslate"><span class="pre">float</span></code>) [m] of world coordinate XY.
-If wx wy coordinates are invalid, (None,None) is returned.
-Returns None if costmap is not defined yet through  (<code class="docutils literal notranslate"><span class="pre">setCostmap(costmap)</span></code>).</p></td>
+<tr class="row-even"><td><p>worldToMapValidated（wx，wy）</p></td>
+<td><p>使用世界坐标XY的wx（浮点数）[m]和wy（浮点数）[m]获取地图坐标XY的mx（整数）和my（整数）。如果wx和wy坐标无效，则返回（None，None）。如果尚未通过（setCostmap（costmap））定义costmap，则返回None。</p></td>
 </tr>
 <tr class="row-odd"><td><p>pointCost(x, y)</p></td>
-<td><p>Get the cost of a point in the costmap using map coordinates XY. (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</p></td>
+<td><p>使用地图坐标XY获取costmap中某一点的成本。（整数）</p></td>
 </tr>
 <tr class="row-even"><td><p>setCostmap(costmap)</p></td>
-<td><p>Specify which costmap to use with the footprint collision checker. (<code class="docutils literal notranslate"><span class="pre">PyCostmap2D</span></code>)</p></td>
+<td><p>指定足迹碰撞检测使用的costmap。（PyCostmap2D）</p></td>
 </tr>
 <tr class="row-odd"><td><p>footprintCostAtPose(x, y, theta, footprint)</p></td>
-<td><p>Get the cost of a footprint at a specific Pose in map coordinates.
-x, y, theta (<code class="docutils literal notranslate"><span class="pre">float</span></code>) footprint (<code class="docutils literal notranslate"><span class="pre">Polygon</span></code>).</p></td>
+<td><p>在地图坐标中获取特定姿态处足迹的成本。x，y，theta（浮点数）足迹（多边形）。</p></td>
 </tr>
 </tbody>
 </table>
