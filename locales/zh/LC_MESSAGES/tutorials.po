@@ -482,7 +482,7 @@ msgstr "**另外，请确保你有以下内容：**"
 
 #: ../../tutorials/docs/camera_calibration.rst:35
 msgid "A large checkerboard with known dimensions. This tutorial uses a 7x9 checkerboard with 20mm squares. **Calibration uses the interior vertex points of the checkerboard, so an \"8x10\" board uses the interior vertex parameter \"7x9\" as in the example below.** The checkerboard with set dimensions can be downloaded from `here <https://calib.io/pages/camera-calibration-pattern-generator>`_."
-msgstr "A large checkerboard with known dimensions. This tutorial uses a 7x9 checkerboard with 20mm squares. **Calibration uses the interior vertex points of the checkerboard, so an \"8x10\" board uses the interior vertex parameter \"7x9\" as in the example below.** The checkerboard with set dimensions can be downloaded from `here <https://calib.io/pages/camera-calibration-pattern-generator>`_."
+msgstr "具有已知尺寸的大型棋盘。本教程使用一个边长为7x9、每个方格尺寸为20mm的棋盘。**校准使用棋盘的内部顶点，因此\"8x10\"棋盘使用下面示例中的内部顶点参数\"7x9\"。** 可以从`此处 <https://calib.io/pages/camera-calibration-pattern-generator>`_ 下载具有指定尺寸的棋盘。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:36
@@ -492,7 +492,7 @@ msgstr "一个光线充足、没有遮挡物和其他棋盘图案的区域"
 
 #: ../../tutorials/docs/camera_calibration.rst:38
 msgid "A monocular camera publishing images over ROS"
-msgstr "A monocular camera publishing images over ROS"
+msgstr "通过ROS发布图像的单目摄像头"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:44
@@ -502,12 +502,12 @@ msgstr "1- 在图形用户界面中启动终端"
 
 #: ../../tutorials/docs/camera_calibration.rst:46
 msgid "2- Launch the ROS driver for your specific camera."
-msgstr "2- Launch the ROS driver for your specific camera."
+msgstr "2- 为您特定的摄像头启动ROS驱动程序。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:48
 msgid "3- Make sure camera is publishing images over ROS. This can be tested by running:"
-msgstr "3- Make sure camera is publishing images over ROS. This can be tested by running:"
+msgstr "3- 确保相机通过ROS发布图像。可以通过运行以下命令进行测试："
 
 
 #: ../../tutorials/docs/camera_calibration.rst:50
@@ -517,7 +517,7 @@ msgstr "``ros2 topic list``"
 
 #: ../../tutorials/docs/camera_calibration.rst:52
 msgid "4- This will show you all the topics published make sure that there is an image_raw topic /camera/image_raw. To confirm that its a real topic and actually publishing check topic hz:"
-msgstr "4- This will show you all the topics published make sure that there is an image_raw topic /camera/image_raw. To confirm that its a real topic and actually publishing check topic hz:"
+msgstr "4- 这将显示所有发布的主题，请确保存在一个图像主题 /camera/image_raw。为确认其为真实主题并正在发布，请检查主题的频率："
 
 
 #: ../../tutorials/docs/camera_calibration.rst:54
@@ -527,7 +527,7 @@ msgstr "``ros2 topic hz /camera/image_raw``"
 
 #: ../../tutorials/docs/camera_calibration.rst:65
 msgid "5- Start the camera calibration node"
-msgstr "5- Start the camera calibration node"
+msgstr "5- 启动相机标定节点"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:67
@@ -537,42 +537,42 @@ msgstr "``ros2 run camera_calibration cameracalibrator --size 7x9 --square 0.02 
 
 #: ../../tutorials/docs/camera_calibration.rst:125
 msgid "6- In order to get a good calibration you will need to move the checkerboard around in the camera frame such that:"
-msgstr "6- In order to get a good calibration you will need to move the checkerboard around in the camera frame such that:"
+msgstr "6- 为了获得良好的标定结果，您需要在相机视野中移动棋盘格，使其满足以下要求："
 
 
 #: ../../tutorials/docs/camera_calibration.rst:132
 msgid "checkerboard on the camera's left, right, top and bottom of field of view"
-msgstr "checkerboard on the camera's left, right, top and bottom of field of view"
+msgstr "相机的左侧、右侧、顶部和底部的棋盘格视野"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:128
 msgid "◦ X bar - left/right in field of view"
-msgstr "◦ X bar - left/right in field of view"
+msgstr "◦ X 轴移动 - 在视野中左右移动"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:130
 msgid "◦ Y bar - top/bottom in field of view"
-msgstr "◦ Y bar - top/bottom in field of view"
+msgstr "◦ Y bar - 视野顶部/底部"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:132
 msgid "◦ Size bar - toward/away and tilt from the camera"
-msgstr "◦ Size bar - toward/away and tilt from the camera"
+msgstr "◦ 大小调整 - 从相机方向上向前/向后倾斜"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:134
 msgid "checkerboard filling the whole field of view"
-msgstr "checkerboard filling the whole field of view"
+msgstr "填满整个视野的棋盘格"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:135
 msgid "checkerboard tilted to the left, right, top and bottom (Skew)"
-msgstr "checkerboard tilted to the left, right, top and bottom (Skew)"
+msgstr "棋盘格向左、向右、向上和向下倾斜（倾斜度）"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:146
 msgid "7- As the checkerboard is moved around the 4 bars on the calibration sidebar increases in length. When all then the 4 bars are green and enough data is available for calibration the CALIBRATE button will light up. Click it to see the results. It takes around the minute for calibration to take place."
-msgstr "7- As the checkerboard is moved around the 4 bars on the calibration sidebar increases in length. When all then the 4 bars are green and enough data is available for calibration the CALIBRATE button will light up. Click it to see the results. It takes around the minute for calibration to take place."
+msgstr "7- 当棋盘格在校准边栏上移动时，4个条形图的长度会增加。当所有4个条形图变为绿色且有足够的数据进行校准时，校准按钮将亮起。点击它查看结果。校准需要大约一分钟的时间。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:160
@@ -582,7 +582,7 @@ msgstr "8- After the calibration is completed the save and commit buttons light 
 
 #: ../../tutorials/docs/camera_calibration.rst:181
 msgid "9-Press the save button to see the result. Data is saved to  \"/tmp/calibrationdata.tar.gz\""
-msgstr "9-Press the save button to see the result. Data is saved to  \"/tmp/calibrationdata.tar.gz\""
+msgstr "9- 点击保存按钮查看结果。数据将保存到\"/tmp/calibrationdata.tar.gz\""
 
 
 #: ../../tutorials/docs/camera_calibration.rst:184
@@ -602,7 +602,7 @@ msgstr "11-In the folder images used for calibration are available and also “*
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:4
 msgid "Filtering of Noise-Induced Obstacles"
-msgstr "Filtering of Noise-Induced Obstacles"
+msgstr "过滤噪声引起的障碍物"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:9
