@@ -1352,7 +1352,7 @@ msgstr "如果你感兴趣，这里有一个用例教程展示了如何使用带
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:59
 msgid "Required files:"
-msgstr "Required files:"
+msgstr "所需文件:"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:61
@@ -1372,7 +1372,7 @@ msgstr "``<your_map>.yaml`` 是我们要提供给Nav2的地图的配置文件。
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:69
 msgid "Launch Nav2. If you set autostart:=False, you need to click on the start button in RViz to initialize the nodes. Make sure `use_sim time` is set to **False**, because we want to use the system time instead of the time simulation time from Gazebo."
-msgstr "Launch Nav2. If you set autostart:=False, you need to click on the start button in RViz to initialize the nodes. Make sure `use_sim time` is set to **False**, because we want to use the system time instead of the time simulation time from Gazebo."
+msgstr "启动Nav2。如果你设置了autostart:=False，你需要在RViz中点击开始按钮来初始化节点。确保`use_sim_time`被设置为**False**，因为我们希望使用系统时间而不是来自Gazebo的仿真时间。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:72
@@ -1382,17 +1382,17 @@ msgstr "``ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autosta
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:74
 msgid "Note: Don't forget to change **/path/to/your-map.yaml** to the actual path to the your-map.yaml file."
-msgstr "Note: Don't forget to change **/path/to/your-map.yaml** to the actual path to the your-map.yaml file."
+msgstr "注意: 别忘了将**/path/to/your-map.yaml**更改为your-map.yaml文件的实际路径。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:77
 msgid "3-  Launch RVIZ"
-msgstr "3-  Launch RVIZ"
+msgstr "3- 启动RVIZ"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:79
 msgid "Launch RVIZ with a pre-defined configuration file."
-msgstr "Launch RVIZ with a pre-defined configuration file."
+msgstr "使用预定义的配置文件启动RVIZ。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:81
@@ -1402,55 +1402,55 @@ msgstr "``ros2 run rviz2 rviz2 -d $(ros2 pkg prefix nav2_bringup)/share/nav2_bri
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:83
 msgid "Now, you should see a shadow of Turtlebot 3 robot model in the center of the plot in Rviz. Click on the Start button (Bottom Left) if you set the auto_start parameter to false. Then, the map should appear in RViz."
-msgstr "Now, you should see a shadow of Turtlebot 3 robot model in the center of the plot in Rviz. Click on the Start button (Bottom Left) if you set the auto_start parameter to false. Then, the map should appear in RViz."
+msgstr "现在，在Rviz的绘图中心，你应该看到Turtlebot 3机器人模型的一个阴影。如果你将auto_start参数设置为false，请点击开始按钮（左下角）。然后，地图应该出现在RViz中。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:93
 msgid "4- Initialize the Location of Turtlebot 3"
-msgstr "4- Initialize the Location of Turtlebot 3"
+msgstr "4- 初始化Turtlebot 3的位置"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:95
 msgid "First, find where the robot is on the map. Check where your robot is in the room."
-msgstr "First, find where the robot is on the map. Check where your robot is in the room."
+msgstr "首先，找到机器人在地图上的位置。查看你的机器人在房间中的位置。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:97
 msgid "Set the pose of the robot in RViz. Click on the 2D Pose Estimate button and point the location of the robot on the map. The direction of the green arrow is the orientation of Turtlebot."
-msgstr "Set the pose of the robot in RViz. Click on the 2D Pose Estimate button and point the location of the robot on the map. The direction of the green arrow is the orientation of Turtlebot."
+msgstr "在RViz中设置机器人的姿态。点击2D位姿估计按钮，然后在地图上指定机器人的位置。绿色箭头的方向表示Turtlebot的方向。"
 
 
 msgid "Set initial pose in RViz"
-msgstr "Set initial pose in RViz"
+msgstr "在RViz中设置初始姿态"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:106
 msgid "Now, the 3D model of Turtlebot should move to that location. A small error in the estimated location is tolerable."
-msgstr "Now, the 3D model of Turtlebot should move to that location. A small error in the estimated location is tolerable."
+msgstr "现在，Turtlebot的3D模型应该移动到指定的位置。对于估计位置的小误差是可以容忍的。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:110
 msgid "5-  Send a Goal Pose"
-msgstr "5-  Send a Goal Pose"
+msgstr "5- 发送目标姿态"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:112
 msgid "Pick a target location for Turtlebot on the map. You can send Turtlebot 3 a goal position and a goal orientation by using the **Nav2 Goal** or the **GoalTool** buttons."
-msgstr "Pick a target location for Turtlebot on the map. You can send Turtlebot 3 a goal position and a goal orientation by using the **Nav2 Goal** or the **GoalTool** buttons."
+msgstr "在地图上选择Turtlebot的目标位置。您可以使用“Nav2 Goal”或“GoalTool”按钮向Turtlebot 3发送目标位置和目标方向。"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:115
 msgid "Note: Nav2 Goal button uses a ROS 2 Action to send the goal and the GoalTool publishes the goal to a topic."
-msgstr "Note: Nav2 Goal button uses a ROS 2 Action to send the goal and the GoalTool publishes the goal to a topic."
+msgstr "注意：Nav2目标按钮使用ROS 2 Action发送目标，而GoalTool将目标发布到一个话题中。"
 
 
 msgid "Send goal pose in RViz"
-msgstr "Send goal pose in RViz"
+msgstr "在RViz中发送目标位姿"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:122
 msgid "Once you define the target pose,  Nav2 will find a global path and start navigating the robot on the map."
-msgstr "Once you define the target pose,  Nav2 will find a global path and start navigating the robot on the map."
+msgstr "一旦您定义了目标姿态，Nav2将找到全局路径并开始在地图上导航机器人。"
 
 
 msgid "Robot navigating in RViz"
@@ -1459,7 +1459,7 @@ msgstr "Robot navigating in RViz"
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:129
 msgid "Now, you can see that Turtlebot 3 moves towards the goal position in the room. See the video below."
-msgstr "Now, you can see that Turtlebot 3 moves towards the goal position in the room. See the video below."
+msgstr "现在，您可以看到Turtlebot 3向房间内的目标位置移动。请参阅下面的视频。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:4
@@ -1469,7 +1469,7 @@ msgstr "Navigating with Keepout Zones"
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:21
 msgid "This tutorial shows how to simply utilize keep-out/safety zones where robots can't enter and preferred lanes for robots moving in industrial environments and warehouses. All this functionality is being covered by ``KeepoutFilter`` costmap filter plugin which will be enabled and used in this document."
-msgstr "This tutorial shows how to simply utilize keep-out/safety zones where robots can't enter and preferred lanes for robots moving in industrial environments and warehouses. All this functionality is being covered by ``KeepoutFilter`` costmap filter plugin which will be enabled and used in this document."
+msgstr "本教程演示了如何简单地利用无法进入的禁止/安全区域以及工业环境和仓库中移动的机器人的首选车道。所有这些功能都由“KeepoutFilter”代价地图过滤器插件提供，该插件将在本文档中启用并使用。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:32 ../../tutorials/docs/navigation2_with_speed_filter.rst:32
@@ -1479,7 +1479,7 @@ msgstr "1. Prepare filter mask"
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:34
 msgid "As was written in :ref:`concepts`, any Costmap Filter (including Keepout Filter) are reading the data marked in a filter mask file. Filter mask - is the usual Nav2 2D-map distributed through PGM, PNG or BMP raster file with its metadata containing in a YAML file. The following steps help to understand how to make a new filter mask:"
-msgstr "As was written in :ref:`concepts`, any Costmap Filter (including Keepout Filter) are reading the data marked in a filter mask file. Filter mask - is the usual Nav2 2D-map distributed through PGM, PNG or BMP raster file with its metadata containing in a YAML file. The following steps help to understand how to make a new filter mask:"
+msgstr "如在:ref:`概念`中所述，任何代价地图过滤器（包括Keepout过滤器）都会读取过滤掩码文件中标记的数据。过滤掩码是一个通常通过PGM、PNG或BMP栅格文件进行分发的Nav2 2D地图，其元数据包含在一个YAML文件中。以下步骤有助于理解如何制作新的过滤掩码："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:36
