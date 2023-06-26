@@ -862,12 +862,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#feedback-for-navigation-failures">导航失败的反馈</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#savitzky-golay-smoother">Savitzky-Golay平滑器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smootherselector-bt-node">SmootherSelector BT Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#publish-costmap-layers">Publish Costmap Layers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#give-behavior-server-access-to-both-costmaps">Give Behavior Server Access to Both Costmaps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-model-predictive-path-integral-controller">New Model Predictive Path Integral Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#behavior-tree-uses-error-codes">Behavior Tree Uses Error Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch">更改启动文件中map_server节点的地图yaml文件路径。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smootherselector-bt-node">SmootherSelector BT节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publish-costmap-layers">发布Costmap图层</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#give-behavior-server-access-to-both-costmaps">让行为服务器访问两个Costmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-model-predictive-path-integral-controller">新的模型预测路径积分控制器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#behavior-tree-uses-error-codes">行为树使用错误代码</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz">Load, Save and Loop Waypoints from the Nav2 Panel in RViz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dwb-forward-vs-reverse-pruning">DWB Forward vs Reverse Pruning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#more-stable-regulation-on-curves-for-long-lookahead-distances">More stable regulation on curves for long lookahead distances</a></li>
@@ -1005,67 +1005,57 @@
 <li><p>Smoother Server：NONE:0（无），UNKNOWN:501（未知错误），服务器错误代码：501-599</p></li>
 <li><p>路径点跟随服务器：NONE:0，UNKNOWN:601，服务器错误代码：601-699</p></li>
 </ul>
-<p>This pr also updates the waypoint follower server to throw exceptions on failures. These exceptions get reported back to the server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application.
-The following errors codes are supported (with more to come as necessary): Unknown and Task Executor Failed.
-See <a class="reference internal" href="../tutorials/docs/adding_a_nav2_task_server.html#adding-a-nav2-task-server"><span class="std std-ref">添加一个新的Nav2任务服务器</span></a> and the PR for additional information.</p>
+<p>此PR还更新了航点跟随服务器，以便在失败时抛出异常。这些异常将报告给服务器，服务器会在行为树导航器的黑板上放置一个错误代码，以便在自治应用程序中进行上下文错误处理。支持以下错误代码（如有需要，将添加更多）：Unknown（未知）和Task Executor Failed（任务执行器失败）。详细信息请参见：:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>添加_nav2_task_server`和PR。</p>
 </div>
 <div class="section" id="costmap-filters">
 <h2>代价地图过滤器<a class="headerlink" href="#costmap-filters" title="永久链接至标题"></a></h2>
 <p>现在成本地图过滤器可以通过调用适当过滤器的 <code class="docutils literal notranslate"><span class="pre">toggle_filter</span></code> 服务在运行时启用/禁用（<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3229">PR #3229</a>）。</p>
-<p>Added new binary flip filter, allowing e.g. to turn off camera in sensitive areas, turn on headlights/leds/other safety things or switch operating mode when robot is inside marked on mask areas (<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3228">PR #3228</a>).</p>
+<p>添加了新的二进制翻转过滤器，允许在敏感区域关闭摄像头，打开前灯/LED灯/其他安全设备，或在机器人位于标记在掩码区域内时切换操作模式（<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3228">PR #3228</a>）。</p>
 </div>
 <div class="section" id="savitzky-golay-smoother">
 <h2>Savitzky-Golay平滑器<a class="headerlink" href="#savitzky-golay-smoother" title="永久链接至标题"></a></h2>
 <p>将新的平滑算法 Savitzky-Golay 平滑器添加到平滑器服务器插件列表中。有关更多详细信息，请参阅配置指南 <a class="reference internal" href="../configuration/packages/configuring-savitzky-golay-smoother.html#configuring-savitzky-golay-filter-smoother"><span class="std std-ref">Savitzky-Golay平滑器</span></a>。</p>
 </div>
 <div class="section" id="changes-to-map-yaml-file-path-for-map-server-node-in-launch">
-<h2>Changes to Map yaml file path for map_server node in Launch<a class="headerlink" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3174">PR #3174</a> adds a way to set the path to map yaml file for the map_server node either from the yaml file or using the launch configuration parameter <code class="docutils literal notranslate"><span class="pre">map</span></code> giving priority to the launch configuration parameter. <code class="docutils literal notranslate"><span class="pre">yaml_filename</span></code> is no longer strictly required to be present in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code>.</p>
+<h2>更改启动文件中map_server节点的地图yaml文件路径。<a class="headerlink" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch" title="永久链接至标题"></a></h2>
+<p>PR #3174 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3174">https://github.com/ros-planning/navigation2/pull/3174</a>&gt;`_添加了一种设置map_server节点的地图yaml文件路径的方式，可以从yaml文件或使用launch配置参数``map``来设置，优先考虑launch配置参数。<a href="#id1"><span class="problematic" id="id2">``</span></a>yaml_filename``不再严格要求在``nav2_params.yaml``中存在。</p>
 </div>
 <div class="section" id="smootherselector-bt-node">
-<h2>SmootherSelector BT Node<a class="headerlink" href="#smootherselector-bt-node" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3283">PR #3283</a> adds a BT node to set the smoother based on a topic or a default. See the configuration guide <a class="reference internal" href="../configuration/packages/configuring-simple-smoother.html#configuring-simple-smoother"><span class="std std-ref">简单平滑器</span></a> for more details.</p>
+<h2>SmootherSelector BT节点<a class="headerlink" href="#smootherselector-bt-node" title="永久链接至标题"></a></h2>
+<p>PR #3283 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3283">https://github.com/ros-planning/navigation2/pull/3283</a>&gt;`_添加了一个BT节点，根据主题或默认值来设置平滑器。有关更多详细信息，请参阅配置指南：<a class="reference internal" href="../configuration/packages/configuring-simple-smoother.html#configuring-simple-smoother"><span class="std std-ref">简单平滑器</span></a>。</p>
 </div>
 <div class="section" id="publish-costmap-layers">
-<h2>Publish Costmap Layers<a class="headerlink" href="#publish-costmap-layers" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3320">PR #3320</a> adds the ability for the nav2_costmap_2d package to publish out costmap data associated with each layer.</p>
+<h2>发布Costmap图层<a class="headerlink" href="#publish-costmap-layers" title="永久链接至标题"></a></h2>
+<p>PR #3320 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3320">https://github.com/ros-planning/navigation2/pull/3320</a>&gt;`_添加了nav2_costmap_2d软件包的功能，发布与每个图层相关联的代价地图数据。</p>
 </div>
 <div class="section" id="give-behavior-server-access-to-both-costmaps">
-<h2>Give Behavior Server Access to Both Costmaps<a class="headerlink" href="#give-behavior-server-access-to-both-costmaps" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3255">PR #3255</a> addes the ability for a behavior to access the local and global costmap.</p>
-<p>To update behaviors, any reference to the global_frame must be updated to the local_frame parameter
-along with the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> method which now takes in the local and global collision checkers.
-Lastly, <code class="docutils literal notranslate"><span class="pre">getResourceInfo</span></code> must be overriden to return <code class="docutils literal notranslate"><span class="pre">CostmapInfoType::LOCAL</span></code>. Other options include <code class="docutils literal notranslate"><span class="pre">GLOBAL</span></code> if the behavior useses global costmap and/or footprint)
-or <code class="docutils literal notranslate"><span class="pre">BOTH</span></code> if both are required. This allows us to only create and maintain the minimum amount of expensive resources.</p>
+<h2>让行为服务器访问两个Costmap<a class="headerlink" href="#give-behavior-server-access-to-both-costmaps" title="永久链接至标题"></a></h2>
+<p>PR #3255 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3255">https://github.com/ros-planning/navigation2/pull/3255</a>&gt;`_添加了一个行为访问本地和全局代价地图的功能。</p>
+<p>为了更新行为，所有对global_frame的引用必须更新为local_frame参数，以及``configuration``方法，该方法现在接受本地和全局碰撞检查器。最后，必须覆盖``getResourceInfo``以返回``CostmapInfoType::LOCAL``。其他选项包括如果行为使用全局costmap和/或足迹，则返回``GLOBAL``，如果两者都需要，则返回``BOTH``。这样我们就可以只创建和维护最少量的昂贵资源。</p>
 </div>
 <div class="section" id="new-model-predictive-path-integral-controller">
-<h2>New Model Predictive Path Integral Controller<a class="headerlink" href="#new-model-predictive-path-integral-controller" title="永久链接至标题"></a></h2>
-<p>The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers - with Nav2. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes.</p>
-<p>See the README.md and <a class="reference internal" href="../configuration/packages/configuring-mppic.html#configuring-mppic"><span class="std std-ref">模型预测路径积分控制器</span></a> page for more detail.</p>
+<h2>新的模型预测路径积分控制器<a class="headerlink" href="#new-model-predictive-path-integral-controller" title="永久链接至标题"></a></h2>
+<p>新的Nav2 MPPI控制器是一个预测性控制器，是TEB和纯路径跟踪MPC控制器的继任者，与Nav2一起使用。它使用基于采样的方法选择最优轨迹，在连续迭代之间进行优化。它包含基于插件的目标函数，可用于自定义和扩展各种行为和行为属性。</p>
+<p>有关详细信息，请参阅README.md和:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_mppic`页面。</p>
 </div>
 <div class="section" id="behavior-tree-uses-error-codes">
-<h2>Behavior Tree Uses Error Codes<a class="headerlink" href="#behavior-tree-uses-error-codes" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https:https://github.com/ros-planning/navigation2/pull/3324">PR #3324</a> adds three new condition nodes to check for error codes on the blackboard set by action BT nodes which contain them.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">AreErrorCodesPresent</span></code> condition node allows the user to specify the error code from the server along with the error codes to match against.
-The <code class="docutils literal notranslate"><span class="pre">WouldAControllerRecoveryHelp</span></code> checks if the active error code is UNKNOWN, PATIENCE_EXCEEDED, FAILED_TO_MAKE_PROGRESS or NO_VALID_CONTROL.
-If the error code is a match, the condition returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
-These error code are potentially able to be cleared by a controller recovery.</p>
+<h2>行为树使用错误代码<a class="headerlink" href="#behavior-tree-uses-error-codes" title="永久链接至标题"></a></h2>
+<p>PR #3324 &lt;<a class="reference external" href="https:https://github.com/ros-planning/navigation2/pull/3324">https:https://github.com/ros-planning/navigation2/pull/3324</a>&gt;`_添加了三个新的条件节点，用于检查由包含它们的动作BT节点在黑板上设置的错误代码。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AreErrorCodesPresent``条件节点允许用户指定来自服务器的错误代码以及要匹配的错误代码。``WouldAControllerRecoveryHelp``检查活动错误代码是否为UNKNOWN、PATIENCE_EXCEEDED、FAILED_TO_MAKE_PROGRESS或NO_VALID_CONTROL。如果错误代码匹配，条件返回``SUCCESS</span></code>。这些错误代码有可能通过控制器恢复来清除。</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">WouldAPlannerRecoveryHelp</span></code> checks if the active error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT.
 If the error code is a match, the condition returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
 These error code are potentially able to be cleared by a planner recovery.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">WouldASmootherRecoveryHelp</span></code> checks if the active error code is UNKNOWN, TIMEOUT, FAILED_TO_SMOOTH_PATH, or SMOOTHED_PATH_IN_COLLISION.
-If the error code is a match, the condition returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
-These error code are potentially able to be cleared by a smoother recovery.</p>
+<p><code class="docutils literal notranslate"><span class="pre">WouldASmootherRecoveryHelp``检查活动错误代码是否为UNKNOWN、TIMEOUT、FAILED_TO_SMOOTH_PATH或SMOOTHED_PATH_IN_COLLISION。如果错误代码匹配，条件返回``SUCCESS</span></code>。这些错误代码有可能通过平滑器恢复来清除。</p>
 </div>
 <div class="section" id="load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz">
 <h2>Load, Save and Loop Waypoints from the Nav2 Panel in RViz<a class="headerlink" href="#load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https:https://github.com/ros-planning/navigation2/pull/3165">PR #3165</a> provides three new functionalities for the nav2 panel in RViz, they are:</p>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>PR＃3165 &lt;<a class="reference external" href="https:https://github.com/ros-planning/navigation2/pull/3165">https:https://github.com/ros-planning/navigation2/pull/3165</a>&gt;`_为RViz中的nav2面板提供了三个新功能，它们是：</p>
 <ul class="simple">
 <li><p>load and save waypoints in a yaml file for waypoint following (initial pose can also be stored if required)</p></li>
-<li><p>loop functionality to revisit the waypoints</p></li>
+<li><p>循环功能以重新访问航点</p></li>
 <li><p>pause and resume button for stopping and continuing through the waypoints</p></li>
 </ul>
-<p>Looping functionality is not specific to the nav2 panel in RViz. Users utilizing nav2_waypoint_follower can take advantage of the changes made to the FollowWaypoint action, by specifying the desired number of loops in the action request that will be eventually sent to the nav2_waypoint_follower server.</p>
+<p>循环功能不仅限于RViz中的nav2面板。使用nav2_waypoint_follower的用户可以利用对FollowWaypoint操作所做的更改，通过在最终发送到nav2_waypoint_follower服务器的操作请求中指定所需的循环次数。</p>
 </div>
 <div class="section" id="dwb-forward-vs-reverse-pruning">
 <h2>DWB Forward vs Reverse Pruning<a class="headerlink" href="#dwb-forward-vs-reverse-pruning" title="永久链接至标题"></a></h2>
