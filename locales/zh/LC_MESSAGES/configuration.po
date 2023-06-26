@@ -6525,7 +6525,7 @@ msgstr "要订阅的地图话题。如果留空，地图话题将默认使用`co
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:4
 msgid "Voxel Layer Parameters"
-msgstr "Voxel Layer Parameters"
+msgstr "体素层参数"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:6
@@ -6555,7 +6555,7 @@ msgstr "``<voxel layer>``.z_voxels"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:52
 msgid "Number of voxels high to mark, maximum 16."
-msgstr "Number of voxels high to mark, maximum 16."
+msgstr "要标记的垂直体素数，最多16个。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6565,7 +6565,7 @@ msgstr "``<voxel layer>``.origin_z"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:63
 msgid "Where to start marking voxels (m)."
-msgstr "Where to start marking voxels (m)."
+msgstr "开始标记体素的位置（米）。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6575,7 +6575,7 @@ msgstr "``<voxel layer>``.z_resolution"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:74
 msgid "Resolution of voxels in height (m)."
-msgstr "Resolution of voxels in height (m)."
+msgstr "垂直方向上体素的分辨率（米）。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6590,7 +6590,7 @@ msgstr "15"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:85
 msgid "Minimum number of empty voxels in a column to mark as unknown in 2D occupancy grid."
-msgstr "Minimum number of empty voxels in a column to mark as unknown in 2D occupancy grid."
+msgstr "在2D占据网格中，标记为未知状态的列中空心体素的最小数量。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6600,7 +6600,7 @@ msgstr "``<voxel layer>``.mark_threshold"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:96
 msgid "Minimum number of voxels in a column to mark as occupied in 2D occupancy grid."
-msgstr "Minimum number of voxels in a column to mark as occupied in 2D occupancy grid."
+msgstr "在2D占据网格中，标记为占用状态的列中的体素最小数量。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6615,7 +6615,7 @@ msgstr "``<voxel layer>``.publish_voxel_map"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:118
 msgid "Whether to publish 3D voxel grid for debug, computationally expensive."
-msgstr "Whether to publish 3D voxel grid for debug, computationally expensive."
+msgstr "是否为调试目的发布3D体素网格，计算开销较大。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6640,7 +6640,7 @@ msgstr "``<voxel layer>``. ``<data source>``.observation_persistence"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.expected_update_rate"
-msgstr "``<voxel layer>``. ``<data source>``.expected_update_rate"
+msgstr "``<体素图层>``. ``<数据源>``.expected_update_rate"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6650,7 +6650,7 @@ msgstr "``<voxel layer>``. ``<data source>``.data_type"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.min_obstacle_height"
-msgstr "``<voxel layer>``. ``<data source>``.min_obstacle_height"
+msgstr "``<体素图层>``. ``<数据源>``.min_obstacle_height"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6660,7 +6660,7 @@ msgstr "``<voxel layer>``. ``<data source>``.max_obstacle_height"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.inf_is_valid"
-msgstr "``<voxel layer>``. ``<data source>``.inf_is_valid"
+msgstr "``<体素图层>``. ``<数据源>``.inf_is_valid"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6670,7 +6670,7 @@ msgstr "``<voxel layer>``. ``<data source>``.marking"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.clearing"
-msgstr "``<voxel layer>``. ``<data source>``.clearing"
+msgstr "``<体素图层>``. ``<数据源>``.clearing"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6680,7 +6680,7 @@ msgstr "``<voxel layer>``. ``<data source>``.obstacle_max_range"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.obstacle_min_range"
-msgstr "``<voxel layer>``. ``<data source>``.obstacle_min_range"
+msgstr "``<体素图层>``. ``<数据源>``.obstacle_min_range"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6690,7 +6690,7 @@ msgstr "``<voxel layer>``. ``<data source>``.raytrace_max_range"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.raytrace_min_range"
-msgstr "``<voxel layer>``. ``<data source>``.raytrace_min_range"
+msgstr "``<体素图层>``. ``<数据源>``.raytrace_min_range"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:9 ../../configuration/packages/dwb-params/iterator.rst:9 ../../configuration/packages/dwb-params/kinematic.rst:9 ../../configuration/packages/dwb-params/visualization.rst:9 ../../configuration/packages/dwb-plugins/limited_accel_generator.rst:6 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:9 ../../configuration/packages/trajectory_critics/base_obstacle.rst:12 ../../configuration/packages/trajectory_critics/goal_align.rst:11 ../../configuration/packages/trajectory_critics/goal_dist.rst:11 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:11 ../../configuration/packages/trajectory_critics/oscillation.rst:11 ../../configuration/packages/trajectory_critics/prefer_forward.rst:11 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:11 ../../configuration/packages/trajectory_critics/twirling.rst:11
@@ -6700,7 +6700,7 @@ msgstr "``<dwb plugin>``: DWB plugin name defined in the **controller_plugin_ids
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.critics"
-msgstr "``<dwb plugin>``.critics"
+msgstr "``<dwb插件>``.critics"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:20
