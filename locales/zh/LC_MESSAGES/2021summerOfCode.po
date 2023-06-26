@@ -457,7 +457,7 @@ msgstr "坐标转换和基本几何"
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:40
 msgid "`Original github issue 1 <https://github.com/ros-planning/navigation2/issues/1278>`_"
-msgstr "`Original github issue 1 <https://github.com/ros-planning/navigation2/issues/1278>`_"
+msgstr "`原始的github问题 1 <https://github.com/ros-planning/navigation2/issues/1278>`_"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:41
@@ -467,7 +467,7 @@ msgstr "`原始 github 问题 2 <https://github.com/ros-planning/navigation2/iss
 
 #: ../../2021summerOfCode/projects/localization.rst:7
 msgid "6. 2D/3D Localization Improvements"
-msgstr "6. 2D/3D Localization Improvements"
+msgstr "6. 2D/3D 定位改进"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:11
@@ -477,7 +477,7 @@ msgstr "Navigation2 堆栈使用 AMCL 作为其主要定位引擎。在过去的
 
 #: ../../2021summerOfCode/projects/localization.rst:13
 msgid "Your target involves designing and creating a new localization engine for the Nav2 stack. The requirements of this are: - Support 2D laser scanners - Support 3D laser scanners, where 2D case could potentially be a simplified case - Accurately track the localization of a robot in a given occupancy grid"
-msgstr "Your target involves designing and creating a new localization engine for the Nav2 stack. The requirements of this are: - Support 2D laser scanners - Support 3D laser scanners, where 2D case could potentially be a simplified case - Accurately track the localization of a robot in a given occupancy grid"
+msgstr "您的目标是为 Nav2 栈设计和创建一个新的定位引擎。其要求如下：- 支持2D激光扫描仪- 支持3D激光扫描仪，其中2D情况可能是一个简化情况- 在给定的占据栅格中准确跟踪机器人的定位"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:18
@@ -487,7 +487,7 @@ msgstr "保留该特定方法的原因是为了允许创造性、新颖性或重
 
 #: ../../2021summerOfCode/projects/localization.rst:20
 msgid "An optional but recommended feature of this work would be to also accept the inputs from multiple laser scanners. However it is not strictly required."
-msgstr "An optional but recommended feature of this work would be to also accept the inputs from multiple laser scanners. However it is not strictly required."
+msgstr "这项工作的一个可选但建议的功能是还可以接受多个激光扫描仪的输入。但这并不是严格要求。"
 
 
 #, python-format
@@ -507,77 +507,77 @@ msgstr "定位、粒子滤波或SLAM技术"
 
 #: ../../2021summerOfCode/projects/localization.rst:38
 msgid "Ability to read and implement academic works"
-msgstr "Ability to read and implement academic works"
+msgstr "能够阅读和实现学术作品的能力"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:45
 msgid "`Original Github Issue <https://github.com/ros-planning/navigation2/issues/1391>`_"
-msgstr "`Original Github Issue <https://github.com/ros-planning/navigation2/issues/1391>`_"
+msgstr "`原始Github问题 <https://github.com/ros-planning/navigation2/issues/1391>`_"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:5
 msgid "4. Navigation MultiThreading"
-msgstr "4. Navigation MultiThreading"
+msgstr "4. 导航多线程化"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:9
 msgid "The aim of this project is the significantly improve the run-time performance of Nav2 making sure to leverage the full capabilities of multi-processor core CPUs. We seek to identify areas in the Nav2 stack that could leverage multi-threading or parallel processing to speed up computations and improve overall user performance on a broad range of compute platforms."
-msgstr "The aim of this project is the significantly improve the run-time performance of Nav2 making sure to leverage the full capabilities of multi-processor core CPUs. We seek to identify areas in the Nav2 stack that could leverage multi-threading or parallel processing to speed up computations and improve overall user performance on a broad range of compute platforms."
+msgstr "该项目的目标是显著提高Nav2的运行时性能，确保充分利用多处理器核心CPU的全部功能。我们寻求在Nav2堆栈中确定可以利用多线程或并行处理加速计算并改善在各种计算平台上的整体用户性能的领域。"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:11
 msgid "Some examples include: - AMCL particle cloud updates - Costmap layer updates - Costmap sensor data population - Controller critic evalulation - Collision checking - Voxel grid ray casting - and more."
-msgstr "Some examples include: - AMCL particle cloud updates - Costmap layer updates - Costmap sensor data population - Controller critic evalulation - Collision checking - Voxel grid ray casting - and more."
+msgstr "一些例子包括: - AMCL粒子云更新 - Costmap图层更新 - Costmap传感器数据填充 - 控制器评估 - 碰撞检测 - Voxel网格光线投射 - 等等。"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:20
 msgid "We are seeking a student interested in learning about multi-threading and parallel processing, ideally with some exposure to these concepts and libraries already, to analyze potential areas for parallel computing. Then, select the top candidates and implement them with parallel processing and benchmark the improvements to the Nav2 stack they provide."
-msgstr "We are seeking a student interested in learning about multi-threading and parallel processing, ideally with some exposure to these concepts and libraries already, to analyze potential areas for parallel computing. Then, select the top candidates and implement them with parallel processing and benchmark the improvements to the Nav2 stack they provide."
+msgstr "我们正在寻找一位对多线程和并行处理感兴趣的学生，最好已经接触过这些概念和库，以分析可能的并行计算领域。然后，选择最佳候选项，并使用并行处理对它们进行实现，并对其提供的Nav2堆栈的改进进行基准测试。"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:22
 msgid "This will be an excellent chance to apply (or obtain) C++ parallel computing skills while also learning a great deal about how to build mobile robot navigation systems -- both very valuable skillsets."
-msgstr "This will be an excellent chance to apply (or obtain) C++ parallel computing skills while also learning a great deal about how to build mobile robot navigation systems -- both very valuable skillsets."
+msgstr "这将是一个很好的机会，可以应用（或获得）C++并行计算技能，同时还可以学到很多关于如何构建移动机器人导航系统的知识 - 这两个技能都非常有价值。"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:30
 msgid "**Project output requirements** - Analysis of potential areas in the Nav2 stack that can benefit from parallel processing - Integrations of 3-5 areas in the Nav2 stack that non-trivially improves run-time performance of the stack using multithreading - Benchmark performance improvements"
-msgstr "**Project output requirements** - Analysis of potential areas in the Nav2 stack that can benefit from parallel processing - Integrations of 3-5 areas in the Nav2 stack that non-trivially improves run-time performance of the stack using multithreading - Benchmark performance improvements"
+msgstr "**项目输出要求** - 分析Nav2堆栈中可以从并行处理中受益的潜在领域 - 集成3-5个Nav2堆栈中利用多线程非常显著地改善堆栈运行时性能的领域 - 基准测试性能改进"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:37 ../../2021summerOfCode/projects/safety_node.rst:34 ../../2021summerOfCode/projects/spinners.rst:33
 msgid "C++, ROS"
-msgstr "C++, ROS"
+msgstr "C++，ROS"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:39
 msgid "Working knowledge (or ability to quickly obtain) on one or more of: TBB, OpenMP, OpenCL, Cuda, and similar"
-msgstr "Working knowledge (or ability to quickly obtain) on one or more of: TBB, OpenMP, OpenCL, Cuda, and similar"
+msgstr "对以下一个或多个领域具备工作知识（或能够迅速获得）：TBB、OpenMP、OpenCL、Cuda等类似领域"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:40 ../../2021summerOfCode/projects/safety_node.rst:37 ../../2021summerOfCode/projects/semantics.rst:30
 msgid "Recommended: Gazebo simulation, ROS navigation"
-msgstr "Recommended: Gazebo simulation, ROS navigation"
+msgstr "推荐：Gazebo模拟，ROS导航"
 
 
 #: ../../2021summerOfCode/projects/multithreading.rst:46
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/2042>`_"
-msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/2042>`_"
+msgstr "`Github票证 <https://github.com/ros-planning/navigation2/issues/2042>`_"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:7
 msgid "5. Navigation Branding and Website"
-msgstr "5. Navigation Branding and Website"
+msgstr "5. 导航品牌和网站"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:11
 msgid "Navigation2 has made significant strides to be the best navigation system in the world. Over time, the original navigation stack in ROS has gained a reputation, fair or unfair, of being relatively limited in the types of tasks it can accomplish that are no longer true in ROS 2 Navigation2."
-msgstr "Navigation2 has made significant strides to be the best navigation system in the world. Over time, the original navigation stack in ROS has gained a reputation, fair or unfair, of being relatively limited in the types of tasks it can accomplish that are no longer true in ROS 2 Navigation2."
+msgstr "Navigation2已经取得了显著的进展，成为世界上最好的导航系统。随着时间的推移，在ROS中原始的导航堆栈已经获得了声誉，无论公平与否，即相对而言，它在可以完成的任务类型方面相对有限，而这种情况在ROS 2 Navigation2中已经不再成立。"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:13
 msgid "As such, we would like to initiate a re-branding effort to help differentiate it from its foundings. `MoveIt <https://moveit.ros.org/>`_ has a high-quality landing page with consistent graphics, color schemes, logos, and a catchy name. Your task will be to create a logo, color scheme, and work with maintainers to develop a new name to use in creating a new website for Navigation2. The `existing website <https://navigation.ros.org/>`_ is a Read The Docs design with just the technical tutorials and details. We would like the new Navigation2 website to be analog to the MoveIt website and allow for future expansions such as a blog and pages highlighting demos and robots using the framework."
-msgstr "As such, we would like to initiate a re-branding effort to help differentiate it from its foundings. `MoveIt <https://moveit.ros.org/>`_ has a high-quality landing page with consistent graphics, color schemes, logos, and a catchy name. Your task will be to create a logo, color scheme, and work with maintainers to develop a new name to use in creating a new website for Navigation2. The `existing website <https://navigation.ros.org/>`_ is a Read The Docs design with just the technical tutorials and details. We would like the new Navigation2 website to be analog to the MoveIt website and allow for future expansions such as a blog and pages highlighting demos and robots using the framework."
+msgstr "因此，我们希望启动一项重新品牌的工作，以便与其创始者区分开来。`MoveIt <https://moveit.ros.org/>`_ 有一个高质量的首页，具有一致的图形、配色方案、标志和一个引人注目的名称。你的任务是创建一个标志、配色方案，并与维护者合作开发一个用于创建 Navigation2 新网站的新名称。`现有的网站 <https://navigation.ros.org/>`_ 是一个仅包含技术教程和详细信息的 Read The Docs 设计。我们希望新的 Navigation2 网站类似于 MoveIt 网站，并允许未来扩展，例如博客和展示使用该框架的演示和机器人页面。"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:21
@@ -587,7 +587,7 @@ msgstr "**Project output requirements** - Work with maintainers to come up with 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:29
 msgid "Design and graphics packages"
-msgstr "Design and graphics packages"
+msgstr "设计和图形包"
 
 
 #: ../../2021summerOfCode/projects/navigation_rebranding.rst:30
