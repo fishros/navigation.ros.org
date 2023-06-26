@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Groot - Interacting with Behavior Trees &mdash; Navigation 2 1.0.0 文档</title>
+  <title>Groot - 与行为树交互 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -247,10 +247,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Groot - Interacting with Behavior Trees</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Groot - 与行为树交互</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#visualize-behavior-trees">Visualize Behavior Trees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#edit-behavior-trees">Edit Behavior Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualize-behavior-trees">可视化行为树</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-behavior-trees">编辑行为树</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#adding-a-custom-node">Adding A Custom Node</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Groot - Interacting with Behavior Trees</li>
+      <li>Groot - 与行为树交互</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,15 +939,15 @@
            <div itemprop="articleBody">
              
   <div class="section" id="groot-interacting-with-behavior-trees">
-<span id="groot-introduction"></span><h1>Groot - Interacting with Behavior Trees<a class="headerlink" href="#groot-interacting-with-behavior-trees" title="永久链接至标题"></a></h1>
+<span id="groot-introduction"></span><h1>Groot - 与行为树交互<a class="headerlink" href="#groot-interacting-with-behavior-trees" title="永久链接至标题"></a></h1>
 <div class="figure align-center" id="groot-startup-menu">
 <img alt="../../_images/groot_start_menu.png" src="../../_images/groot_start_menu.png" />
 </div>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p>可视化行为树</p></li>
-<li><p><a class="reference internal" href="#edit-behavior-trees">Edit Behavior Trees</a></p></li>
-<li><p><a class="reference internal" href="#adding-a-custom-node">Adding A Custom Node</a></p></li>
+<li><p><a class="reference internal" href="#edit-behavior-trees">编辑行为树</a></p></li>
+<li><p><a class="reference internal" href="#adding-a-custom-node">添加自定义节点</a></p></li>
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
@@ -961,22 +961,19 @@
 Behavior Trees are deeply integrated into Nav2, used as the main method of orchestrating task server logic across a complex navigation and autonomy stack.
 Behavior Trees, in short BTs, consist of many nodes completing different tasks and control the flow of logic, similar to a Hierarchical or Finite State Machine, but organized in a tree structure.
 These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Control</cite>, or <cite>Decorator</cite>, and are described in more detail in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a> and <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/BT_basics#types-of-nodes">BehaviorTree.CPP</a>.</p>
-<p><a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> offers a well written example of creating a simple <code class="docutils literal notranslate"><span class="pre">Action</span></code> node if creating new BT nodes is of interest. This tutorial will focus solely on launching Groot, visualizing a Behavior Tree, and modifying that tree for a given customization, assuming a library of BT nodes. Luckily, Nav2 provides a robust number of BT nodes for your use out of the box, enumerated in <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a>.</p>
-<p>A BT configuration file in BehaviorTree.CPP is an XML file. This is used to dynamically load the BT node plugins at run-time from the appropriate libraries mapped to their names. The XML format is defined <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/xml_format/">in detail here</a>. Therefore, Groot needs to have a list of nodes it has access to and important metadata about them like their type and ports (or parameters). We refer to this as the &quot;pallet&quot; of nodes later in the tutorial.</p>
-<p>In the video above you can see Groot side-by-side with RVIz and a test platform 100% equipped with ROS-enabled hardware from SIEMENS.
-Groot not only displays the current Behavior Tree while the robot is operating. Note: Before ROS 2 Humble, live Groot behavior tree monitoring during execution was supported in Nav2. This was removed due to buggy support in BT.CPP / Groot for changing behavior trees on the fly, see <a class="reference internal" href="../../migration/Galactic.html#galactic-migration"><span class="std std-ref">Galactic to Humble</span></a> for more details.</p>
+<p>如果对于创建新的行为树节点感兴趣，<a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 提供了一个写得很好的示例，展示了如何创建一个简单的 <code class="docutils literal notranslate"><span class="pre">Action</span></code> 节点。本教程将专注于启动 Groot，可视化行为树，并对给定的自定义进行树的修改，假设已经存在一个行为树节点库。幸运的是，Nav2 在默认情况下提供了大量可用的行为树节点，这些节点在 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 中列举出来。</p>
+<p>BehaviorTree.CPP中的BT配置文件是一个XML文件。它用于在运行时从映射到它们名称的适当库中动态加载BT节点插件。XML格式在 <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/xml_format/">此处详细定义</a>。因此，Groot需要有一个节点列表，其中包含它可以访问的节点以及关于这些节点的重要元数据，如它们的类型和端口（或参数）。我们在本教程的后面将称之为节点的 &quot;调色板&quot;。</p>
+<p>在上面的视频中，您可以看到 Groot 与 RVIz 和一个完全装备有来自 SIEMENS 的 ROS 启用硬件的测试平台并排显示。Groot 不仅在机器人操作时显示当前的行为树。注意：在 ROS 2 Humble 之前，Nav2 支持在执行过程中实时监控 Groot 行为树。由于 BT.CPP / Groot 对于动态更改行为树的支持存在错误，此功能已被删除，请参阅 <a class="reference internal" href="../../migration/Galactic.html#galactic-migration"><span class="std std-ref">Galactic to Humble</span></a> 了解更多细节。</p>
 </div>
 <div class="section" id="visualize-behavior-trees">
-<h2>Visualize Behavior Trees<a class="headerlink" href="#visualize-behavior-trees" title="永久链接至标题"></a></h2>
-<p>To display a Behavior Tree like that in <a class="reference internal" href="#groot-nav2-default-bt"><span class="std std-numref">Figure 3</span></a>, we will first start the Groot executable.
-Out of the box, Groot can only display Behavior Trees and nodes that are from the defaults in BT.CPP, since it does not know anything about Nav2 or your other projects.
-Therefore, we must point Groot to our pallet, or index, of Nav2 / custom behavior tree nodes:</p>
+<h2>可视化行为树<a class="headerlink" href="#visualize-behavior-trees" title="永久链接至标题"></a></h2>
+<p>要像 <a class="reference internal" href="#groot-nav2-default-bt"><span class="std std-numref">Figure 3</span></a> 中那样显示行为树，我们首先需要启动 Groot 可执行文件。默认情况下，Groot 只能显示来自 BT.CPP 默认设置的行为树和节点，因为它对 Nav2 或您的其他项目一无所知。因此，我们必须将 Groot 指向我们的行为树节点库或索引：</p>
 <ol class="arabic simple">
-<li><p>Open Groot in editor mode. Now, Groot should look like in <a class="reference internal" href="#groot-bt-editor"><span class="std std-numref">Figure 1</span></a>.</p></li>
-<li><p>Select the <cite>Load palette from file</cite> option either via the context menu or the import icon in the top middle of the menu bar.</p></li>
-<li><p>Open the file <cite>/path/to/navigation2/nav2_behavior_tree/nav2_tree_nodes.xml</cite> to import all the custom behavior tree nodes used for navigation. This is the pallet of Nav2 custom behavior tree nodes. Now, Groot should look like in <a class="reference internal" href="#groot-bt-editor-with-nodes"><span class="std std-numref">Figure 2</span></a>.</p></li>
-<li><p>Select <cite>Load tree</cite> option near the top left corner</p></li>
-<li><p>Browse the tree you want to visualize, then select <cite>OK</cite>. The Nav2 BTs exist in <cite>/path/to/navigation2/nav2_bt_navigator/behavior_trees/</cite></p></li>
+<li><p>在编辑器模式下打开Groot。现在，Groot应该看起来像 :numref:<a href="#id1"><span class="problematic" id="id2">`</span></a>groot_bt_editor`中的样子。</p></li>
+<li><p>通过上下文菜单或菜单栏中间顶部的导入图标，选择 <cite>从文件加载调色板</cite> 选项。</p></li>
+<li><p>打开文件 <cite>/path/to/navigation2/nav2_behavior_tree/nav2_tree_nodes.xml</cite>，导入用于导航的所有自定义行为树节点。这是Nav2自定义行为树节点的调色板。现在，Groot应该看起来像 :numref:<a href="#id1"><span class="problematic" id="id2">`</span></a>groot_bt_editor_with_nodes`中的样子。</p></li>
+<li><p>选择位于左上角附近的 <cite>加载树</cite> 选项。</p></li>
+<li><p>浏览您想要可视化的树，然后选择 <cite>确定</cite>。Nav2 BTs存在于 <cite>/path/to/navigation2/nav2_bt_navigator/behavior_trees/</cite> 中</p></li>
 </ol>
 <table class="docutils align-default">
 <colgroup>
@@ -986,12 +983,12 @@ Therefore, we must point Groot to our pallet, or index, of Nav2 / custom behavio
 <tbody>
 <tr class="row-odd"><td><div class="figure align-default" id="groot-bt-editor">
 <img alt="../../_images/groot_bt_editor.png" src="../../_images/groot_bt_editor.png" />
-<p class="caption"><span class="caption-number">Figure 1 </span><span class="caption-text">Default Editor View</span><a class="headerlink" href="#groot-bt-editor" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 1 </span><span class="caption-text">默认编辑器视图</span><a class="headerlink" href="#groot-bt-editor" title="永久链接至图片"></a></p>
 </div>
 </td>
 <td><div class="figure align-default" id="groot-bt-editor-with-nodes">
 <img alt="../../_images/groot_with_nav2_custom_nodes.png" src="../../_images/groot_with_nav2_custom_nodes.png" />
-<p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text">Editor with Custom Nodes loaded in blue</span><a class="headerlink" href="#groot-bt-editor-with-nodes" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text">带有自定义节点的编辑器以蓝色加载</span><a class="headerlink" href="#groot-bt-editor-with-nodes" title="永久链接至图片"></a></p>
 </div>
 </td>
 </tr>
@@ -1005,7 +1002,7 @@ Therefore, we must point Groot to our pallet, or index, of Nav2 / custom behavio
 <tbody>
 <tr class="row-odd"><td><div class="figure align-default" id="groot-nav2-default-bt">
 <img alt="../../_images/bt_w_replanning_and_recovery.png" src="../../_images/bt_w_replanning_and_recovery.png" />
-<p class="caption"><span class="caption-number">Figure 3 </span><span class="caption-text">Full Nav2 Default BehaviorTree</span><a class="headerlink" href="#groot-nav2-default-bt" title="永久链接至图片"></a></p>
+<p class="caption"><span class="caption-number">Figure 3 </span><span class="caption-text">完整的Nav2默认行为树</span><a class="headerlink" href="#groot-nav2-default-bt" title="永久链接至图片"></a></p>
 </div>
 </td>
 </tr>
@@ -1017,19 +1014,15 @@ Therefore, we must point Groot to our pallet, or index, of Nav2 / custom behavio
 </div>
 </div>
 <div class="section" id="edit-behavior-trees">
-<h2>Edit Behavior Trees<a class="headerlink" href="#edit-behavior-trees" title="永久链接至标题"></a></h2>
+<h2>编辑行为树<a class="headerlink" href="#edit-behavior-trees" title="永久链接至标题"></a></h2>
 <p>Now that you have a Nav2 BT open in Groot in editor mode, you should be able to trivially modify it using the GUI.
 Starting from a screen like that shown in <a class="reference internal" href="#groot-nav2-default-bt"><span class="std std-numref">Figure 3</span></a>, you can pull in new nodes from the side panel to add them to the workspace.
 You may then connect the nodes using a &quot;drag and drop&quot; motion between the node's input and output ports to assemble the new nodes into the tree.</p>
-<p>If you select a given node, you can change metadata about it such as its name or values of parameterizable ports. When you're done modifying, simply save the new configuration file and use that on your robot the next time!</p>
+<p>如果选择给定节点，您可以更改其元数据，例如名称或参数化端口的值。修改完成后，只需保存新的配置文件，并在下次使用机器人时使用该文件！</p>
 </div>
 <div class="section" id="adding-a-custom-node">
 <h2>Adding A Custom Node<a class="headerlink" href="#adding-a-custom-node" title="永久链接至标题"></a></h2>
-<p>Each node in the behavior tree holds a specialized function.
-Sometimes, its useful to create new nodes and add them to your pallet during the design process - perhaps before the implementations themselves exist.
-This helps designers abstract away the implementation specifics of the nodes from the higher level logic of the tree itself and how they'd like to interact with a given node (e.g. type, ports, etc).
-Within Groot, you may create new custom nodes to add to your tree and export these new nodes back to your pallet.
-Implementing the node itself needs to be done separately from Groot, which is described in <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a>.</p>
+<p>行为树中的每个节点都具有特定的功能。有时，在设计过程中（实现本身存在之前），创建新节点并将其添加到您的调色板中是很有用的。这有助于设计人员将节点的实现细节从树本身的高级逻辑和与给定节点交互的方式（例如类型、端口等）中抽象出来。在Groot中，您可以创建新的自定义节点并将这些新节点导出到您的调色板。节点本身的实现需要与Groot分开进行，其方法在 <a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 中进行了描述。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 100%" />
@@ -1043,10 +1036,7 @@ Implementing the node itself needs to be done separately from Groot, which is de
 </tr>
 </tbody>
 </table>
-<p>Creating a new custom node can be started by clicking the orange marked icon in <a class="reference internal" href="#groot-create-custom-node"><span class="std std-numref">Figure 4</span></a>, while Groot is in Editor mode.
-This should load a new window, similar to <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a>.
-In this new window, it asks you to fill in the metadata about this new node, in order to create it.
-It will ask you for standard information such as name (green box), type of node (orange box), and any optional ports for parameterization or access to blackboard variables (blue box).</p>
+<p>通过在Groot处于编辑器模式时单击 <a class="reference internal" href="#groot-create-custom-node"><span class="std std-numref">Figure 4</span></a> 中标记为橙色的图标来创建新的自定义节点。这将加载一个类似于 <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a> 的新窗口。在这个新窗口中，它要求您填写关于这个新节点的元数据，以便创建它。它会要求您提供标准信息，如名称（绿色框），节点类型（橙色框），以及用于参数化或访问黑板变量的任何可选端口（蓝色框）。</p>
 <p>After completing, select <cite>OK</cite> in <a class="reference internal" href="#groot-interactive-node-creation"><span class="std std-numref">Figure 5</span></a>, the new custom node should appear in blue in the <cite>TreeNode Palette</cite> as in <a class="reference internal" href="#groot-export-new-node"><span class="std std-numref">Figure 6</span></a>.</p>
 <table class="docutils align-default">
 <colgroup>
