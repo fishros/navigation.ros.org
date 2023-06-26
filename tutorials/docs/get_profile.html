@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profiling in ROS 2 / Nav2 &mdash; Navigation 2 1.0.0 文档</title>
+  <title>在 ROS 2 / Nav2 中进行性能分析 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -266,16 +266,16 @@
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-node">从一个节点开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-a-launch-file">从启动文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-large-project">从大型项目</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-nav2-bringup">From Nav2 Bringup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#automatic-backtrace-on-crash">Automatic backtrace on crash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#from-nav2-bringup">来自Nav2 Bringup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_backtrace.html#automatic-backtrace-on-crash">崩溃时自动获取回溯信息</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Profiling in ROS 2 / Nav2</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">在 ROS 2 / Nav2 中进行性能分析</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#preliminaries">准备工作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#profile-from-a-node">Profile from a Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profile-from-a-node">来自节点的配置文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#profile-from-a-launch-file">Profile from a Launch File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">来自Nav2 Bringup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#interpreting-results">Interpreting Results</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Profiling in ROS 2 / Nav2</li>
+      <li>在 ROS 2 / Nav2 中进行性能分析</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,27 +939,27 @@
            <div itemprop="articleBody">
              
   <div class="section" id="profiling-in-ros-2-nav2">
-<span id="get-profile"></span><h1>Profiling in ROS 2 / Nav2<a class="headerlink" href="#profiling-in-ros-2-nav2" title="永久链接至标题"></a></h1>
+<span id="get-profile"></span><h1>在 ROS 2 / Nav2 中进行性能分析<a class="headerlink" href="#profiling-in-ros-2-nav2" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#preliminaries">准备工作</a></p></li>
-<li><p><a class="reference internal" href="#profile-from-a-node">Profile from a Node</a></p></li>
-<li><p><a class="reference internal" href="#profile-from-a-launch-file">Profile from a Launch File</a></p></li>
+<li><p><a class="reference internal" href="#profile-from-a-node">来自节点的配置文件</a></p></li>
+<li><p><a class="reference internal" href="#profile-from-a-launch-file">从启动文件进行性能分析</a></p></li>
 <li><p><a class="reference internal" href="#from-nav2-bringup">从Nav2启动</a></p></li>
 </ul>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This document explains one method for profiling applications in ROS 2 / Nav2. The aim of profiling is to generate files that can be analyzed to see where compute time and resources are spent during the execution of a program. This can be useful to determine where the bottlenecks in your program exist and where things might be able to be improved.</p>
-<p>The following steps show ROS 2 users how to modify the Nav2 stack to get profiling information about a particular server / algorithm when they encounter a situation they'd like to understand better. This tutorial applies to both simulated and physical robots.</p>
+<p>本文档介绍了在ROS 2 / Nav2中对应用程序进行分析的一种方法。分析的目的是生成可以分析的文件，以查看程序执行过程中计算时间和资源的使用情况。这对于确定程序中的瓶颈所在以及可能需要改进的地方非常有用。</p>
+<p>以下步骤向 ROS 2 用户展示如何修改 Nav2 栈以获取关于特定服务器/算法的性能分析信息，以便更好地理解他们遇到的情况。本教程适用于仿真和物理机器人。</p>
 </div>
 <div class="section" id="preliminaries">
 <h2>准备工作<a class="headerlink" href="#preliminaries" title="永久链接至标题"></a></h2>
-<p>This tutorial makes use of two tools, callgrind from the <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code> set of tools and <code class="docutils literal notranslate"><span class="pre">kcachegrind</span></code>. Valgrind is used to get the profiling information about the program and kcachegrind is the visualization engine used to interprete this information to do useful work.</p>
+<p>本教程使用了两个工具，即``Valgrind``工具集中的callgrind和``kcachegrind``。Valgrind用于获取程序的分析信息，而kcachegrind则是用于解释这些信息并进行有用工作的可视化引擎。</p>
 <p>Thus, we must install them.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>valgrind<span class="w"> </span>kcachegrind
 </pre></div>
 </div>
-<p>More information can be found in the <a class="reference external" href="https://valgrind.org/docs/manual/cl-manual.html">Valgrind manual</a> including additional valgrind arguments that can be used to specify more information.</p>
+<p>有关更多信息，请参阅`Valgrind手册&lt;<a class="reference external" href="https://valgrind.org/docs/manual/cl-manual.html">https://valgrind.org/docs/manual/cl-manual.html</a>&gt;`_，其中包括可以用于指定更多信息的其他valgrind参数。</p>
 <p>Generally speaking, to use valgrind we need to compile with debugging information. This can be done by passing <code class="docutils literal notranslate"><span class="pre">-g</span></code> as a compiling option or compile <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> as <code class="docutils literal notranslate"><span class="pre">Debug</span></code> or <code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code>. Then, we run our program using valgrind to capture the run-time statistics for later analysis. These are stored in <code class="docutils literal notranslate"><span class="pre">callgrind.out.XXX</span></code> files, where the suffix is the PID of the process. kcachegrind is used to visualize and analyze the results of the program execution.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="c"># CMakeLists.txt</span>
 <span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-g</span><span class="p">)</span>
@@ -975,12 +975,12 @@ kcachegrind<span class="w"> </span>callgrind.out.XXX
 </div>
 </div>
 <div class="section" id="profile-from-a-node">
-<h2>Profile from a Node<a class="headerlink" href="#profile-from-a-node" title="永久链接至标题"></a></h2>
+<h2>来自节点的配置文件<a class="headerlink" href="#profile-from-a-node" title="永久链接至标题"></a></h2>
 <p>As in our generic example, for a given node, we need to compile with debug flags to capture the information for profiling with Valgrind. This can be done easily from the commandline. Note that we use <code class="docutils literal notranslate"><span class="pre">--packages-select</span></code> to only compile with this flag for the packages we want to profile nodes within.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>&lt;packages<span class="w"> </span>of<span class="w"> </span>interest&gt;<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebInfo
 </pre></div>
 </div>
-<p>Optionally, you may add the following line to the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> of the package you're looking to profile. This may be preferable when you have a workspace with many packages but would like to only compile a subset with debug information using a single <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span></code> invokation.</p>
+<p>可选地，您可以将以下行添加到要分析的软件包的``CMakeLists.txt``中。当您有一个包含许多软件包的工作空间，但只想使用单个``colcon build``调用编译带有调试信息的子集时，这可能更可取。</p>
 <p>It is important that this should be added to both the host server and plugin packages(s) if you would like the results of a plugin's run-time profile.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-pg</span><span class="p">)</span>
 </pre></div>
@@ -1015,7 +1015,7 @@ kcachegrind<span class="w"> </span>callgrind.out.XXX
 <p>Once sufficient data has been collected, cleanly exit the process with Control+C.</p>
 </div>
 <div class="section" id="from-nav2-bringup">
-<h2>From Nav2 Bringup<a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
+<h2>来自Nav2 Bringup<a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
 <p>Because Nav2 bringup has more than one node per launch file (and in the case <code class="docutils literal notranslate"><span class="pre">use_composition=true</span></code>, more than one per process), it is necessary to separate out a particular node that you're interested in profiling from the rest of the system. As previously described, once they're isolated in either a launch file or as a node to be launched on the commandline, they can easily be run to collect the callgrind information.</p>
 <p>The steps within Nav2 are as follows:</p>
 <ul class="simple">

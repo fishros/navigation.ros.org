@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Profiling in ROS 2 / Nav2" href="get_profile.html" />
+    <link rel="next" title="在 ROS 2 / Nav2 中进行性能分析" href="get_profile.html" />
     <link rel="prev" title="相机校准" href="camera_calibration.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -266,16 +266,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#from-a-node">从一个节点开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-a-launch-file">从启动文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-large-project">从大型项目</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">From Nav2 Bringup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#automatic-backtrace-on-crash">Automatic backtrace on crash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-nav2-bringup">来自Nav2 Bringup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-backtrace-on-crash">崩溃时自动获取回溯信息</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="get_profile.html">Profiling in ROS 2 / Nav2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_profile.html">在 ROS 2 / Nav2 中进行性能分析</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#preliminaries">准备工作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-node">Profile from a Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-node">来自节点的配置文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#profile-from-a-launch-file">Profile from a Launch File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_profile.html#from-nav2-bringup">From Nav2 Bringup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get_profile.html#from-nav2-bringup">来自Nav2 Bringup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_profile.html#interpreting-results">Interpreting Results</a></li>
 </ul>
 </li>
@@ -1036,27 +1036,27 @@
 <div class="section" id="from-large-project">
 <h2>从大型项目<a class="headerlink" href="#from-large-project" title="永久链接至标题"></a></h2>
 <p>使用包含多个节点的启动文件的工作方式有所不同，这样您就可以在同一个终端中进行GDB会话而不受其他日志的干扰。因此，在使用较大的启动文件时，最好将您感兴趣的特定服务器提取出来并单独启动。这些说明针对Nav2，但适用于任何具有多个节点类型的大型项目的一系列启动文件。</p>
-<p>As such, for this case, when you see a crash you'd like to investigate, its beneficial to separate this server from the others.</p>
+<p>因此，在这种情况下，当您遇到需要调查的崩溃时，最好将此服务器与其他服务器分开。</p>
 <p>如果您感兴趣的服务器是从嵌套的启动文件（例如，一个包含的启动文件）启动的，您可能需要执行以下操作：</p>
 <ul class="simple">
-<li><p>Comment out the launch file inclusion from the parent launch file</p></li>
+<li><p>将父启动文件中的启动文件包含部分注释掉。</p></li>
 <li><p>使用``-g``标志为调试符号重新编译感兴趣的软件包。</p></li>
-<li><p>Launch the parent launch file in a terminal</p></li>
+<li><p>在终端中启动父启动文件。</p></li>
 <li><p>在另一个终端中按照`从启动文件启动`_中的说明启动服务器的启动文件。</p></li>
 </ul>
-<p>Alternatively, if you server of interest is being launched in these files directly (e.g. you see a <code class="docutils literal notranslate"><span class="pre">Node</span></code>, <code class="docutils literal notranslate"><span class="pre">LifecycleNode</span></code>, or inside a <code class="docutils literal notranslate"><span class="pre">ComponentContainer</span></code>), you will need to seperate this from the others:</p>
+<p>或者，如果您感兴趣的服务器是直接在这些文件中启动的（例如，您看到一个``Node``、<a href="#id1"><span class="problematic" id="id2">``</span></a>LifecycleNode``或者在``ComponentContainer``内部），您需要将其与其他服务器分开：</p>
 <ul class="simple">
-<li><p>Comment out the node's inclusion from the parent launch file</p></li>
+<li><p>将节点在父启动文件中注释掉</p></li>
 <li><p>使用``-g``标志为调试符号重新编译感兴趣的软件包。</p></li>
-<li><p>Launch the parent launch file in a terminal</p></li>
-<li><p>Launch the server's node in another terminal following the instructions in <a class="reference internal" href="#from-a-node">From a Node</a>.</p></li>
+<li><p>在终端中启动父启动文件。</p></li>
+<li><p>按照`从节点启动`_中的说明，在另一个终端中启动服务器的节点。</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Note that in this case, you may need to remap or provide parameter files to this node if it was previously provided by the launch file. Using <code class="docutils literal notranslate"><span class="pre">--ros-args</span></code> you can give it the path to the new parameters file, remaps, or names. See <a class="reference external" href="https://docs.ros.org/en/rolling/Guides/Node-arguments.html">this ROS 2 tutorial</a> for the commandline arguments required.</p>
-<p>We understand this can be a pain, so it might encourage you to rather have each node possible as a separately included launch file to make debugging easier. An example set of arguments might be <code class="docutils literal notranslate"><span class="pre">--ros-args</span> <span class="pre">-r</span> <span class="pre">__node:=&lt;node_name&gt;</span> <span class="pre">--params-file</span> <span class="pre">/absolute/path/to/params.yaml</span></code> (as a template).</p>
+<p>请注意，如果该节点以前是由启动文件提供的，您可能需要重新映射或提供参数文件给该节点。使用 <code class="docutils literal notranslate"><span class="pre">--ros-args</span></code> 您可以给它提供新参数文件、重映射或名称的路径。有关所需的命令行参数，请参阅 <a class="reference external" href="https://docs.ros.org/en/rolling/Guides/Node-arguments.html">ROS 2 教程</a>。</p>
+<p>我们理解这可能会让您感到困扰，所以您可能更倾向于将每个可能的节点作为单独的启动文件进行包含，以便更容易进行调试。一个示例的参数集合可能是``--ros-args -r __node:=&lt;node_name&gt; --params-file /absolute/path/to/params.yaml``（作为模板）。</p>
 </div>
-<p>Once your server crashes, you'll see a prompt like below in the specific server's terminal. At this point you can now get a backtrace.</p>
+<p>一旦服务器崩溃，您将在特定服务器的终端中看到如下提示。此时，您可以获取回溯信息。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
@@ -1064,18 +1064,18 @@
 <p>这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。</p>
 </div>
 <div class="section" id="from-nav2-bringup">
-<h2>From Nav2 Bringup<a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
-<p>To debug directly from the nav2 bringup launch files you may want to do the following:</p>
+<h2>来自Nav2 Bringup<a class="headerlink" href="#from-nav2-bringup" title="永久链接至标题"></a></h2>
+<p>要直接从 nav2 的启动文件中进行调试，您可以执行以下操作：</p>
 <ul class="simple">
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">prefix=['xterm</span> <span class="pre">-e</span> <span class="pre">gdb</span> <span class="pre">-ex</span> <span class="pre">run</span> <span class="pre">--args']</span></code> to the non-composed node in the appropriate launch file.</p></li>
-<li><p>Recompile the package of interest with <code class="docutils literal notranslate"><span class="pre">-g</span></code> flag for debug symbols.</p></li>
-<li><p>Launch normally with <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">tb3_simulation_launch.py</span> <span class="pre">use_composition:=False</span></code>. A seperate xterm window will open with the proccess of intrest running in gdb.</p></li>
+<li><p>在适当的启动文件中，将``prefix=['xterm -e gdb -ex run --args']``添加到非组合节点中。</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 标志重新编译要调试的软件包以获取调试符号。</p></li>
+<li><p>使用``ros2 launch nav2_bringup tb3_simulation_launch.py use_composition:=False``正常启动。一个单独的 xterm 窗口将打开，其中运行着感兴趣的进程。</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Turning off composition has serious performance impacts. If this is important to you please follow &quot;From Large Project&quot;.</p>
+<p>关闭组合会严重影响性能。如果这对您很重要，请参考&quot;从大型项目&quot;。</p>
 </div>
-<p>Once your server crashes, you'll see a prompt like below in the xterm window. At this point you can now get a backtrace.</p>
+<p>一旦服务器崩溃，您将在 xterm 窗口中看到如下提示。此时，您现在可以获取回溯。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span>
 </pre></div>
 </div>
@@ -1083,9 +1083,9 @@
 <p>这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。</p>
 </div>
 <div class="section" id="automatic-backtrace-on-crash">
-<h2>Automatic backtrace on crash<a class="headerlink" href="#automatic-backtrace-on-crash" title="永久链接至标题"></a></h2>
-<p>The <a class="reference external" href="https://github.com/bombela/backward-cpp">backward-cpp</a> library provides beautiful stack traces, and the <a class="reference external" href="https://github.com/pal-robotics/backward_ros/tree/foxy-devel">backward_ros</a> wrapper simplifies its integration.</p>
-<p>Just add it as a dependency and <cite>find_package</cite> it in your CMakeLists and the backward libraries will be injected in all your executables and libraries.</p>
+<h2>崩溃时自动获取回溯信息<a class="headerlink" href="#automatic-backtrace-on-crash" title="永久链接至标题"></a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>backward-cpp &lt;<a class="reference external" href="https://github.com/bombela/backward-cpp">https://github.com/bombela/backward-cpp</a>&gt;``库提供了美观的堆栈跟踪，而``backward_ros &lt;<a class="reference external" href="https://github.com/pal-robotics/backward_ros/tree/foxy-devel">https://github.com/pal-robotics/backward_ros/tree/foxy-devel</a>&gt;``包装器简化了其集成。</p>
+<p>只需将其作为依赖项添加，并在您的CMakeLists中使用`find_package`，然后后向库将被注入到所有可执行文件和库中。</p>
 </div>
 </div>
 
