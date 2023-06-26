@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setting Up Sensors &mdash; Navigation 2 1.0.0 文档</title>
+  <title>设置传感器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -166,9 +166,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#conclusion">结论</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting Up Sensors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sensor-introduction">Sensor Introduction</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#common-sensor-messages">Common Sensor Messages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">设置传感器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-introduction">传感器介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#common-sensor-messages">常用传感器消息</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#simulating-sensors-using-gazebo">Simulating Sensors using Gazebo</a><ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">首次机器人设置指南</a> &raquo;</li>
-      <li>Setting Up Sensors</li>
+      <li>设置传感器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,21 +939,21 @@
            <div itemprop="articleBody">
              
   <div class="section" id="setting-up-sensors">
-<span id="setup-sensors"></span><h1>Setting Up Sensors<a class="headerlink" href="#setting-up-sensors" title="永久链接至标题"></a></h1>
-<p>In this guide, we will discuss the importance of the sensors in navigating a robot safely and how to set up the sensors with Nav2. In the first half of this tutorial, we will take a brief look at commonly used sensors and common sensor messages in Nav2. Next, we will add a basic sensor setup on our previously built simulated robot, <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>. Lastly, we will then verify the simulated sensor messages of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> by visualizing them in RViz.</p>
+<span id="setup-sensors"></span><h1>设置传感器<a class="headerlink" href="#setting-up-sensors" title="永久链接至标题"></a></h1>
+<p>在本指南中，我们将讨论传感器在安全导航机器人中的重要性以及如何在Nav2中设置传感器。在本教程的前半部分，我们将简要介绍Nav2中常用的传感器和常见的传感器消息。接下来，我们将在先前构建的仿真机器人``sam_bot``上添加基本的传感器设置。最后，我们将通过在RViz中可视化它们来验证``sam_bot``的模拟传感器消息。</p>
 <p>Once sensors have been set up on a robot, their readings can be used in mapping, localization, and perception tasks. In the second half of this guide, we will first discuss how mapping and localization use the sensor data. Then, we will also take a look at one of Nav2's packages, <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d</span></code>, which generates costmaps that will eventually be used in Nav2 path planning. We will set up basic configuration parameters for this package so it properly takes in sensor information from <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>. Lastly, we visualize a generated costmaps in RViz to verify its received data.</p>
 <div class="section" id="sensor-introduction">
-<h2>Sensor Introduction<a class="headerlink" href="#sensor-introduction" title="永久链接至标题"></a></h2>
+<h2>传感器介绍<a class="headerlink" href="#sensor-introduction" title="永久链接至标题"></a></h2>
 <p>Mobile robots are equipped with a multitude of sensors that allow them to see and perceive their environment. These sensors obtain information which can be used to build and maintain the map of the environment, to localize the robot on the map, and to see the obstacles in the environment. These tasks are essential to be able to safely and efficiently navigate a robot through a dynamic environment.</p>
-<p>Examples of commonly used sensors are lidar, radar, RGB camera, depth camera, IMU, and GPS. To standardize the message formats of these sensors and allow for easier interoperation between vendors, ROS provides the <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code> package that defines the common sensor interfaces. This also allows users to use any sensor vendor as long as it follows the standard format in <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code>. In the next subsection, we introduce some of commonly used messages in navigation, namely the <code class="docutils literal notranslate"><span class="pre">sensor_msgs/LaserScan</span></code>, <code class="docutils literal notranslate"><span class="pre">sensor_msgs/PointCloud2</span></code>, <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Range</span></code>, and <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Image</span></code>.</p>
+<p>常用传感器的示例包括激光雷达、雷达、RGB相机、深度相机、IMU和GPS。为了标准化这些传感器的消息格式并方便不同厂商之间的互操作，ROS提供了``sensor_msgs``包，定义了常用的传感器接口。这也使用户可以使用任何遵循``sensor_msgs``标准格式的传感器供应商。在下一小节中，我们介绍了导航中常用的一些消息，即``sensor_msgs/LaserScan``、<code class="docutils literal notranslate"><span class="pre">sensor_msgs/PointCloud2</span></code>、<code class="docutils literal notranslate"><span class="pre">sensor_msgs/Range``和``sensor_msgs/Image</span></code>。</p>
 <p>Aside from the <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code> package, there are also the <code class="docutils literal notranslate"><span class="pre">radar_msgs</span></code> and <code class="docutils literal notranslate"><span class="pre">vision_msgs</span></code> standard interfaces you should be aware of.  The <code class="docutils literal notranslate"><span class="pre">radar_msgs</span></code> defines the messages for radar-specific sensors while the <code class="docutils literal notranslate"><span class="pre">vision_msgs</span></code> package defines the messages used in computer vision such as object detection, segmentation, and other machine learning models. Messages supported by this package are <code class="docutils literal notranslate"><span class="pre">vision_msgs/Classification2D</span></code>, <code class="docutils literal notranslate"><span class="pre">vision_msgs/Classification3D</span></code>, <code class="docutils literal notranslate"><span class="pre">vision_msgs/Detection2D</span></code>, and <code class="docutils literal notranslate"><span class="pre">vision_msgs/Detection3D</span></code>, to name a few.</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more information, see the API documentation of <a class="reference external" href="http://wiki.ros.org/sensor_msgs">sensor_msgs</a>, <a class="reference external" href="http://wiki.ros.org/radar_msgs">radar_msgs</a>, and <a class="reference external" href="http://wiki.ros.org/vision_msgs">vision_msgs</a>.</p>
+<p>有关更多信息，请参阅`sensor_msgs &lt;<a class="reference external" href="http://wiki.ros.org/sensor_msgs">http://wiki.ros.org/sensor_msgs</a>&gt;`_、<a href="#id1"><span class="problematic" id="id2">`</span></a>radar_msgs &lt;<a class="reference external" href="http://wiki.ros.org/radar_msgs">http://wiki.ros.org/radar_msgs</a>&gt;`_和`vision_msgs &lt;<a class="reference external" href="http://wiki.ros.org/vision_msgs">http://wiki.ros.org/vision_msgs</a>&gt;`_的API文档。</p>
 </div>
 <p>Your physical robot's sensors probably have ROS drivers written for them (e.g. a ROS node that connects to the sensors, populates data into messages, and publishes them for your robot to use) that follow the standard interface in the <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code> package. The <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code> package makes it easy for you to use many different sensors from different manufacturers. General software packages like Nav2 can then can read these standardized messages and perform tasks independent of the sensor hardware. On simulated robots such as <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>, Gazebo has sensor plugins which also publish their information following the <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code> package.</p>
 <div class="section" id="common-sensor-messages">
-<h3>Common Sensor Messages<a class="headerlink" href="#common-sensor-messages" title="永久链接至标题"></a></h3>
+<h3>常用传感器消息<a class="headerlink" href="#common-sensor-messages" title="永久链接至标题"></a></h3>
 <p>In this subsection, we discuss some of the common types of <code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code> you might encounter when setting up Nav2. We will provide a brief description for each sensor, an image of it being simulated in Gazebo and the corresponding visualization of the sensor readings in RViz.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>

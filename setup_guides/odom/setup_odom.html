@@ -22,7 +22,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Setting Up Sensors" href="../sensors/setup_sensors.html" />
+    <link rel="next" title="设置传感器" href="../sensors/setup_sensors.html" />
     <link rel="prev" title="Setting Up The URDF" href="../urdf/setup_urdf.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
@@ -166,9 +166,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#conclusion">结论</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../sensors/setup_sensors.html">Setting Up Sensors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#sensor-introduction">Sensor Introduction</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#common-sensor-messages">Common Sensor Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sensors/setup_sensors.html">设置传感器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#sensor-introduction">传感器介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#common-sensor-messages">常用传感器消息</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#simulating-sensors-using-gazebo">Simulating Sensors using Gazebo</a><ul>
@@ -1305,7 +1305,7 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 </div>
 <div class="section" id="id3">
 <h3>启动和构建文件<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
-<p>Now, let us add the <code class="docutils literal notranslate"><span class="pre">ekf_node</span></code> into the launch file. Open <code class="docutils literal notranslate"><span class="pre">launch/display.launch.py</span></code> and paste the following lines before the <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">launch.LaunchDescription([</span></code> line.</p>
+<p>现在，让我们将``ekf_node``添加到启动文件中。打开``launch/display.launch.py``，在``return launch.LaunchDescription([<a href="#id1"><span class="problematic" id="id2">``</span></a>行之前粘贴以下内容。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">robot_localization_node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>launch_ros.actions.Node<span class="o">(</span>
 <span class="w">       </span><span class="nv">package</span><span class="o">=</span><span class="s1">&#39;robot_localization&#39;</span>,
 <span class="w">       </span><span class="nv">executable</span><span class="o">=</span><span class="s1">&#39;ekf_node&#39;</span>,
@@ -1320,7 +1320,7 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 <span class="w">                                            </span><span class="nv">description</span><span class="o">=</span><span class="s1">&#39;Flag to enable use_sim_time&#39;</span><span class="o">)</span>,
 </pre></div>
 </div>
-<p>Lastly, add <code class="docutils literal notranslate"><span class="pre">robot_localization_node,</span></code> above the <code class="docutils literal notranslate"><span class="pre">rviz_node</span></code> line to launch the robot localization node.</p>
+<p>最后，在``rviz_node``行上方添加``robot_localization_node,``以启动机器人定位节点。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">      </span>robot_state_publisher_node,
 <span class="w">      </span>spawn_entity,
 <span class="w">      </span>robot_localization_node,
@@ -1332,7 +1332,7 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&lt;exec_depend&gt;robot_localization&lt;/exec_depend&gt;
 </pre></div>
 </div>
-<p>Lastly, open <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> and append the <code class="docutils literal notranslate"><span class="pre">config</span></code> directory inside the <code class="docutils literal notranslate"><span class="pre">install(DIRECTORY...)</span></code>, as shown in the snippet below.</p>
+<p>最后，打开``CMakeLists.txt``，并将``config``目录追加到``install(DIRECTORY...)``中，如下面的代码片段所示。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>install<span class="o">(</span>
 <span class="w">  </span>DIRECTORY<span class="w"> </span>src<span class="w"> </span>launch<span class="w"> </span>rviz<span class="w"> </span>config
 <span class="w">  </span>DESTINATION<span class="w"> </span>share/<span class="si">${</span><span class="nv">PROJECT_NAME</span><span class="si">}</span>
@@ -1342,30 +1342,30 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 </div>
 <div class="section" id="id4">
 <h3>构建、运行和验证<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
-<p>Let us now build and run our package. Navigate to the root of the project and execute the following lines:</p>
+<p>现在让我们构建并运行我们的软件包。导航到项目的根目录并执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
 .<span class="w"> </span>install/setup.bash
 ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<span class="w"> </span>display.launch.py
 </pre></div>
 </div>
-<p>Gazebo and RVIZ should launch. In the RVIZ window, you should see the model and TF frames of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>:</p>
+<p>Gazebo和RVIZ应该会启动。在RVIZ窗口中，您应该可以看到``sam_bot``的模型和TF坐标系：</p>
 <a class="reference internal image-reference" href="../../_images/rviz.png"><img alt="../../_images/rviz.png" class="align-center" src="../../_images/rviz.png" style="width: 100%;" /></a>
-<p>Next, let us verify that the <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code>,  <code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code>, and <code class="docutils literal notranslate"><span class="pre">/tf</span></code> topics are active in the system. Open a new terminal and execute:</p>
+<p>接下来，让我们验证系统中是否激活了 <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code>、<code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code> 和 <code class="docutils literal notranslate"><span class="pre">/tf</span></code> 主题。打开一个新的终端并执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>list
 </pre></div>
 </div>
-<p>You should see <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code>, <code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code>, and <code class="docutils literal notranslate"><span class="pre">/tf</span></code> in the list of the topics.</p>
-<p>You can also check the subscriber count of these topics again by executing:</p>
+<p>您应该在话题列表中看到``odometry/filtered``，<code class="docutils literal notranslate"><span class="pre">accel/filtered``和</span></code>/tf``。</p>
+<p>您还可以通过执行以下命令再次检查这些主题的订阅者计数：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>info<span class="w"> </span>/demo/imu
 ros2<span class="w"> </span>topic<span class="w"> </span>info<span class="w"> </span>/demo/odom
 </pre></div>
 </div>
-<p>You should see that <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> and <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> now both have 1 subscriber each.</p>
-<p>To verify that the <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code> are the subscribers of these topics, execute:</p>
+<p>您应该看到``/demo/imu``和``/demo/odom``现在各自都有1个订阅者。</p>
+<p>要验证 <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code> 是否是这些主题的订阅者，请执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>node<span class="w"> </span>info<span class="w"> </span>/ekf_filter_node
 </pre></div>
 </div>
-<p>You should see an output as shown below.</p>
+<p>您应该看到如下所示的输出。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/ekf_filter_node
 Subscribers:
 <span class="w">  </span>/demo/imu:<span class="w"> </span>sensor_msgs/msg/Imu
@@ -1383,12 +1383,12 @@ Service<span class="w"> </span>Servers:
 <span class="w">   </span>...
 </pre></div>
 </div>
-<p>From the output above, we can see that the <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code> is subscribed to <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> and <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code>. We can also see that the <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code> publishes on the <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code>, <code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code>, and <code class="docutils literal notranslate"><span class="pre">/tf</span></code> topics.</p>
-<p>You may also verify that <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> is publishing the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform by using the tf2_echo utility. Run the folllowing command in a separate command line terminal:</p>
+<p>从上面的输出中，我们可以看到 <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code> 订阅了 <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> 和 <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code>。我们还可以看到 <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code> 在 <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code>、<code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code> 和 <code class="docutils literal notranslate"><span class="pre">/tf</span></code> 主题上发布。</p>
+<p>您还可以通过使用tf2_echo工具验证``robot_localization``是否发布了``odom`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的变换。在单独的命令行终端中运行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_echo<span class="w"> </span>odom<span class="w"> </span>base_link
 </pre></div>
 </div>
-<p>You should see a continuous output similar to what is shown below.</p>
+<p>您应该看到类似下面所示的连续输出。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>At<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="m">8</span>.842000000
 -<span class="w"> </span>Translation:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.003,<span class="w"> </span>-0.000,<span class="w"> </span><span class="m">0</span>.127<span class="o">]</span>
 -<span class="w"> </span>Rotation:<span class="w"> </span><span class="k">in</span><span class="w"> </span>Quaternion<span class="w"> </span><span class="o">[</span>-0.000,<span class="w"> </span><span class="m">0</span>.092,<span class="w"> </span><span class="m">0</span>.003,<span class="w"> </span><span class="m">0</span>.996<span class="o">]</span>
@@ -1401,7 +1401,7 @@ At<span class="w"> </span><span class="nb">time</span><span class="w"> </span><s
 </div>
 <div class="section" id="conclusion">
 <h2>结论<a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
-<p>In this guide, we have discussed the messages and transforms that are expected by Nav2 from the odometry system. We have seen how to set up an odometry system and how to verify the published messages. We also have discussed how multiple odometry sensors can be used to provide a filtered and smoothed odometry using <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>. We have also checked if the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform is being published correctly by <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>.</p>
+<p>在本指南中，我们讨论了Nav2从里程计系统所期望的消息和变换。我们已经了解了如何设置里程计系统以及如何验证发布的消息。我们还讨论了如何使用``robot_localization``使用多个里程计传感器提供滤波和平滑的里程计。我们还检查了``robot_localization``是否正确发布了``odom`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的变换。</p>
 </div>
 </div>
 
