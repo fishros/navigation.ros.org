@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voxel Layer Parameters &mdash; Navigation 2 1.0.0 文档</title>
+  <title>体素层参数 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -517,7 +517,7 @@
 <li class="toctree-l4"><a class="reference internal" href="static.html">静态层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="inflation.html">膨胀层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="obstacle.html">障碍物图层参数</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Voxel Layer Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">体素层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="range.html">范围传感器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="denoise.html">降噪层参数</a></li>
 </ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../configuring-costmaps.html">二维代价地图</a> &raquo;</li>
-      <li>Voxel Layer Parameters</li>
+      <li>体素层参数</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,7 +940,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="voxel-layer-parameters">
-<h1>Voxel Layer Parameters<a class="headerlink" href="#voxel-layer-parameters" title="永久链接至标题"></a></h1>
+<h1>体素层参数<a class="headerlink" href="#voxel-layer-parameters" title="永久链接至标题"></a></h1>
 <p><a href="#id1"><span class="problematic" id="id2">``</span></a>&lt;voxel layer&gt;``是所选类型的相应插件名称。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code> 是该数据源参数的相应观测源名称。</p>
 <dl class="field-list">
@@ -1020,7 +1020,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of voxels high to mark, maximum 16.</p>
+<dt>描述</dt><dd><p>要标记的垂直体素数，最多16个。</p>
 </dd>
 </dl>
 </dd>
@@ -1040,7 +1040,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Where to start marking voxels (m).</p>
+<dt>描述</dt><dd><p>开始标记体素的位置（米）。</p>
 </dd>
 </dl>
 </dd>
@@ -1060,7 +1060,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Resolution of voxels in height (m).</p>
+<dt>描述</dt><dd><p>垂直方向上体素的分辨率（米）。</p>
 </dd>
 </dl>
 </dd>
@@ -1080,7 +1080,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum number of empty voxels in a column to mark as unknown in 2D occupancy grid.</p>
+<dt>描述</dt><dd><p>在2D占据网格中，标记为未知状态的列中空心体素的最小数量。</p>
 </dd>
 </dl>
 </dd>
@@ -1100,7 +1100,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum number of voxels in a column to mark as occupied in 2D occupancy grid.</p>
+<dt>描述</dt><dd><p>在2D占据网格中，标记为占用状态的列中的体素最小数量。</p>
 </dd>
 </dl>
 </dd>
@@ -1140,7 +1140,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to publish 3D voxel grid for debug, computationally expensive.</p>
+<dt>描述</dt><dd><p>是否为调试目的发布3D体素网格，计算开销较大。</p>
 </dd>
 </dl>
 </dd>
@@ -1224,7 +1224,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>.expected_update_rate</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;体素图层&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code>.expected_update_rate</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1264,7 +1264,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>.min_obstacle_height</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;体素图层&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code>.min_obstacle_height</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1304,7 +1304,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>.inf_is_valid</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;体素图层&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code>.inf_is_valid</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1344,7 +1344,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>.clearing</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;体素图层&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code>.clearing</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1384,7 +1384,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>.obstacle_min_range</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;体素图层&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code>.obstacle_min_range</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1424,7 +1424,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code>.raytrace_min_range</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;体素图层&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code>.raytrace_min_range</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
