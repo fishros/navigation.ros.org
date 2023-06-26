@@ -1454,7 +1454,7 @@ msgstr "一旦您定义了目标姿态，Nav2将找到全局路径并开始在�
 
 
 msgid "Robot navigating in RViz"
-msgstr "Robot navigating in RViz"
+msgstr "在RViz中进行机器人导航"
 
 
 #: ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:129
@@ -1464,7 +1464,7 @@ msgstr "现在，您可以看到Turtlebot 3向房间内的目标位置移动。�
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:4
 msgid "Navigating with Keepout Zones"
-msgstr "Navigating with Keepout Zones"
+msgstr "使用禁止区域进行导航"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:21
@@ -1474,7 +1474,7 @@ msgstr "本教程演示了如何简单地利用无法进入的禁止/安全区�
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:32 ../../tutorials/docs/navigation2_with_speed_filter.rst:32
 msgid "1. Prepare filter mask"
-msgstr "1. Prepare filter mask"
+msgstr "1. 准备过滤掩模"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:34
@@ -1484,57 +1484,57 @@ msgstr "如在:ref:`概念`中所述，任何代价地图过滤器（包括Keepo
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:36
 msgid "Create a new image with a PGM/PNG/BMP format: copy `turtlebot3_world.pgm <https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.pgm>`_ main map which will be used in a world simulation from a ``Nav2`` repository to a new ``keepout_mask.pgm`` file."
-msgstr "Create a new image with a PGM/PNG/BMP format: copy `turtlebot3_world.pgm <https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.pgm>`_ main map which will be used in a world simulation from a ``Nav2`` repository to a new ``keepout_mask.pgm`` file."
+msgstr "创建一个新的图像，格式为PGM/PNG/BMP：从``Nav2``存储库中复制用于世界模拟中的主地图``turtlebot3_world.pgm``到新的``keepout_mask.pgm``文件中。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:38
 msgid "Open ``keepout_mask.pgm`` in your favourite raster graphics editor (as an example could be taken GIMP editor). The lightness of each pixel on the mask means an encoded information for the specific costmap filter you are going to use. Color lightness of each pixel belongs to the ``[0..255]`` range (or ``[0..100]`` in percent scale), where ``0`` means black color and ``255`` - white. Another term \"darkness\" will be understood as the exact opposite of lightness. In other words ``color_darkness = 100% - color_lightness``."
-msgstr "Open ``keepout_mask.pgm`` in your favourite raster graphics editor (as an example could be taken GIMP editor). The lightness of each pixel on the mask means an encoded information for the specific costmap filter you are going to use. Color lightness of each pixel belongs to the ``[0..255]`` range (or ``[0..100]`` in percent scale), where ``0`` means black color and ``255`` - white. Another term \"darkness\" will be understood as the exact opposite of lightness. In other words ``color_darkness = 100% - color_lightness``."
+msgstr "在您喜欢的栅格图形编辑器中打开“keepout_mask.pgm”（例如，可以使用GIMP编辑器作为示例）。掩码上每个像素的亮度代表您将要使用的特定代价地图过滤器的编码信息。每个像素的颜色亮度属于“[0..255]”范围（或者百分比刻度下的“[0..100]”），其中“0”表示黑色，而“255”表示白色。另一个术语“黑暗”将被理解为亮度的确切相反。换句话说，“颜色黑暗度 = 100% - 颜色亮度”。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:40
 msgid "In the GIMP lightness is expressed through color components value (e.g. ``R`` in percent scale) and might be set by moving ``L`` slider in color changing tool:"
-msgstr "In the GIMP lightness is expressed through color components value (e.g. ``R`` in percent scale) and might be set by moving ``L`` slider in color changing tool:"
+msgstr "在GIMP中，亮度通过颜色分量值（例如，百分比比例中的``R``）来表示，并可以通过移动颜色更改工具中的``L``滑块来设置："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:44
 msgid "The incoming mask file is being read by the Map Server and converted into ``OccupancyGrid`` values from ``[0..100]`` range (where ``0`` means free cell, ``100`` - occupied, anything in between - less or more occupied cells on map) or be equal to ``-1`` for unknown value. In Nav2 stack each map has ``mode`` attribute which could be ``trinary``, ``scale`` or ``raw``. Depending on ``mode`` selected, the color lightness of PGM/PNG/BMP is being converted to ``OccupancyGrid`` by one of the following principles:"
-msgstr "The incoming mask file is being read by the Map Server and converted into ``OccupancyGrid`` values from ``[0..100]`` range (where ``0`` means free cell, ``100`` - occupied, anything in between - less or more occupied cells on map) or be equal to ``-1`` for unknown value. In Nav2 stack each map has ``mode`` attribute which could be ``trinary``, ``scale`` or ``raw``. Depending on ``mode`` selected, the color lightness of PGM/PNG/BMP is being converted to ``OccupancyGrid`` by one of the following principles:"
+msgstr "地图服务器正在读取传入的掩码文件，并将其转换为来自“[0..100]”范围的“OccupancyGrid”值（其中“0”表示空闲单元格，“100”表示占用单元格，介于两者之间的任何值表示地图上更少或更多的占用单元格），或等于未知值的“-1”。在Nav2堆栈中，每个地图都具有“mode”属性，可以是“trinary”、“scale”或“raw”。根据所选的“mode”，PGM/PNG/BMP的颜色亮度将按照以下原则之一转换为“OccupancyGrid”："
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:46
 msgid "``trinary`` (default mode): Darkness >= ``occupied_thresh`` means that map occupied (``100``). Darkness <= ``free_thresh`` - map free (``0``). Anything in between - unknown status on map (``-1``)."
-msgstr "``trinary`` (default mode): Darkness >= ``occupied_thresh`` means that map occupied (``100``). Darkness <= ``free_thresh`` - map free (``0``). Anything in between - unknown status on map (``-1``)."
+msgstr "``trinary``（默认模式）：暗度大于等于``occupied_thresh``表示地图被占用（``100``）。暗度小于等于``free_thresh``表示地图为空闲（``0``）。两者之间的值表示地图上的未知状态（``-1``）。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:47
 msgid "``scale``: Alpha < ``1.0`` - unknown. Darkness >= ``occupied_thresh`` means that map occupied (``100``). Darkness <= ``free_thresh`` - map free (``0``). Anything in between - linearly interpolate to nearest integer from ``[0..100]`` range."
-msgstr "``scale``: Alpha < ``1.0`` - unknown. Darkness >= ``occupied_thresh`` means that map occupied (``100``). Darkness <= ``free_thresh`` - map free (``0``). Anything in between - linearly interpolate to nearest integer from ``[0..100]`` range."
+msgstr "“scale”：Alpha < 1.0 - 未知。黑暗度 >= “occupied_thresh”表示地图已占用（“100”）。黑暗度 <= “free_thresh” - 地图为空闲（“0”）。介于两者之间 - 线性插值到“[0..100]”范围内最近的整数。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:48
 msgid "``raw``: Lightness = ``0`` (dark color) means that map is free (``0``). Lightness = ``100`` (in absolute value)  - map is occupied (``100``). Anything in between - ``OccupancyGrid`` value = lightness. Lightness >= ``101`` - unknown (``-1``)."
-msgstr "``raw``: Lightness = ``0`` (dark color) means that map is free (``0``). Lightness = ``100`` (in absolute value)  - map is occupied (``100``). Anything in between - ``OccupancyGrid`` value = lightness. Lightness >= ``101`` - unknown (``-1``)."
+msgstr "``raw``：亮度为``0``（暗色）表示地图为空闲（``0``）。亮度为``100``（绝对值）表示地图被占用（``100``）。两者之间的值表示``OccupancyGrid``的值等于亮度。亮度大于等于``101``表示未知（``-1``）。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:50
 msgid "where ``free_thresh`` and ``occupied_thresh`` thresholds are expressed in percentage of maximum lightness/darkness level (``255``). Map mode and thresholds are placed in YAML metadata file (see below) as ``mode``, ``free_thresh`` and ``occupied_thresh`` fields."
-msgstr "where ``free_thresh`` and ``occupied_thresh`` thresholds are expressed in percentage of maximum lightness/darkness level (``255``). Map mode and thresholds are placed in YAML metadata file (see below) as ``mode``, ``free_thresh`` and ``occupied_thresh`` fields."
+msgstr "其中“free_thresh”和“occupied_thresh”阈值以最大亮度/黑暗度级别（“255”）的百分比表示。地图模式和阈值放置在YAML元数据文件中（见下文），作为“mode”、“free_thresh”和“occupied_thresh”字段。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:54
 msgid "There is another parameter in a YAML metadata file called ``negate``. By default it is set to ``false``. When it is set to ``true``, blacker pixels will be considered as free, whiter pixels - as occupied. In this case we should count color lightness instead of darkness for ``trinary`` and ``scale`` modes. ``negate`` has no effect on ``raw`` mode."
-msgstr "There is another parameter in a YAML metadata file called ``negate``. By default it is set to ``false``. When it is set to ``true``, blacker pixels will be considered as free, whiter pixels - as occupied. In this case we should count color lightness instead of darkness for ``trinary`` and ``scale`` modes. ``negate`` has no effect on ``raw`` mode."
+msgstr "在YAML元数据文件中还有另一个参数叫做``negate``。默认情况下，它被设置为``false``。当它被设置为``true``时，较黑的像素将被视为可通行的，较白的像素将被视为占用的。在这种情况下，对于``trinary``和``scale``模式，我们应该计算颜色的亮度而不是暗度。``negate``对``raw``模式没有影响。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:56
 msgid "For Keepout Filter ``OccupancyGrid`` value is proportional to the passibility of area corresponting to this cell: higher values means more impassable areas. Cells with occupied values covers keep-out zones where robot will never enter or pass through. ``KeepoutFilter`` can also act as a \"weighted areas layer\" by setting the ``OccupancyGrid`` to something between ``[1-99]`` non-occupied values. Robot is allowed to move in these areas, however its presence there would be \"undesirable\" there (the higher the value, the sooner planners will try to get the robot out of this area)."
-msgstr "For Keepout Filter ``OccupancyGrid`` value is proportional to the passibility of area corresponting to this cell: higher values means more impassable areas. Cells with occupied values covers keep-out zones where robot will never enter or pass through. ``KeepoutFilter`` can also act as a \"weighted areas layer\" by setting the ``OccupancyGrid`` to something between ``[1-99]`` non-occupied values. Robot is allowed to move in these areas, however its presence there would be \"undesirable\" there (the higher the value, the sooner planners will try to get the robot out of this area)."
+msgstr "对于Keepout过滤器，“OccupancyGrid”值与与此单元格对应的区域的可通行性成比例：较高的值表示不可通过的区域更多。具有占用值的单元格覆盖了机器人永远不会进入或通过的禁止区域。通过将“OccupancyGrid”设置为介于“[1-99]”之间的非占用值，Keepout过滤器也可以作为“加权区域层”。机器人被允许在这些区域中移动，但是它在那里的存在将是“不可取的”（值越高，规划器越早尝试将机器人移出该区域）。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:58
 msgid "Keepout Filter also covers preferred lanes case, where robots should moving only on pre-defined lanes and permitted areas e.g. in warehouses. To use this feaure you need to prepare the mask image where the lanes and permitted areas will be marked with free values while all other areas will be occupied. TIP for drawing the mask in a ``trinary`` or ``scale`` mode: typically, amount of pixels belonging to lanes are much less than pixels covering other areas. In this case initially all lanes data might be drawn with a black pencil over white background and then (just before saving a PGM) \"color inversion\" tool in a image raster editor might be used."
-msgstr "Keepout Filter also covers preferred lanes case, where robots should moving only on pre-defined lanes and permitted areas e.g. in warehouses. To use this feaure you need to prepare the mask image where the lanes and permitted areas will be marked with free values while all other areas will be occupied. TIP for drawing the mask in a ``trinary`` or ``scale`` mode: typically, amount of pixels belonging to lanes are much less than pixels covering other areas. In this case initially all lanes data might be drawn with a black pencil over white background and then (just before saving a PGM) \"color inversion\" tool in a image raster editor might be used."
+msgstr "Keepout Filter还涵盖了首选车道的情况，即机器人只能在预定义的车道和允许的区域内移动，例如在仓库中。要使用此功能，您需要准备一个掩膜图像，在该图像中车道和允许的区域将被标记为可通行的值，而所有其他区域将被占用。在``trinary``或``scale``模式下绘制掩膜的提示：通常，属于车道的像素数量远少于覆盖其他区域的像素。在这种情况下，最初可以使用黑色铅笔在白色背景上绘制所有车道数据，然后（在保存PGM之前）可以使用图像光栅编辑器中的“颜色反转”工具。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:60
@@ -1544,7 +1544,7 @@ msgstr "For simplicity, in the example fill the areas with black color (in ``tri
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:65
 msgid "After all keepout areas will be filled save the ``keepout_mask.pgm`` image."
-msgstr "After all keepout areas will be filled save the ``keepout_mask.pgm`` image."
+msgstr "填充所有保留区域后保存``keepout_mask.pgm``图像。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:67
@@ -1554,7 +1554,7 @@ msgstr "Like all other maps, filter mask should have its own YAML metadata file.
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:75
 msgid "Since filter mask image was created as a copy of main map, other fields of YAML-file do not need to be changed. Save ``keepout_mask.yaml`` and new filter mask is ready to use."
-msgstr "Since filter mask image was created as a copy of main map, other fields of YAML-file do not need to be changed. Save ``keepout_mask.yaml`` and new filter mask is ready to use."
+msgstr "由于过滤器掩膜图像是主地图的副本，因此不需要更改YAML文件的其他字段。保存``keepout_mask.yaml``，新的过滤器掩膜已准备好使用。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:79
@@ -1564,7 +1564,7 @@ msgstr "World map itself and filter mask could have different sizes, origin and 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:83
 msgid "Another important note is that since Costmap2D does not support orientation, the last third \"yaw\" component of the ``origin`` vector should be equal to zero. For example: ``origin: [1.25, -5.18, 0.0]``."
-msgstr "Another important note is that since Costmap2D does not support orientation, the last third \"yaw\" component of the ``origin`` vector should be equal to zero. For example: ``origin: [1.25, -5.18, 0.0]``."
+msgstr "另一个重要说明是，由于Costmap2D不支持方向性，``origin``向量的最后一个``yaw``分量应该等于零。例如：``origin: [1.25, -5.18, 0.0]``。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:86 ../../tutorials/docs/navigation2_with_speed_filter.rst:100
@@ -1574,7 +1574,7 @@ msgstr "2. Configure Costmap Filter Info Publisher Server"
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:88
 msgid "Each costmap filter reads incoming meta-information (such as filter type or data conversion coefficients) in a messages of ``nav2_msgs/CostmapFilterInfo`` type. These messages are being published by `Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_. The server is running as a lifecycle node. According to the `design document <https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf>`_, ``nav2_msgs/CostmapFilterInfo`` messages are going in a pair with ``OccupancyGrid`` filter mask topic. Therefore, along with Costmap Filter Info Publisher Server there should be enabled a new instance of Map Server configured to publish filter mask."
-msgstr "Each costmap filter reads incoming meta-information (such as filter type or data conversion coefficients) in a messages of ``nav2_msgs/CostmapFilterInfo`` type. These messages are being published by `Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_. The server is running as a lifecycle node. According to the `design document <https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf>`_, ``nav2_msgs/CostmapFilterInfo`` messages are going in a pair with ``OccupancyGrid`` filter mask topic. Therefore, along with Costmap Filter Info Publisher Server there should be enabled a new instance of Map Server configured to publish filter mask."
+msgstr "每个costmap过滤器在``nav2_msgs/CostmapFilterInfo``类型的消息中读取传入的元信息（例如过滤器类型或数据转换系数）。这些消息由`Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_发布。服务器作为生命周期节点运行。根据`设计文档 <https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf>`_，``nav2_msgs/CostmapFilterInfo``消息与``OccupancyGrid``过滤器掩膜主题成对出现。因此，在启用Costmap Filter Info Publisher Server的同时，应启用一个新的Map Server实例，并配置它来发布过滤器掩膜。"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:90
@@ -1584,7 +1584,7 @@ msgstr "In order to enable Keepout Filter in your configuration, both servers sh
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:199 ../../tutorials/docs/navigation2_with_speed_filter.rst:213
 msgid "where the ``params_file`` variable should be set to a YAML-file having ROS parameters for Costmap Filter Info Publisher Server and Map Server nodes. These parameters and their meaning are listed at :ref:`configuring_map_server` page. Please, refer to it for more information. The example of ``params_file`` could be found below:"
-msgstr "where the ``params_file`` variable should be set to a YAML-file having ROS parameters for Costmap Filter Info Publisher Server and Map Server nodes. These parameters and their meaning are listed at :ref:`configuring_map_server` page. Please, refer to it for more information. The example of ``params_file`` could be found below:"
+msgstr "其中``params_file``变"
 
 
 #: ../../tutorials/docs/navigation2_with_keepout_filter.rst:218 ../../tutorials/docs/navigation2_with_speed_filter.rst:232
