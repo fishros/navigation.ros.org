@@ -831,10 +831,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#removed-use-approach-velocity-scaling-param-in-rpp">在 RPP 中移除了使用接近速度缩放参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#refactored-amcl-motion-models-as-plugins">将 AMCL 运动模型重构为插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dropping-support-for-live-groot-monitoring-of-nav2">停止支持 Nav2 的实时 Groot 监控</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#replanning-only-if-path-is-invalid">Replanning Only if Path is Invalid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fix-costmaplayer-cleararea-invert-param-logic">Fix CostmapLayer clearArea invert param logic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dynamic-composition">Dynamic Composition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bt-cancel-node">BT Cancel Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replanning-only-if-path-is-invalid">仅在路径无效时重新规划</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-costmaplayer-cleararea-invert-param-logic">修复 CostmapLayer 清除区域的反转参数逻辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dynamic-composition">动态组合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bt-cancel-node">BT取消节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bt-pathlongeronapproach-node">BT PathLongerOnApproach Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bt-truncatepathlocal-node">BT TruncatePathLocal Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#constrained-smoother">Constrained Smoother</a></li>
@@ -1136,15 +1136,15 @@
 </div>
 <div class="section" id="added-smoother-task-server">
 <h2>添加了更平滑的任务服务器<a class="headerlink" href="#added-smoother-task-server" title="永久链接至标题"></a></h2>
-<p>A new task server was added which loads smoother plugins and executes them to improve quality of an existing planned path. Smoothing action can be called from a behavior tree using SmoothPath action node. <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2569">PR 2569</a> implements and <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2875">PR 2875</a> adds in the first of the plugins using it with a simple smoother. Other smoothers are in development and will be added in the future.</p>
+<p>添加了一个新的任务服务器，它加载更平滑的插件并执行它们，以改进现有的计划路径的质量。平滑动作可以通过使用SmoothPath行为节点在行为树中调用。<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2569">PR 2569</a> 实现了这一功能，<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2875">PR 2875</a> 添加了第一个使用简单平滑器的插件。其他平滑器正在开发中，并将在将来添加。</p>
 </div>
 <div class="section" id="removed-use-approach-velocity-scaling-param-in-rpp">
 <h2>在 RPP 中移除了使用接近速度缩放参数<a class="headerlink" href="#removed-use-approach-velocity-scaling-param-in-rpp" title="永久链接至标题"></a></h2>
-<p>The parameter <code class="docutils literal notranslate"><span class="pre">use_approach_linear_velocity_scaling</span></code> is removed in favor of always on to help in smooth transitions to the goal. <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2701">This PR 2701</a> implements.</p>
+<p>参数``use_approach_linear_velocity_scaling``已被移除，始终处于打开状态，以帮助实现平滑过渡到目标。<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2701">这个 PR 2701</a> 实现了这一功能。</p>
 </div>
 <div class="section" id="refactored-amcl-motion-models-as-plugins">
 <h2>将 AMCL 运动模型重构为插件<a class="headerlink" href="#refactored-amcl-motion-models-as-plugins" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">This PR 2642</a> creates plugins for the different motion models currently used in AMCL. This functionality enables users to use any custom motion model by creating it as a plugin and changing the robot_model_type parameter to the name of the plugin in nav2_params.yaml file. This helps to use custom motion models without the need to modify the AMCL source code.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">这个 PR 2642</a> 创建了当前在 AMCL 中使用的不同运动模型的插件。这个功能使用户可以通过创建插件并将 robot_model_type 参数更改为 nav2_params.yaml 文件中插件的名称来使用任何自定义运动模型。这有助于在不修改 AMCL 源代码的情况下使用自定义运动模型。</p>
 </div>
 <div class="section" id="dropping-support-for-live-groot-monitoring-of-nav2">
 <h2>停止支持 Nav2 的实时 Groot 监控<a class="headerlink" href="#dropping-support-for-live-groot-monitoring-of-nav2" title="永久链接至标题"></a></h2>
@@ -1152,20 +1152,20 @@
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2642">https://github.com/ros-planning/navigation2/pull/2642</a></p></li>
 </ul>
 <p>这是一个很棒的功能想法，但在实践中并没有完全实现，特别是在我们引入 BT Navigator 服务器中的多个导航器类型之后。我们主要遇到的问题是 Zero-MQ 阻止用户在同一进程中产生多个记录器类型。由于 BT 导航有多个服务器，为了查看它们之间的切换，从未有过清晰的交接，这导致人们提交工单或出现糟糕的日志或 ZMQ 崩溃。BT.CPP 客户端不允许我们进行清理关闭过程，所以我们只能希望 ZMQ 能正确处理这种情况，但它很少能做到。此外，Groot 一次只支持可视化一种类型的树，因此对于经常在导航器类型之间切换的应用程序，无法使用单个 groot 客户端，这引起了很大的不便。</p>
-<p>So, what I propose here is to remove live monitoring of the BT from Nav2. <strong>We can still use Groot to modify, visualize, and generally work with behavior trees</strong>, the only thing being removed is to live view the executing behavior tree as Nav2 is currently executing it (it used to light up the boxes of the current nodes). This was of dubious value anyhow, since the tree ticks so fast its difficult to visualize and get meaningful insights into things as the system is moving so quickly.</p>
+<p>因此，我在这里建议将对行为树的实时监控从 Nav2 中移除。<strong>我们仍然可以使用 Groot 来修改、可视化和处理行为树</strong>，唯一被移除的是在 Nav2 当前执行行为树时的实时视图（它曾经会点亮当前节点的框）。这本身就是可疑的价值，因为树的执行速度非常快，很难在系统移动得如此迅速时进行可视化并得到有意义的见解。</p>
 </div>
 <div class="section" id="replanning-only-if-path-is-invalid">
-<h2>Replanning Only if Path is Invalid<a class="headerlink" href="#replanning-only-if-path-is-invalid" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2591">This PR 2591</a> creates two new condition BT node to facilitate replanning only if path becomes invalid rather than constantly replanning. These new nodes were integrated into the default BT.</p>
+<h2>仅在路径无效时重新规划<a class="headerlink" href="#replanning-only-if-path-is-invalid" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2591">这个 PR 2591</a> 创建了两个新的条件行为树节点，以便仅在路径变为无效时进行重新规划，而不是不断地重新规划。这些新节点已集成到默认的行为树中。</p>
 </div>
 <div class="section" id="fix-costmaplayer-cleararea-invert-param-logic">
-<h2>Fix CostmapLayer clearArea invert param logic<a class="headerlink" href="#fix-costmaplayer-cleararea-invert-param-logic" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2772">This PR 2772</a> fixes the invert paramlogic of the CostmapLayer clearArea fonction. Hence correcting the behavior of the clearAroundRobot and clearExceptRegion services and their corresponding BT actions.</p>
+<h2>修复 CostmapLayer 清除区域的反转参数逻辑<a class="headerlink" href="#fix-costmaplayer-cleararea-invert-param-logic" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2772">这个 PR 2772</a> 修复了 CostmapLayer clearArea 函数的反向参数逻辑。从而修正了 clearAroundRobot 和 clearExceptRegion 服务及其相应的行为树动作的行为。</p>
 </div>
 <div class="section" id="dynamic-composition">
-<h2>Dynamic Composition<a class="headerlink" href="#dynamic-composition" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2750">This PR 2750</a> provides a optional bringup based on ROS2 dynamic composition for users. It can be used to compose all Nav2 nodes in a single process instead of launching these nodes separately, which is useful for embedded systems users that need to make optimizations due to harsh resource constraints. it's used by default, but can be disabled by using the launch argument <code class="docutils literal notranslate"><span class="pre">use_composition:=False</span></code>.</p>
-<p>Some experiments to show performance improvement of dynamic composition, and the cpu and memory are captured by <code class="docutils literal notranslate"><span class="pre">psutil</span></code> :</p>
+<h2>动态组合<a class="headerlink" href="#dynamic-composition" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2750">这个PR 2750</a> 为用户提供了基于ROS2动态组合的可选引导。它可以用于将所有Nav2节点组合在一个单独的进程中，而不是分别启动这些节点，这对于需要根据严格的资源限制进行优化的嵌入式系统用户非常有用。它默认情况下启用，但可以通过使用启动参数``use_composition:=False``来禁用。</p>
+<p>一些实验展示了动态组合的性能改进，CPU 和内存由 <code class="docutils literal notranslate"><span class="pre">psutil</span></code> 捕获：</p>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
@@ -1174,17 +1174,17 @@
 <col style="width: 12%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>CPU: Intel(R) i7-8700 (6Cores 12Threads), Memory: 32GB</p></th>
-<th class="head"><p>cpu(%)</p></th>
-<th class="head"><p>memory(%)</p></th>
+<tr class="row-odd"><th class="head"><p>CPU：Intel(R) i7-8700 (6核12线程)，内存：32GB</p></th>
+<th class="head"><p>CPU(%)</p></th>
+<th class="head"><p>内存（%）</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>normal multiple processes</p></td>
+<tr class="row-even"><td><p>正常的多进程</p></td>
 <td><p>44</p></td>
 <td><p>0.76</p></td>
 </tr>
-<tr class="row-odd"><td><p>dynamic composition (use <code class="docutils literal notranslate"><span class="pre">component_container_isolated</span></code>)</p></td>
+<tr class="row-odd"><td><p>动态组合（使用``component_container_isolated``）</p></td>
 <td><p>38</p></td>
 <td><p>0.23</p></td>
 </tr>
@@ -1194,7 +1194,7 @@
 <p>The way of dynamic composition consumes lower memory(saves ~70%),  and lower cpu (saves ~13%) than normal multiple processes.</p>
 </div>
 <div class="section" id="bt-cancel-node">
-<h2>BT Cancel Node<a class="headerlink" href="#bt-cancel-node" title="永久链接至标题"></a></h2>
+<h2>BT取消节点<a class="headerlink" href="#bt-cancel-node" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2787">This PR 2787</a> caters the users with an abstract node to develop cancel behaviors for different servers present in the Nav2 stack such as the controller_server, recovery_server and so on. As a start, this PR also provides the <code class="docutils literal notranslate"><span class="pre">CancelControl</span></code> behavior to cancel the goal given to the controller_server. As an addition to the <code class="docutils literal notranslate"><span class="pre">CancelControl</span></code> <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2856">This PR 2856</a> provides the users with the option to cancel the recoveries such as the <code class="docutils literal notranslate"><span class="pre">backup</span></code>, <code class="docutils literal notranslate"><span class="pre">spin</span></code> and <code class="docutils literal notranslate"><span class="pre">wait</span></code>.</p>
 </div>
 <div class="section" id="bt-pathlongeronapproach-node">
