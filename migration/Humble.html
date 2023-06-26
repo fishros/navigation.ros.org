@@ -868,17 +868,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#give-behavior-server-access-to-both-costmaps">让行为服务器访问两个Costmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-model-predictive-path-integral-controller">新的模型预测路径积分控制器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#behavior-tree-uses-error-codes">行为树使用错误代码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz">Load, Save and Loop Waypoints from the Nav2 Panel in RViz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dwb-forward-vs-reverse-pruning">DWB Forward vs Reverse Pruning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#more-stable-regulation-on-curves-for-long-lookahead-distances">More stable regulation on curves for long lookahead distances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#publish-collision-monitor-state">Publish Collision Monitor State</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#renamed-ros-parameter-in-collision-monitor">Renamed ROS-parameter in Collision Monitor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-safety-behavior-model-limit-in-collision-monitor">New safety behavior model &quot;limit&quot; in Collision Monitor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#velocity-smoother-applies-deceleration-when-timeout">Velocity smoother applies deceleration when timeout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#poseprogresschecker-plugin">PoseProgressChecker plugin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#allow-multiple-goal-checkers-and-change-parameter-progress-checker-plugin-s-name-and-type">Allow multiple goal checkers and change parameter progress_checker_plugin(s) name and type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#isbatterychargingcondition-bt-node">IsBatteryChargingCondition BT Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#behavior-server-error-codes">Behavior Server Error Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz">从RViz的Nav2面板中加载、保存和循环使用路径点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dwb-forward-vs-reverse-pruning">DWB正向和反向修剪</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-stable-regulation-on-curves-for-long-lookahead-distances">在长远的前瞻距离下对曲线进行更稳定的调节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publish-collision-monitor-state">发布碰撞监视器状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renamed-ros-parameter-in-collision-monitor">碰撞监视器中的ROS参数已重命名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-safety-behavior-model-limit-in-collision-monitor">碰撞监视器中新增了安全行为模型“limit”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#velocity-smoother-applies-deceleration-when-timeout">当超时时，速度平滑器应用减速</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#poseprogresschecker-plugin">PoseProgressChecker插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#allow-multiple-goal-checkers-and-change-parameter-progress-checker-plugin-s-name-and-type">允许多个目标检查器并更改参数progress_checker_plugin(s)的名称和类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#isbatterychargingcondition-bt-node">IsBatteryChargingCondition BT节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#behavior-server-error-codes">行为服务器错误代码</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-denoise-costmap-layer-plugin">New Denoise Costmap Layer Plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smacplannerhybrid-viz-expansions-parameter">SmacPlannerHybrid viz_expansions parameter</a></li>
 </ul>
@@ -1042,60 +1042,58 @@
 <h2>行为树使用错误代码<a class="headerlink" href="#behavior-tree-uses-error-codes" title="永久链接至标题"></a></h2>
 <p>PR #3324 &lt;<a class="reference external" href="https:https://github.com/ros-planning/navigation2/pull/3324">https:https://github.com/ros-planning/navigation2/pull/3324</a>&gt;`_添加了三个新的条件节点，用于检查由包含它们的动作BT节点在黑板上设置的错误代码。</p>
 <p><code class="docutils literal notranslate"><span class="pre">AreErrorCodesPresent``条件节点允许用户指定来自服务器的错误代码以及要匹配的错误代码。``WouldAControllerRecoveryHelp``检查活动错误代码是否为UNKNOWN、PATIENCE_EXCEEDED、FAILED_TO_MAKE_PROGRESS或NO_VALID_CONTROL。如果错误代码匹配，条件返回``SUCCESS</span></code>。这些错误代码有可能通过控制器恢复来清除。</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">WouldAPlannerRecoveryHelp</span></code> checks if the active error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT.
-If the error code is a match, the condition returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>.
-These error code are potentially able to be cleared by a planner recovery.</p>
+<p><code class="docutils literal notranslate"><span class="pre">WouldAPlannerRecoveryHelp</span></code> 检查当前的错误代码是否为UNKNOWN、NO_VALID_CONTROL或TIMEOUT。如果错误代码匹配，该条件返回``SUCCESS``。这些错误代码可能可以通过规划器恢复来清除。</p>
 <p><code class="docutils literal notranslate"><span class="pre">WouldASmootherRecoveryHelp``检查活动错误代码是否为UNKNOWN、TIMEOUT、FAILED_TO_SMOOTH_PATH或SMOOTHED_PATH_IN_COLLISION。如果错误代码匹配，条件返回``SUCCESS</span></code>。这些错误代码有可能通过平滑器恢复来清除。</p>
 </div>
 <div class="section" id="load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz">
-<h2>Load, Save and Loop Waypoints from the Nav2 Panel in RViz<a class="headerlink" href="#load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz" title="永久链接至标题"></a></h2>
+<h2>从RViz的Nav2面板中加载、保存和循环使用路径点<a class="headerlink" href="#load-save-and-loop-waypoints-from-the-nav2-panel-in-rviz" title="永久链接至标题"></a></h2>
 <p><a href="#id1"><span class="problematic" id="id2">`</span></a>PR＃3165 &lt;<a class="reference external" href="https:https://github.com/ros-planning/navigation2/pull/3165">https:https://github.com/ros-planning/navigation2/pull/3165</a>&gt;`_为RViz中的nav2面板提供了三个新功能，它们是：</p>
 <ul class="simple">
-<li><p>load and save waypoints in a yaml file for waypoint following (initial pose can also be stored if required)</p></li>
+<li><p>将路径点加载和保存到yaml文件中以进行路径点跟随（如果需要，也可以存储初始位姿）</p></li>
 <li><p>循环功能以重新访问航点</p></li>
-<li><p>pause and resume button for stopping and continuing through the waypoints</p></li>
+<li><p>用于停止和继续沿路径点前进的暂停和恢复按钮</p></li>
 </ul>
 <p>循环功能不仅限于RViz中的nav2面板。使用nav2_waypoint_follower的用户可以利用对FollowWaypoint操作所做的更改，通过在最终发送到nav2_waypoint_follower服务器的操作请求中指定所需的循环次数。</p>
 </div>
 <div class="section" id="dwb-forward-vs-reverse-pruning">
-<h2>DWB Forward vs Reverse Pruning<a class="headerlink" href="#dwb-forward-vs-reverse-pruning" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3374">PR #3374</a> adds a new <code class="docutils literal notranslate"><span class="pre">forward_prune_distance</span></code> parameter in the DWB controller. It replaces the <code class="docutils literal notranslate"><span class="pre">prune_distance</span></code> for forward path shortening, enabled through the <code class="docutils literal notranslate"><span class="pre">shorten_transformed_plan</span></code> boolean parameter. This change allows to use different values for forward and backward path shortening.</p>
+<h2>DWB正向和反向修剪<a class="headerlink" href="#dwb-forward-vs-reverse-pruning" title="永久链接至标题"></a></h2>
+<p>PR #3374 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3374">https://github.com/ros-planning/navigation2/pull/3374</a>&gt; 在 DWB 控制器中添加了一个新的 <cite>forward_prune_distance</cite> 参数。它替代了 <cite>prune_distance</cite> 用于前向路径缩短，通过布尔参数 <cite>shorten_transformed_plan</cite> 启用。这个改变允许使用不同的值来进行前向和后向路径缩短。</p>
 </div>
 <div class="section" id="more-stable-regulation-on-curves-for-long-lookahead-distances">
-<h2>More stable regulation on curves for long lookahead distances<a class="headerlink" href="#more-stable-regulation-on-curves-for-long-lookahead-distances" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3414">PR #3414</a> adds a new <code class="docutils literal notranslate"><span class="pre">use_fixed_curvature_lookahead</span></code> parameter to the RPP controller. This makes slowing down on curve not dependent on the instantaneous lookahead point, but instead on a fixed distance set by the parameter <code class="docutils literal notranslate"><span class="pre">curvature_lookahead_dist</span></code>.</p>
+<h2>在长远的前瞻距离下对曲线进行更稳定的调节<a class="headerlink" href="#more-stable-regulation-on-curves-for-long-lookahead-distances" title="永久链接至标题"></a></h2>
+<p>PR #3414 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3414">https://github.com/ros-planning/navigation2/pull/3414</a>&gt; 在 RPP 控制器中添加了一个新的 <cite>use_fixed_curvature_lookahead</cite> 参数。这使得在曲线上减速不再依赖于瞬时的前瞻点，而是由参数 <cite>curvature_lookahead_dist</cite> 设置的固定距离。</p>
 </div>
 <div class="section" id="publish-collision-monitor-state">
-<h2>Publish Collision Monitor State<a class="headerlink" href="#publish-collision-monitor-state" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3504">PR #3504</a> adds a new <code class="docutils literal notranslate"><span class="pre">state_topic</span></code> parameter to the CollisionMonitor. If specified, this optional parameter enables the state topic publisher. The topic reports the currently activated polygon action type and name.</p>
+<h2>发布碰撞监视器状态<a class="headerlink" href="#publish-collision-monitor-state" title="永久链接至标题"></a></h2>
+<p>PR #3504 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3504">https://github.com/ros-planning/navigation2/pull/3504</a>&gt; 在 CollisionMonitor 中添加了一个新的 <cite>state_topic</cite> 参数。如果指定了这个可选参数，它将启用状态主题发布器。该主题报告当前激活的多边形动作类型和名称。</p>
 </div>
 <div class="section" id="renamed-ros-parameter-in-collision-monitor">
-<h2>Renamed ROS-parameter in Collision Monitor<a class="headerlink" href="#renamed-ros-parameter-in-collision-monitor" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3513">PR #3513</a> renames <code class="docutils literal notranslate"><span class="pre">max_points</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">min_points</span></code> and changes its meaning. Formerly <code class="docutils literal notranslate"><span class="pre">max_points</span></code> meant the maximum number of points inside the area still not triggering the action, while <code class="docutils literal notranslate"><span class="pre">min_points</span></code> - is a minimal number of points starting from the action to be initiated. In other words <code class="docutils literal notranslate"><span class="pre">min_points</span></code> now should be adjusted as <code class="docutils literal notranslate"><span class="pre">max_points</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
+<h2>碰撞监视器中的ROS参数已重命名<a class="headerlink" href="#renamed-ros-parameter-in-collision-monitor" title="永久链接至标题"></a></h2>
+<p>PR #3513 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3513">https://github.com/ros-planning/navigation2/pull/3513</a>&gt; 将 <cite>max_points</cite> 参数重命名为 <cite>min_points</cite> 并改变了其含义。以前，<cite>max_points</cite> 表示区域内仍不触发动作的最大点数，而 <cite>min_points</cite> 是从动作开始计算的最小点数。换句话说，<cite>min_points</cite> 现在应该调整为 <cite>max_points + 1</cite>。</p>
 </div>
 <div class="section" id="new-safety-behavior-model-limit-in-collision-monitor">
-<h2>New safety behavior model &quot;limit&quot; in Collision Monitor<a class="headerlink" href="#new-safety-behavior-model-limit-in-collision-monitor" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3519">PR #3519</a> adds a new collision monitor behavior model <code class="docutils literal notranslate"><span class="pre">limit</span></code> that restricts maximum linear and angular speed to specific values (<code class="docutils literal notranslate"><span class="pre">linear_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">angular_limit</span></code>) if enough points are in the given shape.</p>
+<h2>碰撞监视器中新增了安全行为模型“limit”<a class="headerlink" href="#new-safety-behavior-model-limit-in-collision-monitor" title="永久链接至标题"></a></h2>
+<p>PR #3519 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3519">https://github.com/ros-planning/navigation2/pull/3519</a>&gt; 添加了一个新的碰撞监视器行为模型 <cite>limit</cite>，它限制最大线速度和角速度到特定的值 (<cite>linear_limit</cite> 和 <cite>angular_limit</cite>)，如果给定形状内有足够的点。</p>
 </div>
 <div class="section" id="velocity-smoother-applies-deceleration-when-timeout">
-<h2>Velocity smoother applies deceleration when timeout<a class="headerlink" href="#velocity-smoother-applies-deceleration-when-timeout" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3512">PR #3512</a> makes the VelocitySmoother apply the deceleration when the input command timeout.</p>
+<h2>当超时时，速度平滑器应用减速<a class="headerlink" href="#velocity-smoother-applies-deceleration-when-timeout" title="永久链接至标题"></a></h2>
+<p>PR #3512 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3512">https://github.com/ros-planning/navigation2/pull/3512</a>&gt; 使得 VelocitySmoother 在输入命令超时时应用减速。</p>
 </div>
 <div class="section" id="poseprogresschecker-plugin">
-<h2>PoseProgressChecker plugin<a class="headerlink" href="#poseprogresschecker-plugin" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3530">PR #3530</a> adds a new <code class="docutils literal notranslate"><span class="pre">nav2_controller::PoseProgressChecker</span></code> plugin. It builds on the behavior of the <code class="docutils literal notranslate"><span class="pre">SimpleProgressChecker</span></code> by adding a new parameter <code class="docutils literal notranslate"><span class="pre">required_movement_angle</span></code>, allowing the plugin to considers that there is still progress when there is no translation movement, from the moment there is a rotation movement superior to <code class="docutils literal notranslate"><span class="pre">required_movement_angle</span></code> within the <code class="docutils literal notranslate"><span class="pre">movement_time_allowance</span></code>.</p>
+<h2>PoseProgressChecker插件<a class="headerlink" href="#poseprogresschecker-plugin" title="永久链接至标题"></a></h2>
+<p>PR #3530 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3530">https://github.com/ros-planning/navigation2/pull/3530</a>&gt; 添加了一个新的 <cite>nav2_controller::PoseProgressChecker</cite> 插件。它在 <cite>SimpleProgressChecker</cite> 的基础上添加了一个新的参数 <cite>required_movement_angle</cite>，允许插件在没有平移运动时仍然认为有进展，只要在 <cite>movement_time_allowance</cite> 内有一个超过 <cite>required_movement_angle</cite> 的旋转运动。</p>
 </div>
 <div class="section" id="allow-multiple-goal-checkers-and-change-parameter-progress-checker-plugin-s-name-and-type">
-<h2>Allow multiple goal checkers and change parameter progress_checker_plugin(s) name and type<a class="headerlink" href="#allow-multiple-goal-checkers-and-change-parameter-progress-checker-plugin-s-name-and-type" title="永久链接至标题"></a></h2>
+<h2>允许多个目标检查器并更改参数progress_checker_plugin(s)的名称和类型<a class="headerlink" href="#allow-multiple-goal-checkers-and-change-parameter-progress-checker-plugin-s-name-and-type" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3555">PR #3555</a>  initializes the progress checker plugin(s) in the same way as for the goal checker and controller plugins: it is now a list of string and was renamed from <code class="docutils literal notranslate"><span class="pre">progress_checker_plugin</span></code> to <code class="docutils literal notranslate"><span class="pre">progress_checker_plugins</span></code>, and the type changed from <code class="docutils literal notranslate"><span class="pre">string</span></code> to <code class="docutils literal notranslate"><span class="pre">vector&lt;string&gt;</span></code>. This allows the initialization of multiple progress checkers that can be chosen from the added <code class="docutils literal notranslate"><span class="pre">progress_checker_id</span> <span class="pre">field</span></code> of the <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> action.
 Beware that it is a breaking change and that configuration files will need to be updated.</p>
 </div>
 <div class="section" id="isbatterychargingcondition-bt-node">
-<h2>IsBatteryChargingCondition BT Node<a class="headerlink" href="#isbatterychargingcondition-bt-node" title="永久链接至标题"></a></h2>
+<h2>IsBatteryChargingCondition BT节点<a class="headerlink" href="#isbatterychargingcondition-bt-node" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3553">PR #3553</a> adds a BT node to check if the battery is charging. See the configuration guide <a class="reference internal" href="../configuration/packages/bt-plugins/conditions/IsBatteryCharging.html#bt-is-battery-charging-condition"><span class="std std-ref">电池是否正在充电</span></a> for more details.</p>
 </div>
 <div class="section" id="behavior-server-error-codes">
-<h2>Behavior Server Error Codes<a class="headerlink" href="#behavior-server-error-codes" title="永久链接至标题"></a></h2>
+<h2>行为服务器错误代码<a class="headerlink" href="#behavior-server-error-codes" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3539">PR #3569</a> updates the behavior server plugins to provide error codes on failure.</p>
 <ul class="simple">
 <li><p>Spin: NONE: 0, UNKNOWN: 701, server error codes: 701-709</p></li>
