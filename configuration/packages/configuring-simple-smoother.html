@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Smoother &mdash; Navigation 2 1.0.0 文档</title>
+  <title>简单平滑器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -666,8 +666,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Simple Smoother</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#simple-smoother-parameters">Simple Smoother Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">简单平滑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-smoother-parameters">简单平滑器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Simple Smoother</li>
+      <li>简单平滑器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,14 +939,14 @@
            <div itemprop="articleBody">
              
   <div class="section" id="simple-smoother">
-<span id="configuring-simple-smoother"></span><h1>Simple Smoother<a class="headerlink" href="#simple-smoother" title="永久链接至标题"></a></h1>
+<span id="configuring-simple-smoother"></span><h1>简单平滑器<a class="headerlink" href="#simple-smoother" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">在Github上的源代码</a></p>
-<p>The Simple Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique. It weights the initial path points and the smoothed path points to create a balanced result where the path retains its high level characteristics but reduces oscillations or jagged features.</p>
-<p>It is recommended this is paired ONLY with infeasible (e.g. 2D) planners, since this algorithm will break any kinematically feasible conditions. It is recommended users use the Constrained Smoother plugin instead with feasible plans.</p>
+<p>简单平滑器是一个平滑器服务器插件，它接收输入路径并使用简单且快速的平滑技术进行平滑处理。它对初始路径点和平滑路径点进行加权，以创建一个平衡的结果，使路径保留其高级特征，同时减少震荡或锯齿特性。</p>
+<p>建议仅与不可行的（例如 2D）规划器配对使用，因为该算法会破坏任何运动可行的条件。建议用户改用可行路径的约束平滑器插件（Constrained Smoother plugin）。</p>
 <div class="section" id="simple-smoother-parameters">
-<h2>Simple Smoother Parameters<a class="headerlink" href="#simple-smoother-parameters" title="永久链接至标题"></a></h2>
+<h2>简单平滑器参数<a class="headerlink" href="#simple-smoother-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">tolerance</dt>
+<dt class="field-odd">公差</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Change in parameter values across path to terminate smoothing</p>
+<dt>描述</dt><dd><p>在路径上参数值的变化量，用于终止平滑过程</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to smooth the smoothed path recursively to refine the quality further</p>
+<dt>描述</dt><dd><p>是否递归平滑平滑路径以进一步改善质量</p>
 </dd>
 </dl>
 </dd>
@@ -1002,7 +1002,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of times to recursively attempt to smooth, must be <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1</span></code>.</p>
+<dt>描述</dt><dd><p>递归尝试平滑的次数，必须 <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1</span></code>。</p>
 </dd>
 </dl>
 </dd>
@@ -1062,7 +1062,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Weight to apply to smooth the path (smooths it)</p>
+<dt>描述</dt><dd><p>应用于平滑路径的权重（平滑路径）</p>
 </dd>
 </dl>
 </dd>

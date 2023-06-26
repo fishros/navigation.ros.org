@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="约束平滑器" href="configuring-constrained-smoother.html" />
-    <link rel="prev" title="Simple Smoother" href="configuring-simple-smoother.html" />
+    <link rel="prev" title="简单平滑器" href="configuring-simple-smoother.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -666,8 +666,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-simple-smoother.html">Simple Smoother</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-simple-smoother.html#simple-smoother-parameters">Simple Smoother Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-simple-smoother.html">简单平滑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-simple-smoother.html#simple-smoother-parameters">简单平滑器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-simple-smoother.html#example">示例</a></li>
 </ul>
 </li>
@@ -941,9 +941,9 @@
   <div class="section" id="savitzky-golay-smoother">
 <span id="configuring-savitzky-golay-filter-smoother"></span><h1>Savitzky-Golay平滑器<a class="headerlink" href="#savitzky-golay-smoother" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">在Github上的源代码</a></p>
-<p>The Savitzky-Golay Smoother is a Smoother Server plugin that will take in an input path and smooth it using a simple and fast smoothing technique based on <a class="reference external" href="https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter">Savitzky Golay Filters</a>. It uses a digital signal processing technique designed to reduce noise distorting a reference signal, in this case, a path.</p>
+<p>Savitzky-Golay平滑器是一个平滑器服务器插件，它接收输入路径并使用基于`Savitzky Golay Filters &lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter">https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter</a>&gt;`_的简单且快速的平滑技术进行平滑处理。它使用数字信号处理技术来减少噪音对参考信号（在本例中为路径）的扭曲。</p>
 <p>它适用于所有类型的规划器，但在NavFn中特别有用，可消除路径结束处或Theta*中可能出现的微小伪影，<a href="#id1"><span class="problematic" id="id2">**</span></a>而无需**修改主路径，稍微平滑可见线段之间的过渡。它非常快速（&lt;&lt; 1ms），因此是可能导致轻微不连续性的规划器的推荐默认选项。但是，它不能平滑较大尺度的不连续性、振荡或改善平滑性。对于这些情况，请使用其他提供的平滑器插件之一。它还提供平滑后路径点的估计方向向量。</p>
-<p>This algorithm is deterministic and low-parameter. In the below image, some odd points from NavFn's gradient descent are smoothed out by the smoother in the middle and end of a given path, while otherwise retaining the exact character of the path.</p>
+<p>该算法是确定性的和低参数的。在下图中，NavFn的梯度下降中的一些奇点被平滑器平滑处理，而路径的整体特性保持不变。</p>
 <img alt="../../_images/savitzky-golay-example.png" class="align-center" src="../../_images/savitzky-golay-example.png" />
 <div class="section" id="savitzky-golay-smoother-parameters">
 <h2>Savitzky-Golay平滑器参数<a class="headerlink" href="#savitzky-golay-smoother-parameters" title="永久链接至标题"></a></h2>
@@ -964,7 +964,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to smooth the smoothed results <code class="docutils literal notranslate"><span class="pre">refinement_num</span></code> times to get an improved result.</p>
+<dt>描述</dt><dd><p>是否对平滑结果进行 <code class="docutils literal notranslate"><span class="pre">refinement_num</span></code> 次平滑，以获得改进的结果。</p>
 </dd>
 </dl>
 </dd>
@@ -984,7 +984,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Number of times to recursively smooth a segment</p>
+<dt>描述</dt><dd><p>递归平滑路径的次数</p>
 </dd>
 </dl>
 </dd>
