@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keepout Filter Parameters &mdash; Navigation 2 1.0.0 文档</title>
+  <title>保护区过滤器参数 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -516,14 +516,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#plugin-parameters">插件参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="inflation.html">膨胀层参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="obstacle.html">Obstacle Layer Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="obstacle.html">障碍物图层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="voxel.html">Voxel Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="range.html">Range Sensor Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="denoise.html">降噪层参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Keepout Filter Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">保护区过滤器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="speed_filter.html">Speed Filter Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="binary_filter.html">二值过滤器参数</a></li>
 </ul>
@@ -930,7 +930,7 @@
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../configuring-costmaps.html">二维代价地图</a> &raquo;</li>
-      <li>Keepout Filter Parameters</li>
+      <li>保护区过滤器参数</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,9 +940,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="keepout-filter-parameters">
-<span id="keepout-filter"></span><h1>Keepout Filter Parameters<a class="headerlink" href="#keepout-filter-parameters" title="永久链接至标题"></a></h1>
-<p>Keepout Filter - is a Costmap Filter that enforces robot to avoid keepout areas or stay on preferred lanes, by updating corresponding costmap layer using filter mask information.</p>
-<p>Note: As Costmap Filters does not have the inflation layer applied to them (since inflation is not sensible for a speed or other non-occupation zone type), it may be beneficial to add a separate inflation layer into the vector of filters when using only a keepout zone. Some planners (e.g. Smac Feasible) will use the cost of the center point for a collision checking optimization before doing full SE2 footprint checks. Without inflation, the planner will not respect the Keepout Zone on it extremities -- but will still respect it for the robot centers. If you wish to have a Keepout Zone for any part of the robot base while using a feasible planner, please enable the inflation layer.</p>
+<span id="keepout-filter"></span><h1>保护区过滤器参数<a class="headerlink" href="#keepout-filter-parameters" title="永久链接至标题"></a></h1>
+<p>Keepout Filter - 是一个 Costmap Filter，通过使用过滤器掩码信息更新相应的 Costmap 图层，强制机器人避开限制区域或保持在首选车道上。</p>
+<p>注意：由于成本地图过滤器没有应用膨胀层（因为对于速度或其他非占用区域类型来说，膨胀是不可行的），在仅使用禁止区域时，将向过滤器向量中添加一个单独的膨胀层可能是有益的。一些规划器（例如 Smac Feasible）在执行完整的 SE2 足迹检查之前，会使用中心点的成本进行碰撞检查优化。如果没有膨胀层，规划器将不会在其边缘上尊重禁止区域，但仍会对机器人中心尊重该区域。如果您希望在使用可行规划器时为机器人底座的任何部分设置禁止区域，请启用膨胀层。</p>
 <p><cite>&lt;filter name&gt;</cite>：为此类型选择的相应插件名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.enabled</dt>

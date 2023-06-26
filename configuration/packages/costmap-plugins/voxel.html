@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="next" title="Range Sensor Parameters" href="range.html" />
-    <link rel="prev" title="Obstacle Layer Parameters" href="obstacle.html" />
+    <link rel="prev" title="障碍物图层参数" href="obstacle.html" />
 
 <link rel="stylesheet" href="../../../_static/tcs_theme.css" type="text/css" />
 
@@ -516,14 +516,14 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-costmaps.html#plugin-parameters">插件参数</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="inflation.html">膨胀层参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="obstacle.html">Obstacle Layer Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="obstacle.html">障碍物图层参数</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Voxel Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="range.html">Range Sensor Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="denoise.html">降噪层参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="keepout_filter.html">Keepout Filter Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keepout_filter.html">保护区过滤器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="speed_filter.html">Speed Filter Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="binary_filter.html">二值过滤器参数</a></li>
 </ul>
@@ -942,7 +942,7 @@
   <div class="section" id="voxel-layer-parameters">
 <h1>Voxel Layer Parameters<a class="headerlink" href="#voxel-layer-parameters" title="永久链接至标题"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code> is the corresponding plugin name selected for this type.</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;data</span> <span class="pre">source&gt;</span></code> is the corresponding observation source name for that sources parameters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;数据源&gt;</span></code> 是该数据源参数的相应观测源名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;voxel</span> <span class="pre">layer&gt;</span></code>.enabled</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -980,7 +980,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Clear any occupied cells under robot footprint.</p>
+<dt>描述</dt><dd><p>清除机器人足迹下的任何占用单元格。</p>
 </dd>
 </dl>
 </dd>
@@ -1000,7 +1000,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum height to add return to occupancy grid.</p>
+<dt>描述</dt><dd><p>添加到占用格网的最大高度。</p>
 </dd>
 </dl>
 </dd>
@@ -1120,7 +1120,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Enum for method to add data to master costmap, default to maximum.</p>
+<dt>描述</dt><dd><p>用于将数据添加到主成本地图的方法的枚举，默认为最大值。</p>
 </dd>
 </dl>
 </dd>
@@ -1160,7 +1160,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>namespace of sources of data.</p>
+<dt>描述</dt><dd><p>数据源的命名空间。</p>
 </dd>
 </dl>
 </dd>
@@ -1180,7 +1180,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic of data.</p>
+<dt>描述</dt><dd><p>数据的主题。</p>
 </dd>
 </dl>
 </dd>
@@ -1200,7 +1200,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Frame of sensor, to use if not provided by message. If empty, uses message frame_id.</p>
+<dt>描述</dt><dd><p>传感器的帧，如果消息中没有提供。如果为空，则使用消息的帧标识。</p>
 </dd>
 </dl>
 </dd>
@@ -1220,7 +1220,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>How long to store messages in a buffer to add to costmap before removing them (s).</p>
+<dt>描述</dt><dd><p>在将消息添加到代价地图之前，将其存储在缓冲区中的时间长度（以秒为单位）。</p>
 </dd>
 </dl>
 </dd>
@@ -1240,7 +1240,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Expected rate to get new data from sensor.</p>
+<dt>描述</dt><dd><p>从传感器获取新数据的预期速率。</p>
 </dd>
 </dl>
 </dd>
@@ -1300,7 +1300,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Maximum height to add return to occupancy grid.</p>
+<dt>描述</dt><dd><p>添加到占用格网的最大高度。</p>
 </dd>
 </dl>
 </dd>

@@ -516,14 +516,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#plugin-parameters">插件参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/static.html">Static Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/inflation.html">膨胀层参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/obstacle.html">Obstacle Layer Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/obstacle.html">障碍物图层参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/voxel.html">Voxel Layer Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/range.html">Range Sensor Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/denoise.html">降噪层参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html">Keepout Filter Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html">保护区过滤器参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/speed_filter.html">Speed Filter Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../configuration/packages/costmap-plugins/binary_filter.html">二值过滤器参数</a></li>
 </ul>
@@ -1151,7 +1151,7 @@ $<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </sp
 <li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: type of plugin. In our case <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::KeepoutFilter</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code>: filter info topic name. This need to be equal to <code class="docutils literal notranslate"><span class="pre">filter_info_topic</span></code> parameter of Costmap Filter Info Publisher Server from the chapter above.</p></li>
 </ul>
-<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> are listed at <a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html#keepout-filter"><span class="std std-ref">Keepout Filter Parameters</span></a> page.</p>
+<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> are listed at <a class="reference internal" href="../../configuration/packages/costmap-plugins/keepout_filter.html#keepout-filter"><span class="std std-ref">保护区过滤器参数</span></a> page.</p>
 <p>It is important to note that enabling <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> for <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> only will cause the path planner to build plans bypassing keepout zones. Enabling <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> for <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> only will cause the robot to not enter keepout zones, but the path may still go through them. So, the best practice is to enable <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> for global and local costmaps simultaneously by adding it both in <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> and <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code>. However it does not always have to be true. In some cases keepout zones don't have to be the same for global and local costmaps, e.g. if the robot doesn't allowed to intentionally go inside keepout zones, but if its there, the robot can drive in and out really quick if it clips an edge or corner. For this case, there is not need to use extra resources of the local costmap copy.</p>
 <p>To enable <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> with same mask for both global and local costmaps, use the following configuration:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>global_costmap:
