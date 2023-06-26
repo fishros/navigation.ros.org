@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Galactic to Humble" href="Galactic.html" />
-    <link rel="prev" title="Eloquent to Foxy" href="Eloquent.html" />
+    <link rel="prev" title="从Eloquent升级到Foxy" href="Eloquent.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
 
@@ -91,9 +91,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../development_guides/involvement_docs/index.html">参与进来</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#id1">参与进来</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#process">Process</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#licensing">Licensing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#developer-certification-of-origin-dco">Developer Certification of Origin (DCO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#process">过程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#licensing">许可证</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development_guides/involvement_docs/index.html#developer-certification-of-origin-dco">开发者原产地认证（DCO）</a></li>
 </ul>
 </li>
 </ul>
@@ -762,16 +762,16 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Migration Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Dashing.html">Dashing to Eloquent</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Dashing.html#new-packages">New Packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dashing.html#new-plugins">New Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dashing.html#navigation2-architectural-changes">Navigation2 Architectural Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dashing.html">从Dashing到Eloquent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Dashing.html#new-packages">新的包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dashing.html#new-plugins">新插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dashing.html#navigation2-architectural-changes">Navigation2架构更改</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Eloquent.html">Eloquent to Foxy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#server-updates">Server Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-plugins">New Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Eloquent.html">从Eloquent升级到Foxy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#general">常规</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#server-updates">服务器更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-plugins">新插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#map-server-re-work">Map Server Re-Work</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#new-particle-filter-messages">New Particle Filter Messages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Eloquent.html#selection-of-behavior-tree-in-each-navigation-action">Selection of Behavior Tree in each navigation action</a></li>
@@ -790,7 +790,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#nav2-controllers-and-goal-checker-plugin-interface-changes">Nav2 Controllers and Goal Checker Plugin Interface Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#followpath-goal-checker-id-attribute">FollowPath goal_checker_id attribute</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#groot-support">Groot Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-plugins">New Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-plugins">新插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smacplanner">SmacPlanner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#thetastarplanner">ThetaStarPlanner</a></li>
@@ -1022,7 +1022,7 @@ This is all done without breaking any APIs.
 Enabled by default.</p>
 </div>
 <div class="section" id="new-plugins">
-<h2>New Plugins<a class="headerlink" href="#new-plugins" title="永久链接至标题"></a></h2>
+<h2>新插件<a class="headerlink" href="#new-plugins" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> has an action server that takes in a list of waypoints to follow and follow them in order. In some cases we might want robot to
 perform some tasks/behaviours at arrivals of these waypoints. In order to perform such tasks, a generic plugin interface <cite>WaypointTaskExecutor</cite> has been added to <code class="docutils literal notranslate"><span class="pre">nav2_core</span></code>.
 Users can inherit from this interface to implement their own plugin to perform more specific tasks at waypoint arrivals for their needs.</p>
