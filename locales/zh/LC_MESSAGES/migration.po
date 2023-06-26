@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../migration/Dashing.rst:4
 msgid "Dashing to Eloquent"
-msgstr "Dashing to Eloquent"
+msgstr "从Dashing到Eloquent"
 
 
 #: ../../migration/Dashing.rst:6
@@ -32,7 +32,7 @@ msgstr "从 ROS 2 Dashing 到 Eloquent 的迁移中，我们添加了一些稳�
 
 #: ../../migration/Dashing.rst:9
 msgid "New Packages"
-msgstr "New Packages"
+msgstr "新的包"
 
 
 #: ../../migration/Dashing.rst:11
@@ -42,77 +42,77 @@ msgstr "Navigation2 现在包含一个新包 ``nav2_waypoint_follower``。Waypoi
 
 #: ../../migration/Dashing.rst:18
 msgid "Navigation2 now supports new algorithms for control and SLAM. The Timed-Elastic Band (TEB) controller was implemented `and can be found here <https://github.com/rst-tu-dortmund/teb_local_planner>`_. It is its own controller plugin that can be used instead of the DWB controller. Nav2 also supports SLAM Toolbox as the default SLAM implementation for ROS 2. This replaces the use of Cartographer."
-msgstr "Navigation2 now supports new algorithms for control and SLAM. The Timed-Elastic Band (TEB) controller was implemented `and can be found here <https://github.com/rst-tu-dortmund/teb_local_planner>`_. It is its own controller plugin that can be used instead of the DWB controller. Nav2 also supports SLAM Toolbox as the default SLAM implementation for ROS 2. This replaces the use of Cartographer."
+msgstr "Navigation2现在支持用于控制和SLAM的新算法。Timed-Elastic Band (TEB)控制器已经实现，并可在此处找到： <https://github.com/rst-tu-dortmund/teb_local_planner>。它是自己的控制器插件，可用作DWB控制器的替代方案。Nav2还支持SLAM Toolbox作为ROS 2的默认SLAM实现，用以取代Cartographer的使用。"
 
 
 #: ../../migration/Dashing.rst:25 ../../migration/Eloquent.rst:79 ../../migration/Foxy.rst:108
 msgid "New Plugins"
-msgstr "New Plugins"
+msgstr "新插件"
 
 
 #: ../../migration/Dashing.rst:27
 msgid "Eloquent introduces back in pluginlib plugins to the navigation stack. ``nav2_core`` defines the plugin header interfaces to be used to implement controller, planner, recovery, and goal checker plugins. All algorithms (NavFn, DWB, recoveries) were added as plugin interfaces and the general packages for servers were created. ``nav2_planner`` is the action server for planning that hosts a plugin for the planner. ``nav2_controller`` is the action server for controller that hosts a plugin for the controller. ``nav2_recovery`` is the action server for recovery that hosts a plugin for recovery."
-msgstr "Eloquent introduces back in pluginlib plugins to the navigation stack. ``nav2_core`` defines the plugin header interfaces to be used to implement controller, planner, recovery, and goal checker plugins. All algorithms (NavFn, DWB, recoveries) were added as plugin interfaces and the general packages for servers were created. ``nav2_planner`` is the action server for planning that hosts a plugin for the planner. ``nav2_controller`` is the action server for controller that hosts a plugin for the controller. ``nav2_recovery`` is the action server for recovery that hosts a plugin for recovery."
+msgstr "Eloquent在导航堆栈中引入了pluginlib插件。``nav2_core``定义了插件头接口，用于实现控制器、规划器、恢复器和目标检查器插件。所有算法（NavFn、DWB、恢复器）都作为插件接口进行了添加，并创建了用于服务器的通用包。``nav2_planner``是规划的动作服务器，托管了规划器的插件。``nav2_controller``是控制的动作服务器，托管了控制器的插件。``nav2_recovery``是恢复的动作服务器，托管了恢复器的插件。"
 
 
 #: ../../migration/Dashing.rst:34
 msgid "New recovery plugins were added including backup, which will take in a distance to back up, if collision-free. Additionally, the wait recovery was added that will wait a configurable period of time before trying to navigate again. This plugin is especially helpful for time-dependent obstacles or pausing navigation for a scene to become less dynamic."
-msgstr "New recovery plugins were added including backup, which will take in a distance to back up, if collision-free. Additionally, the wait recovery was added that will wait a configurable period of time before trying to navigate again. This plugin is especially helpful for time-dependent obstacles or pausing navigation for a scene to become less dynamic."
+msgstr "新增了一些恢复插件，包括备份功能，如果无冲突的话，可以根据距离进行备份。此外，还新增了等待恢复功能，可以在再次尝试导航之前等待可配置的一段时间。该插件对于时间相关的障碍物或者暂停导航以使场景变得不太动态非常有帮助。"
 
 
 #: ../../migration/Dashing.rst:38
 msgid "Many new behavior tree nodes were added. These behavior tree nodes are hard-coded in the behavior tree engine. Behavior tree cpp v3 supports plugins and will be converted in the next release."
-msgstr "Many new behavior tree nodes were added. These behavior tree nodes are hard-coded in the behavior tree engine. Behavior tree cpp v3 supports plugins and will be converted in the next release."
+msgstr "添加了许多新的行为树节点。这些行为树节点在行为树引擎中进行了硬编码。行为树cpp v3支持插件，并将在下一个版本中进行转换。"
 
 
 #: ../../migration/Dashing.rst:42
 msgid "Navigation2 Architectural Changes"
-msgstr "Navigation2 Architectural Changes"
+msgstr "Navigation2架构更改"
 
 
 #: ../../migration/Dashing.rst:44
 msgid "The ``nav2_world_model`` package was removed. The individual ``nav2_planner`` and ``nav2_controller`` servers now host their relevent costmaps. This was done to reduce network traffic and ensure up-to-date information for the safety-critical elements of the system. As above mentions, plugins were introduced into the stack and these servers each host plugins for navigation, control, and costmap layers."
-msgstr "The ``nav2_world_model`` package was removed. The individual ``nav2_planner`` and ``nav2_controller`` servers now host their relevent costmaps. This was done to reduce network traffic and ensure up-to-date information for the safety-critical elements of the system. As above mentions, plugins were introduced into the stack and these servers each host plugins for navigation, control, and costmap layers."
+msgstr "``nav2_world_model``包已被移除。个别的``nav2_planner``和``nav2_controller``服务器现在托管其相关的代价地图。这样做是为了减少网络流量并确保系统中关键安全元素的最新信息。如上所述，插件被引入到堆栈中，这些服务器分别托管用于导航、控制和代价地图层的插件。"
 
 
 #: ../../migration/Dashing.rst:48
 msgid "Map server was substantially refactored but the external API remains the same. It now uses the SDL library for image loading."
-msgstr "Map server was substantially refactored but the external API remains the same. It now uses the SDL library for image loading."
+msgstr "地图服务器进行了大规模的重构，但外部API保持不变。现在它使用SDL库来加载图像。"
 
 
 #: ../../migration/Dashing.rst:50
 msgid "TF-based positioning is now used for pose-estimation everywhere in the stack. Prior, some elements of the navigation stack only updated its pose from the ``/amcl_pose`` topic publishing at an irregular rate. This is obviously low-accuracy and high-latency. All positioning is now based on the TF tree from the global frame to the robot frame."
-msgstr "TF-based positioning is now used for pose-estimation everywhere in the stack. Prior, some elements of the navigation stack only updated its pose from the ``/amcl_pose`` topic publishing at an irregular rate. This is obviously low-accuracy and high-latency. All positioning is now based on the TF tree from the global frame to the robot frame."
+msgstr "在整个堆栈中，现在都使用基于TF的定位进行姿态估计。之前，导航堆栈的一些元素只在不规则的频率下从``/amcl_pose``话题中更新其姿态。这显然是低精度且高延迟的。现在所有的定位都基于从全局坐标系到机器人坐标系的TF树。"
 
 
 #: ../../migration/Dashing.rst:55
 msgid "Prior to Eloquent, there were no ROS 2 action servers and clients available. Navigation2, rather, used an interface we called Tasks. Eloquent now contains actions and a simple action server interface was created and is used now throughout the stack. Tasks were removed."
-msgstr "Prior to Eloquent, there were no ROS 2 action servers and clients available. Navigation2, rather, used an interface we called Tasks. Eloquent now contains actions and a simple action server interface was created and is used now throughout the stack. Tasks were removed."
+msgstr "在Eloquent版本之前，没有ROS 2的动作服务器和客户端可用。Navigation2使用了一种我们称之为Tasks的接口。在Eloquent版本中，引入了动作和简单的动作服务器接口，并在整个堆栈中使用。Tasks被移除了。"
 
 
 #: ../../migration/Eloquent.rst:4
 msgid "Eloquent to Foxy"
-msgstr "Eloquent to Foxy"
+msgstr "从Eloquent升级到Foxy"
 
 
 #: ../../migration/Eloquent.rst:6
 msgid "Moving from ROS 2 Eloquent to Foxy, a number of stability improvements were added that we will not specifically address here. We will specifically mention, however, the reduction in terminal noise. TF2 transformation timeout errors and warnings on startup have been largely removed or throttled to be more tractable. Additionally, message filters filling up resulting in messages being dropped were resolved in costmap 2d."
-msgstr "Moving from ROS 2 Eloquent to Foxy, a number of stability improvements were added that we will not specifically address here. We will specifically mention, however, the reduction in terminal noise. TF2 transformation timeout errors and warnings on startup have been largely removed or throttled to be more tractable. Additionally, message filters filling up resulting in messages being dropped were resolved in costmap 2d."
+msgstr "从ROS 2 Eloquent迁移到Foxy版本，增加了许多稳定性改进，我们不会在此具体说明。但值得一提的是终端噪音的减少。大部分启动时的TF2变换超时错误和警告已经被大大减少或限制，使其更易处理。此外，解决了costmap 2d中消息过滤器充满导致消息丢失的问题。"
 
 
 #: ../../migration/Eloquent.rst:12
 msgid "General"
-msgstr "General"
+msgstr "常规"
 
 
 #: ../../migration/Eloquent.rst:14
 msgid "The lifecycle manager was split into 2 unique lifecycle managers. They are the ``navigation_lifecycle_manager`` and ``localization_lifecycle_manager``. This gives each process their own manager to allow users to switch between SLAM and localization without effecting Navigation. It also reduces the redundant code in ``nav2_bringup``."
-msgstr "The lifecycle manager was split into 2 unique lifecycle managers. They are the ``navigation_lifecycle_manager`` and ``localization_lifecycle_manager``. This gives each process their own manager to allow users to switch between SLAM and localization without effecting Navigation. It also reduces the redundant code in ``nav2_bringup``."
+msgstr "生命周期管理器被分成了两个独立的生命周期管理器，它们分别是``navigation_lifecycle_manager``和``localization_lifecycle_manager``。这样每个进程都有自己的管理器，允许用户在SLAM和定位之间切换而不影响导航。它还减少了``nav2_bringup``中的冗余代码。"
 
 
 #: ../../migration/Eloquent.rst:19
 msgid "The lifecycle manager also now contains ``Bond`` connections to each lifecycle server. This means that if a server crashes or exits, the lifecycle manager will be constantly checking and transition down its lifecycle nodes for safety. This acts as a watchdog during run-time to complement the lifecycle manager's transitioning up and down from active states. See `this PR for details <https://github.com/ros-planning/navigation2/pull/1894>`_."
-msgstr "The lifecycle manager also now contains ``Bond`` connections to each lifecycle server. This means that if a server crashes or exits, the lifecycle manager will be constantly checking and transition down its lifecycle nodes for safety. This acts as a watchdog during run-time to complement the lifecycle manager's transitioning up and down from active states. See `this PR for details <https://github.com/ros-planning/navigation2/pull/1894>`_."
+msgstr "生命周期管理器现在还包含与每个生命周期服务器的``Bond``连接。这意味着如果一个服务器崩溃或退出，生命周期管理器将不断检查并将其生命周期节点过渡到安全状态。这在运行时充当看门狗，以补充生命周期管理器从活动状态向上和向下过渡的功能。有关详细信息，请参阅`此PR <https://github.com/ros-planning/navigation2/pull/1894>`_。"
 
 
 #: ../../migration/Eloquent.rst:23
@@ -122,7 +122,7 @@ msgstr "A fix to the BT navigator was added to remove a rare issue where it may 
 
 #: ../../migration/Eloquent.rst:29
 msgid "Server Updates"
-msgstr "Server Updates"
+msgstr "服务器更新"
 
 
 #: ../../migration/Eloquent.rst:30

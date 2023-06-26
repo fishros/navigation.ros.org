@@ -1172,7 +1172,7 @@ msgstr "许可证告诉开发者作为版权持有人提供的权利。重要的
 
 #: ../../development_guides/involvement_docs/index.rst:78
 msgid "If for some reason Apache 2.0 or BSD licenses are not appropriate for your work, please get in contact with a project maintainer and discuss your concerns or requirements. We may consider special exceptions for exceptional work, within reason (we will not accept any licenses that makes it unsuitable for commercial use)."
-msgstr "If for some reason Apache 2.0 or BSD licenses are not appropriate for your work, please get in contact with a project maintainer and discuss your concerns or requirements. We may consider special exceptions for exceptional work, within reason (we will not accept any licenses that makes it unsuitable for commercial use)."
+msgstr "如果由于某种原因，Apache 2.0或BSD许可证不适用于您的工作，请与项目维护人员联系，讨论您的担忧或要求。我们可能会考虑为杰出的工作提供特殊例外情况，但需在合理范围内（我们不会接受任何使其不适合商业用途的许可证）。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:84
@@ -1182,7 +1182,7 @@ msgstr "开发者原产地认证（DCO）"
 
 #: ../../development_guides/involvement_docs/index.rst:86
 msgid "To make a good faith effort to ensure licensing criteria are met, |LPN| encourages the Developer Certificate of Origin (DCO) process to be followed."
-msgstr "To make a good faith effort to ensure licensing criteria are met, |LPN| encourages the Developer Certificate of Origin (DCO) process to be followed."
+msgstr "为了诚实努力确保满足许可条件，|LPN|鼓励遵循开发者证书（DCO）流程。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:90
@@ -1192,7 +1192,7 @@ msgstr "DCO 是开发者在每次贡献中附加的证明。在贡献的提交�
 
 #: ../../development_guides/involvement_docs/index.rst:95
 msgid "In practice, its easier to just ``git commit -s -m \"commit messsage.\"``. Where ``-s`` adds this automatically. If you forgot to add this to a commit, it is easy to append via: ``git commit --amend -s``."
-msgstr "In practice, its easier to just ``git commit -s -m \"commit messsage.\"``. Where ``-s`` adds this automatically. If you forgot to add this to a commit, it is easy to append via: ``git commit --amend -s``."
+msgstr "实际上，最简单的方法是直接执行 ``git commit -s -m \"commit messsage.\"`` 命令。其中 ``-s`` 会自动添加这一项。如果忘记在提交时添加此项，可以通过 ``git commit --amend -s`` 命令进行追加。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:99
