@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navigating with a Physical Turtlebot 3 &mdash; Navigation 2 1.0.0 文档</title>
+  <title>使用实体Turtlebot 3导航 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -207,13 +207,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">General Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Navigating with a Physical Turtlebot 3</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用实体Turtlebot 3导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#setup-your-enviroment-variables">0- Setup Your Enviroment Variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-turtlebot-3">1- Launch Turtlebot 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-nav2">2- Launch Nav2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-your-enviroment-variables">0- 设置环境变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-turtlebot-3">1- 启动Turtlebot 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-nav2">2- 启动Nav2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#launch-rviz">3-  Launch RVIZ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#initialize-the-location-of-turtlebot-3">4- Initialize the Location of Turtlebot 3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#send-a-goal-pose">5-  Send a Goal Pose</a></li>
@@ -284,7 +284,7 @@
 <li class="toctree-l3"><a class="reference internal" href="navigation2_dynamic_point_following.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#create-the-behavior-tree">0- 创建行为树</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#setup-rviz-clicked-point">1- 设置 Rviz 点击点</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#run-dynamic-object-following-in-nav2-simulation">2- Run Dynamic Object Following in Nav2 Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_dynamic_point_following.html#run-dynamic-object-following-in-nav2-simulation">2- 在Nav2仿真中运行动态物体跟随</a></li>
 </ul>
 </li>
 </ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">General Tutorials</a> &raquo;</li>
-      <li>Navigating with a Physical Turtlebot 3</li>
+      <li>使用实体Turtlebot 3导航</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,7 +939,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="navigating-with-a-physical-turtlebot-3">
-<span id="navigation2-on-real-turtlebot3"></span><h1>Navigating with a Physical Turtlebot 3<a class="headerlink" href="#navigating-with-a-physical-turtlebot-3" title="永久链接至标题"></a></h1>
+<span id="navigation2-on-real-turtlebot3"></span><h1>使用实体Turtlebot 3导航<a class="headerlink" href="#navigating-with-a-physical-turtlebot-3" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
@@ -951,38 +951,34 @@
   </div>
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial shows how to control and navigate Turtlebot 3 using the ROS 2 Nav2 on a physical Turtlebot 3 robot.
-Before completing this tutorials, completing <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> is highly recommended especially if you are new to ROS and Nav2.</p>
-<p>This tutorial may take about 1 hour to complete.
-It depends on your experience with ROS, robots, and what computer system you have.</p>
+<p>本教程展示了如何使用ROS 2 Nav2在物理Turtlebot 3机器人上控制和导航。在完成本教程之前，强烈推荐完成 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>，特别是如果你对ROS和Nav2还不熟悉的话。</p>
+<p>完成本教程可能需要大约1小时。这取决于您对ROS、机器人的经验以及您所拥有的计算机系统。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
-<p>You must install Nav2, Turtlebot3.
-If you don't have them installed, please follow <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>.</p>
+<p>你必须安装Nav2和Turtlebot3。如果你尚未安装它们，请按照 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> 进行安装。</p>
 </div>
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="setup-your-enviroment-variables">
-<h3>0- Setup Your Enviroment Variables<a class="headerlink" href="#setup-your-enviroment-variables" title="永久链接至标题"></a></h3>
-<p>Run the following commands first whenever you open a new terminal during this tutorial.</p>
+<h3>0- 设置环境变量<a class="headerlink" href="#setup-your-enviroment-variables" title="永久链接至标题"></a></h3>
+<p>在本教程中，每次打开新的终端时，请首先运行以下命令。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/ros/&lt;ros2-distro&gt;/setup.bash</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TURTLEBOT3_MODEL=waffle</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="launch-turtlebot-3">
-<h3>1- Launch Turtlebot 3<a class="headerlink" href="#launch-turtlebot-3" title="永久链接至标题"></a></h3>
-<p>You will need to launch your robot's interface,</p>
+<h3>1- 启动Turtlebot 3<a class="headerlink" href="#launch-turtlebot-3" title="永久链接至标题"></a></h3>
+<p>你需要启动机器人的界面,</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span>&#160; <span class="pre">use_sim_time:=False</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">turtlebot3_bringup</span> <span class="pre">robot.launch.py</span> <span class="pre">use_sim_time:=False</span></code></p>
 </div></blockquote>
 </div>
 <div class="section" id="launch-nav2">
-<h3>2- Launch Nav2<a class="headerlink" href="#launch-nav2" title="永久链接至标题"></a></h3>
-<p>You need to have a map of the environment where you want to Navigate Turtlebot 3, or create one live with SLAM.</p>
-<p>In case you are interested, there is a use case tutorial which shows how to use Nav2 with SLAM.
-<a class="reference internal" href="navigation2_with_slam.html#navigation2-with-slam"><span class="std std-ref">(SLAM) Navigating While Mapping</span></a>.</p>
+<h3>2- 启动Nav2<a class="headerlink" href="#launch-nav2" title="永久链接至标题"></a></h3>
+<p>您需要拥有一个Turtlebot 3导航的环境地图，或者使用SLAM实时创建一个。</p>
+<p>如果你感兴趣，这里有一个用例教程展示了如何使用带有SLAM的Nav2。<a class="reference internal" href="navigation2_with_slam.html#navigation2-with-slam"><span class="std std-ref">(SLAM) Navigating While Mapping</span></a>。</p>
 <p>Required files:</p>
 <blockquote>
 <div><ul class="simple">
@@ -990,10 +986,7 @@ If you don't have them installed, please follow <a class="reference internal" hr
 <li><p><code class="docutils literal notranslate"><span class="pre">your-map.yaml</span></code></p></li>
 </ul>
 </div></blockquote>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;your_map&gt;.yaml</span></code> is the configuration file for the map we want to provide Nav2.
-In this case, it has the map resolution value, threshold values for obstacles and free spaces, and a map file location.
-You need to make sure these values are correct.
-More information about the map.yaml can be found <a class="reference external" href="http://wiki.ros.org/map_server">here</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;your_map&gt;.yaml</span></code> 是我们要提供给Nav2的地图的配置文件。在这种情况下，它包含地图分辨率值、障碍物和自由空间的阈值以及地图文件的位置。你需要确保这些值是正确的。关于map.yaml的更多信息可以在`这里 &lt;<a class="reference external" href="http://wiki.ros.org/map_server">http://wiki.ros.org/map_server</a>&gt;`_ 找到。</p>
 <p>Launch Nav2. If you set autostart:=False, you need to click on the start button in RViz to initialize the nodes.
 Make sure <cite>use_sim time</cite> is set to <strong>False</strong>, because we want to use the system time instead of the time simulation time from Gazebo.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">bringup_launch.py</span> <span class="pre">use_sim_time:=False</span> <span class="pre">autostart:=False</span> <span class="pre">map:=/path/to/your-map.yaml</span></code></p>

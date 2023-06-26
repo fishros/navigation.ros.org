@@ -207,13 +207,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">General Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="navigation2_on_real_turtlebot3.html">Navigating with a Physical Turtlebot 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation2_on_real_turtlebot3.html">使用实体Turtlebot 3导航</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#setup-your-enviroment-variables">0- Setup Your Enviroment Variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-turtlebot-3">1- Launch Turtlebot 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-nav2">2- Launch Nav2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#setup-your-enviroment-variables">0- 设置环境变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-turtlebot-3">1- 启动Turtlebot 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-nav2">2- 启动Nav2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-rviz">3-  Launch RVIZ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#initialize-the-location-of-turtlebot-3">4- Initialize the Location of Turtlebot 3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#send-a-goal-pose">5-  Send a Goal Pose</a></li>
@@ -284,7 +284,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#create-the-behavior-tree">0- 创建行为树</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setup-rviz-clicked-point">1- 设置 Rviz 点击点</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-dynamic-object-following-in-nav2-simulation">2- Run Dynamic Object Following in Nav2 Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-dynamic-object-following-in-nav2-simulation">2- 在Nav2仿真中运行动态物体跟随</a></li>
 </ul>
 </li>
 </ul>
@@ -1047,11 +1047,11 @@
 <p>可选地，您可以在rviz配置文件中重新映射此主题为``goal_updates``。</p>
 </div>
 <div class="section" id="run-dynamic-object-following-in-nav2-simulation">
-<h3>2- Run Dynamic Object Following in Nav2 Simulation<a class="headerlink" href="#run-dynamic-object-following-in-nav2-simulation" title="永久链接至标题"></a></h3>
+<h3>2- 在Nav2仿真中运行动态物体跟随<a class="headerlink" href="#run-dynamic-object-following-in-nav2-simulation" title="永久链接至标题"></a></h3>
 <p>在一个终端中启动Nav2：</p>
 <p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">tb3_simulation_launch.py</span> <span class="pre">default_bt_xml_filename:=/path/to/bt.xml</span></code></p>
 <p>打开RViz，在初始化机器人位置后，命令机器人导航到任意位置。使用点击点按钮模拟对感兴趣对象的新检测，如本教程开头的视频所示。</p>
-<p>When you have a detector detecting your obstacle at a higher rate (1 hz, 10 hz, 100 hz) you will see a far more reactive robot following your detected object of interest!</p>
+<p>当你的检测器以更高的频率（1 Hz、10 Hz、100 Hz）检测到障碍物时，你将看到一个更具反应性的机器人跟随你检测到的感兴趣的物体！</p>
 <h1 align="center">
   <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
     <iframe width="700" height="450" src="https://www.youtube.com/embed/r4fIkcktZUM?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
