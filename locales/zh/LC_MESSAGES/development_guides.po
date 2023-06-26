@@ -22,82 +22,82 @@ msgstr ""
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:4
 msgid "Build Troubleshooting Guide"
-msgstr "Build Troubleshooting Guide"
+msgstr "构建故障排除指南"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:7
 msgid "Common Nav2 Dependencies Build Failures"
-msgstr "Common Nav2 Dependencies Build Failures"
+msgstr "常见Nav2依赖项构建失败"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:9
 msgid "Make sure that .bashrc file has no ROS environment variables in it. Open new terminals and try to build the packages again."
-msgstr "Make sure that .bashrc file has no ROS environment variables in it. Open new terminals and try to build the packages again."
+msgstr "确保.bashrc文件中没有ROS环境变量。打开新的终端并尝试重新构建软件包。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:11
 msgid "Make sure to run rosdep for the correct ROS 2 distribution. ``rosdep install -y -r -q --from-paths src --ignore-src --rosdistro <ros2-distro>``"
-msgstr "Make sure to run rosdep for the correct ROS 2 distribution. ``rosdep install -y -r -q --from-paths src --ignore-src --rosdistro <ros2-distro>``"
+msgstr "确保对正确的ROS 2发行版运行rosdep。``rosdep install -y -r -q --from-paths src --ignore-src --rosdistro <ros2-distro>``"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:14
 msgid "Make sure that the ``setup.bash`` is sourced in the ROS 2 installation or ROS 2 main build workspace, if applicable. Check if you can run talker and listener nodes."
-msgstr "Make sure that the ``setup.bash`` is sourced in the ROS 2 installation or ROS 2 main build workspace, if applicable. Check if you can run talker and listener nodes."
+msgstr "确保在ROS 2安装或ROS 2主要构建工作区中（如果适用），已加载``setup.bash``文件。检查是否可以运行talker和listener节点。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:16
 msgid "Make sure that the ``setup.bash`` in ``nav2_depend_ws/install`` is sourced."
-msgstr "Make sure that the ``setup.bash`` in ``nav2_depend_ws/install`` is sourced."
+msgstr "确保在``nav2_depend_ws/install``目录中的``setup.bash``已被引用。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:18
 msgid "Check if you have the correct ROS version and distribution. ``printenv | grep -i ROS``"
-msgstr "Check if you have the correct ROS version and distribution. ``printenv | grep -i ROS``"
+msgstr "检查是否使用了正确的ROS版本和发行版。``printenv | grep -i ROS``"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:20
 msgid "If you see a bunch of errors on startup about ``map`` or ``odom`` frame not existing, remember to activate drivers (or gazebo for simulation) and set an initial pose in ``map`` frame. Costmap2D will block activation until a full TF tree is available."
-msgstr "If you see a bunch of errors on startup about ``map`` or ``odom`` frame not existing, remember to activate drivers (or gazebo for simulation) and set an initial pose in ``map`` frame. Costmap2D will block activation until a full TF tree is available."
+msgstr "如果在启动时看到关于``map``或``odom``坐标系不存在的错误，请记得激活驱动程序（或用于仿真的gazebo）并在``map``坐标系中设置初始姿态。只有在完整的TF树可用时，Costmap2D才会阻止激活。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:22
 msgid "Make sure you've activated the lifecycle nodes if you're not seeing transforms or servers running."
-msgstr "Make sure you've activated the lifecycle nodes if you're not seeing transforms or servers running."
+msgstr "如果未看到转换或服务器运行，请确保已激活生命周期节点。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:24
 msgid "Search `GitHub Issues <https://github.com/ros-planning/navigation2/issues>`_"
-msgstr "Search `GitHub Issues <https://github.com/ros-planning/navigation2/issues>`_"
+msgstr "在`GitHub Issues <https://github.com/ros-planning/navigation2/issues>`_中进行搜索。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:26
 msgid "Make sure you're using the correct branch for your distribution. There is no cross support from branch for ``DistroA`` in ``DistroB``. The main development branch uses the rolling distribution."
-msgstr "Make sure you're using the correct branch for your distribution. There is no cross support from branch for ``DistroA`` in ``DistroB``. The main development branch uses the rolling distribution."
+msgstr "确保为您的发行版使用正确的分支。在``DistroB``中，没有来自``DistroA``的跨支持。主要开发分支使用rolling发行版。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:28
 msgid "Still can't solve it? Let us know about your issue. `Open a ticket <https://github.com/ros-planning/navigation2/issues/new>`_."
-msgstr "Still can't solve it? Let us know about your issue. `Open a ticket <https://github.com/ros-planning/navigation2/issues/new>`_."
+msgstr "仍然无法解决？告诉我们您的问题。`提交工单 <https://github.com/ros-planning/navigation2/issues/new>`_。"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:31
 msgid "Reporting Issue"
-msgstr "Reporting Issue"
+msgstr "报告问题"
 
 
 #: ../../development_guides/build_docs/build_troubleshooting_guide.rst:33
 msgid "If you run into any issues when building Navigation2, you can use the search tool in the issues tab on `GitHub <https://github.com/ros-planning/navigation2/issues>`_ and always feel free to `open a ticket <https://github.com/ros-planning/navigation2/issues/new>`_."
-msgstr "If you run into any issues when building Navigation2, you can use the search tool in the issues tab on `GitHub <https://github.com/ros-planning/navigation2/issues>`_ and always feel free to `open a ticket <https://github.com/ros-planning/navigation2/issues/new>`_."
+msgstr "如果在构建Navigation2时遇到任何问题，您可以在`GitHub <https://github.com/ros-planning/navigation2/issues>`_的问题选项卡中使用搜索工具，并随时`提交工单 <https://github.com/ros-planning/navigation2/issues/new>`_。"
 
 
 #: ../../development_guides/build_docs/index.rst:4
 msgid "Build and Install"
-msgstr "Build and Install"
+msgstr "构建和安装"
 
 
 #: ../../development_guides/build_docs/index.rst:7
 msgid "Install"
-msgstr "Install"
+msgstr "安装"
 
 
 #: ../../development_guides/build_docs/index.rst:9
@@ -107,7 +107,7 @@ msgstr "Nav2 and its dependencies are released as binaries. You may install it v
 
 #: ../../development_guides/build_docs/index.rst:21
 msgid "Build"
-msgstr "Build"
+msgstr "构建"
 
 
 #: ../../development_guides/build_docs/index.rst:23

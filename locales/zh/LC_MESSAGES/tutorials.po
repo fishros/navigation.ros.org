@@ -2463,7 +2463,7 @@ msgstr "配置旋转垫片控制器"
 
 #: ../../tutorials/docs/using_shim_controller.rst:41
 msgid "This controller is a *shim* because it is placed between the primary controller plugin and the controller server. It takes commands and pre-processes them to rotate to the heading and then passes off execution-control to the primary plugin once that condition is met - acting as a simple pass through."
-msgstr "This controller is a *shim* because it is placed between the primary controller plugin and the controller server. It takes commands and pre-processes them to rotate to the heading and then passes off execution-control to the primary plugin once that condition is met - acting as a simple pass through."
+msgstr "该控制器是一个*shim*，因为它位于主控制器插件和控制器服务器之间。它接收命令并对其进行预处理以旋转到指定的航向，一旦满足该条件，就将执行控制转交给主插件-充当简单的传递通道。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:43
@@ -2473,52 +2473,52 @@ msgstr "因此，它的配置与任何其他插件的配置非常相似。在下
 
 #: ../../tutorials/docs/using_shim_controller.rst:74
 msgid "The Rotation Shim Controller is very simple and only has a couple of parameters to dictate the conditions it should be enacted."
-msgstr "The Rotation Shim Controller is very simple and only has a couple of parameters to dictate the conditions it should be enacted."
+msgstr "旋转shim控制器非常简单，只有几个参数用于规定其应被激活的条件。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:76
 msgid "``angular_dist_threshold``: The angular distance (in radians) apart from the robot's current heading and the approximated path heading to trigger the rotation behavior. Once the robot is within this threshold, control is handed over to the primary controller plugin."
-msgstr "``angular_dist_threshold``: The angular distance (in radians) apart from the robot's current heading and the approximated path heading to trigger the rotation behavior. Once the robot is within this threshold, control is handed over to the primary controller plugin."
+msgstr "``angular_dist_threshold``：机器人当前航向与近似路径航向之间的角度距离（以弧度表示），以触发旋转行为。一旦机器人处于此阈值内，控制权将移交给主要控制器插件。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:77
 msgid "``forward_sampling_distance``: The distance (in meters) away from the robot to select a point on the path to approximate the path's starting heading at. This is analogous to a \"lookahead\" point."
-msgstr "``forward_sampling_distance``: The distance (in meters) away from the robot to select a point on the path to approximate the path's starting heading at. This is analogous to a \"lookahead\" point."
+msgstr "``forward_sampling_distance``: 离机器人一定距离（以米为单位），选择路径上的一点来近似路径的起始航向。这类似于“前瞻”点。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:78
 msgid "``rotate_to_heading_angular_vel``: The angular velocity (in rad/s) to have the robot rotate to heading by, when the behavior is enacted."
-msgstr "``rotate_to_heading_angular_vel``: The angular velocity (in rad/s) to have the robot rotate to heading by, when the behavior is enacted."
+msgstr "``rotate_to_heading_angular_vel``：行为执行时，使机器人旋转到目标航向所需的角速度（以弧度/秒表示）。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:79
 msgid "``max_angular_accel``: The angular acceleration (in rad/s/s) to have the robot rotate to heading by, when the behavior is enacted."
-msgstr "``max_angular_accel``: The angular acceleration (in rad/s/s) to have the robot rotate to heading by, when the behavior is enacted."
+msgstr "``max_angular_accel``: 当激活该行为时，使机器人旋转到指定航向所需的角加速度（以弧度/秒²为单位）。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:80
 msgid "``simulate_ahead_time``: The Time (s) to forward project the rotation command to check for collision"
-msgstr "``simulate_ahead_time``: The Time (s) to forward project the rotation command to check for collision"
+msgstr "``simulate_ahead_time``：前向投影旋转命令以检查碰撞的时间（以秒为单位）。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:83
 msgid "Configuring Primary Controller"
-msgstr "Configuring Primary Controller"
+msgstr "配置主控制器"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:85
 msgid "There is one more remaining parameter of the ``RotationShimController`` not mentioned above, the ``primary_controller``. This is the type of controller that your application would like to use as the primary modus operandi. It will share the same name and yaml namespace as the shim plugin. You can observe this below with the primary controller set the ``DWB`` (with the progress and goal checkers removed for brevity)."
-msgstr "There is one more remaining parameter of the ``RotationShimController`` not mentioned above, the ``primary_controller``. This is the type of controller that your application would like to use as the primary modus operandi. It will share the same name and yaml namespace as the shim plugin. You can observe this below with the primary controller set the ``DWB`` (with the progress and goal checkers removed for brevity)."
+msgstr "还有一个未在上述提及的``RotationShimController``参数，即``primary_controller``。这是您的应用程序想要用作主要操作模式的控制器类型。它将与shim插件共享相同的名称和yaml命名空间。您可以在下面观察到这一点，其中主要控制器设置为``DWB``（为简洁起见，已删除进度和目标检查器）。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:111
 msgid "An important note is that **within the same yaml namespace**, you may also include any ``primary_controller`` specific parameters required for a robot. Thusly, after ``max_angular_accel``, you can include any of ``DWB``'s parameters for your platform."
-msgstr "An important note is that **within the same yaml namespace**, you may also include any ``primary_controller`` specific parameters required for a robot. Thusly, after ``max_angular_accel``, you can include any of ``DWB``'s parameters for your platform."
+msgstr "重要提示是，在**同一yaml命名空间**中，您还可以包含任何所需的“primary_controller”特定参数以配置机器人。因此，在``max_angular_accel``之后，您可以包含任何适用于您平台的``DWB``参数。"
 
 
 #: ../../tutorials/index.rst:4
 msgid "General Tutorials"
-msgstr "General Tutorials"
+msgstr "常规教程"
 
 
 #: ../../tutorials/index.rst:6
