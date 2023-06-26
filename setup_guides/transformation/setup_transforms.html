@@ -958,18 +958,18 @@
 <p>我们可以选择自己管理这种关系，即在必要时存储和应用两个坐标框架之间的适当变换，但随着坐标框架数量的增加，这将变得非常麻烦。幸运的是，我们不必自己完成这项工作。相反，我们将使用TF2一次性定义``base_link``和``base_laser``之间的关系，并让它为我们管理两个坐标框架之间的变换。在处理非静态变换时，这尤其有用，例如一组相对运动的坐标框架，比如地图坐标框架中的机器人基座坐标框架。</p>
 <p>要使用TF2定义和存储``base_link``和``base_laser``帧之间的关系，我们需要将它们添加到一个变换树中。在概念上，变换树中的每个节点对应一个坐标帧，每条边对应于从当前节点到其子节点的变换。TF2使用树结构来保证任意两个坐标帧之间只有一条遍历路径，并假设树中的所有边都是从父节点指向子节点的。</p>
 <img alt="../../_images/tf_robot.png" class="align-center" src="../../_images/tf_robot.png" />
-<p>To create a transform tree for our simple example, we'll create two nodes: one for the  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> coordinate frame and one for the <code class="docutils literal notranslate"><span class="pre">base_laser</span></code> coordinate frame. To create the edge between them, we first need to decide which node will be the parent and which will be the child. Remember — this distinction is important because TF2 assumes that all transforms move from parent to child.</p>
+<p>为了为我们的简单示例创建一个变换树，我们将创建两个节点：一个用于 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 坐标系，一个用于 <code class="docutils literal notranslate"><span class="pre">base_laser</span></code> 坐标系。要创建它们之间的边，我们首先需要决定哪个节点将作为父节点，哪个将作为子节点。请记住 —— 这个区别很重要，因为TF2假定所有的变换都是从父节点到子节点。</p>
 <p>让我们选择``base_link``坐标帧作为父节点，因为当其他部件/传感器添加到机器人上时，它们与``base_laser``坐标帧之间的关系最容易通过遍历``base_link``坐标帧来建立。这意味着连接``base_link``和``base_laser``的边对应的变换应为（x: 0.1m，y: 0.0m，z: 0.2m）。</p>
-<p>With this transform tree set up, converting the laser scan received in the <code class="docutils literal notranslate"><span class="pre">base_laser</span></code> frame to the  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> frame is as simple as making a call to the TF2 library. Our robot can now use this information to reason about laser scans in the  <code class="docutils literal notranslate"><span class="pre">base_link</span></code> frame and safely plan around obstacles in its environment.</p>
+<p>有了这个设置好的变换树，将接收到的激光扫描从 <code class="docutils literal notranslate"><span class="pre">base_laser</span></code> 坐标系转换到 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 坐标系只需简单地调用TF2库。我们的机器人现在可以使用这些信息来推理 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 坐标系中的激光扫描并安全地规划绕过环境中的障碍物。</p>
 </div>
 <div class="section" id="static-transform-publisher-demo">
 <h2>静态变换发布器演示<a class="headerlink" href="#static-transform-publisher-demo" title="永久链接至标题"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>If you are new to ROS 2 or do not have a working environment yet, then please take some time to properly setup your machine using the resources in the official <a class="reference external" href="https://docs.ros.org/en/rolling/Installation.html">ROS 2 Installation Documentation</a></p>
+<p>如果您是ROS 2的新手或尚未拥有工作环境，请花些时间使用官方的 <a class="reference external" href="https://docs.ros.org/en/rolling/Installation.html">ROS 2安装文档</a> 来正确设置您的机器。</p>
 </div>
 <p>现在让我们尝试使用TF2提供的static_transform_publisher工具发布一个非常简单的变换。我们将发布从链接``base_link``到链接``base_laser``的变换，其平移为（x: 0.1m，y: 0.0m，z: 0.2m）。请注意，我们将根据本教程中的早期图表构建变换。</p>
-<p>Open up your command line and execute the following command:</p>
+<p>打开命令行并执行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>static_transform_publisher<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.2<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>base_link<span class="w"> </span>base_laser
 </pre></div>
 </div>
@@ -977,7 +977,7 @@
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_echo<span class="w"> </span>base_link<span class="w"> </span>base_laser
 </pre></div>
 </div>
-<p>You should be able to observe a repeated output simiar to the one below.</p>
+<p>您应该能够观察到类似下面的重复输出。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>At<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="m">0</span>.0
 -<span class="w"> </span>Translation:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.100,<span class="w"> </span><span class="m">0</span>.000,<span class="w"> </span><span class="m">0</span>.200<span class="o">]</span>
 -<span class="w"> </span>Rotation:<span class="w"> </span><span class="k">in</span><span class="w"> </span>Quaternion<span class="w"> </span><span class="o">[</span><span class="m">0</span>.000,<span class="w"> </span><span class="m">0</span>.000,<span class="w"> </span><span class="m">0</span>.000,<span class="w"> </span><span class="m">1</span>.000<span class="o">]</span>
@@ -986,39 +986,39 @@
 <p>这就是这个简短演示的全部内容 - 我们能够成功地使用TF2库发布了从``base_link``到``base_laser``的变换。请注意，我们不建议在实际的机器人项目中使用上述演示，这只是一个快速演示以展示TF2的功能。对于真实的机器人系统，我们将创建一个包含此信息以及有关机器人更多信息的URDF文件，以供robot_state_publisher使用，而不是static_transform_publisher。有更适合和实用的方法来处理这个问题，这将在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>urdf_handson`教程中讨论。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>If you would like to learn more about TF2 and how to create your own transform publishers, head onto the official <a class="reference external" href="https://wiki.ros.org/tf2/Tutorials">TF2 Documentation</a></p>
+<p>如果您想了解更多关于TF2以及如何创建自己的变换发布器的信息，请参阅官方的 <a class="reference external" href="https://wiki.ros.org/tf2/Tutorials">TF2文档</a></p>
 </div>
 </div>
 <div class="section" id="transforms-in-navigation2">
 <h2>Navigation2中的变换<a class="headerlink" href="#transforms-in-navigation2" title="永久链接至标题"></a></h2>
-<p>There are two important ROS REPs which we highly suggest for you to check out. These documents detail some standards set about by the ROS community to ensure proper operation across different packages. Nav2 also adheres to these standards and conventions.</p>
+<p>有两个重要的ROS REPs，我们强烈建议您查阅。这些文档详细介绍了ROS社区制定的一些标准，以确保不同包之间的正确运行。Nav2也遵循这些标准和约定。</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://www.ros.org/reps/rep-0105.html">REP 105 - Coordinate Frames for Mobile Platforms</a></p></li>
-<li><p><a class="reference external" href="https://www.ros.org/reps/rep-0103.html">REP 103 - Standard Units of Measure and Coordinate Conventions</a></p></li>
+<li><p><a class="reference external" href="https://www.ros.org/reps/rep-0105.html">REP 105 - 移动平台的坐标框架</a></p></li>
+<li><p><a class="reference external" href="https://www.ros.org/reps/rep-0103.html">REP 103 - 标准度量单位和坐标约定</a></p></li>
 </ol>
-<p>To quickly summarize REP 105, this document specifies the naming conventions and semantic meanings of the different coordinate frames used in ROS. Of interest to this tutorial are the <code class="docutils literal notranslate"><span class="pre">base_link</span></code>, <code class="docutils literal notranslate"><span class="pre">odom</span></code> and <code class="docutils literal notranslate"><span class="pre">map</span></code> coordinate frames. The <code class="docutils literal notranslate"><span class="pre">base_link</span></code> is a coordinate frame that is attached to a fixed position on the robot, typically at its main chassis and its rotational center. The <code class="docutils literal notranslate"><span class="pre">odom</span></code> coordinate frame is a fixed frame relative to the robot's starting position and is mainly used for locally-consistent representations of distances. Lastly, the <code class="docutils literal notranslate"><span class="pre">map</span></code> coordinate frame is a world fixed frame that is used for globally-consistent representations of distances.</p>
-<p>REP 103, on the other hand, discusses some standard units of measure and other related conventions to keep integration issues between different ROS packages to a minimum. The basic overview is that frames are defined using the right hand rule, with Z up and X forward, and units should be standard SI units.</p>
-<p>Now let's move on to some specifics for the Navigation2 package to function correctly. Nav2 requires the following transformations to be published in ROS:</p>
+<p>简要总结 REP 105，该文档规定了 ROS 中使用的不同坐标框架的命名约定和语义含义。本教程涉及的坐标框架包括 <code class="docutils literal notranslate"><span class="pre">base_link</span></code>、<code class="docutils literal notranslate"><span class="pre">odom</span></code> 和 <code class="docutils literal notranslate"><span class="pre">map</span></code>。<code class="docutils literal notranslate"><span class="pre">base_link</span></code> 是连接到机器人固定位置的坐标框架，通常位于其主要底盘和旋转中心处。<code class="docutils literal notranslate"><span class="pre">odom</span></code> 坐标框架是相对于机器人起始位置的固定坐标框架，主要用于局部一致的距离表示。最后，<code class="docutils literal notranslate"><span class="pre">map</span></code> 坐标框架是一个固定的世界坐标框架，用于全局一致的距离表示。</p>
+<p>REP 103，另一方面，讨论了一些标准度量单位和其他相关约定，以使不同ROS包之间的集成问题最小化。基本概述是，使用右手规则定义坐标系，Z轴向上，X轴向前，并且单位应为标准的国际单位制。</p>
+<p>现在让我们进一步讨论 Navigation2 软件包的一些具体内容，以确保其正常运行。Nav2 要求在 ROS 中发布以下变换：</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">map</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_laser</span></code> (sensor base frames)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_laser``（传感器基准坐标系）</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">base_laser</span></code> coordinate frame is not included in the REP 105 standard. For this guide, we will be using this name to refer to the coordinate frame for a laser sensor on our robot platform.  If there are multiple sensor base frames (e.g. camera_link, base_laser2, lidar_link etc.), then a transformation back to <code class="docutils literal notranslate"><span class="pre">base_link</span></code> for each one is required.</p>
+<p><code class="docutils literal notranslate"><span class="pre">base_laser</span></code> 坐标框架不在 REP 105 标准中。在本指南中，我们将使用此名称来指代机器人平台上激光传感器的坐标框架。如果存在多个传感器基准坐标系（例如，camera_link、base_laser2、lidar_link 等），则需要为每个传感器都进行到 <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 的转换。</p>
 </div>
-<p>The first transform <code class="docutils literal notranslate"><span class="pre">map</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code> is usually provided by a different ROS package dealing with localization and mapping such as AMCL. This transform updates live in use so we don't set static values for this in our robot's TF tree. Further detail about how to set this up may be pretty complex, so we highly suggest to have a look at the documentation of the mapping or localization package you are using for your platform. All ROS compliant SLAM and localization packages will provide you with this transformation automatically on launch.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> is usually published by our odometry system using sensors such as wheel encoders. This is typically computed via sensor fusion of odometry sensors (IMU, wheel encoders, VIO, etc) using the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package.</p>
-<p>All other statically defined transforms (e.g. <code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_laser</span></code>, <code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">wheels</span></code>, <code class="docutils literal notranslate"><span class="pre">wheels</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">IMU</span></code>, etc) is what we will be talking about for the rest of this guide. This transformation tree is used by Nav2 to properly relate the information from sensors or other frame of interest to the rest of the robot. The transformation between these two coordinate frames is usually provided to Nav2 through the Robot State Publisher and the Universal Robot Descriptor File (URDF). In cases where there are more sensor coordinate frames on your platform, then a transform tree from <code class="docutils literal notranslate"><span class="pre">base_link</span></code> to each sensor coordinate frame needs to be published.</p>
+<p>通常由处理定位和建图（例如AMCL）的其他ROS包提供第一个变换``map`` =&gt; <code class="docutils literal notranslate"><span class="pre">odom</span></code>。这个变换在使用过程中实时更新，因此我们不在机器人的TF树中设置静态值。关于如何设置这个变换的详细信息可能相当复杂，因此我们强烈建议查看您所使用平台的建图或定位包的文档。所有符合ROS标准的SLAM和定位包将在启动时自动为您提供此变换。</p>
+<p>通常，<code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 是由我们的里程计系统使用诸如轮式编码器之类的传感器发布的。这通常是通过使用 <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> 软件包对里程计传感器（IMU、轮式编码器、VIO 等）进行传感器融合来计算的。</p>
+<p>在本指南的其余部分，我们将讨论所有其他静态定义的变换（例如``base_link`` =&gt; <code class="docutils literal notranslate"><span class="pre">base_laser</span></code>，<code class="docutils literal notranslate"><span class="pre">base_link</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">wheels</span></code>，<code class="docutils literal notranslate"><span class="pre">wheels</span></code> =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>IMU``等）。Nav2使用这个变换树来正确关联传感器或其他感兴趣的坐标系的信息与机器人的其他部分。这两个坐标系之间的变换通常通过机器人状态发布器和通用机器人描述文件（URDF）提供给Nav2。如果您的平台上有更多传感器坐标系，则需要发布从``base_link``到每个传感器坐标系的变换树。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For a more in-depth discussion on the usage of transforms and how these are used to estimate the current state of your robot, we highly recommend having a look at the State Estimation topic in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>.</p>
+<p>关于变换的使用以及如何使用变换估计机器人的当前状态，我们强烈建议参阅 <span class="xref std std-ref">概念</span> 中的状态估计主题，进行更深入的讨论。</p>
 </div>
 </div>
 <div class="section" id="conclusion">
 <h2>结论<a class="headerlink" href="#conclusion" title="永久链接至标题"></a></h2>
-<p>In this tutorial, we have discussed about the concept of transforms and how they are used in Nav2.</p>
+<p>在本教程中，我们已经讨论了变换的概念以及它们在Nav2中的使用。</p>
 <p>In the last section, we have also explored using the static_transform_publisher of TF2 to publish our transforms. You may use this to set up your transforms for Nav2, but this is generally not the best way to do it. In most robotics projects, we make use of the Robot State Publisher since it is much easier to use and scales well as our robot gets more complex. We will be talking about the Robot State Publisher, URDF, and how to set it up in the next tutorial on <a class="reference internal" href="../urdf/setup_urdf.html#urdf-handson"><span class="std std-ref">Setting Up The URDF</span></a>.</p>
 <p>Lastly, we also discussed the three published transform requirements of Nav2 and the neccessary REPs to keep in mind when setting them up.</p>
 </div>
