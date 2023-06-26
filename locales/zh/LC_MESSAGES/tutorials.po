@@ -1142,7 +1142,7 @@ msgstr "重要的是在Nav2之前启动分析器节点，这样它可以接收�
 
 #: ../../tutorials/docs/get_profile.rst:120
 msgid "Interpreting Results"
-msgstr "Interpreting Results"
+msgstr "解释结果"
 
 
 #: ../../tutorials/docs/get_profile.rst:122
@@ -1152,7 +1152,7 @@ msgstr "一旦您获得了``callgrind``结果，无论您是通过节点、启�
 
 #: ../../tutorials/docs/get_profile.rst:128
 msgid "This should open a window looking like below. The left side shows all of the calls and their relative percentages of compute time they and their children functions utilized."
-msgstr "This should open a window looking like below. The left side shows all of the calls and their relative percentages of compute time they and their children functions utilized."
+msgstr "这将打开一个看起来如下图所示的窗口。左侧显示了所有调用及其所使用的计算时间及其子函数所占的相对比例。"
 
 
 #: ../../tutorials/docs/get_profile.rst:135
@@ -1162,7 +1162,7 @@ msgstr "如果您在左侧边栏上选择顶级条目，然后在右侧工作区
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:4
 msgid "Dynamic Object Following"
-msgstr "Dynamic Object Following"
+msgstr "动态对象跟随"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:20
@@ -1172,77 +1172,77 @@ msgstr "本教程演示了如何在Nav2中执行与从点A到点B的不同任务
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:22
 msgid "This task is useful in cases such as following a person or another robot. Below are some sample videos of applications that could be created using this capability. The \"Carry My Luggage\" RoboCup @ Home test, in which the `CATIE Robotics <https://robotics.catie.fr/>`_ team performs the test successfully and this real (future) world application:"
-msgstr "This task is useful in cases such as following a person or another robot. Below are some sample videos of applications that could be created using this capability. The \"Carry My Luggage\" RoboCup @ Home test, in which the `CATIE Robotics <https://robotics.catie.fr/>`_ team performs the test successfully and this real (future) world application:"
+msgstr "这个任务在追踪一个人或另一个机器人的情况下非常有用。以下是一些可以使用这种能力创建的应用程序的示例视频。``Carry My Luggage`` RoboCup @ Home 测试，其中 `CATIE Robotics <https://robotics.catie.fr/>`_ 团队成功进行了测试，这是一个真实（未来）世界的应用程序："
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:35
 msgid "The requirements for this task are as follows:"
-msgstr "The requirements for this task are as follows:"
+msgstr "该任务的要求如下："
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:37
 msgid "Changes are limited to the behavior tree used to navigate. This behavior tree can be selected in the ``NavigateToPose`` action when required, or it can be the default behavior tree. It is made up of run-time configurable plugins."
-msgstr "Changes are limited to the behavior tree used to navigate. This behavior tree can be selected in the ``NavigateToPose`` action when required, or it can be the default behavior tree. It is made up of run-time configurable plugins."
+msgstr "更改限于用于导航的行为树。此行为树可以在需要时在``NavigateToPose``动作中选择，或者它可以是默认的行为树。它由运行时可配置的插件组成。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:38
 msgid "The configuration of the planner and the controller will not be modified."
-msgstr "The configuration of the planner and the controller will not be modified."
+msgstr "规划器和控制器的配置不会被修改。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:39
 msgid "The action will indefinitely run until it is canceled by who initiated it."
-msgstr "The action will indefinitely run until it is canceled by who initiated it."
+msgstr "该动作将一直运行，直到由启动它的人取消为止。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:41
 msgid "The detection of the dynamic object (like a person) to follow is outside the scope of this tutorial. As shown in the following diagram, your application should provide a detector for the object(s) of interest, send the initial pose to the ``NavigateToPose`` action, and update it on a topic for the duration of the task. Many different types of detectors exist that you can leverage for this application:"
-msgstr "The detection of the dynamic object (like a person) to follow is outside the scope of this tutorial. As shown in the following diagram, your application should provide a detector for the object(s) of interest, send the initial pose to the ``NavigateToPose`` action, and update it on a topic for the duration of the task. Many different types of detectors exist that you can leverage for this application:"
+msgstr "检测要跟随的动态物体（例如人）超出了本教程的范围。如下图所示，您的应用程序应提供一个用于检测感兴趣物体的探测器，将初始姿态发送到“NavigateToPose”动作，并在任务的整个过程中通过话题进行更新。有许多不同类型的探测器可供您在此应用程序中使用："
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:52
 msgid "0- Create the Behavior Tree"
-msgstr "0- Create the Behavior Tree"
+msgstr "0- 创建行为树"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:54
 msgid "Let's start from this simple behavior tree. This behavior tree replans a new path at 1 hz and passes that path to the controller to follow:"
-msgstr "Let's start from this simple behavior tree. This behavior tree replans a new path at 1 hz and passes that path to the controller to follow:"
+msgstr "让我们从这个简单的行为树开始。该行为树以1赫兹的频率重新规划新路径，并将该路径传递给控制器进行跟随："
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:69
 msgid "First, let's make this behavior run until there's a failure. For this purpose, we will use the ``KeepRunningUntilFailure`` control node."
-msgstr "First, let's make this behavior run until there's a failure. For this purpose, we will use the ``KeepRunningUntilFailure`` control node."
+msgstr "首先，让我们让这个行为一直运行，直到出现故障。为此，我们将使用``KeepRunningUntilFailure``控制节点。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:86
 msgid "We will then use the decorator ``GoalUpdater`` to accept updates of the dynamic object pose we're trying to follow. This node takes as input the current goal and subscribes to the topic ``/goal_update``. It sets the new goal as ``updated_goal`` if a new goal on that topic is received."
-msgstr "We will then use the decorator ``GoalUpdater`` to accept updates of the dynamic object pose we're trying to follow. This node takes as input the current goal and subscribes to the topic ``/goal_update``. It sets the new goal as ``updated_goal`` if a new goal on that topic is received."
+msgstr "然后，我们将使用修饰器“GoalUpdater”来接受我们要跟随的动态物体姿态的更新。该节点以当前目标作为输入，并订阅主题“/goal_update”。如果在该主题上接收到新目标，它将将新目标设置为“updated_goal”。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:105
 msgid "To stay at a certain distance from the target, we will use the action node ``TruncatePath``. This node modifies a path making it shorter so we don't try to navigate into the object of interest. We can set up the desired distance to the goal using the input port ``distance``."
-msgstr "To stay at a certain distance from the target, we will use the action node ``TruncatePath``. This node modifies a path making it shorter so we don't try to navigate into the object of interest. We can set up the desired distance to the goal using the input port ``distance``."
+msgstr "为了保持与目标的一定距离，我们将使用动作节点``TruncatePath``。该节点会修改路径，使其变短，以便我们不会试图进入感兴趣的对象。我们可以使用输入端口``distance``来设置到目标的期望距离。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:127
 msgid "Now, you may save this behavior tree and use it in our navigation task."
-msgstr "Now, you may save this behavior tree and use it in our navigation task."
+msgstr "现在，您可以保存这个行为树并在我们的导航任务中使用它。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:129
 msgid "For reference, this exact behavior tree is `made available <https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml>`_ to you batteries included in the ``nav2_bt_navigator`` package."
-msgstr "For reference, this exact behavior tree is `made available <https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml>`_ to you batteries included in the ``nav2_bt_navigator`` package."
+msgstr "供您使用的确切行为树可以在``nav2_bt_navigator``包中找到，链接在`此处 <https://github.com/ros-planning/navigation2/blob/main/nav2_bt_navigator/behavior_trees/follow_point.xml>`_。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:132
 msgid "1- Setup Rviz clicked point"
-msgstr "1- Setup Rviz clicked point"
+msgstr "1- 设置 Rviz 点击点"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:134
 msgid "We are going to use RViz instead of a full application so you can test at home without finding a detector to get started. We will use the \"clicked point\" button on the toolbar to substitute object detections to provide goal updates to Nav2. This button allows you to publish coordinates in the topic ``/clicked_point``. This point needs to be sent to the behavior tree, using the program ``clicked_point_to_pose``, from `this repo <https://github.com/fmrico/nav2_test_utils>`_. Clone this repo in your workspace, build, and type in a terminal."
-msgstr "We are going to use RViz instead of a full application so you can test at home without finding a detector to get started. We will use the \"clicked point\" button on the toolbar to substitute object detections to provide goal updates to Nav2. This button allows you to publish coordinates in the topic ``/clicked_point``. This point needs to be sent to the behavior tree, using the program ``clicked_point_to_pose``, from `this repo <https://github.com/fmrico/nav2_test_utils>`_. Clone this repo in your workspace, build, and type in a terminal."
+msgstr "我们将使用RViz而不是完整的应用程序，这样您就可以在家中进行测试，而无需找到一个探测器来开始。我们将使用工具栏上的“clicked point”按钮，用来替代对象检测，以向Nav2提供目标更新。该按钮允许您在主题``/clicked_point``中发布坐标。这个点需要通过程序``clicked_point_to_pose``发送到行为树，从`此存储库 <https://github.com/fmrico/nav2_test_utils>`_中获取。在您的工作空间中克隆此存储库，构建并在终端中输入命令。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:138
@@ -1252,7 +1252,7 @@ msgstr "``ros2 run nav2_test_utils clicked_point_to_pose``"
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:140
 msgid "Optionally, you can remap this topic in your rviz configuration file to ``goal_updates``."
-msgstr "Optionally, you can remap this topic in your rviz configuration file to ``goal_updates``."
+msgstr "可选地，您可以在rviz配置文件中重新映射此主题为``goal_updates``。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:143
@@ -1262,7 +1262,7 @@ msgstr "2- Run Dynamic Object Following in Nav2 Simulation"
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:145
 msgid "Start Nav2 in one terminal:"
-msgstr "Start Nav2 in one terminal:"
+msgstr "在一个终端中启动Nav2："
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:147
@@ -1272,7 +1272,7 @@ msgstr "``ros2 launch nav2_bringup tb3_simulation_launch.py default_bt_xml_filen
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:149
 msgid "Open RViz and, after initialize the robot position, command the robot to navigate to any position. Use the button clicked point to simulate a new detection of the object of interest, as shown in the video in the head of this tutorial."
-msgstr "Open RViz and, after initialize the robot position, command the robot to navigate to any position. Use the button clicked point to simulate a new detection of the object of interest, as shown in the video in the head of this tutorial."
+msgstr "打开RViz，在初始化机器人位置后，命令机器人导航到任意位置。使用点击点按钮模拟对感兴趣对象的新检测，如本教程开头的视频所示。"
 
 
 #: ../../tutorials/docs/navigation2_dynamic_point_following.rst:151
