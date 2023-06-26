@@ -187,7 +187,7 @@ msgstr "101-199"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:127
 msgid "`Planner Server`_ (compute_path_to_pose)"
-msgstr "`Planner Server`_ (compute_path_to_pose)"
+msgstr "`计划器服务器`_ (计算路径到姿态)"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:127
@@ -217,7 +217,7 @@ msgstr "301-399"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:133
 msgid "`Smoother Server`_"
-msgstr "`Smoother Server`_"
+msgstr "`平滑器服务器`_"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:133
@@ -232,7 +232,7 @@ msgstr "501-599"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:135
 msgid "`Waypoint Follower Server`_"
-msgstr "`Waypoint Follower Server`_"
+msgstr "`路径点跟随服务器`_"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:135
@@ -247,7 +247,7 @@ msgstr "601-699"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:137
 msgid "`Behavior Server`_"
-msgstr "`Behavior Server`_"
+msgstr "`行为服务器`_"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:137
@@ -257,17 +257,17 @@ msgstr "NONE=0"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:137
 msgid "701-799"
-msgstr "701-799"
+msgstr "701 - 799"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:141
 msgid "Last Nav2 Server"
-msgstr "Last Nav2 Server"
+msgstr "上一个 Nav2 服务器"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:141
 msgid "NONE=0, UNKNOWN=9900"
-msgstr "NONE=0, UNKNOWN=9900"
+msgstr "NONE = 0，UNKNOWN = 9900"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:141
@@ -277,27 +277,27 @@ msgstr "9901-9999"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:143
 msgid "First External Server"
-msgstr "First External Server"
+msgstr "第一个外部服务器"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:143
 msgid "NONE=0, UNKNOWN=10000"
-msgstr "NONE=0, UNKNOWN=10000"
+msgstr "NONE=0，UNKNOWN=10000"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:143
 msgid "10001-10099"
-msgstr "10001-10099"
+msgstr "10001 - 10099"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:154
 msgid "Error codes are attached to the response of the action message. An example can be seen below for the route server. Note that by convention we set the error code field within the message definition to ``error_code``."
-msgstr "Error codes are attached to the response of the action message. An example can be seen below for the route server. Note that by convention we set the error code field within the message definition to ``error_code``."
+msgstr "错误码附加在动作消息的响应中。下面是一个路由服务器的示例。请注意，根据约定，我们在消息定义中将错误码字段设置为 ``error_code``。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:180
 msgid "As stated in the message, the priority order of the errors should match the message order, 0 is reserved for NONE and the first error code in the sequence is reserved for UNKNOWN. Since the the route server is a external server, the errors codes start at 10000 and go up to 10099."
-msgstr "As stated in the message, the priority order of the errors should match the message order, 0 is reserved for NONE and the first error code in the sequence is reserved for UNKNOWN. Since the the route server is a external server, the errors codes start at 10000 and go up to 10099."
+msgstr "如消息中所述，错误的优先级顺序应与消息顺序匹配，0 保留为NONE，序列中的第一个错误代码保留为UNKNOWN。由于路由服务器是外部服务器，错误代码从10000开始，一直增加到10099。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:183
@@ -312,7 +312,7 @@ msgstr "结论"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:198
 msgid "In this section of the guide, we have discussed Lifecycle Nodes, Composition and Error Codes which are new and important concepts in ROS 2. We also showed how to implement Lifecycle Nodes, Composition and Error Codes to your newly created nodes/servers with Nav2. These three concepts are helpful to efficiently run your system and therefore are encouraged to be used throughout Nav2."
-msgstr "In this section of the guide, we have discussed Lifecycle Nodes, Composition and Error Codes which are new and important concepts in ROS 2. We also showed how to implement Lifecycle Nodes, Composition and Error Codes to your newly created nodes/servers with Nav2. These three concepts are helpful to efficiently run your system and therefore are encouraged to be used throughout Nav2."
+msgstr "在本指南的这个部分中，我们讨论了ROS 2中的生命周期节点、组合和错误代码，这些是新的重要概念。我们还展示了如何将生命周期节点、组合和错误代码应用于使用Nav2创建的新节点/服务器。这三个概念有助于有效地运行您的系统，因此鼓励在Nav2中广泛使用它们。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:4
@@ -342,7 +342,7 @@ msgstr "概述"
 
 #: ../../tutorials/docs/adding_smoother.rst:17
 msgid "This tutorial shows how to add a smoother to your behavior tree to smooth output paths from a path planner. Before completing this tutorials, completing :ref:`getting_started` is highly recommended especially if you are new to ROS and Nav2."
-msgstr "This tutorial shows how to add a smoother to your behavior tree to smooth output paths from a path planner. Before completing this tutorials, completing :ref:`getting_started` is highly recommended especially if you are new to ROS and Nav2."
+msgstr "本教程展示了如何向行为树添加平滑器，以平滑路径规划器的输出路径。在完成本教程之前，强烈建议先完成 :ref:`getting_started`，尤其是如果您对ROS和Nav2不熟悉的话。"
 
 
 #: ../../tutorials/docs/adding_smoother.rst:21 ../../tutorials/docs/camera_calibration.rst:17 ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:21 ../../tutorials/docs/navigation2_on_real_turtlebot3.rst:28 ../../tutorials/docs/navigation2_with_keepout_filter.rst:24 ../../tutorials/docs/navigation2_with_slam.rst:23 ../../tutorials/docs/navigation2_with_speed_filter.rst:24 ../../tutorials/docs/using_collision_monitor.rst:21
