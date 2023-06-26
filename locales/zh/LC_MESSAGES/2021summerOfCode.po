@@ -107,7 +107,7 @@ msgstr "**所需技能**"
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:30
 msgid "C++, XML, ROS"
-msgstr "C++, XML, ROS"
+msgstr "C++，XML，ROS"
 
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:31 ../../2021summerOfCode/projects/dynamic.rst:32 ../../2021summerOfCode/projects/multithreading.rst:38 ../../2021summerOfCode/projects/safety_node.rst:35
@@ -117,7 +117,7 @@ msgstr "移动机器人导航经验"
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:32
 msgid "Recommended: Gazebo simulation, ROS navigation, Behavior trees"
-msgstr "Recommended: Gazebo simulation, ROS navigation, Behavior trees"
+msgstr "推荐：Gazebo模拟，ROS导航，行为树"
 
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:34 ../../2021summerOfCode/projects/create_configuration_assistant.rst:46 ../../2021summerOfCode/projects/create_plugins.rst:39 ../../2021summerOfCode/projects/dynamic.rst:36 ../../2021summerOfCode/projects/grid_maps.rst:36 ../../2021summerOfCode/projects/localization.rst:41 ../../2021summerOfCode/projects/multithreading.rst:42 ../../2021summerOfCode/projects/navigation_rebranding.rst:33 ../../2021summerOfCode/projects/safety_node.rst:39 ../../2021summerOfCode/projects/semantics.rst:32 ../../2021summerOfCode/projects/spinners.rst:35 ../../2021summerOfCode/projects/testing.rst:30 ../../2021summerOfCode/projects/twist_n_config.rst:40
@@ -137,7 +137,7 @@ msgstr "`Gazebo模拟器 <http://gazebosim.org/>`_"
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:38
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/2226>`_"
-msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/2226>`_"
+msgstr "`Github票证 <https://github.com/ros-planning/navigation2/issues/2226>`_"
 
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:39 ../../2021summerOfCode/projects/dynamic.rst:42 ../../2021summerOfCode/projects/grid_maps.rst:42 ../../2021summerOfCode/projects/localization.rst:46 ../../2021summerOfCode/projects/multithreading.rst:47 ../../2021summerOfCode/projects/navigation_rebranding.rst:36 ../../2021summerOfCode/projects/safety_node.rst:44 ../../2021summerOfCode/projects/semantics.rst:38 ../../2021summerOfCode/projects/spinners.rst:41 ../../2021summerOfCode/projects/testing.rst:34 ../../2021summerOfCode/projects/twist_n_config.rst:46
@@ -147,7 +147,7 @@ msgstr "`Navigation2 <https://navigation.ros.org/>`_"
 
 #: ../../2021summerOfCode/projects/assisted_teleop.rst:41 ../../2021summerOfCode/projects/create_configuration_assistant.rst:52 ../../2021summerOfCode/projects/create_plugins.rst:46 ../../2021summerOfCode/projects/dynamic.rst:45 ../../2021summerOfCode/projects/grid_maps.rst:44 ../../2021summerOfCode/projects/localization.rst:48 ../../2021summerOfCode/projects/multithreading.rst:49 ../../2021summerOfCode/projects/navigation_rebranding.rst:38 ../../2021summerOfCode/projects/safety_node.rst:46 ../../2021summerOfCode/projects/semantics.rst:40 ../../2021summerOfCode/projects/spinners.rst:44 ../../2021summerOfCode/projects/testing.rst:37 ../../2021summerOfCode/projects/twist_n_config.rst:49
 msgid "**Licensing** - All contributions will be under the Apache 2.0 license. - No other CLA's are required."
-msgstr "**Licensing** - All contributions will be under the Apache 2.0 license. - No other CLA's are required."
+msgstr "**许可** - 所有贡献将在Apache 2.0许可下进行。 - 不需要其他CLA。"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:6
@@ -157,77 +157,77 @@ msgstr "1. 创建一个配置助手（类似于MoveIt）"
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:10
 msgid "`Moveit <https://moveit.ros.org/>`_ has long has a QT `configuration assistant <http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html>`_. This setup assistent helps the user configure their UDRF and needs to setup MoveIt configuration files."
-msgstr "`Moveit <https://moveit.ros.org/>`_ has long has a QT `configuration assistant <http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html>`_. This setup assistent helps the user configure their UDRF and needs to setup MoveIt configuration files."
+msgstr "`Moveit <https://moveit.ros.org/>`_长期以来一直有一个QT`配置助手<http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html>`_。这个配置助手帮助用户配置他们的UDRF，并且需要设置MoveIt配置文件。"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:12
 msgid "A configuration assistant could be extremely beneficial to Navigation2 users as a way to minimize friction. We should provide a gui tool to cover the following configurations:"
-msgstr "A configuration assistant could be extremely beneficial to Navigation2 users as a way to minimize friction. We should provide a gui tool to cover the following configurations:"
+msgstr "为Navigation2用户提供一个配置助手可能会极大地减少操作的摩擦。我们应该提供一个图形界面工具，以涵盖以下配置项："
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:14
 msgid "the broad strokes with the costmap, with a visualizer to show the user what it will look like"
-msgstr "the broad strokes with the costmap, with a visualizer to show the user what it will look like"
+msgstr "以代价图的大致轮廓为基础，使用可视化工具向用户展示其外观"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:15
 msgid "Select configurable costmap layers"
-msgstr "Select configurable costmap layers"
+msgstr "选择可配置的代价地图层"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:16
 msgid "Select recovery behavior parameters"
-msgstr "Select recovery behavior parameters"
+msgstr "选择恢复行为参数"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:17
 msgid "URDF, footprint, and frame selection to make sure the options comply with standards, planner, and controller"
-msgstr "URDF, footprint, and frame selection to make sure the options comply with standards, planner, and controller"
+msgstr "选择URDF、轮廓和坐标系，以确保选项符合标准、规划器和控制器"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:18
 msgid "Set minimum and maximum speed and other kinematic parameters"
-msgstr "Set minimum and maximum speed and other kinematic parameters"
+msgstr "设置最小和最大速度以及其他运动学参数"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:19
 msgid "Select from a dropdown of possible planners and controllers"
-msgstr "Select from a dropdown of possible planners and controllers"
+msgstr "从可能的规划器和控制器下拉菜单中进行选择"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:20
 msgid "Helpful notes throughout the prompts to aid in selecting appropriate parameters"
-msgstr "Helpful notes throughout the prompts to aid in selecting appropriate parameters"
+msgstr "提示中的有用注释以帮助选择合适的参数"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:21
 msgid "Selecting at behavior tree"
-msgstr "Selecting at behavior tree"
+msgstr "在行为树中进行选择"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:22
 msgid "@steve please add more specific options"
-msgstr "@steve please add more specific options"
+msgstr "@steve 请添加更具体的选项"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:24
 msgid "After the items are configured, there should be a preview to see how the parameters effect the robot."
-msgstr "After the items are configured, there should be a preview to see how the parameters effect the robot."
+msgstr "配置完成后，应该提供预览功能，以查看参数对机器人的影响。"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:26 ../../2021summerOfCode/projects/create_plugins.rst:20 ../../2021summerOfCode/projects/dynamic.rst:18 ../../2021summerOfCode/projects/grid_maps.rst:16 ../../2021summerOfCode/projects/localization.rst:22
 msgid "**Project difficulty: High**"
-msgstr "**Project difficulty: High**"
+msgstr "**项目难度：高**"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:32
 msgid "**Contact information for the cooperating mentor (optional):  juzhenatpku@gmail.com**"
-msgstr "**Contact information for the cooperating mentor (optional):  juzhenatpku@gmail.com**"
+msgstr "**合作导师的联系信息（可选）：juzhenatpku@gmail.com**"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:34 ../../2021summerOfCode/projects/create_plugins.rst:26 ../../2021summerOfCode/projects/grid_maps.rst:22 ../../2021summerOfCode/projects/testing.rst:18
 msgid "**Project output requirements**"
-msgstr "**Project output requirements**"
+msgstr "**项目输出要求**"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:36
@@ -237,7 +237,7 @@ msgstr "A QT based GUI configuration assistant that support the parameters liste
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:37
 msgid "A preview panel to display the parameters' effection on the robot"
-msgstr "A preview panel to display the parameters' effection on the robot"
+msgstr "预览面板显示参数对机器人的影响"
 
 
 #: ../../2021summerOfCode/projects/create_configuration_assistant.rst:41
