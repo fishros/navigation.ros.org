@@ -5730,7 +5730,7 @@ msgstr "[0.5，0.0，2.5]"
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:60
 msgid "Maximum velocities (m/s) in ``[x, y, theta]`` axes."
-msgstr "Maximum velocities (m/s) in ``[x, y, theta]`` axes."
+msgstr "最大速度（m/s），分别对应``[x, y, theta]``轴。"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst
@@ -5750,7 +5750,7 @@ msgstr "在“[x，y，theta]”轴上的最小速度（米/秒）。这是**有
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst
 msgid "deadband_velocity"
-msgstr "deadband_velocity"
+msgstr "死区速度"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:78
@@ -5760,7 +5760,7 @@ msgstr "[0.0, 0.0, 0.0]"
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:82
 msgid "Minimum velocities (m/s) to send to the robot hardware controllers, to prevent small commands from damaging hardware controllers if that speed cannot be achieved due to stall torque."
-msgstr "Minimum velocities (m/s) to send to the robot hardware controllers, to prevent small commands from damaging hardware controllers if that speed cannot be achieved due to stall torque."
+msgstr "最小速度（m/s），用于发送给机器人硬件控制器，以防止由于堵转力矩而无法实现该速度时，小指令损坏硬件控制器。"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst
@@ -5770,7 +5770,7 @@ msgstr "velocity_timeout"
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:93
 msgid "Timeout (s) after which the velocity smoother will send a zero-ed out ``Twist`` command and stop publishing."
-msgstr "Timeout (s) after which the velocity smoother will send a zero-ed out ``Twist`` command and stop publishing."
+msgstr "超时时间（秒），在此时间之后，速度平滑器将发送一个零化的``Twist``指令并停止发布。"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst
@@ -5785,12 +5785,12 @@ msgstr "[2.5, 0.0, 3.2]"
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:104
 msgid "Maximum acceleration to apply to each axis ``[x, y, theta]``."
-msgstr "Maximum acceleration to apply to each axis ``[x, y, theta]``."
+msgstr "每个轴（``x，y，theta``）应用的最大加速度。"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst
 msgid "max_decel"
-msgstr "max_decel"
+msgstr "最大减速度"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:111
@@ -5800,12 +5800,12 @@ msgstr "[-2.5, 0.0, -3.2]"
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:115
 msgid "Minimum acceleration to apply to each axis ``[x, y, theta]``. This is **signed** and thus these should generally all be **negative**."
-msgstr "Minimum acceleration to apply to each axis ``[x, y, theta]``. This is **signed** and thus these should generally all be **negative**."
+msgstr "将应用于每个轴``[x，y，theta]``的最小加速度。这是**有符号的**，因此通常应该全部为**负值**。"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:126
 msgid "Topic to find robot odometry, if in ``CLOSED_LOOP`` operational mode."
-msgstr "Topic to find robot odometry, if in ``CLOSED_LOOP`` operational mode."
+msgstr "如果处于``CLOSED_LOOP``操作模式，则用于查找机器人里程计的主题。"
 
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst
@@ -5815,12 +5815,12 @@ msgstr "odom_duration"
 
 #: ../../configuration/packages/configuring-velocity-smoother.rst:137
 msgid "Time (s) to buffer odometry commands to estimate the robot speed, if in ``CLOSED_LOOP`` operational mode."
-msgstr "Time (s) to buffer odometry commands to estimate the robot speed, if in ``CLOSED_LOOP`` operational mode."
+msgstr "将里程计命令缓冲以估计机器人速度的时间（秒），如果处于``CLOSED_LOOP``操作模式。"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:4
 msgid "Waypoint Follower"
-msgstr "Waypoint Follower"
+msgstr "路径点跟随器"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:10
@@ -5830,7 +5830,7 @@ msgstr "The Waypoint Follower module implements a way of doing waypoint followin
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst
 msgid "stop_on_failure"
-msgstr "stop_on_failure"
+msgstr "失败时停止"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:27
@@ -5840,7 +5840,7 @@ msgstr "Whether to fail action task if a single waypoint fails. If false, will c
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst
 msgid "loop_rate"
-msgstr "loop_rate"
+msgstr "循环频率"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:38
@@ -5850,7 +5850,7 @@ msgstr "Rate to check for results from current navigation task."
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst
 msgid "waypoint_task_executor_plugin"
-msgstr "waypoint_task_executor_plugin"
+msgstr "路径点任务执行器插件"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:45
@@ -5860,7 +5860,7 @@ msgstr "'wait_at_waypoint'"
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:49
 msgid "A plugin to define tasks to be executed when robot arrives to a waypoint."
-msgstr "A plugin to define tasks to be executed when robot arrives to a waypoint."
+msgstr "一个插件，用于在机器人到达路径点时定义要执行的任务。"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:69
