@@ -1803,7 +1803,7 @@ msgstr "带速度限制的导航"
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:21
 msgid "This tutorial shows how to simply utilize Speed Filter which is designed to limit the maximum speed of robots in speed restriction areas marked on a map. This functionality is being covered by ``SpeedFilter`` costmap filter plugin which will be enabled and used in this document."
-msgstr "This tutorial shows how to simply utilize Speed Filter which is designed to limit the maximum speed of robots in speed restriction areas marked on a map. This functionality is being covered by ``SpeedFilter`` costmap filter plugin which will be enabled and used in this document."
+msgstr "本教程演示了如何简单地使用Speed Filter，该过滤器旨在限制地图上标记的速度限制区域中机器人的最大速度。这个功能由``SpeedFilter``成本地图过滤器插件实现，本文档将启用并使用该插件。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:26
@@ -1813,77 +1813,77 @@ msgstr "假设已经安装或在本地构建了 ROS 2、Gazebo 和 TurtleBot3 �
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:34
 msgid "As was written in :ref:`concepts`, any Costmap Filter (including Speed Filter) is reading the data marked in a filter mask file. All information about filter masks, their types, detailed structure and how to make a new one is written in a :ref:`navigation2_with_keepout_filter` tutorial at ``1. Prepare filter masks`` chapter. The principal of drawing the filter mask for Speed Filter is the same as for Keepout Filter (to annotate a map with the requested zones), except that ``OccupancyGrid`` mask values have another meaning: these values are encoded speed limits for the areas corresponding to the cell on map."
-msgstr "As was written in :ref:`concepts`, any Costmap Filter (including Speed Filter) is reading the data marked in a filter mask file. All information about filter masks, their types, detailed structure and how to make a new one is written in a :ref:`navigation2_with_keepout_filter` tutorial at ``1. Prepare filter masks`` chapter. The principal of drawing the filter mask for Speed Filter is the same as for Keepout Filter (to annotate a map with the requested zones), except that ``OccupancyGrid`` mask values have another meaning: these values are encoded speed limits for the areas corresponding to the cell on map."
+msgstr "如在 :ref:`concepts` 中所述，任何成本地图过滤器（包括Speed Filter）都会读取过滤器遮罩文件中标记的数据。有关过滤器遮罩、它们的类型、详细结构以及如何创建新的遮罩的所有信息都在 :ref:`navigation2_with_keepout_filter` 教程的 ``1. 准备过滤器遮罩`` 章节中有说明。绘制Speed Filter的过滤器遮罩的原则与Keepout Filter相同（在地图上注释所请求的区域），只是``OccupancyGrid`` 遮罩值具有另一层含义：这些值是对应于地图上的单元格的区域的编码速度限制。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:36
 msgid "Let's look, how it is being decoded. As we know, ``OccupancyGrid`` values are belonging to the ``[0..100]`` range. For Speed Filter ``0`` value means no speed limit in the area corresponding zero-cell on mask. Values from ``[1..100]`` range are being linearly converted into a speed limit value by the following formula:"
-msgstr "Let's look, how it is being decoded. As we know, ``OccupancyGrid`` values are belonging to the ``[0..100]`` range. For Speed Filter ``0`` value means no speed limit in the area corresponding zero-cell on mask. Values from ``[1..100]`` range are being linearly converted into a speed limit value by the following formula:"
+msgstr "让我们来看看它是如何解码的。正如我们所知，``OccupancyGrid`` 的值属于 ``[0..100]`` 范围。对于速度过滤器，``0`` 的值意味着在对应的零单元蒙版区域没有速度限制。范围在 ``[1..100]`` 的值通过以下公式线性转换为速度限制值："
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:42
 msgid "where:"
-msgstr "where:"
+msgstr "其中："
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:44
 msgid "``filter_mask_data`` - is an ``OccupancyGrid`` value of the corresponding cell on mask where maximum speed should be restricted."
-msgstr "``filter_mask_data`` - is an ``OccupancyGrid`` value of the corresponding cell on mask where maximum speed should be restricted."
+msgstr "``filter_mask_data`` 是蒙版上对应单元格的 ``OccupancyGrid`` 值，该值应限制最大速度。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:45
 msgid "``base`` and ``multiplier`` are coefficients taken from ``nav2_msgs/CostmapFilterInfo`` messages published by Costmap Filter Info Server (see in next chapter below)."
-msgstr "``base`` and ``multiplier`` are coefficients taken from ``nav2_msgs/CostmapFilterInfo`` messages published by Costmap Filter Info Server (see in next chapter below)."
+msgstr "``base`` 和 ``multiplier`` 是从成本地图过滤器信息服务器发布的 ``nav2_msgs/CostmapFilterInfo`` 消息中获取的系数（请参见下面的下一章节）。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:47
 msgid "The decoded ``speed_limit`` value may have one of two meanings:"
-msgstr "The decoded ``speed_limit`` value may have one of two meanings:"
+msgstr "解码后的 ``speed_limit`` 值可能有两种含义："
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:49
 msgid "Speed limit expressed in a percent from maximum robot speed."
-msgstr "Speed limit expressed in a percent from maximum robot speed."
+msgstr "速度限制以最大机器人速度的百分比表示。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:50
 msgid "Speed limit expressed in absolute values (e.g. in ``m/s``)."
-msgstr "Speed limit expressed in absolute values (e.g. in ``m/s``)."
+msgstr "以绝对值表示的速度限制（例如以 ``m/s`` 为单位）。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:52
 msgid "The meaning used by Speed Filter is being read from ``nav2_msgs/CostmapFilterInfo`` messages. In this tutorial we will use the first type of speed restriction expressed in a percent from maximum robot speed."
-msgstr "The meaning used by Speed Filter is being read from ``nav2_msgs/CostmapFilterInfo`` messages. In this tutorial we will use the first type of speed restriction expressed in a percent from maximum robot speed."
+msgstr "Speed Filter使用的含义从 ``nav2_msgs/CostmapFilterInfo`` 消息中读取。在本教程中，我们将使用以最大机器人速度的百分比表示的第一种类型的速度限制。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:57
 msgid "For speed restriction expressed in a percent, ``speed_limit`` will be used exactly as a percent belonging to ``[0..100]`` range, not ``[0.0..1.0]`` range."
-msgstr "For speed restriction expressed in a percent, ``speed_limit`` will be used exactly as a percent belonging to ``[0..100]`` range, not ``[0.0..1.0]`` range."
+msgstr "对于以百分比表示的速度限制，``speed_limit`` 将准确地使用百分比，属于 ``[0..100]`` 范围，而不是 ``[0.0..1.0]`` 范围。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:59
 msgid "Create a new image with a PGM/PNG/BMP format: copy ``turtlebot3_world.pgm`` main map which will be used in a world simulation from a Nav2 repository to a new ``speed_mask.pgm`` file. Open ``speed_mask.pgm`` in your favourite raster graphics editor and fill speed restricted areas with grey colors. In our example darker colors will indicate areas with higher speed restriction:"
-msgstr "Create a new image with a PGM/PNG/BMP format: copy ``turtlebot3_world.pgm`` main map which will be used in a world simulation from a Nav2 repository to a new ``speed_mask.pgm`` file. Open ``speed_mask.pgm`` in your favourite raster graphics editor and fill speed restricted areas with grey colors. In our example darker colors will indicate areas with higher speed restriction:"
+msgstr "使用PGM/PNG/BMP格式创建一个新的图像：从Nav2存储库中复制用于世界仿真的 ``turtlebot3_world.pgm`` 主地图，并保存到一个名为 ``speed_mask.pgm`` 的新文件中。在您喜欢的光栅图形编辑器中打开 ``speed_mask.pgm``，并用灰色填充速度受限区域。在我们的示例中，较深的颜色表示具有更高速度限制的区域："
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:64
 msgid "Area \"A\" is filled with ``40%`` gray color, area \"B\" - with ``70%`` gray, that means that speed restriction will take ``100% - 40% = 60%`` in area \"A\" and ``100% - 70% = 30%`` in area \"B\" from maximum speed value allowed for this robot. We will use ``scale`` map mode with no thresholds. In this mode darker colors will have higher ``OccupancyGrid`` values. E.g. for area \"B\" with ``70%`` of gray ``OccupancyGrid`` data will be equal to ``70``. So in order to hit the target, we need to choose ``base = 100.0`` and ``multiplier = -1.0``. This will reverse the scale ``OccupancyGrid`` values to a desired one. No thresholds (``free_thresh`` ``occupied_thresh``) were chosen for the convenience in the ``yaml``  file: to have 1:1 full range conversion of lightness value from filter mask -> to speed restriction percent."
-msgstr "Area \"A\" is filled with ``40%`` gray color, area \"B\" - with ``70%`` gray, that means that speed restriction will take ``100% - 40% = 60%`` in area \"A\" and ``100% - 70% = 30%`` in area \"B\" from maximum speed value allowed for this robot. We will use ``scale`` map mode with no thresholds. In this mode darker colors will have higher ``OccupancyGrid`` values. E.g. for area \"B\" with ``70%`` of gray ``OccupancyGrid`` data will be equal to ``70``. So in order to hit the target, we need to choose ``base = 100.0`` and ``multiplier = -1.0``. This will reverse the scale ``OccupancyGrid`` values to a desired one. No thresholds (``free_thresh`` ``occupied_thresh``) were chosen for the convenience in the ``yaml``  file: to have 1:1 full range conversion of lightness value from filter mask -> to speed restriction percent."
+msgstr "区域 \"A\" 填充了 ``40%`` 的灰色，区域 \"B\" 填充了 ``70%`` 的灰色，这意味着速度限制将分别在区域 \"A\" 中占 ``100% - 40% = 60%``，在区域 \"B\" 中占 ``100% - 70% = 30%``，这是机器人允许的最大速度值。我们将使用没有阈值的 ``scale`` 地图模式。在这种模式下，较暗的颜色将具有较高的 ``OccupancyGrid`` 值。例如，在具有 ``70%`` 灰度的区域 \"B\" 中，``OccupancyGrid`` 数据将等于 ``70``。因此，为了达到目标，我们需要选择 ``base = 100.0`` 和 ``multiplier = -1.0``。这将反转比例尺的 ``OccupancyGrid`` 值为所需值。为了方便起见，在 ``yaml`` 文件中选择不设阈值（``free_thresh``、``occupied_thresh``），以实现从过滤器蒙版的亮度值到速度限制百分比的完整转换。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:69
 msgid "It is typical but not a mandatory selection of ``base`` and ``multiplier``. For example, you can choose map mode to be ``raw``. In this case color lightness is being directly converted into ``OccupancyGrid`` values. For masks saved in a ``raw`` mode, ``base`` and ``multiplier`` will be equal to ``0.0`` and ``1.0`` accordingly."
-msgstr "It is typical but not a mandatory selection of ``base`` and ``multiplier``. For example, you can choose map mode to be ``raw``. In this case color lightness is being directly converted into ``OccupancyGrid`` values. For masks saved in a ``raw`` mode, ``base`` and ``multiplier`` will be equal to ``0.0`` and ``1.0`` accordingly."
+msgstr "这是一种典型但非强制的选择，可以选择``base``和``multiplier``。例如，您可以选择``map``模式为``raw``。在这种情况下，颜色亮度直接转换为``OccupancyGrid``值。对于以``raw``模式保存的掩码，``base``和``multiplier``将分别等于``0.0``和``1.0``。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:71
 msgid "Another important thing is that it is not necessary to use the whole ``[0..100]`` percent scale. ``base`` and ``multiplier`` coefficients could be chosen so that the speed restriction values would belong to somewhere in the middle of percent range. E.g. ``base = 40.0``, ``multiplier = 0.1`` will give speed restrictions from ``[40.0%..50.0%]`` range with a step of ``0.1%``. This might be useful for fine tuning."
-msgstr "Another important thing is that it is not necessary to use the whole ``[0..100]`` percent scale. ``base`` and ``multiplier`` coefficients could be chosen so that the speed restriction values would belong to somewhere in the middle of percent range. E.g. ``base = 40.0``, ``multiplier = 0.1`` will give speed restrictions from ``[40.0%..50.0%]`` range with a step of ``0.1%``. This might be useful for fine tuning."
+msgstr "另一个重要的事情是，不必使用整个 ``[0..100]`` 百分比范围。可以选择 ``base`` 和 ``multiplier`` 系数，使速度限制值位于百分比范围的中间某处。例如，``base = 40.0``，``multiplier = 0.1`` 将以步长为 ``0.1%`` 的速度限制值从 ``[40.0%..50.0%]`` 范围内获得。这对于精细调整可"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:73
 msgid "After all speed restriction areas will be filled, save the ``speed_mask.pgm`` image."
-msgstr "After all speed restriction areas will be filled, save the ``speed_mask.pgm`` image."
+msgstr "在填充完所有的速度限制区域之后，保存``speed_mask.pgm``图像。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:75
@@ -1893,7 +1893,7 @@ msgstr "Like all other maps, the filter mask should have its own YAML metadata f
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:93
 msgid "Since Costmap2D does not support orientation, the last third \"yaw\" component of the ``origin`` vector should be equal to zero (for example: ``origin: [1.25, -5.18, 0.0]``). Save ``speed_mask.yaml`` and the new filter mask is ready to use."
-msgstr "Since Costmap2D does not support orientation, the last third \"yaw\" component of the ``origin`` vector should be equal to zero (for example: ``origin: [1.25, -5.18, 0.0]``). Save ``speed_mask.yaml`` and the new filter mask is ready to use."
+msgstr "由于Costmap2D不支持方向性，``origin``向量的最后一个分量``yaw``应该等于零（例如：``origin: [1.25, -5.18, 0.0]``）。保存``speed_mask.yaml``文件，新的过滤器掩码已经准备就绪。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:97
@@ -1903,7 +1903,7 @@ msgstr "World map itself and filter mask could have different sizes, origin and 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:102
 msgid "Each costmap filter reads incoming meta-information (such as filter type or data conversion coefficients) in messages of ``nav2_msgs/CostmapFilterInfo`` type. These messages are being published by `Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_. The server is running as a lifecycle node. According to the `design document <https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf>`_, ``nav2_msgs/CostmapFilterInfo`` messages are going in a pair with ``OccupancyGrid`` filter mask topic. Therefore, along with Costmap Filter Info Publisher Server there should be enabled a new instance of Map Server configured to publish filter masks."
-msgstr "Each costmap filter reads incoming meta-information (such as filter type or data conversion coefficients) in messages of ``nav2_msgs/CostmapFilterInfo`` type. These messages are being published by `Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_. The server is running as a lifecycle node. According to the `design document <https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf>`_, ``nav2_msgs/CostmapFilterInfo`` messages are going in a pair with ``OccupancyGrid`` filter mask topic. Therefore, along with Costmap Filter Info Publisher Server there should be enabled a new instance of Map Server configured to publish filter masks."
+msgstr "每个costmap过滤器通过``nav2_msgs/CostmapFilterInfo``类型的消息读取传入的元信息（例如过滤器类型或数据转换系数）。这些消息由`Costmap Filter Info Publisher Server <https://github.com/ros-planning/navigation2/tree/main/nav2_map_server/src/costmap_filter_info>`_发布。该服务器作为生命周期节点运行。根据设计文档<https://github.com/ros-planning/navigation2/blob/main/doc/design/CostmapFilters_design.pdf>，``nav2_msgs/CostmapFilterInfo``消息与``OccupancyGrid``过滤器掩码主题成对出现。因此，除了Costmap Filter Info Publisher Server外，还应启用新的Map Server实例，配置为发布过滤器掩码。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:104
@@ -1913,7 +1913,7 @@ msgstr "In order to enable Speed Filter in your configuration, both servers shou
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:234
 msgid "For Speed Filter setting speed restrictions in a percent from maximum speed, the ``type`` of costmap filter should be set to ``1``. All possible costmap filter types could be found at :ref:`configuring_map_server` page."
-msgstr "For Speed Filter setting speed restrictions in a percent from maximum speed, the ``type`` of costmap filter should be set to ``1``. All possible costmap filter types could be found at :ref:`configuring_map_server` page."
+msgstr "对于Speed Filter中以最大速度的百分比设置速度限制，costmap过滤器的``type``应设置为``1``。可在:ref:`configuring_map_server`页面找到所有可能的costmap过滤器类型。"
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:236
@@ -1923,7 +1923,7 @@ msgstr "As was described in a previous chapter, ``base`` and ``multiplier`` shou
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:238
 msgid "Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Speed Filter could be found in a `nav2_costmap_filters_demo <https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo>`_ directory of ``navigation2_tutorials`` repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at :ref:`getting_started`, build the demo and launch ``costmap_filter_info.launch.py`` as follows:"
-msgstr "Ready-to-go standalone Python launch-script, YAML-file with ROS parameters and filter mask example for Speed Filter could be found in a `nav2_costmap_filters_demo <https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo>`_ directory of ``navigation2_tutorials`` repository. To simply run Filter Info Publisher Server and Map Server tuned on Turtlebot3 standard simulation written at :ref:`getting_started`, build the demo and launch ``costmap_filter_info.launch.py`` as follows:"
+msgstr "可在``navigation2_tutorials``存储库的`nav2_costmap_filters_demo <https://github.com/ros-planning/navigation2_tutorials/tree/master/nav2_costmap_filters_demo>`_目录中找到使用示例的独立的Python启动脚本、带有ROS参数的YAML文件和Speed Filter的过滤器掩码。要简单运行Filter Info Publisher Server和调整为在:ref:`getting_started`中编写的Turtlebot3标准仿真上运行的Map Server，请构建示例并按以下方式启动``costmap_filter_info.launch.py``："
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:251
@@ -1933,7 +1933,7 @@ msgstr "3. Enable Speed Filter"
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:253
 msgid "Costmap Filters are Costmap2D plugins. You can enable the ``SpeedFilter`` plugin in Costmap2D by adding ``speed_filter`` to the ``plugins`` parameter in ``nav2_params.yaml``. The Speed Filter plugin should have the following parameters defined:"
-msgstr "Costmap Filters are Costmap2D plugins. You can enable the ``SpeedFilter`` plugin in Costmap2D by adding ``speed_filter`` to the ``plugins`` parameter in ``nav2_params.yaml``. The Speed Filter plugin should have the following parameters defined:"
+msgstr "Costmap Filters是Costmap2D插件。要在Costmap2D中启用``SpeedFilter``插件，需要将``speed_filter``添加到``nav2_params.yaml``中的``plugins``参数中。Speed Filter插件应定义以下参数："
 
 
 #: ../../tutorials/docs/navigation2_with_speed_filter.rst:255
