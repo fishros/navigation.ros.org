@@ -236,11 +236,11 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">(STVL) 使用外部代价图插件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap2d-and-stvl">Costmap2D and STVL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#costmap2d-and-stvl">Costmap2D 和 STVL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#setup">0- Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#install-stvl">1- Install STVL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modify-navigation2-parameter">1- Modify Navigation2 Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup">0- 设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-stvl">1- 安装 STVL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-navigation2-parameter">1- 修改Navigation2参数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#launch-navigation2">2- Launch Navigation2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rviz">3-  RVIZ</a></li>
 </ul>
@@ -959,37 +959,31 @@
 </div>
 </div>
 <div class="section" id="costmap2d-and-stvl">
-<h2>Costmap2D and STVL<a class="headerlink" href="#costmap2d-and-stvl" title="永久链接至标题"></a></h2>
+<h2>Costmap2D 和 STVL<a class="headerlink" href="#costmap2d-and-stvl" title="永久链接至标题"></a></h2>
 <p>Costmap 2D是我们用于将传感器信息缓冲到机器人将用于创建计划和控制工作的全局视图中的数据对象。在Costmap2D</p>
-<p>However, these are simply example plugins offered by the base implementation.
-Another available pluginlib plugin for Costmap2D in Navigation2 is STVL.</p>
-<p>STVL is another 3D perception plugin similar to the Voxel Layer.
-A more detailed overview of how it works can be found <a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">in this repo</a>, however it buffers 3D data from depth cameras, sonars, lidars, and more into a sparse volumetic world model and removes voxels over time proportional with a sensor model and time-based expiration.
-This can be especially useful for robots in highly dynamic envrionments and decreases the resource utilization for 3D sensor processing by up to 2x.
-STVL also treats 3D lidars and radars as first class citizens for support.
-The ROSCon talk for STVL can be found <a class="reference external" href="https://vimeo.com/292699571">in this video</a>.</p>
+<p>然而，这些只是基本实现提供的示例插件。Navigation2 中 Costmap2D 的另一个可用的 pluginlib 插件是 STVL。</p>
+<p>STVL是另一个类似于体素层（Voxel Layer）的3D感知插件。关于其工作原理的更详细概述可以在 <a class="reference external" href="https://github.com/SteveMacenski/spatio_temporal_voxel_layer/">该存储库中</a> 找到。然而，它从深度相机、声纳、激光雷达等设备中缓冲3D数据，并将其存储为稀疏体素化的世界模型，通过传感器模型和基于时间的过期机制逐渐移除体素。这对于在高度动态环境中的机器人尤其有用，并且可以将3D传感器处理的资源利用率减少高达2倍。STVL还将3D激光雷达和雷达视为一等公民提供支持。有关STVL的ROSCon演讲可以在 <a class="reference external" href="https://vimeo.com/292699571">该视频中</a> 找到。</p>
 </div>
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="setup">
-<h3>0- Setup<a class="headerlink" href="#setup" title="永久链接至标题"></a></h3>
-<p>Follow the same process as in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> for installing and setting up a robot for hardware testing or simulation, as applicable. Ensure ROS 2, Navigation2, and Gazebo are installed.</p>
+<h3>0- 设置<a class="headerlink" href="#setup" title="永久链接至标题"></a></h3>
+<p>根据需要，安装和设置机器人进行硬件测试或仿真的过程与 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> 中的相同。确保安装了ROS 2、Navigation2和Gazebo。</p>
 </div>
 <div class="section" id="install-stvl">
-<h3>1- Install STVL<a class="headerlink" href="#install-stvl" title="永久链接至标题"></a></h3>
-<p>STVL can be installed in ROS 2 via the ROS Build Farm:</p>
+<h3>1- 安装 STVL<a class="headerlink" href="#install-stvl" title="永久链接至标题"></a></h3>
+<p>可以通过ROS Build Farm在ROS 2中安装STVL：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">ros-&lt;ros2-distro&gt;-spatio-temporal-voxel-layer</span></code></p></li>
 </ul>
-<p>It can also be built from source by cloning the repository into your Navigation2 workspace:</p>
+<p>也可以通过将存储库克隆到Navigation2工作空间并进行源代码编译来安装STVL：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">&lt;ros2-distro&gt;-devel</span> <span class="pre">git&#64;github.com:stevemacenski/spatio_temporal_voxel_layer</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="modify-navigation2-parameter">
-<h3>1- Modify Navigation2 Parameter<a class="headerlink" href="#modify-navigation2-parameter" title="永久链接至标题"></a></h3>
-<p>STVL is an optional plugin, like all plugins, in Costmap2D. Costmap Plugins in Navigation2 are loaded in the <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> and <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> variables inside of their respective costmaps.
-For example, the following will load the static and obstacle layer plugins into the name <code class="docutils literal notranslate"><span class="pre">static_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">obstacle_layer</span></code>, respectively:</p>
+<h3>1- 修改Navigation2参数<a class="headerlink" href="#modify-navigation2-parameter" title="永久链接至标题"></a></h3>
+<p>STVL 是 Costmap2D 中的可选插件，就像所有插件一样。Navigation2 中的 Costmap 插件被加载到各自的 costmap 内的 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 变量中。例如，以下代码将分别将静态层和障碍层插件加载到名为 <code class="docutils literal notranslate"><span class="pre">static_layer</span></code> 和 <code class="docutils literal notranslate"><span class="pre">obstacle_layer</span></code> 的名称中：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">global_costmap</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">global_costmap</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1001,8 +995,7 @@ For example, the following will load the static and obstacle layer plugins into 
 <p class="admonition-title">注解</p>
 <p>对于Galactic或更新版本，<code class="docutils literal notranslate"><span class="pre">plugin_names``和``plugin_types``已经被单个``plugins``字符串向量替代，用于插件名称。现在，类型在``plugin_name``命名空间中的``plugin:``字段中定义（例如：``plugin:</span> <span class="pre">MyPlugin::Plugin</span></code>）。代码块中的内联注释将帮助指导您完成此操作。</p>
 </div>
-<p>To load the STVL plugin, a new plugin name and type must be added.
-For example, if the application required an STVL layer and no obstacle layer, our file would be:</p>
+<p>为了加载STVL插件，必须添加一个新的插件名称和类型。例如，如果应用程序需要一个STVL层而不需要障碍物层，我们的文件将如下所示：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">global_costmap</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">global_costmap</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1010,8 +1003,7 @@ For example, if the application required an STVL layer and no obstacle layer, ou
 <span class="w">      </span><span class="nt">plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;static_layer&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;stvl_layer&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>Similar to the Voxel Layer, after registering the plugin, we can add the configuration of the STVL layer under the namespace <code class="docutils literal notranslate"><span class="pre">stvl_layer</span></code>.
-An example fully-described parameterization of an STVL configuration is:</p>
+<p>与 Voxal Layer 类似，在注册插件后，我们可以在命名空间 <cite>stvl_layer</cite> 下添加 STVL Layer 的配置。以下是 STVL 配置的一个完整描述参数的示例：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">stvl_layer</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer&quot;</span>
 <span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -1051,19 +1043,16 @@ An example fully-described parameterization of an STVL configuration is:</p>
 <span class="w">    </span><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
-<p>Please copy-paste the text above, with the <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> and <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> registration, into your <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> to enable STVL in your application.
-Make sure to change both the local and global costmaps.</p>
-<p>Note: Pluginlib plugins for other Navigation2 servers such as planning, behavior, and control can be set in this same way.</p>
+<p>请将上述文本中的 <code class="docutils literal notranslate"><span class="pre">plugin_names</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plugin_types</span></code> 注册内容复制粘贴到你的 <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code> 中，以启用STVL在你的应用程序中。请确保同时更改本地和全局代价地图。</p>
+<p>注意：可以以同样的方式设置用于其他 Navigation2 服务器（如规划、行为和控制）的 Pluginlib 插件。</p>
 </div>
 <div class="section" id="launch-navigation2">
 <h3>2- Launch Navigation2<a class="headerlink" href="#launch-navigation2" title="永久链接至标题"></a></h3>
-<p>Follow the same process as in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> to launch a simulated robot in gazebo with Navigation2.
-Navigation2 is now using STVL as its 3D sensing costmap layer.</p>
+<p>按照 <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a> 中的相同过程，在 gazebo 中启动一个模拟机器人，并使用 STVL 作为 3D 感知代价地图层。</p>
 </div>
 <div class="section" id="rviz">
 <h3>3-  RVIZ<a class="headerlink" href="#rviz" title="永久链接至标题"></a></h3>
-<p>With RViz open and <code class="docutils literal notranslate"><span class="pre">publish_voxel_map:</span> <span class="pre">true</span></code>, you can visualize the underlying data structure's 3D grid using the <code class="docutils literal notranslate"><span class="pre">{local,</span> <span class="pre">global}_costmap/voxel_grid</span></code> topics.
-Note: It is recommended in RViz to set the <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> Size to your voxel size and the style to <code class="docutils literal notranslate"><span class="pre">Boxes</span></code> with a neutral color for best visualization.</p>
+<p>在打开 RViz 并设置 <cite>publish_voxel_map: true</cite> 后，可以使用 <cite>{local, global}_costmap/voxel_grid</cite> 主题可视化底层数据结构的 3D 网格。注意：建议在 RViz 中将 <cite>PointCloud2</cite> 的大小设置为你的体素大小，并将样式设置为 <cite>Boxes</cite>，使用中性颜色进行最佳可视化。</p>
 </div>
 </div>
 </div>
