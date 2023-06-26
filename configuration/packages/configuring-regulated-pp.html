@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Regulated Pure Pursuit &mdash; Navigation 2 1.0.0 文档</title>
+  <title>规定纯追踪 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -197,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html">Setting Up Navigation Plugins</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-and-controller-servers">Planner and Controller Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#selecting-the-algorithm-plugins">Selecting the Algorithm Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-server">Planner Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-server">规划器服务器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#controller-server">控制器服务器</a></li>
 </ul>
 </li>
@@ -536,7 +536,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-lifecycle.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-planner-server.html">Planner Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-planner-server.html">规划器服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#example">示例</a></li>
@@ -604,8 +604,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Regulated Pure Pursuit</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#regulated-pure-pursuit-parameters">Regulated Pure Pursuit Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">规定纯追踪</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#regulated-pure-pursuit-parameters">规定纯追踪参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Regulated Pure Pursuit</li>
+      <li>规定纯追踪</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,15 +939,11 @@
            <div itemprop="articleBody">
              
   <div class="section" id="regulated-pure-pursuit">
-<span id="configuring-regulated-pure-puruit"></span><h1>Regulated Pure Pursuit<a class="headerlink" href="#regulated-pure-pursuit" title="永久链接至标题"></a></h1>
+<span id="configuring-regulated-pure-puruit"></span><h1>规定纯追踪<a class="headerlink" href="#regulated-pure-pursuit" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_regulated_pure_pursuit_controller">在Github上的源代码</a></p>
-<p>The Regulated Pure Pursuit controller implements a variation on the Pure Pursuit controller that specifically targeting service / industrial robot needs.
-It regulates the linear velocities by curvature of the path to help reduce overshoot at high speeds around blind corners allowing operations to be much more safe.
-It also better follows paths than any other variation currently available of Pure Pursuit.
-It also has heuristics to slow in proximity to other obstacles so that you can slow the robot automatically when nearby potential collisions.
-It also implements the Adaptive lookahead point features to be scaled by velocities to enable more stable behavior in a larger range of translational speeds.</p>
+<p>规定纯追踪控制器是Pure Pursuit控制器的一种变体，专门针对服务/工业机器人的需求。它通过路径的曲率调节线速度，以帮助减少在高速环境中盲区拐角处的超调，从而使操作更加安全。它还比Pure Pursuit的其他变体更好地跟随路径。它还具有在接近其他障碍物时减速的启发式算法，这样当机器人接近潜在碰撞物体时，可以自动降低机器人的速度。它还实现了根据速度缩放的自适应前视点功能，以在更大范围的平移速度下实现更稳定的行为。</p>
 <p>请参阅软件包的“README”以获取更完整的信息。</p>
-<p>If you use the Regulated Pure Pursuit Controller algorithm or software from this repository, please cite this work in your papers:</p>
+<p>如果您使用了此存储库中的规定纯追踪控制器算法或软件，请在您的论文中引用此工作：</p>
 <ul class="simple">
 <li><ol class="upperalpha simple" start="19">
 <li><p>Macenski, S. Singh, F. Martin, J. Gines, <a class="reference external" href="https://arxiv.org/abs/2305.20026">Regulated Pure Pursuit for Robot Path Tracking</a>. Autonomous Robots, 2023.</p></li>
@@ -955,7 +951,7 @@ It also implements the Adaptive lookahead point features to be scaled by velocit
 </li>
 </ul>
 <div class="section" id="regulated-pure-pursuit-parameters">
-<h2>Regulated Pure Pursuit Parameters<a class="headerlink" href="#regulated-pure-pursuit-parameters" title="永久链接至标题"></a></h2>
+<h2>规定纯追踪参数<a class="headerlink" href="#regulated-pure-pursuit-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
 <dt class="field-odd">desired_linear_vel</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -973,7 +969,7 @@ It also implements the Adaptive lookahead point features to be scaled by velocit
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>The desired maximum linear velocity (m/s) to use.</p>
+<dt>描述</dt><dd><p>要使用的期望最大线性速度（m/s）。</p>
 </dd>
 </dl>
 </dd>

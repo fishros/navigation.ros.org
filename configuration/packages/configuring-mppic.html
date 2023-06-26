@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Rotation Shim Controller" href="configuring-rotation-shim-controller.html" />
-    <link rel="prev" title="Regulated Pure Pursuit" href="configuring-regulated-pp.html" />
+    <link rel="prev" title="规定纯追踪" href="configuring-regulated-pp.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -197,7 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html">Setting Up Navigation Plugins</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-and-controller-servers">Planner and Controller Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#selecting-the-algorithm-plugins">Selecting the Algorithm Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-server">Planner Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#planner-server">规划器服务器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../setup_guides/algorithm/select_algorithm.html#controller-server">控制器服务器</a></li>
 </ul>
 </li>
@@ -536,7 +536,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-lifecycle.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-planner-server.html">Planner Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-planner-server.html">规划器服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-planner-server.html#example">示例</a></li>
@@ -604,8 +604,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-dwb-controller.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-regulated-pp.html">Regulated Pure Pursuit</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuring-regulated-pp.html#regulated-pure-pursuit-parameters">Regulated Pure Pursuit Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-regulated-pp.html">规定纯追踪</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuring-regulated-pp.html#regulated-pure-pursuit-parameters">规定纯追踪参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-regulated-pp.html#example">示例</a></li>
 </ul>
 </li>
@@ -2318,9 +2318,9 @@
 </div>
 <div class="section" id="obstacle-inflation-layer-and-path-following">
 <h3>障碍物、膨胀层和路径跟踪<a class="headerlink" href="#obstacle-inflation-layer-and-path-following" title="永久链接至标题"></a></h3>
-<p>There also exists a relationship between the costmap configurations and the Obstacle critic configurations. If the Obstacle critic is not well tuned with the costmap parameters (inflation radius, scale) it can cause the robot to wobble significantly as it attempts to take finitely lower-cost trajectories with a slightly lower cost in exchange for jerky motion. It may also perform awkward maneuvers when in free-space to try to maximize time in a small pocket of 0-cost over a more natural motion which involves moving into some low-costed region. Finally, it may generally refuse to go into costed space at all when starting in a free 0-cost space if the gain is set disproportionately higher than the Path Follow scoring to encourage the robot to move along the path. This is due to the critic cost of staying in free space becoming more attractive than entering even lightly costed space in exchange for progression along the task.</p>
+<p>还存在着成本地图配置和障碍物批评者配置之间的关系。如果障碍物批评者没有与成本地图参数（膨胀半径、比例）进行良好的调整，当机器人试图采取略微更低成本的轨迹以换取颠簸的运动时，它会导致机器人明显摇晃。在自由空间中，它也可能执行尴尬的机动，以尝试在一个无成本的小区域中最大化时间，而不是采取更自然的运动，这涉及移动到某个低成本区域。最后，如果增益设置远高于路径跟随评分以鼓励机器人沿着路径移动，当在一个自由的0成本空间中开始时，它可能完全拒绝进入有成本的空间。这是因为在自由空间停留的批评成本比进入即使是轻度成本的空间来推进任务更具吸引力。</p>
 <p>因此，在选择障碍物评估函数的权重时，应注意与代价图膨胀半径和比例配合使用，以避免机器人出现这样的问题。我（史蒂夫，你友好的附近导航员）调整的方法是首先创建与膨胀层参数相配合的合适的障碍物评估函数行为。值得注意的是，障碍物评估函数将代价转化为与障碍物的距离，因此膨胀中代价的分布性质并不是非常重要。然而，膨胀半径和比例将定义分布的末端代价，即自由空间与半径内最低代价值相交的位置。因此，在超过该阈值时测试质量行为应该被考虑。</p>
-<p>As you increase or decrease your weights on the Obstacle, you may notice the aforementioned behaviors (e.g. won't overcome free to non-free threshold). To overcome them, increase the FollowPath critic cost to increase the desire for the trajectory planner to continue moving towards the goal. Make sure to not overshoot this though, keep them balanced. A desirable outcome is smooth motion roughly in the center of spaces without significant close interactions with obstacles. It shouldn't be perfectly following a path yet nor should the output velocity be wobbling jaggedly.</p>
+<p>当你增加或减小对障碍物的权重时，你可能会注意到上述行为（例如无法克服从无成本到非无成本的阈值）。为了克服这些问题，增加FollowPath批评者的成本以增加轨迹规划器继续朝着目标移动的欲望。但要确保不过度调整，保持平衡。理想的结果是平滑的运动，大致位于空间的中心，与障碍物没有显著的近距离交互。它不应完全按照路径移动，输出速度也不应摇摆不定。</p>
 <p>一旦你调整好了障碍物避免行为，并与合适的路径跟踪惩罚相匹配，就可以调整路径对齐评估函数以与路径对齐。如果设计了精确路径对齐行为，就可以跳过障碍物评估函数的步骤，因为高度调整系统以遵循路径将使其减少避开障碍物的能力（虽然速度会减慢并停止）。将障碍物评估函数的权重调整为较高将能够避免近碰撞，但斥力权重对你来说很大程度上是不必要的。对于希望获得更多动态行为的其他人来说，逐渐降低障碍物评估函数的权重会有利于给路径对齐评估函数提供更多操作空间。如果你的路径是使用具有代价感知的规划器（如Nav2提供的所有规划器）生成的，并且为您的满意度提供了远离障碍物的路径，那么稍微降低障碍物评估函数并使用路径对齐评估函数会有很好的效果。不过，过分加重路径对齐评估函数会使机器人能够偏离路径以绕过场景中的动态障碍物或先前在路径规划过程中未考虑的其他障碍物。对于你的应用来说，最佳行为是主观的，但已经证明MPPI可以是一个精确的路径跟踪器和/或能够非常流畅地避开动态障碍</p>
 </div>
 </div>

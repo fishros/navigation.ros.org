@@ -197,7 +197,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Setting Up Navigation Plugins</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#planner-and-controller-servers">Planner and Controller Servers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#selecting-the-algorithm-plugins">Selecting the Algorithm Plugins</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#planner-server">Planner Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#planner-server">规划器服务器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#controller-server">控制器服务器</a></li>
 </ul>
 </li>
@@ -536,7 +536,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-lifecycle.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html">Planner Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html">规划器服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#parameters">参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#default-plugins">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-planner-server.html#example">示例</a></li>
@@ -604,8 +604,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-dwb-controller.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html">Regulated Pure Pursuit</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters">Regulated Pure Pursuit Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html">规定纯追踪</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters">规定纯追踪参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration/packages/configuring-regulated-pp.html#example">示例</a></li>
 </ul>
 </li>
@@ -960,7 +960,7 @@
 <p>The algorithm plugins you can use are not limited to the ones mentioned in this section. You may create custom plugins as well and new plugins are added to Nav2 regularly. For tutorials on how to write your own plugins, please see <a class="reference external" href="https://navigation.ros.org/plugin_tutorials/docs/writing_new_nav2planner_plugin.html">Writing a New Planner Plugin</a>  and <a class="reference external" href="https://navigation.ros.org/plugin_tutorials/docs/writing_new_nav2controller_plugin.html">Writing a New Controller Plugin</a>. The list of all available Nav2 plugins and their descriptions can be found in <a class="reference external" href="https://navigation.ros.org/plugins/index.html">Navigation Plugins Section</a>.</p>
 </div>
 <div class="section" id="planner-server">
-<h3>Planner Server<a class="headerlink" href="#planner-server" title="永久链接至标题"></a></h3>
+<h3>规划器服务器<a class="headerlink" href="#planner-server" title="永久链接至标题"></a></h3>
 <p>The algorithm plugins for the planner server find the robot's path using a representation of its environment captured by its different sensors. Some of these algorithms operate by searching through the environment's grid space while others expand the robot's possible states while accounting for path feasibility.</p>
 <p>As mentioned, the planner server may utilize plugins that work on the grid space such as the <code class="docutils literal notranslate"><span class="pre">NavFn</span> <span class="pre">Planner</span></code>, <code class="docutils literal notranslate"><span class="pre">Smac</span> <span class="pre">Planner</span> <span class="pre">2D</span></code>, and <code class="docutils literal notranslate"><span class="pre">Theta</span> <span class="pre">Star</span> <span class="pre">Planner</span></code>. The <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-navfn.html">NavFn planner</a> is a navigation function planner that uses either Dijkstra or A*.  Next, the <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-smac-planner.html">Smac 2D planner</a> implements a 2D A* algorithm using 4 or 8 connected neighborhoods with a smoother and multi-resolution query. Lastly, the <a class="reference external" href="https://navigation.ros.org/configuration/packages/configuring-thetastar.html#">Theta Star planner</a> is an implementation of Theta* using either line of sight to create non-discretely oriented path segments.</p>
 <p>One issue you may encounter when using algorithms that work on the grid space is that there is no guarantee that a drivable path can be generated for any type of robot. For example, it is not guaranteed that the <code class="docutils literal notranslate"><span class="pre">NavFn</span> <span class="pre">Planner</span></code> can plan a feasible path for a non-circular robot in a tight space since it uses the circular footprint of a robot (by approximating the robot's largest cross-sectional radius) and checks for collisions per costmap grid cell. In addition, these algorithms are also not suitable for ackermann and legged robots since they have turning constraints. That being said, these plugins are best used on robots that can drive in any direction or rotate safely in place, such as <strong>circular differential and circular omnidirectional</strong> robots.</p>
