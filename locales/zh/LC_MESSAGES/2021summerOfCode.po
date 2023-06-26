@@ -27,7 +27,7 @@ msgstr "Projects for 2021 Summer Student Program"
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:9
 msgid "The `Summer 2021 Student Program <https://summer.iscas.ac.cn/help/en/student/>`_ is upon us! See below for the list of project proposals for students to review and apply for. This is by no means the only list of potential projects, please check our issue tracker or propose another if there's something you think you're well suited for that would be useful for Nav2."
-msgstr "The `Summer 2021 Student Program <https://summer.iscas.ac.cn/help/en/student/>`_ is upon us! See below for the list of project proposals for students to review and apply for. This is by no means the only list of potential projects, please check our issue tracker or propose another if there's something you think you're well suited for that would be useful for Nav2."
+msgstr "即将到来的是`2021年夏季学生计划<https://summer.iscas.ac.cn/help/zh_CN/student/>`_！请参阅以下项目建议列表，供学生审阅并申请。这绝不是潜在项目的唯一列表，请查看我们的问题追踪器或提出其他项目，如果您认为有适合您的并且对Nav2有用的项目。"
 
 
 #: ../../2021summerOfCode/Summer_2021_Student_Program.rst:13

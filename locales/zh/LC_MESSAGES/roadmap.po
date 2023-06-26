@@ -32,7 +32,7 @@ msgstr "这是Nav2维护者为各个ROS 2发行版承诺完成的重大问题和
 
 #: ../../roadmap/roadmap.rst:12
 msgid "Iron Roadmap"
-msgstr "Iron Roadmap"
+msgstr "铁路路线图"
 
 
 #: ../../roadmap/roadmap.rst:15 ../../roadmap/roadmap.rst:59
@@ -47,12 +47,12 @@ msgstr "大小"
 
 #: ../../roadmap/roadmap.rst:17
 msgid "`Pluginize Navigators`_"
-msgstr "`Pluginize Navigators`_"
+msgstr "`插件化导航器`_"
 
 
 #: ../../roadmap/roadmap.rst:17 ../../roadmap/roadmap.rst:61
 msgid "Medium  (DONE)"
-msgstr "Medium  (DONE)"
+msgstr "中等 (完成)"
 
 
 #: ../../roadmap/roadmap.rst:21
@@ -62,77 +62,77 @@ msgstr "`MPPI 控制器`_"
 
 #: ../../roadmap/roadmap.rst:21
 msgid "Very Large (DONE)"
-msgstr "Very Large (DONE)"
+msgstr "非常大型（已完成）"
 
 
 #: ../../roadmap/roadmap.rst:26
 msgid "`Route Graph Planner`_"
-msgstr "`Route Graph Planner`_"
+msgstr "`路径规划图`_"
 
 
 #: ../../roadmap/roadmap.rst:26
 msgid "Large (in progress)"
-msgstr "Large (in progress)"
+msgstr "大型（进行中）"
 
 
 #, python-format
 msgid "90% unit test coverage"
-msgstr "90% unit test coverage"
+msgstr "90% 单元测试覆盖率"
 
 
 #: ../../roadmap/roadmap.rst:30 ../../roadmap/roadmap.rst:74
 msgid "Small  (DONE)"
-msgstr "Small  (DONE)"
+msgstr "小型（已完成）"
 
 
 #: ../../roadmap/roadmap.rst:33
 msgid "`Velocity Smoother`_"
-msgstr "`Velocity Smoother`_"
+msgstr "`速度平滑器`_"
 
 
 #: ../../roadmap/roadmap.rst:33 ../../roadmap/roadmap.rst:70 ../../roadmap/roadmap.rst:81 ../../roadmap/roadmap.rst:85 ../../roadmap/roadmap.rst:93
 msgid "Medium (DONE)"
-msgstr "Medium (DONE)"
+msgstr "中型（已完成）"
 
 
 #: ../../roadmap/roadmap.rst:35
 msgid "ROS Time Respect Across Stack"
-msgstr "ROS Time Respect Across Stack"
+msgstr "ROS 时间在整个堆栈中的尊重"
 
 
 #: ../../roadmap/roadmap.rst:35
 msgid "Medium (in progress)"
-msgstr "Medium (in progress)"
+msgstr "中型（进行中）"
 
 
 #: ../../roadmap/roadmap.rst:39
 msgid "`Fuse Migration`_"
-msgstr "`Fuse Migration`_"
+msgstr "`融合迁移`_"
 
 
 #: ../../roadmap/roadmap.rst:39
 msgid "Medium"
-msgstr "Medium"
+msgstr "中等"
 
 
 #: ../../roadmap/roadmap.rst:43
 msgid "`Ignition Migration`_"
-msgstr "`Ignition Migration`_"
+msgstr "`Ignition 迁移`_"
 
 
 #: ../../roadmap/roadmap.rst:43
 msgid "Large"
-msgstr "Large"
+msgstr "大号"
 
 
 #: ../../roadmap/roadmap.rst:56
 msgid "Humble Roadmap"
-msgstr "Humble Roadmap"
+msgstr "谦虚的路线图"
 
 
 #: ../../roadmap/roadmap.rst:61
 msgid "`Nav2 1 Node Per Server`_"
-msgstr "`Nav2 1 Node Per Server`_"
+msgstr "`Nav2 1个节点每台服务器`_"
 
 
 #: ../../roadmap/roadmap.rst:65
@@ -142,7 +142,7 @@ msgstr "`Smac Lattice Planner`_"
 
 #: ../../roadmap/roadmap.rst:65
 msgid "Large (DONE)"
-msgstr "Large (DONE)"
+msgstr "大号（完成）"
 
 
 #: ../../roadmap/roadmap.rst:70
@@ -152,27 +152,27 @@ msgstr "`Safety Collision Nodes`_"
 
 #: ../../roadmap/roadmap.rst:74
 msgid "`Fix Min Range Bug`_"
-msgstr "`Fix Min Range Bug`_"
+msgstr "`修复最小范围错误`_"
 
 
 #: ../../roadmap/roadmap.rst:77
 msgid "`Move Development from Master to Rolling`_"
-msgstr "`Move Development from Master to Rolling`_"
+msgstr "`将开发从主分支迁移到滚动分支`_"
 
 
 #: ../../roadmap/roadmap.rst:77 ../../roadmap/roadmap.rst:89
 msgid "Small (DONE)"
-msgstr "Small (DONE)"
+msgstr "小号（完成）"
 
 
 #: ../../roadmap/roadmap.rst:81
 msgid "Push Test Coverage to 88\\%"
-msgstr "Push Test Coverage to 88\\%"
+msgstr "将测试覆盖率提升至88％"
 
 
 #: ../../roadmap/roadmap.rst:85
 msgid "`Complete First Time Guide`_"
-msgstr "`Complete First Time Guide`_"
+msgstr "`完成首次使用指南`_"
 
 
 #: ../../roadmap/roadmap.rst:89
