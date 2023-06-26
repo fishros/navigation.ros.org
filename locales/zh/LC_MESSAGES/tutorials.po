@@ -687,7 +687,7 @@ msgstr "工作原理"
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:99
 msgid "The plugin is based on two algorithms."
-msgstr "The plugin is based on two algorithms."
+msgstr "该插件基于两种算法。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:101
@@ -697,7 +697,7 @@ msgstr "当参数“minimal_group_size”= 2时，第一个算法启动。它将
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:108
 msgid "As a result of erosion function the neighbors image is created. Each possible position of the kernel on the costmap corresponds to one pixel of the neighbors image. The pixel value of this image is equal to the maximum of 4/8 costmap pixels corresponding to the white pixels of the mask. In other words, the pixel of the neighbors image is equal to the obstacle code if there is an obstacle nearby, the free space code in other case. After that, obstacles corresponding to free space code on neighbors image are removed."
-msgstr "As a result of erosion function the neighbors image is created. Each possible position of the kernel on the costmap corresponds to one pixel of the neighbors image. The pixel value of this image is equal to the maximum of 4/8 costmap pixels corresponding to the white pixels of the mask. In other words, the pixel of the neighbors image is equal to the obstacle code if there is an obstacle nearby, the free space code in other case. After that, obstacles corresponding to free space code on neighbors image are removed."
+msgstr "通过腐蚀函数生成了邻居图像。内核在代价图上的每个可能位置对应于邻居图像的一个像素。该图像的像素值等于与掩码的白色像素对应的4/8个代价图像素的最大值。换句话说，如果附近有障碍物，则邻居图像的像素等于障碍物代码；否则为自由空间代码。然后，将邻居图像上对应自由空间代码的障碍物移除。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:112
@@ -707,7 +707,7 @@ msgstr "该过程如下图所示。图像的左侧是costmap，右侧是邻居�
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:118
 msgid "When parameter ``minimal_group_size`` > 2, the second algorithm is executed. This is a generalized solution that allows you to remove groups of adjacent obstacles if their total number is less than ``minimal_group_size``. To select groups of adjacent obstacles, the algorithm performs their segmentation. The type of cell connectivity in one segment is determined by the parameter ``group_connectivity_type``. Next, the size of each segment is calculated. Obstacles segments with size less than the ``minimal_group_size`` are replaced with empty cells. This algorithm is about 10 times slower than first, so use it with caution and only when necessary. Its execution time depends on the size of the processed map fragment (and not depend on the value of ``minimal_group_size``)."
-msgstr "When parameter ``minimal_group_size`` > 2, the second algorithm is executed. This is a generalized solution that allows you to remove groups of adjacent obstacles if their total number is less than ``minimal_group_size``. To select groups of adjacent obstacles, the algorithm performs their segmentation. The type of cell connectivity in one segment is determined by the parameter ``group_connectivity_type``. Next, the size of each segment is calculated. Obstacles segments with size less than the ``minimal_group_size`` are replaced with empty cells. This algorithm is about 10 times slower than first, so use it with caution and only when necessary. Its execution time depends on the size of the processed map fragment (and not depend on the value of ``minimal_group_size``)."
+msgstr "当参数``minimal_group_size`` > 2时，执行第二种算法。这是一种通用解决方案，可以删除邻近障碍物组，如果它们的总数小于``minimal_group_size``。为了选择相邻障碍物组，算法执行它们的分割。一个段中的细胞连接类型由参数``group_connectivity_type``确定。然后计算每个段的大小。大小小于``minimal_group_size``的障碍物段将被替换为空细胞。该算法比第一种算法慢大约10倍，因此请谨慎使用，仅在必要时使用。它的执行时间取决于处理地图片段的大小（而不取决于``minimal_group_size``的值）。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:127
@@ -717,77 +717,77 @@ msgstr "该算法如下动画所示（“group_connectivity_type”= 8）。动�
 
 #: ../../tutorials/docs/get_backtrace.rst:4
 msgid "Get Backtrace in ROS 2 / Nav2"
-msgstr "Get Backtrace in ROS 2 / Nav2"
+msgstr "在ROS 2 / Nav2中获取回溯"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:7 ../../tutorials/docs/get_profile.rst:8
 msgid "`Preliminaries`_"
-msgstr "`Preliminaries`_"
+msgstr "`准备工作`_"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:8
 msgid "`From a Node`_"
-msgstr "`From a Node`_"
+msgstr "`从节点`_"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:9
 msgid "`From a Launch File`_"
-msgstr "`From a Launch File`_"
+msgstr "`来自启动文件`_"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:10 ../../tutorials/docs/get_profile.rst:11
 msgid "`From Nav2 Bringup`_"
-msgstr "`From Nav2 Bringup`_"
+msgstr "`从Nav2启动`_"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:11
 msgid "`Automatic backtrace on crash`_"
-msgstr "`Automatic backtrace on crash`_"
+msgstr "`崩溃时自动回溯`_"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:16
 msgid "This document explains one set of methods for getting backtraces for ROS 2 and Nav2. There are many ways to accomplish this, but this is a good starting point for new C++ developers without GDB experience."
-msgstr "This document explains one set of methods for getting backtraces for ROS 2 and Nav2. There are many ways to accomplish this, but this is a good starting point for new C++ developers without GDB experience."
+msgstr "本文档介绍了在ROS 2和Nav2中获取回溯的一组方法。有许多实现此目标的方法，但对于没有GDB经验的新C++开发人员来说，这是一个很好的起点。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:19
 msgid "The following steps show ROS 2 users how to modify the Nav2 stack to get traces from specific servers when they encounter a problem. This tutorial applies to both simulated and physical robots."
-msgstr "The following steps show ROS 2 users how to modify the Nav2 stack to get traces from specific servers when they encounter a problem. This tutorial applies to both simulated and physical robots."
+msgstr "以下步骤向ROS 2用户展示如何修改Nav2堆栈，以便在遇到问题时从特定服务器获取跟踪信息。本教程适用于仿真和物理机器人。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:22
 msgid "This will cover how to get a backtrace from a specific node using ``ros2 run``, from a launch file representing a single node using ``ros2 launch``, and from a more complex orchestration of nodes. By the end of this tutorial, you should be able to get a backtrace when you notice a server crashing in ROS 2."
-msgstr "This will cover how to get a backtrace from a specific node using ``ros2 run``, from a launch file representing a single node using ``ros2 launch``, and from a more complex orchestration of nodes. By the end of this tutorial, you should be able to get a backtrace when you notice a server crashing in ROS 2."
+msgstr "本教程将介绍如何使用``ros2 run``从特定节点获取回溯信息，如何使用代表单个节点的启动文件``ros2 launch``，以及如何从更复杂的节点编排中获取回溯信息。通过完成本教程，您应该能够在注意到ROS 2中的服务器崩溃时获取回溯信息。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:26 ../../tutorials/docs/get_profile.rst:21
 msgid "Preliminaries"
-msgstr "Preliminaries"
+msgstr "准备工作"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:28
 msgid "GDB is the most popular debugger for C++ on Unix systems. It can be used to determine the reason for a crash and track threads. It may also be used to add breakpoints in your code to check values in memory a particular points in your software."
-msgstr "GDB is the most popular debugger for C++ on Unix systems. It can be used to determine the reason for a crash and track threads. It may also be used to add breakpoints in your code to check values in memory a particular points in your software."
+msgstr "GDB是Unix系统上最流行的C++调试器。它可用于确定崩溃的原因并跟踪线程。它还可以在代码中添加断点，以便在软件中特定位置检查内存中的值。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:32
 msgid "Using GDB is a critical skill for all software developers working on C/C++. Many IDEs will have some kind of debugger or profiler built in, but with ROS, there are few IDEs to choose. Therefore it's important to understand how to use these raw tools you have available rather than relying on an IDE to provide them. Further, understanding these tools is a fundamental skill of C/C++ development and leaving it up to your IDE can be problematic if you change roles and no longer have access to it or are doing development on the fly through an ssh session to a remote asset."
-msgstr "Using GDB is a critical skill for all software developers working on C/C++. Many IDEs will have some kind of debugger or profiler built in, but with ROS, there are few IDEs to choose. Therefore it's important to understand how to use these raw tools you have available rather than relying on an IDE to provide them. Further, understanding these tools is a fundamental skill of C/C++ development and leaving it up to your IDE can be problematic if you change roles and no longer have access to it or are doing development on the fly through an ssh session to a remote asset."
+msgstr "使用GDB是所有在C/C++上工作的软件开发人员的关键技能。许多集成开发环境（IDE）都内置了一些调试器或性能分析工具，但是在ROS中，可供选择的IDE很少。因此，重要的是了解如何使用这些可用的原始工具，而不是依赖IDE来提供它们。此外，了解这些工具是C/C++开发的基本技能，如果您改变角色并且不再可以访问IDE，或者通过ssh会话到远程资源进行开发，依赖IDE可能会带来问题。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:37
 msgid "Using GDB luckily is fairly simple after you have the basics under your belt. The first step is to add ``-g`` to your compiler flags for the ROS package you want to profile / debug. This flag builds debug symbols that GDB and valgrind can read to tell you specific lines of code in your project are failing and why. If you do not set this flag, you can still get backtraces but it will not provide line numbers for failures. Be sure to remove this flag after debugging, it will slow down performance at run-time."
-msgstr "Using GDB luckily is fairly simple after you have the basics under your belt. The first step is to add ``-g`` to your compiler flags for the ROS package you want to profile / debug. This flag builds debug symbols that GDB and valgrind can read to tell you specific lines of code in your project are failing and why. If you do not set this flag, you can still get backtraces but it will not provide line numbers for failures. Be sure to remove this flag after debugging, it will slow down performance at run-time."
+msgstr "幸运的是，一旦掌握了基础知识，使用GDB相当简单。第一步是在要分析/调试的ROS软件包的编译器标志中添加``-g``。此标志会构建调试符号，供GDB和valgrind读取，以告诉您项目中的具体代码行失败的原因。如果不设置此标志，仍然可以获取回溯信息，但不会提供失败的行号。在调试完成后，务必删除此标志，否则会降低运行时性能。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:43
 msgid "Adding the following line to your ``CMakeLists.txt`` for your project should do the trick. If your project already has a ``add_compile_options()``, you can simply add ``-g`` to it. Then simply rebuild your workspace with this package ``colcon build --packages-select <package-name>``. It may take a little longer than usual to compile."
-msgstr "Adding the following line to your ``CMakeLists.txt`` for your project should do the trick. If your project already has a ``add_compile_options()``, you can simply add ``-g`` to it. Then simply rebuild your workspace with this package ``colcon build --packages-select <package-name>``. It may take a little longer than usual to compile."
+msgstr "将以下行添加到项目的``CMakeLists.txt``文件中应该就可以解决问题。如果您的项目已经有一个``add_compile_options()``，您只需添加``-g``即可。然后使用此包重新构建工作空间``colcon build --packages-select <package-name>``。编译过程可能比平常稍长一些。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:52
 msgid "Now you're ready to debug your code! If this was a non-ROS project, at this point you might do something like below. Here we're launching a GDB session and telling our program to immediately run. Once your program crashes, it will return a gdb session prompt denoted by ``(gdb)``. At this prompt you can access the information you're interested in. However, since this is a ROS project with lots of node configurations and other things going on, this isn't a great option for beginners or those that don't like tons of commandline work and understanding the filesystem."
-msgstr "Now you're ready to debug your code! If this was a non-ROS project, at this point you might do something like below. Here we're launching a GDB session and telling our program to immediately run. Once your program crashes, it will return a gdb session prompt denoted by ``(gdb)``. At this prompt you can access the information you're interested in. However, since this is a ROS project with lots of node configurations and other things going on, this isn't a great option for beginners or those that don't like tons of commandline work and understanding the filesystem."
+msgstr "现在，您已经准备好调试代码了！如果这是一个非ROS项目，此时您可能会执行以下操作。这里我们启动了一个GDB会话，并告诉我们的程序立即运行。一旦程序崩溃，它将返回一个以 ``(gdb)`` 标识的gdb会话提示符。在此提示符下，您可以访问您感兴趣的信息。然而，由于这是一个涉及大量节点配置和其他操作的ROS项目，对于初学者或不喜欢大量命令行操作和理解文件系统的人来说，这不是一个很好的选择。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:63
@@ -797,7 +797,7 @@ msgstr "Below are sections to describe the 3 major situations you could run into
 
 #: ../../tutorials/docs/get_backtrace.rst:67
 msgid "From a Node"
-msgstr "From a Node"
+msgstr "从一个节点开始"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:69
@@ -807,7 +807,7 @@ msgstr "Just as in our non-ROS example, we need to setup a GDB session before la
 
 #: ../../tutorials/docs/get_backtrace.rst:72
 msgid "``--prefix`` will execute some bits of code before our ``ros2`` command allowing us to insert some information. If you attempted to do ``gdb ex run --args ros2 run <pkg> <node>`` as analog to our example in the preliminaries, you'd find that it couldn't find the ``ros2`` command. If you're even more clever, you'd find that trying to source your workspace would also fail for similar reasons."
-msgstr "``--prefix`` will execute some bits of code before our ``ros2`` command allowing us to insert some information. If you attempted to do ``gdb ex run --args ros2 run <pkg> <node>`` as analog to our example in the preliminaries, you'd find that it couldn't find the ``ros2`` command. If you're even more clever, you'd find that trying to source your workspace would also fail for similar reasons."
+msgstr "``--prefix``将在我们的``ros2``命令之前执行一些代码，以便插入一些信息。如果您尝试执行类似于我们在前言中的示例的``gdb ex run --args ros2 run <pkg> <node>``，您会发现它找不到``ros2``命令。如果您更聪明一些，您会发现尝试源化您的工作空间也会因类似的原因而失败。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:76
@@ -817,7 +817,7 @@ msgstr "Rather than having to revert to finding the install path of the executab
 
 #: ../../tutorials/docs/get_backtrace.rst:83
 msgid "Just as before, this prefix will launch a GDB session and run the node you requested with all the additional commandline arguments. You should now have your node running and should be chugging along with some debug printing."
-msgstr "Just as before, this prefix will launch a GDB session and run the node you requested with all the additional commandline arguments. You should now have your node running and should be chugging along with some debug printing."
+msgstr "与之前一样，此前缀将启动一个GDB会话，并使用所有附加的命令行参数运行您请求的节点。现在，您的节点应该正在运行，并且应该带有一些调试输出。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:86
