@@ -1961,7 +1961,7 @@ msgstr "``AreErrorCodesPresent``条件节点允许用户指定来自服务器的
 
 #: ../../migration/Humble.rst:147
 msgid "The ``WouldAPlannerRecoveryHelp`` checks if the active error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT. If the error code is a match, the condition returns ``SUCCESS``. These error code are potentially able to be cleared by a planner recovery."
-msgstr "The ``WouldAPlannerRecoveryHelp`` checks if the active error code is UNKNOWN, NO_VALID_CONTROL, or TIMEOUT. If the error code is a match, the condition returns ``SUCCESS``. These error code are potentially able to be cleared by a planner recovery."
+msgstr "``WouldAPlannerRecoveryHelp`` 检查当前的错误代码是否为UNKNOWN、NO_VALID_CONTROL或TIMEOUT。如果错误代码匹配，该条件返回``SUCCESS``。这些错误代码可能可以通过规划器恢复来清除。"
 
 
 #: ../../migration/Humble.rst:151
@@ -1971,7 +1971,7 @@ msgstr "``WouldASmootherRecoveryHelp``检查活动错误代码是否为UNKNOWN�
 
 #: ../../migration/Humble.rst:156
 msgid "Load, Save and Loop Waypoints from the Nav2 Panel in RViz"
-msgstr "Load, Save and Loop Waypoints from the Nav2 Panel in RViz"
+msgstr "从RViz的Nav2面板中加载、保存和循环使用路径点"
 
 
 #: ../../migration/Humble.rst:158
@@ -1981,7 +1981,7 @@ msgstr "`PR＃3165 <https:https://github.com/ros-planning/navigation2/pull/3165>
 
 #: ../../migration/Humble.rst:160
 msgid "load and save waypoints in a yaml file for waypoint following (initial pose can also be stored if required)"
-msgstr "load and save waypoints in a yaml file for waypoint following (initial pose can also be stored if required)"
+msgstr "将路径点加载和保存到yaml文件中以进行路径点跟随（如果需要，也可以存储初始位姿）"
 
 
 #: ../../migration/Humble.rst:161
@@ -1991,7 +1991,7 @@ msgstr "循环功能以重新访问航点"
 
 #: ../../migration/Humble.rst:162
 msgid "pause and resume button for stopping and continuing through the waypoints"
-msgstr "pause and resume button for stopping and continuing through the waypoints"
+msgstr "用于停止和继续沿路径点前进的暂停和恢复按钮"
 
 
 #: ../../migration/Humble.rst:164
@@ -2001,77 +2001,77 @@ msgstr "循环功能不仅限于RViz中的nav2面板。使用nav2_waypoint_follo
 
 #: ../../migration/Humble.rst:167
 msgid "DWB Forward vs Reverse Pruning"
-msgstr "DWB Forward vs Reverse Pruning"
+msgstr "DWB正向和反向修剪"
 
 
 #: ../../migration/Humble.rst:169
 msgid "`PR #3374 <https://github.com/ros-planning/navigation2/pull/3374>`_ adds a new ``forward_prune_distance`` parameter in the DWB controller. It replaces the ``prune_distance`` for forward path shortening, enabled through the ``shorten_transformed_plan`` boolean parameter. This change allows to use different values for forward and backward path shortening."
-msgstr "`PR #3374 <https://github.com/ros-planning/navigation2/pull/3374>`_ adds a new ``forward_prune_distance`` parameter in the DWB controller. It replaces the ``prune_distance`` for forward path shortening, enabled through the ``shorten_transformed_plan`` boolean parameter. This change allows to use different values for forward and backward path shortening."
+msgstr "PR #3374 <https://github.com/ros-planning/navigation2/pull/3374> 在 DWB 控制器中添加了一个新的 `forward_prune_distance` 参数。它替代了 `prune_distance` 用于前向路径缩短，通过布尔参数 `shorten_transformed_plan` 启用。这个改变允许使用不同的值来进行前向和后向路径缩短。"
 
 
 #: ../../migration/Humble.rst:172
 msgid "More stable regulation on curves for long lookahead distances"
-msgstr "More stable regulation on curves for long lookahead distances"
+msgstr "在长远的前瞻距离下对曲线进行更稳定的调节"
 
 
 #: ../../migration/Humble.rst:174
 msgid "`PR #3414 <https://github.com/ros-planning/navigation2/pull/3414>`_ adds a new ``use_fixed_curvature_lookahead`` parameter to the RPP controller. This makes slowing down on curve not dependent on the instantaneous lookahead point, but instead on a fixed distance set by the parameter ``curvature_lookahead_dist``."
-msgstr "`PR #3414 <https://github.com/ros-planning/navigation2/pull/3414>`_ adds a new ``use_fixed_curvature_lookahead`` parameter to the RPP controller. This makes slowing down on curve not dependent on the instantaneous lookahead point, but instead on a fixed distance set by the parameter ``curvature_lookahead_dist``."
+msgstr "PR #3414 <https://github.com/ros-planning/navigation2/pull/3414> 在 RPP 控制器中添加了一个新的 `use_fixed_curvature_lookahead` 参数。这使得在曲线上减速不再依赖于瞬时的前瞻点，而是由参数 `curvature_lookahead_dist` 设置的固定距离。"
 
 
 #: ../../migration/Humble.rst:177
 msgid "Publish Collision Monitor State"
-msgstr "Publish Collision Monitor State"
+msgstr "发布碰撞监视器状态"
 
 
 #: ../../migration/Humble.rst:179
 msgid "`PR #3504 <https://github.com/ros-planning/navigation2/pull/3504>`_ adds a new ``state_topic`` parameter to the CollisionMonitor. If specified, this optional parameter enables the state topic publisher. The topic reports the currently activated polygon action type and name."
-msgstr "`PR #3504 <https://github.com/ros-planning/navigation2/pull/3504>`_ adds a new ``state_topic`` parameter to the CollisionMonitor. If specified, this optional parameter enables the state topic publisher. The topic reports the currently activated polygon action type and name."
+msgstr "PR #3504 <https://github.com/ros-planning/navigation2/pull/3504> 在 CollisionMonitor 中添加了一个新的 `state_topic` 参数。如果指定了这个可选参数，它将启用状态主题发布器。该主题报告当前激活的多边形动作类型和名称。"
 
 
 #: ../../migration/Humble.rst:182
 msgid "Renamed ROS-parameter in Collision Monitor"
-msgstr "Renamed ROS-parameter in Collision Monitor"
+msgstr "碰撞监视器中的ROS参数已重命名"
 
 
 #: ../../migration/Humble.rst:184
 msgid "`PR #3513 <https://github.com/ros-planning/navigation2/pull/3513>`_ renames ``max_points`` parameter to ``min_points`` and changes its meaning. Formerly ``max_points`` meant the maximum number of points inside the area still not triggering the action, while ``min_points`` - is a minimal number of points starting from the action to be initiated. In other words ``min_points`` now should be adjusted as ``max_points + 1``."
-msgstr "`PR #3513 <https://github.com/ros-planning/navigation2/pull/3513>`_ renames ``max_points`` parameter to ``min_points`` and changes its meaning. Formerly ``max_points`` meant the maximum number of points inside the area still not triggering the action, while ``min_points`` - is a minimal number of points starting from the action to be initiated. In other words ``min_points`` now should be adjusted as ``max_points + 1``."
+msgstr "PR #3513 <https://github.com/ros-planning/navigation2/pull/3513> 将 `max_points` 参数重命名为 `min_points` 并改变了其含义。以前，`max_points` 表示区域内仍不触发动作的最大点数，而 `min_points` 是从动作开始计算的最小点数。换句话说，`min_points` 现在应该调整为 `max_points + 1`。"
 
 
 #: ../../migration/Humble.rst:187
 msgid "New safety behavior model \"limit\" in Collision Monitor"
-msgstr "New safety behavior model \"limit\" in Collision Monitor"
+msgstr "碰撞监视器中新增了安全行为模型“limit”"
 
 
 #: ../../migration/Humble.rst:188
 msgid "`PR #3519 <https://github.com/ros-planning/navigation2/pull/3519>`_ adds a new collision monitor behavior model ``limit`` that restricts maximum linear and angular speed to specific values (``linear_limit`` and ``angular_limit``) if enough points are in the given shape."
-msgstr "`PR #3519 <https://github.com/ros-planning/navigation2/pull/3519>`_ adds a new collision monitor behavior model ``limit`` that restricts maximum linear and angular speed to specific values (``linear_limit`` and ``angular_limit``) if enough points are in the given shape."
+msgstr "PR #3519 <https://github.com/ros-planning/navigation2/pull/3519> 添加了一个新的碰撞监视器行为模型 `limit`，它限制最大线速度和角速度到特定的值 (`linear_limit` 和 `angular_limit`)，如果给定形状内有足够的点。"
 
 
 #: ../../migration/Humble.rst:191
 msgid "Velocity smoother applies deceleration when timeout"
-msgstr "Velocity smoother applies deceleration when timeout"
+msgstr "当超时时，速度平滑器应用减速"
 
 
 #: ../../migration/Humble.rst:193
 msgid "`PR #3512 <https://github.com/ros-planning/navigation2/pull/3512>`_ makes the VelocitySmoother apply the deceleration when the input command timeout."
-msgstr "`PR #3512 <https://github.com/ros-planning/navigation2/pull/3512>`_ makes the VelocitySmoother apply the deceleration when the input command timeout."
+msgstr "PR #3512 <https://github.com/ros-planning/navigation2/pull/3512> 使得 VelocitySmoother 在输入命令超时时应用减速。"
 
 
 #: ../../migration/Humble.rst:196
 msgid "PoseProgressChecker plugin"
-msgstr "PoseProgressChecker plugin"
+msgstr "PoseProgressChecker插件"
 
 
 #: ../../migration/Humble.rst:197
 msgid "`PR #3530 <https://github.com/ros-planning/navigation2/pull/3530>`_ adds a new ``nav2_controller::PoseProgressChecker`` plugin. It builds on the behavior of the ``SimpleProgressChecker`` by adding a new parameter ``required_movement_angle``, allowing the plugin to considers that there is still progress when there is no translation movement, from the moment there is a rotation movement superior to ``required_movement_angle`` within the ``movement_time_allowance``."
-msgstr "`PR #3530 <https://github.com/ros-planning/navigation2/pull/3530>`_ adds a new ``nav2_controller::PoseProgressChecker`` plugin. It builds on the behavior of the ``SimpleProgressChecker`` by adding a new parameter ``required_movement_angle``, allowing the plugin to considers that there is still progress when there is no translation movement, from the moment there is a rotation movement superior to ``required_movement_angle`` within the ``movement_time_allowance``."
+msgstr "PR #3530 <https://github.com/ros-planning/navigation2/pull/3530> 添加了一个新的 `nav2_controller::PoseProgressChecker` 插件。它在 `SimpleProgressChecker` 的基础上添加了一个新的参数 `required_movement_angle`，允许插件在没有平移运动时仍然认为有进展，只要在 `movement_time_allowance` 内有一个超过 `required_movement_angle` 的旋转运动。"
 
 
 #: ../../migration/Humble.rst:200
 msgid "Allow multiple goal checkers and change parameter progress_checker_plugin(s) name and type"
-msgstr "Allow multiple goal checkers and change parameter progress_checker_plugin(s) name and type"
+msgstr "允许多个目标检查器并更改参数progress_checker_plugin(s)的名称和类型"
 
 
 #: ../../migration/Humble.rst:201
@@ -2081,7 +2081,7 @@ msgstr "`PR #3555 <https://github.com/ros-planning/navigation2/pull/3555>`_  ini
 
 #: ../../migration/Humble.rst:205
 msgid "IsBatteryChargingCondition BT Node"
-msgstr "IsBatteryChargingCondition BT Node"
+msgstr "IsBatteryChargingCondition BT节点"
 
 
 #: ../../migration/Humble.rst:206
@@ -2091,7 +2091,7 @@ msgstr "`PR #3553 <https://github.com/ros-planning/navigation2/pull/3553>`_ adds
 
 #: ../../migration/Humble.rst:209
 msgid "Behavior Server Error Codes"
-msgstr "Behavior Server Error Codes"
+msgstr "行为服务器错误代码"
 
 
 #: ../../migration/Humble.rst:210
