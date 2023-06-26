@@ -2428,12 +2428,12 @@ msgstr "Note that it is not required to use this with **any** plugin. Many users
 
 #: ../../tutorials/docs/using_shim_controller.rst:27
 msgid "The ``nav2_rotation_shim_controller`` will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the ``primary_controller`` to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task."
-msgstr "The ``nav2_rotation_shim_controller`` will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the ``primary_controller`` to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task."
+msgstr "“nav2_rotation_shim_controller”将检查与机器人和新接收的路径之间的大致方向差异。如果在一个阈值内，它将将请求传递给“primary_controller”来执行任务。如果超出阈值，该控制器将原地旋转机器人朝向该路径方向。一旦在容差范围内，它将从此旋转适配器控制器转移到主要控制器插件上执行控制。此时，机器人的主要插件将接管控制权，以平稳地过渡到任务。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:29
 msgid "The ``RotationShimController`` is most suitable for:"
-msgstr "The ``RotationShimController`` is most suitable for:"
+msgstr "``RotationShimController`` 最适用于以下情况："
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:31
@@ -2443,12 +2443,12 @@ msgstr "能够原地旋转的机器人，如差分驱动和全向驱动机器人
 
 #: ../../tutorials/docs/using_shim_controller.rst:32
 msgid "Preference to rotate in place when starting to track a new path that is at a significantly different heading than the robot's current heading -- or when tuning your controller for its task makes tight rotations difficult."
-msgstr "Preference to rotate in place when starting to track a new path that is at a significantly different heading than the robot's current heading -- or when tuning your controller for its task makes tight rotations difficult."
+msgstr "在开始跟踪一个与机器人当前朝向显著不同的新路径时，或者在为任务调整控制器时，进行原地旋转的首选。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:33
 msgid "Using planners that are non-kinematically feasible, such as NavFn, Theta\\*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation since their paths are guaranteed drivable by physical constraints)."
-msgstr "Using planners that are non-kinematically feasible, such as NavFn, Theta\\*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation since their paths are guaranteed drivable by physical constraints)."
+msgstr "使用非运动学可行的规划器，如 NavFn、Theta\\* 或 Smac 2D（可行的规划器如 Smac Hybrid-A* 和 State Lattice 将从机器人的实际起始方向开始搜索，不需要旋转，因为它们的路径在物理约束下是可行的）。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:36

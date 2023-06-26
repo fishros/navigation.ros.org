@@ -5231,7 +5231,7 @@ msgstr "在使用全向规划器时，是否启用旋转到粗略朝向和目标
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:234 ../../configuration/packages/configuring-regulated-pp.rst:247
 msgid "Note: both ``use_rotate_to_heading`` and ``allow_reversing`` cannot be set to ``true`` at the same time as it would result in ambiguous situations."
-msgstr "Note: both ``use_rotate_to_heading`` and ``allow_reversing`` cannot be set to ``true`` at the same time as it would result in ambiguous situations."
+msgstr "注意：``use_rotate_to_heading``和``allow_reversing``不能同时设置为``true``，否则会导致歧义情况。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5241,7 +5241,7 @@ msgstr "allow_reversing"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:245
 msgid "Enables the robot to drive in the reverse direction, when the path planned involves reversing (which is represented by orientation cusps). Variants of the smac_planner comes with the support of reversing. Checkout the :ref:`configuring_smac_planner` to know more."
-msgstr "Enables the robot to drive in the reverse direction, when the path planned involves reversing (which is represented by orientation cusps). Variants of the smac_planner comes with the support of reversing. Checkout the :ref:`configuring_smac_planner` to know more."
+msgstr "允许机器人在路径规划需要倒车时倒车行驶（通过方向拐点表示）。smac_planner的变种支持倒车。请查看:ref:`configuring_smac_planner`了解更多信息。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5256,7 +5256,7 @@ msgstr "0.785"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:258
 msgid "The difference in the path orientation and the starting robot orientation (radians) to trigger a rotate in place, if ``use_rotate_to_heading`` is ``true``."
-msgstr "The difference in the path orientation and the starting robot orientation (radians) to trigger a rotate in place, if ``use_rotate_to_heading`` is ``true``."
+msgstr "如果“use_rotate_to_heading”为“true”，则路径方向和起始机器人方向之间的差异（以弧度表示），触发原地旋转。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst ../../configuration/packages/configuring-rotation-shim-controller.rst
@@ -5266,17 +5266,17 @@ msgstr "max_angular_accel"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:269
 msgid "Maximum allowable angular acceleration (rad/s/s) while rotating to heading, if ``use_rotate_to_heading`` is ``true``."
-msgstr "Maximum allowable angular acceleration (rad/s/s) while rotating to heading, if ``use_rotate_to_heading`` is ``true``."
+msgstr "如果“use_rotate_to_heading”为“true”，则旋转到目标方向时的最大允许角加速度（弧度/秒²）。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:276
 msgid "Local costmap max extent (max(width, height) / 2)"
-msgstr "Local costmap max extent (max(width, height) / 2)"
+msgstr "局部代价地图最大范围（最大宽度或高度的一半）"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:280
 msgid "Upper bound on integrated distance along the global plan to search for the closest pose to the robot pose. This should be left as the default unless there are paths with loops and intersections that do not leave the local costmap, in which case making this value smaller is necessary to prevent shortcutting. If set to ``-1``, it will use the maximum distance possible to search every point on the path for the nearest path point."
-msgstr "Upper bound on integrated distance along the global plan to search for the closest pose to the robot pose. This should be left as the default unless there are paths with loops and intersections that do not leave the local costmap, in which case making this value smaller is necessary to prevent shortcutting. If set to ``-1``, it will use the maximum distance possible to search every point on the path for the nearest path point."
+msgstr "在全局规划路径上沿着积分距离搜索最接近机器人姿态的位姿的上界。除非存在不离开局部代价地图的具有循环和交叉的路径，否则应保留此默认值，否则必须将该值设小以防止捷径。如果设置为“-1”，将使用最大可能距离，在路径上搜索最近的路径点。"
 
 
 #: ../../configuration/packages/configuring-regulated-pp.rst
@@ -5286,22 +5286,22 @@ msgstr "use_interpolation"
 
 #: ../../configuration/packages/configuring-regulated-pp.rst:291
 msgid "Enable linear interpolation between poses for lookahead point selection. Leads to smoother commanded linear and angular velocities."
-msgstr "Enable linear interpolation between poses for lookahead point selection. Leads to smoother commanded linear and angular velocities."
+msgstr "启用在前瞻点选择时对姿态进行线性插值。导致产生更平滑的线性和角速度命令。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:4
 msgid "Rotation Shim Controller"
-msgstr "Rotation Shim Controller"
+msgstr "旋转增益控制器"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:10
 msgid "The ``nav2_rotation_shim_controller`` will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the ``primary_controller`` to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task."
-msgstr "The ``nav2_rotation_shim_controller`` will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the ``primary_controller`` to execute the task. If it is outside of the threshold, this controller will rotate the robot in place towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot's main plugin will take control for a smooth hand off into the task."
+msgstr "“nav2_rotation_shim_controller”将检查与机器人和新接收的路径之间的大致方向差异。如果在一个阈值内，它将将请求传递给“primary_controller”来执行任务。如果超出阈值，该控制器将原地旋转机器人朝向该路径方向。一旦在容差范围内，它将从此旋转适配器控制器转移到主要控制器插件上执行控制。此时，机器人的主要插件将接管控制权，以平稳地过渡到任务。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:12
 msgid "The ``RotationShimController`` is most suitable for:"
-msgstr "The ``RotationShimController`` is most suitable for:"
+msgstr "``RotationShimController`` 最适用于以下情况："
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:14
@@ -5311,17 +5311,17 @@ msgstr "能够原地旋转的机器人，如差分驱动和全向驱动机器人
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:15
 msgid "Preference to rotate in place when starting to track a new path that is at a significantly different heading than the robot's current heading -- or when tuning your controller for its task makes tight rotations difficult."
-msgstr "Preference to rotate in place when starting to track a new path that is at a significantly different heading than the robot's current heading -- or when tuning your controller for its task makes tight rotations difficult."
+msgstr "在开始跟踪一个与机器人当前朝向显著不同的新路径时，或者在为任务调整控制器时，进行原地旋转的首选。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:16
 msgid "Using planners that are non-kinematically feasible, such as NavFn, Theta\\*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation since their paths are guaranteed drivable by physical constraints)."
-msgstr "Using planners that are non-kinematically feasible, such as NavFn, Theta\\*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation since their paths are guaranteed drivable by physical constraints)."
+msgstr "使用非运动学可行的规划器，如 NavFn、Theta\\* 或 Smac 2D（可行的规划器如 Smac Hybrid-A* 和 State Lattice 将从机器人的实际起始方向开始搜索，不需要旋转，因为它们的路径在物理约束下是可行的）。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:29
 msgid "Rotation Shim Controller Parameters"
-msgstr "Rotation Shim Controller Parameters"
+msgstr "旋转适配器控制器参数"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst
@@ -5331,7 +5331,7 @@ msgstr "angular_dist_threshold"
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:40
 msgid "Maximum angular distance, in radians, away from the path heading to trigger rotation until within."
-msgstr "Maximum angular distance, in radians, away from the path heading to trigger rotation until within."
+msgstr "最大角度偏离路径航向的弧度，触发旋转直到在范围内。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst
@@ -5341,37 +5341,37 @@ msgstr "forward_sampling_distance"
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:51
 msgid "Forward distance, in meters, along path to select a sampling point to use to approximate path heading"
-msgstr "Forward distance, in meters, along path to select a sampling point to use to approximate path heading"
+msgstr "沿路径选择采样点以近似路径航向的前向距离，单位为米。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:62
 msgid "Angular rotational velocity, in rad/s, to rotate to the path heading"
-msgstr "Angular rotational velocity, in rad/s, to rotate to the path heading"
+msgstr "以弧度/秒表示的角度旋转速度，用于旋转到路径方向"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst
 msgid "primary_controller"
-msgstr "primary_controller"
+msgstr "主控制器"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:73
 msgid "Internal controller plugin to use for actual control behavior after rotating to heading"
-msgstr "Internal controller plugin to use for actual control behavior after rotating to heading"
+msgstr "旋转到方向后用于实际控制行为的内部控制器插件"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:84
 msgid "Maximum angular acceleration for rotation to heading (rad/s/s)"
-msgstr "Maximum angular acceleration for rotation to heading (rad/s/s)"
+msgstr "旋转到航向的最大角加速度（弧度/秒/秒）。"
 
 
 #: ../../configuration/packages/configuring-rotation-shim-controller.rst:95
 msgid "Time in seconds to forward simulate a rotation command to check for collisions. If a collision is found, forwards control back to the primary controller plugin."
-msgstr "Time in seconds to forward simulate a rotation command to check for collisions. If a collision is found, forwards control back to the primary controller plugin."
+msgstr "以秒为单位的时间，用于前向模拟旋转命令以检查碰撞。如果发现碰撞，则将控制权返回给主控制器插件。"
 
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:4
 msgid "Savitzky-Golay Smoother"
-msgstr "Savitzky-Golay Smoother"
+msgstr "Savitzky-Golay平滑器"
 
 
 #, python-format
@@ -5381,7 +5381,7 @@ msgstr "The Savitzky-Golay Smoother is a Smoother Server plugin that will take i
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:12
 msgid "It is useful for all types of planners, but particularly in NavFn to remove tiny artifacts that can occur near the end of paths or Theta* to slightly soften the transition between Line of Sight line segments **without** modifying the primary path. It is very fast (<< 1ms) so is a recommended default for planners that may result in slight discontinuities. However, it will not smooth out larger scale discontinuities, oscillations, or improve smoothness. For those, use one of the other provided smoother plugins. It also provides estimated orientation vectors of the path points after smoothing."
-msgstr "It is useful for all types of planners, but particularly in NavFn to remove tiny artifacts that can occur near the end of paths or Theta* to slightly soften the transition between Line of Sight line segments **without** modifying the primary path. It is very fast (<< 1ms) so is a recommended default for planners that may result in slight discontinuities. However, it will not smooth out larger scale discontinuities, oscillations, or improve smoothness. For those, use one of the other provided smoother plugins. It also provides estimated orientation vectors of the path points after smoothing."
+msgstr "它适用于所有类型的规划器，但在NavFn中特别有用，可消除路径结束处或Theta*中可能出现的微小伪影，**而无需**修改主路径，稍微平滑可见线段之间的过渡。它非常快速（<< 1ms），因此是可能导致轻微不连续性的规划器的推荐默认选项。但是，它不能平滑较大尺度的不连续性、振荡或改善平滑性。对于这些情况，请使用其他提供的平滑器插件之一。它还提供平滑后路径点的估计方向向量。"
 
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:14
@@ -5391,7 +5391,7 @@ msgstr "This algorithm is deterministic and low-parameter. In the below image, s
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst:20
 msgid "Savitzky-Golay Smoother Parameters"
-msgstr "Savitzky-Golay Smoother Parameters"
+msgstr "Savitzky-Golay平滑器参数"
 
 
 #: ../../configuration/packages/configuring-savitzky-golay-smoother.rst ../../configuration/packages/configuring-simple-smoother.rst

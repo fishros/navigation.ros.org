@@ -1876,7 +1876,7 @@ msgstr "Added new binary flip filter, allowing e.g. to turn off camera in sensit
 
 #: ../../migration/Humble.rst:105
 msgid "Savitzky-Golay Smoother"
-msgstr "Savitzky-Golay Smoother"
+msgstr "Savitzky-Golay平滑器"
 
 
 #: ../../migration/Humble.rst:107
