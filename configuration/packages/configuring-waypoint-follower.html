@@ -525,7 +525,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/keepout_filter.html">Keepout Filter Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="costmap-plugins/speed_filter.html">Speed Filter Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="costmap-plugins/binary_filter.html">Binary Filter Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="costmap-plugins/binary_filter.html">二值过滤器参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-costmaps.html#example">示例</a></li>
@@ -704,7 +704,7 @@
 <li class="toctree-l4"><a class="reference internal" href="nav2_waypoint_follower-plugins/input_at_waypoint.html">InputAtWaypoint</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#default-plugin">Default Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-plugin">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -941,10 +941,7 @@
   <div class="section" id="waypoint-follower">
 <span id="configuring-waypoint-follower"></span><h1>路径点跟随器<a class="headerlink" href="#waypoint-follower" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_waypoint_follower">在Github上的源代码</a></p>
-<p>The Waypoint Follower module implements a way of doing waypoint following using the NavigateToPose action server.
-It will take in a set of ordered waypoints to follow and then try to navigate to them in order.
-It also hosts a waypoint task executor plugin which can be used to perform custom behavior at a waypoint like waiting for user instruction, taking a picture, or picking up a box.
-If a waypoint is not achievable, the <code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> parameter will determine whether to continue to the next point or stop.</p>
+<p>Waypoint Follower 模块通过使用 NavigateToPose 动作服务器实现了一种按照路径点进行跟随的方法。它会接收一组有序的路径点，并尝试按顺序导航到它们。该模块还提供了一个路径点任务执行插件，可用于在路径点上执行自定义行为，如等待用户指令、拍照或拾取物品。如果某个路径点无法到达，<code class="docutils literal notranslate"><span class="pre">stop_on_failure</span></code> 参数将决定是继续到下一个点还是停止。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -964,7 +961,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to fail action task if a single waypoint fails. If false, will continue to next waypoint.</p>
+<dt>描述</dt><dd><p>如果单个路径点失败，是否使动作任务失败。如果为 false，则继续到下一个路径点。</p>
 </dd>
 </dl>
 </dd>
@@ -984,7 +981,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Rate to check for results from current navigation task.</p>
+<dt>描述</dt><dd><p>检查当前导航任务结果的频率。</p>
 </dd>
 </dl>
 </dd>
@@ -1025,7 +1022,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 <div class="section" id="provided-plugins">
 <h2>Provided Plugins<a class="headerlink" href="#provided-plugins" title="永久链接至标题"></a></h2>
 <blockquote>
-<div><p>The plugins listed below are inside the <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> namespace.</p>
+<div><p>下面列出的插件位于 <code class="docutils literal notranslate"><span class="pre">nav2_waypoint_follower</span></code> 命名空间中。</p>
 </div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1036,7 +1033,7 @@ If a waypoint is not achievable, the <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="section" id="default-plugin">
-<h2>Default Plugin<a class="headerlink" href="#default-plugin" title="永久链接至标题"></a></h2>
+<h2>默认插件<a class="headerlink" href="#default-plugin" title="永久链接至标题"></a></h2>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>

@@ -525,7 +525,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Keepout Filter Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="speed_filter.html">Speed Filter Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="binary_filter.html">Binary Filter Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="binary_filter.html">二值过滤器参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#example">示例</a></li>
@@ -704,7 +704,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../nav2_waypoint_follower-plugins/input_at_waypoint.html">InputAtWaypoint</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../configuring-waypoint-follower.html#default-plugin">Default Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-waypoint-follower.html#default-plugin">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-waypoint-follower.html#example">示例</a></li>
 </ul>
 </li>
@@ -943,9 +943,9 @@
 <span id="keepout-filter"></span><h1>Keepout Filter Parameters<a class="headerlink" href="#keepout-filter-parameters" title="永久链接至标题"></a></h1>
 <p>Keepout Filter - is a Costmap Filter that enforces robot to avoid keepout areas or stay on preferred lanes, by updating corresponding costmap layer using filter mask information.</p>
 <p>Note: As Costmap Filters does not have the inflation layer applied to them (since inflation is not sensible for a speed or other non-occupation zone type), it may be beneficial to add a separate inflation layer into the vector of filters when using only a keepout zone. Some planners (e.g. Smac Feasible) will use the cost of the center point for a collision checking optimization before doing full SE2 footprint checks. Without inflation, the planner will not respect the Keepout Zone on it extremities -- but will still respect it for the robot centers. If you wish to have a Keepout Zone for any part of the robot base while using a feasible planner, please enable the inflation layer.</p>
-<p><cite>&lt;filter name&gt;</cite>: is the corresponding plugin name selected for this type.</p>
+<p><cite>&lt;filter name&gt;</cite>：为此类型选择的相应插件名称。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.enabled</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.enabled</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -961,11 +961,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether it is enabled.</p>
+<dt>描述</dt><dd><p>是否启用。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.filter_info_topic</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.filter_info_topic</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -981,11 +981,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Name of the incoming <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg">CostmapFilterInfo</a> topic having filter-related information. Published by Costmap Filter Info Server along with filter mask topic. For more details about Map and Costmap Filter Info servers configuration please refer to the <a class="reference internal" href="../configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> configuration page.</p>
+<dt>描述</dt><dd><p>传入的 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg">CostmapFilterInfo</a> 主题的名称，其中包含与过滤器相关的信息。由 Costmap Filter Info Server 与过滤器掩码主题一起发布。有关地图和 Costmap Filter Info 服务器配置的详细信息，请参考 <a class="reference internal" href="../configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> 配置页面。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.transform_tolerance</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.transform_tolerance</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1001,7 +1001,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time with which to post-date the transform that is published, to indicate that this transform is valid into the future. Used when filter mask and current costmap layer are in different frames.</p>
+<dt>描述</dt><dd><p>发布的变换的时间，用于表示该变换在未来是有效的。在过滤器掩码和当前 Costmap 层位于不同的帧时使用。</p>
 </dd>
 </dl>
 </dd>

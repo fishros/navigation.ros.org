@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Binary Filter Parameters &mdash; Navigation 2 1.0.0 文档</title>
+  <title>二值过滤器参数 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -525,7 +525,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-costmaps.html#costmap-filters-parameters">成本地图过滤器参数</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="keepout_filter.html">Keepout Filter Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="speed_filter.html">Speed Filter Parameters</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Binary Filter Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">二值过滤器参数</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-costmaps.html#example">示例</a></li>
@@ -704,7 +704,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../nav2_waypoint_follower-plugins/input_at_waypoint.html">InputAtWaypoint</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../configuring-waypoint-follower.html#default-plugin">Default Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-waypoint-follower.html#default-plugin">默认插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-waypoint-follower.html#example">示例</a></li>
 </ul>
 </li>
@@ -930,7 +930,7 @@
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">配置指南</a> &raquo;</li>
           <li><a href="../configuring-costmaps.html">二维代价地图</a> &raquo;</li>
-      <li>Binary Filter Parameters</li>
+      <li>二值过滤器参数</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -940,13 +940,13 @@
            <div itemprop="articleBody">
              
   <div class="section" id="binary-filter-parameters">
-<span id="binary-filter"></span><h1>Binary Filter Parameters<a class="headerlink" href="#binary-filter-parameters" title="永久链接至标题"></a></h1>
-<p>Binary Filter - is a Costmap Filter that publishes a boolean topic, flipping binary state when the encoded filter space value (corresponding to the filter mask point where the robot is) is higher than given threshold. It then flips back when lower or equal.</p>
-<p>Filter space value is being calculated as: <code class="docutils literal notranslate"><span class="pre">Fv</span> <span class="pre">=</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">multiplier</span> <span class="pre">*</span> <span class="pre">mask_value</span></code>, where <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">multiplier</span></code> are being published in a filter info by Costmap Filter Info Server. The example of usage are include: camera operating on/off to turn off cameras in sensitive areas, headlights switch on/off for moving indoors to outdoors, smart house light triggering, etc.</p>
+<span id="binary-filter"></span><h1>二值过滤器参数<a class="headerlink" href="#binary-filter-parameters" title="永久链接至标题"></a></h1>
+<p>二进制过滤器 - 是一个发布布尔类型主题的 Costmap 过滤器，当编码的过滤器空间值（对应机器人所在的过滤器掩码点）高于给定的阈值时，翻转二进制状态。当低于或等于阈值时，再次翻转回去。</p>
+<p>过滤器空间值的计算方式为: <code class="docutils literal notranslate"><span class="pre">Fv</span> <span class="pre">=</span> <span class="pre">基础值</span> <span class="pre">+</span> <span class="pre">乘数</span> <span class="pre">*</span> <span class="pre">掩码值</span></code>，其中``基础值``和``乘数``由成本地图过滤器信息服务器发布。使用示例包括：在敏感区域关闭摄像头的摄像操作开关、室内外切换时的车头灯开关、智能家居灯光触发等。</p>
 <img alt="../../../_images/binary_filter.png" class="align-center" src="../../../_images/binary_filter.png" />
-<p><cite>&lt;filter name&gt;</cite>: is the corresponding plugin name selected for this type.</p>
+<p><cite>&lt;filter name&gt;</cite>：为此类型选择的相应插件名称。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.enabled</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.enabled</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -962,11 +962,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether it is enabled.</p>
+<dt>描述</dt><dd><p>是否启用。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.filter_info_topic</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.filter_info_topic</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -982,11 +982,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Name of the incoming <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg">CostmapFilterInfo</a> topic having filter-related information. Published by Costmap Filter Info Server along with filter mask topic. For more details about Map and Costmap Filter Info servers configuration please refer to the <a class="reference internal" href="../configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> configuration page.</p>
+<dt>描述</dt><dd><p>传入的 <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg">CostmapFilterInfo</a> 主题的名称，其中包含与过滤器相关的信息。由 Costmap Filter Info Server 与过滤器掩码主题一起发布。有关地图和 Costmap Filter Info 服务器配置的详细信息，请参考 <a class="reference internal" href="../configuring-map-server.html#configuring-map-server"><span class="std std-ref">地图服务器/保存器</span></a> 配置页面。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.transform_tolerance</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.transform_tolerance</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1002,11 +1002,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Time with which to post-date the transform that is published, to indicate that this transform is valid into the future. Used when filter mask and current costmap layer are in different frames.</p>
+<dt>描述</dt><dd><p>发布的变换的时间，用于表示该变换在未来是有效的。在过滤器掩码和当前 Costmap 层位于不同的帧时使用。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.default_state</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.default_state</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1026,7 +1026,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;filter</span> <span class="pre">name&gt;</span></code>.binary_state_topic</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;过滤器名称&gt;</span></code>.binary_state_topic</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 30%" />
@@ -1042,7 +1042,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic of <code class="docutils literal notranslate"><span class="pre">std_msgs::msg::Bool</span></code> type to publish binary filter state to.</p>
+<dt>描述</dt><dd><p>以``std_msgs::msg::Bool``类型发布二进制过滤器状态的主题。</p>
 </dd>
 </dl>
 </dd>
