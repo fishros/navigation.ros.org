@@ -941,13 +941,13 @@
              
   <div class="section" id="oscillationcritic">
 <span id="configuring-dwb-oscillation"></span><h1>OscillationCritic<a class="headerlink" href="#oscillationcritic" title="永久链接至标题"></a></h1>
-<p>Prevents the robot from just moving backwards and forwards.</p>
+<p>防止机器人只是前后移动。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>: OscillationCritic critic name defined in the <strong>&lt;dwb plugin&gt;.critics</strong> parameter defined in <a class="reference internal" href="../dwb-params/controller.html#dwb-controller"><span class="std std-ref">DWB控制器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>：OscillationCritic是在**:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>dwb_controller`**中定义的**&lt;dwb plugin&gt;.critics**参数中定义的批评者名称。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.oscillation_reset_dist</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>。<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>。oscillation_reset_dist</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -964,12 +964,12 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Minimum distance to move to reset oscillation watchdog (m).</p>
+<dt>描述</dt><dd><p>重置振荡监控器所需的最小移动距离（米）。</p>
 </dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.oscillation_reset_angle</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>。<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>。oscillation_reset_angle</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -991,7 +991,7 @@
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.oscillation_reset_time</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>。<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>。oscillation_reset_time</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1008,7 +1008,7 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Duration when a reset may be called. If -1, cannot be reset..</p>
+<dt>描述</dt><dd><p>重置可能被调用的持续时间。如果为-1，则不能重置。</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -1030,7 +1030,7 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Threshold to check in the X velocity direction.</p>
+<dt>描述</dt><dd><p>检查X轴速度方向的阈值。</p>
 </dd>
 </dl>
 </div></blockquote>

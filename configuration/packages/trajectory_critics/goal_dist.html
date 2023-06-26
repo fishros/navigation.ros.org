@@ -941,11 +941,11 @@
              
   <div class="section" id="goaldistcritic">
 <span id="configuring-dwb-goal-dist"></span><h1>GoalDistCritic<a class="headerlink" href="#goaldistcritic" title="永久链接至标题"></a></h1>
-<p>Scores a trajectory based on how close the trajectory gets the robot to the goal pose.</p>
+<p>根据轨迹将机器人接近目标姿态的程度评分。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>: GoalDistCritic critic name defined in the <strong>&lt;dwb plugin&gt;.critics</strong> parameter defined in <a class="reference internal" href="../dwb-params/controller.html#dwb-controller"><span class="std std-ref">DWB控制器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>：GoalDistCritic是在**:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>dwb_controller`**中定义的**&lt;dwb plugin&gt;.critics**参数中定义的批评者名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.aggregation_type</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -964,7 +964,7 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>last, sum, or product combination methods.</p>
+<dt>描述</dt><dd><p>最后，求和或乘积组合方法。</p>
 </dd>
 </dl>
 </div></blockquote>
