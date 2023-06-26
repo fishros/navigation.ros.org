@@ -1862,5 +1862,5 @@ msgstr "到此为止。在本教程中，您已成功为一个简单的差动驱
 
 #: ../../setup_guides/urdf/setup_urdf.rst:460
 msgid "Feel free to use this tutorial as a template for your own robot. Remember that your main goal is to publish the correct transforms from your base_link up to your sensor_frames. Once these have been setup, then you may proceed to our other setup guides."
-msgstr "Feel free to use this tutorial as a template for your own robot. Remember that your main goal is to publish the correct transforms from your base_link up to your sensor_frames. Once these have been setup, then you may proceed to our other setup guides."
+msgstr "请随意将本教程用作您自己机器人的模板。请记住，您的主要目标是从base_link到sensor_frames发布正确的变换。一旦这些设置好了，您就可以继续使用我们的其他设置指南。"
 

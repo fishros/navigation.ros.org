@@ -37,7 +37,7 @@ msgstr "Nav2简单（Python3）指挥官的目标是为Python3用户提供“作
 
 #: ../../commander_api/index.rst:11
 msgid "A simple demonstration is shown below. Note: ``goToPose()``, ``goThroughPoses()``, ``followWaypoints()`` and similar are **non-blocking** such that you can receive and process feedback in a single-threaded application. As such while waiting for a task to be completed, the ``while not nav.isTaskComplete()`` design is necessary to poll for changes in the navigation completion, and if not complete some tasks of interest to your application (like processing feedback, doing something with the data the robot is collecting, or checking for faults)."
-msgstr "A simple demonstration is shown below. Note: ``goToPose()``, ``goThroughPoses()``, ``followWaypoints()`` and similar are **non-blocking** such that you can receive and process feedback in a single-threaded application. As such while waiting for a task to be completed, the ``while not nav.isTaskComplete()`` design is necessary to poll for changes in the navigation completion, and if not complete some tasks of interest to your application (like processing feedback, doing something with the data the robot is collecting, or checking for faults)."
+msgstr "下面是一个简单的演示。注意：``goToPose()``, ``goThroughPoses()``, ``followWaypoints()``等函数是**非阻塞**的，因此您可以在单线程应用程序中接收和处理反馈。因此，在等待任务完成时，使用``while not nav.isTaskComplete()``的设计来轮询导航完成情况的更改是必要的。如果任务没有完成，您可以执行一些对应用程序有意义的任务（例如处理反馈、处理机器人收集的数据或检查故障）。"
 
 
 #: ../../commander_api/index.rst:13
@@ -47,7 +47,7 @@ msgstr "您可以使用此简单指挥官来中断相同类型的命令（例如
 
 #: ../../commander_api/index.rst:53
 msgid "Commander API"
-msgstr "Commander API"
+msgstr "指挥官 API"
 
 
 #: ../../commander_api/index.rst:55
@@ -57,7 +57,7 @@ msgstr "基本导航器提供的方法如下所示，包括输入和预期返回
 
 #: ../../commander_api/index.rst:59
 msgid "Robot Navigator Method"
-msgstr "Robot Navigator Method"
+msgstr "机器人导航器方法"
 
 
 #: ../../commander_api/index.rst:59 ../../commander_api/index.rst:140 ../../commander_api/index.rst:186
@@ -72,7 +72,7 @@ msgstr "setInitialPose(initial_pose)"
 
 #: ../../commander_api/index.rst:61
 msgid "Sets the initial pose (``PoseStamped``) of the robot to localization."
-msgstr "Sets the initial pose (``PoseStamped``) of the robot to localization."
+msgstr "将机器人的初始姿态（``PoseStamped``）设置为本地化。"
 
 
 #: ../../commander_api/index.rst:63
@@ -82,7 +82,7 @@ msgstr "goThroughPoses(poses, behavior_tree='')"
 
 #: ../../commander_api/index.rst:63
 msgid "Requests the robot to drive through a set of poses (list of ``PoseStamped``)."
-msgstr "Requests the robot to drive through a set of poses (list of ``PoseStamped``)."
+msgstr "请求机器人按顺序通过一组姿态（``PoseStamped``列表）。"
 
 
 #: ../../commander_api/index.rst:66
@@ -92,7 +92,7 @@ msgstr "goToPose(pose, behavior_tree='')"
 
 #: ../../commander_api/index.rst:66
 msgid "Requests the robot to drive to a pose (``PoseStamped``)."
-msgstr "Requests the robot to drive to a pose (``PoseStamped``)."
+msgstr "请求机器人驶向一个姿态（``PoseStamped``）。"
 
 
 #: ../../commander_api/index.rst:68
@@ -102,7 +102,7 @@ msgstr "followWaypoints(poses)"
 
 #: ../../commander_api/index.rst:68
 msgid "Requests the robot to follow a set of waypoints (list of ``PoseStamped``). This will execute the chosen ``TaskExecutor`` plugin at each pose."
-msgstr "Requests the robot to follow a set of waypoints (list of ``PoseStamped``). This will execute the chosen ``TaskExecutor`` plugin at each pose."
+msgstr "请求机器人按照一组路径点（``PoseStamped``的列表）行进。这将在每个姿态上执行选择的``TaskExecutor``插件。"
 
 
 #: ../../commander_api/index.rst:71
@@ -112,7 +112,7 @@ msgstr "followPath(path, controller_id='', goal_checker_id='')"
 
 #: ../../commander_api/index.rst:71
 msgid "Requests the robot to follow a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``."
-msgstr "Requests the robot to follow a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``."
+msgstr "请求机器人按照起始和目标``PoseStamped``（``nav_msgs/Path``）之间的路径行进。"
 
 
 #: ../../commander_api/index.rst:74
@@ -122,7 +122,7 @@ msgstr "spin(spin_dist=1.57, time_allowance=10)"
 
 #: ../../commander_api/index.rst:74
 msgid "Requests the robot to performs an in-place rotation by a given angle."
-msgstr "Requests the robot to performs an in-place rotation by a given angle."
+msgstr "请求机器人执行给定角度的就地旋转。"
 
 
 #: ../../commander_api/index.rst:77
@@ -132,7 +132,7 @@ msgstr "backup(backup_dist=0.15, backup_speed=0.025, time_allowance=10)"
 
 #: ../../commander_api/index.rst:77
 msgid "Requests the robot to back up by a given distance."
-msgstr "Requests the robot to back up by a given distance."
+msgstr "请求机器人后退给定距离。"
 
 
 #: ../../commander_api/index.rst:80
@@ -142,7 +142,7 @@ msgstr "assistedTeleop(time_allowance=30)"
 
 #: ../../commander_api/index.rst:80
 msgid "Requests the robot to run the assisted teleop action."
-msgstr "Requests the robot to run the assisted teleop action."
+msgstr "请求机器人运行辅助遥控操作。"
 
 
 #: ../../commander_api/index.rst:82
@@ -152,22 +152,22 @@ msgstr "cancelTask()"
 
 #: ../../commander_api/index.rst:82
 msgid "Cancel an ongoing task, including route tasks."
-msgstr "Cancel an ongoing task, including route tasks."
+msgstr "取消正在进行的任务，包括路径跟踪任务。"
 
 
 #: ../../commander_api/index.rst:84
 msgid "isTaskComplete(trackingRoute=False)"
-msgstr "isTaskComplete(trackingRoute=False)"
+msgstr "isTaskComplete（trackingRoute=False）"
 
 
 #: ../../commander_api/index.rst:84
 msgid "Checks if task is complete yet, times out at ``100ms``. Returns ``True`` if completed and ``False`` if still going. If checking a route tracking task, set default argument to ``True``."
-msgstr "Checks if task is complete yet, times out at ``100ms``. Returns ``True`` if completed and ``False`` if still going. If checking a route tracking task, set default argument to ``True``."
+msgstr "检查任务是否已完成，超时时间为``100ms``。如果已完成则返回``True``，如果仍在进行则返回``False``。如果检查路径跟踪任务，请将默认参数设置为``True``。"
 
 
 #: ../../commander_api/index.rst:88
 msgid "getFeedback(trackingRoute=False)"
-msgstr "getFeedback(trackingRoute=False)"
+msgstr "getFeedback（trackingRoute=False）"
 
 
 #: ../../commander_api/index.rst:88
@@ -177,7 +177,7 @@ msgstr "Gets feedback from task, returns action server feedback msg. If getting 
 
 #: ../../commander_api/index.rst:91
 msgid "getResult()"
-msgstr "getResult()"
+msgstr "getResult（）"
 
 
 #: ../../commander_api/index.rst:91
@@ -187,7 +187,7 @@ msgstr "Gets final result of task, to be called after ``isTaskComplete`` returns
 
 #: ../../commander_api/index.rst:94
 msgid "getPath(start, goal, planner_id='', use_start=False)"
-msgstr "getPath(start, goal, planner_id='', use_start=False)"
+msgstr "getPath（start，goal，planner_id=''，use_start=False）"
 
 
 #: ../../commander_api/index.rst:94
@@ -197,7 +197,7 @@ msgstr "Gets a path from a starting to a goal ``PoseStamped``, ``nav_msgs/Path``
 
 #: ../../commander_api/index.rst:97
 msgid "getPathThroughPoses(start, goals, planner_id='', use_start=False)"
-msgstr "getPathThroughPoses(start, goals, planner_id='', use_start=False)"
+msgstr "getPathThroughPoses（start，goals，planner_id=''，use_start=False）"
 
 
 #: ../../commander_api/index.rst:97
@@ -207,7 +207,7 @@ msgstr "Gets a path through a starting to a set of goals, a list of ``PoseStampe
 
 #: ../../commander_api/index.rst:100
 msgid "getRoute(start, goal, use_start=False)"
-msgstr "getRoute(start, goal, use_start=False)"
+msgstr "getRoute（start，goal，use_start=False）"
 
 
 #: ../../commander_api/index.rst:100
@@ -217,7 +217,7 @@ msgstr "Gets a sparse route and dense path from start to goal, where start and g
 
 #: ../../commander_api/index.rst:103
 msgid "getandTrackRoute(start, goal, use_start=False)"
-msgstr "getandTrackRoute(start, goal, use_start=False)"
+msgstr "getandTrackRoute（start，goal，use_start=False）"
 
 
 #: ../../commander_api/index.rst:103
