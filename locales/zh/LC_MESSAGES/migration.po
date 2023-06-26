@@ -457,7 +457,7 @@ msgstr "新增了PoseStamped字段``start``。"
 
 #: ../../migration/Foxy.rst:45
 msgid "The bool field ``use_start`` has been added."
-msgstr "The bool field ``use_start`` has been added."
+msgstr "已添加了布尔字段``use_start``。"
 
 
 #: ../../migration/Foxy.rst:47
@@ -467,7 +467,7 @@ msgstr "这两个附加字段可选择性地在``use_start``为true时，允许�
 
 #: ../../migration/Foxy.rst:50
 msgid "BackUp BT-node Interface Changes"
-msgstr "BackUp BT-node Interface Changes"
+msgstr "备份BT节点接口更改"
 
 
 #: ../../migration/Foxy.rst:52
@@ -477,77 +477,77 @@ msgstr "``backup_dist``和``backup_speed``输入端口应为正值，分别指�
 
 #: ../../migration/Foxy.rst:55
 msgid "BackUp Recovery Interface Changes"
-msgstr "BackUp Recovery Interface Changes"
+msgstr "备份恢复接口更改"
 
 
 #: ../../migration/Foxy.rst:57
 msgid "``speed`` in a backup recovery goal should be positive indicating the speed with which to drive backward. ``target.x`` in a backup recovery goal should be positive indicating the distance to drive backward. In both cases negative values are silently inverted."
-msgstr "``speed`` in a backup recovery goal should be positive indicating the speed with which to drive backward. ``target.x`` in a backup recovery goal should be positive indicating the distance to drive backward. In both cases negative values are silently inverted."
+msgstr "在备份恢复目标中，``speed`` 应为正数，表示向后驱动的速度。在备份恢复目标中，``target.x`` 应为正数，表示向后驱动的距离。在这两种情况下，负值会被自动转为相反数。"
 
 
 #: ../../migration/Foxy.rst:62
 msgid "Nav2 Controllers and Goal Checker Plugin Interface Changes"
-msgstr "Nav2 Controllers and Goal Checker Plugin Interface Changes"
+msgstr "Nav2控制器和目标检查器插件接口更改"
 
 
 #: ../../migration/Foxy.rst:64
 msgid "As of `this PR 2247 <https://github.com/ros-planning/navigation2/pull/2247>`_, the ``controller`` plugins will now be given a pointer to the current goal checker in use of the navigation task in ``computeAndPublishVelocity()``. This is geared to enabling controllers to have access to predictive checks for goal completion as well as access to the state information of the goal checker plugin."
-msgstr "As of `this PR 2247 <https://github.com/ros-planning/navigation2/pull/2247>`_, the ``controller`` plugins will now be given a pointer to the current goal checker in use of the navigation task in ``computeAndPublishVelocity()``. This is geared to enabling controllers to have access to predictive checks for goal completion as well as access to the state information of the goal checker plugin."
+msgstr "从 `这个PR 2247 <https://github.com/ros-planning/navigation2/pull/2247>`_ 开始，``controller`` 插件现在会在 ``computeAndPublishVelocity()`` 中得到一个指向当前使用的导航任务的目标检查器的指针。这旨在使控制器能够访问有关目标完成的预测检查以及目标检查器插件的状态信息。"
 
 
 #: ../../migration/Foxy.rst:66
 msgid "The ``goal_checker`` plugins also have the change of including a ``getTolerances()`` method. This method allows a goal checker holder to access the tolerance information of the goal checker to consider at the goal. Each field of the ``pose`` and ``velocity`` represents the maximum allowable error in each dimension for a goal to be considered completed. In the case of a translational tolerance (combined X and Y components), each the X and Y will be populated with the tolerance value because it is the **maximum** tolerance in the dimension (assuming the other has no error). If the goal checker does not contain any tolerances for a dimension, the ``numeric_limits<double> lowest()`` value is utilized in its place."
-msgstr "The ``goal_checker`` plugins also have the change of including a ``getTolerances()`` method. This method allows a goal checker holder to access the tolerance information of the goal checker to consider at the goal. Each field of the ``pose`` and ``velocity`` represents the maximum allowable error in each dimension for a goal to be considered completed. In the case of a translational tolerance (combined X and Y components), each the X and Y will be populated with the tolerance value because it is the **maximum** tolerance in the dimension (assuming the other has no error). If the goal checker does not contain any tolerances for a dimension, the ``numeric_limits<double> lowest()`` value is utilized in its place."
+msgstr "``goal_checker``插件还包括了``getTolerances()``方法的更改。该方法允许目标检查器持有者访问目标检查器在目标处要考虑的容限信息。``pose``和``velocity``的每个字段表示目标在每个维度上允许的最大误差。对于平移容限（合并的X和Y分量），X和Y将填充容限值，因为它是该维度上的**最大**容限（假设另一个没有误差）。如果目标检查器不包含任何维度的容限，将使用``numeric_limits<double> lowest()``值代替。"
 
 
 #: ../../migration/Foxy.rst:69
 msgid "FollowPath goal_checker_id attribute"
-msgstr "FollowPath goal_checker_id attribute"
+msgstr "FollowPath 的 goal_checker_id 属性"
 
 
 #: ../../migration/Foxy.rst:70
 msgid "For example: you could use for some specific navigation motion a more precise goal checker than the default one that it is used in usual motions."
-msgstr "For example: you could use for some specific navigation motion a more precise goal checker than the default one that it is used in usual motions."
+msgstr "例如：对于某些特定导航动作，您可以使用比通常使用的默认目标检查器更精确的目标检查器。"
 
 
 #: ../../migration/Foxy.rst:76
 msgid "The previous usage of the ``goal_checker_plugin`` parameter to declare the controller_server goal_checker is now obsolete and removed."
-msgstr "The previous usage of the ``goal_checker_plugin`` parameter to declare the controller_server goal_checker is now obsolete and removed."
+msgstr "先前使用的 ``goal_checker_plugin`` 参数来声明 controller_server 的 goal_checker 现在已过时并已移除。"
 
 
 #: ../../migration/Foxy.rst:77
 msgid "The controller_server parameters now support the declaration of a list of goal checkers ``goal_checker_plugins`` mapped to unique identifier names, such as is the case with ``FollowPath`` and ``GridBased`` for the controller and planner plugins, respectively."
-msgstr "The controller_server parameters now support the declaration of a list of goal checkers ``goal_checker_plugins`` mapped to unique identifier names, such as is the case with ``FollowPath`` and ``GridBased`` for the controller and planner plugins, respectively."
+msgstr "controller_server参数现在支持声明一个将目标检查器``goal_checker_plugins``映射到唯一标识符名称的列表，类似于控制器和规划器插件的``FollowPath``和``GridBased``的情况。"
 
 
 #: ../../migration/Foxy.rst:79
 msgid "The specification of the selected goal checker is mandatory when more than one checker is defined in the controller_server parameter configuration. If only one goal_checker is configured in the controller_server it is selected by default even if no goal_checker is specified."
-msgstr "The specification of the selected goal checker is mandatory when more than one checker is defined in the controller_server parameter configuration. If only one goal_checker is configured in the controller_server it is selected by default even if no goal_checker is specified."
+msgstr "在 controller_server 参数配置中定义多个检查器时，必须指定所选目标检查器。如果在 controller_server 中仅配置了一个 goal_checker，则默认选择该检查器，即使未指定 goal_checker。"
 
 
 #: ../../migration/Foxy.rst:81
 msgid "Below it is shown an example of goal_checker configuration of the controller_server node."
-msgstr "Below it is shown an example of goal_checker configuration of the controller_server node."
+msgstr "下面显示了控制器服务器节点的goal_checker配置示例。"
 
 
 #: ../../migration/Foxy.rst:100
 msgid "Groot Support"
-msgstr "Groot Support"
+msgstr "Groot 支持"
 
 
 #: ../../migration/Foxy.rst:102
 msgid "Live Monitoring and Editing of behavior trees with Groot is now possible. Switching bt-xmls on the fly through a new goal request is also included. This is all done without breaking any APIs. Enabled by default."
-msgstr "Live Monitoring and Editing of behavior trees with Groot is now possible. Switching bt-xmls on the fly through a new goal request is also included. This is all done without breaking any APIs. Enabled by default."
+msgstr "现在可以使用Groot进行行为树的实时监控和编辑。还包括通过新的目标请求实时切换bt-xml。所有这些操作都不会破坏任何API。默认情况下启用。"
 
 
 #: ../../migration/Foxy.rst:110
 msgid "``nav2_waypoint_follower`` has an action server that takes in a list of waypoints to follow and follow them in order. In some cases we might want robot to perform some tasks/behaviours at arrivals of these waypoints. In order to perform such tasks, a generic plugin interface `WaypointTaskExecutor` has been added to ``nav2_core``. Users can inherit from this interface to implement their own plugin to perform more specific tasks at waypoint arrivals for their needs."
-msgstr "``nav2_waypoint_follower`` has an action server that takes in a list of waypoints to follow and follow them in order. In some cases we might want robot to perform some tasks/behaviours at arrivals of these waypoints. In order to perform such tasks, a generic plugin interface `WaypointTaskExecutor` has been added to ``nav2_core``. Users can inherit from this interface to implement their own plugin to perform more specific tasks at waypoint arrivals for their needs."
+msgstr "``nav2_waypoint_follower`` 具有一个动作服务器，接收一个要按顺序跟随的路径点列表。在某些情况下，我们可能希望机器人在到达这些路径点时执行某些任务/行为。为了执行这些任务，已经在 ``nav2_core`` 中添加了一个通用插件接口 `WaypointTaskExecutor`。用户可以从该接口继承，以实现自己的插件，以满足其特定需求下路径点到达时执行更具体任务的需要。"
 
 
 #: ../../migration/Foxy.rst:114
 msgid "Several example implementations are included in ``nav2_waypoint_follower``. ``WaitAtWaypoint`` and ``PhotoAtWaypoint`` plusings are included in ``nav2_waypoint_follower`` as run-time loadable plugins. ``WaitAtWaypoint`` simply lets robot to pause for a specified amount of time in milliseconds, at waypoint arrivals. While ``PhotoAtWaypoint`` takes photos at waypoint arrivals and saves the taken photos to specified directory, the format for taken photos also can be configured through parameters. All major image formats such as ``png``, ``jpeg``, ``jpg`` etc. are supported, the default format is ``png``."
-msgstr "Several example implementations are included in ``nav2_waypoint_follower``. ``WaitAtWaypoint`` and ``PhotoAtWaypoint`` plusings are included in ``nav2_waypoint_follower`` as run-time loadable plugins. ``WaitAtWaypoint`` simply lets robot to pause for a specified amount of time in milliseconds, at waypoint arrivals. While ``PhotoAtWaypoint`` takes photos at waypoint arrivals and saves the taken photos to specified directory, the format for taken photos also can be configured through parameters. All major image formats such as ``png``, ``jpeg``, ``jpg`` etc. are supported, the default format is ``png``."
+msgstr "``nav2_waypoint_follower``中包含了几个示例实现。``WaitAtWaypoint``和``PhotoAtWaypoint``插件包含在``nav2_waypoint_follower``中作为运行时可加载插件。``WaitAtWaypoint``允许机器人在到达航点时暂停指定的时间（以毫秒为单位）。而``PhotoAtWaypoint``在到达航点时拍照并将拍摄的照片保存到指定目录，拍摄的照片格式也可以通过参数进行配置。支持所有主要的图像格式，如``png``、``jpeg``、``jpg``等，默认格式为``png``。"
 
 
 #: ../../migration/Foxy.rst:119
@@ -557,7 +557,7 @@ msgstr "Loading a plugin of this type is done through ``nav2_bringup/params/nav2
 
 #: ../../migration/Foxy.rst:135
 msgid "`WaypointTaskExecutor <https://github.com/ros-planning/navigation2/pull/1993>`_"
-msgstr "`WaypointTaskExecutor <https://github.com/ros-planning/navigation2/pull/1993>`_"
+msgstr "``WaypointTaskExecutor <https://github.com/ros-planning/navigation2/pull/1993>`_"
 
 
 #: ../../migration/Foxy.rst:136
@@ -567,7 +567,7 @@ msgstr "`WaitAtWaypoint <https://github.com/ros-planning/navigation2/pull/1993>`
 
 #: ../../migration/Foxy.rst:137
 msgid "`PhotoAtWaypoint <https://github.com/ros-planning/navigation2/pull/2041>`_"
-msgstr "`PhotoAtWaypoint <https://github.com/ros-planning/navigation2/pull/2041>`_"
+msgstr "``PhotoAtWaypoint <https://github.com/ros-planning/navigation2/pull/2041>`_"
 
 
 #: ../../migration/Foxy.rst:138
@@ -582,7 +582,7 @@ msgstr "代价地图过滤器"
 
 #: ../../migration/Foxy.rst:143
 msgid "A new concept interacting with spatial-dependent objects called \"Costmap Filters\" appeared in Galactic (more information about this concept could be found at :ref:`concepts` page). Costmap filters are acting as a costmap plugins, applied to a separate costmap above common plugins. In order to make a filtered costmap and change robot's behavior in annotated areas, filter plugin reads the data came from filter mask. Then this data is being linearly transformed into feature map in a filter space. It could be passability of an area, maximum speed limit in m/s, robot desired direction in degrees or anything else. Transformed feature map along with the map/costmap, sensors data and current robot position is used in plugin's algorithms to make required updates in the resulting costmap and robot's behavor."
-msgstr "A new concept interacting with spatial-dependent objects called \"Costmap Filters\" appeared in Galactic (more information about this concept could be found at :ref:`concepts` page). Costmap filters are acting as a costmap plugins, applied to a separate costmap above common plugins. In order to make a filtered costmap and change robot's behavior in annotated areas, filter plugin reads the data came from filter mask. Then this data is being linearly transformed into feature map in a filter space. It could be passability of an area, maximum speed limit in m/s, robot desired direction in degrees or anything else. Transformed feature map along with the map/costmap, sensors data and current robot position is used in plugin's algorithms to make required updates in the resulting costmap and robot's behavor."
+msgstr "Galactic引入了一个与空间相关对象进行交互的新概念，称为\"Costmap Filters\"（成本地图过滤器）（有关该概念的更多信息可在:ref:`concepts`页面找到）。Costmap过滤器作为成本地图插件，应用于一个独立于常规插件的单独成本地图上。为了创建一个经过过滤的成本地图并在标注区域改变机器人的行为，过滤器插件读取来自过滤器掩码的数据。然后，这些数据被线性转换为过滤空间中的特征图。这可以是区域的可通过性、最大速度限制（以米/秒为单位）、机器人期望的方向（以度为单位）或其他任何内容。转换后的特征图与地图/成本地图、传感器数据和当前机器人位置一起用于插件算法中，以对结果成本地图和机器人行为进行必要的更新。"
 
 
 #: ../../migration/Foxy.rst:145
@@ -592,7 +592,7 @@ msgstr "Architecturally, costmap filters consists from ``CostmapFilter`` class w
 
 #: ../../migration/Foxy.rst:147
 msgid "``KeepoutFilter``: keep-out/safety zones filter plugin."
-msgstr "``KeepoutFilter``: keep-out/safety zones filter plugin."
+msgstr "``KeepoutFilter``：禁止进入/安全区域过滤器插件。"
 
 
 #: ../../migration/Foxy.rst:148
