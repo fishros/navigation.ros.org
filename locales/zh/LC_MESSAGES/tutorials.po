@@ -792,7 +792,7 @@ msgstr "现在，您已经准备好调试代码了！如果这是一个非ROS项
 
 #: ../../tutorials/docs/get_backtrace.rst:63
 msgid "Below are sections to describe the 3 major situations you could run into with ROS 2-based systems. Read the section that best describes the problem you're attempting to solve."
-msgstr "Below are sections to describe the 3 major situations you could run into with ROS 2-based systems. Read the section that best describes the problem you're attempting to solve."
+msgstr "下面是描述使用基于ROS 2的系统可能遇到的三种主要情况的部分。请阅读最能描述你尝试解决的问题的部分。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:67
@@ -802,7 +802,7 @@ msgstr "从一个节点开始"
 
 #: ../../tutorials/docs/get_backtrace.rst:69
 msgid "Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 node. While we could set this up through the commandline with some knowledge of the ROS 2 file system, we can instead use the launch ``--prefix`` option the kind folks at Open Robotics provided for us."
-msgstr "Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 node. While we could set this up through the commandline with some knowledge of the ROS 2 file system, we can instead use the launch ``--prefix`` option the kind folks at Open Robotics provided for us."
+msgstr "就像在我们的非ROS示例中一样，我们需要在启动ROS 2节点之前设置一个GDB会话。虽然我们可以通过命令行和对ROS 2文件系统的一些了解来设置这个会话，但我们可以使用Open Robotics提供的launch ``--prefix``选项。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:72
@@ -812,7 +812,7 @@ msgstr "``--prefix``将在我们的``ros2``命令之前执行一些代码，以�
 
 #: ../../tutorials/docs/get_backtrace.rst:76
 msgid "Rather than having to revert to finding the install path of the executable and typing it all out, we can instead use ``--prefix``. This allows us to use the same ``ros2 run`` syntax you're used to without having to worry about some of the GDB details."
-msgstr "Rather than having to revert to finding the install path of the executable and typing it all out, we can instead use ``--prefix``. This allows us to use the same ``ros2 run`` syntax you're used to without having to worry about some of the GDB details."
+msgstr "我们不必回到查找可执行文件的安装路径并将其全部输入的状态，而可以使用``--prefix``。这样我们就可以使用你熟悉的``ros2 run``语法，而不必担心一些GDB的细节。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:83
@@ -822,77 +822,77 @@ msgstr "与之前一样，此前缀将启动一个GDB会话，并使用所有附
 
 #: ../../tutorials/docs/get_backtrace.rst:86
 msgid "Once your server crashes, you'll see a prompt like below. At this point you can now get a backtrace."
-msgstr "Once your server crashes, you'll see a prompt like below. At this point you can now get a backtrace."
+msgstr "一旦你的服务器崩溃，你会看到下面这样的提示。此时你现在可以获得一个回溯。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:92
 msgid "In this session, type ``backtrace`` and it will provide you with a backtrace. Copy this for your needs. For example:"
-msgstr "In this session, type ``backtrace`` and it will provide you with a backtrace. Copy this for your needs. For example:"
+msgstr "在这个会话中，输入``backtrace``，它会为您提供一个回溯。根据您的需要进行复制。例如："
 
 
 #: ../../tutorials/docs/get_backtrace.rst:115
 msgid "In this example you should read this in the following way, starting at the bottom:"
-msgstr "In this example you should read this in the following way, starting at the bottom:"
+msgstr "在这个例子中，你应该按以下方式阅读，从底部开始："
 
 
 #: ../../tutorials/docs/get_backtrace.rst:117
 msgid "In the main function, on line 25 we call a function VectorCrash."
-msgstr "In the main function, on line 25 we call a function VectorCrash."
+msgstr "在主函数中，第25行我们调用了一个名为VectorCrash的函数。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:119
 msgid "In VectorCrash, on line 44, we crashed in the Vector's ``at()`` method with input ``100``."
-msgstr "In VectorCrash, on line 44, we crashed in the Vector's ``at()`` method with input ``100``."
+msgstr "在VectorCrash中，第44行，我们在Vector的``at()``方法中以输入``100``崩溃。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:121
 msgid "It crashed in ``at()`` on STL vector line 1091 after throwing an exception from a range check failure."
-msgstr "It crashed in ``at()`` on STL vector line 1091 after throwing an exception from a range check failure."
+msgstr "在STL向量的第1091行的``at()``函数中发生了崩溃，并在范围检查失败后抛出了异常。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:123 ../../tutorials/docs/get_backtrace.rst:168 ../../tutorials/docs/get_backtrace.rst:217 ../../tutorials/docs/get_backtrace.rst:246
 msgid "These traces take some time to get used to reading, but in general, start at the bottom and follow it up the stack until you see the line it crashed on. Then you can deduce why it crashed. When you are done with GDB, type ``quit`` and it will exit the session and kill any processes still up. It may ask you if you want to kill some threads at the end, say yes."
-msgstr "These traces take some time to get used to reading, but in general, start at the bottom and follow it up the stack until you see the line it crashed on. Then you can deduce why it crashed. When you are done with GDB, type ``quit`` and it will exit the session and kill any processes still up. It may ask you if you want to kill some threads at the end, say yes."
+msgstr "这些追踪需要一些时间来适应阅读，但一般来说，从底部开始，沿着堆栈向上查看，直到看到崩溃的那一行。然后你可以推断出为什么会崩溃。当你完成GDB操作后，输入``quit``，它将退出会话并关闭任何仍在运行的进程。最后可能会询问是否要终止一些线程，选择是。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:129
 msgid "From a Launch File"
-msgstr "From a Launch File"
+msgstr "从启动文件"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:131
 msgid "Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 launch file. While we could set this up through the commandline, we can instead make use of the same mechanics that we did in the ``ros2 run`` node example, now using a launch file."
-msgstr "Just as in our non-ROS example, we need to setup a GDB session before launching our ROS 2 launch file. While we could set this up through the commandline, we can instead make use of the same mechanics that we did in the ``ros2 run`` node example, now using a launch file."
+msgstr "与我们非ROS示例一样，在启动ROS 2启动文件之前，我们需要设置一个GDB会话。虽然我们可以通过命令行设置，但我们可以利用与``ros2 run``节点示例中相同的机制来实现，现在使用一个启动文件。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:134
 msgid "In your launch file, find the node that you're interested in debugging. For this section, we assume that your launch file contains only a single node (and potentially other information as well). The ``Node`` function used in the ``launch_ros`` package will take in a field ``prefix`` taking a list of prefix arguments. We will insert the GDB snippet here with one change from our node example, use of ``xterm``. ``xterm`` will pop up a new terminal window to show and interact with GDB. We do this because of issues handling ``stdin`` on launch files (e.g. if you hit control+C, are you talking to GDB or launch?). See `this ticket <https://github.com/ros2/launch_ros/issues/165>`_ for more information. See below for an example debugging SLAM Toolbox."
-msgstr "In your launch file, find the node that you're interested in debugging. For this section, we assume that your launch file contains only a single node (and potentially other information as well). The ``Node`` function used in the ``launch_ros`` package will take in a field ``prefix`` taking a list of prefix arguments. We will insert the GDB snippet here with one change from our node example, use of ``xterm``. ``xterm`` will pop up a new terminal window to show and interact with GDB. We do this because of issues handling ``stdin`` on launch files (e.g. if you hit control+C, are you talking to GDB or launch?). See `this ticket <https://github.com/ros2/launch_ros/issues/165>`_ for more information. See below for an example debugging SLAM Toolbox."
+msgstr "在您的启动文件中，找到您想要调试的节点。在本节中，我们假设您的启动文件只包含一个单独的节点（以及其他可能的信息）。``launch_ros``包中使用的``Node``函数将接受一个名为``prefix``的字段，它需要一个前缀参数的列表。我们将在此处插入包含 GDB 代码片段的示例，与我们的节点示例相比有一个变化，即使用``xterm``。``xterm``将弹出一个新的终端窗口，用于显示和与 GDB 交互。我们之所以这样做，是因为处理启动文件上的``stdin``存在问题（例如，如果您按下Ctrl+C，您是在与GDB 还是启动进行交互？）。有关更多信息，请参阅`此票证<https://github.com/ros2/launch_ros/issues/165>`_。以下是一个关于调试 SLAM 工具箱的示例："
 
 
 #: ../../tutorials/docs/get_backtrace.rst:156
 msgid "Just as before, this prefix will launch a GDB session, now in ``xterm`` and run the launch file you requested with all the additional launch arguments defined."
-msgstr "Just as before, this prefix will launch a GDB session, now in ``xterm`` and run the launch file you requested with all the additional launch arguments defined."
+msgstr "与之前一样，此前缀将启动一个GDB会话，现在使用``xterm``并运行您请求的启动文件以及所有定义的附加启动参数。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:158
 msgid "Once your server crashes, you'll see a prompt like below, now in the ``xterm`` session. At this point you can now get a backtrace."
-msgstr "Once your server crashes, you'll see a prompt like below, now in the ``xterm`` session. At this point you can now get a backtrace."
+msgstr "一旦服务器崩溃，您会在``xterm``会话中看到如下提示。此时，您可以获取一个回溯。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:164 ../../tutorials/docs/get_backtrace.rst:213 ../../tutorials/docs/get_backtrace.rst:242
 msgid "In this session, type ``backtrace`` and it will provide you with a backtrace. Copy this for your needs. See the example trace in the section above for an example."
-msgstr "In this session, type ``backtrace`` and it will provide you with a backtrace. Copy this for your needs. See the example trace in the section above for an example."
+msgstr "在此会话中，键入``backtrace``，它将为您提供一个回溯。根据您的需求进行复制。请参考上面的示例跟踪。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:174
 msgid "From Large Project"
-msgstr "From Large Project"
+msgstr "从大型项目"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:176
 msgid "Working with launch files with multiple nodes is a little different so you can interact with your GDB session without being bogged down by other logging in the same terminal. For this reason, when working with larger launch files, its good to pull out the specific server you're interested in and launching it seperately. These instructions are targeting Nav2, but are applicable to any large project with many nodes of any type in a series of launch file(s)."
-msgstr "Working with launch files with multiple nodes is a little different so you can interact with your GDB session without being bogged down by other logging in the same terminal. For this reason, when working with larger launch files, its good to pull out the specific server you're interested in and launching it seperately. These instructions are targeting Nav2, but are applicable to any large project with many nodes of any type in a series of launch file(s)."
+msgstr "使用包含多个节点的启动文件的工作方式有所不同，这样您就可以在同一个终端中进行GDB会话而不受其他日志的干扰。因此，在使用较大的启动文件时，最好将您感兴趣的特定服务器提取出来并单独启动。这些说明针对Nav2，但适用于任何具有多个节点类型的大型项目的一系列启动文件。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:180
@@ -902,7 +902,7 @@ msgstr "As such, for this case, when you see a crash you'd like to investigate, 
 
 #: ../../tutorials/docs/get_backtrace.rst:182
 msgid "If your server of interest is being launched from a nested launch file (e.g. an included launch file) you may want to do the following:"
-msgstr "If your server of interest is being launched from a nested launch file (e.g. an included launch file) you may want to do the following:"
+msgstr "如果您感兴趣的服务器是从嵌套的启动文件（例如，一个包含的启动文件）启动的，您可能需要执行以下操作："
 
 
 #: ../../tutorials/docs/get_backtrace.rst:184
@@ -912,7 +912,7 @@ msgstr "Comment out the launch file inclusion from the parent launch file"
 
 #: ../../tutorials/docs/get_backtrace.rst:186 ../../tutorials/docs/get_backtrace.rst:196
 msgid "Recompile the package of interest with ``-g`` flag for debug symbols"
-msgstr "Recompile the package of interest with ``-g`` flag for debug symbols"
+msgstr "使用``-g``标志为调试符号重新编译感兴趣的软件包。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:188 ../../tutorials/docs/get_backtrace.rst:198
@@ -922,7 +922,7 @@ msgstr "Launch the parent launch file in a terminal"
 
 #: ../../tutorials/docs/get_backtrace.rst:190
 msgid "Launch the server's launch file in another terminal following the instructions in `From a Launch File`_."
-msgstr "Launch the server's launch file in another terminal following the instructions in `From a Launch File`_."
+msgstr "在另一个终端中按照`从启动文件启动`_中的说明启动服务器的启动文件。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:192
