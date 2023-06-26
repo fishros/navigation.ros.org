@@ -941,11 +941,11 @@
              
   <div class="section" id="rotatetogoalcritic">
 <span id="configuring-dwb-rotate-to-goal"></span><h1>RotateToGoalCritic<a class="headerlink" href="#rotatetogoalcritic" title="永久链接至标题"></a></h1>
-<p>Only allows the robot to rotate to the goal orientation when it is sufficiently close to the goal location.</p>
+<p>只有在机器人距离目标位置足够近时，才允许其旋转到目标方向。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>: RotateToGoalCritic critic name defined in the <strong>&lt;dwb plugin&gt;.critics</strong> parameter defined in <a class="reference internal" href="../dwb-params/controller.html#dwb-controller"><span class="std std-ref">DWB控制器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>：RotateToGoalCritic评价器名称，在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>dwb_controller`中定义的**&lt;dwb插件&gt;.critics**参数中定义。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.xy_goal_tolerance</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -969,7 +969,7 @@
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.trans_stopped_velocity</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.停止转换速度</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />

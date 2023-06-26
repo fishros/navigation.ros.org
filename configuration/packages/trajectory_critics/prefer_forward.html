@@ -941,13 +941,13 @@
              
   <div class="section" id="preferforwardcritic">
 <span id="configuring-dwb-prefer-forward"></span><h1>PreferForwardCritic<a class="headerlink" href="#preferforwardcritic" title="永久链接至标题"></a></h1>
-<p>Scores trajectories that move the robot forwards more highly.</p>
+<p>对将机器人向前移动的轨迹给予更高分的评分。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>: PreferForwardCritic critic name defined in the <strong>&lt;dwb plugin&gt;.critics</strong> parameter defined in <a class="reference internal" href="../dwb-params/controller.html#dwb-controller"><span class="std std-ref">DWB控制器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>: 在 <a class="reference internal" href="../dwb-params/controller.html#dwb-controller"><span class="std std-ref">DWB控制器</span></a> 中定义的 <strong>&lt;dwb plugin&gt;.critics</strong> 参数中定义的 PreferForwardCritic 评判器名称。</p>
 <dl class="field-list">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.penalty</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>.惩罚</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -964,12 +964,12 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Penalty to apply to backward motion.</p>
+<dt>描述</dt><dd><p>应用于后向运动的惩罚。</p>
 </dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.strafe_x</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>.横向平移_x</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -986,12 +986,12 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Minimum X velocity before penalty.</p>
+<dt>描述</dt><dd><p>在施加惩罚之前的最小 X 轴速度。</p>
 </dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.strafe_theta</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>.横向平移_θ</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1008,12 +1008,12 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Minimum angular velocity before applying penalty.</p>
+<dt>描述</dt><dd><p>在施加惩罚之前的最小角速度。</p>
 </dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.theta_scale</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.<code class="docutils literal notranslate"><span class="pre">&lt;名称&gt;</span></code>.θ缩放</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1030,7 +1030,7 @@
 </table>
 <blockquote>
 <div><dl class="simple">
-<dt>描述</dt><dd><p>Weight for angular velocity component.</p>
+<dt>描述</dt><dd><p>角速度分量的权重。</p>
 </dd>
 </dl>
 </div></blockquote>
