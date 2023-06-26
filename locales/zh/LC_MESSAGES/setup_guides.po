@@ -1037,7 +1037,7 @@ msgstr "接下来，让我们给``sam_bot``添加一个深度摄像头。在激�
 
 #: ../../setup_guides/sensors/setup_sensors.rst:216
 msgid "Similar to the lidar sensor, we create ``camera_link`` which will be referenced by the ``gazebo_ros_camera`` plugin as the sensor attachment location. We also create a ``camera_depth_frame`` that is attached to the ``camera_link`` and will be set as the ``<frame_name>`` of the depth camera plugin.  We also configure the plugin such that it will publish ``sensor_msgs/Image`` and ``sensor_msgs/PointCloud2`` messages to ``/depth_camera/image_raw`` and  ``/depth_camera/points`` topics respectively. Lastly, we also set up other basic configuration properties for our depth camera."
-msgstr "Similar to the lidar sensor, we create ``camera_link`` which will be referenced by the ``gazebo_ros_camera`` plugin as the sensor attachment location. We also create a ``camera_depth_frame`` that is attached to the ``camera_link`` and will be set as the ``<frame_name>`` of the depth camera plugin.  We also configure the plugin such that it will publish ``sensor_msgs/Image`` and ``sensor_msgs/PointCloud2`` messages to ``/depth_camera/image_raw`` and  ``/depth_camera/points`` topics respectively. Lastly, we also set up other basic configuration properties for our depth camera."
+msgstr "与激光雷达传感器类似，我们创建``camera_link``，它将被``gazebo_ros_camera``插件引用作为传感器的连接位置。我们还创建一个``camera_depth_frame``，将其附加到``camera_link``上，并将其设置为深度相机插件的``<frame_name>``。我们还配置插件，使其分别将``sensor_msgs/Image``和``sensor_msgs/PointCloud2``消息发布到``/depth_camera/image_raw``和``/depth_camera/points``主题。最后，我们还为深度相机设置了其他基本配置属性。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:221
@@ -1047,7 +1047,7 @@ msgstr "为了验证传感器是否正确设置，并且能够在我们的环境
 
 #: ../../setup_guides/sensors/setup_sensors.rst:224
 msgid "To create the world, create a directory named ``world`` at the root of your project and create a file named ``my_world.sdf`` inside the ``world`` folder . Then copy the contents of `world/my_world.sdf <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/world/my_world.sdf>`_ and paste them inside ``my_world.sdf``."
-msgstr "To create the world, create a directory named ``world`` at the root of your project and create a file named ``my_world.sdf`` inside the ``world`` folder . Then copy the contents of `world/my_world.sdf <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/world/my_world.sdf>`_ and paste them inside ``my_world.sdf``."
+msgstr "要创建世界，首先在项目的根目录下创建一个名为``world``的目录，并在``world``文件夹中创建一个名为``my_world.sdf``的文件。然后复制 `world/my_world.sdf <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/world/my_world.sdf>`_ 的内容，并将其粘贴到``my_world.sdf``中。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:226
@@ -1057,7 +1057,7 @@ msgstr "现在，让我们编辑我们的启动文件 `launch/display.launch.py 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:232
 msgid "Lastly, add the world path in the ``launch.actions.ExecuteProcess(cmd=['gazebo',...`` line, as shown below."
-msgstr "Lastly, add the world path in the ``launch.actions.ExecuteProcess(cmd=['gazebo',...`` line, as shown below."
+msgstr "最后，在以下位置的``launch.actions.ExecuteProcess(cmd=['gazebo',...``行中添加世界路径，如下所示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:238
@@ -1067,7 +1067,7 @@ msgstr "我们还需要在``CMakeLists.txt``文件中添加``world``目录。打
 
 #: ../../setup_guides/sensors/setup_sensors.rst:250
 msgid "We can now build and run our project. Navigate to the root of the project and execute the following lines:"
-msgstr "We can now build and run our project. Navigate to the root of the project and execute the following lines:"
+msgstr "现在，我们可以构建和运行项目。转到项目的根目录，并执行以下命令："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:258
@@ -1077,7 +1077,7 @@ msgstr "然后，RViz 和 Gazebo 将同时启动，``sam_bot``将存在于两者
 
 #: ../../setup_guides/sensors/setup_sensors.rst:263
 msgid "In the RViz window, we can verify if we have properly modeled our sensors and if the transforms of our newly added sensors are correct:"
-msgstr "In the RViz window, we can verify if we have properly modeled our sensors and if the transforms of our newly added sensors are correct:"
+msgstr "在RViz窗口中，我们可以验证是否正确建模了传感器，并且新添加的传感器的变换是否正确："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:268
@@ -1087,7 +1087,7 @@ msgstr "最后，我们还可以在 RViz 中可视化传感器读数。要可视
 
 #: ../../setup_guides/sensors/setup_sensors.rst:274
 msgid "Next, set the ``Reliability Policy`` in RViz to ``Best Effort`` and set the ``size`` to 0.1 to see the points clearer. You should see the visualized ``LaserScan`` detection as shown below. This corresponds to the detected cube and sphere that we added to the Gazebo world."
-msgstr "Next, set the ``Reliability Policy`` in RViz to ``Best Effort`` and set the ``size`` to 0.1 to see the points clearer. You should see the visualized ``LaserScan`` detection as shown below. This corresponds to the detected cube and sphere that we added to the Gazebo world."
+msgstr "接下来，在RViz中将``Reliability Policy``设置为``Best Effort``，并将``size``设置为0.1，以使点更清晰可见。您应该可以看到如下所示的可视化``LaserScan``检测结果。这对应于我们在Gazebo世界中添加的立方体和球体的检测结果。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:279
@@ -1097,12 +1097,12 @@ msgstr "要可视化``sensor_msgs/Image``和``sensor_msgs/PointCloud2``，请分
 
 #: ../../setup_guides/sensors/setup_sensors.rst:283
 msgid "After adding the ``/depth_camera/image_raw`` topic in RViz, set the ``Reliability Policy`` in RViz to ``Best Effort``. Then you should see the cube in the image window at the lower-left side of the RViz window, as shown below."
-msgstr "After adding the ``/depth_camera/image_raw`` topic in RViz, set the ``Reliability Policy`` in RViz to ``Best Effort``. Then you should see the cube in the image window at the lower-left side of the RViz window, as shown below."
+msgstr "在RViz中添加``/depth_camera/image_raw``主题后，将RViz中的``Reliability Policy``设置为``Best Effort``。然后，您应该在RViz窗口左下方的图像窗口中看到立方体，如下所示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:288
 msgid "You should also see the ``sensor_msgs/PointCloud2``, as shown below."
-msgstr "You should also see the ``sensor_msgs/PointCloud2``, as shown below."
+msgstr "你还应该查看下面显示的``sensor_msgs/PointCloud2``。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:295
@@ -1112,7 +1112,7 @@ msgstr "Mapping and Localization"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:296
 msgid "Now that we have a robot with its sensors set up, we can use the obtained sensor information to build a map of the environment and to localize the robot on the map. The ``slam_toolbox`` package is a set of tools and capabilities for 2D Simultaneous Localization and Mapping (SLAM) in potentially massive maps with ROS2. It is also one of the officially supported SLAM libraries in Nav2, and we recommend to use this package in situations you need to use SLAM on your robot setup. Aside from the ``slam_toolbox``, localization can also be implemented through the ``nav2_amcl`` package. This package implements Adaptive Monte Carlo Localization (AMCL) which estimates the position and orientation of the robot in a map. Other techniques may also be available, please check Nav2 documentation for more information."
-msgstr "Now that we have a robot with its sensors set up, we can use the obtained sensor information to build a map of the environment and to localize the robot on the map. The ``slam_toolbox`` package is a set of tools and capabilities for 2D Simultaneous Localization and Mapping (SLAM) in potentially massive maps with ROS2. It is also one of the officially supported SLAM libraries in Nav2, and we recommend to use this package in situations you need to use SLAM on your robot setup. Aside from the ``slam_toolbox``, localization can also be implemented through the ``nav2_amcl`` package. This package implements Adaptive Monte Carlo Localization (AMCL) which estimates the position and orientation of the robot in a map. Other techniques may also be available, please check Nav2 documentation for more information."
+msgstr "现在我们已经有了一个设置好传感器的机器人，我们可以利用获取到的传感器信息来构建环境地图，并在地图上对机器人进行定位。``slam_toolbox``软件包是ROS2中用于二维同时定位与地图构建（SLAM）的一组工具和功能，可以在潜在的大型地图上进行SLAM。它也是Nav2中官方支持的SLAM库之一，我们建议在需要在机器人设置中使用SLAM时使用该软件包。除了``slam_toolbox``，定位还可以通过``nav2_amcl``软件包实现。该软件包实现了自适应蒙特卡洛定位（AMCL），用于估计机器人在地图中的位置和方向。其他技术也可能可用，请查阅Nav2文档以获取更多信息。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:298
@@ -1122,7 +1122,7 @@ msgstr "Both the ``slam_toolbox`` and ``nav2_amcl`` use information from the las
 
 #: ../../setup_guides/sensors/setup_sensors.rst:300
 msgid "In-depth discussions on the complete configuration parameters will not be a scope of our tutorials since they can be pretty complex. Instead, we recommend you to have a look at their official documentation in the links below."
-msgstr "In-depth discussions on the complete configuration parameters will not be a scope of our tutorials since they can be pretty complex. Instead, we recommend you to have a look at their official documentation in the links below."
+msgstr "我们的教程将不会对完整的配置参数进行深入讨论，因为它们可能相当复杂。相反，我们建议您查看下面的官方文档链接。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst
@@ -1132,7 +1132,7 @@ msgstr "For the complete list of configuration parameters of ``slam_toolbox``, s
 
 #: ../../setup_guides/sensors/setup_sensors.rst
 msgid "For the complete list of configuration parameters and example configuration of ``nav2_amcl``, see the `AMCL Configuration Guide <https://navigation.ros.org/configuration/packages/configuring-amcl.html>`_."
-msgstr "For the complete list of configuration parameters and example configuration of ``nav2_amcl``, see the `AMCL Configuration Guide <https://navigation.ros.org/configuration/packages/configuring-amcl.html>`_."
+msgstr "要获取``nav2_amcl``的完整配置参数列表和示例配置，请参阅`AMCL配置指南<https://navigation.ros.org/configuration/packages/configuring-amcl.html>`_。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:307
@@ -1147,7 +1147,7 @@ msgstr "二维代价地图"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:312
 msgid "The costmap 2D package makes use of the sensor information to provide a representation of the robot's environment in the form of an occupancy grid. The cells in the occupancy grid store cost values between 0-254 which denote a cost to travel through these zones. A cost of 0 means the cell is free while a cost of 254 means that the cell is lethally occupied. Values in between these extremes are used by navigation algorithms to steer your robot away from obstacles as a potential field. Costmaps in Nav2 are implemented through the ``nav2_costmap_2d`` package."
-msgstr "The costmap 2D package makes use of the sensor information to provide a representation of the robot's environment in the form of an occupancy grid. The cells in the occupancy grid store cost values between 0-254 which denote a cost to travel through these zones. A cost of 0 means the cell is free while a cost of 254 means that the cell is lethally occupied. Values in between these extremes are used by navigation algorithms to steer your robot away from obstacles as a potential field. Costmaps in Nav2 are implemented through the ``nav2_costmap_2d`` package."
+msgstr "Costmap 2D软件包利用传感器信息以占用格网的形式提供机器人环境的表示。占用格网中的单元格存储了0-254之间的代表通过这些区域的成本值。成本为0表示该单元格为空闲，而成本为254表示该单元格被严重占用。这些极值之间的值被导航算法用作潜在场的障碍物，用于引导机器人避开障碍物。Nav2中的Costmap通过``nav2_costmap_2d``软件包实现。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:314
@@ -1157,7 +1157,7 @@ msgstr "The costmap implementation consists of multiple layers, each of which ha
 
 #: ../../setup_guides/sensors/setup_sensors.rst:316
 msgid "The layers are integrated into the costmap through a plugin interface and then inflated using a user-specified `inflation radius <http://wiki.ros.org/costmap_2d/hydro/inflation>`_, if the inflation layer is enabled. For a deeper discussion on costmap concepts, you can have a look at the `ROS1 costmap_2D documentation <http://wiki.ros.org/costmap_2d>`_. Note that the ``nav2_costmap_2d`` package is mostly a straightforward ROS2 port of the ROS1 navigation stack version with minor changes required for ROS2 support and some new layer plugins."
-msgstr "The layers are integrated into the costmap through a plugin interface and then inflated using a user-specified `inflation radius <http://wiki.ros.org/costmap_2d/hydro/inflation>`_, if the inflation layer is enabled. For a deeper discussion on costmap concepts, you can have a look at the `ROS1 costmap_2D documentation <http://wiki.ros.org/costmap_2d>`_. Note that the ``nav2_costmap_2d`` package is mostly a straightforward ROS2 port of the ROS1 navigation stack version with minor changes required for ROS2 support and some new layer plugins."
+msgstr "层通过插件接口集成到Costmap中，如果启用了膨胀层，则使用用户指定的`膨胀半径<http://wiki.ros.org/costmap_2d/hydro/inflation>`_进行膨胀。要深入讨论Costmap概念，您可以查看`ROS1 costmap_2D文档<http://wiki.ros.org/costmap_2d>`_。请注意，``nav2_costmap_2d``软件包基本上是ROS1导航堆栈版本的直接转换到ROS2的版本，并进行了一些针对ROS2支持所需的小修改和一些新的层插件。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:321
@@ -1167,7 +1167,7 @@ msgstr "Configuring nav2_costmap_2d"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:322
 msgid "In this subsection, we will show an example configuration of ``nav2_costmap_2d`` such that it uses the information provided by the lidar sensor of ``sam_bot``. We will show an example configuration that uses static layer, obstacle layer, voxel layer, and inflation layer. We set both the obstacle and voxel layer to use the ``LaserScan`` messages published  to the ``/scan`` topic by the lidar sensor. We also set some of the basic parameters to define how the detected obstacles are reflected in the costmap. Note that this configuration is to be included in the configuration file of Nav2."
-msgstr "In this subsection, we will show an example configuration of ``nav2_costmap_2d`` such that it uses the information provided by the lidar sensor of ``sam_bot``. We will show an example configuration that uses static layer, obstacle layer, voxel layer, and inflation layer. We set both the obstacle and voxel layer to use the ``LaserScan`` messages published  to the ``/scan`` topic by the lidar sensor. We also set some of the basic parameters to define how the detected obstacles are reflected in the costmap. Note that this configuration is to be included in the configuration file of Nav2."
+msgstr "在本小节中，我们将展示一个``na"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:399
