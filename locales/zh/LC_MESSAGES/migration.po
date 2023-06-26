@@ -1651,7 +1651,7 @@ msgstr "新增辅助遥操作"
 
 #: ../../migration/Galactic.rst:339
 msgid "`PR 2904 <https://github.com/ros-planning/navigation2/pull/2904>`_ adds a new behavior for assisted teleop along with two new BT nodes AssistedTeleop and CancelAssistedTeleop."
-msgstr "`PR 2904 <https://github.com/ros-planning/navigation2/pull/2904>`_ adds a new behavior for assisted teleop along with two new BT nodes AssistedTeleop and CancelAssistedTeleop."
+msgstr "PR 2904 <https://github.com/ros-planning/navigation2/pull/2904> 中新增了一个辅助远程操作的新行为，同时还添加了两个新的行为树节点 AssistedTeleop 和 CancelAssistedTeleop。"
 
 
 #: ../../migration/Humble.rst:4
@@ -1661,7 +1661,7 @@ msgstr "从Humble升级到Iron"
 
 #: ../../migration/Humble.rst:6
 msgid "Moving from ROS 2 Humble to Iron, a number of stability improvements were added that we will not specifically address here."
-msgstr "Moving from ROS 2 Humble to Iron, a number of stability improvements were added that we will not specifically address here."
+msgstr "从 ROS 2 Humble 版本升级到 Iron 版本，增加了一些稳定性改进，我们在此不会具体讨论。"
 
 
 #: ../../migration/Humble.rst:9
@@ -1671,77 +1671,77 @@ msgstr "新增行为树导航插件"
 
 #: ../../migration/Humble.rst:11
 msgid "New in `PR 3345 <https://github.com/ros-planning/navigation2/pull/3345>`_, the navigator types are exposed to users as plugins that can be replaced or new navigator types added. The default behaviors of navigate to pose and navigate through poses continue to be default behavior but are now customizable with new action interface definitions. These plugins implement the ``nav2_core::BehaviorTreeNavigator`` base class, which must process the action request, feedback, and completion messages. The behavior tree is handled by this base class with as much general logic as possible abstracted away from users to minimize repetition."
-msgstr "New in `PR 3345 <https://github.com/ros-planning/navigation2/pull/3345>`_, the navigator types are exposed to users as plugins that can be replaced or new navigator types added. The default behaviors of navigate to pose and navigate through poses continue to be default behavior but are now customizable with new action interface definitions. These plugins implement the ``nav2_core::BehaviorTreeNavigator`` base class, which must process the action request, feedback, and completion messages. The behavior tree is handled by this base class with as much general logic as possible abstracted away from users to minimize repetition."
+msgstr "在 PR 3345 <https://github.com/ros-planning/navigation2/pull/3345> 中新增了导航器类型，以插件形式暴露给用户，可以替换或添加新的导航器类型。导航到位姿和通过位姿的默认行为仍然是默认行为，但现在可以使用新的动作接口定义进行自定义。这些插件实现了 `nav2_core::BehaviorTreeNavigator` 基类，必须处理动作请求、反馈和完成消息。行为树由该基类处理，尽可能将通用逻辑从用户中抽象出来，以减少重复。"
 
 
 #: ../../migration/Humble.rst:13
 msgid "See :ref:`writing_new_nav2navigator_plugin` for a tutorial about writing new navigator plugins."
-msgstr "See :ref:`writing_new_nav2navigator_plugin` for a tutorial about writing new navigator plugins."
+msgstr "参见 :ref:`writing_new_nav2navigator_plugin` 以了解关于编写新导航插件的教程。"
 
 
 #: ../../migration/Humble.rst:16
 msgid "Added Collision Monitor"
-msgstr "Added Collision Monitor"
+msgstr "添加了碰撞监测器。"
 
 
 #: ../../migration/Humble.rst:17
 msgid "`PR 2982 <https://github.com/ros-planning/navigation2/pull/2982>`_ adds new safety layer operating independently of Nav2 stack which ensures the robot to control the collisions with near obstacles, obtained from different sensors (LaserScan, PointCloud, IR, Sonars, etc...). See :ref:`configuring_collision_monitor` for more details. It is not included in the default bringup batteries included from ``nav2_bringup``."
-msgstr "`PR 2982 <https://github.com/ros-planning/navigation2/pull/2982>`_ adds new safety layer operating independently of Nav2 stack which ensures the robot to control the collisions with near obstacles, obtained from different sensors (LaserScan, PointCloud, IR, Sonars, etc...). See :ref:`configuring_collision_monitor` for more details. It is not included in the default bringup batteries included from ``nav2_bringup``."
+msgstr "`PR 2982 <https://github.com/ros-planning/navigation2/pull/2982>`_ 添加了一个独立于 Nav2 栈运行的新的安全层，确保机器人可以控制与近处障碍物的碰撞，这些障碍物来自不同的传感器（LaserScan、PointCloud、IR、Sonars 等）。有关详细信息，请参见 :ref:`configuring_collision_monitor`。它不包含在默认的 ``nav2_bringup`` 中的启动电池中。"
 
 
 #: ../../migration/Humble.rst:20
 msgid "Removed use_sim_time from yaml"
-msgstr "Removed use_sim_time from yaml"
+msgstr "从 yaml 文件中移除了 use_sim_time。"
 
 
 #: ../../migration/Humble.rst:21
 msgid "`PR #3131 <https://github.com/ros-planning/navigation2/pull/3131>`_ makes it possible to set the use_sim_time parameter from the launch file for multiple nodes instead of individually via the yaml files. If using the Nav2 launch files, you can optionally remove the use_sim_time parameter from your yaml files and set it via a launch argument."
-msgstr "`PR #3131 <https://github.com/ros-planning/navigation2/pull/3131>`_ makes it possible to set the use_sim_time parameter from the launch file for multiple nodes instead of individually via the yaml files. If using the Nav2 launch files, you can optionally remove the use_sim_time parameter from your yaml files and set it via a launch argument."
+msgstr "`PR #3131 <https://github.com/ros-planning/navigation2/pull/3131>`_ 使得可以在启动文件中为多个节点设置 use_sim_time 参数，而不是通过 yaml 文件逐个设置。如果使用 Nav2 的启动文件，您可以选择从您的 yaml 文件中删除 use_sim_time 参数，并通过启动参数进行设置。"
 
 
 #: ../../migration/Humble.rst:24
 msgid "Run-time Speed up of Smac Planner"
-msgstr "Run-time Speed up of Smac Planner"
+msgstr "Smac 规划器的运行时加速。"
 
 
 #, python-format
 msgid "The core data structure of the graph implementation in the Smac Planner framework was swapped out in `PR 3201 <https://github.com/ros-planning/navigation2/pull/3201>`_ to using a specialized unordered map implementation. This speeds up the planner by 10% on trivial requests and reports up to 30% on complex plans that involve numerous rehashings."
-msgstr "The core data structure of the graph implementation in the Smac Planner framework was swapped out in `PR 3201 <https://github.com/ros-planning/navigation2/pull/3201>`_ to using a specialized unordered map implementation. This speeds up the planner by 10% on trivial requests and reports up to 30% on complex plans that involve numerous rehashings."
+msgstr "在 `PR 3201 <https://github.com/ros-planning/navigation2/pull/3201>`_ 中，Smac Planner 框架中的图实现的核心数据结构被更换为使用专门的无序映射实现。这将加快规划器在简单请求上的速度约 10%，并在涉及大量重新哈希的复杂计划上报告高达 30% 的速度提升。"
 
 
 #: ../../migration/Humble.rst:28
 msgid "Recursive Refinement of Smac and Simple Smoothers"
-msgstr "Recursive Refinement of Smac and Simple Smoothers"
+msgstr "对 Smac 和 Simple 平滑器进行了递归细化。"
 
 
 #: ../../migration/Humble.rst:30
 msgid "The number of recursive refinements for the Simple and Smac Planner Smoothers have been exposed under the ``refinement_num`` parameter. Previous behavior had this hardcoded if ``do_refinement = True`` to ``4``. Now, default is ``2`` to help decrease out-of-the-box over smoothing reducing in paths closer to collision than probably ideal, but old behavior can be achieved by changing this to ``4``."
-msgstr "The number of recursive refinements for the Simple and Smac Planner Smoothers have been exposed under the ``refinement_num`` parameter. Previous behavior had this hardcoded if ``do_refinement = True`` to ``4``. Now, default is ``2`` to help decrease out-of-the-box over smoothing reducing in paths closer to collision than probably ideal, but old behavior can be achieved by changing this to ``4``."
+msgstr "对于 Simple 和 Smac Planner Smoothers，递归细化次数已在 ``refinement_num`` 参数下公开。以前的行为是，如果 ``do_refinement = True``，则将此参数硬编码为 ``4``。现在，默认值为 ``2``，以帮助减少开箱即用时的过度平滑，从而减少与碰撞较近的路径，但可以通过将其更改为 ``4`` 来实现旧的行为。"
 
 
 #: ../../migration/Humble.rst:33
 msgid "Simple Commander Python API"
-msgstr "Simple Commander Python API"
+msgstr "简单指挥官 Python API"
 
 
 #: ../../migration/Humble.rst:34
 msgid "`PR 3159 <https://github.com/ros-planning/navigation2/pull/3159>`_ and follow-up PRs add in Costmap API in Python3 simple commander to receive ``OccupancyGrid`` messages from Nav2 and be able to work with them natively in Python3, analog to the C++ Costmap API. It also includes a line iterator and collision checking object to perform footprint or other collision checking in Python3. See the Simple Commander API for more details."
-msgstr "`PR 3159 <https://github.com/ros-planning/navigation2/pull/3159>`_ and follow-up PRs add in Costmap API in Python3 simple commander to receive ``OccupancyGrid`` messages from Nav2 and be able to work with them natively in Python3, analog to the C++ Costmap API. It also includes a line iterator and collision checking object to perform footprint or other collision checking in Python3. See the Simple Commander API for more details."
+msgstr "`PR 3159 <https://github.com/ros-planning/navigation2/pull/3159>`_ 和后续的 PR 添加了在 Python3 中的 Costmap API，以接收来自 Nav2 的 ``OccupancyGrid`` 消息，并能够在 Python3 中原生处理它们，类似于 C++ 的 Costmap API。它还包括了一个行迭代器和碰撞检测对象，用于在 Python3 中执行足迹或其他碰撞检测。有关详细信息，请参阅 Simple Commander API。"
 
 
 #: ../../migration/Humble.rst:37
 msgid "Smac Planner Start Pose Included in Path"
-msgstr "Smac Planner Start Pose Included in Path"
+msgstr "Smac 规划器路径包括起始姿态"
 
 
 #: ../../migration/Humble.rst:39
 msgid "`PR 3168 <https://github.com/ros-planning/navigation2/pull/3168>`_ adds the starting pose to the Smac Planners that was previously excluded during backtracing."
-msgstr "`PR 3168 <https://github.com/ros-planning/navigation2/pull/3168>`_ adds the starting pose to the Smac Planners that was previously excluded during backtracing."
+msgstr "`PR 3168 <https://github.com/ros-planning/navigation2/pull/3168>`_ 在 Smac Planner 中添加了起始姿态，而以前在回溯过程中被排除在外。"
 
 
 #: ../../migration/Humble.rst:42
 msgid "Parameterizable Collision Checking in RPP"
-msgstr "Parameterizable Collision Checking in RPP"
+msgstr "可参数化的 RPP 碰撞检查"
 
 
 #: ../../migration/Humble.rst:44
@@ -1751,7 +1751,7 @@ msgstr "`PR 3204 <https://github.com/ros-planning/navigation2/pull/3204>`_ adds 
 
 #: ../../migration/Humble.rst:47
 msgid "Expanded Planner Benchmark Tests"
-msgstr "Expanded Planner Benchmark Tests"
+msgstr "扩展规划器基准测试"
 
 
 #: ../../migration/Humble.rst:49
@@ -1761,7 +1761,7 @@ msgstr "`PR 3218 <https://github.com/ros-planning/navigation2/pull/3218>`_ adds 
 
 #: ../../migration/Humble.rst:52
 msgid "Smac Planner Path Tolerances"
-msgstr "Smac Planner Path Tolerances"
+msgstr "Smac 规划器路径容差"
 
 
 #: ../../migration/Humble.rst:54
@@ -1771,7 +1771,7 @@ msgstr "`PR 3219 <https://github.com/ros-planning/navigation2/pull/3219>`_ adds 
 
 #: ../../migration/Humble.rst:57
 msgid "costmap_2d_node default constructor"
-msgstr "costmap_2d_node default constructor"
+msgstr "costmap_2d_node 默认构造函数"
 
 
 #: ../../migration/Humble.rst:59
@@ -1781,7 +1781,7 @@ msgstr "`PR #3222 <https://github.com/ros-planning/navigation2/pull/3222>`_ chan
 
 #: ../../migration/Humble.rst:62
 msgid "Feedback for Navigation Failures"
-msgstr "Feedback for Navigation Failures"
+msgstr "导航失败的反馈"
 
 
 #: ../../migration/Humble.rst:64
