@@ -4801,7 +4801,7 @@ msgstr "6"
 
 #: ../../configuration/packages/configuring-mppic.rst:668
 msgid "Number of path points after furthest one any trajectory achieves to drive path tracking relative to."
-msgstr "Number of path points after furthest one any trajectory achieves to drive path tracking relative to."
+msgstr "在任何轨迹实现驱动路径跟踪之后，最远点后的路径点数。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:671
@@ -4811,7 +4811,7 @@ msgstr "优先正向评论家"
 
 #: ../../configuration/packages/configuring-mppic.rst:704
 msgid "Distance (m) between robot and goal to **stop** considering preferring forward and allow goal critics to take over."
-msgstr "Distance (m) between robot and goal to **stop** considering preferring forward and allow goal critics to take over."
+msgstr "机器人与目标之间的距离（米），考虑前进优先并允许目标评论家接管的**停止**。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:707
@@ -4821,7 +4821,7 @@ msgstr "旋转评论家"
 
 #: ../../configuration/packages/configuring-mppic.rst:822
 msgid "Notes to Users"
-msgstr "Notes to Users"
+msgstr "用户注意事项"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:825
@@ -4831,47 +4831,47 @@ msgstr "智慧的一般性言论"
 
 #: ../../configuration/packages/configuring-mppic.rst:827
 msgid "The ``model_dt`` parameter generally should be set to the duration of your control frequency. So if your control frequency is 20hz, this should be ``0.05``. However, you may also set it lower **but not larger**."
-msgstr "The ``model_dt`` parameter generally should be set to the duration of your control frequency. So if your control frequency is 20hz, this should be ``0.05``. However, you may also set it lower **but not larger**."
+msgstr "``model_dt``参数通常应设置为控制频率的持续时间。因此，如果控制频率为20hz，则应设置为``0.05``。但是，您也可以将其设置得更低**但不能更高**。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:829
 msgid "Visualization of the trajectories using ``visualize`` uses compute resources to back out trajectories for visualization and therefore slows compute time. It is not suggested that this parameter is set to ``true`` during a deployed use, but is a useful debug instrument while tuning the system, but use sparingly. Visualizing 2000 batches @ 56 points at 30 hz is *alot*."
-msgstr "Visualization of the trajectories using ``visualize`` uses compute resources to back out trajectories for visualization and therefore slows compute time. It is not suggested that this parameter is set to ``true`` during a deployed use, but is a useful debug instrument while tuning the system, but use sparingly. Visualizing 2000 batches @ 56 points at 30 hz is *alot*."
+msgstr "使用``visualize``可视化轨迹会使用计算资源来计算可视化所需的轨迹，因此会降低计算时间。在部署使用时，不建议将此参数设置为``true``，但在调整系统时，它是一个有用的调试工具，但请谨慎使用。以30 Hz的频率可视化2000批次、每批56个点，是非常大的负担。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:831
 msgid "The most common parameters you might want to start off changing are the velocity profiles (``vx_max``, ``vx_min``, ``wz_max``, and ``vy_max`` if holonomic) and the ``motion_model`` to correspond to your vehicle. Its wise to consider the ``prune_distance`` of the path plan in proportion to your maximum velocity and prediction horizon. The only deeper parameter that will likely need to be adjusted for your particular settings is the Obstacle critics' ``repulsion_weight`` since the tuning of this is proprtional to your inflation layer's radius. Higher radii should correspond to reduced ``repulsion_weight`` due to the penalty formation (e.g. ``inflation_radius - min_dist_to_obstacle``). If this penalty is too high, the robot will slow significantly when entering cost-space from non-cost space or jitter in narrow corridors. It is noteworthy, but likely not necessary to be changed, that the Obstacle critic may use the full footprint information if ``consider_footprint = true``, though comes at an increased compute cost."
-msgstr "The most common parameters you might want to start off changing are the velocity profiles (``vx_max``, ``vx_min``, ``wz_max``, and ``vy_max`` if holonomic) and the ``motion_model`` to correspond to your vehicle. Its wise to consider the ``prune_distance`` of the path plan in proportion to your maximum velocity and prediction horizon. The only deeper parameter that will likely need to be adjusted for your particular settings is the Obstacle critics' ``repulsion_weight`` since the tuning of this is proprtional to your inflation layer's radius. Higher radii should correspond to reduced ``repulsion_weight`` due to the penalty formation (e.g. ``inflation_radius - min_dist_to_obstacle``). If this penalty is too high, the robot will slow significantly when entering cost-space from non-cost space or jitter in narrow corridors. It is noteworthy, but likely not necessary to be changed, that the Obstacle critic may use the full footprint information if ``consider_footprint = true``, though comes at an increased compute cost."
+msgstr "您可能希望首先更改的最常见参数是速度配置文件（``vx_max``、``vx_min``、``wz_max``以及如果是全向的，则为``vy_max``）以及与您的车辆对应的``motion_model``。明智的做法是将路径规划的``prune_distance``与您的最大速度和预测视野成比例地考虑。根据您的特定设置，可能需要调整的更深层次的参数仅限于障碍物评论家的``repulsion_weight``，因为其调整与膨胀层的半径成比例。较大的半径应对由于惩罚形成（例如``inflation_radius - min_dist_to_obstacle``）而导致减小的``repulsion_weight``。如果此惩罚过高，机器人在从非成本空间进入成本空间或在狭窄的走廊中抖动时会显著减速。值得注意的是，但可能不需要更改的是，如果``consider_footprint = true``，障碍物评论家可以使用完整的足迹信息，但会增加计算成本。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:833
 msgid "Otherwise, the parameters have been closely pre-tuned by your friendly neighborhood navigator to give you a decent starting point that hopefully you only need to retune for your specific desired behavior lightly (if at all). Varying costmap parameters or maximum speeds are the actions which require the most attention, as described below:"
-msgstr "Otherwise, the parameters have been closely pre-tuned by your friendly neighborhood navigator to give you a decent starting point that hopefully you only need to retune for your specific desired behavior lightly (if at all). Varying costmap parameters or maximum speeds are the actions which require the most attention, as described below:"
+msgstr "除此之外，这些参数已经由友好的导航器进行了精细调整，以便为您提供一个不错的起点，希望您只需要轻微地重新调整以满足特定的需求（如果需要的话）。调整代价图参数或最大速度是需要特别关注的操作，如下所述："
 
 
 #: ../../configuration/packages/configuring-mppic.rst:836
 msgid "Prediction Horizon, Costmap Sizing, and Offsets"
-msgstr "Prediction Horizon, Costmap Sizing, and Offsets"
+msgstr "预测视野、成本地图尺寸和偏移量"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:838
 msgid "As this is a predictive planner, there is some relationship between maximum speed, prediction times, and costmap size that users should keep in mind while tuning for their application. If a controller server costmap is set to 3.0m in size, that means that with the robot in the center, there is 1.5m of information on either side of the robot. When your prediction horizon (``time_steps * model_dt``) at maximum speed (``vx_max``) is larger than this, then your robot will be artificially limited in its maximum speeds and behavior by the costmap limitation. For example, if you predict forward 3 seconds (60 steps @ 0.05s per step) at 0.5m/s maximum speed, the **minimum** required costmap radius is 1.5m - or 3m total width."
-msgstr "As this is a predictive planner, there is some relationship between maximum speed, prediction times, and costmap size that users should keep in mind while tuning for their application. If a controller server costmap is set to 3.0m in size, that means that with the robot in the center, there is 1.5m of information on either side of the robot. When your prediction horizon (``time_steps * model_dt``) at maximum speed (``vx_max``) is larger than this, then your robot will be artificially limited in its maximum speeds and behavior by the costmap limitation. For example, if you predict forward 3 seconds (60 steps @ 0.05s per step) at 0.5m/s maximum speed, the **minimum** required costmap radius is 1.5m - or 3m total width."
+msgstr "由于这是一个预测性规划器，用户在调整应用程序时应该注意最大速度、预测时间和代价图大小之间的某种关系。如果控制器服务器代价图的大小设置为3.0米，这意味着在机器人中心，机器人两侧各有1.5米的信息。当您的预测视野（``time_steps * model_dt``）在最大速度（``vx_max``）下大于这个值时，机器人在最大速度和行为上将受到代价图限制的人为限制。例如，如果您以0.5米/秒的最大速度向前预测3秒（每步0.05秒，60步），则**最小**所需的代价图半径为1.5米，或者总宽度为3米。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:840
 msgid "The same applies to the Path Follow and Align offsets from furthest. In the same example if the furthest point we can consider is already at the edge of the costmap, then further offsets are thresholded because they're unusable. So its important while selecting these parameters to make sure that the theoretical offsets can exist on the costmap settings selected with the maximum prediction horizon and velocities desired."
-msgstr "The same applies to the Path Follow and Align offsets from furthest. In the same example if the furthest point we can consider is already at the edge of the costmap, then further offsets are thresholded because they're unusable. So its important while selecting these parameters to make sure that the theoretical offsets can exist on the costmap settings selected with the maximum prediction horizon and velocities desired."
+msgstr "相同的原理适用于最远点的路径跟踪和对齐偏移量。在同样的示例中，如果我们可以考虑的最远点已经在成本地图的边缘，则进一步的偏移将被阈值化，因为它们是不可用的。因此，在选择这些参数时，确保理论偏移可以存在于选择的具有所需最大预测视野和速度的成本地图设置中非常重要。"
 
 
 #, python-format
 msgid "The Path Follow critic cannot drive velocities greater than the projectable distance of that velocity on the available path on the rolling costmap. The Path Align critic `offset_from_furthest` represents the number of path points a trajectory passes through while tracking the path. If this is set either absurdly low (e.g. 5) it can trigger when a robot is simply trying to start path tracking causing some suboptimal behaviors and local minima while starting a task. If it is set absurdly high (e.g. 50) relative to the path resolution and costmap size, then the critic may never trigger or only do so when at full-speed. A balance here is wise. A selection of this value to be ~30% of the maximum velocity distance projected is good (e.g. if a planner produces points every 2.5cm, 60 can fit on the 1.5m local costmap radius. If the max speed is 0.5m/s with a 3s prediction time, then 20 points represents 33% of the maximum speed projected over the prediction horizon onto the path). When in doubt, ``prediction_horizon_s * max_speed / path_resolution / 3.0`` is a good baseline."
-msgstr "The Path Follow critic cannot drive velocities greater than the projectable distance of that velocity on the available path on the rolling costmap. The Path Align critic `offset_from_furthest` represents the number of path points a trajectory passes through while tracking the path. If this is set either absurdly low (e.g. 5) it can trigger when a robot is simply trying to start path tracking causing some suboptimal behaviors and local minima while starting a task. If it is set absurdly high (e.g. 50) relative to the path resolution and costmap size, then the critic may never trigger or only do so when at full-speed. A balance here is wise. A selection of this value to be ~30% of the maximum velocity distance projected is good (e.g. if a planner produces points every 2.5cm, 60 can fit on the 1.5m local costmap radius. If the max speed is 0.5m/s with a 3s prediction time, then 20 points represents 33% of the maximum speed projected over the prediction horizon onto the path). When in doubt, ``prediction_horizon_s * max_speed / path_resolution / 3.0`` is a good baseline."
+msgstr "路径跟随评价器无法使速度超过可用路径上可投影距离的最大值。路径对齐评价器``offset_from_furthest``表示在跟踪路径时，轨迹通过的路径点数量。如果将其设置得非常低（例如5），它可能会在机器人仅仅试图开始路径跟踪时触发，从而导致一些次优的行为和局部极小值。如果相对于路径分辨率和代价图大小将其设置得非常高（例如50），则评价器可能永远不会触发，或者只会在全速运行时触发。在这里要注意取得平衡。选择这个值时，应该是最大速度距离预测距离的约30%（例如，如果规划器每2.5厘米产生一个点，在1.5米的本地代价图半径上可以容纳60个点。如果最大速度为0.5米/秒，预测时间为3秒，则20个点代表了沿路径投影的最大"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:845
 msgid "Obstacle, Inflation Layer, and Path Following"
-msgstr "Obstacle, Inflation Layer, and Path Following"
+msgstr "障碍物、膨胀层和路径跟踪"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:847
@@ -4881,7 +4881,7 @@ msgstr "There also exists a relationship between the costmap configurations and 
 
 #: ../../configuration/packages/configuring-mppic.rst:849
 msgid "Thus, care should be taken to select weights of the obstacle critic in conjunction with the costmap inflation radius and scale so that a robot does not have such issues. How I (Steve, your friendly neighborhood navigator) tuned this was to first create the appropriate obstacle critic behavior desirable in conjunction with the inflation layer parameters. Its worth noting that the Obstacle critic converts the cost into a distance from obstacles, so the nature of the distribution of costs in the inflation isn't overly significant. However, the inflation radius and the scale will define the cost at the end of the distribution where free-space meets the lowest cost value within the radius. So testing for quality behavior when going over that threshold should be considered."
-msgstr "Thus, care should be taken to select weights of the obstacle critic in conjunction with the costmap inflation radius and scale so that a robot does not have such issues. How I (Steve, your friendly neighborhood navigator) tuned this was to first create the appropriate obstacle critic behavior desirable in conjunction with the inflation layer parameters. Its worth noting that the Obstacle critic converts the cost into a distance from obstacles, so the nature of the distribution of costs in the inflation isn't overly significant. However, the inflation radius and the scale will define the cost at the end of the distribution where free-space meets the lowest cost value within the radius. So testing for quality behavior when going over that threshold should be considered."
+msgstr "因此，在选择障碍物评估函数的权重时，应注意与代价图膨胀半径和比例配合使用，以避免机器人出现这样的问题。我（史蒂夫，你友好的附近导航员）调整的方法是首先创建与膨胀层参数相配合的合适的障碍物评估函数行为。值得注意的是，障碍物评估函数将代价转化为与障碍物的距离，因此膨胀中代价的分布性质并不是非常重要。然而，膨胀半径和比例将定义分布的末端代价，即自由空间与半径内最低代价值相交的位置。因此，在超过该阈值时测试质量行为应该被考虑。"
 
 
 #: ../../configuration/packages/configuring-mppic.rst:851
@@ -4891,7 +4891,7 @@ msgstr "As you increase or decrease your weights on the Obstacle, you may notice
 
 #: ../../configuration/packages/configuring-mppic.rst:853
 msgid "Once you have your obstacle avoidance behavior tuned and matched with an appropriate path following penalty, tune the Path Align critic to align with the path. If you design exact-path-alignment behavior, its possible to skip the obstacle critic step as highly tuning the system to follow the path will give it less ability to deviate to avoid obstacles (though it'll slow and stop). Tuning the critic weight for the Obstacle critic high will do the job to avoid near-collisions but the repulsion weight is largely unnecessary to you. For others wanting more dynamic behavior, it *can* be beneficial to slowly lower the weight on the obstacle critic to give the path alignment critic some more room to work. If your path was generated with a cost-aware planner (like all provided by Nav2) and providing paths sufficiently far from obstacles for your satisfaction, the impact of a slightly reduced Obstacle critic with a Path Alignment critic will do you well. Not over-weighting the path align critic will allow the robot to  deviate from the path to get around dynamic obstacles in the scene or other obstacles not previous considered during path planning. It is subjective as to the best behavior for your application, but it has been shown that MPPI can be an exact path tracker and/or avoid dynamic obstacles very fluidly and everywhere in between. The defaults provided are in the generally right regime for a balanced initial trade-off."
-msgstr "Once you have your obstacle avoidance behavior tuned and matched with an appropriate path following penalty, tune the Path Align critic to align with the path. If you design exact-path-alignment behavior, its possible to skip the obstacle critic step as highly tuning the system to follow the path will give it less ability to deviate to avoid obstacles (though it'll slow and stop). Tuning the critic weight for the Obstacle critic high will do the job to avoid near-collisions but the repulsion weight is largely unnecessary to you. For others wanting more dynamic behavior, it *can* be beneficial to slowly lower the weight on the obstacle critic to give the path alignment critic some more room to work. If your path was generated with a cost-aware planner (like all provided by Nav2) and providing paths sufficiently far from obstacles for your satisfaction, the impact of a slightly reduced Obstacle critic with a Path Alignment critic will do you well. Not over-weighting the path align critic will allow the robot to  deviate from the path to get around dynamic obstacles in the scene or other obstacles not previous considered during path planning. It is subjective as to the best behavior for your application, but it has been shown that MPPI can be an exact path tracker and/or avoid dynamic obstacles very fluidly and everywhere in between. The defaults provided are in the generally right regime for a balanced initial trade-off."
+msgstr "一旦你调整好了障碍物避免行为，并与合适的路径跟踪惩罚相匹配，就可以调整路径对齐评估函数以与路径对齐。如果设计了精确路径对齐行为，就可以跳过障碍物评估函数的步骤，因为高度调整系统以遵循路径将使其减少避开障碍物的能力（虽然速度会减慢并停止）。将障碍物评估函数的权重调整为较高将能够避免近碰撞，但斥力权重对你来说很大程度上是不必要的。对于希望获得更多动态行为的其他人来说，逐渐降低障碍物评估函数的权重会有利于给路径对齐评估函数提供更多操作空间。如果你的路径是使用具有代价感知的规划器（如Nav2提供的所有规划器）生成的，并且为您的满意度提供了远离障碍物的路径，那么稍微降低障碍物评估函数并使用路径对齐评估函数会有很好的效果。不过，过分加重路径对齐评估函数会使机器人能够偏离路径以绕过场景中的动态障碍物或先前在路径规划过程中未考虑的其他障碍物。对于你的应用来说，最佳行为是主观的，但已经证明MPPI可以是一个精确的路径跟踪器和/或能够非常流畅地避开动态障碍"
 
 
 #: ../../configuration/packages/configuring-navfn.rst:4
