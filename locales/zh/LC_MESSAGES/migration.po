@@ -342,7 +342,7 @@ msgstr "FollowPoint功能"
 
 #: ../../migration/Eloquent.rst:139
 msgid "A new behavior tree ``followpoint.xml`` has added. This behavior tree makes a robot follow a dynamically generated point, keeping a certain distance from the target. This can be used for moving target following maneuvers."
-msgstr "A new behavior tree ``followpoint.xml`` has added. This behavior tree makes a robot follow a dynamically generated point, keeping a certain distance from the target. This can be used for moving target following maneuvers."
+msgstr "添加了一个新的行为树``followpoint.xml``。该行为树使机器人跟随一个动态生成的点，并保持与目标的一定距离。这可用于移动目标跟踪操纵。"
 
 
 #: ../../migration/Eloquent.rst:141
@@ -352,7 +352,7 @@ msgstr "此功能已在`票号1660 <https://github.com/ros-planning/navigation2/
 
 #: ../../migration/Eloquent.rst:144
 msgid "New Costmap Layer"
-msgstr "New Costmap Layer"
+msgstr "新的Costmap图层"
 
 
 #: ../../migration/Eloquent.rst:145
@@ -362,7 +362,7 @@ msgstr "范围传感器代价地图在navigation2中尚未迁移为``nav2_costma
 
 #: ../../migration/Foxy.rst:4
 msgid "Foxy to Galactic"
-msgstr "Foxy to Galactic"
+msgstr "Foxy到Galactic"
 
 
 #: ../../migration/Foxy.rst:6
@@ -372,7 +372,7 @@ msgstr "从ROS 2 Foxy迁移到Galactic，我们添加了许多稳定性改进，
 
 #: ../../migration/Foxy.rst:9
 msgid "NavigateToPose Action Feedback updates"
-msgstr "NavigateToPose Action Feedback updates"
+msgstr "NavigateToPose动作反馈更新"
 
 
 #: ../../migration/Foxy.rst:11
@@ -382,77 +382,77 @@ msgstr "NavigateToPose动作反馈有两个改进："
 
 #: ../../migration/Foxy.rst:13
 msgid "``distance_remaining`` now integrates path poses to report accurate distance remaining to go. Previously, this field reported the euclidean distance between the current pose and the goal pose."
-msgstr "``distance_remaining`` now integrates path poses to report accurate distance remaining to go. Previously, this field reported the euclidean distance between the current pose and the goal pose."
+msgstr "``distance_remaining``现在整合了路径姿势以报告准确的剩余距离。先前，该字段报告当前姿势和目标姿势之间的欧几里德距离。"
 
 
 #: ../../migration/Foxy.rst:14
 msgid "Addition of ``estimated_time_remaining`` field. This field reports the estimated time remaining by dividing the remaining distance by the current speed."
-msgstr "Addition of ``estimated_time_remaining`` field. This field reports the estimated time remaining by dividing the remaining distance by the current speed."
+msgstr "新增了``estimated_time_remaining``字段。该字段通过将剩余距离除以当前速度来报告预计剩余时间。"
 
 
 #: ../../migration/Foxy.rst:17
 msgid "NavigateToPose BT-node Interface Changes"
-msgstr "NavigateToPose BT-node Interface Changes"
+msgstr "NavigateToPose BT节点接口更改"
 
 
 #: ../../migration/Foxy.rst:19
 msgid "The NavigateToPose input port has been changed to PoseStamped instead of Point and Quaternion."
-msgstr "The NavigateToPose input port has been changed to PoseStamped instead of Point and Quaternion."
+msgstr "NavigateToPose输入端口已更改为PoseStamped，而不是Point和Quaternion。"
 
 
 #: ../../migration/Foxy.rst:21
 msgid "See :ref:`bt_navigate_to_pose_action` for more information."
-msgstr "See :ref:`bt_navigate_to_pose_action` for more information."
+msgstr "更多信息请参阅:ref:`bt_navigate_to_pose_action`。"
 
 
 #: ../../migration/Foxy.rst:25
 msgid "NavigateThroughPoses and ComputePathThroughPoses Actions Added"
-msgstr "NavigateThroughPoses and ComputePathThroughPoses Actions Added"
+msgstr "新增了NavigateThroughPoses和ComputePathThroughPoses动作。"
 
 
 #: ../../migration/Foxy.rst:27
 msgid "The ``NavigateThroughPoses`` action has been added analog to the ``NavigateToPose``. Rather than going to a single position, this Action will allow a user to specify a number of hard intermediary pose constraints between the start and final pose to plan through. The new ``ComputePathThroughPoses`` action has been added to the ``planner_server`` to process these requests through ``N goal_poses``."
-msgstr "The ``NavigateThroughPoses`` action has been added analog to the ``NavigateToPose``. Rather than going to a single position, this Action will allow a user to specify a number of hard intermediary pose constraints between the start and final pose to plan through. The new ``ComputePathThroughPoses`` action has been added to the ``planner_server`` to process these requests through ``N goal_poses``."
+msgstr "新增了``NavigateThroughPoses``动作，类似于``NavigateToPose``。与前者只到达一个位置不同，这个动作允许用户在起始姿态和目标姿态之间指定多个硬约束的中间姿态。新增了``ComputePathThroughPoses``动作，用于在``planner_server``中处理这些通过``N个目标姿态``的请求。"
 
 
 #: ../../migration/Foxy.rst:29
 msgid "The ``ComputePathThroughPoses`` action server will take in a set of ``N`` goals to achieve, plan through each pose and concatenate the output path for use in navigation. The controller and navigator know nothing about the semantics of the generated path, so the robot will not stop or slow on approach to these goals. It will rather continue through each pose as it were any other point on the path continuously. When paired with the ``SmacPlanner``, this feature can be used to generate **completely kinematically feasible trajectories through pose constraints**."
-msgstr "The ``ComputePathThroughPoses`` action server will take in a set of ``N`` goals to achieve, plan through each pose and concatenate the output path for use in navigation. The controller and navigator know nothing about the semantics of the generated path, so the robot will not stop or slow on approach to these goals. It will rather continue through each pose as it were any other point on the path continuously. When paired with the ``SmacPlanner``, this feature can be used to generate **completely kinematically feasible trajectories through pose constraints**."
+msgstr "``ComputePathThroughPoses``动作服务器将接收一组``N``个目标以实现，通过每个姿势进行规划，并连接输出路径以供导航使用。控制器和导航器对生成路径的语义一无所知，因此机器人不会在接近这些目标时停止或减速。相反，它将像处理路径上的任何其他点一样持续通过每个姿势。与``SmacPlanner``配对使用时，此功能可用于生成**完全符合运动约束的轨迹**。"
 
 
 #: ../../migration/Foxy.rst:31
 msgid "If you wish to stop at each goal pose, consider using the waypoint follower instead, which will stop and allow a user to optionally execute a task plugin at each pose."
-msgstr "If you wish to stop at each goal pose, consider using the waypoint follower instead, which will stop and allow a user to optionally execute a task plugin at each pose."
+msgstr "如果您希望在每个目标姿态处停下来，请考虑使用航点跟随器（waypoint follower），它会停下来，并允许用户在每个姿态上选择性地执行任务插件。"
 
 
 #: ../../migration/Foxy.rst:34
 msgid "ComputePathToPose BT-node Interface Changes"
-msgstr "ComputePathToPose BT-node Interface Changes"
+msgstr "ComputePathToPose BT节点接口更改"
 
 
 #: ../../migration/Foxy.rst:36
 msgid "The ``start`` input port has been added to optionally allow the request of a path from ``start`` to ``goal``  instead of from the current position of the robot to ``goal``."
-msgstr "The ``start`` input port has been added to optionally allow the request of a path from ``start`` to ``goal``  instead of from the current position of the robot to ``goal``."
+msgstr "新增了``start``输入端口，可选择性地请求从``start``到``goal``的路径，而不是从机器人的当前位置到``goal``的路径。"
 
 
 #: ../../migration/Foxy.rst:38
 msgid "See :ref:`bt_compute_path_to_pose_action` for more information."
-msgstr "See :ref:`bt_compute_path_to_pose_action` for more information."
+msgstr "有关详细信息，请参见：:ref:`bt_compute_path_to_pose_action`。"
 
 
 #: ../../migration/Foxy.rst:41
 msgid "ComputePathToPose Action Interface Changes"
-msgstr "ComputePathToPose Action Interface Changes"
+msgstr "ComputePathToPose Action接口变更"
 
 
 #: ../../migration/Foxy.rst:43
 msgid "The goal pose field ``pose`` was changed to ``goal``."
-msgstr "The goal pose field ``pose`` was changed to ``goal``."
+msgstr "目标姿势字段``pose``已更改为``goal``。"
 
 
 #: ../../migration/Foxy.rst:44
 msgid "The PoseStamped field ``start`` has been added."
-msgstr "The PoseStamped field ``start`` has been added."
+msgstr "新增了PoseStamped字段``start``。"
 
 
 #: ../../migration/Foxy.rst:45
@@ -462,7 +462,7 @@ msgstr "The bool field ``use_start`` has been added."
 
 #: ../../migration/Foxy.rst:47
 msgid "These two additional fields have been added to optionally allow, when ``use_start`` is true, the request of a path from ``start`` to ``goal`` instead of from the current position of the robot to ``goal``. Corresponding changes have been done of the Planner Server."
-msgstr "These two additional fields have been added to optionally allow, when ``use_start`` is true, the request of a path from ``start`` to ``goal`` instead of from the current position of the robot to ``goal``. Corresponding changes have been done of the Planner Server."
+msgstr "这两个附加字段可选择性地在``use_start``为true时，允许请求从``start``到``goal``的路径，而不是从机器人的当前位置到``goal``的路径。相应的变更已在Planner Server上进行。"
 
 
 #: ../../migration/Foxy.rst:50
@@ -472,7 +472,7 @@ msgstr "BackUp BT-node Interface Changes"
 
 #: ../../migration/Foxy.rst:52
 msgid "The ``backup_dist`` and ``backup_speed`` input ports should both be positive values indicating the distance to go backward respectively the speed with which the robot drives backward."
-msgstr "The ``backup_dist`` and ``backup_speed`` input ports should both be positive values indicating the distance to go backward respectively the speed with which the robot drives backward."
+msgstr "``backup_dist``和``backup_speed``输入端口应为正值，分别指示后退距离和机器人后退时的速度。"
 
 
 #: ../../migration/Foxy.rst:55
