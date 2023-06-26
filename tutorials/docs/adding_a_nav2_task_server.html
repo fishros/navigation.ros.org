@@ -343,7 +343,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">添加一个新的Nav2任务服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lifecycle-nodes">生命周期节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#composition">组合</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#error-codes">Error codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-codes">错误代码</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#conclusion">结论</a></li>
 </ul>
 </li>
@@ -989,15 +989,15 @@
 </div>
 <div class="section" id="composition">
 <h2>组合<a class="headerlink" href="#composition" title="永久链接至标题"></a></h2>
-<p>Composition is the second key component nav2 task servers that was introduced to reduce the memory and CPU resources by putting multiple nodes in a single process. In Nav2, Composition can be used to compose all Nav2 nodes in a single process instead of launching them separately. This is useful for deployment on embedded systems where developers need to optimize resource usage.</p>
+<p>Composition 是 nav2 任务服务器的第二个关键组件，通过将多个节点放在单个进程中来减少内存和 CPU 资源的使用。在 Nav2 中，可以使用 Composition 将所有 Nav2 节点组合到单个进程中，而不是分别启动它们。这在嵌入式系统上部署时非常有用，开发人员需要优化资源使用情况。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
 <p>有关组合的更多信息可以在`这里 &lt;<a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Intermediate/Composition.html">https://docs.ros.org/en/rolling/Tutorials/Intermediate/Composition.html</a>&gt;`_ 找到。</p>
 </div>
-<p>In the following section, we give an example on how to add a new Nav2 server, which we notionally call the <code class="docutils literal notranslate"><span class="pre">route_server</span></code>, to our system.</p>
+<p>在下一部分中，我们将给出一个示例，说明如何向我们的系统中添加一个新的 Nav2 服务器，我们暂时称之为 <code class="docutils literal notranslate"><span class="pre">route_server</span></code>。</p>
 <p>我们使用启动文件将不同的服务器组合成一个单一进程。该进程由``ComposableNodeContainer``容器建立，通过``ComposableNode``添加组合节点。然后可以像其他Nav2节点一样启动和使用此容器。</p>
 <ol class="arabic">
-<li><p>Add a new <code class="docutils literal notranslate"><span class="pre">ComposableNode()</span></code> instance in your launch file pointing to the component container of your choice.</p>
+<li><p>在您的 launch 文件中添加一个新的 <code class="docutils literal notranslate"><span class="pre">ComposableNode()</span></code> 实例，指向您选择的组件容器。</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">container</span> <span class="o">=</span> <span class="n">ComposableNodeContainer</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_container&#39;</span><span class="p">,</span>
@@ -1016,11 +1016,11 @@
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>See example in composition demo's <a class="reference external" href="https://github.com/ros2/demos/blob/master/composition/launch/composition_demo.launch.py">composition_demo.launch.py</a>.</p>
+<p>请参考组合演示的示例`composition_demo.launch.py &lt;<a class="reference external" href="https://github.com/ros2/demos/blob/master/composition/launch/composition_demo.launch.py">https://github.com/ros2/demos/blob/master/composition/launch/composition_demo.launch.py</a>&gt;`_。</p>
 </div>
 </div></blockquote>
 </li>
-<li><p>Add the package containing the server to your <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> file.</p>
+<li><p>将包含服务器的包添加到您的 <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> 文件中。</p>
 <blockquote>
 <div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;exec_depend&gt;</span>nav2_route_server<span class="nt">&lt;/exec_depend&gt;</span>
 </pre></div>
@@ -1030,10 +1030,9 @@
 </ol>
 </div>
 <div class="section" id="error-codes">
-<h2>Error codes<a class="headerlink" href="#error-codes" title="永久链接至标题"></a></h2>
-<p>Your nav2 task server may also wish to return a 'error_code' in its action response (though not required). If there are semantically meaningful and actionable types of failures for your system, this is a systemic way to communicate those failures which may be automatically aggregated into the responses of the navigation system to your application.</p>
-<p>It is important to note that error codes from 0-9999 are reserved for internal nav2 servers with each server offset by 100 while external servers start at 10000 and end at 65535.
-The table below shows the current servers along with the expected error code structure.</p>
+<h2>错误代码<a class="headerlink" href="#error-codes" title="永久链接至标题"></a></h2>
+<p>您的 nav2 任务服务器可能还希望在其操作响应中返回一个 'error_code'（尽管不是必需的）。如果对于您的系统而言有语义上有意义且可执行的失败类型，这是一种系统化的方式来传达这些失败，这些失败可能会自动聚合到导航系统对您的应用程序的响应中。</p>
+<p>需要注意的是，0-9999的错误代码保留给内部nav2服务器，每个服务器的偏移量为100，而外部服务器的错误代码从10000开始，到65535结束。下表显示了当前的服务器以及预期的错误代码结构。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 53%" />
@@ -1041,25 +1040,25 @@ The table below shows the current servers along with the expected error code str
 <col style="width: 23%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Server Name</p></th>
-<th class="head"><p>Reserved</p></th>
+<tr class="row-odd"><th class="head"><p>服务器名称</p></th>
+<th class="head"><p>保留</p></th>
 <th class="head"><p>RANGE</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>...</p></td>
-<td><p>NONE=0, UNKNOWN=1</p></td>
+<td><p>NONE=0，UNKNOWN=1</p></td>
 <td><p>2-99</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_controller/src/controller_server.cpp">Controller Server</a></p></td>
-<td><p>NONE=0, UNKNOWN=100</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_controller/src/controller_server.cpp">控制器服务器</a></p></td>
+<td><p>NONE=0，UNKNOWN=100</p></td>
 <td><p>101-199</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_planner/src/planner_server.cpp">Planner Server</a> (compute_path_to_pose)</p></td>
-<td><p>NONE=0, UNKNOWN=200</p></td>
+<td><p>NONE=0，UNKNOWN=200</p></td>
 <td><p>201-299</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_planner/src/planner_server.cpp">Planner Server</a> (compute_path_through_poses)</p></td>
+<tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">`</span></a>规划器服务器`_（计算路径通过姿态）</p></td>
 <td><p>NONE=0, UNKNOWN=300</p></td>
 <td><p>301-399</p></td>
 </tr>
@@ -1068,7 +1067,7 @@ The table below shows the current servers along with the expected error code str
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_smoother/src/nav2_smoother.cpp">Smoother Server</a></p></td>
-<td><p>NONE=0, UNKNOWN=500</p></td>
+<td><p>NONE=0，UNKNOWN=500</p></td>
 <td><p>501-599</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_waypoint_follower/src/waypoint_follower.cpp">Waypoint Follower Server</a></p></td>
