@@ -92,7 +92,7 @@ msgstr "组合"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:72
 msgid "Composition is the second key component nav2 task servers that was introduced to reduce the memory and CPU resources by putting multiple nodes in a single process. In Nav2, Composition can be used to compose all Nav2 nodes in a single process instead of launching them separately. This is useful for deployment on embedded systems where developers need to optimize resource usage."
-msgstr "Composition is the second key component nav2 task servers that was introduced to reduce the memory and CPU resources by putting multiple nodes in a single process. In Nav2, Composition can be used to compose all Nav2 nodes in a single process instead of launching them separately. This is useful for deployment on embedded systems where developers need to optimize resource usage."
+msgstr "Composition 是 nav2 任务服务器的第二个关键组件，通过将多个节点放在单个进程中来减少内存和 CPU 资源的使用。在 Nav2 中，可以使用 Composition 将所有 Nav2 节点组合到单个进程中，而不是分别启动它们。这在嵌入式系统上部署时非常有用，开发人员需要优化资源使用情况。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:75
@@ -102,7 +102,7 @@ msgstr "有关组合的更多信息可以在`这里 <https://docs.ros.org/en/rol
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:77
 msgid "In the following section, we give an example on how to add a new Nav2 server, which we notionally call the ``route_server``, to our system."
-msgstr "In the following section, we give an example on how to add a new Nav2 server, which we notionally call the ``route_server``, to our system."
+msgstr "在下一部分中，我们将给出一个示例，说明如何向我们的系统中添加一个新的 Nav2 服务器，我们暂时称之为 ``route_server``。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:80
@@ -112,42 +112,42 @@ msgstr "我们使用启动文件将不同的服务器组合成一个单一进程
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:82
 msgid "Add a new ``ComposableNode()`` instance in your launch file pointing to the component container of your choice."
-msgstr "Add a new ``ComposableNode()`` instance in your launch file pointing to the component container of your choice."
+msgstr "在您的 launch 文件中添加一个新的 ``ComposableNode()`` 实例，指向您选择的组件容器。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:101
 msgid "See example in composition demo's `composition_demo.launch.py <https://github.com/ros2/demos/blob/master/composition/launch/composition_demo.launch.py>`_."
-msgstr "See example in composition demo's `composition_demo.launch.py <https://github.com/ros2/demos/blob/master/composition/launch/composition_demo.launch.py>`_."
+msgstr "请参考组合演示的示例`composition_demo.launch.py <https://github.com/ros2/demos/blob/master/composition/launch/composition_demo.launch.py>`_。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:103
 msgid "Add the package containing the server to your ``package.xml`` file."
-msgstr "Add the package containing the server to your ``package.xml`` file."
+msgstr "将包含服务器的包添加到您的 ``package.xml`` 文件中。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:111
 msgid "Error codes"
-msgstr "Error codes"
+msgstr "错误代码"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:113
 msgid "Your nav2 task server may also wish to return a 'error_code' in its action response (though not required). If there are semantically meaningful and actionable types of failures for your system, this is a systemic way to communicate those failures which may be automatically aggregated into the responses of the navigation system to your application."
-msgstr "Your nav2 task server may also wish to return a 'error_code' in its action response (though not required). If there are semantically meaningful and actionable types of failures for your system, this is a systemic way to communicate those failures which may be automatically aggregated into the responses of the navigation system to your application."
+msgstr "您的 nav2 任务服务器可能还希望在其操作响应中返回一个 'error_code'（尽管不是必需的）。如果对于您的系统而言有语义上有意义且可执行的失败类型，这是一种系统化的方式来传达这些失败，这些失败可能会自动聚合到导航系统对您的应用程序的响应中。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:115
 msgid "It is important to note that error codes from 0-9999 are reserved for internal nav2 servers with each server offset by 100 while external servers start at 10000 and end at 65535. The table below shows the current servers along with the expected error code structure."
-msgstr "It is important to note that error codes from 0-9999 are reserved for internal nav2 servers with each server offset by 100 while external servers start at 10000 and end at 65535. The table below shows the current servers along with the expected error code structure."
+msgstr "需要注意的是，0-9999的错误代码保留给内部nav2服务器，每个服务器的偏移量为100，而外部服务器的错误代码从10000开始，到65535结束。下表显示了当前的服务器以及预期的错误代码结构。"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:121
 msgid "Server Name"
-msgstr "Server Name"
+msgstr "服务器名称"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:121
 msgid "Reserved"
-msgstr "Reserved"
+msgstr "保留"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:121
@@ -162,7 +162,7 @@ msgstr "..."
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:123
 msgid "NONE=0, UNKNOWN=1"
-msgstr "NONE=0, UNKNOWN=1"
+msgstr "NONE=0，UNKNOWN=1"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:123
@@ -172,12 +172,12 @@ msgstr "2-99"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:125
 msgid "`Controller Server`_"
-msgstr "`Controller Server`_"
+msgstr "`控制器服务器`_"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:125
 msgid "NONE=0, UNKNOWN=100"
-msgstr "NONE=0, UNKNOWN=100"
+msgstr "NONE=0，UNKNOWN=100"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:125
@@ -192,7 +192,7 @@ msgstr "`Planner Server`_ (compute_path_to_pose)"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:127
 msgid "NONE=0, UNKNOWN=200"
-msgstr "NONE=0, UNKNOWN=200"
+msgstr "NONE=0，UNKNOWN=200"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:127
@@ -202,7 +202,7 @@ msgstr "201-299"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:129
 msgid "`Planner Server`_ (compute_path_through_poses)"
-msgstr "`Planner Server`_ (compute_path_through_poses)"
+msgstr "`规划器服务器`_（计算路径通过姿态）"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:129
@@ -222,7 +222,7 @@ msgstr "`Smoother Server`_"
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:133
 msgid "NONE=0, UNKNOWN=500"
-msgstr "NONE=0, UNKNOWN=500"
+msgstr "NONE=0，UNKNOWN=500"
 
 
 #: ../../tutorials/docs/adding_a_nav2_task_server.rst:133

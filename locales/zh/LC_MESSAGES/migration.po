@@ -132,7 +132,7 @@ msgstr "All plugin servers (controller, planner, recovery) now supports the use 
 
 #: ../../migration/Eloquent.rst:35
 msgid "Server Name"
-msgstr "Server Name"
+msgstr "服务器名称"
 
 
 #: ../../migration/Eloquent.rst:35
