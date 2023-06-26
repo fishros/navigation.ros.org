@@ -1367,77 +1367,77 @@ msgstr "然后将RViz中的``fixed frame``设置为``odom``，您现在应该在
 
 #: ../../setup_guides/sensors/setup_sensors.rst:550
 msgid "In this section of our robot setup guide, we have discussed the importance of sensor information for different tasks associated with Nav2. More specifically, tasks such as mapping (SLAM), localization (AMCL), and perception (costmap) tasks."
-msgstr "In this section of our robot setup guide, we have discussed the importance of sensor information for different tasks associated with Nav2. More specifically, tasks such as mapping (SLAM), localization (AMCL), and perception (costmap) tasks."
+msgstr "在我们的机器人设置指南的这一部分，我们讨论了传感器信息对于与Nav2相关的不同任务的重要性。更具体地说，这些任务包括地图创建（SLAM）、定位（AMCL）和感知（costmap）任务。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:552
 msgid "We also had a discussion on the common types of sensor messages in Nav2 which standardize the message formats for different sensor vendors. We also discussed how to add sensors to a simulated robot using Gazebo and how to verify that the sensors are working correctly through RViz."
-msgstr "We also had a discussion on the common types of sensor messages in Nav2 which standardize the message formats for different sensor vendors. We also discussed how to add sensors to a simulated robot using Gazebo and how to verify that the sensors are working correctly through RViz."
+msgstr "我们还讨论了Nav2中常见的传感器消息类型，这些消息类型标准化了不同传感器供应商的消息格式。我们还讨论了如何使用Gazebo向模拟机器人添加传感器，并通过RViz验证传感器的正确工作。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:554
 msgid "Lastly, we set up a basic configuration for the ``nav2_costmap_2d`` package using different layers to produce a global and local costmap. We then verify our work by visualizing these costmaps in RViz."
-msgstr "Lastly, we set up a basic configuration for the ``nav2_costmap_2d`` package using different layers to produce a global and local costmap. We then verify our work by visualizing these costmaps in RViz."
+msgstr "最后，我们使用不同的图层设置了``nav2_costmap_2d``软件包的基本配置，以生成全局和局部代价地图。然后，我们通过在RViz中可视化这些代价地图来验证我们的工作。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:4
 msgid "Setting Up Transformations"
-msgstr "Setting Up Transformations"
+msgstr "设置变换"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:6
 msgid "In this guide, we will be looking at the necessary transforms required by Nav2. These transforms allow Nav2 to interpret information coming in from various sources, such as sensors and odometry, by transforming them to the coordinate frames for use. Below is what a full transform tree for a robot looks like but we'll start with something much more simpler."
-msgstr "In this guide, we will be looking at the necessary transforms required by Nav2. These transforms allow Nav2 to interpret information coming in from various sources, such as sensors and odometry, by transforming them to the coordinate frames for use. Below is what a full transform tree for a robot looks like but we'll start with something much more simpler."
+msgstr "在本指南中，我们将讨论Nav2所需的必要变换。这些变换使Nav2能够解释来自各种来源（如传感器和里程计）的信息，通过将它们转换为用于使用的坐标框架。下面是一个机器人的完整变换树示例，但我们将从更简单的内容开始。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:11
 msgid "For this tutorial, we will first provide a brief introduction to transforms in ROS. Second, we will be working on a simple command-line demo of a TF2 static publisher to see it in action. Lastly, we will outline the necessary transforms that need to be published for Nav2 to function."
-msgstr "For this tutorial, we will first provide a brief introduction to transforms in ROS. Second, we will be working on a simple command-line demo of a TF2 static publisher to see it in action. Lastly, we will outline the necessary transforms that need to be published for Nav2 to function."
+msgstr "在本教程中，我们首先简要介绍ROS中的变换。其次，我们将通过一个简单的命令行演示TF2静态发布者来实际操作。最后，我们将概述需要发布的变换，以使Nav2能够正常运行。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:14
 msgid "Transforms Introduction"
-msgstr "Transforms Introduction"
+msgstr "变换介绍"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:17
 msgid "This section of this guide has been adapted from the `Setting Up You Robot using tf <http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF>`__ tutorial in the ROS (1) Navigation documentation."
-msgstr "This section of this guide has been adapted from the `Setting Up You Robot using tf <http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF>`__ tutorial in the ROS (1) Navigation documentation."
+msgstr "本指南的此部分内容改编自ROS（1）导航文档中的“使用tf设置机器人”教程。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:19
 msgid "Many ROS packages require the transform tree of a robot to be published using the TF2 ROS package. A transformation tree defines the relations between different coordinate systems, in terms of translation, rotation, and relative motion. To make this more concrete, let us apply an example of a simple robot that has a mobile base with a single laser sensor mounted on top of it."
-msgstr "Many ROS packages require the transform tree of a robot to be published using the TF2 ROS package. A transformation tree defines the relations between different coordinate systems, in terms of translation, rotation, and relative motion. To make this more concrete, let us apply an example of a simple robot that has a mobile base with a single laser sensor mounted on top of it."
+msgstr "许多ROS软件包要求使用TF2 ROS软件包来发布机器人的变换树。变换树定义了不同坐标系之间的关系，包括平移、旋转和相对运动。为了更具体，让我们应用一个简单机器人的例子，该机器人具有一个在其顶部安装的单个激光传感器的移动底座。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:21
 msgid "This robot has two defined coordinate frames: one corresponding to the center point of the mobile base of the robot, and one for the center point of the laser that is mounted on top of the base. We'll call the coordinate frame attached to the mobile base  ``base_link`` and we'll call the coordinate frame attached to the laser ``base_laser``. Note that will be talking more about the naming and conventions of these coordinate frames in the next section."
-msgstr "This robot has two defined coordinate frames: one corresponding to the center point of the mobile base of the robot, and one for the center point of the laser that is mounted on top of the base. We'll call the coordinate frame attached to the mobile base  ``base_link`` and we'll call the coordinate frame attached to the laser ``base_laser``. Note that will be talking more about the naming and conventions of these coordinate frames in the next section."
+msgstr "此机器人有两个定义的坐标框架：一个对应于机器人移动基座的中心点，另一个对应于安装在基座顶部的激光的中心点。我们将称与移动基座相关联的坐标框架为``base_link``，称与激光相关联的坐标框架为``base_laser``。请注意，我们将在下一节中更详细地讨论这些坐标框架的命名和约定。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:23
 msgid "At this point, let's assume that we have some data from the laser in the form of distance measurements from the laser's center point. In other words, we have some data in the ``base_laser`` coordinate frame."
-msgstr "At this point, let's assume that we have some data from the laser in the form of distance measurements from the laser's center point. In other words, we have some data in the ``base_laser`` coordinate frame."
+msgstr "在这一点上，让我们假设我们有一些来自激光器的数据，以距离激光中心点的测量形式存在。换句话说，我们有一些``base_laser``坐标框架中的数据。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:25
 msgid "Now, suppose we want to take this data and use it to help the mobile base avoid obstacles in the world. To do this successfully, we need a way to transform the laser scan we've received from the ``base_laser`` frame to the  ``base_link`` frame. In essence, we need to define a relationship between the ``base_laser`` and  ``base_link`` coordinate frames."
-msgstr "Now, suppose we want to take this data and use it to help the mobile base avoid obstacles in the world. To do this successfully, we need a way to transform the laser scan we've received from the ``base_laser`` frame to the  ``base_link`` frame. In essence, we need to define a relationship between the ``base_laser`` and  ``base_link`` coordinate frames."
+msgstr "现在，假设我们想利用从``base_laser``坐标框架接收到的数据帮助移动基座避开世界中的障碍物。为了成功实现这一点，我们需要一种将接收到的激光扫描从``base_laser``坐标框架转换到``base_link``坐标框架的方法。本质上，我们需要定义``base_laser``和``base_link``坐标框架之间的关系。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:30
 msgid "In defining this relationship, let us assume that the only data we have is that the laser is mounted 10cm forward and 20cm above the center point of the mobile base. This gives us a translational offset that relates the  ``base_link`` frame to the ``base_laser`` frame. Specifically, we know that to get data from the  ``base_link`` frame to the ``base_laser`` frame, we must apply a translation of (x: 0.1m, y: 0.0m, z: 0.2m), and transversely, to get data from the ``base_laser`` frame to the  ``base_link`` frame, we must apply the opposite translation (x: -0.1m, y: 0.0m, z: -0.20m)."
-msgstr "In defining this relationship, let us assume that the only data we have is that the laser is mounted 10cm forward and 20cm above the center point of the mobile base. This gives us a translational offset that relates the  ``base_link`` frame to the ``base_laser`` frame. Specifically, we know that to get data from the  ``base_link`` frame to the ``base_laser`` frame, we must apply a translation of (x: 0.1m, y: 0.0m, z: 0.2m), and transversely, to get data from the ``base_laser`` frame to the  ``base_link`` frame, we must apply the opposite translation (x: -0.1m, y: 0.0m, z: -0.20m)."
+msgstr "在定义这种关系时，让我们假设我们唯一拥有的数据是激光器相对于移动底座中心点的前向10厘米和上方20厘米的安装位置。这给了我们一个平移偏移量，将``base_link``框架与``base_laser``框架相关联。具体来说，我们知道要将数据从``base_link``框架转换到``base_laser``框架，我们必须应用平移变换（x: 0.1m，y: 0.0m，z: 0.2m），反之亦然，要将数据从``base_laser``框架转换到``base_link``框架，我们必须应用相反的平移变换（x: -0.1m，y: 0.0m，z: -0.20m）。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:32
 msgid "We could choose to manage this relationship ourselves, meaning to store and apply the appropriate translations between the frames when necessary, but this becomes a real pain as the number of coordinate frames increases. Luckily, we don't have to do this work ourselves. Instead, we'll define the relationship between  ``base_link`` and ``base_laser`` once using TF2 and let it manage the transformation between the two coordinate frames for us. This is especially useful when working with non-static transformations, such as a set of frames that are moving relative to each other, like a robot base frame in a map frame."
-msgstr "We could choose to manage this relationship ourselves, meaning to store and apply the appropriate translations between the frames when necessary, but this becomes a real pain as the number of coordinate frames increases. Luckily, we don't have to do this work ourselves. Instead, we'll define the relationship between  ``base_link`` and ``base_laser`` once using TF2 and let it manage the transformation between the two coordinate frames for us. This is especially useful when working with non-static transformations, such as a set of frames that are moving relative to each other, like a robot base frame in a map frame."
+msgstr "我们可以选择自己管理这种关系，即在必要时存储和应用两个坐标框架之间的适当变换，但随着坐标框架数量的增加，这将变得非常麻烦。幸运的是，我们不必自己完成这项工作。相反，我们将使用TF2一次性定义``base_link``和``base_laser``之间的关系，并让它为我们管理两个坐标框架之间的变换。在处理非静态变换时，这尤其有用，例如一组相对运动的坐标框架，比如地图坐标框架中的机器人基座坐标框架。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:34
 msgid "To define and store the relationship between the  ``base_link`` and ``base_laser`` frames using TF2, we need to add them to a transform tree. Conceptually, each node in the transform tree corresponds to a coordinate frame, and each edge corresponds to the transform that needs to be applied to move from the current node to its child. TF2 uses a tree structure to guarantee that there is only a single traversal that links any two coordinate frames together, and assumes that all edges in the tree are directed from parent to child nodes."
-msgstr "To define and store the relationship between the  ``base_link`` and ``base_laser`` frames using TF2, we need to add them to a transform tree. Conceptually, each node in the transform tree corresponds to a coordinate frame, and each edge corresponds to the transform that needs to be applied to move from the current node to its child. TF2 uses a tree structure to guarantee that there is only a single traversal that links any two coordinate frames together, and assumes that all edges in the tree are directed from parent to child nodes."
+msgstr "要使用TF2定义和存储``base_link``和``base_laser``帧之间的关系，我们需要将它们添加到一个变换树中。在概念上，变换树中的每个节点对应一个坐标帧，每条边对应于从当前节点到其子节点的变换。TF2使用树结构来保证任意两个坐标帧之间只有一条遍历路径，并假设树中的所有边都是从父节点指向子节点的。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:39
@@ -1447,7 +1447,7 @@ msgstr "To create a transform tree for our simple example, we'll create two node
 
 #: ../../setup_guides/transformation/setup_transforms.rst:41
 msgid "Let's choose the  ``base_link`` coordinate frame as the parent because when other pieces/sensors are added to the robot, it will make the most sense for them to relate to the ``base_laser`` frame by traversing through the  ``base_link`` frame. This means that the transform associated with the edge connecting  ``base_link`` and ``base_laser`` should be (x: 0.1m, y: 0.0m, z: 0.2m)."
-msgstr "Let's choose the  ``base_link`` coordinate frame as the parent because when other pieces/sensors are added to the robot, it will make the most sense for them to relate to the ``base_laser`` frame by traversing through the  ``base_link`` frame. This means that the transform associated with the edge connecting  ``base_link`` and ``base_laser`` should be (x: 0.1m, y: 0.0m, z: 0.2m)."
+msgstr "让我们选择``base_link``坐标帧作为父节点，因为当其他部件/传感器添加到机器人上时，它们与``base_laser``坐标帧之间的关系最容易通过遍历``base_link``坐标帧来建立。这意味着连接``base_link``和``base_laser``的边对应的变换应为（x: 0.1m，y: 0.0m，z: 0.2m）。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:43
@@ -1457,7 +1457,7 @@ msgstr "With this transform tree set up, converting the laser scan received in t
 
 #: ../../setup_guides/transformation/setup_transforms.rst:46
 msgid "Static Transform Publisher Demo"
-msgstr "Static Transform Publisher Demo"
+msgstr "静态变换发布器演示"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:48
@@ -1467,7 +1467,7 @@ msgstr "If you are new to ROS 2 or do not have a working environment yet, then p
 
 #: ../../setup_guides/transformation/setup_transforms.rst:50
 msgid "Now let's try publishing a very simple transform using the static_transform_publisher tool provided by TF2. We will be publishing a transformation from the link ``base_link`` to the link ``base_laser`` with a translation of (x: 0.1m, y: 0.0m, z: 0.2m). Note that we will be building the transform from the diagram earlier in this tutorial."
-msgstr "Now let's try publishing a very simple transform using the static_transform_publisher tool provided by TF2. We will be publishing a transformation from the link ``base_link`` to the link ``base_laser`` with a translation of (x: 0.1m, y: 0.0m, z: 0.2m). Note that we will be building the transform from the diagram earlier in this tutorial."
+msgstr "现在让我们尝试使用TF2提供的static_transform_publisher工具发布一个非常简单的变换。我们将发布从链接``base_link``到链接``base_laser``的变换，其平移为（x: 0.1m，y: 0.0m，z: 0.2m）。请注意，我们将根据本教程中的早期图表构建变换。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:52
@@ -1477,7 +1477,7 @@ msgstr "Open up your command line and execute the following command:"
 
 #: ../../setup_guides/transformation/setup_transforms.rst:58
 msgid "With this, we are now sucessfully publishing our ``base_link`` to ``base_laser`` transform in TF2. Let us now check if it is working properly through ``tf2_echo``. Open up a separate command line window and execute the following:"
-msgstr "With this, we are now sucessfully publishing our ``base_link`` to ``base_laser`` transform in TF2. Let us now check if it is working properly through ``tf2_echo``. Open up a separate command line window and execute the following:"
+msgstr "通过这样做，我们现在成功地在TF2中发布了``base_link``到``base_laser``的变换。现在让我们通过``tf2_echo``检查它是否正常工作。打开一个单独的命令行窗口并执行以下操作："
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:64
@@ -1487,7 +1487,7 @@ msgstr "You should be able to observe a repeated output simiar to the one below.
 
 #: ../../setup_guides/transformation/setup_transforms.rst:72
 msgid "And that's it for this short demo - we were able to successfully publish a transform from ``base_link`` to ``base_laser`` using the TF2 library. Note that we do not recommend using the above demo in publishing transforms for your actual robotics projects, it is just a quick demo to see TF2 in action. For a real robot system, we would create a URDF file which embeds this information and more about your robot for use of the robot_state_publisher rather than the static_transform_publisher. There are more suitable and practical ways to go about this which will be discussed in the :ref:`urdf_handson` tutorial."
-msgstr "And that's it for this short demo - we were able to successfully publish a transform from ``base_link`` to ``base_laser`` using the TF2 library. Note that we do not recommend using the above demo in publishing transforms for your actual robotics projects, it is just a quick demo to see TF2 in action. For a real robot system, we would create a URDF file which embeds this information and more about your robot for use of the robot_state_publisher rather than the static_transform_publisher. There are more suitable and practical ways to go about this which will be discussed in the :ref:`urdf_handson` tutorial."
+msgstr "这就是这个简短演示的全部内容 - 我们能够成功地使用TF2库发布了从``base_link``到``base_laser``的变换。请注意，我们不建议在实际的机器人项目中使用上述演示，这只是一个快速演示以展示TF2的功能。对于真实的机器人系统，我们将创建一个包含此信息以及有关机器人更多信息的URDF文件，以供robot_state_publisher使用，而不是static_transform_publisher。有更适合和实用的方法来处理这个问题，这将在:ref:`urdf_handson`教程中讨论。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:75
@@ -1497,7 +1497,7 @@ msgstr "If you would like to learn more about TF2 and how to create your own tra
 
 #: ../../setup_guides/transformation/setup_transforms.rst:79
 msgid "Transforms in Navigation2"
-msgstr "Transforms in Navigation2"
+msgstr "Navigation2中的变换"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:81
