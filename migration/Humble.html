@@ -849,17 +849,17 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">从Humble升级到Iron</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-behavior-tree-navigator-plugins">新增行为树导航插件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#added-collision-monitor">Added Collision Monitor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#removed-use-sim-time-from-yaml">Removed use_sim_time from yaml</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-time-speed-up-of-smac-planner">Run-time Speed up of Smac Planner</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recursive-refinement-of-smac-and-simple-smoothers">Recursive Refinement of Smac and Simple Smoothers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simple-commander-python-api">Simple Commander Python API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smac-planner-start-pose-included-in-path">Smac Planner Start Pose Included in Path</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#parameterizable-collision-checking-in-rpp">Parameterizable Collision Checking in RPP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#expanded-planner-benchmark-tests">Expanded Planner Benchmark Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smac-planner-path-tolerances">Smac Planner Path Tolerances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#costmap-2d-node-default-constructor">costmap_2d_node default constructor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#feedback-for-navigation-failures">Feedback for Navigation Failures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#added-collision-monitor">添加了碰撞监测器。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removed-use-sim-time-from-yaml">从 yaml 文件中移除了 use_sim_time。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-time-speed-up-of-smac-planner">Smac 规划器的运行时加速。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recursive-refinement-of-smac-and-simple-smoothers">对 Smac 和 Simple 平滑器进行了递归细化。</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-commander-python-api">简单指挥官 Python API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smac-planner-start-pose-included-in-path">Smac 规划器路径包括起始姿态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parameterizable-collision-checking-in-rpp">可参数化的 RPP 碰撞检查</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expanded-planner-benchmark-tests">扩展规划器基准测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smac-planner-path-tolerances">Smac 规划器路径容差</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#costmap-2d-node-default-constructor">costmap_2d_node 默认构造函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feedback-for-navigation-failures">导航失败的反馈</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#costmap-filters">代价地图过滤器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#savitzky-golay-smoother">Savitzky-Golay平滑器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#changes-to-map-yaml-file-path-for-map-server-node-in-launch">Changes to Map yaml file path for map_server node in Launch</a></li>
@@ -940,54 +940,54 @@
              
   <div class="section" id="humble-to-iron">
 <span id="humble-migration"></span><h1>从Humble升级到Iron<a class="headerlink" href="#humble-to-iron" title="永久链接至标题"></a></h1>
-<p>Moving from ROS 2 Humble to Iron, a number of stability improvements were added that we will not specifically address here.</p>
+<p>从 ROS 2 Humble 版本升级到 Iron 版本，增加了一些稳定性改进，我们在此不会具体讨论。</p>
 <div class="section" id="new-behavior-tree-navigator-plugins">
 <h2>新增行为树导航插件<a class="headerlink" href="#new-behavior-tree-navigator-plugins" title="永久链接至标题"></a></h2>
-<p>New in <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3345">PR 3345</a>, the navigator types are exposed to users as plugins that can be replaced or new navigator types added. The default behaviors of navigate to pose and navigate through poses continue to be default behavior but are now customizable with new action interface definitions. These plugins implement the <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code> base class, which must process the action request, feedback, and completion messages. The behavior tree is handled by this base class with as much general logic as possible abstracted away from users to minimize repetition.</p>
-<p>See <a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#writing-new-nav2navigator-plugin"><span class="std std-ref">编写新的导航器插件</span></a> for a tutorial about writing new navigator plugins.</p>
+<p>在 PR 3345 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3345">https://github.com/ros-planning/navigation2/pull/3345</a>&gt; 中新增了导航器类型，以插件形式暴露给用户，可以替换或添加新的导航器类型。导航到位姿和通过位姿的默认行为仍然是默认行为，但现在可以使用新的动作接口定义进行自定义。这些插件实现了 <cite>nav2_core::BehaviorTreeNavigator</cite> 基类，必须处理动作请求、反馈和完成消息。行为树由该基类处理，尽可能将通用逻辑从用户中抽象出来，以减少重复。</p>
+<p>参见 <a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#writing-new-nav2navigator-plugin"><span class="std std-ref">编写新的导航器插件</span></a> 以了解关于编写新导航插件的教程。</p>
 </div>
 <div class="section" id="added-collision-monitor">
-<h2>Added Collision Monitor<a class="headerlink" href="#added-collision-monitor" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2982">PR 2982</a> adds new safety layer operating independently of Nav2 stack which ensures the robot to control the collisions with near obstacles, obtained from different sensors (LaserScan, PointCloud, IR, Sonars, etc...). See <a class="reference internal" href="../configuration/packages/configuring-collision-monitor.html#configuring-collision-monitor"><span class="std std-ref">碰撞监控</span></a> for more details. It is not included in the default bringup batteries included from <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code>.</p>
+<h2>添加了碰撞监测器。<a class="headerlink" href="#added-collision-monitor" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2982">PR 2982</a> 添加了一个独立于 Nav2 栈运行的新的安全层，确保机器人可以控制与近处障碍物的碰撞，这些障碍物来自不同的传感器（LaserScan、PointCloud、IR、Sonars 等）。有关详细信息，请参见 <a class="reference internal" href="../configuration/packages/configuring-collision-monitor.html#configuring-collision-monitor"><span class="std std-ref">碰撞监控</span></a>。它不包含在默认的 <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code> 中的启动电池中。</p>
 </div>
 <div class="section" id="removed-use-sim-time-from-yaml">
-<h2>Removed use_sim_time from yaml<a class="headerlink" href="#removed-use-sim-time-from-yaml" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3131">PR #3131</a> makes it possible to set the use_sim_time parameter from the launch file for multiple nodes instead of individually via the yaml files. If using the Nav2 launch files, you can optionally remove the use_sim_time parameter from your yaml files and set it via a launch argument.</p>
+<h2>从 yaml 文件中移除了 use_sim_time。<a class="headerlink" href="#removed-use-sim-time-from-yaml" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3131">PR #3131</a> 使得可以在启动文件中为多个节点设置 use_sim_time 参数，而不是通过 yaml 文件逐个设置。如果使用 Nav2 的启动文件，您可以选择从您的 yaml 文件中删除 use_sim_time 参数，并通过启动参数进行设置。</p>
 </div>
 <div class="section" id="run-time-speed-up-of-smac-planner">
-<h2>Run-time Speed up of Smac Planner<a class="headerlink" href="#run-time-speed-up-of-smac-planner" title="永久链接至标题"></a></h2>
-<p>The core data structure of the graph implementation in the Smac Planner framework was swapped out in <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3201">PR 3201</a> to using a specialized unordered map implementation. This speeds up the planner by 10% on trivial requests and reports up to 30% on complex plans that involve numerous rehashings.</p>
+<h2>Smac 规划器的运行时加速。<a class="headerlink" href="#run-time-speed-up-of-smac-planner" title="永久链接至标题"></a></h2>
+<p>在 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3201">PR 3201</a> 中，Smac Planner 框架中的图实现的核心数据结构被更换为使用专门的无序映射实现。这将加快规划器在简单请求上的速度约 10%，并在涉及大量重新哈希的复杂计划上报告高达 30% 的速度提升。</p>
 </div>
 <div class="section" id="recursive-refinement-of-smac-and-simple-smoothers">
-<h2>Recursive Refinement of Smac and Simple Smoothers<a class="headerlink" href="#recursive-refinement-of-smac-and-simple-smoothers" title="永久链接至标题"></a></h2>
-<p>The number of recursive refinements for the Simple and Smac Planner Smoothers have been exposed under the <code class="docutils literal notranslate"><span class="pre">refinement_num</span></code> parameter. Previous behavior had this hardcoded if <code class="docutils literal notranslate"><span class="pre">do_refinement</span> <span class="pre">=</span> <span class="pre">True</span></code> to <code class="docutils literal notranslate"><span class="pre">4</span></code>. Now, default is <code class="docutils literal notranslate"><span class="pre">2</span></code> to help decrease out-of-the-box over smoothing reducing in paths closer to collision than probably ideal, but old behavior can be achieved by changing this to <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<h2>对 Smac 和 Simple 平滑器进行了递归细化。<a class="headerlink" href="#recursive-refinement-of-smac-and-simple-smoothers" title="永久链接至标题"></a></h2>
+<p>对于 Simple 和 Smac Planner Smoothers，递归细化次数已在 <code class="docutils literal notranslate"><span class="pre">refinement_num</span></code> 参数下公开。以前的行为是，如果 <code class="docutils literal notranslate"><span class="pre">do_refinement</span> <span class="pre">=</span> <span class="pre">True</span></code>，则将此参数硬编码为 <code class="docutils literal notranslate"><span class="pre">4</span></code>。现在，默认值为 <code class="docutils literal notranslate"><span class="pre">2</span></code>，以帮助减少开箱即用时的过度平滑，从而减少与碰撞较近的路径，但可以通过将其更改为 <code class="docutils literal notranslate"><span class="pre">4</span></code> 来实现旧的行为。</p>
 </div>
 <div class="section" id="simple-commander-python-api">
-<h2>Simple Commander Python API<a class="headerlink" href="#simple-commander-python-api" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3159">PR 3159</a> and follow-up PRs add in Costmap API in Python3 simple commander to receive <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> messages from Nav2 and be able to work with them natively in Python3, analog to the C++ Costmap API. It also includes a line iterator and collision checking object to perform footprint or other collision checking in Python3. See the Simple Commander API for more details.</p>
+<h2>简单指挥官 Python API<a class="headerlink" href="#simple-commander-python-api" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3159">PR 3159</a> 和后续的 PR 添加了在 Python3 中的 Costmap API，以接收来自 Nav2 的 <code class="docutils literal notranslate"><span class="pre">OccupancyGrid</span></code> 消息，并能够在 Python3 中原生处理它们，类似于 C++ 的 Costmap API。它还包括了一个行迭代器和碰撞检测对象，用于在 Python3 中执行足迹或其他碰撞检测。有关详细信息，请参阅 Simple Commander API。</p>
 </div>
 <div class="section" id="smac-planner-start-pose-included-in-path">
-<h2>Smac Planner Start Pose Included in Path<a class="headerlink" href="#smac-planner-start-pose-included-in-path" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3168">PR 3168</a> adds the starting pose to the Smac Planners that was previously excluded during backtracing.</p>
+<h2>Smac 规划器路径包括起始姿态<a class="headerlink" href="#smac-planner-start-pose-included-in-path" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3168">PR 3168</a> 在 Smac Planner 中添加了起始姿态，而以前在回溯过程中被排除在外。</p>
 </div>
 <div class="section" id="parameterizable-collision-checking-in-rpp">
-<h2>Parameterizable Collision Checking in RPP<a class="headerlink" href="#parameterizable-collision-checking-in-rpp" title="永久链接至标题"></a></h2>
+<h2>可参数化的 RPP 碰撞检查<a class="headerlink" href="#parameterizable-collision-checking-in-rpp" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3204">PR 3204</a> adds makes collision checking for RPP optional (default on).</p>
 </div>
 <div class="section" id="expanded-planner-benchmark-tests">
-<h2>Expanded Planner Benchmark Tests<a class="headerlink" href="#expanded-planner-benchmark-tests" title="永久链接至标题"></a></h2>
+<h2>扩展规划器基准测试<a class="headerlink" href="#expanded-planner-benchmark-tests" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3218">PR 3218</a> adds launch files and updated scripts for performing objective random planning tests across the planners in Nav2 for benchmarking and metric computation.</p>
 </div>
 <div class="section" id="smac-planner-path-tolerances">
-<h2>Smac Planner Path Tolerances<a class="headerlink" href="#smac-planner-path-tolerances" title="永久链接至标题"></a></h2>
+<h2>Smac 规划器路径容差<a class="headerlink" href="#smac-planner-path-tolerances" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3219">PR 3219</a> adds path tolerances to Hybrid-A* and State Lattice planners to return approximate paths if exact paths cannot be found, within a configurable tolerance aroun the goal pose.</p>
 </div>
 <div class="section" id="costmap-2d-node-default-constructor">
-<h2>costmap_2d_node default constructor<a class="headerlink" href="#costmap-2d-node-default-constructor" title="永久链接至标题"></a></h2>
+<h2>costmap_2d_node 默认构造函数<a class="headerlink" href="#costmap-2d-node-default-constructor" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3222">PR #3222</a> changes the constructor used by the standalone costmap node. The new constructor does not set a name and namespace internally so it can be set via the launch file.</p>
 </div>
 <div class="section" id="feedback-for-navigation-failures">
-<h2>Feedback for Navigation Failures<a class="headerlink" href="#feedback-for-navigation-failures" title="永久链接至标题"></a></h2>
+<h2>导航失败的反馈<a class="headerlink" href="#feedback-for-navigation-failures" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3146">PR #3146</a> updates the global planners to throw exceptions on planning failures. These exceptions get reported back to the planner server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application.</p>
 <p>The following errors codes are supported (with more to come as necessary): Unknown, TF Error, Start or Goal Outside of Map, Start or Goal Occupied, Timeout, or No Valid Path Found.</p>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3248">PR #3248</a> updates the compute path through poses action to report planning failures. These exceptions get reported back to the planner server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application.</p>
