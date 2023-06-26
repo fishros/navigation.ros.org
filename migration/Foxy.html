@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Galactic to Humble" href="Galactic.html" />
+    <link rel="next" title="Galactic转换为Humble" href="Galactic.html" />
     <link rel="prev" title="从Eloquent升级到Foxy" href="Eloquent.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
@@ -806,12 +806,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#new-behavior-tree-nodes">新的行为树节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sensor-msgs-pointcloud-to-sensor-msgs-pointcloud2-change">sensor_msgs/PointCloud to sensor_msgs/PointCloud2 Change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#controllerserver-new-parameter-failure-tolerance">ControllerServer 新参数 failure_tolerance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#removed-bt-xml-launch-configurations">Removed BT XML Launch Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removed-bt-xml-launch-configurations">移除了BT XML启动配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nav2-rviz-panel-action-feedback-information">Nav2 RViz 面板的行动反馈信息</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Galactic.html">Galactic to Humble</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#major-improvements-to-smac-planners">Major improvements to Smac Planners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Galactic.html">Galactic转换为Humble</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#major-improvements-to-smac-planners">对Smac规划器进行了重大改进</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Galactic.html#simple-python-commander">Simple (Python) Commander</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Galactic.html#reduce-nodes-and-executors">Reduce Nodes and Executors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Galactic.html#api-change-for-nav2-core">API Change for nav2_core</a></li>
@@ -1177,16 +1177,13 @@
 <p>Controller Server 添加了一个新参数 <code class="code docutils literal notranslate"><span class="pre">failure_tolerance</span></code>，用于容忍控制器插件的异常而不立即失败。它类似于 ROS(1) Nav 中的 <code class="docutils literal notranslate"><span class="pre">controller_patience</span></code>。有关描述，请参阅 <a class="reference internal" href="../configuration/packages/configuring-controller-server.html#configuring-controller-server"><span class="std std-ref">控制器服务器</span></a>。这些更改是在这个 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2264">pull request 2264</a> 中引入的。</p>
 </div>
 <div class="section" id="removed-bt-xml-launch-configurations">
-<h2>Removed BT XML Launch Configurations<a class="headerlink" href="#removed-bt-xml-launch-configurations" title="永久链接至标题"></a></h2>
+<h2>移除了BT XML启动配置<a class="headerlink" href="#removed-bt-xml-launch-configurations" title="永久链接至标题"></a></h2>
 <p>已删除用于设置行为树 XML 文件的 CLI 设置的启动 Python 配置。相反，您应该使用 yaml 文件来设置该值。然而，如果您在较大的部署中有一个与 yaml 文件不一致的 <code class="docutils literal notranslate"><span class="pre">path</span></code>，您可以在父启动文件中使用 <code class="docutils literal notranslate"><span class="pre">RewrittenYaml</span></code> 工具，利用 <code class="docutils literal notranslate"><span class="pre">get_shared_package_path()</span></code> 目录查找器（或者像之前一样使用 Python 3）重新映射默认的 XML 路径。</p>
-<p>The use of map subscription QoS launch configuration was also removed, use parameter file.
-This change was introduced in this <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2295">pull request 2295</a>.</p>
+<p>还删除了地图订阅QoS启动配置，请使用参数文件。此更改在此`pull request 2295 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2295">https://github.com/ros-planning/navigation2/pull/2295</a>&gt;`_中引入。</p>
 </div>
 <div class="section" id="nav2-rviz-panel-action-feedback-information">
 <h2>Nav2 RViz 面板的行动反馈信息<a class="headerlink" href="#nav2-rviz-panel-action-feedback-information" title="永久链接至标题"></a></h2>
-<p>The Nav2 RViz Panel now displays the action feedback published by <code class="docutils literal notranslate"><span class="pre">nav2_msgs/NavigateToPose</span></code> and <code class="docutils literal notranslate"><span class="pre">nav2_msgs/NavigateThroughPoses</span></code> actions.
-Users can find information like the estimated time of arrival, distance remaining to goal, time elapsed since navigation started, and number of recoveries performed during a navigation action directly through the RViz panel.
-This feature was introduced in this <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2338">pull request 2338</a>.</p>
+<p>Nav2 RViz面板现在显示``nav2_msgs/NavigateToPose``和``nav2_msgs/NavigateThroughPoses``动作发布的动作反馈。用户可以通过RViz面板直接查看到达预计时间、距离目标剩余距离、导航开始后经过的时间以及导航动作期间执行的恢复次数等信息。此功能在此`pull request 2338 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2338">https://github.com/ros-planning/navigation2/pull/2338</a>&gt;`_中引入。</p>
 <a class="reference internal image-reference" href="../_images/panel-feedback.gif"><img alt="在 RViz 中的导航反馈。" class="align-center" src="../_images/panel-feedback.gif" style="width: 600px;" /></a>
 </div>
 </div>

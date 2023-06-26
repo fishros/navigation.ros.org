@@ -806,12 +806,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#new-behavior-tree-nodes">新的行为树节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#sensor-msgs-pointcloud-to-sensor-msgs-pointcloud2-change">sensor_msgs/PointCloud to sensor_msgs/PointCloud2 Change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#controllerserver-new-parameter-failure-tolerance">ControllerServer 新参数 failure_tolerance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#removed-bt-xml-launch-configurations">Removed BT XML Launch Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#removed-bt-xml-launch-configurations">移除了BT XML启动配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Foxy.html#nav2-rviz-panel-action-feedback-information">Nav2 RViz 面板的行动反馈信息</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../migration/Galactic.html">Galactic to Humble</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#major-improvements-to-smac-planners">Major improvements to Smac Planners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration/Galactic.html">Galactic转换为Humble</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#major-improvements-to-smac-planners">对Smac规划器进行了重大改进</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#simple-python-commander">Simple (Python) Commander</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#reduce-nodes-and-executors">Reduce Nodes and Executors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../migration/Galactic.html#api-change-for-nav2-core">API Change for nav2_core</a></li>
@@ -963,7 +963,7 @@ Behavior Trees, in short BTs, consist of many nodes completing different tasks a
 These nodes are of types: <cite>Action</cite>, <cite>Condition</cite>, <cite>Control</cite>, or <cite>Decorator</cite>, and are described in more detail in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a> and <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/BT_basics#types-of-nodes">BehaviorTree.CPP</a>.</p>
 <p>如果对于创建新的行为树节点感兴趣，<a class="reference internal" href="../../plugin_tutorials/docs/writing_new_bt_plugin.html#writing-new-nbt-plugin"><span class="std std-ref">编写新的行为树插件</span></a> 提供了一个写得很好的示例，展示了如何创建一个简单的 <code class="docutils literal notranslate"><span class="pre">Action</span></code> 节点。本教程将专注于启动 Groot，可视化行为树，并对给定的自定义进行树的修改，假设已经存在一个行为树节点库。幸运的是，Nav2 在默认情况下提供了大量可用的行为树节点，这些节点在 <a class="reference internal" href="../../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 中列举出来。</p>
 <p>BehaviorTree.CPP中的BT配置文件是一个XML文件。它用于在运行时从映射到它们名称的适当库中动态加载BT节点插件。XML格式在 <a class="reference external" href="https://www.behaviortree.dev/docs/learn-the-basics/xml_format/">此处详细定义</a>。因此，Groot需要有一个节点列表，其中包含它可以访问的节点以及关于这些节点的重要元数据，如它们的类型和端口（或参数）。我们在本教程的后面将称之为节点的 &quot;调色板&quot;。</p>
-<p>在上面的视频中，您可以看到 Groot 与 RVIz 和一个完全装备有来自 SIEMENS 的 ROS 启用硬件的测试平台并排显示。Groot 不仅在机器人操作时显示当前的行为树。注意：在 ROS 2 Humble 之前，Nav2 支持在执行过程中实时监控 Groot 行为树。由于 BT.CPP / Groot 对于动态更改行为树的支持存在错误，此功能已被删除，请参阅 <a class="reference internal" href="../../migration/Galactic.html#galactic-migration"><span class="std std-ref">Galactic to Humble</span></a> 了解更多细节。</p>
+<p>在上面的视频中，您可以看到 Groot 与 RVIz 和一个完全装备有来自 SIEMENS 的 ROS 启用硬件的测试平台并排显示。Groot 不仅在机器人操作时显示当前的行为树。注意：在 ROS 2 Humble 之前，Nav2 支持在执行过程中实时监控 Groot 行为树。由于 BT.CPP / Groot 对于动态更改行为树的支持存在错误，此功能已被删除，请参阅 <a class="reference internal" href="../../migration/Galactic.html#galactic-migration"><span class="std std-ref">Galactic转换为Humble</span></a> 了解更多细节。</p>
 </div>
 <div class="section" id="visualize-behavior-trees">
 <h2>可视化行为树<a class="headerlink" href="#visualize-behavior-trees" title="永久链接至标题"></a></h2>

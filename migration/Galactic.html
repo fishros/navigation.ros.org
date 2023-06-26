@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galactic to Humble &mdash; Navigation 2 1.0.0 文档</title>
+  <title>Galactic转换为Humble &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -806,12 +806,12 @@
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#new-behavior-tree-nodes">新的行为树节点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#sensor-msgs-pointcloud-to-sensor-msgs-pointcloud2-change">sensor_msgs/PointCloud to sensor_msgs/PointCloud2 Change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#controllerserver-new-parameter-failure-tolerance">ControllerServer 新参数 failure_tolerance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Foxy.html#removed-bt-xml-launch-configurations">Removed BT XML Launch Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Foxy.html#removed-bt-xml-launch-configurations">移除了BT XML启动配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Foxy.html#nav2-rviz-panel-action-feedback-information">Nav2 RViz 面板的行动反馈信息</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Galactic to Humble</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#major-improvements-to-smac-planners">Major improvements to Smac Planners</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Galactic转换为Humble</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#major-improvements-to-smac-planners">对Smac规划器进行了重大改进</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simple-python-commander">Simple (Python) Commander</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reduce-nodes-and-executors">Reduce Nodes and Executors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#api-change-for-nav2-core">API Change for nav2_core</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Migration Guides</a> &raquo;</li>
-      <li>Galactic to Humble</li>
+      <li>Galactic转换为Humble</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,25 +939,25 @@
            <div itemprop="articleBody">
              
   <div class="section" id="galactic-to-humble">
-<span id="galactic-migration"></span><h1>Galactic to Humble<a class="headerlink" href="#galactic-to-humble" title="永久链接至标题"></a></h1>
+<span id="galactic-migration"></span><h1>Galactic转换为Humble<a class="headerlink" href="#galactic-to-humble" title="永久链接至标题"></a></h1>
 <p>从 ROS 2 Galactic 到 Humble，我们添加了一些稳定性改进，我们将不在此处具体介绍。</p>
 <div class="section" id="major-improvements-to-smac-planners">
-<h2>Major improvements to Smac Planners<a class="headerlink" href="#major-improvements-to-smac-planners" title="永久链接至标题"></a></h2>
-<p>The Smac Planner was significantly improved, of both the 2D and Hybrid-A* implementations, making the paths better, faster, and of higher quality.</p>
+<h2>对Smac规划器进行了重大改进<a class="headerlink" href="#major-improvements-to-smac-planners" title="永久链接至标题"></a></h2>
+<p>Smac Planner在2D和Hybrid-A*实现方面得到了显著改进，使路径更好、更快、更高质量。</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Collision checker rejects collisions faster and queries the costmap for coordinates less often</p></li>
-<li><p>Zero-copy collision checking object</p></li>
-<li><p>precompute collision checking footprint orientations so no need for trig at runtime</p></li>
-<li><p>Only checking full SE2 footprint when the robot is in the possibly inscribed zones</p></li>
+<li><p>碰撞检查器更快地拒绝碰撞并更少地查询代价地图的坐标</p></li>
+<li><p>零拷贝碰撞检测对象</p></li>
+<li><p>预先计算碰撞检查足迹的方向，运行时不需要三角函数计算</p></li>
+<li><p>只有在机器人位于可能被内接区域时才检查完整的SE2足迹</p></li>
 <li><p>Computing the possibly inscribed zones, or the cost over which some part of the footprint may be in collision with a boundary to check the full footprint. Else, check center cost since promised to not be in a potential collision state</p></li>
-<li><p>Renaming Hybrid-A* planner to SmacPlannerHybrid</p></li>
+<li><p>将Hybrid-A*规划器重命名为SmacPlannerHybrid</p></li>
 <li><p>Precomputing the Reedshepp and Dubin paths offline so at runtime its just a lookup table</p></li>
-<li><p>Replacing the wavefront heuristic with a new, and novel, heuristic dubbed the obstacle heuristic. This computes a Dijkstra's path using Differential A* search taking into account the 8 connected space, as well as weights for the cost at the positions to guide the heuristic into the center of aisle ways. It also downsamples the costmap such that it can reduce the number of expansions by 75% and have a very small error introduced into the heuristic by being off by at most a partial fraction of a single cell distance</p></li>
+<li><p>用名为障碍启发式的新启发式替换了波前启发式。该启发式使用差分A*搜索计算Dijkstra路径，考虑了8个连接空间，并在位置的成本上引入权重以指导启发式进入走廊中心。它还对代价图进行降采样，可以将扩展次数减少75%，并且在启发式中引入的误差非常小，最多仅为单个单元距离的部分分数。</p></li>
 <li><p>Improvements to the analytic expansion algorithm to remove the possibility of loops at the end of paths, whenever possible to remove</p></li>
-<li><p>Improving analytic expansions to provide maximum path length to prevent skirting close to obstacles</p></li>
+<li><p>改进分析性扩展以提供最大路径长度，以防止靠近障碍物</p></li>
 <li><p>2D A* travel cost and heuristic improvements to speed up planning times and also increase the path quality significantly</p></li>
-<li><p>Replaced smoother with a bespoke gradient descent implementation</p></li>
+<li><p>用定制的梯度下降实现替换了平滑器</p></li>
 <li><p>Abstract out common utilities of planners into a utils file</p></li>
 <li><p>tuned cost functions</p></li>
 <li><p>precomputed obstacle heuristic using dynamic programming to expand only the minimum number of nodes</p></li>
