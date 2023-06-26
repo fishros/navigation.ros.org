@@ -1577,77 +1577,77 @@ msgstr "在本教程中，我们已经讨论了变换的概念以及它们在Nav
 
 #: ../../setup_guides/transformation/setup_transforms.rst:113
 msgid "In the last section, we have also explored using the static_transform_publisher of TF2 to publish our transforms. You may use this to set up your transforms for Nav2, but this is generally not the best way to do it. In most robotics projects, we make use of the Robot State Publisher since it is much easier to use and scales well as our robot gets more complex. We will be talking about the Robot State Publisher, URDF, and how to set it up in the next tutorial on :ref:`urdf_handson`."
-msgstr "In the last section, we have also explored using the static_transform_publisher of TF2 to publish our transforms. You may use this to set up your transforms for Nav2, but this is generally not the best way to do it. In most robotics projects, we make use of the Robot State Publisher since it is much easier to use and scales well as our robot gets more complex. We will be talking about the Robot State Publisher, URDF, and how to set it up in the next tutorial on :ref:`urdf_handson`."
+msgstr "在上一节中，我们还探讨了使用TF2的static_transform_publisher来发布我们的转换。您可以使用它来设置Nav2的转换，但这通常不是最好的方法。在大多数机器人项目中，我们使用机器人状态发布器，因为它更容易使用，并且随着机器人变得更加复杂，它的扩展性也更好。下一篇教程中我们将讨论机器人状态发布器、URDF以及如何设置它：参考：urdf_handson。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:115
 msgid "Lastly, we also discussed the three published transform requirements of Nav2 and the neccessary REPs to keep in mind when setting them up."
-msgstr "Lastly, we also discussed the three published transform requirements of Nav2 and the neccessary REPs to keep in mind when setting them up."
+msgstr "最后，我们还讨论了Nav2的三个已发布的转换需求以及在设置它们时需要记住的必要REPs。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:4
 msgid "Setting Up The URDF"
-msgstr "Setting Up The URDF"
+msgstr "设置URDF"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:6
 msgid "For this guide, we will be creating the Unified Robot Description Format (URDF) file for a simple differential drive robot to give you hands-on experience on working with URDF. We will also setup the robot state publisher and visualize our model in RVIZ. Lastly, we will be adding some kinematic properties to our robot URDF to prepare it for simulation purposes. These steps are necessary to represent all the sensor, hardware, and robot transforms of your robot for use in navigation."
-msgstr "For this guide, we will be creating the Unified Robot Description Format (URDF) file for a simple differential drive robot to give you hands-on experience on working with URDF. We will also setup the robot state publisher and visualize our model in RVIZ. Lastly, we will be adding some kinematic properties to our robot URDF to prepare it for simulation purposes. These steps are necessary to represent all the sensor, hardware, and robot transforms of your robot for use in navigation."
+msgstr "在本指南中，我们将为一个简单的差动驱动机器人创建统一机器人描述格式（Unified Robot Description Format，URDF）文件，以便让您亲自体验使用URDF的工作。我们还将设置机器人状态发布器并在RVIZ中可视化我们的模型。最后，我们将向机器人的URDF添加一些运动学属性，以便为仿真目的做准备。这些步骤是为了代表您的机器人的所有传感器、硬件和机器人变换，以供导航使用。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:12
 msgid "URDF and the Robot State Publisher"
-msgstr "URDF and the Robot State Publisher"
+msgstr "URDF和机器人状态发布器"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:14
 msgid "As discussed in the previous tutorial, one of the requirements for Navigation2 is the transformation from  ``base_link`` to the various sensors and reference frames. This transformation tree can range from a simple tree with only one link from the  ``base_link`` to ``laser_link`` or a tree comprised of multiple sensors located in different locations, each having their own coordinate frame. Creating multiple publishers to handle all of these coordinate frame transformations may become tedious. Therefore, we will be making use of the Robot State Publisher package to publish our transforms."
-msgstr "As discussed in the previous tutorial, one of the requirements for Navigation2 is the transformation from  ``base_link`` to the various sensors and reference frames. This transformation tree can range from a simple tree with only one link from the  ``base_link`` to ``laser_link`` or a tree comprised of multiple sensors located in different locations, each having their own coordinate frame. Creating multiple publishers to handle all of these coordinate frame transformations may become tedious. Therefore, we will be making use of the Robot State Publisher package to publish our transforms."
+msgstr "如前面的教程中所讨论的，Navigation2的一个要求是从 ``base_link`` 到各种传感器和参考坐标系的变换。这个变换树可以是一个简单的树，只有一个链接从 ``base_link`` 到 ``laser_link``，也可以是一个由位于不同位置的多个传感器组成的树，每个传感器都有自己的坐标系。创建多个发布者来处理所有这些坐标系的变换可能会变得繁琐。因此，我们将使用机器人状态发布器包来发布我们的变换。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:16
 msgid "The Robot State Publisher is a package of ROS 2 that interacts with the tf2 package to publish all of the necessary transforms that can be directly inferred from the geometry and structure of the robot. We need to provide it with the correct URDF and it will automatically handle publishing the transforms. This is very useful for complex transformations but it is still recommended for simpler transform trees."
-msgstr "The Robot State Publisher is a package of ROS 2 that interacts with the tf2 package to publish all of the necessary transforms that can be directly inferred from the geometry and structure of the robot. We need to provide it with the correct URDF and it will automatically handle publishing the transforms. This is very useful for complex transformations but it is still recommended for simpler transform trees."
+msgstr "机器人状态发布器是ROS 2的一个包，它与tf2包交互，发布可以直接从机器人的几何和结构中推断出的所有必要转换。我们需要提供正确的URDF给它，它将自动处理转换的发布。这对于复杂的转换非常有用，但对于较简单的转换树也是推荐的。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:18
 msgid "The Unified Robot Description Format (URDF) is an XML file that represents a robot model. In this tutorial, it will mainly be used to build transformations trees related with the robot geometry, but it also has other uses. One example is how it can be used in visualizing your robot model in RVIZ, a 3D Visualization tool for ROS, by defining visual components such as materials and meshes. Another example is how the URDF can be used to define the physical properties of the robot. These properties are then used in physics simulators such as Gazebo to simulate how your robot will interact in an environment."
-msgstr "The Unified Robot Description Format (URDF) is an XML file that represents a robot model. In this tutorial, it will mainly be used to build transformations trees related with the robot geometry, but it also has other uses. One example is how it can be used in visualizing your robot model in RVIZ, a 3D Visualization tool for ROS, by defining visual components such as materials and meshes. Another example is how the URDF can be used to define the physical properties of the robot. These properties are then used in physics simulators such as Gazebo to simulate how your robot will interact in an environment."
+msgstr "统一机器人描述格式（Unified Robot Description Format，URDF）是一个表示机器人模型的XML文件。在本教程中，它主要用于构建与机器人几何相关的变换树，但它还有其他用途。一个例子是如何在RVIZ中可视化机器人模型，RVIZ是ROS的一个三维可视化工具，通过定义诸如材料和网格等可视化组件来实现。另一个例子是URDF如何用于定义机器人的物理属性。这些属性然后被物理模拟器（如Gazebo）用于模拟机器人在环境中的交互。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:20
 msgid "Another major feature of URDF is that it also supports Xacro (XML Macros) to help you create a shorter and readable XML to help in defining complex robots. We can use these macros to eliminate the need for repeating blocks of XML in our URDF. Xacro is also useful in defining configuration constants which can be reused throughout the URDF."
-msgstr "Another major feature of URDF is that it also supports Xacro (XML Macros) to help you create a shorter and readable XML to help in defining complex robots. We can use these macros to eliminate the need for repeating blocks of XML in our URDF. Xacro is also useful in defining configuration constants which can be reused throughout the URDF."
+msgstr "URDF的另一个重要特性是它还支持Xacro（XML宏），帮助您创建一个更短、更易读的XML来定义复杂的机器人。我们可以使用这些宏来消除URDF中重复的XML块的需要。Xacro还可以用于定义可以在整个URDF中重用的配置常量。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:23
 msgid "If you want to learn more about the URDF and the Robot State Publisher, we encourage you to have a look at the official `URDF Documentation <http://wiki.ros.org/urdf>`__ and `Robot State Publisher Documentation <http://wiki.ros.org/robot_state_publisher>`__"
-msgstr "If you want to learn more about the URDF and the Robot State Publisher, we encourage you to have a look at the official `URDF Documentation <http://wiki.ros.org/urdf>`__ and `Robot State Publisher Documentation <http://wiki.ros.org/robot_state_publisher>`__"
+msgstr "如果您想了解更多关于URDF和机器人状态发布器的信息，我们建议您查看官方的 `URDF文档 <http://wiki.ros.org/urdf>`__ 和 `机器人状态发布器文档 <http://wiki.ros.org/robot_state_publisher>`__。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:26
 msgid "Setting Up the Environment"
-msgstr "Setting Up the Environment"
+msgstr "设置环境"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:28
 msgid "In this guide, we are assuming that you are already familiar with ROS 2 and how to setup your development environment, so we'll breeze through the steps in this section."
-msgstr "In this guide, we are assuming that you are already familiar with ROS 2 and how to setup your development environment, so we'll breeze through the steps in this section."
+msgstr "在本指南中，我们假设您已经熟悉ROS 2以及如何设置开发环境，因此我们将快速浏览本节中的步骤。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:30
 msgid "Let's begin by installing some additional ROS 2 packages that we will be using during this tutorial."
-msgstr "Let's begin by installing some additional ROS 2 packages that we will be using during this tutorial."
+msgstr "让我们从安装一些在本教程中将使用的额外ROS 2包开始。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:37
 msgid "Next, create a directory for your project, initialize a ROS 2 workspace and give your robot a name. For ours, we'll be calling it ``sam_bot``."
-msgstr "Next, create a directory for your project, initialize a ROS 2 workspace and give your robot a name. For ours, we'll be calling it ``sam_bot``."
+msgstr "接下来，创建一个用于您的项目的目录，初始化一个ROS 2工作空间并为您的机器人命名。我们将称之为 ``sam_bot``。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:44
 msgid "Writing the URDF"
-msgstr "Writing the URDF"
+msgstr "编写URDF"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:46
@@ -1657,7 +1657,7 @@ msgstr "This section aims to provide you with a beginner-friendly introduction t
 
 #: ../../setup_guides/urdf/setup_urdf.rst:48
 msgid "Now that we have our project workspace set up, let's dive straight into writing the URDF. Below is an image of the robot we will be trying to build."
-msgstr "Now that we have our project workspace set up, let's dive straight into writing the URDF. Below is an image of the robot we will be trying to build."
+msgstr "既然我们已经设置好了项目工作空间，让我们直接开始编写URDF。下面是我们将要尝试构建的机器人的图像。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:57
@@ -1667,7 +1667,7 @@ msgstr "To get started, create a file named ``sam_bot_description.urdf`` under `
 
 #: ../../setup_guides/urdf/setup_urdf.rst:69
 msgid "The following code snippets should be placed within the ``<robot>`` tags. We suggest to add them in the same order as introduced in this tutorial. We have also included some line numbers to give you a rough idea on where to input the code. This may differ from the actual file you are writing depending on your usage of whitespaces. Also note that the line numbers assume that you are putting in code as they appear in this guide."
-msgstr "The following code snippets should be placed within the ``<robot>`` tags. We suggest to add them in the same order as introduced in this tutorial. We have also included some line numbers to give you a rough idea on where to input the code. This may differ from the actual file you are writing depending on your usage of whitespaces. Also note that the line numbers assume that you are putting in code as they appear in this guide."
+msgstr "下面的代码片段应该放置在``<robot>``标签之间。我们建议按照本教程介绍的顺序添加它们。我们还包含了一些行号，以便大致指导您在何处输入代码。实际文件中的行号可能与本指南中出现的行号不同，这取决于您使用空格的方式。还请注意，行号假设您按照指南中的代码顺序输入。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:71
@@ -1677,7 +1677,7 @@ msgstr "Next, let us define some constants using XAcro properties that will be r
 
 #: ../../setup_guides/urdf/setup_urdf.rst:89
 msgid "Here is a brief discussion on what these properties will represent in our urdf. The ``base_*`` properties all define the size of the robot's main chassis. The ``wheel_radius`` and ``wheel_width`` define the shape of the robot's two back wheels. The ``wheel_ygap`` adjusts the gap between the wheel and the chassis along the y-axis whilst ``wheel_zoff`` and ``wheel_xoff`` position the back wheels along the z-axis and x-axis appropriately. Lastly, the ``caster_xoff`` positions the front caster wheel along the x-axis."
-msgstr "Here is a brief discussion on what these properties will represent in our urdf. The ``base_*`` properties all define the size of the robot's main chassis. The ``wheel_radius`` and ``wheel_width`` define the shape of the robot's two back wheels. The ``wheel_ygap`` adjusts the gap between the wheel and the chassis along the y-axis whilst ``wheel_zoff`` and ``wheel_xoff`` position the back wheels along the z-axis and x-axis appropriately. Lastly, the ``caster_xoff`` positions the front caster wheel along the x-axis."
+msgstr "以下是对这些属性在我们的URDF中代表的简要讨论。``base_*``属性都定义了机器人主底盘的尺寸。``wheel_radius``和``wheel_width``定义了机器人两个后轮的形状。``wheel_ygap``调整了轮子与底盘之间沿y轴的间隙，而``wheel_zoff``和``wheel_xoff``则适当地将后轮定位于z轴和x轴上。最后，``caster_xoff``将前导轮定位于x轴上。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:91
@@ -1687,7 +1687,7 @@ msgstr "Let us then define our ``base_link`` - this link will be a large box and
 
 #: ../../setup_guides/urdf/setup_urdf.rst:93
 msgid "We will also be defining some of the link's visual properties which can be used by tools such as Gazebo and Rviz to show us a 3D model of our robot. Amongst these properties are ``<geometry>`` which describes the link's shape and ``<material>`` which describes it's color."
-msgstr "We will also be defining some of the link's visual properties which can be used by tools such as Gazebo and Rviz to show us a 3D model of our robot. Amongst these properties are ``<geometry>`` which describes the link's shape and ``<material>`` which describes it's color."
+msgstr "我们还将定义一些链接的视觉属性，这些属性可以被诸如Gazebo和Rviz之类的工具用来显示机器人的三维模型。其中包括``<geometry>``描述链接的形状和``<material>``描述其颜色。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:95
@@ -1697,7 +1697,7 @@ msgstr "For the code block block below, we access the ``base`` properties from t
 
 #: ../../setup_guides/urdf/setup_urdf.rst:112
 msgid "Next, let us define a ``base_footprint`` link. The ``base_footprint`` link is a virtual (non-physical) link which has no dimensions or collision areas. Its primary purpose is to enable various packages determine the center of a robot projected to the ground. For example, Navigation2 uses this link to determine the center of a circular footprint used in its obstacle avoidance algorithms. Again, we set this link with no dimensions and to which position the robot's center is in when it is projected to the ground plane."
-msgstr "Next, let us define a ``base_footprint`` link. The ``base_footprint`` link is a virtual (non-physical) link which has no dimensions or collision areas. Its primary purpose is to enable various packages determine the center of a robot projected to the ground. For example, Navigation2 uses this link to determine the center of a circular footprint used in its obstacle avoidance algorithms. Again, we set this link with no dimensions and to which position the robot's center is in when it is projected to the ground plane."
+msgstr "接下来，让我们定义一个``base_footprint``链接。``base_footprint``链接是一个虚拟（非物理）链接，它没有尺寸或碰撞区域。其主要目的是使各种软件包确定机器人在地面上投影时的中心。例如，Navigation2使用该链接确定其避障算法中使用的圆形足迹的中心。同样，我们设置这个链接没有尺寸，并指定机器人在投影到地平面时的中心位置。"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:114
@@ -1707,7 +1707,7 @@ msgstr "After defining our base_link, we then add a joint to connect it to ``bas
 
 #: ../../setup_guides/urdf/setup_urdf.rst:128
 msgid "Now, we will be adding two large drive wheels to our robot. To make our code cleaner and avoid repetition, we will make use of macros to define a block of code that will be repeated with differing parameters. Our macro will have 3 params: ``prefix`` which simply adds a prefix to our link and joint names, and ``x_reflect`` and ``y_reflect`` which allows us to flip the positions of our wheels with respect to the x and y axis respectively. Within this macro, we can also define the visual properties of a single wheel. Lastly, we will also define a ``continuous`` joint to allow our wheels to freely rotate about an axis. This joint also connects our wheel to the ``base_link`` at the appropriate location."
-msgstr "Now, we will be adding two large drive wheels to our robot. To make our code cleaner and avoid repetition, we will make use of macros to define a block of code that will be repeated with differing parameters. Our macro will have 3 params: ``prefix`` which simply adds a prefix to our link and joint names, and ``x_reflect`` and ``y_reflect`` which allows us to flip the positions of our wheels with respect to the x and y axis respectively. Within this macro, we can also define the visual properties of a single wheel. Lastly, we will also define a ``continuous`` joint to allow our wheels to freely rotate about an axis. This joint also connects our wheel to the ``base_link`` at the appropriate location."
+msgstr "现在，我们将向机器人添加两个大型驱动轮。为了使我们的代码更清晰，避免重复，我们将使用宏来定义一个将以不同参数重复的代码块。我们的宏有3个参数：``prefix``仅为我们的链接和关节名称添加前缀，``x_reflect``和``y_reflect``允许我们根据x轴和y轴翻转轮子的位置。在这个宏中，我们还可以定义单个轮子的视觉属性。最后，我们还将定义一个``continuous``关节，允许我们的轮子在一个轴周围自"
 
 
 #: ../../setup_guides/urdf/setup_urdf.rst:130
