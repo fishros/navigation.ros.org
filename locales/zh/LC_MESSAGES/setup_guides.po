@@ -917,7 +917,7 @@ msgstr "在本指南中，我们将讨论传感器在安全导航机器人中的
 
 #: ../../setup_guides/sensors/setup_sensors.rst:8
 msgid "Once sensors have been set up on a robot, their readings can be used in mapping, localization, and perception tasks. In the second half of this guide, we will first discuss how mapping and localization use the sensor data. Then, we will also take a look at one of Nav2's packages, ``nav2_costmap_2d``, which generates costmaps that will eventually be used in Nav2 path planning. We will set up basic configuration parameters for this package so it properly takes in sensor information from ``sam_bot``. Lastly, we visualize a generated costmaps in RViz to verify its received data."
-msgstr "Once sensors have been set up on a robot, their readings can be used in mapping, localization, and perception tasks. In the second half of this guide, we will first discuss how mapping and localization use the sensor data. Then, we will also take a look at one of Nav2's packages, ``nav2_costmap_2d``, which generates costmaps that will eventually be used in Nav2 path planning. We will set up basic configuration parameters for this package so it properly takes in sensor information from ``sam_bot``. Lastly, we visualize a generated costmaps in RViz to verify its received data."
+msgstr "一旦在机器人上设置了传感器，它们的读数可以用于地图创建、定位和感知任务。在本指南的后半部分，我们首先讨论了地图创建和定位如何使用传感器数据。然后，我们还将介绍 Nav2 的一个软件包 ``nav2_costmap_2d``，该软件包生成的代价图最终将用于 Nav2 的路径规划。我们将设置该软件包的基本配置参数，以便它能正确地接收来自 ``sam_bot`` 的传感器信息。最后，我们在 RViz 中可视化生成的代价图，以验证其接收到的数据。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:11
@@ -927,7 +927,7 @@ msgstr "传感器介绍"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:12
 msgid "Mobile robots are equipped with a multitude of sensors that allow them to see and perceive their environment. These sensors obtain information which can be used to build and maintain the map of the environment, to localize the robot on the map, and to see the obstacles in the environment. These tasks are essential to be able to safely and efficiently navigate a robot through a dynamic environment."
-msgstr "Mobile robots are equipped with a multitude of sensors that allow them to see and perceive their environment. These sensors obtain information which can be used to build and maintain the map of the environment, to localize the robot on the map, and to see the obstacles in the environment. These tasks are essential to be able to safely and efficiently navigate a robot through a dynamic environment."
+msgstr "移动机器人配备了许多传感器，使其能够观察和感知环境。这些传感器获取的信息可以用于构建和维护环境地图，将机器人定位在地图上，并查看环境中的障碍物。这些任务对于能够在动态环境中安全、高效地导航机器人非常重要。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:14
@@ -937,7 +937,7 @@ msgstr "常用传感器的示例包括激光雷达、雷达、RGB相机、深度
 
 #: ../../setup_guides/sensors/setup_sensors.rst:16
 msgid "Aside from the ``sensor_msgs`` package, there are also the ``radar_msgs`` and ``vision_msgs`` standard interfaces you should be aware of.  The ``radar_msgs`` defines the messages for radar-specific sensors while the ``vision_msgs`` package defines the messages used in computer vision such as object detection, segmentation, and other machine learning models. Messages supported by this package are ``vision_msgs/Classification2D``, ``vision_msgs/Classification3D``, ``vision_msgs/Detection2D``, and ``vision_msgs/Detection3D``, to name a few."
-msgstr "Aside from the ``sensor_msgs`` package, there are also the ``radar_msgs`` and ``vision_msgs`` standard interfaces you should be aware of.  The ``radar_msgs`` defines the messages for radar-specific sensors while the ``vision_msgs`` package defines the messages used in computer vision such as object detection, segmentation, and other machine learning models. Messages supported by this package are ``vision_msgs/Classification2D``, ``vision_msgs/Classification3D``, ``vision_msgs/Detection2D``, and ``vision_msgs/Detection3D``, to name a few."
+msgstr "除了 ``sensor_msgs`` 软件包，还有一些标准接口需要您了解，例如 ``radar_msgs`` 和 ``vision_msgs``。``radar_msgs`` 定义了用于雷达特定传感器的消息，而 ``vision_msgs`` 软件包定义了计算机视觉中使用的消息，例如目标检测、分割和其他机器学习模型。该软件包支持的消息类型包括 ``vision_msgs/Classification2D``、``vision_msgs/Classification3D``、``vision_msgs/Detection2D`` 和 ``vision_msgs/Detection3D``，等等。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:19
@@ -947,7 +947,7 @@ msgstr "有关更多信息，请参阅`sensor_msgs <http://wiki.ros.org/sensor_m
 
 #: ../../setup_guides/sensors/setup_sensors.rst:21
 msgid "Your physical robot's sensors probably have ROS drivers written for them (e.g. a ROS node that connects to the sensors, populates data into messages, and publishes them for your robot to use) that follow the standard interface in the ``sensor_msgs`` package. The ``sensor_msgs`` package makes it easy for you to use many different sensors from different manufacturers. General software packages like Nav2 can then can read these standardized messages and perform tasks independent of the sensor hardware. On simulated robots such as ``sam_bot``, Gazebo has sensor plugins which also publish their information following the ``sensor_msgs`` package."
-msgstr "Your physical robot's sensors probably have ROS drivers written for them (e.g. a ROS node that connects to the sensors, populates data into messages, and publishes them for your robot to use) that follow the standard interface in the ``sensor_msgs`` package. The ``sensor_msgs`` package makes it easy for you to use many different sensors from different manufacturers. General software packages like Nav2 can then can read these standardized messages and perform tasks independent of the sensor hardware. On simulated robots such as ``sam_bot``, Gazebo has sensor plugins which also publish their information following the ``sensor_msgs`` package."
+msgstr "您的物理机器人的传感器可能已经为它们编写了 ROS 驱动程序（例如连接到传感器的 ROS 节点，将数据填充到消息中，并将其发布供机器人使用），这些驱动程序遵循 ``sensor_msgs`` 软件包中的标准接口。``sensor_msgs`` 软件包使您能够轻松地使用来自不同制造商的许多不同传感器。然后，像 Nav2 这样的通用软件包可以读取这些标准化的消息，并执行与传感器硬件无关的任务。在诸如 ``sam_bot`` 的仿真机器人上，Gazebo 还具有传感器插件，这些插件也会按照 ``sensor_msgs`` 软件包发布它们的信息。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:24
@@ -957,12 +957,12 @@ msgstr "常用传感器消息"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:26
 msgid "In this subsection, we discuss some of the common types of ``sensor_msgs`` you might encounter when setting up Nav2. We will provide a brief description for each sensor, an image of it being simulated in Gazebo and the corresponding visualization of the sensor readings in RViz."
-msgstr "In this subsection, we discuss some of the common types of ``sensor_msgs`` you might encounter when setting up Nav2. We will provide a brief description for each sensor, an image of it being simulated in Gazebo and the corresponding visualization of the sensor readings in RViz."
+msgstr "在本小节中，我们讨论了在设置 Nav2 时可能遇到的一些常见类型的 ``sensor_msgs``。我们将为每个传感器提供简要描述，在 Gazebo 中模拟其图像以及在 RViz 中对传感器"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:28
 msgid "There are other types of ``sensor_msgs`` aside from the ones listed below.  The complete list of messages and their definitions can be found in the `sensor_msgs documentation <http://wiki.ros.org/sensor_msgs>`_."
-msgstr "There are other types of ``sensor_msgs`` aside from the ones listed below.  The complete list of messages and their definitions can be found in the `sensor_msgs documentation <http://wiki.ros.org/sensor_msgs>`_."
+msgstr "除了下面列出的类型之外，还有其他类型的``sensor_msgs``。完整的消息列表及其定义可以在 `sensor_msgs 文档 <http://wiki.ros.org/sensor_msgs>`_ 中找到。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:31
@@ -972,7 +972,7 @@ msgstr "sensor_msgs/LaserScan"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:33
 msgid "This message represents a single scan from a planar laser range-finder. This message is used in ``slam_toolbox`` and ``nav2_amcl`` for localization and mapping, or in ``nav2_costmap_2d`` for perception."
-msgstr "This message represents a single scan from a planar laser range-finder. This message is used in ``slam_toolbox`` and ``nav2_amcl`` for localization and mapping, or in ``nav2_costmap_2d`` for perception."
+msgstr "这个消息表示来自平面激光测距仪的单个扫描。这个消息在``slam_toolbox``和``nav2_amcl``中用于定位和建图，或在``nav2_costmap_2d``中用于感知。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:38
@@ -982,7 +982,7 @@ msgstr "sensor_msgs/PointCloud2"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:40
 msgid "This message holds a collection of 3D points, plus optional additional information about each point. This can be from a 3D lidar, a 2D lidar, a depth camera or more."
-msgstr "This message holds a collection of 3D points, plus optional additional information about each point. This can be from a 3D lidar, a 2D lidar, a depth camera or more."
+msgstr "这个消息包含一组3D点，以及每个点的可选附加信息。这可以来自3D激光雷达、2D激光雷达、深度相机或其他设备。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:45
@@ -992,7 +992,7 @@ msgstr "sensor_msgs/Range"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:47
 msgid "This is a single range reading from an active ranger that emits energy and reports one range reading that is valid along an arc at the distance measured. A sonar, IR sensor, or 1D range finder are examples of sensors that use this message."
-msgstr "This is a single range reading from an active ranger that emits energy and reports one range reading that is valid along an arc at the distance measured. A sonar, IR sensor, or 1D range finder are examples of sensors that use this message."
+msgstr "这是来自发射能量并报告沿测距的弧线上有效测距的主动测距仪的单个测距读数。声纳、红外传感器或1D测距仪是使用这个消息的传感器的示例。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:52
@@ -1002,37 +1002,37 @@ msgstr "sensor_msgs/Image"
 
 #: ../../setup_guides/sensors/setup_sensors.rst:54
 msgid "This represents the sensor readings from RGB or depth camera, corresponding to RGB or range values."
-msgstr "This represents the sensor readings from RGB or depth camera, corresponding to RGB or range values."
+msgstr "这表示来自RGB或深度相机的传感器读数，对应于RGB或深度值。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:59
 msgid "Simulating Sensors using Gazebo"
-msgstr "Simulating Sensors using Gazebo"
+msgstr "使用Gazebo模拟传感器"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:60
 msgid "To give you a better grasp of how to set up sensors on a simulated robot, we will build up on our previous tutorials and attach sensors to our simulated robot ``sam_bot``. Similar to the previous tutorial where we used Gazebo plugins to add odometry sensors to ``sam_bot``, we will be using the Gazebo plugins to simulate a lidar sensor and a depth camera on ``sam_bot``. If you are working with a real robot, most of these steps are still required for setting up your URDF frames and it will not hurt to also add in the gazebo plugins for later use."
-msgstr "To give you a better grasp of how to set up sensors on a simulated robot, we will build up on our previous tutorials and attach sensors to our simulated robot ``sam_bot``. Similar to the previous tutorial where we used Gazebo plugins to add odometry sensors to ``sam_bot``, we will be using the Gazebo plugins to simulate a lidar sensor and a depth camera on ``sam_bot``. If you are working with a real robot, most of these steps are still required for setting up your URDF frames and it will not hurt to also add in the gazebo plugins for later use."
+msgstr "为了让您更好地了解如何在模拟机器人上设置传感器，我们将在之前的教程基础上为我们的模拟机器人``sam_bot``添加传感器。与之前的教程类似，在``sam_bot``上使用Gazebo插件添加里程计传感器，我们将使用Gazebo插件来模拟``sam_bot``上的激光雷达传感器和深度相机。如果您正在使用实际机器人，设置URDF框架时仍然需要执行大部分这些步骤，而且添加Gazebo插件以备将来使用也是有好处的。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:62
 msgid "To be able to follow the rest of this section, make sure that you have properly installed Gazebo. You can follow the instructions at the `Setup and Prerequisites <https://navigation.ros.org/setup_guides/odom/setup_odom.html#setup-and-prerequisites>`_ of the previous tutorial to setup Gazebo."
-msgstr "To be able to follow the rest of this section, make sure that you have properly installed Gazebo. You can follow the instructions at the `Setup and Prerequisites <https://navigation.ros.org/setup_guides/odom/setup_odom.html#setup-and-prerequisites>`_ of the previous tutorial to setup Gazebo."
+msgstr "为了能够跟随本节的其余部分，请确保您已正确安装了Gazebo。您可以按照先前教程中的“设置和先决条件 <https://navigation.ros.org/setup_guides/odom/setup_odom.html#setup-and-prerequisites>`_的说明来设置Gazebo。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:68
 msgid "Let us first add a lidar sensor to ``sam_bot``. Open the URDF file, `src/description/sam_bot_description.urdf <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/src/description/sam_bot_description.urdf>`_ and paste the following lines before the ``</robot>`` tag."
-msgstr "Let us first add a lidar sensor to ``sam_bot``. Open the URDF file, `src/description/sam_bot_description.urdf <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/src/description/sam_bot_description.urdf>`_ and paste the following lines before the ``</robot>`` tag."
+msgstr "首先让我们为``sam_bot``添加一个激光雷达传感器。打开URDF文件 `src/description/sam_bot_description.urdf <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/src/description/sam_bot_description.urdf>`_，并将以下行粘贴到``</robot>``标记之前。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:136
 msgid "In the code snippet above, we create a ``lidar_link`` which will be referenced by the ``gazebo_ros_ray_sensor`` plugin as the location to attach our sensor. We also set values to the simulated lidar's scan and range properties. Lastly, we set the ``/scan`` as the topic to which it will publish the ``sensor_msgs/LaserScan`` messages."
-msgstr "In the code snippet above, we create a ``lidar_link`` which will be referenced by the ``gazebo_ros_ray_sensor`` plugin as the location to attach our sensor. We also set values to the simulated lidar's scan and range properties. Lastly, we set the ``/scan`` as the topic to which it will publish the ``sensor_msgs/LaserScan`` messages."
+msgstr "在上面的代码片段中，我们创建了一个名为``lidar_link``的链接，它将被``gazebo_ros_ray_sensor``插件引用为附加传感器的位置。我们还设置了模拟激光雷达的扫描和范围属性的值。最后，我们将``/scan``设置为它将发布``sensor_msgs/LaserScan``消息的主题。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:138
 msgid "Next, let us add a depth camera to ``sam_bot``. Paste the following lines after the ``</gazebo>`` tag of the lidar sensor."
-msgstr "Next, let us add a depth camera to ``sam_bot``. Paste the following lines after the ``</gazebo>`` tag of the lidar sensor."
+msgstr "接下来，让我们给``sam_bot``添加一个深度摄像头。在激光雷达传感器的``</gazebo>``标签之后，粘贴以下几行代码。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:216
@@ -1042,7 +1042,7 @@ msgstr "Similar to the lidar sensor, we create ``camera_link`` which will be ref
 
 #: ../../setup_guides/sensors/setup_sensors.rst:221
 msgid "To verify that the sensors are set up properly and that they can see objects in our environemnt, let us launch ``sam_bot`` in a Gazebo world with objects. Let us create a Gazebo world with a single cube and a single sphere that are within the range of ``sam_bot``'s sensors so we can verify if it can see the objects correctly."
-msgstr "To verify that the sensors are set up properly and that they can see objects in our environemnt, let us launch ``sam_bot`` in a Gazebo world with objects. Let us create a Gazebo world with a single cube and a single sphere that are within the range of ``sam_bot``'s sensors so we can verify if it can see the objects correctly."
+msgstr "为了验证传感器是否正确设置，并且能够在我们的环境中看到物体，让我们在带有物体的 Gazebo 世界中启动``sam_bot``。我们创建一个 Gazebo 世界，里面有一个立方体和一个球体，它们在``sam_bot``的传感器范围内，这样我们可以验证它是否能够正确地看到这些物体。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:224
@@ -1052,7 +1052,7 @@ msgstr "To create the world, create a directory named ``world`` at the root of y
 
 #: ../../setup_guides/sensors/setup_sensors.rst:226
 msgid "Now, let us edit our launch file, `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_, to launch Gazebo with the world we just created. First, add the path of ``my_world.sdf`` by adding the following lines inside the ``generate_launch_description()``:"
-msgstr "Now, let us edit our launch file, `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_, to launch Gazebo with the world we just created. First, add the path of ``my_world.sdf`` by adding the following lines inside the ``generate_launch_description()``:"
+msgstr "现在，让我们编辑我们的启动文件 `launch/display.launch.py <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py>`_，以启动包含我们刚刚创建的世界的 Gazebo。首先，在``generate_launch_description()``中添加``my_world.sdf``的路径，添加以下几行代码："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:232
@@ -1062,7 +1062,7 @@ msgstr "Lastly, add the world path in the ``launch.actions.ExecuteProcess(cmd=['
 
 #: ../../setup_guides/sensors/setup_sensors.rst:238
 msgid "We also have to add the ``world`` directory to our ``CMakeLists.txt`` file. Open `CmakeLists.txt <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/CMakeLists.txt>`_ and append the ``world`` directory inside the install(DIRECTORY...), as shown in the snippet below."
-msgstr "We also have to add the ``world`` directory to our ``CMakeLists.txt`` file. Open `CmakeLists.txt <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/CMakeLists.txt>`_ and append the ``world`` directory inside the install(DIRECTORY...), as shown in the snippet below."
+msgstr "我们还需要在``CMakeLists.txt``文件中添加``world``目录。打开 `CmakeLists.txt <https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/CMakeLists.txt>`_，并在 install(DIRECTORY...) 中添加``world``目录，如下面的代码片段所示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:250
@@ -1072,7 +1072,7 @@ msgstr "We can now build and run our project. Navigate to the root of the projec
 
 #: ../../setup_guides/sensors/setup_sensors.rst:258
 msgid "RViz and the Gazebo will then be launched with ``sam_bot`` present in both. In the Gazebo window, the world that we created should be launched and ``sam_bot`` should be spawned in that world. You should now be able to observe ``sam_bot`` with the 360 lidar sensor and the depth camera, as shown in the image below."
-msgstr "RViz and the Gazebo will then be launched with ``sam_bot`` present in both. In the Gazebo window, the world that we created should be launched and ``sam_bot`` should be spawned in that world. You should now be able to observe ``sam_bot`` with the 360 lidar sensor and the depth camera, as shown in the image below."
+msgstr "然后，RViz 和 Gazebo 将同时启动，``sam_bot``将存在于两者中。在 Gazebo 窗口中，我们创建的世界应该会被加载，``sam_bot``也应该会在该世界中生成。您现在应该能够观察到具有 360 度激光雷达传感器和深度摄像头的``sam_bot``，如下图所示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:263
@@ -1082,7 +1082,7 @@ msgstr "In the RViz window, we can verify if we have properly modeled our sensor
 
 #: ../../setup_guides/sensors/setup_sensors.rst:268
 msgid "Lastly, we can also visualize the sensor readings in RViz.  To visualize the ``sensor_msgs/LaserScan`` message published on ``/scan`` topic, click the add button at the bottom part of the RViz window. Then go to the ``By topic`` tab and select the ``LaserScan`` option under ``/scan``, as shown below."
-msgstr "Lastly, we can also visualize the sensor readings in RViz.  To visualize the ``sensor_msgs/LaserScan`` message published on ``/scan`` topic, click the add button at the bottom part of the RViz window. Then go to the ``By topic`` tab and select the ``LaserScan`` option under ``/scan``, as shown below."
+msgstr "最后，我们还可以在 RViz 中可视化传感器读数。要可视化发布在``/scan``话题上的``sensor_msgs/LaserScan``消息，请在 RViz 窗口底部的添加按钮上点击。然后进入``By topic``选项卡，并在``/scan``下选择``LaserScan``选项，如下所示。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:274
@@ -1092,7 +1092,7 @@ msgstr "Next, set the ``Reliability Policy`` in RViz to ``Best Effort`` and set 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:279
 msgid "To visualize ``sensor_msgs/Image`` and ``sensor_msgs/PointCloud2``, do the same for topics ``/depth_camera/image_raw`` and ``/depth_camera/points`` respectively:"
-msgstr "To visualize ``sensor_msgs/Image`` and ``sensor_msgs/PointCloud2``, do the same for topics ``/depth_camera/image_raw`` and ``/depth_camera/points`` respectively:"
+msgstr "要可视化``sensor_msgs/Image``和``sensor_msgs/PointCloud2``，请分别对``/depth_camera/image_raw``和``/depth_camera/points``话题执行相同的操作："
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:283
