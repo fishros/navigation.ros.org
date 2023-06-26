@@ -351,11 +351,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial-steps"><cite>教程步骤</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enable-denoise-layer">1. Enable Denoise Layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">2. Run Nav2 stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-denoise-layer">1. 启用去噪图层</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-nav2-stack">2. 运行Nav2 stack</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">工作原理</a></li>
 </ul>
 </li>
 </ul>
@@ -944,13 +944,12 @@
 <li><p><a class="reference internal" href="#overview">概述</a></p></li>
 <li><p><a class="reference internal" href="#requirements">要求</a></p></li>
 <li><p><a class="reference internal" href="#tutorial-steps">教程步骤</a></p></li>
-<li><p><a class="reference internal" href="#how-it-works">How it works</a></p></li>
+<li><p><a class="reference internal" href="#how-it-works">工作原理</a></p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/title.png"><img alt="../../_images/title.png" src="../../_images/title.png" style="width: 1000px;" /></a>
 <div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>Noisy sensor measurements can cause to errors in <code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">Layer</span></code> or <code class="docutils literal notranslate"><span class="pre">Obstacle</span> <span class="pre">Layer</span></code>. As a result, salt and pepper noise may appear on the costmap. This noise creates false obstacles that prevent the robot from finding the best path on the map. While the images above show both salt and pepper noise as well as error due to mislocalization, this layer will only remove sensor noise, not mislocalized artifacts misaligned with the static map.
-This tutorial shows how to configure filtering of false obstacles caused by noise. This functionality is provided by the <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> costmap layer plugin which will be enabled and used in this document.</p>
+<p>嘈杂的传感器测量可能导致``Voxel Layer``或``Obstacle Layer``中的错误。结果是，在代价地图上可能出现椒盐噪声。这种噪声会产生虚假障碍物，阻止机器人在地图上找到最佳路径。尽管上面的图像显示了盐和胡椒噪声以及由于错误定位引起的错误，但此图层仅会去除传感器噪声，而不会去除与静态地图不对齐的错误定位伪影。本教程展示了如何配置用于过滤由噪声引起的虚假障碍物。这个功能由``DenoiseLayer``代价地图图层插件提供，将在本文档中启用和使用。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
@@ -959,19 +958,14 @@ This tutorial shows how to configure filtering of false obstacles caused by nois
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="enable-denoise-layer">
-<h3>1. Enable Denoise Layer<a class="headerlink" href="#enable-denoise-layer" title="永久链接至标题"></a></h3>
-<p>Denoise Layer is Costmap2D plugin. You can enable the <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> plugin in Costmap2D by adding <code class="docutils literal notranslate"><span class="pre">denoise_layer</span></code> to the <code class="docutils literal notranslate"><span class="pre">plugins</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">nav2_params.yaml</span></code>. You can place it in the <code class="docutils literal notranslate"><span class="pre">global_costmap</span></code> and (or) <code class="docutils literal notranslate"><span class="pre">local_costmap</span></code> to filter noise on a global or local map. The DenoiseLayer plugin should have the following parameter defined:</p>
+<h3>1. 启用去噪图层<a class="headerlink" href="#enable-denoise-layer" title="永久链接至标题"></a></h3>
+<p>Denoise Layer是Costmap2D插件。您可以通过在``nav2_params.yaml``的``plugins``参数中添加``denoise_layer``来启用``DenoiseLayer``插件。您可以将其放置在``global_costmap``和/或``local_costmap``中以在全局或局部地图上过滤噪声。DenoiseLayer插件应定义以下参数：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: type of plugin. In our case <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::DenoiseLayer</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: 插件类型。在我们的情况下是 <code class="docutils literal notranslate"><span class="pre">nav2_costmap_2d::DenoiseLayer</span></code>。</p></li>
 </ul>
-<p>Full list of parameters supported by <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> are listed at <a class="reference internal" href="../../configuration/packages/costmap-plugins/denoise.html#denoise"><span class="std std-ref">降噪层参数</span></a> page.</p>
-<p>It is important to note that <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> typically should be placed before the inflation layer.
-This is required to prevent inflation from noise-induced obstacles.
-Moreover, <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> processes only obstacle information in the costmap.
-Values <code class="docutils literal notranslate"><span class="pre">INSCRIBED_INFLATED_OBSTACLE</span></code>, <code class="docutils literal notranslate"><span class="pre">LETHAL_OBSTACLE</span></code> and optionally <code class="docutils literal notranslate"><span class="pre">NO_INFORMATION</span></code>
-will be interpreted as obstacle cell. Cells with any other values will be interpreted as <code class="docutils literal notranslate"><span class="pre">FREE_SPACE</span></code> when processed (won't be distorted in the cost map).
-If a cell with an obstacle is recognized as noise, it will be replaced by <code class="docutils literal notranslate"><span class="pre">FREE_SPACE</span></code> after processing.</p>
-<p>To enable <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> for both global and local costmaps, use the following configuration:</p>
+<p>支持``DenoiseLayer``的完整参数列表列在 <a class="reference internal" href="../../configuration/packages/costmap-plugins/denoise.html#denoise"><span class="std std-ref">降噪层参数</span></a> 页面上。</p>
+<p>值得注意的是，通常应将 <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> 放在膨胀图层之前。这是为了防止噪声引起的障碍物膨胀。此外，<code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> 仅处理代价地图中的障碍物信息。<code class="docutils literal notranslate"><span class="pre">INSCRIBED_INFLATED_OBSTACLE</span></code>、<code class="docutils literal notranslate"><span class="pre">LETHAL_OBSTACLE``和可选的``NO_INFORMATION``将被解释为障碍物单元。在处理时，具有其他任何值的单元将被解释为``FREE_SPACE``（在代价地图中不会失真）。如果将障碍物单元识别为噪声，则在处理后将其替换为``FREE_SPACE</span></code>。</p>
+<p>要为全局和局部代价地图同时启用``DenoiseLayer``，请使用以下配置：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>global_costmap:
   global_costmap:
     ros__parameters:
@@ -995,42 +989,32 @@ local_costmap:
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>The key to success in filtering noise is to understand its type and choose the right <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> parameters.
-The default parameters are focused on fast removal of standalone obstacles.
-More formally, an obstacle is discarded if there are no obstacles among the adjacent eight cells.
-This should be sufficient in typical cases.</p>
-<p>If some sensor generates intercorrelated noise-induced obstacles and small obstacles in the world are unlikely, small groups of obstacles can be removed.
-To configure the <code class="docutils literal notranslate"><span class="pre">DenoiseLayer</span></code> to such cases and understand how it works, refer to the section <a class="reference internal" href="#how-it-works">How it works</a>.</p>
+<p>在过滤噪声方面成功的关键是了解噪声的类型并选择正确的“DenoiseLayer”参数。默认参数专注于快速移除独立的障碍物。更正式地说，如果相邻的八个单元中没有障碍物，则会丢弃一个障碍物。这在典型情况下应该足够了。</p>
+<p>如果某个传感器生成了相互关联的噪声引起的障碍物，并且世界上的小障碍物不太可能存在，可以删除小组障碍物。要配置``DenoiseLayer``以处理此类情况并了解其工作原理，请参阅``How it works``部分。</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>Use this plugin to filter the global costmap with caution. It introduces potential performance issues.
-For example in case of typically-high-range lidars (20+ meters) update window can be massive making processing time unacceptably long.
-It is worth taking this into account as an application designer.</p>
+<p>谨慎使用此插件来过滤全局costmap，因为它可能引入潜在的性能问题。例如，在通常具有较高范围的激光雷达（20米以上）的情况下，更新窗口可能非常大，导致处理时间不可接受地长。作为应用程序设计者，考虑到这一点是值得的。</p>
 </div>
 </div>
 <div class="section" id="run-nav2-stack">
-<h3>2. Run Nav2 stack<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
-<p>After Denoise Layer was enabled for global/local costmaps, run Nav2 stack as written in <a class="reference internal" href="../../getting_started/index.html#getting-started"><span class="std std-ref">开始使用</span></a>:</p>
+<h3>2. 运行Nav2 stack<a class="headerlink" href="#run-nav2-stack" title="永久链接至标题"></a></h3>
+<p>在为全局/局部costmap启用Denoise Layer后，按照:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>getting_started`中的指示运行Nav2 stack：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>tb3_simulation_launch.py<span class="w"> </span>headless:<span class="o">=</span>False
 </pre></div>
 </div>
-<p>And check that filter is working properly: with the default parameters,
-no standalone obstacles should remain on the cost map. This can be checked, for example, in RViz main window displaying local and global costmaps after removing unnecessary particles (illustrated at the top of this tutorial).</p>
+<p>并检查过滤器是否正常工作：使用默认参数，在代价地图上不应保留任何独立的障碍物。例如，可以在移除不必要的粒子后，在RViz主窗口中显示局部和全局代价地图来进行检查（如本教程顶部所示）。</p>
 </div>
 </div>
 <div class="section" id="how-it-works">
-<h2>How it works<a class="headerlink" href="#how-it-works" title="永久链接至标题"></a></h2>
+<h2>工作原理<a class="headerlink" href="#how-it-works" title="永久链接至标题"></a></h2>
 <p>The plugin is based on two algorithms.</p>
-<p>When parameter <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code> = 2, the first algorithm turns on.
-It apply <a class="reference external" href="https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html">erosion</a> function with kernel from image below (left if <code class="docutils literal notranslate"><span class="pre">group_connectivity_type</span></code> = 4 or right if <code class="docutils literal notranslate"><span class="pre">group_connectivity_type</span></code> = 8) to the costmap.
-White color of the kernel pixel means to use the value, black means to ignore it.</p>
+<p>当参数“minimal_group_size”= 2时，第一个算法启动。它将`erosion &lt;<a class="reference external" href="https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html">https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html</a>&gt;`_ 函数应用于下方图片中的内核（如果“group_connectivity_type”= 4，则使用左侧内核；如果“group_connectivity_type”= 8，则使用右侧内核），作用于costmap上。内核像素的白色表示使用该值，黑色表示忽略该值。</p>
 <a class="reference internal image-reference" href="../../_images/3x3_kernels.png"><img alt="../../_images/3x3_kernels.png" src="../../_images/3x3_kernels.png" style="width: 222px;" /></a>
 <p>As a result of erosion function the neighbors image is created. Each possible position of the kernel on the costmap corresponds to one pixel of the neighbors image. The pixel value of this image is equal to the maximum of 4/8 costmap pixels corresponding to the white pixels of the mask.
 In other words, the pixel of the neighbors image is equal to the obstacle code if there is an obstacle nearby, the free space code in other case.
 After that, obstacles corresponding to free space code on neighbors image are removed.</p>
-<p>This process is illustrated below. On the left side of the image is a costmap, on the right is a neighbors image. White pixels are free space, black pixels are obstacles, <code class="docutils literal notranslate"><span class="pre">group_connectivity_type</span></code> = 4.
-Obstacles marked at the end of the animation will be removed.</p>
+<p>该过程如下图所示。图像的左侧是costmap，右侧是邻居图像。白色像素表示自由空间，黑色像素表示障碍物，“group_connectivity_type”= 4。动画结束时标记的障碍物将被移除。</p>
 <a class="reference internal image-reference" href="../../_images/dilate.gif"><img alt="../../_images/dilate.gif" src="../../_images/dilate.gif" style="width: 600px;" /></a>
 <p>When parameter <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code> &gt; 2, the second algorithm is executed.
 This is a generalized solution that allows you to remove groups of adjacent obstacles if their total number is less than <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code>.
@@ -1040,8 +1024,7 @@ Next, the size of each segment is calculated.
 Obstacles segments with size less than the <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code> are replaced with empty cells.
 This algorithm is about 10 times slower than first, so use it with caution and only when necessary.
 Its execution time depends on the size of the processed map fragment (and not depend on the value of <code class="docutils literal notranslate"><span class="pre">minimal_group_size</span></code>).</p>
-<p>This algorithm is illustrated in the animation below (<code class="docutils literal notranslate"><span class="pre">group_connectivity_type</span></code> = 8).
-Obstacles marked at the end of the animation will be removed (groups that size less 3).</p>
+<p>该算法如下动画所示（“group_connectivity_type”= 8）。动画结束时标记的障碍物将被移除（大小小于3的组）。</p>
 <a class="reference internal image-reference" href="../../_images/connected_components.gif"><img alt="../../_images/connected_components.gif" src="../../_images/connected_components.gif" style="width: 600px;" /></a>
 </div>
 </div>
