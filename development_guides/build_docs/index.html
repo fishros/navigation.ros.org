@@ -986,7 +986,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li><p><a class="reference external" href="https://docs.ros.org/en/rolling/Installation/Alternatives/Ubuntu-Development-Setup.html#install-development-tools-and-ros-tools">安装开发工具和 ROS 工具</a></p></li>
 </ul>
 </div>
-<p>Once your environment is setup, clone the repo, install all dependencies, and build the workspace:</p>
+<p>一旦您的环境设置完成，克隆存储库，安装所有依赖项并构建工作空间：</p>
 <div class="admonition attention">
 <p class="admonition-title">注意</p>
 <p>Nav2 的分支命名方案按照 ROS 发行版进行组织，而 Rolling 的默认分支为 <code class="docutils literal notranslate"><span class="pre">main</span></code>。</p>
@@ -1001,26 +1001,26 @@ colcon<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
 <span class="w">  </span>--symlink-install
 </pre></div>
 </div>
-<p>You can then <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/nav2_ws/install/setup.bash</span></code> to get ready for demonstrations!</p>
+<p>然后您可以执行 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/nav2_ws/install/setup.bash</span></code> 准备进行演示！</p>
 <div class="admonition hint">
 <p class="admonition-title">提示</p>
-<p>For more examples on building Nav2 from released distribution binaries, checkout <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile">distro.Dockerfile</a>.</p>
+<p>要了解如何从发布的分发二进制文件构建Nav2的更多示例，请查看`distro.Dockerfile &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile">https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile</a>&gt;`_。</p>
 </div>
 </div>
 <div class="content-collapse section" id="rolling-development-source">
 <h3>滚动式开发源代码<a class="headerlink" href="#rolling-development-source" title="永久链接至标题"></a></h3>
-<p>Building Nav2 using rolling development source is similar to building Nav2 from released distribution binaries, where instead you build dependencies from source using the main development branches for all ROS based packages.</p>
+<p>使用滚动开发源构建Nav2类似于使用发布的分发二进制文件构建Nav2，不同之处在于使用所有基于ROS的软件包的主要开发分支从源代码构建依赖项。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more information on building ROS 2 from source, see the official documentation:</p>
+<p>要了解如何从源代码构建ROS 2的更多信息，请参阅官方文档：</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.ros.org/en/rolling/Installation.html#building-from-source">ROS 2 Building from source</a></p></li>
+<li><p><a class="reference external" href="https://docs.ros.org/en/rolling/Installation.html#building-from-source">ROS 2 从源代码构建</a></p></li>
 </ul>
 </div>
-<p>Once your environment is setup, clone the repo, import all dependencies, and build the workspace:</p>
+<p>完成环境设置后，克隆存储库，导入所有依赖项并构建工作空间：</p>
 <div class="admonition attention">
 <p class="admonition-title">注意</p>
-<p>Be sure to check that all dependencies you need are included and uncommented in the <code class="docutils literal notranslate"><span class="pre">.repos</span></code> file.</p>
+<p>请确保检查您需要的所有依赖项是否已在 <code class="docutils literal notranslate"><span class="pre">.repos</span></code> 文件中包含并取消注释。</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>&lt;ros_ws&gt;/install/setup.bash
 mkdir<span class="w"> </span>-p<span class="w"> </span>~/nav2_ws/src<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/nav2_ws
@@ -1033,24 +1033,24 @@ colcon<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
 <span class="w">  </span>--symlink-install
 </pre></div>
 </div>
-<p>You can then <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/nav2_ws/install/setup.bash</span></code> to get ready for demonstrations!</p>
+<p>然后您可以执行 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/nav2_ws/install/setup.bash</span></code> 准备进行演示！</p>
 <div class="admonition hint">
 <p class="admonition-title">提示</p>
-<p>For more examples on building Nav2 from rolling development source, checkout <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile">source.Dockerfile</a>.</p>
+<p>要了解如何从滚动开发源构建Nav2的更多示例，请查看`source.Dockerfile &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile">https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile</a>&gt;`_。</p>
 </div>
 </div>
 <div class="content-collapse section" id="docker-container-images">
 <h3>Docker 容器映像<a class="headerlink" href="#docker-container-images" title="永久链接至标题"></a></h3>
-<p>Building Nav2 using Docker container images provides a repeatable and reproducible environment to automate and self document the entire setup process. Instead of manually invoking the development tools as documented above, you can leverage the project's Dockerfiles to build and install Nav2 for various distributions.</p>
+<p>使用Docker容器镜像构建Nav2提供了可重复和可复制的环境，以自动化和自我记录整个设置过程。与上述文档中手动调用开发工具不同，您可以利用项目的Docker文件来构建和安装适用于各种分发版本的Nav2。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more information on installing Docker or leaning about Dockerfiles, see the official documentation:</p>
+<p>要了解有关安装Docker或了解Docker文件的更多信息，请参阅官方文档：</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install">Docker Engine</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/engine/reference/builder">Dockerfile reference</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install">Docker 引擎</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/engine/reference/builder">Dockerfile参考</a></p></li>
 </ul>
 </div>
-<p>Once your system is setup, you can build the Nav2 Dockerfile from the root of the repo:</p>
+<p>一旦您的系统设置完成，您可以从存储库的根目录中构建Nav2 Dockerfile：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DISTRO</span><span class="o">=</span>rolling
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ros-planning/navigation2.git<span class="w"> </span>--branch<span class="w"> </span>main
 docker<span class="w"> </span>build<span class="w"> </span>--tag<span class="w"> </span>navigation2:<span class="nv">$ROS_DISTRO</span><span class="w"> </span><span class="se">\</span>
@@ -1060,19 +1060,17 @@ docker<span class="w"> </span>build<span class="w"> </span>--tag<span class="w">
 <span class="w">  </span>./navigation2
 </pre></div>
 </div>
-<p>The <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/build/">docker build</a> command above creates a tagged image using the <cite>Dockerfile</cite> from the context specified using the path to the repo, where build-time variables are set using additional arguments, e.g. passing a set of <a class="reference external" href="https://github.com/colcon/colcon-mixin-repository">colcon mixins</a> to configure the workspace build. Check the <code class="docutils literal notranslate"><span class="pre">ARG</span></code> directives in the <cite>Dockerfile</cite> to discover all build-time variables available. The command also specifies an <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/build/#cache-from">external cache source</a> to pull the latest cached image from Nav2's <a class="reference external" href="https://github.com/ros-planning/navigation2/pkgs/container/navigation2">Container Registry</a> to speed up the build process.</p>
+<p>上述`docker build &lt;<a class="reference external" href="https://docs.docker.com/engine/reference/commandline/build/">https://docs.docker.com/engine/reference/commandline/build/</a>&gt;`_命令使用来自指定路径到存储库的上下文的`Dockerfile`创建了一个带有标签的镜像，其中使用附加参数设置了构建时变量，例如通过传递一组`colcon mixins &lt;<a class="reference external" href="https://github.com/colcon/colcon-mixin-repository">https://github.com/colcon/colcon-mixin-repository</a>&gt;`_来配置工作空间构建。查看`Dockerfile`中的``ARG``指令以发现所有可用的构建时变量。该命令还指定了一个`外部缓存源 &lt;<a class="reference external" href="https://docs.docker.com/engine/reference/commandline/build/#cache-from">https://docs.docker.com/engine/reference/commandline/build/#cache-from</a>&gt;`_，以从Nav2的`容器注册表 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pkgs/container/navigation2">https://github.com/ros-planning/navigation2/pkgs/container/navigation2</a>&gt;`_中拉取最新的缓存镜像以加快构建过程。</p>
 <div class="admonition tip">
 <p class="admonition-title">小技巧</p>
-<p>The images cached from above are used for Nav2 CI, but can also be used with Nav2 <a class="reference internal" href="../devcontainer_docs/index.html#devcontainers"><span class="std std-ref">Dev Containers</span></a>!</p>
+<p>上面缓存的镜像用于Nav2 CI，但也可以与Nav2的devcontainers一起使用！</p>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="generate-doxygen">
 <h2>Generate Doxygen<a class="headerlink" href="#generate-doxygen" title="永久链接至标题"></a></h2>
-<p>Run <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> in the root of the Nav2 repository.
-It will generate a <code class="docutils literal notranslate"><span class="pre">/doc/*</span></code> directory containing the documentation.
-The documentation entrypoint in a browser is index.html.</p>
+<p>在Nav2存储库的根目录中运行``doxygen``。它将生成一个包含文档的``/doc/<a href="#id1"><span class="problematic" id="id2">*</span></a><a href="#id3"><span class="problematic" id="id4">``</span></a>目录。文档的入口点在浏览器中是index.html。</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="help">
