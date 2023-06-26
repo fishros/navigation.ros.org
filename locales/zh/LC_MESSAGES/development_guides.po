@@ -257,7 +257,7 @@ msgstr "上面缓存的镜像用于Nav2 CI，但也可以与Nav2的devcontainers
 
 #: ../../development_guides/build_docs/index.rst:141
 msgid "Generate Doxygen"
-msgstr "Generate Doxygen"
+msgstr "生成 Doxygen"
 
 
 #: ../../development_guides/build_docs/index.rst:143
@@ -267,7 +267,7 @@ msgstr "在Nav2存储库的根目录中运行``doxygen``。它将生成一个包
 
 #: ../../development_guides/build_docs/index.rst:150
 msgid "Help"
-msgstr "Help"
+msgstr "帮助"
 
 
 #: ../../development_guides/build_docs/index.rst:152
@@ -277,7 +277,7 @@ msgstr ":ref:`build-troubleshooting-guide`"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:2
 msgid "Dev Container Guide"
-msgstr "Dev Container Guide"
+msgstr "开发容器指南"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:4
@@ -287,7 +287,7 @@ msgstr "在本指南中，我们将逐步介绍为该项目创建和使用dev容
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:6
 msgid "Creating Dev Containers"
-msgstr "Creating Dev Containers"
+msgstr "创建开发容器"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:8
@@ -297,7 +297,7 @@ msgstr "在创建dev容器之前，您需要选择要使用的确切配置。默
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:11
 msgid "The specification, reference, and schema for the `devcontainer.json` config file format can be found here:"
-msgstr "The specification, reference, and schema for the `devcontainer.json` config file format can be found here:"
+msgstr "有关 `devcontainer.json` 配置文件格式的规范、参考和模式，请参阅此处："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:12
@@ -307,77 +307,77 @@ msgstr "[规范](https://containers.dev/implementors/spec)"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:13
 msgid "Development Container Specification"
-msgstr "Development Container Specification"
+msgstr "开发容器规范"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:14
 msgid "[Reference](https://containers.dev/implementors/json_reference)"
-msgstr "[Reference](https://containers.dev/implementors/json_reference)"
+msgstr "[参考](https://containers.dev/implementors/json_reference)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:15
 msgid "Metadata and properties reference"
-msgstr "Metadata and properties reference"
+msgstr "元数据和属性参考"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:16
 msgid "[Schema](https://containers.dev/implementors/json_schema)"
-msgstr "[Schema](https://containers.dev/implementors/json_schema)"
+msgstr "[模式](https://containers.dev/implementors/json_schema)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:17
 msgid "JSON schema for `devcontainer.json`"
-msgstr "JSON schema for `devcontainer.json`"
+msgstr "用于 `devcontainer.json` 的 JSON 模式"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:20
 msgid "Building the image"
-msgstr "Building the image"
+msgstr "构建镜像"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:22
 msgid "When first creating Dev Containers, any supporting tool or service used will download and build the docker images needed to run the container. This includes pulling any parent images the project's Dockerfile builds `FROM`, as well as any tags or layers declared via `cacheFrom`, as specified in the chosen `devcontainer.json` config file. This can take a while, but only needs to be done once, or at least not again until such layers are updated and pushed to the image registry."
-msgstr "When first creating Dev Containers, any supporting tool or service used will download and build the docker images needed to run the container. This includes pulling any parent images the project's Dockerfile builds `FROM`, as well as any tags or layers declared via `cacheFrom`, as specified in the chosen `devcontainer.json` config file. This can take a while, but only needs to be done once, or at least not again until such layers are updated and pushed to the image registry."
+msgstr "当首次创建 Dev Containers 时，任何使用的支持工具或服务将下载并构建所需的 Docker 镜像以运行容器。这包括拉取项目的 Dockerfile 构建中所声明的任何父镜像（`FROM`），以及通过 `cacheFrom` 在选择的 `devcontainer.json` 配置文件中声明的任何标签或层。这可能需要一些时间，但只需要执行一次，或者至少在这些层被更新并推送到镜像注册表之前不需要再次执行。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:24
 msgid "Specifically, for this project, the default `devcontainer.json` file targets the `dever` stage within the project's root Dockerfile, the stage that also includes handy tools for developing the project, such as bash auto completion. This stage is in turn built `FROM` the `builder` stage, the stage that only includes the dependencies needed for building the project, as reused by the project's CI. For example, the `dever` stage modifies `/etc/bash.bashrc` to automatically source `install/setup.bash` from the underlay workspace, ensuring all VS Code extensions are loaded with the correct environment, while avoiding any race conditions during installation and startup."
-msgstr "Specifically, for this project, the default `devcontainer.json` file targets the `dever` stage within the project's root Dockerfile, the stage that also includes handy tools for developing the project, such as bash auto completion. This stage is in turn built `FROM` the `builder` stage, the stage that only includes the dependencies needed for building the project, as reused by the project's CI. For example, the `dever` stage modifies `/etc/bash.bashrc` to automatically source `install/setup.bash` from the underlay workspace, ensuring all VS Code extensions are loaded with the correct environment, while avoiding any race conditions during installation and startup."
+msgstr "特别是对于这个项目，默认的`devcontainer.json`文件针对项目根目录中的`dever`阶段的Dockerfile进行了配置，该阶段还包括用于开发项目的实用工具，如bash自动完成。而这个阶段是从`builder`阶段构建的，`builder`阶段仅包括构建项目所需的依赖项，由项目的CI重复使用。例如，`dever`阶段修改了`/etc/bash.bashrc`以自动从基础工作区中源`install/setup.bash`，确保所有VS Code扩展都以正确的环境加载，同时避免安装和启动期间的任何竞争条件。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:26
 msgid "To speed up the initial build, images layers from this `builder` stage are cached by pulling the same image tag used by the project's CI, hosted from the image registry. This ensures your local dev container replicates our CI environment as close as possible, while benefiting from any cached work preemptively performed by the CI. Yet, this still allows you to customize the project's Dockerfile and rebuild the container, without needing to update CI images to reflect your local modifications."
-msgstr "To speed up the initial build, images layers from this `builder` stage are cached by pulling the same image tag used by the project's CI, hosted from the image registry. This ensures your local dev container replicates our CI environment as close as possible, while benefiting from any cached work preemptively performed by the CI. Yet, this still allows you to customize the project's Dockerfile and rebuild the container, without needing to update CI images to reflect your local modifications."
+msgstr "为了加快初始构建速度，从这个 `builder` 阶段的镜像层通过拉取与项目的 CI 使用的相同镜像标签进行缓存，该标签从镜像注册表中托管。这确保您的本地开发容器尽可能地复制我们的 CI 环境，同时从 CI 预先执行的任何缓存工作中获益。然而，这仍然允许您自定义项目的 Dockerfile 并重新构建容器，而无需更新 CI 镜像以反映您的本地修改。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:29
 msgid "More details on the project's CI and related docker image registry can be found here:"
-msgstr "More details on the project's CI and related docker image registry can be found here:"
+msgstr "可以在这里找到关于该项目的CI和相关的Docker镜像注册表的更多详细信息："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:31
 msgid "[Chronicles of Caching and Containerising CI for Nav2](https://vimeo.com/649647161/5b0c278e6c)"
-msgstr "[Chronicles of Caching and Containerising CI for Nav2](https://vimeo.com/649647161/5b0c278e6c)"
+msgstr "[缓存和为 Nav2 创建容器化 CI 的编年史](https://vimeo.com/649647161/5b0c278e6c)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:32
 msgid "Video presentation from ROS World 2021 - Ruffin White"
-msgstr "Video presentation from ROS World 2021 - Ruffin White"
+msgstr "ROS World 2021 - Ruffin White的视频演示"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:35
 msgid "Once the base image from the target stage is built, the supporting tool or service may then add additional layers to the image, such as installing additional [features](https://containers.dev/features) or customizations. For VS Code, this also includes some fancy file caching for any extensions to install later. Once this custom image is built, it is then used to start the dev container."
-msgstr "Once the base image from the target stage is built, the supporting tool or service may then add additional layers to the image, such as installing additional [features](https://containers.dev/features) or customizations. For VS Code, this also includes some fancy file caching for any extensions to install later. Once this custom image is built, it is then used to start the dev container."
+msgstr "一旦构建了目标阶段的基础镜像，支持工具或服务可以向镜像添加其他层，例如安装其他[功能](https://containers.dev/features)或定制内容。对于 VS Code，这还包括一些用于稍后安装的扩展的文件缓存。构建此自定义镜像后，将使用它来启动开发容器。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:37
 msgid "Starting the container"
-msgstr "Starting the container"
+msgstr "启动容器"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:39
 msgid "When first creating Dev Containers, any supporting tool or service will invoke a sequence of commands specified in the chosen `devcontainer.json` config file. This can take a while, but only needs to be done once, or at least not again until the container is rebuilt, triggered by either updating the Dockerfile, base image, or `.devcontainer/` config."
-msgstr "When first creating Dev Containers, any supporting tool or service will invoke a sequence of commands specified in the chosen `devcontainer.json` config file. This can take a while, but only needs to be done once, or at least not again until the container is rebuilt, triggered by either updating the Dockerfile, base image, or `.devcontainer/` config."
+msgstr "当首次创建 Dev Containers 时，任何支持工具或服务都将调用在选择的 `devcontainer.json` 配置文件中指定的一系列命令。这可能需要一些时间，但只需要执行一次，或者至少在重新构建容器之前不需要再次执行，可以通过更新 Dockerfile、基础镜像或 `.devcontainer/` 配置来触发重新构建。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:41
