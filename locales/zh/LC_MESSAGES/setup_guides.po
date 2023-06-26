@@ -1442,7 +1442,7 @@ msgstr "要使用TF2定义和存储``base_link``和``base_laser``帧之间的关
 
 #: ../../setup_guides/transformation/setup_transforms.rst:39
 msgid "To create a transform tree for our simple example, we'll create two nodes: one for the  ``base_link`` coordinate frame and one for the ``base_laser`` coordinate frame. To create the edge between them, we first need to decide which node will be the parent and which will be the child. Remember — this distinction is important because TF2 assumes that all transforms move from parent to child."
-msgstr "To create a transform tree for our simple example, we'll create two nodes: one for the  ``base_link`` coordinate frame and one for the ``base_laser`` coordinate frame. To create the edge between them, we first need to decide which node will be the parent and which will be the child. Remember — this distinction is important because TF2 assumes that all transforms move from parent to child."
+msgstr "为了为我们的简单示例创建一个变换树，我们将创建两个节点：一个用于 ``base_link`` 坐标系，一个用于 ``base_laser`` 坐标系。要创建它们之间的边，我们首先需要决定哪个节点将作为父节点，哪个将作为子节点。请记住 —— 这个区别很重要，因为TF2假定所有的变换都是从父节点到子节点。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:41
@@ -1452,7 +1452,7 @@ msgstr "让我们选择``base_link``坐标帧作为父节点，因为当其他�
 
 #: ../../setup_guides/transformation/setup_transforms.rst:43
 msgid "With this transform tree set up, converting the laser scan received in the ``base_laser`` frame to the  ``base_link`` frame is as simple as making a call to the TF2 library. Our robot can now use this information to reason about laser scans in the  ``base_link`` frame and safely plan around obstacles in its environment."
-msgstr "With this transform tree set up, converting the laser scan received in the ``base_laser`` frame to the  ``base_link`` frame is as simple as making a call to the TF2 library. Our robot can now use this information to reason about laser scans in the  ``base_link`` frame and safely plan around obstacles in its environment."
+msgstr "有了这个设置好的变换树，将接收到的激光扫描从 ``base_laser`` 坐标系转换到 ``base_link`` 坐标系只需简单地调用TF2库。我们的机器人现在可以使用这些信息来推理 ``base_link`` 坐标系中的激光扫描并安全地规划绕过环境中的障碍物。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:46
@@ -1462,7 +1462,7 @@ msgstr "静态变换发布器演示"
 
 #: ../../setup_guides/transformation/setup_transforms.rst:48
 msgid "If you are new to ROS 2 or do not have a working environment yet, then please take some time to properly setup your machine using the resources in the official `ROS 2 Installation Documentation <https://docs.ros.org/en/rolling/Installation.html>`__"
-msgstr "If you are new to ROS 2 or do not have a working environment yet, then please take some time to properly setup your machine using the resources in the official `ROS 2 Installation Documentation <https://docs.ros.org/en/rolling/Installation.html>`__"
+msgstr "如果您是ROS 2的新手或尚未拥有工作环境，请花些时间使用官方的 `ROS 2安装文档 <https://docs.ros.org/en/rolling/Installation.html>`__ 来正确设置您的机器。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:50
@@ -1472,7 +1472,7 @@ msgstr "现在让我们尝试使用TF2提供的static_transform_publisher工具�
 
 #: ../../setup_guides/transformation/setup_transforms.rst:52
 msgid "Open up your command line and execute the following command:"
-msgstr "Open up your command line and execute the following command:"
+msgstr "打开命令行并执行以下命令："
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:58
@@ -1482,7 +1482,7 @@ msgstr "通过这样做，我们现在成功地在TF2中发布了``base_link``�
 
 #: ../../setup_guides/transformation/setup_transforms.rst:64
 msgid "You should be able to observe a repeated output simiar to the one below."
-msgstr "You should be able to observe a repeated output simiar to the one below."
+msgstr "您应该能够观察到类似下面的重复输出。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:72
@@ -1492,7 +1492,7 @@ msgstr "这就是这个简短演示的全部内容 - 我们能够成功地使用
 
 #: ../../setup_guides/transformation/setup_transforms.rst:75
 msgid "If you would like to learn more about TF2 and how to create your own transform publishers, head onto the official `TF2 Documentation <https://wiki.ros.org/tf2/Tutorials>`__"
-msgstr "If you would like to learn more about TF2 and how to create your own transform publishers, head onto the official `TF2 Documentation <https://wiki.ros.org/tf2/Tutorials>`__"
+msgstr "如果您想了解更多关于TF2以及如何创建自己的变换发布器的信息，请参阅官方的 `TF2文档 <https://wiki.ros.org/tf2/Tutorials>`__"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:79
@@ -1502,32 +1502,32 @@ msgstr "Navigation2中的变换"
 
 #: ../../setup_guides/transformation/setup_transforms.rst:81
 msgid "There are two important ROS REPs which we highly suggest for you to check out. These documents detail some standards set about by the ROS community to ensure proper operation across different packages. Nav2 also adheres to these standards and conventions."
-msgstr "There are two important ROS REPs which we highly suggest for you to check out. These documents detail some standards set about by the ROS community to ensure proper operation across different packages. Nav2 also adheres to these standards and conventions."
+msgstr "有两个重要的ROS REPs，我们强烈建议您查阅。这些文档详细介绍了ROS社区制定的一些标准，以确保不同包之间的正确运行。Nav2也遵循这些标准和约定。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:83
 msgid "`REP 105 - Coordinate Frames for Mobile Platforms <https://www.ros.org/reps/rep-0105.html>`__"
-msgstr "`REP 105 - Coordinate Frames for Mobile Platforms <https://www.ros.org/reps/rep-0105.html>`__"
+msgstr "`REP 105 - 移动平台的坐标框架 <https://www.ros.org/reps/rep-0105.html>`__"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:84
 msgid "`REP 103 - Standard Units of Measure and Coordinate Conventions <https://www.ros.org/reps/rep-0103.html>`__"
-msgstr "`REP 103 - Standard Units of Measure and Coordinate Conventions <https://www.ros.org/reps/rep-0103.html>`__"
+msgstr "`REP 103 - 标准度量单位和坐标约定 <https://www.ros.org/reps/rep-0103.html>`__"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:86
 msgid "To quickly summarize REP 105, this document specifies the naming conventions and semantic meanings of the different coordinate frames used in ROS. Of interest to this tutorial are the ``base_link``, ``odom`` and ``map`` coordinate frames. The ``base_link`` is a coordinate frame that is attached to a fixed position on the robot, typically at its main chassis and its rotational center. The ``odom`` coordinate frame is a fixed frame relative to the robot's starting position and is mainly used for locally-consistent representations of distances. Lastly, the ``map`` coordinate frame is a world fixed frame that is used for globally-consistent representations of distances."
-msgstr "To quickly summarize REP 105, this document specifies the naming conventions and semantic meanings of the different coordinate frames used in ROS. Of interest to this tutorial are the ``base_link``, ``odom`` and ``map`` coordinate frames. The ``base_link`` is a coordinate frame that is attached to a fixed position on the robot, typically at its main chassis and its rotational center. The ``odom`` coordinate frame is a fixed frame relative to the robot's starting position and is mainly used for locally-consistent representations of distances. Lastly, the ``map`` coordinate frame is a world fixed frame that is used for globally-consistent representations of distances."
+msgstr "简要总结 REP 105，该文档规定了 ROS 中使用的不同坐标框架的命名约定和语义含义。本教程涉及的坐标框架包括 ``base_link``、``odom`` 和 ``map``。``base_link`` 是连接到机器人固定位置的坐标框架，通常位于其主要底盘和旋转中心处。``odom`` 坐标框架是相对于机器人起始位置的固定坐标框架，主要用于局部一致的距离表示。最后，``map`` 坐标框架是一个固定的世界坐标框架，用于全局一致的距离表示。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:88
 msgid "REP 103, on the other hand, discusses some standard units of measure and other related conventions to keep integration issues between different ROS packages to a minimum. The basic overview is that frames are defined using the right hand rule, with Z up and X forward, and units should be standard SI units."
-msgstr "REP 103, on the other hand, discusses some standard units of measure and other related conventions to keep integration issues between different ROS packages to a minimum. The basic overview is that frames are defined using the right hand rule, with Z up and X forward, and units should be standard SI units."
+msgstr "REP 103，另一方面，讨论了一些标准度量单位和其他相关约定，以使不同ROS包之间的集成问题最小化。基本概述是，使用右手规则定义坐标系，Z轴向上，X轴向前，并且单位应为标准的国际单位制。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:90
 msgid "Now let's move on to some specifics for the Navigation2 package to function correctly. Nav2 requires the following transformations to be published in ROS:"
-msgstr "Now let's move on to some specifics for the Navigation2 package to function correctly. Nav2 requires the following transformations to be published in ROS:"
+msgstr "现在让我们进一步讨论 Navigation2 软件包的一些具体内容，以确保其正常运行。Nav2 要求在 ROS 中发布以下变换："
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:92
@@ -1542,37 +1542,37 @@ msgstr "``odom`` => ``base_link``"
 
 #: ../../setup_guides/transformation/setup_transforms.rst:94
 msgid "``base_link`` => ``base_laser`` (sensor base frames)"
-msgstr "``base_link`` => ``base_laser`` (sensor base frames)"
+msgstr "``base_link`` => ``base_laser``（传感器基准坐标系）"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:97
 msgid "The ``base_laser`` coordinate frame is not included in the REP 105 standard. For this guide, we will be using this name to refer to the coordinate frame for a laser sensor on our robot platform.  If there are multiple sensor base frames (e.g. camera_link, base_laser2, lidar_link etc.), then a transformation back to ``base_link`` for each one is required."
-msgstr "The ``base_laser`` coordinate frame is not included in the REP 105 standard. For this guide, we will be using this name to refer to the coordinate frame for a laser sensor on our robot platform.  If there are multiple sensor base frames (e.g. camera_link, base_laser2, lidar_link etc.), then a transformation back to ``base_link`` for each one is required."
+msgstr "``base_laser`` 坐标框架不在 REP 105 标准中。在本指南中，我们将使用此名称来指代机器人平台上激光传感器的坐标框架。如果存在多个传感器基准坐标系（例如，camera_link、base_laser2、lidar_link 等），则需要为每个传感器都进行到 ``base_link`` 的转换。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:99
 msgid "The first transform ``map`` => ``odom`` is usually provided by a different ROS package dealing with localization and mapping such as AMCL. This transform updates live in use so we don't set static values for this in our robot's TF tree. Further detail about how to set this up may be pretty complex, so we highly suggest to have a look at the documentation of the mapping or localization package you are using for your platform. All ROS compliant SLAM and localization packages will provide you with this transformation automatically on launch."
-msgstr "The first transform ``map`` => ``odom`` is usually provided by a different ROS package dealing with localization and mapping such as AMCL. This transform updates live in use so we don't set static values for this in our robot's TF tree. Further detail about how to set this up may be pretty complex, so we highly suggest to have a look at the documentation of the mapping or localization package you are using for your platform. All ROS compliant SLAM and localization packages will provide you with this transformation automatically on launch."
+msgstr "通常由处理定位和建图（例如AMCL）的其他ROS包提供第一个变换``map`` => ``odom``。这个变换在使用过程中实时更新，因此我们不在机器人的TF树中设置静态值。关于如何设置这个变换的详细信息可能相当复杂，因此我们强烈建议查看您所使用平台的建图或定位包的文档。所有符合ROS标准的SLAM和定位包将在启动时自动为您提供此变换。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:101
 msgid "The ``odom`` => ``base_link`` is usually published by our odometry system using sensors such as wheel encoders. This is typically computed via sensor fusion of odometry sensors (IMU, wheel encoders, VIO, etc) using the ``robot_localization`` package."
-msgstr "The ``odom`` => ``base_link`` is usually published by our odometry system using sensors such as wheel encoders. This is typically computed via sensor fusion of odometry sensors (IMU, wheel encoders, VIO, etc) using the ``robot_localization`` package."
+msgstr "通常，``odom`` => ``base_link`` 是由我们的里程计系统使用诸如轮式编码器之类的传感器发布的。这通常是通过使用 ``robot_localization`` 软件包对里程计传感器（IMU、轮式编码器、VIO 等）进行传感器融合来计算的。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:103
 msgid "All other statically defined transforms (e.g. ``base_link`` => ``base_laser``, ``base_link`` => ``wheels``, ``wheels`` => ``IMU``, etc) is what we will be talking about for the rest of this guide. This transformation tree is used by Nav2 to properly relate the information from sensors or other frame of interest to the rest of the robot. The transformation between these two coordinate frames is usually provided to Nav2 through the Robot State Publisher and the Universal Robot Descriptor File (URDF). In cases where there are more sensor coordinate frames on your platform, then a transform tree from ``base_link`` to each sensor coordinate frame needs to be published."
-msgstr "All other statically defined transforms (e.g. ``base_link`` => ``base_laser``, ``base_link`` => ``wheels``, ``wheels`` => ``IMU``, etc) is what we will be talking about for the rest of this guide. This transformation tree is used by Nav2 to properly relate the information from sensors or other frame of interest to the rest of the robot. The transformation between these two coordinate frames is usually provided to Nav2 through the Robot State Publisher and the Universal Robot Descriptor File (URDF). In cases where there are more sensor coordinate frames on your platform, then a transform tree from ``base_link`` to each sensor coordinate frame needs to be published."
+msgstr "在本指南的其余部分，我们将讨论所有其他静态定义的变换（例如``base_link`` => ``base_laser``，``base_link`` => ``wheels``，``wheels`` => ``IMU``等）。Nav2使用这个变换树来正确关联传感器或其他感兴趣的坐标系的信息与机器人的其他部分。这两个坐标系之间的变换通常通过机器人状态发布器和通用机器人描述文件（URDF）提供给Nav2。如果您的平台上有更多传感器坐标系，则需要发布从``base_link``到每个传感器坐标系的变换树。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:106
 msgid "For a more in-depth discussion on the usage of transforms and how these are used to estimate the current state of your robot, we highly recommend having a look at the State Estimation topic in :ref:`concepts`."
-msgstr "For a more in-depth discussion on the usage of transforms and how these are used to estimate the current state of your robot, we highly recommend having a look at the State Estimation topic in :ref:`concepts`."
+msgstr "关于变换的使用以及如何使用变换估计机器人的当前状态，我们强烈建议参阅 :ref:`概念` 中的状态估计主题，进行更深入的讨论。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:111
 msgid "In this tutorial, we have discussed about the concept of transforms and how they are used in Nav2."
-msgstr "In this tutorial, we have discussed about the concept of transforms and how they are used in Nav2."
+msgstr "在本教程中，我们已经讨论了变换的概念以及它们在Nav2中的使用。"
 
 
 #: ../../setup_guides/transformation/setup_transforms.rst:113
