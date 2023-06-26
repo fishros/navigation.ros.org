@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5. Navigation Safety Node &mdash; Navigation 2 1.0.0 文档</title>
+  <title>5. 导航安全节点 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>5. Navigation Safety Node</li>
+      <li>5. 导航安全节点</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,25 +936,22 @@
            <div itemprop="articleBody">
              
   <div class="section" id="navigation-safety-node">
-<span id="safety-node"></span><h1>5. Navigation Safety Node<a class="headerlink" href="#navigation-safety-node" title="永久链接至标题"></a></h1>
+<span id="safety-node"></span><h1>5. 导航安全节点<a class="headerlink" href="#navigation-safety-node" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
-<p>The aim of this project is to create a safety watchdog node to ensure the robot is acting properly and not about to collide with an obstacle. Typical safety-rated lidars will contain &quot;safety zones&quot; whereas if any sensor points are located in a box around the lidar, then the lidar will send a signal to the robot to stop due to a potential collision. However, less and less people are using safety-rated lidars as consumer available lidars are dropping in cost and 3D lidars are seeing more use in mobile robotics.</p>
-<p>Your project will be to re-create this logic at the Navigation level. While this wouldn't be &quot;safety certified&quot;, this is a significant functional improvement on safety that could potentially safe real people from real injuries in the real-world. The project will be to create a node that sits below the navigation stack but above the robot controller to do the following:</p>
+<p>该项目的目标是创建一个安全监控节点，以确保机器人的行为正常，不会与障碍物发生碰撞。通常安全级别的激光雷达会包含&quot;安全区域&quot;，即如果任何传感器点位于激光雷达周围的一个框中，那么激光雷达将向机器人发送信号，要求其停止以避免潜在的碰撞。然而，随着消费者可用的激光雷达成本降低和3D激光雷达在移动机器人领域的应用增多，使用安全级别的激光雷达的人越来越少。</p>
+<p>你的项目是在导航层级上重新创建这个逻辑。虽然这不会得到“安全认证”，但它对安全性是一个重大的功能改进，有可能在现实世界中保护真实的人们免受真实的伤害。该项目的目标是创建一个位于导航栈下方但位于机器人控制器上方的节点，完成以下任务：</p>
 <ul class="simple">
-<li><p>Take in the current command velocity from navigation and the most recent laser or RGBD scan</p></li>
-<li><p>Projecting the velocity forward in time <code class="docutils literal notranslate"><span class="pre">N</span></code> seconds, check if that velocity will result in a collision with any sensor measurements</p></li>
-<li><p>If not, allow the velocity command through to the base</p></li>
-<li><p>If it does collide, scale back the velocity such that the robot will always be at minimum <code class="docutils literal notranslate"><span class="pre">N</span></code> seconds from a collision</p></li>
-<li><p>Optionally if a flag is set, if <code class="docutils literal notranslate"><span class="pre">M</span></code> or more points are in defined bounding boxes around the robot, send only <code class="docutils literal notranslate"><span class="pre">0</span></code> commands to enact an emergency stop.</p></li>
+<li><p>接收来自导航的当前命令速度和最近的激光扫描或RGBD扫描</p></li>
+<li><p>预测将来 <code class="docutils literal notranslate"><span class="pre">N</span></code> 秒内的速度，并检查该速度是否会与任何传感器测量结果发生碰撞</p></li>
+<li><p>如果没有问题，将速度命令传递到底盘</p></li>
+<li><p>如果发生碰撞，降低速度，使得机器人始终与碰撞至少相隔 <code class="docutils literal notranslate"><span class="pre">N</span></code> 秒</p></li>
+<li><p>可选地，如果设置了标志，并且定义的边界框中有``M``个或更多点位于机器人周围，只发送``0``命令以执行紧急停止操作。</p></li>
 </ul>
-<p>This will be an excellent chance to make mobile robots and Nav2 users significantly safer and run at higher speeds in their production or research environments. It goes a long way for functional safety for those not using safety-rated lidars which contain similar features.</p>
+<p>这将是使移动机器人和Nav2用户在生产或研究环境中显著提高安全性和运行速度的绝佳机会。对于那些不使用具备类似功能的安全级激光雷达的用户而言，这在功能安全方面起到了很大的作用。</p>
 <p><strong>项目难度：中等</strong></p>
 <p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
 <p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
-<p><strong>Project output requirements</strong>
-- Creation of a ROS 2 node that will prevent robot collision based on lidar and/or RGBD data
-- Node should be able to run at lidar data speed (40hz+) and adjust velocity commands accordingly
-- If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box</p>
+<p><strong>项目输出要求</strong> - 创建一个基于激光雷达和/或RGBD数据的ROS 2节点，用于防止机器人碰撞 - 节点应能够以激光雷达数据的速度运行（40赫兹以上），并相应地调整速度指令 - 如果时间允许，可以调整/添加新的批评者到DWB本地规划器，以改进其性能对用户的安全性能</p>
 <p><strong>所需技能</strong></p>
 <ul class="simple">
 <li><p>C++，ROS</p></li>
@@ -966,7 +963,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
 <li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1899">Github ticket</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1899">Github问题单</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>
 <p><strong>许可</strong> - 所有贡献将在Apache 2.0许可下进行。 - 不需要其他CLA。</p>

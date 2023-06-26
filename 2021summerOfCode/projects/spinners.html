@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7. Reduce ROS 2 Nodes and Determinism &mdash; Navigation 2 1.0.0 文档</title>
+  <title>7. 减少ROS 2节点和确定性 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>7. Reduce ROS 2 Nodes and Determinism</li>
+      <li>7. 减少ROS 2节点和确定性</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,7 +936,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="reduce-ros-2-nodes-and-determinism">
-<span id="spinners"></span><h1>7. Reduce ROS 2 Nodes and Determinism<a class="headerlink" href="#reduce-ros-2-nodes-and-determinism" title="永久链接至标题"></a></h1>
+<span id="spinners"></span><h1>7. 减少ROS 2节点和确定性<a class="headerlink" href="#reduce-ros-2-nodes-and-determinism" title="永久链接至标题"></a></h1>
 <p><strong>任务描述</strong></p>
 <p>This project is admittedly abstract to explain to someone unfamiliar with the inner-details of ROS 2 and its layers. If you're interested in working on this, you will become one of the few that truly understand the inner workings of it and be a very marketable skill. We do not expect anyone applying for this project to have that knowledge beforehand and we will help you learn the necessary items.</p>
 <p>ROS 2 architecturally was changed before Foxy in order to ensure that any single process containing multiple ROS 2 node objects will share the same DDS participant on the network. This is important due to the overhead that each additional DDS participant has on the system.</p>
