@@ -816,13 +816,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#reduce-nodes-and-executors">减少节点和执行器</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#api-change-for-nav2-core">nav2_core的API更改</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extending-the-btservicenode-to-process-service-results">扩展BtServiceNode以处理服务结果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#including-new-rotation-shim-controller-plugin">Including new Rotation Shim Controller Plugin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spawning-the-robot-in-gazebo">Spawning the robot in Gazebo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recovery-behavior-timeout">Recovery Behavior Timeout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-parameter-use-final-approach-orientation-for-the-3-2d-planners">New parameter <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> for the 3 2D planners</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smacplanner2d-and-theta-fix-goal-orientation-being-ignored">SmacPlanner2D and Theta*: fix goal orientation being ignored</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases">SmacPlanner2D, NavFn and Theta*: fix small path corner cases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#change-and-fix-behavior-of-dynamic-parameter-change-detection">Change and fix behavior of dynamic parameter change detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#including-new-rotation-shim-controller-plugin">包括新的旋转Shim控制器插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spawning-the-robot-in-gazebo">在Gazebo中生成机器人</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovery-behavior-timeout">恢复行为超时</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-parameter-use-final-approach-orientation-for-the-3-2d-planners">3个2D规划器的新参数``use_final_approach_orientation``</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smacplanner2d-and-theta-fix-goal-orientation-being-ignored">SmacPlanner2D和Theta*：修复目标方向被忽略的问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases">SmacPlanner2D、NavFn和Theta*：修复小路径的边界情况</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-and-fix-behavior-of-dynamic-parameter-change-detection">更改和修复动态参数更改检测的行为</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dynamic-parameters">Dynamic Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bt-action-nodes-exception-changes">BT Action Nodes Exception Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bt-navigator-groot-multiple-navigators">BT Navigator Groot Multiple Navigators</a></li>
@@ -1041,23 +1041,20 @@
 </ul>
 </div></blockquote>
 <dl class="simple">
-<dt>some APIs are changed in these PRs:</dt><dd><ul class="simple">
+<dt>这些PR中有一些API发生了变化：</dt><dd><ul class="simple">
 <li><p><cite>PR2489 &lt;https://github.com/ros-planning/navigation2/pull/2489&gt;`_在``nav2_costmap_2d::Layer``类的初始化函数中移除了参数``client_node`</cite>、<code class="docutils literal notranslate"><span class="pre">rclcpp_node``并添加了参数``callback_group</span></code>。<code class="docutils literal notranslate"><span class="pre">callback_group``用于替代``rclcpp_node</span></code>。</p></li>
-<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2993">PR2993</a> removes argument <code class="docutils literal notranslate"><span class="pre">use_rclcpp_node</span> <span class="pre">``</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">constructor</span> <span class="pre">of</span> <span class="pre">class</span> <span class="pre">``nav2_util::LifecycleNode</span></code>.</p></li>
+<li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2993">PR2993</a> 在 <code class="docutils literal notranslate"><span class="pre">nav2_util::LifecycleNode</span></code> 类的构造函数中删除了参数 <code class="docutils literal notranslate"><span class="pre">use_rclcpp_node</span></code>。</p></li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="api-change-for-nav2-core">
 <h2>nav2_core的API更改<a class="headerlink" href="#api-change-for-nav2-core" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2976">PR 2976</a> changes the API for <code class="docutils literal notranslate"><span class="pre">nav2_core::Controller</span></code> and <code class="docutils literal notranslate"><span class="pre">nav2_core::Smoother</span></code> by replacing the use of shared pointer references <code class="docutils literal notranslate"><span class="pre">(const</span> <span class="pre">shared_ptr&lt;&gt;</span> <span class="pre">&amp;)</span></code> to shared pointers <code class="docutils literal notranslate"><span class="pre">(shared_ptr&lt;&gt;)</span></code>.
-Use of shared pointer references meant that the shared pointer counter was never incremented.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2976">PR2976</a> 更改了 <code class="docutils literal notranslate"><span class="pre">nav2_core::Controller</span></code> 和 <code class="docutils literal notranslate"><span class="pre">nav2_core::Smoother</span></code> 的API，将共享指针引用 <code class="docutils literal notranslate"><span class="pre">(const</span> <span class="pre">shared_ptr&lt;&gt;</span> <span class="pre">&amp;)</span></code> 替换为共享指针 <code class="docutils literal notranslate"><span class="pre">(shared_ptr&lt;&gt;)</span></code>。使用共享指针引用意味着共享指针计数器从未增加。</p>
 </div>
 <div class="section" id="extending-the-btservicenode-to-process-service-results">
 <h2>扩展BtServiceNode以处理服务结果<a class="headerlink" href="#extending-the-btservicenode-to-process-service-results" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2481">This PR 2481</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2992">PR 2992</a>  address <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2467">the ticket</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2968">this ticket</a> and adds a virtual <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> function to the <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> class (<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp">can be found here</a>).
-Similar to the already existing virtual <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> function, it can be overwritten in the child class to react to a respective event with some user-defined operation.
-The added <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> function will be called after the service interaction of the <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> has been successfully completed.</p>
+<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2481">PR2481</a> 和 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2992">PR2992</a> 处理了 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2467">该问题</a> 和 <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2968">这个问题</a>，并为 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 类添加了一个虚拟的 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 函数（<a class="reference external" href="https://github.com/ros-planning/navigation2/blob/c417e2fd267e1dfa880b7ff9d37aaaa7b5eab9ca/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp">可以在这里找到</a>）。类似于已有的虚拟 <code class="docutils literal notranslate"><span class="pre">on_wait_for_result()</span></code> 函数，它可以在子类中进行重写，以对相应的事件做出用户定义的操作。添加的 <code class="docutils literal notranslate"><span class="pre">on_completion()</span></code> 函数将在 <code class="docutils literal notranslate"><span class="pre">BtServiceNode</span></code> 的服务交互成功完成后调用。</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* @brief Function to perform some user-defined operation upon successful</span>
 <span class="cm">* completion of the service. Could put a value on the blackboard.</span>
@@ -1073,47 +1070,45 @@ The added <code class="docutils literal notranslate"><span class="pre">on_comple
 <p>返回的``BT::NodeStatus``将设置BT节点的当前状态。由于函数可以访问服务的结果，因此返回的节点状态可以依赖于这些服务结果。引入``on_completion()``函数不会影响``BtServiceNode``的正常行为，因为默认实现仍然在服务交互成功完成时简单地返回``BT::NodeStatus::SUCCESS``。</p>
 </div>
 <div class="section" id="including-new-rotation-shim-controller-plugin">
-<h2>Including new Rotation Shim Controller Plugin<a class="headerlink" href="#including-new-rotation-shim-controller-plugin" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2718">This PR 2718</a> introduces the new <code class="docutils literal notranslate"><span class="pre">nav2_rotation_shim_controller</span></code>. This controller will check the rough heading difference with respect to the robot and a newly received path. If within a threshold, it will pass the request onto the primary controller to execute. If it is outside of the threshold, this controller will rotate the robot towards that path heading. Once it is within the tolerance, it will then pass off control-execution from this rotation shim controller onto the primary controller plugin. At this point, the robot is still going to be rotating, allowing the current plugin to take control for a smooth hand off into path tracking.</p>
-<p>The Rotation Shim Controller is suitable for:</p>
+<h2>包括新的旋转Shim控制器插件<a class="headerlink" href="#including-new-rotation-shim-controller-plugin" title="永久链接至标题"></a></h2>
+<p>这个 PR 2718 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2718">https://github.com/ros-planning/navigation2/pull/2718</a>&gt; 引入了新的 nav2_rotation_shim_controller。这个控制器将检查机器人与新接收到的路径之间的大致航向差异。如果在阈值范围内，它将将请求传递给主要控制器来执行。如果超出阈值范围，这个控制器将使机器人朝向该路径的航向旋转。一旦在容差范围内，它将把控制执行从这个旋转控制器转交给主要控制器插件。此时，机器人仍然会旋转，以便当前插件可以控制平稳过渡到路径跟踪。</p>
+<p>旋转Shim控制器适用于以下情况：</p>
 <ul class="simple">
 <li><p>能够原地旋转的机器人，如差分驱动和全向驱动机器人。</p></li>
-<li><p>Preference to rotate in place rather than 'spiral out' when starting to track a new path that is at a significantly different heading than the robot's current heading.</p></li>
-<li><p>Using planners that are non-kinematically feasible, such as NavFn, Theta*, or Smac 2D (Feasible planners such as Smac Hybrid-A* and State Lattice will start search from the robot's actual starting heading, requiring no rotation).</p></li>
+<li><p>在开始跟踪一个与机器人当前方向明显不同的新路径时，更喜欢原地旋转而不是“螺旋外扩”。</p></li>
+<li><p>使用不可行的规划器（如 NavFn、Theta* 或 Smac 2D）（可行的规划器如 Smac Hybrid-A* 和 State Lattice 将从机器人的实际起始航向开始搜索，无需旋转）。</p></li>
 </ul>
 </div>
 <div class="section" id="spawning-the-robot-in-gazebo">
-<h2>Spawning the robot in Gazebo<a class="headerlink" href="#spawning-the-robot-in-gazebo" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2473">This PR 2473</a> deletes the pkg <code class="docutils literal notranslate"><span class="pre">nav2_gazebo_spawner</span></code> inside nav2_bringup directory. Instead of <code class="docutils literal notranslate"><span class="pre">nav2_gazebo_spawner</span></code> the Node <a class="reference external" href="https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py">spawn_entity.py</a> of <code class="docutils literal notranslate"><span class="pre">gazebo_ros</span></code> is recomended to spawn the robot in gazebo.
-Note that</p>
+<h2>在Gazebo中生成机器人<a class="headerlink" href="#spawning-the-robot-in-gazebo" title="永久链接至标题"></a></h2>
+<p>这个 PR 2473 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2473">https://github.com/ros-planning/navigation2/pull/2473</a>&gt; 删除了 nav2_bringup 目录中的 pkg nav2_gazebo_spawner。推荐使用 gazebo_ros 的节点 spawn_entity.py &lt;<a class="reference external" href="https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py">https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_ros/scripts/spawn_entity.py</a>&gt; 在 gazebo 中生成机器人。注意</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>gazebo should be started with both <code class="docutils literal notranslate"><span class="pre">libgazebo_ros_init.so</span></code> and <code class="docutils literal notranslate"><span class="pre">libgazebo_ros_factory.so</span></code> to work correctly.</p></li>
-<li><p>spawn_entity node could not remap /tf and /tf_static to tf and tf_static in the launch file yet, used only for multi-robot situations. This problem was overcame by adding remapping argument <code class="docutils literal notranslate"><span class="pre">&lt;remapping&gt;/tf:=tf&lt;/remapping&gt;</span></code>  <code class="docutils literal notranslate"><span class="pre">&lt;remapping&gt;/tf_static:=tf_static&lt;/remapping&gt;</span></code> under ros2 tag in each plugin which publishs transforms in the SDF file. It is essential to differentiate the tf's of the different robot.</p></li>
+<li><p>要正确工作，必须同时启动``libgazebo_ros_init.so``和``libgazebo_ros_factory.so``的Gazebo。</p></li>
+<li><p>spawn_entity 节点尚不能在启动文件中将 /tf 和 /tf_static 重新映射为 tf 和 tf_static，仅用于多机器人情况。通过在每个在 SDF 文件中发布变换的插件下添加重映射参数 &lt;remapping&gt;/tf:=tf&lt;/remapping&gt; &lt;remapping&gt;/tf_static:=tf_static&lt;/remapping&gt; 在 ros2 标签下，克服了这个问题。区分不同机器人的 tf 是必不可少的。</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="recovery-behavior-timeout">
-<h2>Recovery Behavior Timeout<a class="headerlink" href="#recovery-behavior-timeout" title="永久链接至标题"></a></h2>
-<p>Recoveries in Nav2, spin and backup, now have <code class="docutils literal notranslate"><span class="pre">time_allowance</span></code> ports in their BT nodes and request fields in their actions to specify a timeout. This helps ensure that the robot can exit a backup or spin primitive behavior in case it gets stuck or otherwise is unable to backup the full distance over a reasonable block of time.</p>
+<h2>恢复行为超时<a class="headerlink" href="#recovery-behavior-timeout" title="永久链接至标题"></a></h2>
+<p>Nav2 中的恢复（spin 和 backup）现在在它们的行为树节点和动作中具有 time_allowance 端口和请求字段，用于指定超时时间。这有助于确保机器人在备份或旋转原语行为中能够在一段合理的时间内退出，以防止被卡住或无法在合理的时间内完全备份。</p>
 </div>
 <div class="section" id="new-parameter-use-final-approach-orientation-for-the-3-2d-planners">
-<h2>New parameter <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> for the 3 2D planners<a class="headerlink" href="#new-parameter-use-final-approach-orientation-for-the-3-2d-planners" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">Pull request 2488</a> adds a new parameter <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation</span></code> to the 3 2D planners (Theta*, SmacPlanner2D and NavFn), <code class="docutils literal notranslate"><span class="pre">false</span></code> by default. If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the last pose of the path generated by the planner will have its orientation set to the approach orientation, i.e. the orientation of the vector connecting the last two points of the path. It allows sending the robot to a position (x,y) instead of a pose (x,y,theta) by effectively ignoring the goal orientation.
-For example, below, for the same goal with an orientaton pointed left of the screen, <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation=false</span></code> (left) and <code class="docutils literal notranslate"><span class="pre">use_final_approach_orientation=true</span></code> (right)</p>
+<h2>3个2D规划器的新参数``use_final_approach_orientation``<a class="headerlink" href="#new-parameter-use-final-approach-orientation-for-the-3-2d-planners" title="永久链接至标题"></a></h2>
+<p>Pull request 2488 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">https://github.com/ros-planning/navigation2/pull/2488</a>&gt; 向 3 个 2D 规划器（Theta*、SmacPlanner2D 和 NavFn）添加了一个新参数 use_final_approach_orientation，默认为 false。如果为 true，则规划器生成的路径的最后姿态将其方向设置为接近方向，即连接路径最后两个点的向量的方向。这允许将</p>
 <a class="reference internal image-reference" href="../_images/use_final_approach_orientation_false.gif"><img alt="../_images/use_final_approach_orientation_false.gif" src="../_images/use_final_approach_orientation_false.gif" style="width: 45%;" /></a>
 <a class="reference internal image-reference" href="../_images/use_final_approach_orientation_true.gif"><img alt="../_images/use_final_approach_orientation_true.gif" src="../_images/use_final_approach_orientation_true.gif" style="width: 45%;" /></a>
 </div>
 <div class="section" id="smacplanner2d-and-theta-fix-goal-orientation-being-ignored">
-<h2>SmacPlanner2D and Theta*: fix goal orientation being ignored<a class="headerlink" href="#smacplanner2d-and-theta-fix-goal-orientation-being-ignored" title="永久链接至标题"></a></h2>
+<h2>SmacPlanner2D和Theta*：修复目标方向被忽略的问题<a class="headerlink" href="#smacplanner2d-and-theta-fix-goal-orientation-being-ignored" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">This pull request 2488</a> fixes <a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2482">the  issue</a> of the goal pose orientation being ignored (the end path pose orientation was always set to 0).</p>
 </div>
 <div class="section" id="smacplanner2d-navfn-and-theta-fix-small-path-corner-cases">
-<h2>SmacPlanner2D, NavFn and Theta*: fix small path corner cases<a class="headerlink" href="#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases" title="永久链接至标题"></a></h2>
+<h2>SmacPlanner2D、NavFn和Theta*：修复小路径的边界情况<a class="headerlink" href="#smacplanner2d-navfn-and-theta-fix-small-path-corner-cases" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2488">This PR 2488</a> ensures the planners are not failing when the distance between the start and the goal is small (i.e. when they are on the same costmap cell), and in that case the output path is constructed with a single pose.</p>
 </div>
 <div class="section" id="change-and-fix-behavior-of-dynamic-parameter-change-detection">
-<h2>Change and fix behavior of dynamic parameter change detection<a class="headerlink" href="#change-and-fix-behavior-of-dynamic-parameter-change-detection" title="永久链接至标题"></a></h2>
+<h2>更改和修复动态参数更改检测的行为<a class="headerlink" href="#change-and-fix-behavior-of-dynamic-parameter-change-detection" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2576">This</a> and <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2585">this PR</a> modify the method used to catch the changes of dynamic parameters. The motivation was to fix the issue that <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">on_parameter_event_callback(const</span> <span class="pre">rcl_interfaces::msg::ParameterEvent::SharedPtr</span> <span class="pre">event)</span></code> was called for every parameter change of every node leading to unwanted parameter changes if 2 different nodes had the same parameter name.</p>
 </div>
 <div class="section" id="dynamic-parameters">
