@@ -7534,7 +7534,7 @@ msgstr "``<name>``.downsample_costmap"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:36 ../../configuration/packages/smac/configuring-smac-hybrid.rst:25
 msgid "Whether to downsample costmap to another resolution for search."
-msgstr "Whether to downsample costmap to another resolution for search."
+msgstr "是否将代价地图降采样到另一个分辨率以进行搜索。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst
@@ -7544,12 +7544,12 @@ msgstr "``<name>``.downsampling_factor"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:47 ../../configuration/packages/smac/configuring-smac-hybrid.rst:36
 msgid "Multiplier factor to downsample costmap by (e.g. if 5cm costmap at 2 ``downsample_factor``, 10cm output)."
-msgstr "Multiplier factor to downsample costmap by (e.g. if 5cm costmap at 2 ``downsample_factor``, 10cm output)."
+msgstr "代价地图降采样的乘数因子（例如，如果2 ``downsample_factor`` 的代价地图为5cm，则输出为10cm）。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:58 ../../configuration/packages/smac/configuring-smac-hybrid.rst:47 ../../configuration/packages/smac/configuring-smac-lattice.rst:29
 msgid "Whether to allow traversing/search in unknown space."
-msgstr "Whether to allow traversing/search in unknown space."
+msgstr "是否允许在未知空间中进行穿越/搜索。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7564,7 +7564,7 @@ msgstr "1000000"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:69 ../../configuration/packages/smac/configuring-smac-hybrid.rst:69 ../../configuration/packages/smac/configuring-smac-lattice.rst:51
 msgid "Maximum number of search iterations before failing to limit compute time, disabled by -1."
-msgstr "Maximum number of search iterations before failing to limit compute time, disabled by -1."
+msgstr "在超过最大搜索迭代次数之前进行搜索的最大次数，如果设为-1，则不限制计算时间。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7574,7 +7574,7 @@ msgstr "``<name>``.max_on_approach_iterations"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:80
 msgid "Maximum number of iterations after the search is within ``tolerance`` before returning approximate path with best heuristic if exact path is not found."
-msgstr "Maximum number of iterations after the search is within ``tolerance`` before returning approximate path with best heuristic if exact path is not found."
+msgstr "在搜索到达``tolerance``范围内的最大迭代次数之后，如果无法找到精确路径，则返回具有最佳启发式的近似路径。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7584,7 +7584,7 @@ msgstr "``<name>``.max_planning_time"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:91 ../../configuration/packages/smac/configuring-smac-hybrid.rst:91 ../../configuration/packages/smac/configuring-smac-lattice.rst:73
 msgid "Maximum planning time in seconds."
-msgstr "Maximum planning time in seconds."
+msgstr "规划的最长时间（以秒为单位）。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst
@@ -7594,7 +7594,7 @@ msgstr "``<name>``.cost_travel_multiplier"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:102
 msgid "Cost multiplier to apply to search to steer away from high cost areas. Larger values will place in the center of aisles more exactly (if non-`FREE` cost potential field exists) but take slightly longer to compute. To optimize for speed, a value of 1.0 is reasonable. A reasonable tradeoff value is 2.0. A value of 0.0 effective disables steering away from obstacles and acts like a naive binary search A*."
-msgstr "Cost multiplier to apply to search to steer away from high cost areas. Larger values will place in the center of aisles more exactly (if non-`FREE` cost potential field exists) but take slightly longer to compute. To optimize for speed, a value of 1.0 is reasonable. A reasonable tradeoff value is 2.0. A value of 0.0 effective disables steering away from obstacles and acts like a naive binary search A*."
+msgstr "用于搜索的成本乘数，以避开高成本区域。较大的值将更准确地放置在走道的中心（如果存在非`FREE`成本潜力场），但计算时间会稍长。为了优化速度，1.0是一个合理的值。合理的折中值为2.0。值为0.0将有效地禁用避开障碍物，并表现得像一个朴素的二进制搜索A*算法。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7604,7 +7604,7 @@ msgstr "``<name>``.smoother.max_iterations"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:124 ../../configuration/packages/smac/configuring-smac-hybrid.rst:256 ../../configuration/packages/smac/configuring-smac-lattice.rst:227
 msgid "The maximum number of iterations the smoother has to smooth the path, to bound potential computation."
-msgstr "The maximum number of iterations the smoother has to smooth the path, to bound potential computation."
+msgstr "平滑器用于平滑路径的最大迭代次数，以限制潜在的计算量。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7614,7 +7614,7 @@ msgstr "``<name>``.smoother.w_smooth"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:135 ../../configuration/packages/smac/configuring-smac-hybrid.rst:267 ../../configuration/packages/smac/configuring-smac-lattice.rst:238
 msgid "Weight for smoother to apply to smooth out the data points"
-msgstr "Weight for smoother to apply to smooth out the data points"
+msgstr "平滑器应用于平滑数据点的权重。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7624,7 +7624,7 @@ msgstr "``<name>``.smoother.w_data"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:146 ../../configuration/packages/smac/configuring-smac-hybrid.rst:278 ../../configuration/packages/smac/configuring-smac-lattice.rst:249
 msgid "Weight for smoother to apply to retain original data information"
-msgstr "Weight for smoother to apply to retain original data information"
+msgstr "平滑器应用于保留原始数据信息的权重。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7634,7 +7634,7 @@ msgstr "``<name>``.smoother.tolerance"
 
 #: ../../configuration/packages/smac/configuring-smac-2d.rst:157 ../../configuration/packages/smac/configuring-smac-hybrid.rst:289 ../../configuration/packages/smac/configuring-smac-lattice.rst:260
 msgid "Parameter tolerance change amount to terminate smoothing session"
-msgstr "Parameter tolerance change amount to terminate smoothing session"
+msgstr "平滑会话终止的参数容差变化量。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:4
