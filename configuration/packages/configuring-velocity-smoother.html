@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Velocity Smoother &mdash; Navigation 2 1.0.0 文档</title>
+  <title>速度平滑器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -681,8 +681,8 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-constrained-smoother.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Velocity Smoother</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#velocity-smoother-parameters">Velocity Smoother Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">速度平滑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#velocity-smoother-parameters">速度平滑器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
 </li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Velocity Smoother</li>
+      <li>速度平滑器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,15 +939,14 @@
            <div itemprop="articleBody">
              
   <div class="section" id="velocity-smoother">
-<span id="configuring-velocity-smoother"></span><h1>Velocity Smoother<a class="headerlink" href="#velocity-smoother" title="永久链接至标题"></a></h1>
+<span id="configuring-velocity-smoother"></span><h1>速度平滑器<a class="headerlink" href="#velocity-smoother" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_velocity_smoother">在Github上的源代码</a></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_velocity_smoother</span></code> is a package containing a lifecycle-component node for smoothing velocities sent by Nav2 to robot controllers.
-The aim of this package is to implement velocity, acceleration, and deadband smoothing from Nav2 to reduce wear-and-tear on robot motors and hardware controllers by smoothing out the accelerations/jerky movements that might be present with some local trajectory planners' control efforts.</p>
-<p>See the package's README for more information.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_velocity_smoother``是一个包含生命周期组件节点的软件包，用于平滑Nav2发送给机器人控制器的速度。该软件包的目的是通过平滑加速度/突变运动，从Nav2实现速度、加速度和死区的平滑，以减少机器人电机和硬件控制器的磨损。</p>
+<p>有关更多信息，请参阅软件包的 README。</p>
 <div class="section" id="velocity-smoother-parameters">
-<h2>Velocity Smoother Parameters<a class="headerlink" href="#velocity-smoother-parameters" title="永久链接至标题"></a></h2>
+<h2>速度平滑器参数<a class="headerlink" href="#velocity-smoother-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
-<dt class="field-odd">smoothing_frequency</dt>
+<dt class="field-odd">平滑频率</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -963,11 +962,11 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Frequency (Hz) to use the last received velocity command to smooth by velocity, acceleration, and deadband constraints. If set approximately to the rate of your local trajectory planner, it should smooth by acceleration constraints velocity commands. If set much higher, it will interpolate and provide a smooth set of commands to the hardware controller.</p>
+<dt>描述</dt><dd><p>使用最后接收到的速度命令按照速度、加速度和死区约束进行平滑的频率（Hz）。如果设置为与您的本地轨迹规划器的频率大致相同，它将通过加速度约束平滑速度命令。如果设置得更高，它将进行插值，并为硬件控制器提供一组平滑的命令。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">scale_velocities</dt>
+<dt class="field-even">比例速度</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -983,11 +982,11 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether or not to adjust other components of velocity proportionally to a component's required changes due to acceleration limits. This will try to adjust all components to follow the same direction, but still enforces acceleration limits to guarantee compliance, even if it means deviating off commanded trajectory slightly.</p>
+<dt>描述</dt><dd><p>是否按比例调整速度的其他分量，以根据加速度限制的变化来进行调整。这将尝试调整所有分量以遵循相同的方向，但仍然强制执行加速度限制以确保合规性，即使这意味着稍微偏离命令轨迹。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">feedback</dt>
+<dt class="field-odd">反馈</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1003,7 +1002,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Type of feedback to use for the current state of the robot's velocity. In <code class="docutils literal notranslate"><span class="pre">OPEN_LOOP</span></code>, it will use the last commanded velocity as the next iteration's current velocity. When acceleration limits are set appropriately, this is a good assumption. In <code class="docutils literal notranslate"><span class="pre">CLOSED_LOOP</span></code>, it will use the odometry from the <code class="docutils literal notranslate"><span class="pre">odom</span></code> topic to estimate the robot's current speed. In closed loop mode, it is important that the odometry is high rate and low latency, relative to the smoothing frequency.</p>
+<dt>描述</dt><dd><p>用于机器人速度当前状态的反馈类型。在“OPEN_LOOP”模式下，它将使用上一次命令的速度作为下一次迭代的当前速度。当适当设置加速度限制时，这是一个很好的假设。在“CLOSED_LOOP”模式下，它将使用“odom”话题的里程计来估算机器人的当前速度。在闭环模式下，相对于平滑频率而言，里程计的速率和延迟都非常重要。</p>
 </dd>
 </dl>
 </dd>
@@ -1018,7 +1017,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 <td><p>默认</p></td>
 </tr>
 <tr class="row-even"><td><p>vector&lt;double&gt;</p></td>
-<td><p>[0.5, 0.0, 2.5]</p></td>
+<td><p>[0.5，0.0，2.5]</p></td>
 </tr>
 </tbody>
 </table>
@@ -1027,7 +1026,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">min_velocity</dt>
+<dt class="field-odd">最小速度</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -1043,7 +1042,7 @@ The aim of this package is to implement velocity, acceleration, and deadband smo
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum velocities (m/s) in <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">theta]</span></code> axes. This is <strong>signed</strong> and thus must be <strong>negative</strong> to reverse. Note: rotational velocities negative direction is a right-hand turn, so this should always be negative regardless of reversing preference.</p>
+<dt>描述</dt><dd><p>在“[x，y，theta]”轴上的最小速度（米/秒）。这是**有符号**的，因此必须是**负数**以进行反向运动。注意：旋转速度的负方向是右转，因此无论反转偏好如何，它始终应为负数。</p>
 </dd>
 </dl>
 </dd>
