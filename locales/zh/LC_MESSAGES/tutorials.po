@@ -2313,7 +2313,7 @@ msgstr "带有自定义节点的编辑器以蓝色加载"
 
 #: ../../tutorials/docs/using_groot.rst:60
 msgid "If you select the default tree `navigate_w_replanning_and_recovery.xml`, then a Groot editor should look like :numref:`groot_nav2_default_bt`."
-msgstr "If you select the default tree `navigate_w_replanning_and_recovery.xml`, then a Groot editor should look like :numref:`groot_nav2_default_bt`."
+msgstr "如果选择默认的树`navigate_w_replanning_and_recovery.xml`，那么Groot编辑器应该如图所示：见图`groot_nav2_default_bt`。"
 
 
 #: ../../tutorials/docs/using_groot.rst:66
@@ -2323,7 +2323,7 @@ msgstr "完整的Nav2默认行为树"
 
 #: ../../tutorials/docs/using_groot.rst:70
 msgid "If a tree cannot be visualized because some nodes are missing in the pallet, you might need to add it to your pallet. While we try to keep Nav2's BT nodes and pallets in sync, if you notice one is missing, please file a ticket or pull request and we should have that updated quickly."
-msgstr "If a tree cannot be visualized because some nodes are missing in the pallet, you might need to add it to your pallet. While we try to keep Nav2's BT nodes and pallets in sync, if you notice one is missing, please file a ticket or pull request and we should have that updated quickly."
+msgstr "如果因为在面板中缺少一些节点而无法可视化树，则可能需要将其添加到面板中。尽管我们尽力使Nav2的BT节点和面板保持同步，但如果您注意到有一个节点缺失，请提交工单或拉取请求，我们将迅速进行更新。"
 
 
 #: ../../tutorials/docs/using_groot.rst:74
@@ -2333,7 +2333,7 @@ msgstr "编辑行为树"
 
 #: ../../tutorials/docs/using_groot.rst:76
 msgid "Now that you have a Nav2 BT open in Groot in editor mode, you should be able to trivially modify it using the GUI. Starting from a screen like that shown in :numref:`groot_nav2_default_bt`, you can pull in new nodes from the side panel to add them to the workspace. You may then connect the nodes using a \"drag and drop\" motion between the node's input and output ports to assemble the new nodes into the tree."
-msgstr "Now that you have a Nav2 BT open in Groot in editor mode, you should be able to trivially modify it using the GUI. Starting from a screen like that shown in :numref:`groot_nav2_default_bt`, you can pull in new nodes from the side panel to add them to the workspace. You may then connect the nodes using a \"drag and drop\" motion between the node's input and output ports to assemble the new nodes into the tree."
+msgstr "现在，在Groot中以编辑模式打开Nav2 BT后，您可以轻松使用GUI进行修改。从类似于:numref:`groot_nav2_default_bt`中显示的屏幕开始，您可以从侧边栏中拖入新节点并将其添加到工作区。然后，您可以使用“拖放”动作将节点的输入和输出端口连接起来，以将新节点组装成树形结构。"
 
 
 #: ../../tutorials/docs/using_groot.rst:80
@@ -2343,7 +2343,7 @@ msgstr "如果选择给定节点，您可以更改其元数据，例如名称或
 
 #: ../../tutorials/docs/using_groot.rst:83
 msgid "Adding A Custom Node"
-msgstr "Adding A Custom Node"
+msgstr "添加自定义节点"
 
 
 #: ../../tutorials/docs/using_groot.rst:85
@@ -2353,7 +2353,7 @@ msgstr "行为树中的每个节点都具有特定的功能。有时，在设计
 
 #: ../../tutorials/docs/using_groot.rst:95
 msgid "Create a new Custom Node"
-msgstr "Create a new Custom Node"
+msgstr "创建一个新的自定义节点"
 
 
 #: ../../tutorials/docs/using_groot.rst:98
@@ -2363,67 +2363,67 @@ msgstr "通过在Groot处于编辑器模式时单击 :numref:`groot_create_custo
 
 #: ../../tutorials/docs/using_groot.rst:103
 msgid "After completing, select `OK` in :numref:`groot_interactive_node_creation`, the new custom node should appear in blue in the `TreeNode Palette` as in :numref:`groot_export_new_node`."
-msgstr "After completing, select `OK` in :numref:`groot_interactive_node_creation`, the new custom node should appear in blue in the `TreeNode Palette` as in :numref:`groot_export_new_node`."
+msgstr "完成后，在:numref:`groot_interactive_node_creation`中选择`OK`，新的自定义节点应该以蓝色出现在`TreeNode Palette`中，如图所示：见图`groot_export_new_node`。"
 
 
 #: ../../tutorials/docs/using_groot.rst:110
 msgid "UI to describing new Nodes"
-msgstr "UI to describing new Nodes"
+msgstr "用于描述新节点的用户界面"
 
 
 #: ../../tutorials/docs/using_groot.rst:110
 msgid "Exporting the new Custom Node"
-msgstr "Exporting the new Custom Node"
+msgstr "导出新的自定义节点"
 
 
 #: ../../tutorials/docs/using_groot.rst:113
 msgid "Before starting to create a new BT based on the new custom nodes, it is recommend to export the newly created nodes to save in case of Groot crashing. This can be performed with the icon highlighted in green from :numref:`groot_export_new_node`. The resulting XML output from the node created in :numref:`groot_interactive_node_creation` can be seen below. You can see more examples in `Nav2's BT Node Pallet XML <https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml>`_."
-msgstr "Before starting to create a new BT based on the new custom nodes, it is recommend to export the newly created nodes to save in case of Groot crashing. This can be performed with the icon highlighted in green from :numref:`groot_export_new_node`. The resulting XML output from the node created in :numref:`groot_interactive_node_creation` can be seen below. You can see more examples in `Nav2's BT Node Pallet XML <https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml>`_."
+msgstr "在开始基于新自定义节点创建新BT之前，建议将新创建的节点导出以便在Groot崩溃时保存。可以使用 :numref:`groot_export_new_node` 中突出显示为绿色的图标来执行此操作。可以在 :numref:`groot_interactive_node_creation` 中创建的节点的XML输出如下所示。您可以在 `Nav2的BT节点面板XML <https://github.com/ros-planning/navigation2/blob/main/nav2_behavior_tree/nav2_tree_nodes.xml>`_ 中查看更多示例。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:4
 msgid "Using Rotation Shim Controller"
-msgstr "Using Rotation Shim Controller"
+msgstr "使用旋转垫片控制器"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:8
 msgid "`What is the Rotation Shim Controller?`_"
-msgstr "`What is the Rotation Shim Controller?`_"
+msgstr "`旋转衬垫控制器是什么？`_"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:9
 msgid "`Configuring Rotation Shim Controller`_"
-msgstr "`Configuring Rotation Shim Controller`_"
+msgstr "`配置旋转垫片控制器`_"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:10
 msgid "`Configuring Primary Controller`_"
-msgstr "`Configuring Primary Controller`_"
+msgstr "`配置主控制器`_"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:16
 msgid "This tutorial will discuss how to set up your robot to use the ``RotationShimController`` to help create intuitive, rotate-in-place, behavior for your robot while starting out to track a path. The goal of this tutorial is to explain to the reader the value of the controller, how to configure it, how to configure the primary controller with it, and finally an example of it in use."
-msgstr "This tutorial will discuss how to set up your robot to use the ``RotationShimController`` to help create intuitive, rotate-in-place, behavior for your robot while starting out to track a path. The goal of this tutorial is to explain to the reader the value of the controller, how to configure it, how to configure the primary controller with it, and finally an example of it in use."
+msgstr "本教程将讨论如何设置机器人以使用``RotationShimController``来帮助创建直观、原地旋转的行为，以便在追踪路径时起到辅助作用。本教程的目标是向读者解释控制器的价值，如何进行配置，如何与主控制器进行配置，并最后给出一个使用示例。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:18
 msgid "Before starting this tutorial, completing the :ref:`getting_started` is highly recommended especially if you are new to ROS and Nav2. The requirements are having the latest install of Nav2 / ROS 2 containing this package."
-msgstr "Before starting this tutorial, completing the :ref:`getting_started` is highly recommended especially if you are new to ROS and Nav2. The requirements are having the latest install of Nav2 / ROS 2 containing this package."
+msgstr "在开始本教程之前，强烈建议完成 :ref:`getting_started`，特别是如果您对ROS和Nav2不熟悉的话。要求是安装最新版本的Nav2 / ROS 2，并包含此软件包。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:21
 msgid "What is the Rotation Shim Controller?"
-msgstr "What is the Rotation Shim Controller?"
+msgstr "什么是旋转垫片控制器？"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:23
 msgid "This was developed due to quirks in TEB and DWB, but applicable to any other controller plugin type that you'd like to have rotation in place behavior with. ``TEB``'s behavior tends to whip the robot around with small turns, or when the path is starting at a very different heading than current, in a somewhat surprising way due to the elastic band approach. ``DWB`` can be tuned to have any type of behavior, but typically to tune it to be an excellent path follower also makes it less optimally capable of smooth transitions to new paths at far away headings -- there are always trade offs. Giving both TEB and DWB a better starting point to start tracking a path makes tuning the controllers significantly easier and creates more intuitive results for on-lookers."
-msgstr "This was developed due to quirks in TEB and DWB, but applicable to any other controller plugin type that you'd like to have rotation in place behavior with. ``TEB``'s behavior tends to whip the robot around with small turns, or when the path is starting at a very different heading than current, in a somewhat surprising way due to the elastic band approach. ``DWB`` can be tuned to have any type of behavior, but typically to tune it to be an excellent path follower also makes it less optimally capable of smooth transitions to new paths at far away headings -- there are always trade offs. Giving both TEB and DWB a better starting point to start tracking a path makes tuning the controllers significantly easier and creates more intuitive results for on-lookers."
+msgstr "这是由于TEB和DWB中的一些问题而开发的，但适用于您希望具有旋转行为的任何其他控制器插件类型。``TEB`` 的行为倾向于通过小的转弯将机器人扭转，或者当路径的起始朝向与当前朝向非常不同时，以一种令人惊讶的方式进行，这是由于弹性带方法。``DWB`` 可以被调节为具有任何类型的行为，但通常将其调节为出色的路径跟踪器也会使其在远离头部的新路径上的平滑过渡能力不够理想-总是存在权衡。给予TEB和DWB更好的起点以开始跟踪路径将显著简化控制器的调节，并为旁观者创造更直观的结果。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:25
 msgid "Note that it is not required to use this with **any** plugin. Many users are perfectly successful without using this controller, but if a robot may rotate in place before beginning its path tracking task (or others), it can be advantageous to do so."
-msgstr "Note that it is not required to use this with **any** plugin. Many users are perfectly successful without using this controller, but if a robot may rotate in place before beginning its path tracking task (or others), it can be advantageous to do so."
+msgstr "请注意，并不需要与**任何**插件一起使用。许多用户在不使用该控制器的情况下也能取得很好的效果，但如果机器人在开始追踪路径（或其他任务）之前需要进行原地旋转，使用该控制器可能会有优势。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:27
@@ -2453,12 +2453,12 @@ msgstr "使用非运动学可行的规划器，如 NavFn、Theta\\* 或 Smac 2D�
 
 #: ../../tutorials/docs/using_shim_controller.rst:36
 msgid "Regulated Pure Pursuit has this built in so it is not necessary to pair with RPP. However, it is applicable to all others. See :ref:`plugins` for a full list of current controller plugins."
-msgstr "Regulated Pure Pursuit has this built in so it is not necessary to pair with RPP. However, it is applicable to all others. See :ref:`plugins` for a full list of current controller plugins."
+msgstr "规则纯追踪已内置此功能，因此不需要与RPP配对。然而，它适用于所有其他插件。有关当前控制器插件的完整列表，请参阅 :ref:`plugins`。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:39
 msgid "Configuring Rotation Shim Controller"
-msgstr "Configuring Rotation Shim Controller"
+msgstr "配置旋转垫片控制器"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:41
@@ -2468,7 +2468,7 @@ msgstr "This controller is a *shim* because it is placed between the primary con
 
 #: ../../tutorials/docs/using_shim_controller.rst:43
 msgid "As such, its configuration looks very similar to that of any other plugin. In the code block below, you can see that we've added the ``RotationShimController`` as the plugin for path tracking in the controller server. You can see that we've also configured it below with its internal parameters, ``angular_dist_threshold`` through ``max_angular_accel``."
-msgstr "As such, its configuration looks very similar to that of any other plugin. In the code block below, you can see that we've added the ``RotationShimController`` as the plugin for path tracking in the controller server. You can see that we've also configured it below with its internal parameters, ``angular_dist_threshold`` through ``max_angular_accel``."
+msgstr "因此，它的配置与任何其他插件的配置非常相似。在下面的代码块中，您可以看到我们将``RotationShimController``作为控制器服务器中路径追踪的插件添加进去了。您还可以看到我们通过下面的内部参数``angular_dist_threshold``到``max_angular_accel``对其进行了配置。"
 
 
 #: ../../tutorials/docs/using_shim_controller.rst:74
