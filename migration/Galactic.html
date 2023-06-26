@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Humble to Iron" href="Humble.html" />
+    <link rel="next" title="从Humble升级到Iron" href="Humble.html" />
     <link rel="prev" title="Foxy到Galactic" href="Foxy.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
@@ -835,20 +835,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#fix-costmaplayer-cleararea-invert-param-logic">修复 CostmapLayer 清除区域的反转参数逻辑</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dynamic-composition">动态组合</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bt-cancel-node">BT取消节点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bt-pathlongeronapproach-node">BT PathLongerOnApproach Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bt-truncatepathlocal-node">BT TruncatePathLocal Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#constrained-smoother">Constrained Smoother</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#replanning-at-a-constant-rate-and-if-the-path-is-invalid">Replanning at a Constant Rate and if the Path is Invalid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#euclidean-distance-2d">Euclidean Distance 2D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recovery-to-behavior">Recovery To Behavior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#respawn-support-in-launch-and-lifecycle-manager">Respawn Support in Launch and Lifecycle Manager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#new-nav2-velocity-smoother">New Nav2 Velocity Smoother</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#goal-checker-api-changed">Goal Checker API Changed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#added-assisted-teleop">Added Assisted Teleop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bt-pathlongeronapproach-node">BT PathLongerOnApproach 节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bt-truncatepathlocal-node">BT TruncatePathLocal 节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constrained-smoother">约束平滑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replanning-at-a-constant-rate-and-if-the-path-is-invalid">以恒定速率重新规划路径，如果路径无效则重新规划</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#euclidean-distance-2d">二维欧几里得距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovery-to-behavior">恢复至行为</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#respawn-support-in-launch-and-lifecycle-manager">启动和生命周期管理中的重新生成支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-nav2-velocity-smoother">新增Nav2速度平滑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#goal-checker-api-changed">目标检查器API已更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#added-assisted-teleop">新增辅助遥操作</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Humble.html">Humble to Iron</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Humble.html#new-behavior-tree-navigator-plugins">New Behavior-Tree Navigator Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Humble.html">从Humble升级到Iron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Humble.html#new-behavior-tree-navigator-plugins">新增行为树导航插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#added-collision-monitor">Added Collision Monitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#removed-use-sim-time-from-yaml">Removed use_sim_time from yaml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Humble.html#run-time-speed-up-of-smac-planner">Run-time Speed up of Smac Planner</a></li>
@@ -1191,60 +1191,56 @@
 </tbody>
 </table>
 </div></blockquote>
-<p>The way of dynamic composition consumes lower memory(saves ~70%),  and lower cpu (saves ~13%) than normal multiple processes.</p>
+<p>动态组合的方式消耗的内存较低（节约约70%），CPU使用较低（节约约13%）比普通的多进程。</p>
 </div>
 <div class="section" id="bt-cancel-node">
 <h2>BT取消节点<a class="headerlink" href="#bt-cancel-node" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2787">This PR 2787</a> caters the users with an abstract node to develop cancel behaviors for different servers present in the Nav2 stack such as the controller_server, recovery_server and so on. As a start, this PR also provides the <code class="docutils literal notranslate"><span class="pre">CancelControl</span></code> behavior to cancel the goal given to the controller_server. As an addition to the <code class="docutils literal notranslate"><span class="pre">CancelControl</span></code> <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2856">This PR 2856</a> provides the users with the option to cancel the recoveries such as the <code class="docutils literal notranslate"><span class="pre">backup</span></code>, <code class="docutils literal notranslate"><span class="pre">spin</span></code> and <code class="docutils literal notranslate"><span class="pre">wait</span></code>.</p>
+<p>这个`PR 2787 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2787">https://github.com/ros-planning/navigation2/pull/2787</a>&gt;`_ 为Nav2堆栈中的不同服务器（如controller_server、recovery_server等）提供了一个抽象节点，用于开发取消行为。作为起点，这个PR还提供了``CancelControl``行为，用于取消给controller_server的目标。作为对``CancelControl``的补充，<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2856">PR 2856</a> 为用户提供了取消恢复行为（如``backup``、<code class="docutils literal notranslate"><span class="pre">spin``和``wait</span></code>）的选项。</p>
 </div>
 <div class="section" id="bt-pathlongeronapproach-node">
-<h2>BT PathLongerOnApproach Node<a class="headerlink" href="#bt-pathlongeronapproach-node" title="永久链接至标题"></a></h2>
-<p>In the <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2802">PR</a>, a new Decorator BT node known as <code class="docutils literal notranslate"><span class="pre">PathLongerOnApproach</span></code> has been added to provide with the functionality to check and potentially handle longer path generated due to an obstacle in the given goal proximity. To demonstrate this functionality, a new BT <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_goal_patience_and_recovery.xml</span></code> would serve both as an example and ready-to-use BT for a specific application that wishes to optimize their process cycle time. Demo of the developed BT can be seen below, where the robot pauses when close to a goal to see if the dynamic obstacle moves out of the way. Else, it executes the replan:</p>
-<p>Obstacle does not clear at all, with <cite>obstacle_clearance_time</cite> to be 3 seconds:</p>
+<h2>BT PathLongerOnApproach 节点<a class="headerlink" href="#bt-pathlongeronapproach-node" title="永久链接至标题"></a></h2>
+<p>在`PR &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2802">https://github.com/ros-planning/navigation2/pull/2802</a>&gt;`_ 中，添加了一个名为``PathLongerOnApproach``的新的装饰器BT节点，用于检查和处理由于给定目标附近的障碍物而生成的较长路径。为了演示这个功能，一个新的BT <code class="docutils literal notranslate"><span class="pre">navigate_to_pose_w_replanning_goal_patience_and_recovery.xml</span></code> 将作为一个示例和一个可立即使用的BT，用于针对希望优化其过程周期时间的特定应用程序。下面可以看到开发的BT的演示，当机器人接近目标时会暂停，以查看动态障碍物是否移开。否则，它会执行重新规划：</p>
+<p>障碍物完全没有清除，'obstacle_clearance_time' 设置为 3 秒：</p>
 <img alt="../_images/nav2_patience_near_goal_and_clear_obstacle.gif" src="../_images/nav2_patience_near_goal_and_clear_obstacle.gif" />
-<p>Obstacle clears and you can see the robot pass through the (could have been ideally the) same path:</p>
+<p>障碍物消失，你可以看到机器人通过了（理想情况下应该是）相同的路径：</p>
 <img alt="../_images/nav2_patience_near_goal_and_go_around.gif" src="../_images/nav2_patience_near_goal_and_go_around.gif" />
 </div>
 <div class="section" id="bt-truncatepathlocal-node">
-<h2>BT TruncatePathLocal Node<a class="headerlink" href="#bt-truncatepathlocal-node" title="永久链接至标题"></a></h2>
-<p>In the <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2753">PR 2753</a>, a new Action BT node named <code class="docutils literal notranslate"><span class="pre">TruncatePathLocal</span></code> has been added to extract a bounded-length path section near robot to be used e.g. for collision checking or computationally expensive smoothers</p>
+<h2>BT TruncatePathLocal 节点<a class="headerlink" href="#bt-truncatepathlocal-node" title="永久链接至标题"></a></h2>
+<p>在`PR 2753 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2753">https://github.com/ros-planning/navigation2/pull/2753</a>&gt;`_ 中，添加了一个名为``TruncatePathLocal``的新的动作BT节点，用于提取靠近机器人的有界长度路径段，用于碰撞检测或计算密集型平滑器等用途。</p>
 </div>
 <div class="section" id="constrained-smoother">
-<h2>Constrained Smoother<a class="headerlink" href="#constrained-smoother" title="永久链接至标题"></a></h2>
-<p>In <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2753">the PR 2753</a>, a new Smoother named <code class="docutils literal notranslate"><span class="pre">nav2_constrained_smoother::ConstrainedSmoother</span></code> has been added to optimize various path criteria such as smoothness or distance from obstacles, maintaining minimum turning radius</p>
+<h2>约束平滑器<a class="headerlink" href="#constrained-smoother" title="永久链接至标题"></a></h2>
+<p>在`PR 2753 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2753">https://github.com/ros-planning/navigation2/pull/2753</a>&gt;`_ 中，添加了一个名为``nav2_constrained_smoother::ConstrainedSmoother``的新的平滑器，用于优化各种路径标准，如平滑性或与障碍物的距离，并保持最小转弯半径。</p>
 </div>
 <div class="section" id="replanning-at-a-constant-rate-and-if-the-path-is-invalid">
-<h2>Replanning at a Constant Rate and if the Path is Invalid<a class="headerlink" href="#replanning-at-a-constant-rate-and-if-the-path-is-invalid" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2841">This PR 2804</a> introduces a new behavior tree that navigates to pose with consistent replanning and if the path becomes invalid.
-To facilitate the new behavior tree a new condition node PathExpiringTimer was introduced to trigger replanning at a consistent rate.</p>
+<h2>以恒定速率重新规划路径，如果路径无效则重新规划<a class="headerlink" href="#replanning-at-a-constant-rate-and-if-the-path-is-invalid" title="永久链接至标题"></a></h2>
+<p>「这个 PR 2804 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2841">https://github.com/ros-planning/navigation2/pull/2841</a>&gt;」引入了一个新的行为树，用于在目标位姿中进行一致的重新规划和路径失效处理。为了支持这个新的行为树，引入了一个新的条件节点 PathExpiringTimer，以便以一致的频率触发重新规划。</p>
 </div>
 <div class="section" id="euclidean-distance-2d">
-<h2>Euclidean Distance 2D<a class="headerlink" href="#euclidean-distance-2d" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2865">This PR 2865</a> changes Euclidean distance calculation throughout nav2 to project on to the XY plane (i.e. discard any information related to components in Z).
-This may potentially subtly change the way certain BT nodes, BT Navigators, controller servers, planner servers, and RPP behave if using custom plugins outside the Nav2 ecosystem.</p>
+<h2>二维欧几里得距离<a class="headerlink" href="#euclidean-distance-2d" title="永久链接至标题"></a></h2>
+<p>「这个 PR 2865 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2865">https://github.com/ros-planning/navigation2/pull/2865</a>&gt;」修改了 nav2 中的欧几里德距离计算，将其投影到 XY 平面上（即丢弃与 Z 分量相关的任何信息）。如果在 Nav2 生态系统之外使用自定义插件，则这可能会在某种程度上改变某些行为树节点、行为树导航器、控制器服务器、规划器服务器和 RPP 的行为。</p>
 </div>
 <div class="section" id="recovery-to-behavior">
-<h2>Recovery To Behavior<a class="headerlink" href="#recovery-to-behavior" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation.ros.org/pull/298">This PR 2867</a> renames the nav2_recoveries to nav2_behaviors.</p>
-<p>In navigation_launch.py recoveries_server -&gt; behavior_server and nav2_recoveries -&gt; nav2_behaviors.
-In nav2_params.yaml recovery_plugins -&gt; behavior_plugins and nav2_recoveries -&gt; nav2_behaviors.</p>
+<h2>恢复至行为<a class="headerlink" href="#recovery-to-behavior" title="永久链接至标题"></a></h2>
+<p>「这个 PR 2867 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation.ros.org/pull/298">https://github.com/ros-planning/navigation.ros.org/pull/298</a>&gt;」将 nav2_recoveries 重命名为 nav2_behaviors。</p>
+<p>在navigation_launch.py中，recoveries_server -&gt; behavior_server以及nav2_recoveries -&gt; nav2_behaviors。在nav2_params.yaml中，recovery_plugins -&gt; behavior_plugins以及nav2_recoveries -&gt; nav2_behaviors。</p>
 </div>
 <div class="section" id="respawn-support-in-launch-and-lifecycle-manager">
-<h2>Respawn Support in Launch and Lifecycle Manager<a class="headerlink" href="#respawn-support-in-launch-and-lifecycle-manager" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2910">PR 2752</a> enables respawn support in Nav2. In the launch files, you may set <code class="docutils literal notranslate"><span class="pre">use_respawn</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> to enable respawning of servers that crash. This is only available in non-composed systems, since in composed systems, all of the nodes are under a single process and a crash anywhere will bring everything down (including the lifecycle manager itself). Even if the container was set to respawn, it would only respawn the empty container, not with all of the components loaded into it.</p>
-<p>That PR also enables the lifecycle manager to check if a system goes down due to a crash. If so, it allows the manager to check if the server comes back online within a given timeout period. If it does, it will automatically retransition the system back up to active to continue on its task automatically.</p>
+<h2>启动和生命周期管理中的重新生成支持<a class="headerlink" href="#respawn-support-in-launch-and-lifecycle-manager" title="永久链接至标题"></a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>PR 2752 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2910">https://github.com/ros-planning/navigation2/pull/2910</a>&gt;`_使Nav2支持重启。在启动文件中，您可以将``use_respawn``设置为``true``以启用服务器崩溃后的重启。这仅适用于非组合系统，因为在组合系统中，所有节点都在单个进程下运行，任何地方的崩溃都会导致整个系统崩溃（包括生命周期管理器本身）。即使容器设置为重启，它也只会重启空容器，而不会加载其中的所有组件。</p>
+<p>该 PR 还使生命周期管理器能够检查系统是否因崩溃而停机。如果是这样，管理器将检查服务器是否在给定的超时期内重新上线。如果是，它将自动重新将系统转换为活动状态，以继续执行其任务。</p>
 </div>
 <div class="section" id="new-nav2-velocity-smoother">
-<h2>New Nav2 Velocity Smoother<a class="headerlink" href="#new-nav2-velocity-smoother" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2964">PR 2964</a> introduces the <code class="docutils literal notranslate"><span class="pre">nav2_velocity_smoother</span></code> for smoothing velocity commands from Nav2 to a robot controller by velocity, acceleration, and deadband constraints. See <a class="reference internal" href="../configuration/packages/configuring-velocity-smoother.html#configuring-velocity-smoother"><span class="std std-ref">速度平滑器</span></a> for more details. It is not included in the default bringup batteries included from <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code>.</p>
+<h2>新增Nav2速度平滑器<a class="headerlink" href="#new-nav2-velocity-smoother" title="永久链接至标题"></a></h2>
+<p>「PR 2964 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2964">https://github.com/ros-planning/navigation2/pull/2964</a>&gt;」引入了 <code class="docutils literal notranslate"><span class="pre">nav2_velocity_smoother</span></code>，用于通过速度、加速度和死区约束对来自 Nav2 到机器人控制器的速度指令进行平滑处理。有关更多详细信息，请参阅 <a class="reference internal" href="../configuration/packages/configuring-velocity-smoother.html#configuring-velocity-smoother"><span class="std std-ref">速度平滑器</span></a>。它不包含在默认的 <code class="docutils literal notranslate"><span class="pre">nav2_bringup</span></code> 中。</p>
 </div>
 <div class="section" id="goal-checker-api-changed">
-<h2>Goal Checker API Changed<a class="headerlink" href="#goal-checker-api-changed" title="永久链接至标题"></a></h2>
-<p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2965">PR 2965</a> adds an extra argument in the initialize function of the <cite>nav2_core::GoalChecker</cite> class.
-The extra argument is a costmap_ros pointer. This is used to check if the goal is in collision, so that we can avoid moving towards the goal and replanning can be initiates using some BT plugin.</p>
+<h2>目标检查器API已更改<a class="headerlink" href="#goal-checker-api-changed" title="永久链接至标题"></a></h2>
+<p>「PR 2965 &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2965">https://github.com/ros-planning/navigation2/pull/2965</a>&gt;」在 <cite>nav2_core::GoalChecker</cite> 类的初始化函数中添加了一个额外的参数，即 costmap_ros 指针。这用于检查目标是否与碰撞，以便我们可以避免朝目标移动并使用某个 BT 插件触发重新规划。</p>
 </div>
 <div class="section" id="added-assisted-teleop">
-<h2>Added Assisted Teleop<a class="headerlink" href="#added-assisted-teleop" title="永久链接至标题"></a></h2>
+<h2>新增辅助遥操作<a class="headerlink" href="#added-assisted-teleop" title="永久链接至标题"></a></h2>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/2904">PR 2904</a> adds a new behavior for assisted teleop along with two new BT nodes AssistedTeleop and CancelAssistedTeleop.</p>
 </div>
 </div>

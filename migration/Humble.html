@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Humble to Iron &mdash; Navigation 2 1.0.0 文档</title>
+  <title>从Humble升级到Iron &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -835,20 +835,20 @@
 <li class="toctree-l3"><a class="reference internal" href="Galactic.html#fix-costmaplayer-cleararea-invert-param-logic">修复 CostmapLayer 清除区域的反转参数逻辑</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Galactic.html#dynamic-composition">动态组合</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Galactic.html#bt-cancel-node">BT取消节点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#bt-pathlongeronapproach-node">BT PathLongerOnApproach Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#bt-truncatepathlocal-node">BT TruncatePathLocal Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#constrained-smoother">Constrained Smoother</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#replanning-at-a-constant-rate-and-if-the-path-is-invalid">Replanning at a Constant Rate and if the Path is Invalid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#euclidean-distance-2d">Euclidean Distance 2D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#recovery-to-behavior">Recovery To Behavior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#respawn-support-in-launch-and-lifecycle-manager">Respawn Support in Launch and Lifecycle Manager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#new-nav2-velocity-smoother">New Nav2 Velocity Smoother</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#goal-checker-api-changed">Goal Checker API Changed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Galactic.html#added-assisted-teleop">Added Assisted Teleop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#bt-pathlongeronapproach-node">BT PathLongerOnApproach 节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#bt-truncatepathlocal-node">BT TruncatePathLocal 节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#constrained-smoother">约束平滑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#replanning-at-a-constant-rate-and-if-the-path-is-invalid">以恒定速率重新规划路径，如果路径无效则重新规划</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#euclidean-distance-2d">二维欧几里得距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#recovery-to-behavior">恢复至行为</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#respawn-support-in-launch-and-lifecycle-manager">启动和生命周期管理中的重新生成支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#new-nav2-velocity-smoother">新增Nav2速度平滑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#goal-checker-api-changed">目标检查器API已更改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Galactic.html#added-assisted-teleop">新增辅助遥操作</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Humble to Iron</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#new-behavior-tree-navigator-plugins">New Behavior-Tree Navigator Plugins</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">从Humble升级到Iron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-behavior-tree-navigator-plugins">新增行为树导航插件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#added-collision-monitor">Added Collision Monitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#removed-use-sim-time-from-yaml">Removed use_sim_time from yaml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-time-speed-up-of-smac-planner">Run-time Speed up of Smac Planner</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Migration Guides</a> &raquo;</li>
-      <li>Humble to Iron</li>
+      <li>从Humble升级到Iron</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,10 +939,10 @@
            <div itemprop="articleBody">
              
   <div class="section" id="humble-to-iron">
-<span id="humble-migration"></span><h1>Humble to Iron<a class="headerlink" href="#humble-to-iron" title="永久链接至标题"></a></h1>
+<span id="humble-migration"></span><h1>从Humble升级到Iron<a class="headerlink" href="#humble-to-iron" title="永久链接至标题"></a></h1>
 <p>Moving from ROS 2 Humble to Iron, a number of stability improvements were added that we will not specifically address here.</p>
 <div class="section" id="new-behavior-tree-navigator-plugins">
-<h2>New Behavior-Tree Navigator Plugins<a class="headerlink" href="#new-behavior-tree-navigator-plugins" title="永久链接至标题"></a></h2>
+<h2>新增行为树导航插件<a class="headerlink" href="#new-behavior-tree-navigator-plugins" title="永久链接至标题"></a></h2>
 <p>New in <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/3345">PR 3345</a>, the navigator types are exposed to users as plugins that can be replaced or new navigator types added. The default behaviors of navigate to pose and navigate through poses continue to be default behavior but are now customizable with new action interface definitions. These plugins implement the <code class="docutils literal notranslate"><span class="pre">nav2_core::BehaviorTreeNavigator</span></code> base class, which must process the action request, feedback, and completion messages. The behavior tree is handled by this base class with as much general logic as possible abstracted away from users to minimize repetition.</p>
 <p>See <a class="reference internal" href="../plugin_tutorials/docs/writing_new_navigator_plugin.html#writing-new-nav2navigator-plugin"><span class="std std-ref">编写新的导航器插件</span></a> for a tutorial about writing new navigator plugins.</p>
 </div>
