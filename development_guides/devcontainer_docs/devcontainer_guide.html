@@ -23,7 +23,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Getting Involved" href="../involvement_docs/index.html" />
-    <link rel="prev" title="Dev Containers" href="index.html" />
+    <link rel="prev" title="开发容器" href="index.html" />
 
 <link rel="stylesheet" href="../../_static/tcs_theme.css" type="text/css" />
 
@@ -72,13 +72,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Dev Containers</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">开发容器</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">开发容器指南</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#creating-dev-containers">创建开发容器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#using-dev-containers">使用 Dev Containers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#what-why-how">What, Why, How?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#what-why-how">什么、为什么、如何?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="index.html#what-is-a-dev-container">What is a Dev Container?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index.html#why-use-a-dev-container">Why use a Dev Container?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index.html#how-do-dev-containers-work">How do Dev Containers work?</a></li>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Development Guides</a> &raquo;</li>
-          <li><a href="index.html">Dev Containers</a> &raquo;</li>
+          <li><a href="index.html">开发容器</a> &raquo;</li>
       <li>开发容器指南</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -1165,34 +1165,34 @@
 </ul>
 </li>
 </ul>
-<p>When necessary, you can also rebuild the container from scratch, e.i. without caching from docker, by selecting the <code class="docutils literal notranslate"><span class="pre">Remote-Containers:</span> <span class="pre">Rebuild</span> <span class="pre">Container</span> <span class="pre">Without</span> <span class="pre">Cache</span></code> command. This instead omits the <code class="docutils literal notranslate"><span class="pre">--cache-from</span></code> flag from the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">buildx</span></code> command, while also adding the <code class="docutils literal notranslate"><span class="pre">--no-cache</span></code> and <code class="docutils literal notranslate"><span class="pre">--pull</span></code> flags to prevent caching from any existing image layers, using only the latest images from a container registry.</p>
+<p>如果需要，您还可以选择<code class="docutils literal notranslate"><span class="pre">Remote-Containers:</span> <span class="pre">Rebuild</span> <span class="pre">Container</span> <span class="pre">Without</span> <span class="pre">Cache</span></code>命令从头开始重新构建容器，即不使用docker缓存。这将从<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">buildx</span></code>命令中省略<code class="docutils literal notranslate"><span class="pre">--cache-from</span></code>标志，同时添加<code class="docutils literal notranslate"><span class="pre">--no-cache</span></code>和<code class="docutils literal notranslate"><span class="pre">--pull</span></code>标志，以防止使用任何现有镜像层的缓存，并仅使用容器注册表中的最新镜像。</p>
 <div class="admonition caution">
 <p class="admonition-title">小心</p>
 <p>重新构建容器时，可能会从容器注册表中拉取更新的镜像或安装更新的软件包，这在开发 ROS 2 Rolling 时很常见。然后，您可能需要清理覆盖卷，以避免ABI不兼容或过时的构件。</p>
 </div>
-<p>Rebuilding without caching may be necessary when:</p>
+<p>当需要重新构建而不使用缓存时可能需要这样做：</p>
 <ul class="simple">
-<li><p>Needing to update the base image</p>
+<li><p>需要更新基础镜像</p>
 <ul>
-<li><p>specifically if dev container configurations remain unmodified</p></li>
-<li><p>to forcefully rerun a <code class="docutils literal notranslate"><span class="pre">RUN</span></code> directive in the Dockerfile</p></li>
-<li><p>such as unchanged <code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">upgrade</span></code> or <code class="docutils literal notranslate"><span class="pre">rosdep</span> <span class="pre">update</span></code> commands</p></li>
+<li><p>特别是如果开发容器配置保持不变</p></li>
+<li><p>以强制重新运行 Dockerfile 中的 <code class="docutils literal notranslate"><span class="pre">RUN</span></code> 指令</p></li>
+<li><p>例如未更改的<code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">upgrade</span></code>或<code class="docutils literal notranslate"><span class="pre">rosdep</span> <span class="pre">update</span></code>命令</p></li>
 </ul>
 </li>
 </ul>
-<p>Specifically, for this project, volumes remain unaffected by this rebuilding process: i.e. those used to mount the ccache directory or colcon workspace. While volume management is left to the user's discretion, other projects may of course handle this differently, so be sure to check the <code class="docutils literal notranslate"><span class="pre">./devcontainer</span></code> configuration to inspect how various container resources may be managed.</p>
+<p>具体而言，对于此项目，卷不受此重建过程的影响，例如用于挂载 ccache 目录或 colcon 工作区的卷。虽然卷的管理由用户自行决定，但其他项目可能会以不同的方式处理，因此请务必检查 <code class="docutils literal notranslate"><span class="pre">./devcontainer</span></code> 配置以了解如何管理各种容器资源。</p>
 <div class="admonition tip">
 <p class="admonition-title">小技巧</p>
-<p>Docker volume management can be done via the Docker CLI, or the VS Code Docker extension:</p>
+<p>可以通过Docker CLI或VS Code Docker扩展来管理Docker卷：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.docker.com/engine/reference/commandline/volume">Docker Volume CLI</a></p>
 <ul>
-<li><p>Manage volumes using subcommands to create, inspect, list, remove, or prune volumes</p></li>
+<li><p>使用子命令来创建、检查、列出、删除或修剪卷</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">VS Code Docker extension</a></p>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">VS Code Docker 扩展</a></p>
 <ul>
-<li><p>Makes it easy to create, manage, and debug containerized applications</p></li>
+<li><p>简化了容器化应用程序的创建、管理和调试</p></li>
 </ul>
 </li>
 </ul>
