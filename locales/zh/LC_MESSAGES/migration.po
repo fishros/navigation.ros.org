@@ -1861,7 +1861,7 @@ msgstr "路径点跟随服务器：NONE:0，UNKNOWN:601，服务器错误代码�
 
 #: ../../migration/Humble.rst:93
 msgid "This pr also updates the waypoint follower server to throw exceptions on failures. These exceptions get reported back to the server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application. The following errors codes are supported (with more to come as necessary): Unknown and Task Executor Failed. See :ref:`adding_a_nav2_task_server` and the PR for additional information."
-msgstr "This pr also updates the waypoint follower server to throw exceptions on failures. These exceptions get reported back to the server which in turn places a error code on the Behavior Tree Navigator's blackboard for use in contextual error handling in the autonomy application. The following errors codes are supported (with more to come as necessary): Unknown and Task Executor Failed. See :ref:`adding_a_nav2_task_server` and the PR for additional information."
+msgstr "此PR还更新了航点跟随服务器，以便在失败时抛出异常。这些异常将报告给服务器，服务器会在行为树导航器的黑板上放置一个错误代码，以便在自治应用程序中进行上下文错误处理。支持以下错误代码（如有需要，将添加更多）：Unknown（未知）和Task Executor Failed（任务执行器失败）。详细信息请参见：:ref:`添加_nav2_task_server`和PR。"
 
 
 #: ../../migration/Humble.rst:100
@@ -1871,7 +1871,7 @@ msgstr "现在成本地图过滤器可以通过调用适当过滤器的 ``toggle
 
 #: ../../migration/Humble.rst:102
 msgid "Added new binary flip filter, allowing e.g. to turn off camera in sensitive areas, turn on headlights/leds/other safety things or switch operating mode when robot is inside marked on mask areas (`PR #3228 <https://github.com/ros-planning/navigation2/pull/3228>`_)."
-msgstr "Added new binary flip filter, allowing e.g. to turn off camera in sensitive areas, turn on headlights/leds/other safety things or switch operating mode when robot is inside marked on mask areas (`PR #3228 <https://github.com/ros-planning/navigation2/pull/3228>`_)."
+msgstr "添加了新的二进制翻转过滤器，允许在敏感区域关闭摄像头，打开前灯/LED灯/其他安全设备，或在机器人位于标记在掩码区域内时切换操作模式（`PR #3228 <https://github.com/ros-planning/navigation2/pull/3228>`_）。"
 
 
 #: ../../migration/Humble.rst:105
@@ -1886,77 +1886,77 @@ msgstr "将新的平滑算法 Savitzky-Golay 平滑器添加到平滑器服务�
 
 #: ../../migration/Humble.rst:110
 msgid "Changes to Map yaml file path for map_server node in Launch"
-msgstr "Changes to Map yaml file path for map_server node in Launch"
+msgstr "更改启动文件中map_server节点的地图yaml文件路径。"
 
 
 #: ../../migration/Humble.rst:111
 msgid "`PR #3174 <https://github.com/ros-planning/navigation2/pull/3174>`_ adds a way to set the path to map yaml file for the map_server node either from the yaml file or using the launch configuration parameter ``map`` giving priority to the launch configuration parameter. ``yaml_filename`` is no longer strictly required to be present in ``nav2_params.yaml``."
-msgstr "`PR #3174 <https://github.com/ros-planning/navigation2/pull/3174>`_ adds a way to set the path to map yaml file for the map_server node either from the yaml file or using the launch configuration parameter ``map`` giving priority to the launch configuration parameter. ``yaml_filename`` is no longer strictly required to be present in ``nav2_params.yaml``."
+msgstr "PR #3174 <https://github.com/ros-planning/navigation2/pull/3174>`_添加了一种设置map_server节点的地图yaml文件路径的方式，可以从yaml文件或使用launch配置参数``map``来设置，优先考虑launch配置参数。``yaml_filename``不再严格要求在``nav2_params.yaml``中存在。"
 
 
 #: ../../migration/Humble.rst:114
 msgid "SmootherSelector BT Node"
-msgstr "SmootherSelector BT Node"
+msgstr "SmootherSelector BT节点"
 
 
 #: ../../migration/Humble.rst:115
 msgid "`PR #3283 <https://github.com/ros-planning/navigation2/pull/3283>`_ adds a BT node to set the smoother based on a topic or a default. See the configuration guide :ref:`configuring_simple_smoother` for more details."
-msgstr "`PR #3283 <https://github.com/ros-planning/navigation2/pull/3283>`_ adds a BT node to set the smoother based on a topic or a default. See the configuration guide :ref:`configuring_simple_smoother` for more details."
+msgstr "PR #3283 <https://github.com/ros-planning/navigation2/pull/3283>`_添加了一个BT节点，根据主题或默认值来设置平滑器。有关更多详细信息，请参阅配置指南：:ref:`configuring_simple_smoother`。"
 
 
 #: ../../migration/Humble.rst:119
 msgid "Publish Costmap Layers"
-msgstr "Publish Costmap Layers"
+msgstr "发布Costmap图层"
 
 
 #: ../../migration/Humble.rst:120
 msgid "`PR #3320 <https://github.com/ros-planning/navigation2/pull/3320>`_ adds the ability for the nav2_costmap_2d package to publish out costmap data associated with each layer."
-msgstr "`PR #3320 <https://github.com/ros-planning/navigation2/pull/3320>`_ adds the ability for the nav2_costmap_2d package to publish out costmap data associated with each layer."
+msgstr "PR #3320 <https://github.com/ros-planning/navigation2/pull/3320>`_添加了nav2_costmap_2d软件包的功能，发布与每个图层相关联的代价地图数据。"
 
 
 #: ../../migration/Humble.rst:123
 msgid "Give Behavior Server Access to Both Costmaps"
-msgstr "Give Behavior Server Access to Both Costmaps"
+msgstr "让行为服务器访问两个Costmap"
 
 
 #: ../../migration/Humble.rst:124
 msgid "`PR #3255 <https://github.com/ros-planning/navigation2/pull/3255>`_ addes the ability for a behavior to access the local and global costmap."
-msgstr "`PR #3255 <https://github.com/ros-planning/navigation2/pull/3255>`_ addes the ability for a behavior to access the local and global costmap."
+msgstr "PR #3255 <https://github.com/ros-planning/navigation2/pull/3255>`_添加了一个行为访问本地和全局代价地图的功能。"
 
 
 #: ../../migration/Humble.rst:126
 msgid "To update behaviors, any reference to the global_frame must be updated to the local_frame parameter along with the ``configuration`` method which now takes in the local and global collision checkers. Lastly, ``getResourceInfo`` must be overriden to return ``CostmapInfoType::LOCAL``. Other options include ``GLOBAL`` if the behavior useses global costmap and/or footprint) or ``BOTH`` if both are required. This allows us to only create and maintain the minimum amount of expensive resources."
-msgstr "To update behaviors, any reference to the global_frame must be updated to the local_frame parameter along with the ``configuration`` method which now takes in the local and global collision checkers. Lastly, ``getResourceInfo`` must be overriden to return ``CostmapInfoType::LOCAL``. Other options include ``GLOBAL`` if the behavior useses global costmap and/or footprint) or ``BOTH`` if both are required. This allows us to only create and maintain the minimum amount of expensive resources."
+msgstr "为了更新行为，所有对global_frame的引用必须更新为local_frame参数，以及``configuration``方法，该方法现在接受本地和全局碰撞检查器。最后，必须覆盖``getResourceInfo``以返回``CostmapInfoType::LOCAL``。其他选项包括如果行为使用全局costmap和/或足迹，则返回``GLOBAL``，如果两者都需要，则返回``BOTH``。这样我们就可以只创建和维护最少量的昂贵资源。"
 
 
 #: ../../migration/Humble.rst:132
 msgid "New Model Predictive Path Integral Controller"
-msgstr "New Model Predictive Path Integral Controller"
+msgstr "新的模型预测路径积分控制器"
 
 
 #: ../../migration/Humble.rst:134
 msgid "The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers - with Nav2. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes."
-msgstr "The new Nav2 MPPI Controller is a predictive controller - a successor to TEB and pure path tracking MPC controllers - with Nav2. It uses a sampling based approach to select optimal trajectories, optimizing between successive iterations. It contains plugin-based objective functions for customization and extension for various behaviors and behavioral attributes."
+msgstr "新的Nav2 MPPI控制器是一个预测性控制器，是TEB和纯路径跟踪MPC控制器的继任者，与Nav2一起使用。它使用基于采样的方法选择最优轨迹，在连续迭代之间进行优化。它包含基于插件的目标函数，可用于自定义和扩展各种行为和行为属性。"
 
 
 #: ../../migration/Humble.rst:136
 msgid "See the README.md and :ref:`configuring_mppic` page for more detail."
-msgstr "See the README.md and :ref:`configuring_mppic` page for more detail."
+msgstr "有关详细信息，请参阅README.md和:ref:`configuring_mppic`页面。"
 
 
 #: ../../migration/Humble.rst:139
 msgid "Behavior Tree Uses Error Codes"
-msgstr "Behavior Tree Uses Error Codes"
+msgstr "行为树使用错误代码"
 
 
 #: ../../migration/Humble.rst:140
 msgid "`PR #3324 <https:https://github.com/ros-planning/navigation2/pull/3324>`_ adds three new condition nodes to check for error codes on the blackboard set by action BT nodes which contain them."
-msgstr "`PR #3324 <https:https://github.com/ros-planning/navigation2/pull/3324>`_ adds three new condition nodes to check for error codes on the blackboard set by action BT nodes which contain them."
+msgstr "PR #3324 <https:https://github.com/ros-planning/navigation2/pull/3324>`_添加了三个新的条件节点，用于检查由包含它们的动作BT节点在黑板上设置的错误代码。"
 
 
 #: ../../migration/Humble.rst:142
 msgid "The ``AreErrorCodesPresent`` condition node allows the user to specify the error code from the server along with the error codes to match against. The ``WouldAControllerRecoveryHelp`` checks if the active error code is UNKNOWN, PATIENCE_EXCEEDED, FAILED_TO_MAKE_PROGRESS or NO_VALID_CONTROL. If the error code is a match, the condition returns ``SUCCESS``. These error code are potentially able to be cleared by a controller recovery."
-msgstr "The ``AreErrorCodesPresent`` condition node allows the user to specify the error code from the server along with the error codes to match against. The ``WouldAControllerRecoveryHelp`` checks if the active error code is UNKNOWN, PATIENCE_EXCEEDED, FAILED_TO_MAKE_PROGRESS or NO_VALID_CONTROL. If the error code is a match, the condition returns ``SUCCESS``. These error code are potentially able to be cleared by a controller recovery."
+msgstr "``AreErrorCodesPresent``条件节点允许用户指定来自服务器的错误代码以及要匹配的错误代码。``WouldAControllerRecoveryHelp``检查活动错误代码是否为UNKNOWN、PATIENCE_EXCEEDED、FAILED_TO_MAKE_PROGRESS或NO_VALID_CONTROL。如果错误代码匹配，条件返回``SUCCESS``。这些错误代码有可能通过控制器恢复来清除。"
 
 
 #: ../../migration/Humble.rst:147
@@ -1966,7 +1966,7 @@ msgstr "The ``WouldAPlannerRecoveryHelp`` checks if the active error code is UNK
 
 #: ../../migration/Humble.rst:151
 msgid "The ``WouldASmootherRecoveryHelp`` checks if the active error code is UNKNOWN, TIMEOUT, FAILED_TO_SMOOTH_PATH, or SMOOTHED_PATH_IN_COLLISION. If the error code is a match, the condition returns ``SUCCESS``. These error code are potentially able to be cleared by a smoother recovery."
-msgstr "The ``WouldASmootherRecoveryHelp`` checks if the active error code is UNKNOWN, TIMEOUT, FAILED_TO_SMOOTH_PATH, or SMOOTHED_PATH_IN_COLLISION. If the error code is a match, the condition returns ``SUCCESS``. These error code are potentially able to be cleared by a smoother recovery."
+msgstr "``WouldASmootherRecoveryHelp``检查活动错误代码是否为UNKNOWN、TIMEOUT、FAILED_TO_SMOOTH_PATH或SMOOTHED_PATH_IN_COLLISION。如果错误代码匹配，条件返回``SUCCESS``。这些错误代码有可能通过平滑器恢复来清除。"
 
 
 #: ../../migration/Humble.rst:156
@@ -1976,7 +1976,7 @@ msgstr "Load, Save and Loop Waypoints from the Nav2 Panel in RViz"
 
 #: ../../migration/Humble.rst:158
 msgid "`PR #3165 <https:https://github.com/ros-planning/navigation2/pull/3165>`_ provides three new functionalities for the nav2 panel in RViz, they are:"
-msgstr "`PR #3165 <https:https://github.com/ros-planning/navigation2/pull/3165>`_ provides three new functionalities for the nav2 panel in RViz, they are:"
+msgstr "`PR＃3165 <https:https://github.com/ros-planning/navigation2/pull/3165>`_为RViz中的nav2面板提供了三个新功能，它们是："
 
 
 #: ../../migration/Humble.rst:160
@@ -1986,7 +1986,7 @@ msgstr "load and save waypoints in a yaml file for waypoint following (initial p
 
 #: ../../migration/Humble.rst:161
 msgid "loop functionality to revisit the waypoints"
-msgstr "loop functionality to revisit the waypoints"
+msgstr "循环功能以重新访问航点"
 
 
 #: ../../migration/Humble.rst:162
@@ -1996,7 +1996,7 @@ msgstr "pause and resume button for stopping and continuing through the waypoint
 
 #: ../../migration/Humble.rst:164
 msgid "Looping functionality is not specific to the nav2 panel in RViz. Users utilizing nav2_waypoint_follower can take advantage of the changes made to the FollowWaypoint action, by specifying the desired number of loops in the action request that will be eventually sent to the nav2_waypoint_follower server."
-msgstr "Looping functionality is not specific to the nav2 panel in RViz. Users utilizing nav2_waypoint_follower can take advantage of the changes made to the FollowWaypoint action, by specifying the desired number of loops in the action request that will be eventually sent to the nav2_waypoint_follower server."
+msgstr "循环功能不仅限于RViz中的nav2面板。使用nav2_waypoint_follower的用户可以利用对FollowWaypoint操作所做的更改，通过在最终发送到nav2_waypoint_follower服务器的操作请求中指定所需的循环次数。"
 
 
 #: ../../migration/Humble.rst:167
