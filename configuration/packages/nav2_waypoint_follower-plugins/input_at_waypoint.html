@@ -941,7 +941,7 @@
              
   <div class="section" id="inputatwaypoint">
 <span id="configuring-nav2-waypoint-follower-input-at-waypoint-plugin"></span><h1>InputAtWaypoint<a class="headerlink" href="#inputatwaypoint" title="永久链接至标题"></a></h1>
-<p>Lets robot to wait for external input, with timeout, at a waypoint.</p>
+<p>使机器人在航点处等待外部输入，超时后继续执行。</p>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;nav2_waypoint_follower</span> <span class="pre">plugin&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>configuring_waypoint_follower`中的**waypoint_task_executor_plugin_id**参数中定义的nav2_waypoint_follower插件名称。</p>
@@ -962,7 +962,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether waypoint_task_executor plugin is enabled.</p>
+<dt>描述</dt><dd><p>是否启用 waypoint_task_executor 插件。</p>
 </dd>
 </dl>
 </dd>
@@ -982,7 +982,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Amount of time in seconds to wait for user input before moving on to the next waypoint.</p>
+<dt>描述</dt><dd><p>在前往下一个航点之前等待用户输入的时间（以秒为单位）。</p>
 </dd>
 </dl>
 </dd>
@@ -1002,7 +1002,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Topic input is published to to indicate to move to the next waypoint, in <cite>std_msgs/Empty</cite>.</p>
+<dt>描述</dt><dd><p>将主题输入发布为`std_msgs/Empty`，以指示移动到下一个航点。</p>
 </dd>
 </dl>
 </dd>
