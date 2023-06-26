@@ -822,7 +822,7 @@ msgstr "有关将输入数据配置为``robot_localization``的更多建议，�
 
 #: ../../setup_guides/odom/setup_odom.rst:440
 msgid "Now, let us add the ``ekf_node`` into the launch file. Open ``launch/display.launch.py`` and paste the following lines before the ``return launch.LaunchDescription([`` line."
-msgstr "Now, let us add the ``ekf_node`` into the launch file. Open ``launch/display.launch.py`` and paste the following lines before the ``return launch.LaunchDescription([`` line."
+msgstr "现在，让我们将``ekf_node``添加到启动文件中。打开``launch/display.launch.py``，在``return launch.LaunchDescription([``行之前粘贴以下内容。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:452
@@ -832,7 +832,7 @@ msgstr "接下来，在``return launch.LaunchDescription([``块中添加以下�
 
 #: ../../setup_guides/odom/setup_odom.rst:459
 msgid "Lastly, add ``robot_localization_node,`` above the ``rviz_node`` line to launch the robot localization node."
-msgstr "Lastly, add ``robot_localization_node,`` above the ``rviz_node`` line to launch the robot localization node."
+msgstr "最后，在``rviz_node``行上方添加``robot_localization_node,``以启动机器人定位节点。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:469
@@ -842,77 +842,77 @@ msgstr "接下来，我们需要将``robot_localization``依赖项添加到我�
 
 #: ../../setup_guides/odom/setup_odom.rst:475
 msgid "Lastly, open ``CMakeLists.txt`` and append the ``config`` directory inside the ``install(DIRECTORY...)``, as shown in the snippet below."
-msgstr "Lastly, open ``CMakeLists.txt`` and append the ``config`` directory inside the ``install(DIRECTORY...)``, as shown in the snippet below."
+msgstr "最后，打开``CMakeLists.txt``，并将``config``目录追加到``install(DIRECTORY...)``中，如下面的代码片段所示。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:488
 msgid "Let us now build and run our package. Navigate to the root of the project and execute the following lines:"
-msgstr "Let us now build and run our package. Navigate to the root of the project and execute the following lines:"
+msgstr "现在让我们构建并运行我们的软件包。导航到项目的根目录并执行以下命令："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:496
 msgid "Gazebo and RVIZ should launch. In the RVIZ window, you should see the model and TF frames of ``sam_bot``:"
-msgstr "Gazebo and RVIZ should launch. In the RVIZ window, you should see the model and TF frames of ``sam_bot``:"
+msgstr "Gazebo和RVIZ应该会启动。在RVIZ窗口中，您应该可以看到``sam_bot``的模型和TF坐标系："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:502
 msgid "Next, let us verify that the ``odometry/filtered``,  ``accel/filtered``, and ``/tf`` topics are active in the system. Open a new terminal and execute:"
-msgstr "Next, let us verify that the ``odometry/filtered``,  ``accel/filtered``, and ``/tf`` topics are active in the system. Open a new terminal and execute:"
+msgstr "接下来，让我们验证系统中是否激活了 ``odometry/filtered``、``accel/filtered`` 和 ``/tf`` 主题。打开一个新的终端并执行以下命令："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:508
 msgid "You should see ``odometry/filtered``, ``accel/filtered``, and ``/tf`` in the list of the topics."
-msgstr "You should see ``odometry/filtered``, ``accel/filtered``, and ``/tf`` in the list of the topics."
+msgstr "您应该在话题列表中看到``odometry/filtered``，``accel/filtered``和``/tf``。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:510
 msgid "You can also check the subscriber count of these topics again by executing:"
-msgstr "You can also check the subscriber count of these topics again by executing:"
+msgstr "您还可以通过执行以下命令再次检查这些主题的订阅者计数："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:517
 msgid "You should see that ``/demo/imu`` and ``/demo/odom`` now both have 1 subscriber each."
-msgstr "You should see that ``/demo/imu`` and ``/demo/odom`` now both have 1 subscriber each."
+msgstr "您应该看到``/demo/imu``和``/demo/odom``现在各自都有1个订阅者。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:519
 msgid "To verify that the ``ekf_filter_node`` are the subscribers of these topics, execute:"
-msgstr "To verify that the ``ekf_filter_node`` are the subscribers of these topics, execute:"
+msgstr "要验证 ``ekf_filter_node`` 是否是这些主题的订阅者，请执行以下命令："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:525
 msgid "You should see an output as shown below."
-msgstr "You should see an output as shown below."
+msgstr "您应该看到如下所示的输出。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:545
 msgid "From the output above, we can see that the ``ekf_filter_node`` is subscribed to ``/demo/imu`` and ``/demo/odom``. We can also see that the ``ekf_filter_node`` publishes on the ``odometry/filtered``, ``accel/filtered``, and ``/tf`` topics."
-msgstr "From the output above, we can see that the ``ekf_filter_node`` is subscribed to ``/demo/imu`` and ``/demo/odom``. We can also see that the ``ekf_filter_node`` publishes on the ``odometry/filtered``, ``accel/filtered``, and ``/tf`` topics."
+msgstr "从上面的输出中，我们可以看到 ``ekf_filter_node`` 订阅了 ``/demo/imu`` 和 ``/demo/odom``。我们还可以看到 ``ekf_filter_node`` 在 ``odometry/filtered``、``accel/filtered`` 和 ``/tf`` 主题上发布。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:547
 msgid "You may also verify that ``robot_localization`` is publishing the ``odom`` => ``base_link`` transform by using the tf2_echo utility. Run the folllowing command in a separate command line terminal:"
-msgstr "You may also verify that ``robot_localization`` is publishing the ``odom`` => ``base_link`` transform by using the tf2_echo utility. Run the folllowing command in a separate command line terminal:"
+msgstr "您还可以通过使用tf2_echo工具验证``robot_localization``是否发布了``odom`` => ``base_link``的变换。在单独的命令行终端中运行以下命令："
 
 
 #: ../../setup_guides/odom/setup_odom.rst:553
 msgid "You should see a continuous output similar to what is shown below."
-msgstr "You should see a continuous output similar to what is shown below."
+msgstr "您应该看到类似下面所示的连续输出。"
 
 
 #: ../../setup_guides/odom/setup_odom.rst:567
 msgid "In this guide, we have discussed the messages and transforms that are expected by Nav2 from the odometry system. We have seen how to set up an odometry system and how to verify the published messages. We also have discussed how multiple odometry sensors can be used to provide a filtered and smoothed odometry using ``robot_localization``. We have also checked if the ``odom`` => ``base_link`` transform is being published correctly by ``robot_localization``."
-msgstr "In this guide, we have discussed the messages and transforms that are expected by Nav2 from the odometry system. We have seen how to set up an odometry system and how to verify the published messages. We also have discussed how multiple odometry sensors can be used to provide a filtered and smoothed odometry using ``robot_localization``. We have also checked if the ``odom`` => ``base_link`` transform is being published correctly by ``robot_localization``."
+msgstr "在本指南中，我们讨论了Nav2从里程计系统所期望的消息和变换。我们已经了解了如何设置里程计系统以及如何验证发布的消息。我们还讨论了如何使用``robot_localization``使用多个里程计传感器提供滤波和平滑的里程计。我们还检查了``robot_localization``是否正确发布了``odom`` => ``base_link``的变换。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:4
 msgid "Setting Up Sensors"
-msgstr "Setting Up Sensors"
+msgstr "设置传感器"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:6
 msgid "In this guide, we will discuss the importance of the sensors in navigating a robot safely and how to set up the sensors with Nav2. In the first half of this tutorial, we will take a brief look at commonly used sensors and common sensor messages in Nav2. Next, we will add a basic sensor setup on our previously built simulated robot, ``sam_bot``. Lastly, we will then verify the simulated sensor messages of ``sam_bot`` by visualizing them in RViz."
-msgstr "In this guide, we will discuss the importance of the sensors in navigating a robot safely and how to set up the sensors with Nav2. In the first half of this tutorial, we will take a brief look at commonly used sensors and common sensor messages in Nav2. Next, we will add a basic sensor setup on our previously built simulated robot, ``sam_bot``. Lastly, we will then verify the simulated sensor messages of ``sam_bot`` by visualizing them in RViz."
+msgstr "在本指南中，我们将讨论传感器在安全导航机器人中的重要性以及如何在Nav2中设置传感器。在本教程的前半部分，我们将简要介绍Nav2中常用的传感器和常见的传感器消息。接下来，我们将在先前构建的仿真机器人``sam_bot``上添加基本的传感器设置。最后，我们将通过在RViz中可视化它们来验证``sam_bot``的模拟传感器消息。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:8
@@ -922,7 +922,7 @@ msgstr "Once sensors have been set up on a robot, their readings can be used in 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:11
 msgid "Sensor Introduction"
-msgstr "Sensor Introduction"
+msgstr "传感器介绍"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:12
@@ -932,7 +932,7 @@ msgstr "Mobile robots are equipped with a multitude of sensors that allow them t
 
 #: ../../setup_guides/sensors/setup_sensors.rst:14
 msgid "Examples of commonly used sensors are lidar, radar, RGB camera, depth camera, IMU, and GPS. To standardize the message formats of these sensors and allow for easier interoperation between vendors, ROS provides the ``sensor_msgs`` package that defines the common sensor interfaces. This also allows users to use any sensor vendor as long as it follows the standard format in ``sensor_msgs``. In the next subsection, we introduce some of commonly used messages in navigation, namely the ``sensor_msgs/LaserScan``, ``sensor_msgs/PointCloud2``, ``sensor_msgs/Range``, and ``sensor_msgs/Image``."
-msgstr "Examples of commonly used sensors are lidar, radar, RGB camera, depth camera, IMU, and GPS. To standardize the message formats of these sensors and allow for easier interoperation between vendors, ROS provides the ``sensor_msgs`` package that defines the common sensor interfaces. This also allows users to use any sensor vendor as long as it follows the standard format in ``sensor_msgs``. In the next subsection, we introduce some of commonly used messages in navigation, namely the ``sensor_msgs/LaserScan``, ``sensor_msgs/PointCloud2``, ``sensor_msgs/Range``, and ``sensor_msgs/Image``."
+msgstr "常用传感器的示例包括激光雷达、雷达、RGB相机、深度相机、IMU和GPS。为了标准化这些传感器的消息格式并方便不同厂商之间的互操作，ROS提供了``sensor_msgs``包，定义了常用的传感器接口。这也使用户可以使用任何遵循``sensor_msgs``标准格式的传感器供应商。在下一小节中，我们介绍了导航中常用的一些消息，即``sensor_msgs/LaserScan``、``sensor_msgs/PointCloud2``、``sensor_msgs/Range``和``sensor_msgs/Image``。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:16
@@ -942,7 +942,7 @@ msgstr "Aside from the ``sensor_msgs`` package, there are also the ``radar_msgs`
 
 #: ../../setup_guides/sensors/setup_sensors.rst:19
 msgid "For more information, see the API documentation of `sensor_msgs <http://wiki.ros.org/sensor_msgs>`_, `radar_msgs <http://wiki.ros.org/radar_msgs>`_, and `vision_msgs <http://wiki.ros.org/vision_msgs>`_."
-msgstr "For more information, see the API documentation of `sensor_msgs <http://wiki.ros.org/sensor_msgs>`_, `radar_msgs <http://wiki.ros.org/radar_msgs>`_, and `vision_msgs <http://wiki.ros.org/vision_msgs>`_."
+msgstr "有关更多信息，请参阅`sensor_msgs <http://wiki.ros.org/sensor_msgs>`_、`radar_msgs <http://wiki.ros.org/radar_msgs>`_和`vision_msgs <http://wiki.ros.org/vision_msgs>`_的API文档。"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:21
@@ -952,7 +952,7 @@ msgstr "Your physical robot's sensors probably have ROS drivers written for them
 
 #: ../../setup_guides/sensors/setup_sensors.rst:24
 msgid "Common Sensor Messages"
-msgstr "Common Sensor Messages"
+msgstr "常用传感器消息"
 
 
 #: ../../setup_guides/sensors/setup_sensors.rst:26
