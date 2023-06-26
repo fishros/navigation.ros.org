@@ -1091,7 +1091,7 @@ msgstr "通过改进的平滑器和一种新颖的启发式算法，路径质量
 
 #: ../../migration/Galactic.rst:41
 msgid "Using caching or downsampler parameterizations, can easily achieve path planning with sub-50ms in nearly any sized space."
-msgstr "Using caching or downsampler parameterizations, can easily achieve path planning with sub-50ms in nearly any sized space."
+msgstr "使用缓存或降采样参数化，几乎可以在任何大小的空间中实现低于50毫秒的路径规划。"
 
 
 #: ../../migration/Galactic.rst:42
@@ -1101,7 +1101,7 @@ msgstr "平滑器现在可以进行更多的细化操作，即使在倒车时也
 
 #: ../../migration/Galactic.rst:44
 msgid "Additional improvements were made to include a ``analytic_expansion_max_length`` parameter such that analytic expansions are limited in their potential length. If the length is too far, reject this expansion. This prevents unsafe shortcutting of paths into higher cost areas far out from the goal itself, let search to the work of getting close before the analytic expansion brings it home. This should never be smaller than 4-5x the minimum turning radius being used, or planning times will begin to spike."
-msgstr "Additional improvements were made to include a ``analytic_expansion_max_length`` parameter such that analytic expansions are limited in their potential length. If the length is too far, reject this expansion. This prevents unsafe shortcutting of paths into higher cost areas far out from the goal itself, let search to the work of getting close before the analytic expansion brings it home. This should never be smaller than 4-5x the minimum turning radius being used, or planning times will begin to spike."
+msgstr "还进行了其他改进，包括``analytic_expansion_max_length``参数的引入，限制了解析扩展的潜在长度。如果长度太长，则拒绝此扩展。这样可以防止将路径不安全地捷径到离目标远的高成本区域，让搜索工作在解析扩展接近目标之前完成。此参数的值不应小于使用的最小转弯半径的4-5倍，否则规划时间将开始急剧增加。"
 
 
 #: ../../migration/Galactic.rst:46
@@ -1111,77 +1111,77 @@ msgstr "此外，遍历成本和启发式成本计算已经更新**，如果您�
 
 #: ../../migration/Galactic.rst:49
 msgid "Simple (Python) Commander"
-msgstr "Simple (Python) Commander"
+msgstr "简单（Python）指令器"
 
 
 #: ../../migration/Galactic.rst:51
 msgid "`This PR 2411 <https://github.com/ros-planning/navigation2/pull/2411>`_ introduces a new package to Nav2, called the ``nav2_simple_commander``. It is a set of functions in an object, ``BasicNavigator``, which can be used to build Nav2-powered autonomy tasks in Python3 without concerning yourself with the Nav2, ROS 2, or Action server details. It contains a simple API taking common types (primarily ``PoseStamped``) and handles all of the implementation details behind the hood. For example, this is a simple navigation task using this API:"
-msgstr "`This PR 2411 <https://github.com/ros-planning/navigation2/pull/2411>`_ introduces a new package to Nav2, called the ``nav2_simple_commander``. It is a set of functions in an object, ``BasicNavigator``, which can be used to build Nav2-powered autonomy tasks in Python3 without concerning yourself with the Nav2, ROS 2, or Action server details. It contains a simple API taking common types (primarily ``PoseStamped``) and handles all of the implementation details behind the hood. For example, this is a simple navigation task using this API:"
+msgstr "`This PR 2411 <https://github.com/ros-planning/navigation2/pull/2411>`_引入了一个新的包到Nav2，称为``nav2_simple_commander``。它是一个在对象中的一组函数，``BasicNavigator``，可以用于在Python3中构建使用Nav2驱动的自主任务，而不必关心Nav2、ROS 2或Action服务器的详细信息。它包含一个简单的API，接受常见的类型（主要是``PoseStamped``），并处理所有在幕后的实现细节。例如，这是一个使用这个API的简单导航任务："
 
 
 #: ../../migration/Galactic.rst:88
 msgid "`The full API can be found in the README of the package <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_. A number of well commented examples and demos can also be found in the package's source code at the link prior."
-msgstr "`The full API can be found in the README of the package <https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>`_. A number of well commented examples and demos can also be found in the package's source code at the link prior."
+msgstr "完整的API可以在软件包的README中找到：<https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander>。还可以在软件包的源代码中找到一些有详细注释的示例和演示：<https://github.com/ros-planning/navigation2>。"
 
 
 #: ../../migration/Galactic.rst:92
 msgid "Reduce Nodes and Executors"
-msgstr "Reduce Nodes and Executors"
+msgstr "减少节点和执行器"
 
 
 #: ../../migration/Galactic.rst:94
 msgid "In order for nav2 to make the best use of ROS 2, we need minimize the number of nodes and executors in nav2, which can improve performance."
-msgstr "In order for nav2 to make the best use of ROS 2, we need minimize the number of nodes and executors in nav2, which can improve performance."
+msgstr "为了使nav2充分利用ROS 2，我们需要尽量减少nav2中的节点和执行器数量，以提高性能。"
 
 
 #: ../../migration/Galactic.rst:96
 msgid "This functionality has been discussed in `the ticket #816 <https://github.com/ros-planning/navigation2/issues/816>`_, and carried out in"
-msgstr "This functionality has been discussed in `the ticket #816 <https://github.com/ros-planning/navigation2/issues/816>`_, and carried out in"
+msgstr "这个功能在`票号816 <https://github.com/ros-planning/navigation2/issues/816>`_中讨论过，并在"
 
 
 #: ../../migration/Galactic.rst:98
 msgid "Remove ``client_node_`` in ``class WaypointFollower`` : `PR2441 <https://github.com/ros-planning/navigation2/pull/2441>`_"
-msgstr "Remove ``client_node_`` in ``class WaypointFollower`` : `PR2441 <https://github.com/ros-planning/navigation2/pull/2441>`_"
+msgstr "在``WaypointFollower``类中删除``client_node_``：`PR2441 <https://github.com/ros-planning/navigation2/pull/2441>`_"
 
 
 #: ../../migration/Galactic.rst:99
 msgid "Remove ``rclcpp_node_`` in ``class MapSaver`` : `PR2454 <https://github.com/ros-planning/navigation2/pull/2454>`_"
-msgstr "Remove ``rclcpp_node_`` in ``class MapSaver`` : `PR2454 <https://github.com/ros-planning/navigation2/pull/2454>`_"
+msgstr "删除``class MapSaver``中的``rclcpp_node_``：`PR2454 <https://github.com/ros-planning/navigation2/pull/2454>`_"
 
 
 #: ../../migration/Galactic.rst:100
 msgid "Remove ``bond_client_node_`` in ``class LifecycleManager`` : `PR2456 <https://github.com/ros-planning/navigation2/pull/2456>`_"
-msgstr "Remove ``bond_client_node_`` in ``class LifecycleManager`` : `PR2456 <https://github.com/ros-planning/navigation2/pull/2456>`_"
+msgstr "在``LifecycleManager``类中删除``bond_client_node_``：`PR2456 <https://github.com/ros-planning/navigation2/pull/2456>`_"
 
 
 #: ../../migration/Galactic.rst:101
 msgid "Remove ``node_`` in ``class LifecycleManagerClient`` : `PR2469 <https://github.com/ros-planning/navigation2/pull/2469>`_"
-msgstr "Remove ``node_`` in ``class LifecycleManagerClient`` : `PR2469 <https://github.com/ros-planning/navigation2/pull/2469>`_"
+msgstr "删除``class LifecycleManagerClient``中的``node_``：`PR2469 <https://github.com/ros-planning/navigation2/pull/2469>`_"
 
 
 #: ../../migration/Galactic.rst:102
 msgid "Remove ``rclcpp_node_`` in ``class ControllerServer`` : `PR2459 <https://github.com/ros-planning/navigation2/pull/2459>`_, `PR2479 <https://github.com/ros-planning/navigation2/pull/2479>`_"
-msgstr "Remove ``rclcpp_node_`` in ``class ControllerServer`` : `PR2459 <https://github.com/ros-planning/navigation2/pull/2459>`_, `PR2479 <https://github.com/ros-planning/navigation2/pull/2479>`_"
+msgstr "在``class ControllerServer``中移除``rclcpp_node_``：`PR2459 <https://github.com/ros-planning/navigation2/pull/2459>`_，`PR2479 <https://github.com/ros-planning/navigation2/pull/2479>`_"
 
 
 #: ../../migration/Galactic.rst:103
 msgid "Remove ``rclcpp_node_`` in ``class PlannerServer`` : `PR2459 <https://github.com/ros-planning/navigation2/pull/2459>`_, `PR2480 <https://github.com/ros-planning/navigation2/pull/2480>`_"
-msgstr "Remove ``rclcpp_node_`` in ``class PlannerServer`` : `PR2459 <https://github.com/ros-planning/navigation2/pull/2459>`_, `PR2480 <https://github.com/ros-planning/navigation2/pull/2480>`_"
+msgstr "删除``class PlannerServer``中的``rclcpp_node_``：`PR2459 <https://github.com/ros-planning/navigation2/pull/2459>`_，`PR2480 <https://github.com/ros-planning/navigation2/pull/2480>`_"
 
 
 #: ../../migration/Galactic.rst:104
 msgid "Remove ``rclcpp_node_`` in ``class AmclNode`` : `PR2483 <https://github.com/ros-planning/navigation2/pull/2483>`_"
-msgstr "Remove ``rclcpp_node_`` in ``class AmclNode`` : `PR2483 <https://github.com/ros-planning/navigation2/pull/2483>`_"
+msgstr "在``class AmclNode``中移除``rclcpp_node_``：`PR2483 <https://github.com/ros-planning/navigation2/pull/2483>`_"
 
 
 #: ../../migration/Galactic.rst:105
 msgid "Remove ``rclcpp_node_`` and ``clinet_node_`` in ``class Costmap2DROS`` : `PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_"
-msgstr "Remove ``rclcpp_node_`` and ``clinet_node_`` in ``class Costmap2DROS`` : `PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_"
+msgstr "删除``class Costmap2DROS``中的``rclcpp_node_``和``client_node_``：`PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_"
 
 
 #: ../../migration/Galactic.rst:106
 msgid "Remove ``rclcpp_node_`` in ``class LifecycleNode`` : `PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_"
-msgstr "Remove ``rclcpp_node_`` in ``class LifecycleNode`` : `PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_"
+msgstr "在``class LifecycleNode``中移除``rclcpp_node_``：`PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_"
 
 
 #: ../../migration/Galactic.rst:110
@@ -1191,7 +1191,7 @@ msgstr "some APIs are changed in these PRs:"
 
 #: ../../migration/Galactic.rst:109
 msgid "`PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_ removes arguments ``client_node``, ``rclcpp_node`` and adds argument ``callback_group`` in the initialize function of class ``nav2_costmap_2d::Layer``. ``callback_group`` is used to replace ``rclcpp_node``."
-msgstr "`PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_ removes arguments ``client_node``, ``rclcpp_node`` and adds argument ``callback_group`` in the initialize function of class ``nav2_costmap_2d::Layer``. ``callback_group`` is used to replace ``rclcpp_node``."
+msgstr "`PR2489 <https://github.com/ros-planning/navigation2/pull/2489>`_在``nav2_costmap_2d::Layer``类的初始化函数中移除了参数``client_node``、``rclcpp_node``并添加了参数``callback_group``。``callback_group``用于替代``rclcpp_node``。"
 
 
 #: ../../migration/Galactic.rst:110
@@ -1201,7 +1201,7 @@ msgstr "`PR2993 <https://github.com/ros-planning/navigation2/pull/2993>`_ remove
 
 #: ../../migration/Galactic.rst:113
 msgid "API Change for nav2_core"
-msgstr "API Change for nav2_core"
+msgstr "nav2_core的API更改"
 
 
 #: ../../migration/Galactic.rst:115
@@ -1211,7 +1211,7 @@ msgstr "`PR 2976 <https://github.com/ros-planning/navigation2/pull/2976>`_ chang
 
 #: ../../migration/Galactic.rst:120
 msgid "Extending the BtServiceNode to process Service-Results"
-msgstr "Extending the BtServiceNode to process Service-Results"
+msgstr "扩展BtServiceNode以处理服务结果"
 
 
 #: ../../migration/Galactic.rst:122
@@ -1221,7 +1221,7 @@ msgstr "`This PR 2481 <https://github.com/ros-planning/navigation2/pull/2481>`_ 
 
 #: ../../migration/Galactic.rst:139
 msgid "The returned ``BT::NodeStatus`` will set the current status of the BT-Node. Since the function has access to the results of the service, the returned node-status can depend on those service results, for example. The normal behavior of the ``BtServiceNode`` is not affected by introducing the ``on_completion()`` function, since the the default implementation still simply returns ``BT::NodeStatus::SUCCESS``, if the service interaction completed successfully."
-msgstr "The returned ``BT::NodeStatus`` will set the current status of the BT-Node. Since the function has access to the results of the service, the returned node-status can depend on those service results, for example. The normal behavior of the ``BtServiceNode`` is not affected by introducing the ``on_completion()`` function, since the the default implementation still simply returns ``BT::NodeStatus::SUCCESS``, if the service interaction completed successfully."
+msgstr "返回的``BT::NodeStatus``将设置BT节点的当前状态。由于函数可以访问服务的结果，因此返回的节点状态可以依赖于这些服务结果。引入``on_completion()``函数不会影响``BtServiceNode``的正常行为，因为默认实现仍然在服务交互成功完成时简单地返回``BT::NodeStatus::SUCCESS``。"
 
 
 #: ../../migration/Galactic.rst:143
