@@ -7270,7 +7270,7 @@ msgstr "``<nav2_controller插件>``: 在:ref:`configuring_controller_server`中�
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst
 msgid "``<nav2_controller plugin>``.required_movement_radius"
-msgstr "``<nav2_controller plugin>``.required_movement_radius"
+msgstr "``<nav2_controller plugin>``.required_movement_radius""
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:22 ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:22
@@ -7280,7 +7280,7 @@ msgstr "机器人必须移动的最小距离才能向目标前进（米）。"
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst
 msgid "``<nav2_controller plugin>``.required_movement_angle"
-msgstr "``<nav2_controller plugin>``.required_movement_angle"
+msgstr "``<nav2_controller plugin>``.required_movement_angle""
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:33
@@ -7290,27 +7290,27 @@ msgstr "机器人必须旋转的最小角度才能向目标前进（弧度）。
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst
 msgid "``<nav2_controller plugin>``.movement_time_allowance"
-msgstr "``<nav2_controller plugin>``.movement_time_allowance"
+msgstr "``<nav2_controller plugin>``.movement_time_allowance""
 
 
 #: ../../configuration/packages/nav2_controller-plugins/pose_progress_checker.rst:44
 msgid "Maximum amount of time a robot has to move the minimum radius or the mnimum angle (s)."
-msgstr "Maximum amount of time a robot has to move the minimum radius or the mnimum angle (s)."
+msgstr "机器人移动最小半径或最小角度的最大时间（秒）。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:4
 msgid "SimpleGoalChecker"
-msgstr "SimpleGoalChecker"
+msgstr "SimpleGoalChecker""
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:6
 msgid "Checks whether the robot has reached the goal pose."
-msgstr "Checks whether the robot has reached the goal pose."
+msgstr "检查机器人是否达到目标位姿。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:11 ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst:11
 msgid "``<nav2_controller plugin>``: nav2_controller plugin name defined in the **goal_checker_plugin_id** parameter in :ref:`configuring_controller_server`."
-msgstr "``<nav2_controller plugin>``: nav2_controller plugin name defined in the **goal_checker_plugin_id** parameter in :ref:`configuring_controller_server`."
+msgstr "``<nav2_controller plugin>``：在:ref:`configuring_controller_server`中的**goal_checker_plugin_id**参数中定义的nav2_controller插件名称。""
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst
@@ -7320,7 +7320,7 @@ msgstr "``<nav2_controller plugin>``.xy_goal_tolerance"
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:22 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:25
 msgid "Tolerance to meet goal completion criteria (m)."
-msgstr "Tolerance to meet goal completion criteria (m)."
+msgstr "达到目标完成条件的公差（米）。""
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst
@@ -7330,7 +7330,7 @@ msgstr "``<nav2_controller plugin>``.yaw_goal_tolerance"
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:33
 msgid "Tolerance to meet goal completion criteria (rad)."
-msgstr "Tolerance to meet goal completion criteria (rad)."
+msgstr "达到目标完成条件的公差（弧度）。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst
@@ -7340,7 +7340,7 @@ msgstr "``<nav2_controller plugin>``.stateful"
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_goal_checker.rst:44
 msgid "Whether to check for XY position tolerance after rotating to goal orientation in case of minor localization changes."
-msgstr "Whether to check for XY position tolerance after rotating to goal orientation in case of minor localization changes."
+msgstr "是否在目标方向旋转后，针对微小的定位变化检查XY位置容差。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:4
@@ -7350,12 +7350,12 @@ msgstr "SimpleProgressChecker"
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:6
 msgid "Checks whether the robot has made progress."
-msgstr "Checks whether the robot has made progress."
+msgstr "检查机器人是否取得了进展。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/simple_progress_checker.rst:33
 msgid "Maximum amount of time a robot has to move the minimum radius (s)."
-msgstr "Maximum amount of time a robot has to move the minimum radius (s)."
+msgstr "机器人移动最小半径的最大时间（秒）。"
 
 
 #: ../../configuration/packages/nav2_controller-plugins/stopped_goal_checker.rst:4
@@ -7400,7 +7400,7 @@ msgstr "Lets robot to wait for external input, with timeout, at a waypoint."
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst:11 ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst:13 ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst:11
 msgid "``<nav2_waypoint_follower plugin>``: nav2_waypoint_follower plugin name defined in the **waypoint_task_executor_plugin_id** parameter in :ref:`configuring_waypoint_follower`."
-msgstr "``<nav2_waypoint_follower plugin>``: nav2_waypoint_follower plugin name defined in the **waypoint_task_executor_plugin_id** parameter in :ref:`configuring_waypoint_follower`."
+msgstr "``<nav2_waypoint_follower plugin>``：在:ref:`configuring_waypoint_follower`中的**waypoint_task_executor_plugin_id**参数中定义的nav2_waypoint_follower插件名称。"
 
 
 #: ../../configuration/packages/nav2_waypoint_follower-plugins/input_at_waypoint.rst ../../configuration/packages/nav2_waypoint_follower-plugins/photo_at_waypoint.rst ../../configuration/packages/nav2_waypoint_follower-plugins/wait_at_waypoint.rst
