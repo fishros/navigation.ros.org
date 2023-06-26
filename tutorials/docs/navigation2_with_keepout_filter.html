@@ -214,9 +214,9 @@
 <li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#setup-your-enviroment-variables">0- 设置环境变量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-turtlebot-3">1- 启动Turtlebot 3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-nav2">2- 启动Nav2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-rviz">3-  Launch RVIZ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#initialize-the-location-of-turtlebot-3">4- Initialize the Location of Turtlebot 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#send-a-goal-pose">5-  Send a Goal Pose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#launch-rviz">3- 启动RVIZ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#initialize-the-location-of-turtlebot-3">4- 初始化Turtlebot 3的位置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="navigation2_on_real_turtlebot3.html#send-a-goal-pose">5- 发送目标姿态</a></li>
 </ul>
 </li>
 </ul>
@@ -951,7 +951,7 @@
   </div>
 </h1><div class="section" id="overview">
 <h2>概述<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
-<p>This tutorial shows how to simply utilize keep-out/safety zones where robots can't enter and preferred lanes for robots moving in industrial environments and warehouses. All this functionality is being covered by <code class="docutils literal notranslate"><span class="pre">KeepoutFilter</span></code> costmap filter plugin which will be enabled and used in this document.</p>
+<p>本教程演示了如何简单地利用无法进入的禁止/安全区域以及工业环境和仓库中移动的机器人的首选车道。所有这些功能都由“KeepoutFilter”代价地图过滤器插件提供，该插件将在本文档中启用并使用。</p>
 </div>
 <div class="section" id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="永久链接至标题"></a></h2>
@@ -961,7 +961,7 @@
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <div class="section" id="prepare-filter-mask">
 <h3>1. Prepare filter mask<a class="headerlink" href="#prepare-filter-mask" title="永久链接至标题"></a></h3>
-<p>As was written in <a class="reference internal" href="../../concepts/index.html#concepts"><span class="std std-ref">导航概念</span></a>, any Costmap Filter (including Keepout Filter) are reading the data marked in a filter mask file. Filter mask - is the usual Nav2 2D-map distributed through PGM, PNG or BMP raster file with its metadata containing in a YAML file. The following steps help to understand how to make a new filter mask:</p>
+<p>如在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>概念`中所述，任何代价地图过滤器（包括Keepout过滤器）都会读取过滤掩码文件中标记的数据。过滤掩码是一个通常通过PGM、PNG或BMP栅格文件进行分发的Nav2 2D地图，其元数据包含在一个YAML文件中。以下步骤有助于理解如何制作新的过滤掩码：</p>
 <p>Create a new image with a PGM/PNG/BMP format: copy <a class="reference external" href="https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/bringup/maps/turtlebot3_world.pgm">turtlebot3_world.pgm</a> main map which will be used in a world simulation from a <code class="docutils literal notranslate"><span class="pre">Nav2</span></code> repository to a new <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> file.</p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">keepout_mask.pgm</span></code> in your favourite raster graphics editor (as an example could be taken GIMP editor). The lightness of each pixel on the mask means an encoded information for the specific costmap filter you are going to use. Color lightness of each pixel belongs to the <code class="docutils literal notranslate"><span class="pre">[0..255]</span></code> range (or <code class="docutils literal notranslate"><span class="pre">[0..100]</span></code> in percent scale), where <code class="docutils literal notranslate"><span class="pre">0</span></code> means black color and <code class="docutils literal notranslate"><span class="pre">255</span></code> - white. Another term &quot;darkness&quot; will be understood as the exact opposite of lightness. In other words <code class="docutils literal notranslate"><span class="pre">color_darkness</span> <span class="pre">=</span> <span class="pre">100%</span> <span class="pre">-</span> <span class="pre">color_lightness</span></code>.</p>
 <p>In the GIMP lightness is expressed through color components value (e.g. <code class="docutils literal notranslate"><span class="pre">R</span></code> in percent scale) and might be set by moving <code class="docutils literal notranslate"><span class="pre">L</span></code> slider in color changing tool:</p>

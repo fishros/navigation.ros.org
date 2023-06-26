@@ -214,9 +214,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#setup-your-enviroment-variables">0- 设置环境变量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#launch-turtlebot-3">1- 启动Turtlebot 3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#launch-nav2">2- 启动Nav2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-rviz">3-  Launch RVIZ</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initialize-the-location-of-turtlebot-3">4- Initialize the Location of Turtlebot 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#send-a-goal-pose">5-  Send a Goal Pose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-rviz">3- 启动RVIZ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialize-the-location-of-turtlebot-3">4- 初始化Turtlebot 3的位置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#send-a-goal-pose">5- 发送目标姿态</a></li>
 </ul>
 </li>
 </ul>
@@ -979,7 +979,7 @@
 <h3>2- 启动Nav2<a class="headerlink" href="#launch-nav2" title="永久链接至标题"></a></h3>
 <p>您需要拥有一个Turtlebot 3导航的环境地图，或者使用SLAM实时创建一个。</p>
 <p>如果你感兴趣，这里有一个用例教程展示了如何使用带有SLAM的Nav2。<a class="reference internal" href="navigation2_with_slam.html#navigation2-with-slam"><span class="std std-ref">(SLAM) Navigating While Mapping</span></a>。</p>
-<p>Required files:</p>
+<p>所需文件:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">your-map.map</span></code></p></li>
@@ -987,42 +987,35 @@
 </ul>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;your_map&gt;.yaml</span></code> 是我们要提供给Nav2的地图的配置文件。在这种情况下，它包含地图分辨率值、障碍物和自由空间的阈值以及地图文件的位置。你需要确保这些值是正确的。关于map.yaml的更多信息可以在`这里 &lt;<a class="reference external" href="http://wiki.ros.org/map_server">http://wiki.ros.org/map_server</a>&gt;`_ 找到。</p>
-<p>Launch Nav2. If you set autostart:=False, you need to click on the start button in RViz to initialize the nodes.
-Make sure <cite>use_sim time</cite> is set to <strong>False</strong>, because we want to use the system time instead of the time simulation time from Gazebo.</p>
+<p>启动Nav2。如果你设置了autostart:=False，你需要在RViz中点击开始按钮来初始化节点。确保`use_sim_time`被设置为**False**，因为我们希望使用系统时间而不是来自Gazebo的仿真时间。</p>
 <p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">launch</span> <span class="pre">nav2_bringup</span> <span class="pre">bringup_launch.py</span> <span class="pre">use_sim_time:=False</span> <span class="pre">autostart:=False</span> <span class="pre">map:=/path/to/your-map.yaml</span></code></p>
-<p>Note: Don't forget to change <strong>/path/to/your-map.yaml</strong> to the actual path to the your-map.yaml file.</p>
+<p>注意: 别忘了将**/path/to/your-map.yaml**更改为your-map.yaml文件的实际路径。</p>
 </div>
 <div class="section" id="launch-rviz">
-<h3>3-  Launch RVIZ<a class="headerlink" href="#launch-rviz" title="永久链接至标题"></a></h3>
-<p>Launch RVIZ with a pre-defined configuration file.</p>
+<h3>3- 启动RVIZ<a class="headerlink" href="#launch-rviz" title="永久链接至标题"></a></h3>
+<p>使用预定义的配置文件启动RVIZ。</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">rviz2</span> <span class="pre">rviz2</span> <span class="pre">-d</span> <span class="pre">$(ros2</span> <span class="pre">pkg</span> <span class="pre">prefix</span> <span class="pre">nav2_bringup)/share/nav2_bringup/rviz/nav2_default_view.rviz</span></code></p>
 </div></blockquote>
-<p>Now, you should see a shadow of Turtlebot 3 robot model in the center of the plot in Rviz.
-Click on the Start button (Bottom Left) if you set the auto_start parameter to false.
-Then, the map should appear in RViz.</p>
+<p>现在，在Rviz的绘图中心，你应该看到Turtlebot 3机器人模型的一个阴影。如果你将auto_start参数设置为false，请点击开始按钮（左下角）。然后，地图应该出现在RViz中。</p>
 <a class="reference internal image-reference" href="../../_images/rviz_after_launch_view.png"><img alt="../../_images/rviz_after_launch_view.png" src="../../_images/rviz_after_launch_view.png" style="width: 48%;" /></a>
 <a class="reference internal image-reference" href="../../_images/rviz_slam_map_view.png"><img alt="../../_images/rviz_slam_map_view.png" src="../../_images/rviz_slam_map_view.png" style="width: 45%;" /></a>
 </div>
 <div class="section" id="initialize-the-location-of-turtlebot-3">
-<h3>4- Initialize the Location of Turtlebot 3<a class="headerlink" href="#initialize-the-location-of-turtlebot-3" title="永久链接至标题"></a></h3>
-<p>First, find where the robot is on the map. Check where your robot is in the room.</p>
-<p>Set the pose of the robot in RViz.
-Click on the 2D Pose Estimate button and point the location of the robot on the map.
-The direction of the green arrow is the orientation of Turtlebot.</p>
-<a class="reference internal image-reference" href="../../_images/rviz_set_initial_pose.png"><img alt="Set initial pose in RViz" class="align-center" src="../../_images/rviz_set_initial_pose.png" style="width: 700px;" /></a>
-<p>Now, the 3D model of Turtlebot should move to that location.
-A small error in the estimated location is tolerable.</p>
+<h3>4- 初始化Turtlebot 3的位置<a class="headerlink" href="#initialize-the-location-of-turtlebot-3" title="永久链接至标题"></a></h3>
+<p>首先，找到机器人在地图上的位置。查看你的机器人在房间中的位置。</p>
+<p>在RViz中设置机器人的姿态。点击2D位姿估计按钮，然后在地图上指定机器人的位置。绿色箭头的方向表示Turtlebot的方向。</p>
+<a class="reference internal image-reference" href="../../_images/rviz_set_initial_pose.png"><img alt="在RViz中设置初始姿态" class="align-center" src="../../_images/rviz_set_initial_pose.png" style="width: 700px;" /></a>
+<p>现在，Turtlebot的3D模型应该移动到指定的位置。对于估计位置的小误差是可以容忍的。</p>
 </div>
 <div class="section" id="send-a-goal-pose">
-<h3>5-  Send a Goal Pose<a class="headerlink" href="#send-a-goal-pose" title="永久链接至标题"></a></h3>
-<p>Pick a target location for Turtlebot on the map.
-You can send Turtlebot 3 a goal position and a goal orientation by using the <strong>Nav2 Goal</strong> or the <strong>GoalTool</strong> buttons.</p>
-<p>Note: Nav2 Goal button uses a ROS 2 Action to send the goal and the GoalTool publishes the goal to a topic.</p>
-<a class="reference internal image-reference" href="../../_images/rviz_send_goal.png"><img alt="Send goal pose in RViz" class="align-center" src="../../_images/rviz_send_goal.png" style="width: 700px;" /></a>
-<p>Once you define the target pose,  Nav2 will find a global path and start navigating the robot on the map.</p>
+<h3>5- 发送目标姿态<a class="headerlink" href="#send-a-goal-pose" title="永久链接至标题"></a></h3>
+<p>在地图上选择Turtlebot的目标位置。您可以使用“Nav2 Goal”或“GoalTool”按钮向Turtlebot 3发送目标位置和目标方向。</p>
+<p>注意：Nav2目标按钮使用ROS 2 Action发送目标，而GoalTool将目标发布到一个话题中。</p>
+<a class="reference internal image-reference" href="../../_images/rviz_send_goal.png"><img alt="在RViz中发送目标位姿" class="align-center" src="../../_images/rviz_send_goal.png" style="width: 700px;" /></a>
+<p>一旦您定义了目标姿态，Nav2将找到全局路径并开始在地图上导航机器人。</p>
 <a class="reference internal image-reference" href="../../_images/rviz_robot_navigating.png"><img alt="Robot navigating in RViz" class="align-center" src="../../_images/rviz_robot_navigating.png" style="width: 700px;" /></a>
-<p>Now, you can see that Turtlebot 3 moves towards the goal position in the room. See the video below.</p>
+<p>现在，您可以看到Turtlebot 3向房间内的目标位置移动。请参阅下面的视频。</p>
 </div>
 </div>
 </div>
