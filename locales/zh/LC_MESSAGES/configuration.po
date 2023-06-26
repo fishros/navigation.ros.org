@@ -7060,7 +7060,7 @@ msgstr "``<dwb plugin>``.acc_lim_y"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:119
 msgid "Maximum acceleration Y (m/s^2)."
-msgstr "Maximum acceleration Y (m/s^2)."
+msgstr "Y轴最大加速度（m/s^2）。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7070,7 +7070,7 @@ msgstr "``<dwb plugin>``.acc_lim_theta"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:130
 msgid "Maximum acceleration rotation (rad/s^2)."
-msgstr "Maximum acceleration rotation (rad/s^2)."
+msgstr "旋转最大加速度（rad/s^2）。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7080,7 +7080,7 @@ msgstr "``<dwb plugin>``.decel_lim_x"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:141
 msgid "Maximum deceleration X (m/s^2)."
-msgstr "Maximum deceleration X (m/s^2)."
+msgstr "X轴最大减速度（m/s^2）。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7090,7 +7090,7 @@ msgstr "``<dwb plugin>``.decel_lim_y"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:152
 msgid "Maximum deceleration Y (m/s^2)."
-msgstr "Maximum deceleration Y (m/s^2)."
+msgstr "Y轴最大减速度（m/s^2）。"
 
 
 #: ../../configuration/packages/dwb-params/kinematic.rst
@@ -7100,12 +7100,12 @@ msgstr "``<dwb plugin>``.decel_lim_theta"
 
 #: ../../configuration/packages/dwb-params/kinematic.rst:163
 msgid "Maximum deceleration rotation (rad/s^2)."
-msgstr "Maximum deceleration rotation (rad/s^2)."
+msgstr "旋转最大减速度（rad/s^2）。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst:4
 msgid "Publisher"
-msgstr "Publisher"
+msgstr "发布者"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
@@ -7115,7 +7115,7 @@ msgstr "``<dwb plugin>``.publish_evaluation"
 
 #: ../../configuration/packages/dwb-params/visualization.rst:20
 msgid "Whether to publish the local plan evaluation."
-msgstr "Whether to publish the local plan evaluation."
+msgstr "是否发布局部路径规划评估结果。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
@@ -7125,7 +7125,7 @@ msgstr "``<dwb plugin>``.publish_global_plan"
 
 #: ../../configuration/packages/dwb-params/visualization.rst:31
 msgid "Whether to publish the global plan."
-msgstr "Whether to publish the global plan."
+msgstr "是否发布全局路径规划结果。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
@@ -7135,7 +7135,7 @@ msgstr "``<dwb plugin>``.publish_transformed_plan"
 
 #: ../../configuration/packages/dwb-params/visualization.rst:42
 msgid "Whether to publish the global plan in the odometry frame."
-msgstr "Whether to publish the global plan in the odometry frame."
+msgstr "是否在里程计坐标系中发布全局路径规划结果。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
@@ -7145,7 +7145,7 @@ msgstr "``<dwb plugin>``.publish_local_plan"
 
 #: ../../configuration/packages/dwb-params/visualization.rst:53
 msgid "Whether to publish the local planner's plan."
-msgstr "Whether to publish the local planner's plan."
+msgstr "是否发布局部路径规划器的规划结果。"
 
 
 #: ../../configuration/packages/dwb-params/visualization.rst
