@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smac Planner &mdash; Navigation 2 1.0.0 文档</title>
+  <title>Smac规划器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -547,7 +547,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-navfn.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Smac Planner</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Smac规划器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#provided-plugins">Provided Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-2d.html">Smac 2D Planner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-hybrid.html">Smac混合A*规划器</a></li>
@@ -661,7 +661,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-smoother-server.html">Smoother Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-smoother-server.html">平滑服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#smoother-server-parameters">平滑器服务器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuring-smoother-server.html#example">示例</a></li>
 </ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Smac Planner</li>
+      <li>Smac规划器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,10 +939,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="smac-planner">
-<span id="configuring-smac-planner"></span><h1>Smac Planner<a class="headerlink" href="#smac-planner" title="永久链接至标题"></a></h1>
+<span id="configuring-smac-planner"></span><h1>Smac规划器<a class="headerlink" href="#smac-planner" title="永久链接至标题"></a></h1>
 <p>源代码和“README”包含了设计、说明和指标，可以在 <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smac_planner">Github</a> 上找到。下面是一个简要解释，但是“README”包含了对框架和规划器实现的最详细概述。</p>
-<p>The Smac Planner plugin implements three A* based planning algorithms: 2D A*, Hybrid-A*, and State Lattice path planners.
-It is important to know that in June 2021 and December 2021, the package received a several <strong>major</strong> updates both improving path quality and run-times by 2-3x.</p>
+<p>Smac规划器插件实现了三种基于A*的规划算法：2D A*、Hybrid-A*和State Lattice路径规划器。重要的是要知道，在2021年6月和2021年12月，该软件包经历了多次**重大**更新，既改善了路径质量，又将运行时间提高了2-3倍。</p>
 <div class="section" id="provided-plugins">
 <h2>Provided Plugins<a class="headerlink" href="#provided-plugins" title="永久链接至标题"></a></h2>
 <blockquote>
@@ -958,19 +957,19 @@ It is important to know that in June 2021 and December 2021, the package receive
 </div>
 <div class="section" id="description">
 <h2>描述<a class="headerlink" href="#description" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_smac_planner</span></code> package contains an optimized templated A* search algorithm used to create multiple A*-based planners for multiple types of robot platforms. It uses template node types to develop different search-based planners.</p>
-<p>We support circular differential-drive and omni-directional drive robots using the <code class="docutils literal notranslate"><span class="pre">SmacPlanner2D</span></code> planner which implements a cost-aware A* planner. We support car-like (ackermann) and legged vehicles using the <code class="docutils literal notranslate"><span class="pre">SmacPlannerHybrid</span></code> plugin which implements a Hybrid-A* planner. We support non-circular, arbitrary shaped, any model vehicles using the <code class="docutils literal notranslate"><span class="pre">SmacPlannerLattice</span></code> plugin which implements a State Lattice planner (e.g. omni, diff, ackermann, legged, custom). It contains control sets and generators for ackermann, legged, differential drive and omnidirectional vehicles, but you may provide your own for another robot type or to have different planning behaviors.</p>
-<p>The last two plugins are both <strong>kinematically feasible</strong> and support <strong>reversing</strong>. They have performance similar to its 2D counter parts like 2D-A* and NavFn via highly optimized heuristic functions and efficient programming. An example of the 3 planners can be seen below, planning a roughly 75 m path.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_smac_planner``软件包包含了一个优化的模板化A*搜索算法，用于为多种类型的机器人平台创建多个基于A*的规划器。它使用模板节点类型来开发不同的基于搜索的规划器。</p>
+<p>我们支持使用“SmacPlanner2D”规划器的圆形差分驱动和全向驱动机器人。该规划器实现了一个成本感知的A*规划器。我们支持使用“SmacPlannerHybrid”插件的类似汽车（Ackermann）和腿部车辆。该插件实现了一个混合A*规划器。我们支持非圆形、任意形状、任意模型的车辆，使用“SmacPlannerLattice”插件，该插件实现了一个状态格规划器（例如全向、差分、Ackermann、腿部、自定义）。它包含了用于Ackermann、腿部、差分驱动和全向驱动车辆的控制集和生成器，但您也可以为另一种机器人类型提供自己的控制集和生成器，或者使用不同的规划行为。</p>
+<p>最后两个插件都是**运动可行**的，并支持**后退**。它们通过高度优化的启发式函数和高效的编程，具有与其2D对应物（如2D-A*和NavFn）类似的性能。下面是三个规划器的示例，规划一个大约75米的路径。</p>
 <ul class="simple">
-<li><p>Hybrid-A* computed the path in 144ms</p></li>
-<li><p>State Lattice computed the path in 113ms</p></li>
-<li><p>2D A* computed the path in 243ms</p></li>
-<li><p>For reference: NavFn compute the path in 146ms, including some nasty path discontinuity artifacts</p></li>
+<li><p>混合A*在144毫秒内计算出路径。</p></li>
+<li><p>State Lattice在113毫秒内计算出路径</p></li>
+<li><p>2D A*在243毫秒内计算出路径。</p></li>
+<li><p>供参考：NavFn在146毫秒内计算出路径，包括一些不好的路径不连续性的痕迹</p></li>
 </ul>
-<p>Usual planning times are below 100ms for some environments, occasionally approaching up to 200ms. The performance of all 3 planners is roughly comparable with naive 2D search algorithms that have long been mainstays of the ROS Navigation ecosystem, but also achieving kinematic feasibility, support for reversing, and using modern state of the art techniques.</p>
+<p>对于某些环境，通常的规划时间低于100毫秒，偶尔会接近200毫秒。所有三个规划器的性能与ROS导航生态系统中长期以来一直存在的简单2D搜索算法大致相当，同时实现了运动学可行性、倒车支持，并使用了现代的最新技术。</p>
 <div class="figure align-center" id="id1">
-<img alt="Paths generated by the Smac Planners" src="../../_images/3planners.png" />
-<p class="caption"><span class="caption-number">Figure 7 </span><span class="caption-text">2D A* (Panel 1),  Hybrid-A* (Panel 2), State Lattice (Panel 3)</span><a class="headerlink" href="#id1" title="永久链接至图片"></a></p>
+<img alt="Smac规划器生成的路径" src="../../_images/3planners.png" />
+<p class="caption"><span class="caption-number">Figure 7 </span><span class="caption-text">2D A*（面板1），混合A*（面板2），状态格（面板3）。</span><a class="headerlink" href="#id1" title="永久链接至图片"></a></p>
 </div>
 </div>
 </div>

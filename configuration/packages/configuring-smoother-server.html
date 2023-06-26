@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smoother Server &mdash; Navigation 2 1.0.0 文档</title>
+  <title>平滑服务器 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -547,7 +547,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-navfn.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="configuring-smac-planner.html">Smac Planner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuring-smac-planner.html">Smac规划器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuring-smac-planner.html#provided-plugins">Provided Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-2d.html">Smac 2D Planner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="smac/configuring-smac-hybrid.html">Smac混合A*规划器</a></li>
@@ -661,7 +661,7 @@
 <li class="toctree-l3"><a class="reference internal" href="configuring-behavior-server.html#example">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Smoother Server</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">平滑服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#smoother-server-parameters">平滑器服务器参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">示例</a></li>
 </ul>
@@ -929,7 +929,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">配置指南</a> &raquo;</li>
-      <li>Smoother Server</li>
+      <li>平滑服务器</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -939,10 +939,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="smoother-server">
-<span id="configuring-smoother-server"></span><h1>Smoother Server<a class="headerlink" href="#smoother-server" title="永久链接至标题"></a></h1>
+<span id="configuring-smoother-server"></span><h1>平滑服务器<a class="headerlink" href="#smoother-server" title="永久链接至标题"></a></h1>
 <p><a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_smoother">在Github上的源代码</a></p>
-<p>The Smoother Server implements the server for handling smooth path requests and hosting a vector of plugins implementing various C++ smoothers.
-The server exposes an action interface for smoothing with multiple smoothers that share resources such as costmaps and TF buffers.</p>
+<p>平滑器服务器实现了用于处理平滑路径请求的服务器，并托管一个包含多个C++平滑器插件的向量。该服务器通过一个操作接口公开了多个平滑器的功能，这些平滑器共享资源，例如代价图和TF缓冲区。</p>
 <div class="section" id="smoother-server-parameters">
 <h2>平滑器服务器参数<a class="headerlink" href="#smoother-server-parameters" title="永久链接至标题"></a></h2>
 <dl class="field-list">
@@ -962,7 +961,7 @@ The server exposes an action interface for smoothing with multiple smoothers tha
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Raw costmap topic for collision checking.</p>
+<dt>描述</dt><dd><p>用于碰撞检测的原始代价图主题。</p>
 </dd>
 </dl>
 </dd>
