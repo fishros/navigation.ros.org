@@ -962,7 +962,7 @@ msgstr "要使用开发容器，您需要以下内容："
 
 #: ../../development_guides/devcontainer_docs/index.md:64
 msgid "[Docker Engine](https://docs.docker.com/engine/install/) installed and running on the host machine"
-msgstr "[Docker Engine](https://docs.docker.com/engine/install/) installed and running on the host machine"
+msgstr "[Docker Engine](https://docs.docker.com/engine/install/) 已安装并在主机上运行"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:65
@@ -972,7 +972,7 @@ msgstr "[Visual Studio Code](https://code.visualstudio.com/) 安装在任何远�
 
 #: ../../development_guides/devcontainer_docs/index.md:66
 msgid "[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code"
-msgstr "[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed in VS Code"
+msgstr "在 VS Code 中安装了 [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 扩展"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:69
@@ -982,7 +982,7 @@ msgstr "或者，您可以直接从项目仓库或任何其他远程主机上使
 
 #: ../../development_guides/devcontainer_docs/index.md:71
 msgid "[Creating a codespace for a repository](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository?tool=webui)"
-msgstr "[Creating a codespace for a repository](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository?tool=webui)"
+msgstr "在[创建用于存储库的 codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository?tool=webui)"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:72
@@ -992,7 +992,7 @@ msgstr "如何通过GitHub CLI、VS Code或Web浏览器为存储库创建一个c
 
 #: ../../development_guides/devcontainer_docs/index.md:73
 msgid "[Develop on a remote Docker host](https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host)"
-msgstr "[Develop on a remote Docker host](https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host)"
+msgstr "[在远程 Docker 主机上开发](https://code.visualstudio.com/remote/advancedcontainers/develop-remote-host)"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:74
@@ -1002,7 +1002,7 @@ msgstr "如何使用SSH隧道或TCP套接字将VS Code连接到远程Docker主�
 
 #: ../../development_guides/devcontainer_docs/index.md:77
 msgid "Getting started"
-msgstr "Getting started"
+msgstr "入门"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:79
@@ -1012,12 +1012,12 @@ msgstr "使用开发容器的入门方法就是通过以下方式在VS Code中�
 
 #: ../../development_guides/devcontainer_docs/index.md:82
 msgid "Clicking the `Starting Dev Container (show log)` notification in VS Code allows you to observe in live time how the sausage is made, while typing `Dev Containers: Show Log` into the command palette will list all the available commands to review and revisit these log files later."
-msgstr "Clicking the `Starting Dev Container (show log)` notification in VS Code allows you to observe in live time how the sausage is made, while typing `Dev Containers: Show Log` into the command palette will list all the available commands to review and revisit these log files later."
+msgstr "在 VS Code 中单击`启动 Dev Container (显示日志)`通知，可以实时观察制作过程，同时在命令面板中输入`Dev Containers: Show Log`将列出所有可用的命令以供查看和重新访问这些日志文件。"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:85
 msgid "While waiting for the initial setup, feel free to stretch your legs, grab a coffee, or continue to read the following guides to learn more about creating and using dev containers, or how to visualize and leverage graphical user interfaces from a headless development environment."
-msgstr "While waiting for the initial setup, feel free to stretch your legs, grab a coffee, or continue to read the following guides to learn more about creating and using dev containers, or how to visualize and leverage graphical user interfaces from a headless development environment."
+msgstr "在等待初始设置的同时，可以随意活动一下，喝杯咖啡，或者继续阅读以下指南，了解有关创建和使用开发容器，或如何从无头开发环境中可视化和利用图形用户界面的更多信息。"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:87
@@ -1027,27 +1027,27 @@ msgstr "**[](devcontainer_guide.md)**"
 
 #: ../../development_guides/devcontainer_docs/index.md:88
 msgid "How to develop Nav2 using dev containers and supporting tools"
-msgstr "How to develop Nav2 using dev containers and supporting tools"
+msgstr "如何使用开发容器和支持工具开发Nav2"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:90
 msgid "Security"
-msgstr "Security"
+msgstr "安全性"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:93
 msgid "Ensure you trust the authors and contents of workspaces before launching derived dev containers."
-msgstr "Ensure you trust the authors and contents of workspaces before launching derived dev containers."
+msgstr "在启动衍生的开发容器之前，请确保信任工作区的作者和内容。"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:96
 msgid "A word of caution when using dev containers: they are powerful tools, but can be a security concern, as the capability of arbitrary code execution facilitated by IDE extensions to enable such automation and convenience remains inherently dual use. Before launching a dev container, ensure you trust the workspaces and authors. For example, when reviewing a pull request, verify patches remain benign and do not introduce any malicious code. Although such vigilance is merited whenever compiling and running patched code, using containers with either elevated privileges or filesystem access renders this diligence even more prudent."
-msgstr "A word of caution when using dev containers: they are powerful tools, but can be a security concern, as the capability of arbitrary code execution facilitated by IDE extensions to enable such automation and convenience remains inherently dual use. Before launching a dev container, ensure you trust the workspaces and authors. For example, when reviewing a pull request, verify patches remain benign and do not introduce any malicious code. Although such vigilance is merited whenever compiling and running patched code, using containers with either elevated privileges or filesystem access renders this diligence even more prudent."
+msgstr "在使用开发容器时需要谨慎：它们是强大的工具，但可能存在安全问题，因为由IDE扩展实现的任意代码执行功能为自动化和便利性提供了双重用途。在启动开发容器之前，请确保信任工作区和作者。例如，在审查拉取请求时，请验证补丁是否仍然是良性的，不会引入任何恶意代码。尽管在编译和运行修补代码时需要保持警惕，但使用具有提升权限或文件系统访问权限的容器则需要更加谨慎。"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:99
 msgid "More info on trusting workspaces and extensions in general can be found here:"
-msgstr "More info on trusting workspaces and extensions in general can be found here:"
+msgstr "有关信任工作区和扩展的更多信息可以在此处找到："
 
 
 #: ../../development_guides/devcontainer_docs/index.md:101
@@ -1057,32 +1057,32 @@ msgstr "[Workspace Trust](https://code.visualstudio.com/docs/editor/workspace-tr
 
 #: ../../development_guides/devcontainer_docs/index.md:102
 msgid "VS Code user guid on trusting and configure workspaces"
-msgstr "VS Code user guid on trusting and configure workspaces"
+msgstr "VS Code用户指南：信任和配置工作区"
 
 
 #: ../../development_guides/index.rst:4
 msgid "Development Guides"
-msgstr "Development Guides"
+msgstr "开发指南"
 
 
 #: ../../development_guides/index.rst:6
 msgid "This section includes guides for developing Nav2, e.g. how to build from source, how to use dev containers, and how to get involved."
-msgstr "This section includes guides for developing Nav2, e.g. how to build from source, how to use dev containers, and how to get involved."
+msgstr "本部分包含开发Nav2的指南，例如如何从源代码构建，如何使用开发容器以及如何参与其中。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:4 ../../development_guides/involvement_docs/index.rst:16
 msgid "Getting Involved"
-msgstr "Getting Involved"
+msgstr "参与进来"
 
 
 #: ../../development_guides/involvement_docs/index.rst:6
 msgid "As an open-source project, we welcome and encourage the community to submit patches directly to the |LPN|.  In our collaborative open source environment, standards and methods for submitting changes help reduce the chaos that can result from an active development community."
-msgstr "As an open-source project, we welcome and encourage the community to submit patches directly to the |LPN|.  In our collaborative open source environment, standards and methods for submitting changes help reduce the chaos that can result from an active development community."
+msgstr "作为一个开源项目，我们欢迎并鼓励社区直接向|LPN|提交补丁。在我们的协作开源环境中，提交更改的标准和方法有助于减少活跃开发社区可能导致的混乱。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:11
 msgid "This document explains how to participate in project conversations, log and track bugs and enhancement requests, and submit patches to the project so your patch will be accepted quickly in the codebase."
-msgstr "This document explains how to participate in project conversations, log and track bugs and enhancement requests, and submit patches to the project so your patch will be accepted quickly in the codebase."
+msgstr "本文档说明了如何参与项目讨论，记录和跟踪错误和改进请求，并向项目提交补丁，以便快速将您的补丁接受到代码库中。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:18
@@ -1092,7 +1092,7 @@ msgstr "If you're interested in getting involved in Navigation 2, first of all, 
 
 #, python-format
 msgid "All ROS 2 TSC Working Groups have their meetings on the `working group calendar <https://calendar.google.com/calendar/embed?src=agf3kajirket8khktupm9go748%40group.calendar.google.com>`_. Here, you can find the date and time of the Navigation2 working group meeting. Make sure you're checking in your local timezone. From this calendar, you can add yourself to the event so it will appear on your google calendar and get the event link to the call through Google Hangouts. We encourage everyone interested to come to the meeting to introduce yourself, your project, and see what everyone is working on."
-msgstr "All ROS 2 TSC Working Groups have their meetings on the `working group calendar <https://calendar.google.com/calendar/embed?src=agf3kajirket8khktupm9go748%40group.calendar.google.com>`_. Here, you can find the date and time of the Navigation2 working group meeting. Make sure you're checking in your local timezone. From this calendar, you can add yourself to the event so it will appear on your google calendar and get the event link to the call through Google Hangouts. We encourage everyone interested to come to the meeting to introduce yourself, your project, and see what everyone is working on."
+msgstr "所有ROS 2 TSC工作组都在`工作组日历<https://calendar.google.com/calendar/embed?src=agf3kajirket8khktupm9go748%40group.calendar.google.com>`_上进行会议。在这里，您可以找到Navigation2工作组会议的日期和时间。请确保按照您所在的本地时区进行检查。通过该日历，您可以将自己添加到事件中，以便在您的Google日历上显示，并通过Google Hangouts获取通话的事件链接。我们鼓励所有感兴趣的人参加会议，介绍自己、您的项目，并了解其他人正在做什么。"
 
 
 #: ../../development_guides/involvement_docs/index.rst:27
