@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Assisted Teleop &mdash; Navigation 2 1.0.0 文档</title>
+  <title>3. 辅助远程操控 &mdash; Navigation 2 1.0.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -926,7 +926,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>3. Assisted Teleop</li>
+      <li>3. 辅助远程操控</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -936,29 +936,26 @@
            <div itemprop="articleBody">
              
   <div class="section" id="assisted-teleop">
-<span id="id1"></span><h1>3. Assisted Teleop<a class="headerlink" href="#assisted-teleop" title="永久链接至标题"></a></h1>
-<p><strong>Task description</strong></p>
-<p>In mobile robot and autonomous vehicle navigation, there are situations where a human driver is required to intervene to get the vehicle out of a sticky situation. This can be both as a backup in case of autonomy failure as well as the primary function of the robot (e.g. telepresence robots).</p>
-<p>This project's aim is to create an assisted teleop feature in Nav2 by means of a new behavior tree configuration file (the file that defines the flow of information for the navigation task) and potentially new plugins. This feature should make sure to use the local costmap and/or sensor data in order to avoid obstacles and take position and/or velocity commands to attempt to follow.</p>
-<p>An example application of this is a telepresence robot, where a human driver is driving the robot through a space to visit in an office building or hospital. Another example would be an autonomous delivery robot stuck requiring a human driver to navigate it back into an open space for the robot to continue its task.</p>
-<p>This will be an excellent chance to make a substantial new feature in the Nav2 system to be used by hundreds of robots in the future. This project could also be a good candidate for a ROSCon talk in future events.</p>
-<p><strong>Project difficulty: Medium</strong></p>
-<p><strong>Project community mentor: Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
-<p><strong>Mentor contact details: [See link above, link in GitHub profile description]</strong></p>
-<p><strong>Project output requirements</strong>
-- Integrations of an assisted teleop feature in Nav2 as either a set of plugins and/or a behavior tree configuration
-- Robot can successfully navigate a space by a user teleop without collision
-- If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box</p>
-<p><strong>Skills required</strong></p>
+<span id="id1"></span><h1>3. 辅助远程操控<a class="headerlink" href="#assisted-teleop" title="永久链接至标题"></a></h1>
+<p><strong>任务描述</strong></p>
+<p>在移动机器人和自动驾驶车辆导航中，有时需要人类驾驶员介入，以使车辆摆脱困境。这既可以作为自主模式失败时的备用措施，也可以作为机器人的主要功能（例如远程控制机器人）。</p>
+<p>该项目的目标是通过引入新的行为树配置文件（定义导航任务信息流的文件）和可能的新插件，在Nav2中创建一个辅助遥控功能。该功能应确保使用本地代价地图和/或传感器数据以避开障碍物，并采用位置和/或速度命令来尝试跟随。</p>
+<p>这的一个例子是远程控制机器人，由人类驾驶员驱动机器人在办公大楼或医院的空间中移动。另一个例子是自主送货机器人被困，需要人类驾驶员将其导航回开放的空间，以便机器人能够继续执行任务。</p>
+<p>这将是在未来由数百个机器人使用的Nav2系统中实现重大新功能的绝佳机会。该项目还可能成为未来活动中ROSCon演讲的一个良好候选。</p>
+<p><strong>项目难度：中等</strong></p>
+<p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
+<p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
+<p><strong>项目产出要求</strong>： - 将辅助遥控功能集成到Nav2中，可以是一组插件和/或行为树配置 - 机器人能够通过用户遥控成功导航而无碰撞 - 如果时间允许，可以调整/添加新的DWB本地规划器批评者，以改善其性能的安全性。</p>
+<p><strong>所需技能</strong></p>
 <ul class="simple">
 <li><p>C++, XML, ROS</p></li>
-<li><p>Mobile robot navigation experience</p></li>
+<li><p>移动机器人导航经验</p></li>
 <li><p>Recommended: Gazebo simulation, ROS navigation, Behavior trees</p></li>
 </ul>
-<p><strong>List of relevant open source software repositories and refs</strong></p>
+<p><strong>相关开源软件仓库和参考资料列表</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
-<li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
+<li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/2226">Github ticket</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>

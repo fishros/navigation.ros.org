@@ -937,7 +937,7 @@
              
   <div class="section" id="navigation-safety-node">
 <span id="safety-node"></span><h1>5. Navigation Safety Node<a class="headerlink" href="#navigation-safety-node" title="永久链接至标题"></a></h1>
-<p><strong>Task description</strong></p>
+<p><strong>任务描述</strong></p>
 <p>The aim of this project is to create a safety watchdog node to ensure the robot is acting properly and not about to collide with an obstacle. Typical safety-rated lidars will contain &quot;safety zones&quot; whereas if any sensor points are located in a box around the lidar, then the lidar will send a signal to the robot to stop due to a potential collision. However, less and less people are using safety-rated lidars as consumer available lidars are dropping in cost and 3D lidars are seeing more use in mobile robotics.</p>
 <p>Your project will be to re-create this logic at the Navigation level. While this wouldn't be &quot;safety certified&quot;, this is a significant functional improvement on safety that could potentially safe real people from real injuries in the real-world. The project will be to create a node that sits below the navigation stack but above the robot controller to do the following:</p>
 <ul class="simple">
@@ -948,24 +948,24 @@
 <li><p>Optionally if a flag is set, if <code class="docutils literal notranslate"><span class="pre">M</span></code> or more points are in defined bounding boxes around the robot, send only <code class="docutils literal notranslate"><span class="pre">0</span></code> commands to enact an emergency stop.</p></li>
 </ul>
 <p>This will be an excellent chance to make mobile robots and Nav2 users significantly safer and run at higher speeds in their production or research environments. It goes a long way for functional safety for those not using safety-rated lidars which contain similar features.</p>
-<p><strong>Project difficulty: Medium</strong></p>
-<p><strong>Project community mentor: Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
-<p><strong>Mentor contact details: [See link above, link in GitHub profile description]</strong></p>
+<p><strong>项目难度：中等</strong></p>
+<p><strong>项目社区导师：Steve Macenski</strong> <a class="reference external" href="https://github.com/SteveMacenski">&#64;SteveMacenski</a></p>
+<p><strong>导师联系方式：[参见上方链接，在GitHub个人资料描述中的链接]</strong></p>
 <p><strong>Project output requirements</strong>
 - Creation of a ROS 2 node that will prevent robot collision based on lidar and/or RGBD data
 - Node should be able to run at lidar data speed (40hz+) and adjust velocity commands accordingly
 - If time allots, work on tuning / adding new critics to the DWB local planner to improve safety of its performance for users out of the box</p>
-<p><strong>Skills required</strong></p>
+<p><strong>所需技能</strong></p>
 <ul class="simple">
 <li><p>C++, ROS</p></li>
-<li><p>Mobile robot navigation experience</p></li>
+<li><p>移动机器人导航经验</p></li>
 <li><p>Geometry and statistics</p></li>
 <li><p>Recommended: Gazebo simulation, ROS navigation</p></li>
 </ul>
-<p><strong>List of relevant open source software repositories and refs</strong></p>
+<p><strong>相关开源软件仓库和参考资料列表</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.ros.org/">ROS</a></p></li>
-<li><p><a class="reference external" href="http://gazebosim.org/">Gazebo Simulator</a></p></li>
+<li><p><a class="reference external" href="http://gazebosim.org/">Gazebo模拟器</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/issues/1899">Github ticket</a></p></li>
 <li><p><a class="reference external" href="https://navigation.ros.org/">Navigation2</a></p></li>
 </ul>
