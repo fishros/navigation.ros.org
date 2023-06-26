@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/index.rst:4
 msgid "Getting Started"
-msgstr "入门指南"
+msgstr "开始入门"
 
 
 #: ../../getting_started/index.rst:6
