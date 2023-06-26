@@ -2013,7 +2013,7 @@ msgstr "对于2021年12月之前的Ubuntu 20.04用户，OpenVDB及其二进制�
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:34
 msgid "Costmap2D and STVL"
-msgstr "Costmap2D and STVL"
+msgstr "Costmap2D 和 STVL"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:36
@@ -2023,32 +2023,32 @@ msgstr "Costmap 2D是我们用于将传感器信息缓冲到机器人将用于�
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:40
 msgid "However, these are simply example plugins offered by the base implementation. Another available pluginlib plugin for Costmap2D in Navigation2 is STVL."
-msgstr "However, these are simply example plugins offered by the base implementation. Another available pluginlib plugin for Costmap2D in Navigation2 is STVL."
+msgstr "然而，这些只是基本实现提供的示例插件。Navigation2 中 Costmap2D 的另一个可用的 pluginlib 插件是 STVL。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:43
 msgid "STVL is another 3D perception plugin similar to the Voxel Layer. A more detailed overview of how it works can be found `in this repo <https://github.com/SteveMacenski/spatio_temporal_voxel_layer/>`_, however it buffers 3D data from depth cameras, sonars, lidars, and more into a sparse volumetic world model and removes voxels over time proportional with a sensor model and time-based expiration. This can be especially useful for robots in highly dynamic envrionments and decreases the resource utilization for 3D sensor processing by up to 2x. STVL also treats 3D lidars and radars as first class citizens for support. The ROSCon talk for STVL can be found `in this video <https://vimeo.com/292699571>`_."
-msgstr "STVL is another 3D perception plugin similar to the Voxel Layer. A more detailed overview of how it works can be found `in this repo <https://github.com/SteveMacenski/spatio_temporal_voxel_layer/>`_, however it buffers 3D data from depth cameras, sonars, lidars, and more into a sparse volumetic world model and removes voxels over time proportional with a sensor model and time-based expiration. This can be especially useful for robots in highly dynamic envrionments and decreases the resource utilization for 3D sensor processing by up to 2x. STVL also treats 3D lidars and radars as first class citizens for support. The ROSCon talk for STVL can be found `in this video <https://vimeo.com/292699571>`_."
+msgstr "STVL是另一个类似于体素层（Voxel Layer）的3D感知插件。关于其工作原理的更详细概述可以在 `该存储库中 <https://github.com/SteveMacenski/spatio_temporal_voxel_layer/>`_ 找到。然而，它从深度相机、声纳、激光雷达等设备中缓冲3D数据，并将其存储为稀疏体素化的世界模型，通过传感器模型和基于时间的过期机制逐渐移除体素。这对于在高度动态环境中的机器人尤其有用，并且可以将3D传感器处理的资源利用率减少高达2倍。STVL还将3D激光雷达和雷达视为一等公民提供支持。有关STVL的ROSCon演讲可以在 `该视频中 <https://vimeo.com/292699571>`_ 找到。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:53
 msgid "0- Setup"
-msgstr "0- Setup"
+msgstr "0- 设置"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:55
 msgid "Follow the same process as in :ref:`getting_started` for installing and setting up a robot for hardware testing or simulation, as applicable. Ensure ROS 2, Navigation2, and Gazebo are installed."
-msgstr "Follow the same process as in :ref:`getting_started` for installing and setting up a robot for hardware testing or simulation, as applicable. Ensure ROS 2, Navigation2, and Gazebo are installed."
+msgstr "根据需要，安装和设置机器人进行硬件测试或仿真的过程与 :ref:`getting_started` 中的相同。确保安装了ROS 2、Navigation2和Gazebo。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:58
 msgid "1- Install STVL"
-msgstr "1- Install STVL"
+msgstr "1- 安装 STVL"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:60
 msgid "STVL can be installed in ROS 2 via the ROS Build Farm:"
-msgstr "STVL can be installed in ROS 2 via the ROS Build Farm:"
+msgstr "可以通过ROS Build Farm在ROS 2中安装STVL："
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:62
@@ -2058,7 +2058,7 @@ msgstr "``sudo apt install ros-<ros2-distro>-spatio-temporal-voxel-layer``"
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:64
 msgid "It can also be built from source by cloning the repository into your Navigation2 workspace:"
-msgstr "It can also be built from source by cloning the repository into your Navigation2 workspace:"
+msgstr "也可以通过将存储库克隆到Navigation2工作空间并进行源代码编译来安装STVL："
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:66
@@ -2068,12 +2068,12 @@ msgstr "``git clone -b <ros2-distro>-devel git@github.com:stevemacenski/spatio_t
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:69
 msgid "1- Modify Navigation2 Parameter"
-msgstr "1- Modify Navigation2 Parameter"
+msgstr "1- 修改Navigation2参数"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:71
 msgid "STVL is an optional plugin, like all plugins, in Costmap2D. Costmap Plugins in Navigation2 are loaded in the ``plugin_names`` and ``plugin_types`` variables inside of their respective costmaps. For example, the following will load the static and obstacle layer plugins into the name ``static_layer`` and ``obstacle_layer``, respectively:"
-msgstr "STVL is an optional plugin, like all plugins, in Costmap2D. Costmap Plugins in Navigation2 are loaded in the ``plugin_names`` and ``plugin_types`` variables inside of their respective costmaps. For example, the following will load the static and obstacle layer plugins into the name ``static_layer`` and ``obstacle_layer``, respectively:"
+msgstr "STVL 是 Costmap2D 中的可选插件，就像所有插件一样。Navigation2 中的 Costmap 插件被加载到各自的 costmap 内的 ``plugin_names`` 和 ``plugin_types`` 变量中。例如，以下代码将分别将静态层和障碍层插件加载到名为 ``static_layer`` 和 ``obstacle_layer`` 的名称中："
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:85
@@ -2083,22 +2083,22 @@ msgstr "对于Galactic或更新版本，``plugin_names``和``plugin_types``已�
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:87
 msgid "To load the STVL plugin, a new plugin name and type must be added. For example, if the application required an STVL layer and no obstacle layer, our file would be:"
-msgstr "To load the STVL plugin, a new plugin name and type must be added. For example, if the application required an STVL layer and no obstacle layer, our file would be:"
+msgstr "为了加载STVL插件，必须添加一个新的插件名称和类型。例如，如果应用程序需要一个STVL层而不需要障碍物层，我们的文件将如下所示："
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:98
 msgid "Similar to the Voxel Layer, after registering the plugin, we can add the configuration of the STVL layer under the namespace ``stvl_layer``. An example fully-described parameterization of an STVL configuration is:"
-msgstr "Similar to the Voxel Layer, after registering the plugin, we can add the configuration of the STVL layer under the namespace ``stvl_layer``. An example fully-described parameterization of an STVL configuration is:"
+msgstr "与 Voxal Layer 类似，在注册插件后，我们可以在命名空间 `stvl_layer` 下添加 STVL Layer 的配置。以下是 STVL 配置的一个完整描述参数的示例："
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:141
 msgid "Please copy-paste the text above, with the ``plugin_names`` and ``plugin_types`` registration, into your ``nav2_params.yaml`` to enable STVL in your application. Make sure to change both the local and global costmaps."
-msgstr "Please copy-paste the text above, with the ``plugin_names`` and ``plugin_types`` registration, into your ``nav2_params.yaml`` to enable STVL in your application. Make sure to change both the local and global costmaps."
+msgstr "请将上述文本中的 ``plugin_names`` 和 ``plugin_types`` 注册内容复制粘贴到你的 ``nav2_params.yaml`` 中，以启用STVL在你的应用程序中。请确保同时更改本地和全局代价地图。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:144
 msgid "Note: Pluginlib plugins for other Navigation2 servers such as planning, behavior, and control can be set in this same way."
-msgstr "Note: Pluginlib plugins for other Navigation2 servers such as planning, behavior, and control can be set in this same way."
+msgstr "注意：可以以同样的方式设置用于其他 Navigation2 服务器（如规划、行为和控制）的 Pluginlib 插件。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:147
@@ -2108,7 +2108,7 @@ msgstr "2- Launch Navigation2"
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:149
 msgid "Follow the same process as in :ref:`getting_started` to launch a simulated robot in gazebo with Navigation2. Navigation2 is now using STVL as its 3D sensing costmap layer."
-msgstr "Follow the same process as in :ref:`getting_started` to launch a simulated robot in gazebo with Navigation2. Navigation2 is now using STVL as its 3D sensing costmap layer."
+msgstr "按照 :ref:`getting_started` 中的相同过程，在 gazebo 中启动一个模拟机器人，并使用 STVL 作为 3D 感知代价地图层。"
 
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:153
@@ -2118,7 +2118,7 @@ msgstr "3-  RVIZ"
 
 #: ../../tutorials/docs/navigation2_with_stvl.rst:155
 msgid "With RViz open and ``publish_voxel_map: true``, you can visualize the underlying data structure's 3D grid using the ``{local, global}_costmap/voxel_grid`` topics. Note: It is recommended in RViz to set the ``PointCloud2`` Size to your voxel size and the style to ``Boxes`` with a neutral color for best visualization."
-msgstr "With RViz open and ``publish_voxel_map: true``, you can visualize the underlying data structure's 3D grid using the ``{local, global}_costmap/voxel_grid`` topics. Note: It is recommended in RViz to set the ``PointCloud2`` Size to your voxel size and the style to ``Boxes`` with a neutral color for best visualization."
+msgstr "在打开 RViz 并设置 `publish_voxel_map: true` 后，可以使用 `{local, global}_costmap/voxel_grid` 主题可视化底层数据结构的 3D 网格。注意：建议在 RViz 中将 `PointCloud2` 的大小设置为你的体素大小，并将样式设置为 `Boxes`，使用中性颜色进行最佳可视化。"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:4
@@ -2128,7 +2128,7 @@ msgstr "Using Collision Monitor"
 
 #: ../../tutorials/docs/using_collision_monitor.rst:8
 msgid "`Preparing Nav2 stack`_"
-msgstr "`Preparing Nav2 stack`_"
+msgstr "`准备 Nav2 栈`_"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:9
@@ -2138,7 +2138,7 @@ msgstr "`Configuring Collision Monitor`_"
 
 #: ../../tutorials/docs/using_collision_monitor.rst:10 ../../tutorials/docs/using_shim_controller.rst:11
 msgid "`Demo Execution`_"
-msgstr "`Demo Execution`_"
+msgstr "`演示执行`_"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:18
@@ -2148,7 +2148,7 @@ msgstr "This tutorial shows how to use a Collision Monitor with Nav2 stack. Base
 
 #: ../../tutorials/docs/using_collision_monitor.rst:23
 msgid "It is assumed ROS2 and Nav2 dependent packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
-msgstr "It is assumed ROS2 and Nav2 dependent packages are installed or built locally. Please make sure that Nav2 project is also built locally as it was made in :ref:`build-instructions`."
+msgstr "假设已安装或在本地构建了 ROS2 和 Nav2 的依赖包。请确保 Nav2 项目也在本地构建，就像 :ref:`build-instructions` 中所述。"
 
 
 #: ../../tutorials/docs/using_collision_monitor.rst:27
