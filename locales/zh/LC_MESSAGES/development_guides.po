@@ -732,7 +732,7 @@ msgstr "构建缓存重用与所做更改的严重程度相关"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:170
 msgid "When necessary, you can also rebuild the container from scratch, e.i. without caching from docker, by selecting the `Remote-Containers: Rebuild Container Without Cache` command. This instead omits the `--cache-from` flag from the `docker buildx` command, while also adding the `--no-cache` and `--pull` flags to prevent caching from any existing image layers, using only the latest images from a container registry."
-msgstr "When necessary, you can also rebuild the container from scratch, e.i. without caching from docker, by selecting the `Remote-Containers: Rebuild Container Without Cache` command. This instead omits the `--cache-from` flag from the `docker buildx` command, while also adding the `--no-cache` and `--pull` flags to prevent caching from any existing image layers, using only the latest images from a container registry."
+msgstr "如果需要，您还可以选择`Remote-Containers: Rebuild Container Without Cache`命令从头开始重新构建容器，即不使用docker缓存。这将从`docker buildx`命令中省略`--cache-from`标志，同时添加`--no-cache`和`--pull`标志，以防止使用任何现有镜像层的缓存，并仅使用容器注册表中的最新镜像。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:173
@@ -742,37 +742,37 @@ msgstr "重新构建容器时，可能会从容器注册表中拉取更新的镜
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:176
 msgid "Rebuilding without caching may be necessary when:"
-msgstr "Rebuilding without caching may be necessary when:"
+msgstr "当需要重新构建而不使用缓存时可能需要这样做："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:178
 msgid "Needing to update the base image"
-msgstr "Needing to update the base image"
+msgstr "需要更新基础镜像"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:179
 msgid "specifically if dev container configurations remain unmodified"
-msgstr "specifically if dev container configurations remain unmodified"
+msgstr "特别是如果开发容器配置保持不变"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:180
 msgid "to forcefully rerun a `RUN` directive in the Dockerfile"
-msgstr "to forcefully rerun a `RUN` directive in the Dockerfile"
+msgstr "以强制重新运行 Dockerfile 中的 `RUN` 指令"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:181
 msgid "such as unchanged `apt upgrade` or `rosdep update` commands"
-msgstr "such as unchanged `apt upgrade` or `rosdep update` commands"
+msgstr "例如未更改的`apt upgrade`或`rosdep update`命令"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:183
 msgid "Specifically, for this project, volumes remain unaffected by this rebuilding process: i.e. those used to mount the ccache directory or colcon workspace. While volume management is left to the user's discretion, other projects may of course handle this differently, so be sure to check the `./devcontainer` configuration to inspect how various container resources may be managed."
-msgstr "Specifically, for this project, volumes remain unaffected by this rebuilding process: i.e. those used to mount the ccache directory or colcon workspace. While volume management is left to the user's discretion, other projects may of course handle this differently, so be sure to check the `./devcontainer` configuration to inspect how various container resources may be managed."
+msgstr "具体而言，对于此项目，卷不受此重建过程的影响，例如用于挂载 ccache 目录或 colcon 工作区的卷。虽然卷的管理由用户自行决定，但其他项目可能会以不同的方式处理，因此请务必检查 `./devcontainer` 配置以了解如何管理各种容器资源。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:186
 msgid "Docker volume management can be done via the Docker CLI, or the VS Code Docker extension:"
-msgstr "Docker volume management can be done via the Docker CLI, or the VS Code Docker extension:"
+msgstr "可以通过Docker CLI或VS Code Docker扩展来管理Docker卷："
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:188
@@ -782,37 +782,37 @@ msgstr "[Docker Volume CLI](https://docs.docker.com/engine/reference/commandline
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:189
 msgid "Manage volumes using subcommands to create, inspect, list, remove, or prune volumes"
-msgstr "Manage volumes using subcommands to create, inspect, list, remove, or prune volumes"
+msgstr "使用子命令来创建、检查、列出、删除或修剪卷"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:190
 msgid "[VS Code Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)"
-msgstr "[VS Code Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)"
+msgstr "[VS Code Docker 扩展](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:191
 msgid "Makes it easy to create, manage, and debug containerized applications"
-msgstr "Makes it easy to create, manage, and debug containerized applications"
+msgstr "简化了容器化应用程序的创建、管理和调试"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:2
 msgid "Dev Containers"
-msgstr "Dev Containers"
+msgstr "开发容器"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:4
 msgid "You can use dev containers to build the project if you prefer a streamlined setup experience. This means you can use the same tools and dependencies as the rest of the team, including our Continuous Integration (CI) workflows, without worrying about installing dependencies on your host machine. Additionally, using Dev Containers makes it simple to switch between local or remote development environments, such as GitHub Codespaces."
-msgstr "You can use dev containers to build the project if you prefer a streamlined setup experience. This means you can use the same tools and dependencies as the rest of the team, including our Continuous Integration (CI) workflows, without worrying about installing dependencies on your host machine. Additionally, using Dev Containers makes it simple to switch between local or remote development environments, such as GitHub Codespaces."
+msgstr "如果您喜欢简化的设置体验，您可以使用开发容器构建项目。这意味着您可以使用与团队的其他成员相同的工具和依赖项，包括我们的持续集成（CI）工作流程，而无需担心在主机上安装依赖项。此外，使用开发容器可以轻松切换本地或远程开发环境，例如 GitHub Codespaces。"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:7
 msgid "More info on Dev Containers can be found here:"
-msgstr "More info on Dev Containers can be found here:"
+msgstr "有关开发容器的更多信息，请参阅此处："
 
 
 #: ../../development_guides/devcontainer_docs/index.md:9
 msgid "[Development Containers](https://containers.dev/)"
-msgstr "[Development Containers](https://containers.dev/)"
+msgstr "[开发容器](https://containers.dev/)"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:10
@@ -822,7 +822,7 @@ msgstr "An open specification for enriching containers with development specific
 
 #: ../../development_guides/devcontainer_docs/index.md:11
 msgid "[Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)"
-msgstr "[Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)"
+msgstr "[在容器内开发](https://code.visualstudio.com/docs/remote/containers)"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:12
@@ -832,7 +832,7 @@ msgstr "Learn how to use Visual Studio Code to develop inside a Docker container
 
 #: ../../development_guides/devcontainer_docs/index.md:13
 msgid "[GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview)"
-msgstr "[GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview)"
+msgstr "[GitHub Codespaces 概述](https://docs.github.com/en/codespaces/overview)"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:14
@@ -842,7 +842,7 @@ msgstr "A development environment hosted in the cloud"
 
 #: ../../development_guides/devcontainer_docs/index.md:24
 msgid "What, Why, How?"
-msgstr "What, Why, How?"
+msgstr "什么、为什么、如何?"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:26
@@ -852,7 +852,7 @@ msgstr "Lets briefly explain what dev containers are, why you should use them, a
 
 #: ../../development_guides/devcontainer_docs/index.md:29
 msgid "Here we'll assume the use of VS Code, but still applies to alternative tools and services, including  other CLIs, IDEs, etc. such as:"
-msgstr "Here we'll assume the use of VS Code, but still applies to alternative tools and services, including  other CLIs, IDEs, etc. such as:"
+msgstr "在这里，我们将假设使用VS Code，但同样适用于其他工具和服务，包括其他CLI、IDE等，比如:"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:31
@@ -862,7 +862,7 @@ msgstr "[Dev Container CLI](https://github.com/devcontainers/cli)"
 
 #: ../../development_guides/devcontainer_docs/index.md:32
 msgid "A reference implementation for the open specification"
-msgstr "A reference implementation for the open specification"
+msgstr "对于开放规范的参考实现"
 
 
 #: ../../development_guides/devcontainer_docs/index.md:33
