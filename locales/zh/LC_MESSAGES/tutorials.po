@@ -577,7 +577,7 @@ msgstr "7- 当棋盘格在校准边栏上移动时，4个条形图的长度会�
 
 #: ../../tutorials/docs/camera_calibration.rst:160
 msgid "8- After the calibration is completed the save and commit buttons light up. And you can also see the result in terminal."
-msgstr "8- After the calibration is completed the save and commit buttons light up. And you can also see the result in terminal."
+msgstr "8- 完成校准后，保存和提交按钮会亮起。您也可以在终端中看到结果。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:181
@@ -587,7 +587,7 @@ msgstr "9- 点击保存按钮查看结果。数据将保存到\"/tmp/calibration
 
 #: ../../tutorials/docs/camera_calibration.rst:184
 msgid "10-To use the the calibration file unzip the calibration.tar.gz"
-msgstr "10-To use the the calibration file unzip the calibration.tar.gz"
+msgstr "10- 要使用校准文件，需要解压缩calibration.tar.gz文件。"
 
 
 #: ../../tutorials/docs/camera_calibration.rst:184
@@ -597,7 +597,7 @@ msgstr "``tar -xvf calibration.tar.gz``"
 
 #: ../../tutorials/docs/camera_calibration.rst:186
 msgid "11-In the folder images used for calibration are available and also “**ost.yaml**” and “**ost.txt**”. You can use the yaml file which contains the calibration parameters as directed by the camera driver."
-msgstr "11-In the folder images used for calibration are available and also “**ost.yaml**” and “**ost.txt**”. You can use the yaml file which contains the calibration parameters as directed by the camera driver."
+msgstr "11- 在用于校准的文件夹中，有可用的图像，还有“**ost.yaml**”和“**ost.txt**”文件。您可以按照相机驱动程序的指示使用包含校准参数的yaml文件。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:4
@@ -607,12 +607,12 @@ msgstr "过滤噪声引起的障碍物"
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:9
 msgid "`How it works`_"
-msgstr "`How it works`_"
+msgstr "`工作原理`_"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:17
 msgid "Noisy sensor measurements can cause to errors in ``Voxel Layer`` or ``Obstacle Layer``. As a result, salt and pepper noise may appear on the costmap. This noise creates false obstacles that prevent the robot from finding the best path on the map. While the images above show both salt and pepper noise as well as error due to mislocalization, this layer will only remove sensor noise, not mislocalized artifacts misaligned with the static map. This tutorial shows how to configure filtering of false obstacles caused by noise. This functionality is provided by the ``DenoiseLayer`` costmap layer plugin which will be enabled and used in this document."
-msgstr "Noisy sensor measurements can cause to errors in ``Voxel Layer`` or ``Obstacle Layer``. As a result, salt and pepper noise may appear on the costmap. This noise creates false obstacles that prevent the robot from finding the best path on the map. While the images above show both salt and pepper noise as well as error due to mislocalization, this layer will only remove sensor noise, not mislocalized artifacts misaligned with the static map. This tutorial shows how to configure filtering of false obstacles caused by noise. This functionality is provided by the ``DenoiseLayer`` costmap layer plugin which will be enabled and used in this document."
+msgstr "嘈杂的传感器测量可能导致``Voxel Layer``或``Obstacle Layer``中的错误。结果是，在代价地图上可能出现椒盐噪声。这种噪声会产生虚假障碍物，阻止机器人在地图上找到最佳路径。尽管上面的图像显示了盐和胡椒噪声以及由于错误定位引起的错误，但此图层仅会去除传感器噪声，而不会去除与静态地图不对齐的错误定位伪影。本教程展示了如何配置用于过滤由噪声引起的虚假障碍物。这个功能由``DenoiseLayer``代价地图图层插件提供，将在本文档中启用和使用。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:23 ../../tutorials/docs/navigation2_with_keepout_filter.rst:26
@@ -622,67 +622,67 @@ msgstr "假设已安装或本地构建了ROS 2、Gazebo和TurtleBot3软件包。
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:29
 msgid "1. Enable Denoise Layer"
-msgstr "1. Enable Denoise Layer"
+msgstr "1. 启用去噪图层"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:31
 msgid "Denoise Layer is Costmap2D plugin. You can enable the ``DenoiseLayer`` plugin in Costmap2D by adding ``denoise_layer`` to the ``plugins`` parameter in ``nav2_params.yaml``. You can place it in the ``global_costmap`` and (or) ``local_costmap`` to filter noise on a global or local map. The DenoiseLayer plugin should have the following parameter defined:"
-msgstr "Denoise Layer is Costmap2D plugin. You can enable the ``DenoiseLayer`` plugin in Costmap2D by adding ``denoise_layer`` to the ``plugins`` parameter in ``nav2_params.yaml``. You can place it in the ``global_costmap`` and (or) ``local_costmap`` to filter noise on a global or local map. The DenoiseLayer plugin should have the following parameter defined:"
+msgstr "Denoise Layer是Costmap2D插件。您可以通过在``nav2_params.yaml``的``plugins``参数中添加``denoise_layer``来启用``DenoiseLayer``插件。您可以将其放置在``global_costmap``和/或``local_costmap``中以在全局或局部地图上过滤噪声。DenoiseLayer插件应定义以下参数："
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:33
 msgid "``plugin``: type of plugin. In our case ``nav2_costmap_2d::DenoiseLayer``."
-msgstr "``plugin``: type of plugin. In our case ``nav2_costmap_2d::DenoiseLayer``."
+msgstr "``plugin``: 插件类型。在我们的情况下是 ``nav2_costmap_2d::DenoiseLayer``。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:35
 msgid "Full list of parameters supported by ``DenoiseLayer`` are listed at :ref:`denoise` page."
-msgstr "Full list of parameters supported by ``DenoiseLayer`` are listed at :ref:`denoise` page."
+msgstr "支持``DenoiseLayer``的完整参数列表列在 :ref:`denoise` 页面上。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:37
 msgid "It is important to note that ``DenoiseLayer`` typically should be placed before the inflation layer. This is required to prevent inflation from noise-induced obstacles. Moreover, ``DenoiseLayer`` processes only obstacle information in the costmap. Values ``INSCRIBED_INFLATED_OBSTACLE``, ``LETHAL_OBSTACLE`` and optionally ``NO_INFORMATION`` will be interpreted as obstacle cell. Cells with any other values will be interpreted as ``FREE_SPACE`` when processed (won't be distorted in the cost map). If a cell with an obstacle is recognized as noise, it will be replaced by ``FREE_SPACE`` after processing."
-msgstr "It is important to note that ``DenoiseLayer`` typically should be placed before the inflation layer. This is required to prevent inflation from noise-induced obstacles. Moreover, ``DenoiseLayer`` processes only obstacle information in the costmap. Values ``INSCRIBED_INFLATED_OBSTACLE``, ``LETHAL_OBSTACLE`` and optionally ``NO_INFORMATION`` will be interpreted as obstacle cell. Cells with any other values will be interpreted as ``FREE_SPACE`` when processed (won't be distorted in the cost map). If a cell with an obstacle is recognized as noise, it will be replaced by ``FREE_SPACE`` after processing."
+msgstr "值得注意的是，通常应将 ``DenoiseLayer`` 放在膨胀图层之前。这是为了防止噪声引起的障碍物膨胀。此外，``DenoiseLayer`` 仅处理代价地图中的障碍物信息。``INSCRIBED_INFLATED_OBSTACLE``、``LETHAL_OBSTACLE``和可选的``NO_INFORMATION``将被解释为障碍物单元。在处理时，具有其他任何值的单元将被解释为``FREE_SPACE``（在代价地图中不会失真）。如果将障碍物单元识别为噪声，则在处理后将其替换为``FREE_SPACE``。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:44
 msgid "To enable ``DenoiseLayer`` for both global and local costmaps, use the following configuration:"
-msgstr "To enable ``DenoiseLayer`` for both global and local costmaps, use the following configuration:"
+msgstr "要为全局和局部代价地图同时启用``DenoiseLayer``，请使用以下配置："
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:70
 msgid "The key to success in filtering noise is to understand its type and choose the right ``DenoiseLayer`` parameters. The default parameters are focused on fast removal of standalone obstacles. More formally, an obstacle is discarded if there are no obstacles among the adjacent eight cells. This should be sufficient in typical cases."
-msgstr "The key to success in filtering noise is to understand its type and choose the right ``DenoiseLayer`` parameters. The default parameters are focused on fast removal of standalone obstacles. More formally, an obstacle is discarded if there are no obstacles among the adjacent eight cells. This should be sufficient in typical cases."
+msgstr "在过滤噪声方面成功的关键是了解噪声的类型并选择正确的“DenoiseLayer”参数。默认参数专注于快速移除独立的障碍物。更正式地说，如果相邻的八个单元中没有障碍物，则会丢弃一个障碍物。这在典型情况下应该足够了。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:75
 msgid "If some sensor generates intercorrelated noise-induced obstacles and small obstacles in the world are unlikely, small groups of obstacles can be removed. To configure the ``DenoiseLayer`` to such cases and understand how it works, refer to the section `How it works`_."
-msgstr "If some sensor generates intercorrelated noise-induced obstacles and small obstacles in the world are unlikely, small groups of obstacles can be removed. To configure the ``DenoiseLayer`` to such cases and understand how it works, refer to the section `How it works`_."
+msgstr "如果某个传感器生成了相互关联的噪声引起的障碍物，并且世界上的小障碍物不太可能存在，可以删除小组障碍物。要配置``DenoiseLayer``以处理此类情况并了解其工作原理，请参阅``How it works``部分。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:79
 msgid "Use this plugin to filter the global costmap with caution. It introduces potential performance issues. For example in case of typically-high-range lidars (20+ meters) update window can be massive making processing time unacceptably long. It is worth taking this into account as an application designer."
-msgstr "Use this plugin to filter the global costmap with caution. It introduces potential performance issues. For example in case of typically-high-range lidars (20+ meters) update window can be massive making processing time unacceptably long. It is worth taking this into account as an application designer."
+msgstr "谨慎使用此插件来过滤全局costmap，因为它可能引入潜在的性能问题。例如，在通常具有较高范围的激光雷达（20米以上）的情况下，更新窗口可能非常大，导致处理时间不可接受地长。作为应用程序设计者，考虑到这一点是值得的。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:84
 msgid "2. Run Nav2 stack"
-msgstr "2. Run Nav2 stack"
+msgstr "2. 运行Nav2 stack"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:86
 msgid "After Denoise Layer was enabled for global/local costmaps, run Nav2 stack as written in :ref:`getting_started`:"
-msgstr "After Denoise Layer was enabled for global/local costmaps, run Nav2 stack as written in :ref:`getting_started`:"
+msgstr "在为全局/局部costmap启用Denoise Layer后，按照:ref:`getting_started`中的指示运行Nav2 stack："
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:92
 msgid "And check that filter is working properly: with the default parameters, no standalone obstacles should remain on the cost map. This can be checked, for example, in RViz main window displaying local and global costmaps after removing unnecessary particles (illustrated at the top of this tutorial)."
-msgstr "And check that filter is working properly: with the default parameters, no standalone obstacles should remain on the cost map. This can be checked, for example, in RViz main window displaying local and global costmaps after removing unnecessary particles (illustrated at the top of this tutorial)."
+msgstr "并检查过滤器是否正常工作：使用默认参数，在代价地图上不应保留任何独立的障碍物。例如，可以在移除不必要的粒子后，在RViz主窗口中显示局部和全局代价地图来进行检查（如本教程顶部所示）。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:97
 msgid "How it works"
-msgstr "How it works"
+msgstr "工作原理"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:99
@@ -692,7 +692,7 @@ msgstr "The plugin is based on two algorithms."
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:101
 msgid "When parameter ``minimal_group_size`` = 2, the first algorithm turns on. It apply `erosion <https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html>`_ function with kernel from image below (left if ``group_connectivity_type`` = 4 or right if ``group_connectivity_type`` = 8) to the costmap. White color of the kernel pixel means to use the value, black means to ignore it."
-msgstr "When parameter ``minimal_group_size`` = 2, the first algorithm turns on. It apply `erosion <https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html>`_ function with kernel from image below (left if ``group_connectivity_type`` = 4 or right if ``group_connectivity_type`` = 8) to the costmap. White color of the kernel pixel means to use the value, black means to ignore it."
+msgstr "当参数“minimal_group_size”= 2时，第一个算法启动。它将`erosion <https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html>`_ 函数应用于下方图片中的内核（如果“group_connectivity_type”= 4，则使用左侧内核；如果“group_connectivity_type”= 8，则使用右侧内核），作用于costmap上。内核像素的白色表示使用该值，黑色表示忽略该值。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:108
@@ -702,7 +702,7 @@ msgstr "As a result of erosion function the neighbors image is created. Each pos
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:112
 msgid "This process is illustrated below. On the left side of the image is a costmap, on the right is a neighbors image. White pixels are free space, black pixels are obstacles, ``group_connectivity_type`` = 4. Obstacles marked at the end of the animation will be removed."
-msgstr "This process is illustrated below. On the left side of the image is a costmap, on the right is a neighbors image. White pixels are free space, black pixels are obstacles, ``group_connectivity_type`` = 4. Obstacles marked at the end of the animation will be removed."
+msgstr "该过程如下图所示。图像的左侧是costmap，右侧是邻居图像。白色像素表示自由空间，黑色像素表示障碍物，“group_connectivity_type”= 4。动画结束时标记的障碍物将被移除。"
 
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:118
@@ -712,7 +712,7 @@ msgstr "When parameter ``minimal_group_size`` > 2, the second algorithm is execu
 
 #: ../../tutorials/docs/filtering_of_noise-induced_obstacles.rst:127
 msgid "This algorithm is illustrated in the animation below (``group_connectivity_type`` = 8). Obstacles marked at the end of the animation will be removed (groups that size less 3)."
-msgstr "This algorithm is illustrated in the animation below (``group_connectivity_type`` = 8). Obstacles marked at the end of the animation will be removed (groups that size less 3)."
+msgstr "该算法如下动画所示（“group_connectivity_type”= 8）。动画结束时标记的障碍物将被移除（大小小于3的组）。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:4
