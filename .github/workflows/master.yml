@@ -34,4 +34,4 @@ jobs:
           publish_branch: gh-pages-cn-master
           
       - name: Deploy to fishros.org
-        run: echo `curl "http://fishros.org/deploy/github/action?url=git@github.com:fishros/navigation.ros.org.git&branch=gh-pages-cn-master&repository=navigation.ros.org&directory=&prefix=nav2"`
+        run: echo `curl "http://fishros.org/deploy/github/action?url=git@github.com:fishros/navigation.ros.org.git&branch=gh-pages-cn-master&repository=navigation.ros.org&directory=&prefix=doc/nav2"`
