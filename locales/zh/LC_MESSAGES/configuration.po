@@ -7718,7 +7718,7 @@ msgstr "``<name>``.minimum_turning_radius"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:146
 msgid "Minimum turning radius in meters of vehicle. Also used in the smoother to compute maximum curvature."
-msgstr "Minimum turning radius in meters of vehicle. Also used in the smoother to compute maximum curvature."
+msgstr "车辆的最小转弯半径（以米为单位）。在平滑器中也用于计算最大曲率。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7728,7 +7728,7 @@ msgstr "``<name>``.reverse_penalty"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:157
 msgid "Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in ``REEDS_SHEPP`` motion model."
-msgstr "Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in ``REEDS_SHEPP`` motion model."
+msgstr "如果在反向搜索中，对SE2节点应用启发式惩罚。仅在``REEDS_SHEPP``运动模型中使用。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7738,7 +7738,7 @@ msgstr "``<name>``.change_penalty"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:168
 msgid "Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search. Disabled by default after change to guarantee admissibility of the Hybrid-A* planner."
-msgstr "Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search. Disabled by default after change to guarantee admissibility of the Hybrid-A* planner."
+msgstr "如果在搜索中改变方向（例如从左向右），对SE2节点应用启发式惩罚。在改变后默认禁用，以保证Hybrid-A*规划器的合理性。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7763,7 +7763,7 @@ msgstr "``<name>``.cost_penalty"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:190
 msgid "Heuristic penalty to apply to SE2 node for cost at pose. Allows Hybrid-A* to be cost aware."
-msgstr "Heuristic penalty to apply to SE2 node for cost at pose. Allows Hybrid-A* to be cost aware."
+msgstr "启发式惩罚应用于姿态成本的SE2节点。允许混合A*算法具有成本感知能力。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7773,7 +7773,7 @@ msgstr "``<name>``.retrospective_penalty"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:201
 msgid "Heuristic penalty to apply to SE2 node penalty. Causes Hybrid-A* to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be >= 0.0 and <= 1.0. Must be `0.0` to be fully admissible."
-msgstr "Heuristic penalty to apply to SE2 node penalty. Causes Hybrid-A* to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be >= 0.0 and <= 1.0. Must be `0.0` to be fully admissible."
+msgstr "启发式惩罚应用于SE2节点的惩罚。导致混合A*算法更喜欢路径上较晚的机动动作而不是较早的动作。节省搜索时间，因为较早（较短）的分支在必要时不会被扩展。必须 >= 0.0 并且 <= 1.0。必须为`0.0`以完全符合要求。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7783,7 +7783,7 @@ msgstr "``<name>``.lookup_table_size"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:212 ../../configuration/packages/smac/configuring-smac-lattice.rst:183
 msgid "Size of the dubin/reeds-sheep distance window to cache, in meters."
-msgstr "Size of the dubin/reeds-sheep distance window to cache, in meters."
+msgstr "以米为单位的Dubin/Reeds-Sheep距离窗口的大小。用于缓存。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst
@@ -7793,7 +7793,7 @@ msgstr "``<name>``.viz_expansions"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:223
 msgid "Whether to publish expansions on the ``/expansions`` topic as an array of poses (the orientation has no meaning). WARNING: heavy to compute and to display, for debug only as it degrades the performance."
-msgstr "Whether to publish expansions on the ``/expansions`` topic as an array of poses (the orientation has no meaning). WARNING: heavy to compute and to display, for debug only as it degrades the performance."
+msgstr "是否将扩展发布到``/expansions``主题上，以位姿数组的形式（方向无意义）。警告：计算和显示开销较大，仅用于调试，因为它会降低性能。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7803,7 +7803,7 @@ msgstr "``<name>``.cache_obstacle_heuristic"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:234 ../../configuration/packages/smac/configuring-smac-lattice.rst:194
 msgid "Cache the obstacle map dynamic programming distance expansion heuristic between subsiquent replannings of the same goal location. Dramatically speeds up replanning performance (40x) if costmap is largely static."
-msgstr "Cache the obstacle map dynamic programming distance expansion heuristic between subsiquent replannings of the same goal location. Dramatically speeds up replanning performance (40x) if costmap is largely static."
+msgstr "在同一目标位置的后续重新规划之间缓存障碍地图动态规划距离扩展启发式。如果代价地图基本静态，可以显著加快重新规划的性能（40倍）。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7813,7 +7813,7 @@ msgstr "``<name>``.smooth_path"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:245 ../../configuration/packages/smac/configuring-smac-lattice.rst:216
 msgid "If true, does simple and fast smoothing post-processing to the path from search"
-msgstr "If true, does simple and fast smoothing post-processing to the path from search"
+msgstr "如果为true，则对搜索路径进行简单且快速的平滑后处理。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7823,7 +7823,7 @@ msgstr "``<name>``.smoother.do_refinement"
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst:300
 msgid "Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner due to the extra \"wobbling\" it can have due to the very small primitive lengths but may cause the path to get slightly closer to some obstacles."
-msgstr "Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner due to the extra \"wobbling\" it can have due to the very small primitive lengths but may cause the path to get slightly closer to some obstacles."
+msgstr "执行额外的细化平滑运行。基本上，这会递归调用平滑器，使用上一次平滑周期的输出进一步平滑路径以获取宏观趋势。这通常改善了质量，尤其是在混合A*规划器中，因为由于非常小的基元长度，它可能产生额外的\"摆动\"，但可能会使路径稍微靠近某些障碍物。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-hybrid.rst ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7833,26 +7833,26 @@ msgstr "``<name>``.smoother.refinement_num"
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:4
 msgid "Smac State Lattice Planner"
-msgstr "Smac State Lattice Planner"
+msgstr "Smac状态格规划器"
 
 
 msgid "Paths generated by the Smac State Lattice"
-msgstr "Paths generated by the Smac State Lattice"
+msgstr "由Smac状态格生成的路径"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:13
 msgid "Note: State Lattice does not have the costmap downsampler due to the minimum control sets being tied with map resolutions on generation. The minimum turning radius is also not a parameter in State Lattice since this was specified at the minimum control set pre-computation phase. See the Smac Planner package to generate custom control sets for your vehicle or use one of our pre-generated examples."
-msgstr "Note: State Lattice does not have the costmap downsampler due to the minimum control sets being tied with map resolutions on generation. The minimum turning radius is also not a parameter in State Lattice since this was specified at the minimum control set pre-computation phase. See the Smac Planner package to generate custom control sets for your vehicle or use one of our pre-generated examples."
+msgstr "注意：由于最小控制集与生成时的地图分辨率相关联，状态格没有成本地图降采样器。最小转弯半径也不是状态格的参数，因为这在最小控制集预计算阶段已经确定。请查看Smac Planner包以生成适用于您的车辆的自定义控制集，或使用我们预先生成的示例之一。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:15
 msgid "The image above you can see the reverse expansion enabled, such that the robot can back into a tight requested spot close to an obstacle."
-msgstr "The image above you can see the reverse expansion enabled, such that the robot can back into a tight requested spot close to an obstacle."
+msgstr "如上图所示，您可以看到启用了反向扩展，这样机器人就能够倒车到靠近障碍物的狭小空间中。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:40
 msgid "If an exact path cannot be found, the tolerance (as measured by the heuristic cost-to-goal) that would be acceptable to diverge from the requested pose in distance-to-goal."
-msgstr "If an exact path cannot be found, the tolerance (as measured by the heuristic cost-to-goal) that would be acceptable to diverge from the requested pose in distance-to-goal."
+msgstr "如果无法找到精确路径，则可以接受与所请求姿态的距离差异在启发式成本目标方面的容差。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:62
@@ -7862,7 +7862,7 @@ msgstr "Maximum number of iterations once a visited node is within the goal tole
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:84
 msgid "SE2 node will attempt to complete an analytic expansion with frequency proportional to this value and the minimum heuristic. Negative values convert to infinite."
-msgstr "SE2 node will attempt to complete an analytic expansion with frequency proportional to this value and the minimum heuristic. Negative values convert to infinite."
+msgstr "SE2节点将尝试按比例于该值和最小启发式频繁地完成分析扩展。负值将转换为无穷大。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:106
@@ -7872,7 +7872,7 @@ msgstr "Heuristic penalty to apply to SE2 node if searching in reverse direction
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:117
 msgid "Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search."
-msgstr "Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search."
+msgstr "如果搜索中更改方向（例如从左到右），则要应用于SE2节点的启发式惩罚。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:124
@@ -7882,7 +7882,7 @@ msgstr "1.05"
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:139
 msgid "Heuristic penalty to apply to SE2 node for cost at pose. Allows State Lattice to be cost aware."
-msgstr "Heuristic penalty to apply to SE2 node for cost at pose. Allows State Lattice to be cost aware."
+msgstr "如果姿态的成本发生变化，要应用于SE2节点的启发式惩罚。允许状态格具有成本感知性。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst
@@ -7892,7 +7892,7 @@ msgstr "``<name>``.rotation_penalty"
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:150
 msgid "Penalty to apply for rotations in place, if minimum control set contains in-place rotations. This should always be set sufficiently high to weight against in-place rotations unless strictly necessary for obstacle avoidance or there may be frequent discontinuities in the plan where the plan requests the robot to rotate in place to short-cut an otherwise smooth forward-moving path for marginal path distance savings."
-msgstr "Penalty to apply for rotations in place, if minimum control set contains in-place rotations. This should always be set sufficiently high to weight against in-place rotations unless strictly necessary for obstacle avoidance or there may be frequent discontinuities in the plan where the plan requests the robot to rotate in place to short-cut an otherwise smooth forward-moving path for marginal path distance savings."
+msgstr "对于原地旋转而言，要应用的惩罚，如果最小控制集包含原地旋转。应始终将其设置为足够高的值，以便权衡原地旋转，除非对于避障来说绝对必要，否则计划中可能会出现频繁的不连续性，计划要求机器人原地旋转以便节省路径距离。"
 
 
 #: ../../configuration/packages/smac/configuring-smac-lattice.rst:161
