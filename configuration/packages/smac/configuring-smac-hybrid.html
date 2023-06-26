@@ -22,7 +22,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="Smac State Lattice Planner" href="configuring-smac-lattice.html" />
+    <link rel="next" title="Smac状态格规划器" href="configuring-smac-lattice.html" />
     <link rel="prev" title="Smac 2D Planner" href="configuring-smac-2d.html" />
 
 <link rel="stylesheet" href="../../../_static/tcs_theme.css" type="text/css" />
@@ -551,7 +551,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../configuring-smac-planner.html#provided-plugins">Provided Plugins</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="configuring-smac-2d.html">Smac 2D Planner</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Smac混合A*规划器</a></li>
-<li class="toctree-l4"><a class="reference internal" href="configuring-smac-lattice.html">Smac State Lattice Planner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuring-smac-lattice.html">Smac状态格规划器</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../configuring-smac-planner.html#description">描述</a></li>
@@ -1182,7 +1182,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Minimum turning radius in meters of vehicle. Also used in the smoother to compute maximum curvature.</p>
+<dt>描述</dt><dd><p>车辆的最小转弯半径（以米为单位）。在平滑器中也用于计算最大曲率。</p>
 </dd>
 </dl>
 </dd>
@@ -1202,7 +1202,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node if searching in reverse direction. Only used in <code class="docutils literal notranslate"><span class="pre">REEDS_SHEPP</span></code> motion model.</p>
+<dt>描述</dt><dd><p>如果在反向搜索中，对SE2节点应用启发式惩罚。仅在``REEDS_SHEPP``运动模型中使用。</p>
 </dd>
 </dl>
 </dd>
@@ -1222,7 +1222,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node if changing direction (e.g. left to right) in search. Disabled by default after change to guarantee admissibility of the Hybrid-A* planner.</p>
+<dt>描述</dt><dd><p>如果在搜索中改变方向（例如从左向右），对SE2节点应用启发式惩罚。在改变后默认禁用，以保证Hybrid-A*规划器的合理性。</p>
 </dd>
 </dl>
 </dd>
@@ -1262,7 +1262,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node for cost at pose. Allows Hybrid-A* to be cost aware.</p>
+<dt>描述</dt><dd><p>启发式惩罚应用于姿态成本的SE2节点。允许混合A*算法具有成本感知能力。</p>
 </dd>
 </dl>
 </dd>
@@ -1282,7 +1282,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Heuristic penalty to apply to SE2 node penalty. Causes Hybrid-A* to prefer later maneuvers before earlier ones along the path. Saves search time since earlier (shorter) branches are not expanded until it is necessary. Must be &gt;= 0.0 and &lt;= 1.0. Must be <cite>0.0</cite> to be fully admissible.</p>
+<dt>描述</dt><dd><p>启发式惩罚应用于SE2节点的惩罚。导致混合A*算法更喜欢路径上较晚的机动动作而不是较早的动作。节省搜索时间，因为较早（较短）的分支在必要时不会被扩展。必须 &gt;= 0.0 并且 &lt;= 1.0。必须为`0.0`以完全符合要求。</p>
 </dd>
 </dl>
 </dd>
@@ -1302,7 +1302,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Size of the dubin/reeds-sheep distance window to cache, in meters.</p>
+<dt>描述</dt><dd><p>以米为单位的Dubin/Reeds-Sheep距离窗口的大小。用于缓存。</p>
 </dd>
 </dl>
 </dd>
@@ -1322,7 +1322,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to publish expansions on the <code class="docutils literal notranslate"><span class="pre">/expansions</span></code> topic as an array of poses (the orientation has no meaning). WARNING: heavy to compute and to display, for debug only as it degrades the performance.</p>
+<dt>描述</dt><dd><p>是否将扩展发布到``/expansions``主题上，以位姿数组的形式（方向无意义）。警告：计算和显示开销较大，仅用于调试，因为它会降低性能。</p>
 </dd>
 </dl>
 </dd>
@@ -1342,7 +1342,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Cache the obstacle map dynamic programming distance expansion heuristic between subsiquent replannings of the same goal location. Dramatically speeds up replanning performance (40x) if costmap is largely static.</p>
+<dt>描述</dt><dd><p>在同一目标位置的后续重新规划之间缓存障碍地图动态规划距离扩展启发式。如果代价地图基本静态，可以显著加快重新规划的性能（40倍）。</p>
 </dd>
 </dl>
 </dd>
@@ -1362,7 +1362,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>If true, does simple and fast smoothing post-processing to the path from search</p>
+<dt>描述</dt><dd><p>如果为true，则对搜索路径进行简单且快速的平滑后处理。</p>
 </dd>
 </dl>
 </dd>
@@ -1462,7 +1462,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Performs extra refinement smoothing runs. Essentially, this recursively calls the smoother using the output from the last smoothing cycle to further smooth the path for macro-trends. This typically improves quality especially in the Hybrid-A* planner due to the extra &quot;wobbling&quot; it can have due to the very small primitive lengths but may cause the path to get slightly closer to some obstacles.</p>
+<dt>描述</dt><dd><p>执行额外的细化平滑运行。基本上，这会递归调用平滑器，使用上一次平滑周期的输出进一步平滑路径以获取宏观趋势。这通常改善了质量，尤其是在混合A*规划器中，因为由于非常小的基元长度，它可能产生额外的&quot;摆动&quot;，但可能会使路径稍微靠近某些障碍物。</p>
 </dd>
 </dl>
 </dd>
