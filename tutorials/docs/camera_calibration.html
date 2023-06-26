@@ -347,7 +347,7 @@
 <li class="toctree-l3"><a class="reference internal" href="adding_a_nav2_task_server.html#conclusion">结论</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="filtering_of_noise-induced_obstacles.html">Filtering of Noise-Induced Obstacles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filtering_of_noise-induced_obstacles.html">过滤噪声引起的障碍物</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="filtering_of_noise-induced_obstacles.html#overview">概述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="filtering_of_noise-induced_obstacles.html#requirements">要求</a></li>
 <li class="toctree-l3"><a class="reference internal" href="filtering_of_noise-induced_obstacles.html#tutorial-steps"><cite>教程步骤</cite></a><ul>
@@ -964,21 +964,21 @@
 <p><strong>另外，请确保你有以下内容：</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>A large checkerboard with known dimensions. This tutorial uses a 7x9 checkerboard with 20mm squares. <strong>Calibration uses the interior vertex points of the checkerboard, so an &quot;8x10&quot; board uses the interior vertex parameter &quot;7x9&quot; as in the example below.</strong> The checkerboard with set dimensions can be downloaded from <a class="reference external" href="https://calib.io/pages/camera-calibration-pattern-generator">here</a>.</p></li>
+<li><p>具有已知尺寸的大型棋盘。本教程使用一个边长为7x9、每个方格尺寸为20mm的棋盘。<strong>校准使用棋盘的内部顶点，因此&quot;8x10&quot;棋盘使用下面示例中的内部顶点参数&quot;7x9&quot;。</strong> 可以从`此处 &lt;<a class="reference external" href="https://calib.io/pages/camera-calibration-pattern-generator">https://calib.io/pages/camera-calibration-pattern-generator</a>&gt;`_ 下载具有指定尺寸的棋盘。</p></li>
 <li><p>一个光线充足、没有遮挡物和其他棋盘图案的区域</p></li>
-<li><p>A monocular camera publishing images over ROS</p></li>
+<li><p>通过ROS发布图像的单目摄像头</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="tutorial-steps">
 <h2><cite>教程步骤</cite><a class="headerlink" href="#tutorial-steps" title="永久链接至标题"></a></h2>
 <p>1- 在图形用户界面中启动终端</p>
-<p>2- Launch the ROS driver for your specific camera.</p>
-<p>3- Make sure camera is publishing images over ROS. This can be tested by running:</p>
+<p>2- 为您特定的摄像头启动ROS驱动程序。</p>
+<p>3- 确保相机通过ROS发布图像。可以通过运行以下命令进行测试：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">list</span></code></p>
 </div></blockquote>
-<p>4- This will show you all the topics published make sure that there is an image_raw topic /camera/image_raw. To confirm that its a real topic and actually publishing check topic hz:</p>
+<p>4- 这将显示所有发布的主题，请确保存在一个图像主题 /camera/image_raw。为确认其为真实主题并正在发布，请检查主题的频率：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span> <span class="pre">hz</span> <span class="pre">/camera/image_raw</span></code></p>
 </div></blockquote>
@@ -991,7 +991,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>5- Start the camera calibration node</p>
+<p>5- 启动相机标定节点</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">run</span> <span class="pre">camera_calibration</span> <span class="pre">cameracalibrator</span> <span class="pre">--size</span> <span class="pre">7x9</span> <span class="pre">--square</span> <span class="pre">0.02</span> <span class="pre">--ros-args</span> <span class="pre">-r</span> <span class="pre">image:=/my_camera/image_raw</span> <span class="pre">-p</span> <span class="pre">camera:=/my_camera</span></code></p>
 </div></blockquote>
@@ -1046,18 +1046,18 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>6- In order to get a good calibration you will need to move the checkerboard around in the camera frame such that:</p>
+<p>6- 为了获得良好的标定结果，您需要在相机视野中移动棋盘格，使其满足以下要求：</p>
 <blockquote>
 <div><ul>
 <li><dl>
-<dt>checkerboard on the camera's left, right, top and bottom of field of view</dt><dd><p>◦ X bar - left/right in field of view</p>
-<p>◦ Y bar - top/bottom in field of view</p>
-<p>◦ Size bar - toward/away and tilt from the camera</p>
+<dt>相机的左侧、右侧、顶部和底部的棋盘格视野</dt><dd><p>◦ X 轴移动 - 在视野中左右移动</p>
+<p>◦ Y bar - 视野顶部/底部</p>
+<p>◦ 大小调整 - 从相机方向上向前/向后倾斜</p>
 </dd>
 </dl>
 </li>
-<li><p>checkerboard filling the whole field of view</p></li>
-<li><p>checkerboard tilted to the left, right, top and bottom (Skew)</p></li>
+<li><p>填满整个视野的棋盘格</p></li>
+<li><p>棋盘格向左、向右、向上和向下倾斜（倾斜度）</p></li>
 </ul>
 </div></blockquote>
 <div class="line-block">
@@ -1069,7 +1069,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>7- As the checkerboard is moved around the 4 bars on the calibration sidebar increases in length. When all then the 4 bars are green and enough data is available for calibration the CALIBRATE button will light up. Click it to see the results. It takes around the minute for calibration to take place.</p>
+<p>7- 当棋盘格在校准边栏上移动时，4个条形图的长度会增加。当所有4个条形图变为绿色且有足够的数据进行校准时，校准按钮将亮起。点击它查看结果。校准需要大约一分钟的时间。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1098,7 +1098,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>9-Press the save button to see the result. Data is saved to  &quot;/tmp/calibrationdata.tar.gz&quot;</p>
+<p>9- 点击保存按钮查看结果。数据将保存到&quot;/tmp/calibrationdata.tar.gz&quot;</p>
 <dl class="simple">
 <dt>10-To use the the calibration file unzip the calibration.tar.gz</dt><dd><p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xvf</span> <span class="pre">calibration.tar.gz</span></code></p>
 </dd>
