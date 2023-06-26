@@ -6430,7 +6430,7 @@ msgstr "输入传感器类型可以是ALL（自动选择）、VARIABLE（最小�
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:4
 msgid "Speed Filter Parameters"
-msgstr "Speed Filter Parameters"
+msgstr "速度过滤器参数"
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:6
@@ -6450,32 +6450,32 @@ msgstr "发布速度限制的主题。`消息 <https://github.com/ros-planning/n
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:51
 msgid "``percentage``: speed limit is expressed in percentage if ``true`` or in absolute values in ``false`` case. This parameter is set depending on ``type`` field of ``CostmapFilterInfo`` message."
-msgstr "``percentage``: speed limit is expressed in percentage if ``true`` or in absolute values in ``false`` case. This parameter is set depending on ``type`` field of ``CostmapFilterInfo`` message."
+msgstr "``percentage``: 如果 ``true``，则速度限制以百分比表示；如果 ``false``，则以绝对值表示。此参数根据 ``CostmapFilterInfo`` 消息的 ``type`` 字段设置。"
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:53
 msgid "``speed_limit``: non-zero values show maximum allowed speed expressed in a percent of maximum robot speed or in absolute value depending on ``percentage`` value. Zero value means no speed restriction (independently on ``percentage``). ``speed_limit`` is being linearly converted from ``OccupancyGrid`` filter mask value as: ``speed_limit = base + multiplier * mask_value``, where ``base`` and ``multiplier`` coefficients are taken from ``CostmapFilterInfo`` message."
-msgstr "``speed_limit``: non-zero values show maximum allowed speed expressed in a percent of maximum robot speed or in absolute value depending on ``percentage`` value. Zero value means no speed restriction (independently on ``percentage``). ``speed_limit`` is being linearly converted from ``OccupancyGrid`` filter mask value as: ``speed_limit = base + multiplier * mask_value``, where ``base`` and ``multiplier`` coefficients are taken from ``CostmapFilterInfo`` message."
+msgstr "``speed_limit``：非零值表示以最大机器人速度的百分比或绝对值表示的最大允许速度。零值表示没有速度限制（与``percentage``无关）。``speed_limit``根据``OccupancyGrid``过滤器掩码值进行线性转换，公式为：``speed_limit = base + multiplier * mask_value``，其中``base``和``multiplier``系数来自``CostmapFilterInfo``消息。"
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:56
 msgid "``speed_limit`` expressed in a percent should belong to ``(0.0 .. 100.0]`` range."
-msgstr "``speed_limit`` expressed in a percent should belong to ``(0.0 .. 100.0]`` range."
+msgstr "以百分比表示的 ``speed_limit`` 应属于 ``(0.0 .. 100.0]`` 范围内。"
 
 
 #: ../../configuration/packages/costmap-plugins/speed_filter.rst:58
 msgid "This topic will be used by a Controller Server. Please refer to :ref:`configuring_controller_server` configuration page to set it appropriately."
-msgstr "This topic will be used by a Controller Server. Please refer to :ref:`configuring_controller_server` configuration page to set it appropriately."
+msgstr "此主题将由控制器服务器使用。请参考:ref:`configuring_controller_server`配置页面以适当设置它。"
 
 
 #: ../../configuration/packages/costmap-plugins/static.rst:4
 msgid "Static Layer Parameters"
-msgstr "Static Layer Parameters"
+msgstr "静态层参数"
 
 
 #: ../../configuration/packages/costmap-plugins/static.rst:6
 msgid "``<static layer>`` is the corresponding plugin name selected for this type."
-msgstr "``<static layer>`` is the corresponding plugin name selected for this type."
+msgstr "``<static layer>``是为此类型选择的相应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/static.rst
@@ -6490,7 +6490,7 @@ msgstr "``<static layer>``.subscribe_to_updates"
 
 #: ../../configuration/packages/costmap-plugins/static.rst:28
 msgid "Subscribe to static map updates after receiving first."
-msgstr "Subscribe to static map updates after receiving first."
+msgstr "在接收到第一个静态地图更新后订阅。"
 
 
 #: ../../configuration/packages/costmap-plugins/static.rst
@@ -6500,7 +6500,7 @@ msgstr "``<static layer>``.map_subscribe_transient_local"
 
 #: ../../configuration/packages/costmap-plugins/static.rst:39
 msgid "QoS settings for map topic."
-msgstr "QoS settings for map topic."
+msgstr "用于地图话题的QoS设置。"
 
 
 #: ../../configuration/packages/costmap-plugins/static.rst
@@ -6510,7 +6510,7 @@ msgstr "``<static layer>``.transform_tolerance"
 
 #: ../../configuration/packages/costmap-plugins/static.rst:50
 msgid "TF tolerance."
-msgstr "TF tolerance."
+msgstr "TF容差。"
 
 
 #: ../../configuration/packages/costmap-plugins/static.rst
@@ -6520,7 +6520,7 @@ msgstr "``<static layer>``.map_topic"
 
 #: ../../configuration/packages/costmap-plugins/static.rst:61
 msgid "Map topic to subscribe to. If left empty the map topic will default to the global `map_topic` parameter in `costmap_2d_ros`."
-msgstr "Map topic to subscribe to. If left empty the map topic will default to the global `map_topic` parameter in `costmap_2d_ros`."
+msgstr "要订阅的地图话题。如果留空，地图话题将默认使用`costmap_2d_ros`中的全局`map_topic`参数。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:4
@@ -6530,7 +6530,7 @@ msgstr "Voxel Layer Parameters"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst:6
 msgid "``<voxel layer>`` is the corresponding plugin name selected for this type."
-msgstr "``<voxel layer>`` is the corresponding plugin name selected for this type."
+msgstr "``<voxel layer>``是所选类型的相应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
