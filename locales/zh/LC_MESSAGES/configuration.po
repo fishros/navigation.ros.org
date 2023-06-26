@@ -5825,7 +5825,7 @@ msgstr "路径点跟随器"
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:10
 msgid "The Waypoint Follower module implements a way of doing waypoint following using the NavigateToPose action server. It will take in a set of ordered waypoints to follow and then try to navigate to them in order. It also hosts a waypoint task executor plugin which can be used to perform custom behavior at a waypoint like waiting for user instruction, taking a picture, or picking up a box. If a waypoint is not achievable, the ``stop_on_failure`` parameter will determine whether to continue to the next point or stop."
-msgstr "The Waypoint Follower module implements a way of doing waypoint following using the NavigateToPose action server. It will take in a set of ordered waypoints to follow and then try to navigate to them in order. It also hosts a waypoint task executor plugin which can be used to perform custom behavior at a waypoint like waiting for user instruction, taking a picture, or picking up a box. If a waypoint is not achievable, the ``stop_on_failure`` parameter will determine whether to continue to the next point or stop."
+msgstr "Waypoint Follower 模块通过使用 NavigateToPose 动作服务器实现了一种按照路径点进行跟随的方法。它会接收一组有序的路径点，并尝试按顺序导航到它们。该模块还提供了一个路径点任务执行插件，可用于在路径点上执行自定义行为，如等待用户指令、拍照或拾取物品。如果某个路径点无法到达，``stop_on_failure`` 参数将决定是继续到下一个点还是停止。"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst
@@ -5835,7 +5835,7 @@ msgstr "失败时停止"
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:27
 msgid "Whether to fail action task if a single waypoint fails. If false, will continue to next waypoint."
-msgstr "Whether to fail action task if a single waypoint fails. If false, will continue to next waypoint."
+msgstr "如果单个路径点失败，是否使动作任务失败。如果为 false，则继续到下一个路径点。"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst
@@ -5845,7 +5845,7 @@ msgstr "循环频率"
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:38
 msgid "Rate to check for results from current navigation task."
-msgstr "Rate to check for results from current navigation task."
+msgstr "检查当前导航任务结果的频率。"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst
@@ -5865,12 +5865,12 @@ msgstr "一个插件，用于在机器人到达路径点时定义要执行的任
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:69
 msgid "The plugins listed below are inside the ``nav2_waypoint_follower`` namespace."
-msgstr "The plugins listed below are inside the ``nav2_waypoint_follower`` namespace."
+msgstr "下面列出的插件位于 ``nav2_waypoint_follower`` 命名空间中。"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:80
 msgid "Default Plugin"
-msgstr "Default Plugin"
+msgstr "默认插件"
 
 
 #: ../../configuration/packages/configuring-waypoint-follower.rst:85
@@ -5885,57 +5885,57 @@ msgstr "\"nav2_waypoint_follower::WaitAtWaypoint\""
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:4
 msgid "Binary Filter Parameters"
-msgstr "Binary Filter Parameters"
+msgstr "二值过滤器参数"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:6
 msgid "Binary Filter - is a Costmap Filter that publishes a boolean topic, flipping binary state when the encoded filter space value (corresponding to the filter mask point where the robot is) is higher than given threshold. It then flips back when lower or equal."
-msgstr "Binary Filter - is a Costmap Filter that publishes a boolean topic, flipping binary state when the encoded filter space value (corresponding to the filter mask point where the robot is) is higher than given threshold. It then flips back when lower or equal."
+msgstr "二进制过滤器 - 是一个发布布尔类型主题的 Costmap 过滤器，当编码的过滤器空间值（对应机器人所在的过滤器掩码点）高于给定的阈值时，翻转二进制状态。当低于或等于阈值时，再次翻转回去。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:8
 msgid "Filter space value is being calculated as: ``Fv = base + multiplier * mask_value``, where ``base`` and ``multiplier`` are being published in a filter info by Costmap Filter Info Server. The example of usage are include: camera operating on/off to turn off cameras in sensitive areas, headlights switch on/off for moving indoors to outdoors, smart house light triggering, etc."
-msgstr "Filter space value is being calculated as: ``Fv = base + multiplier * mask_value``, where ``base`` and ``multiplier`` are being published in a filter info by Costmap Filter Info Server. The example of usage are include: camera operating on/off to turn off cameras in sensitive areas, headlights switch on/off for moving indoors to outdoors, smart house light triggering, etc."
+msgstr "过滤器空间值的计算方式为: ``Fv = 基础值 + 乘数 * 掩码值``，其中``基础值``和``乘数``由成本地图过滤器信息服务器发布。使用示例包括：在敏感区域关闭摄像头的摄像操作开关、室内外切换时的车头灯开关、智能家居灯光触发等。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:13 ../../configuration/packages/costmap-plugins/keepout_filter.rst:10 ../../configuration/packages/costmap-plugins/speed_filter.rst:16
 msgid "`<filter name>`: is the corresponding plugin name selected for this type."
-msgstr "`<filter name>`: is the corresponding plugin name selected for this type."
+msgstr "`<filter name>`：为此类型选择的相应插件名称。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst ../../configuration/packages/costmap-plugins/keepout_filter.rst ../../configuration/packages/costmap-plugins/speed_filter.rst
 msgid "``<filter name>``.enabled"
-msgstr "``<filter name>``.enabled"
+msgstr "``<过滤器名称>``.enabled"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:24 ../../configuration/packages/costmap-plugins/denoise.rst:17 ../../configuration/packages/costmap-plugins/inflation.rst:18 ../../configuration/packages/costmap-plugins/keepout_filter.rst:21 ../../configuration/packages/costmap-plugins/obstacle.rst:19 ../../configuration/packages/costmap-plugins/range.rst:17 ../../configuration/packages/costmap-plugins/speed_filter.rst:27 ../../configuration/packages/costmap-plugins/static.rst:17 ../../configuration/packages/costmap-plugins/voxel.rst:19
 msgid "Whether it is enabled."
-msgstr "Whether it is enabled."
+msgstr "是否启用。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst ../../configuration/packages/costmap-plugins/keepout_filter.rst ../../configuration/packages/costmap-plugins/speed_filter.rst
 msgid "``<filter name>``.filter_info_topic"
-msgstr "``<filter name>``.filter_info_topic"
+msgstr "``<过滤器名称>``.filter_info_topic"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:35 ../../configuration/packages/costmap-plugins/keepout_filter.rst:32 ../../configuration/packages/costmap-plugins/speed_filter.rst:38
 msgid "Name of the incoming `CostmapFilterInfo <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg>`_ topic having filter-related information. Published by Costmap Filter Info Server along with filter mask topic. For more details about Map and Costmap Filter Info servers configuration please refer to the :ref:`configuring_map_server` configuration page."
-msgstr "Name of the incoming `CostmapFilterInfo <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg>`_ topic having filter-related information. Published by Costmap Filter Info Server along with filter mask topic. For more details about Map and Costmap Filter Info servers configuration please refer to the :ref:`configuring_map_server` configuration page."
+msgstr "传入的 `CostmapFilterInfo <https://github.com/ros-planning/navigation2/blob/main/nav2_msgs/msg/CostmapFilterInfo.msg>`_ 主题的名称，其中包含与过滤器相关的信息。由 Costmap Filter Info Server 与过滤器掩码主题一起发布。有关地图和 Costmap Filter Info 服务器配置的详细信息，请参考 :ref:`configuring_map_server` 配置页面。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst ../../configuration/packages/costmap-plugins/keepout_filter.rst ../../configuration/packages/costmap-plugins/speed_filter.rst
 msgid "``<filter name>``.transform_tolerance"
-msgstr "``<filter name>``.transform_tolerance"
+msgstr "``<过滤器名称>``.transform_tolerance"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:46 ../../configuration/packages/costmap-plugins/keepout_filter.rst:43 ../../configuration/packages/costmap-plugins/speed_filter.rst:70
 msgid "Time with which to post-date the transform that is published, to indicate that this transform is valid into the future. Used when filter mask and current costmap layer are in different frames."
-msgstr "Time with which to post-date the transform that is published, to indicate that this transform is valid into the future. Used when filter mask and current costmap layer are in different frames."
+msgstr "发布的变换的时间，用于表示该变换在未来是有效的。在过滤器掩码和当前 Costmap 层位于不同的帧时使用。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst
 msgid "``<filter name>``.default_state"
-msgstr "``<filter name>``.default_state"
+msgstr "``<过滤器名称>``.default_state"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:57
@@ -5945,7 +5945,7 @@ msgstr "Default state of binary filter."
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst
 msgid "``<filter name>``.binary_state_topic"
-msgstr "``<filter name>``.binary_state_topic"
+msgstr "``<过滤器名称>``.binary_state_topic"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:64
@@ -5955,7 +5955,7 @@ msgstr "\"binary_state\""
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst:68
 msgid "Topic of ``std_msgs::msg::Bool`` type to publish binary filter state to."
-msgstr "Topic of ``std_msgs::msg::Bool`` type to publish binary filter state to."
+msgstr "以``std_msgs::msg::Bool``类型发布二进制过滤器状态的主题。"
 
 
 #: ../../configuration/packages/costmap-plugins/binary_filter.rst
