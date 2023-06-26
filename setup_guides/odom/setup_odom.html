@@ -157,8 +157,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#robot-localization-demo">Robot Localization Demo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configuring-robot-localization">Configuring Robot Localization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#robot-localization-demo">机器人定位演示</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-robot-localization">配置机器人定位</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">构建、运行和验证</a></li>
 </ul>
@@ -1196,19 +1196,19 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<span class="w"> </span>display.launch.py
 </pre></div>
 </div>
-<p>Gazebo should launch and you should see a 3D model of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>:</p>
+<p>Gazebo 应该会启动，您应该会看到一个名为 <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> 的三维模型:</p>
 <a class="reference internal image-reference" href="../../_images/gazebo_sam_bot.png"><img alt="../../_images/gazebo_sam_bot.png" class="align-center" src="../../_images/gazebo_sam_bot.png" style="width: 50%;" /></a>
 <p>要查看系统中的活动话题，请打开一个新的终端并执行</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>list
 </pre></div>
 </div>
-<p>You should see <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> and <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> in the list of topics.</p>
+<p>您应该在话题列表中看到 <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> 和 <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code>。</p>
 <p>要查看有关话题的更多信息，请执行</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>info<span class="w"> </span>/demo/imu
 ros2<span class="w"> </span>topic<span class="w"> </span>info<span class="w"> </span>/demo/odom
 </pre></div>
 </div>
-<p>You should see an output similar to below:</p>
+<p>您应该会看到类似下面的输出:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Type:<span class="w"> </span>sensor_msgs/msg/Imu
 Publisher<span class="w"> </span>count:<span class="w"> </span><span class="m">1</span>
 Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m">0</span>
@@ -1223,28 +1223,28 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 </div>
 </div>
 <div class="section" id="robot-localization-demo">
-<h2>Robot Localization Demo<a class="headerlink" href="#robot-localization-demo" title="永久链接至标题"></a></h2>
+<h2>机器人定位演示<a class="headerlink" href="#robot-localization-demo" title="永久链接至标题"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> 包用于从 <code class="docutils literal notranslate"><span class="pre">N</span></code> 个里程计传感器输入的数据中提供融合和本地准确的平滑里程计信息。这些信息可以通过 <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code>、<code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code>、<code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseWithCovarianceStamped</span></code> 和 <code class="docutils literal notranslate"><span class="pre">geometry_msgs/TwistWithCovarianceStamped</span></code> 消息提供给该包。</p>
-<p>A usual robot setup consists of at least the wheel encoders and IMU as its odometry sensor sources. When multiple sources are provided to <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>, it is able to fuse the odometry information given by the sensors through the use of state estimation nodes. These nodes make use of either an Extended Kalman filter (<code class="docutils literal notranslate"><span class="pre">ekf_node</span></code>) or an Unscented Kalman Filter (<code class="docutils literal notranslate"><span class="pre">ukf_node</span></code>) to implement this fusion. In addition, the package also implements a <code class="docutils literal notranslate"><span class="pre">navsat_transform_node</span></code> which transforms geographic coordinates into the robot’s world frame when working with GPS.</p>
-<p>Fused sensor data is published by the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package through the <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code> and the <code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code> topics, if enabled in its configuration. In addition, it can also publish the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform on the <code class="docutils literal notranslate"><span class="pre">/tf</span></code> topic.</p>
+<p>通常的机器人设置至少包括轮编码器和惯性测量单元 (IMU) 作为其里程计传感器来源。当``robot_localization``接收到多个传感器提供的里程计信息时，它可以通过使用状态估计节点来融合传感器提供的里程计信息。这些节点使用扩展卡尔曼滤波器(<code class="docutils literal notranslate"><span class="pre">ekf_node</span></code>)或无迹卡尔曼滤波器(<code class="docutils literal notranslate"><span class="pre">ukf_node</span></code>)来实现融合。此外，该软件包还实现了一个``navsat_transform_node``，在使用GPS时将地理坐标转换为机器人的世界坐标系。</p>
+<p>如果在配置中启用了``robot_localization``软件包，它将通过``odometry/filtered``和``accel/filtered``主题发布融合的传感器数据。此外，它还可以在``/tf``主题上发布``odom`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的变换。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>More details on <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> can be found in the official <a class="reference external" href="http://docs.ros.org/en/noetic/api/robot_localization/html/index.html">Robot Localization Documentation</a>.</p>
+<p>有关``robot_localization``的更多详细信息，请参阅官方的 <a class="reference external" href="http://docs.ros.org/en/noetic/api/robot_localization/html/index.html">Robot Localization 文档</a>。</p>
 </div>
-<p>If your robot is only able to provide one odometry source, the use of <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> would have minimal effects aside from smoothing. In this case, an alternative approach is to publish transforms through a tf2 broadcaster in your single source of odometry node. Nevertheless, you can still opt to use <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> to publish the transforms and some smoothing properties may still be observed in the output.</p>
+<p>如果您的机器人只能提供一个里程计源，使用``robot_localization``除了平滑效果外，几乎没有其他影响。在这种情况下，另一种方法是通过单个里程计源节点使用tf2广播器发布变换。然而，您仍然可以选择使用``robot_localization``来发布变换，输出结果可能仍然具有一定的平滑效果。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more information on how to write a tf2 broadcaster, you can check Writing a tf2 broadcaster <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Cpp.html">(C++)</a>  <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Py.html">(Python)</a>.</p>
+<p>有关如何编写 tf2 广播器的更多信息，请查阅如下链接: Writing a tf2 broadcaster <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Cpp.html">(C++)</a>  <a class="reference external" href="https://docs.ros.org/en/rolling/Tutorials/Tf2/Writing-A-Tf2-Broadcaster-Py.html">(Python)</a>。</p>
 </div>
-<p>For the rest of this section, we will show how to use <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> to fuse the sensors of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>. It will use the <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code> messages published on <code class="docutils literal notranslate"><span class="pre">/demo/Imu</span></code> and the <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> message published on <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> and then it will publish data on <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code>,  <code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code>, and <code class="docutils literal notranslate"><span class="pre">/tf</span></code> topics.</p>
+<p>在本节的其余部分中，我们将展示如何使用``robot_localization``来融合``sam_bot``的传感器。它将使用发布在``/demo/Imu``上的``sensor_msgs/Imu``消息和发布在``/demo/odom``上的``nav_msgs/Odometry``消息，然后在``odometry/filtered``、<code class="docutils literal notranslate"><span class="pre">accel/filtered``和</span></code>/tf``主题上发布数据。</p>
 <div class="section" id="configuring-robot-localization">
-<h3>Configuring Robot Localization<a class="headerlink" href="#configuring-robot-localization" title="永久链接至标题"></a></h3>
-<p>Let us now configure the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package to use an Extended Kalman Filter (<code class="docutils literal notranslate"><span class="pre">ekf_node</span></code>) to fuse odometry information and publish the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform.</p>
-<p>First, install the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package using your machines package manager or by executing the following command:</p>
+<h3>配置机器人定位<a class="headerlink" href="#configuring-robot-localization" title="永久链接至标题"></a></h3>
+<p>现在让我们配置``robot_localization``软件包，使用扩展卡尔曼滤波器（<code class="docutils literal notranslate"><span class="pre">ekf_node</span></code>）来融合里程计信息，并发布``odom`` =&gt; <a href="#id1"><span class="problematic" id="id2">``</span></a>base_link``的变换。</p>
+<p>首先，使用您的机器的软件包管理器安装``robot_localization``软件包，或者执行以下命令进行安装：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-robot-localization
 </pre></div>
 </div>
-<p>Next, we specify the parameters of the <code class="docutils literal notranslate"><span class="pre">ekf_node</span></code> using a YAML file. Create a directory named <code class="docutils literal notranslate"><span class="pre">config</span></code> at the root of your project and create a file named <code class="docutils literal notranslate"><span class="pre">ekf.yaml</span></code>. Copy the following lines of code into your <code class="docutils literal notranslate"><span class="pre">ekf.yaml</span></code> file.</p>
+<p>接下来，我们使用一个YAML文件来指定``ekf_node``的参数。在您的项目根目录下创建一个名为``config``的目录，并创建一个名为``ekf.yaml``的文件。将以下代码复制到``ekf.yaml``文件中。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1">### ekf config file ###</span>
 <span class="nt">ekf_filter_node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ros__parameters</span><span class="p">:</span>
@@ -1294,13 +1294,13 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 <span class="w">                      </span><span class="nv">false</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>In this configuration, we defined the parameter values of <code class="docutils literal notranslate"><span class="pre">frequency</span></code>, <code class="docutils literal notranslate"><span class="pre">two_d_mode</span></code>, <code class="docutils literal notranslate"><span class="pre">publish_acceleration</span></code>, <code class="docutils literal notranslate"><span class="pre">publish_tf</span></code>, <code class="docutils literal notranslate"><span class="pre">map_frame</span></code>, <code class="docutils literal notranslate"><span class="pre">odom_frame</span></code>, <code class="docutils literal notranslate"><span class="pre">base_link_frame</span></code>, and <code class="docutils literal notranslate"><span class="pre">world_frame</span></code>. For more information on the other parameters you can modify, see <a class="reference external" href="http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters">Parameters of state estimation nodes</a>, and a sample <code class="docutils literal notranslate"><span class="pre">efk.yaml</span></code> can be found <a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml">here</a>.</p>
-<p>To add a sensor input to the <code class="docutils literal notranslate"><span class="pre">ekf_filter_node</span></code>, add the next number in the sequence to its base name (odom, imu, pose, twist). In our case, we have one <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> and one <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code> as inputs to the filter, thus we use <code class="docutils literal notranslate"><span class="pre">odom0</span></code> and <code class="docutils literal notranslate"><span class="pre">imu0</span></code>. We set the value of <code class="docutils literal notranslate"><span class="pre">odom0</span></code> to <code class="docutils literal notranslate"><span class="pre">demo/odom</span></code>, which is the topic that publishes the <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code>. Similarly, we set the value of <code class="docutils literal notranslate"><span class="pre">imu0</span></code> to the topic that publishes <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code>, which is <code class="docutils literal notranslate"><span class="pre">demo/imu</span></code>.</p>
-<p>You can specify which values from a sensor are to be used by the filter using the <code class="docutils literal notranslate"><span class="pre">_config</span></code> parameter. The order of the values of this parameter is x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az. In our example, we set everything in <code class="docutils literal notranslate"><span class="pre">odom0_config</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code> except the 1st, 2nd, 3rd, and 12th entries, which means the filter will only use the x, y, z, and the vyaw values of <code class="docutils literal notranslate"><span class="pre">odom0</span></code>.</p>
-<p>In the <code class="docutils literal notranslate"><span class="pre">imu0_config</span></code> matrix, you'll notice that only roll, pitch, and yaw are used. Typical mobile robot-grade IMUs will also provide angular velocities and linear accelerations. For <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> to work properly, you should not fuse in multiple fields that are derivative of each other. Since angular velocity is fused internally to the IMU to provide the roll, pitch and yaw estimates, we should not fuse in the angular velocities used to derive that information. We also do not fuse in angular velocity due to the noisy characteristics it has when not using exceptionally high quality (and expensive) IMUs.</p>
+<p>在这个配置中，我们定义了``frequency``、<code class="docutils literal notranslate"><span class="pre">two_d_mode</span></code>、<code class="docutils literal notranslate"><span class="pre">publish_acceleration</span></code>、<code class="docutils literal notranslate"><span class="pre">publish_tf</span></code>、<code class="docutils literal notranslate"><span class="pre">map_frame</span></code>、<code class="docutils literal notranslate"><span class="pre">odom_frame</span></code>、<a href="#id1"><span class="problematic" id="id2">``</span></a>base_link_frame``和``world_frame``的参数值。有关您可以修改的其他参数的详细信息，请参阅`状态估计节点的参数 &lt;<a class="reference external" href="http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters">http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters</a>&gt;`_，以及示例``efk.yaml``可以在`这里找到 &lt;<a class="reference external" href="https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml">https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml</a>&gt;`_。</p>
+<p>要将传感器输入添加到``ekf_filter_node``，请将序列中的下一个数字添加到其基本名称（odom、imu、pose、twist）。在我们的例子中，我们有一个``nav_msgs/Odometry``和一个``sensor_msgs/Imu``作为滤波器的输入，因此我们使用``odom0``和``imu0``。我们将``odom0``的值设置为``demo/odom``，它是发布``nav_msgs/Odometry``的主题。类似地，我们将``imu0``的值设置为发布``sensor_msgs/Imu``的主题，即``demo/imu``。</p>
+<p>您可以使用``_config``参数指定要由滤波器使用的传感器的值。该参数的值的顺序是x、y、z、roll、pitch、yaw、vx、vy、vz、vroll、vpitch、vyaw、ax、ay、az。在我们的例子中，我们将``odom0_config``中除了第1、2、3和12个条目以外的所有条目都设置为``false``，这意味着滤波器只会使用``odom0``的x、y、z和vyaw的值。</p>
+<p>在``imu0_config``矩阵中，您会注意到只使用了滚转、俯仰和偏航。典型的移动机器人级别的IMU还会提供角速度和线性加速度。为了使``robot_localization``正常工作，您不应该融合多个彼此有导数关系的字段。由于角速度在IMU内部被融合以提供滚转、俯仰和偏航的估计，我们不应该融合用</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more advise on configuration of input data to <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>, see <a class="reference external" href="http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html#odometry">Preparing Your Data for Use with robot_localization</a>, and <a class="reference external" href="http://docs.ros.org/en/melodic/api/robot_localization/html/configuring_robot_localization.html">Configuring robot_localization</a>.</p>
+<p>有关将输入数据配置为``robot_localization``的更多建议，请参阅`准备用于robot_localization的数据 &lt;<a class="reference external" href="http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html#odometry">http://docs.ros.org/en/melodic/api/robot_localization/html/preparing_sensor_data.html#odometry</a>&gt;`_，以及`配置robot_localization &lt;<a class="reference external" href="http://docs.ros.org/en/melodic/api/robot_localization/html/configuring_robot_localization.html">http://docs.ros.org/en/melodic/api/robot_localization/html/configuring_robot_localization.html</a>&gt;`_。</p>
 </div>
 </div>
 <div class="section" id="id3">
@@ -1315,7 +1315,7 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 <span class="o">)</span>
 </pre></div>
 </div>
-<p>Next, add the following launch arguments within the <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">launch.LaunchDescription([</span></code> block.</p>
+<p>接下来，在``return launch.LaunchDescription([<a href="#id1"><span class="problematic" id="id2">``</span></a>块中添加以下启动参数。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>launch.actions.DeclareLaunchArgument<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;use_sim_time&#39;</span>,<span class="w"> </span><span class="nv">default_value</span><span class="o">=</span><span class="s1">&#39;True&#39;</span>,
 <span class="w">                                            </span><span class="nv">description</span><span class="o">=</span><span class="s1">&#39;Flag to enable use_sim_time&#39;</span><span class="o">)</span>,
 </pre></div>
@@ -1328,7 +1328,7 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 <span class="o">])</span>
 </pre></div>
 </div>
-<p>Next, we need to add the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> dependency to our package definition. Open <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> and add the following line below the last <code class="docutils literal notranslate"><span class="pre">&lt;exec_depend&gt;</span></code> tag.</p>
+<p>接下来，我们需要将``robot_localization``依赖项添加到我们的软件包定义中。打开``package.xml``，并在最后一个``&lt;exec_depend&gt;``标签下面添加以下行。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&lt;exec_depend&gt;robot_localization&lt;/exec_depend&gt;
 </pre></div>
 </div>
