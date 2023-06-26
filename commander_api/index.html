@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Roadmaps" href="../roadmap/roadmap.html" />
+    <link rel="next" title="路线图" href="../roadmap/roadmap.html" />
     <link rel="prev" title="Humble to Iron" href="../migration/Humble.html" />
 
 <link rel="stylesheet" href="../_static/tcs_theme.css" type="text/css" />
@@ -890,10 +890,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">指挥官 API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#costmap-api">Costmap API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#footprint-collision-checker-api">足迹碰撞检查器 API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examples-and-demos">Examples and Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-and-demos">示例和演示</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../roadmap/roadmap.html">Roadmaps</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap/roadmap.html">路线图</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/roadmap.html#iron-roadmap">Iron Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/roadmap.html#humble-roadmap">Humble Roadmap</a></li>
 </ul>
@@ -1163,11 +1163,10 @@ localizer='amcl')</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>footprintCost(footprint)</p></td>
-<td><p>Checks the footprint (<code class="docutils literal notranslate"><span class="pre">Polygon</span></code>) for collision at its implicit provided coordinate pose.</p></td>
+<td><p>检查隐含提供的坐标姿态处的足迹（<code class="docutils literal notranslate"><span class="pre">Polygon</span></code>）是否发生碰撞。</p></td>
 </tr>
 <tr class="row-odd"><td><p>lineCost(x0, x1, y0, y1, step_size=0.5)</p></td>
-<td><p>Iterate over all the points along a line and check for collision.
-The line is defined by x0, y0, x1, y1, step_size (<code class="docutils literal notranslate"><span class="pre">int</span></code>) or (<code class="docutils literal notranslate"><span class="pre">float</span></code>).</p></td>
+<td><p>沿着一条线迭代所有点，并检查是否发生碰撞。该线由 x0、y0、x1、y1、step_size（<code class="docutils literal notranslate"><span class="pre">int</span></code>）或（<code class="docutils literal notranslate"><span class="pre">float</span></code>）定义。</p></td>
 </tr>
 <tr class="row-even"><td><p>worldToMapValidated（wx，wy）</p></td>
 <td><p>使用世界坐标XY的wx（浮点数）[m]和wy（浮点数）[m]获取地图坐标XY的mx（整数）和my（整数）。如果wx和wy坐标无效，则返回（None，None）。如果尚未通过（setCostmap（costmap））定义costmap，则返回None。</p></td>
@@ -1185,23 +1184,23 @@ The line is defined by x0, y0, x1, y1, step_size (<code class="docutils literal 
 </table>
 </div>
 <div class="section" id="examples-and-demos">
-<h2>Examples and Demos<a class="headerlink" href="#examples-and-demos" title="永久链接至标题"></a></h2>
-<p>All of these can be found in the <a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">package</a>.</p>
+<h2>示例和演示<a class="headerlink" href="#examples-and-demos" title="永久链接至标题"></a></h2>
+<p>所有这些内容都可以在`package &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander">https://github.com/ros-planning/navigation2/tree/main/nav2_simple_commander</a>&gt;`_中找到。</p>
 <a class="reference internal image-reference" href="../_images/readme.gif"><img alt="替代文本" class="align-center" src="../_images/readme.gif" style="width: 800px;" /></a>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> has a few examples to highlight the API functions available to you as a user:</p>
+<p><code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> 提供了一些示例，以突出显示作为用户可用的 API 函数：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">example_nav_to_pose.py</span></code> - Demonstrates the navigate to pose capabilities of the navigator, as well as a number of auxiliary methods.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">example_nav_through_poses.py</span></code> - Demonstrates the navigate through poses capabilities of the navigator, as well as a number of auxiliary methods.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">example_waypoint_follower.py</span></code> - Demonstrates the waypoint following capabilities of the navigator, as well as a number of auxiliary methods.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">example_follow_path.py</span></code> - Demonstrates the path following capabilities of the navigator, as well as a number of auxiliary methods like path smoothing.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">example_assisted_teleop.py</span></code> - Demonstrates the assisted teleop capabilities of the navigator.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">example_route.py</span></code> - Demonstrates the Route server capabilities of the navigator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example_nav_to_pose.py</span></code> - 演示导航器的导航到位姿功能，以及一些辅助方法。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example_nav_through_poses.py</span></code> - 演示导航器通过姿势导航的能力，以及一些辅助方法。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example_waypoint_follower.py</span></code> - 演示导航器的路径点跟随功能，以及一些辅助方法。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example_follow_path.py</span></code> - 演示导航器的路径跟随能力，以及一些辅助方法，如路径平滑。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example_assisted_teleop.py</span></code> - 演示导航器的辅助遥控功能。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example_route.py</span></code> - 演示导航器的路由服务器功能。</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">nav2_simple_commander</span></code> has a few demonstrations to highlight a couple of simple autonomy applications you can build using the API:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>nav2_simple_commander``有几个演示，可以突出使用API构建的几个简单自主应用程序：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">demo_security.py</span></code> - A simple security robot application, showing how to have a robot follow a security route using Navigate Through Poses to do a patrol route, indefinitely.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">demo_picking.py</span></code> - A simple item picking application, showing how to have a robot drive to a specific shelf in a warehouse to either pick an item or have a person place an item into a basket and deliver it to a destination for shipping using Navigate To Pose.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">demo_inspection.py</span></code> - A simple shelf inspection application, showing how to use the Waypoint Follower and task executors to take pictures, RFID scans, etc of shelves to analyze the current shelf statuses and locate items in the warehouse.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_security.py</span></code> - 一个简单的安保机器人应用程序，展示了如何使用导航通过姿势进行巡逻路线。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_picking.py</span></code> - 一个简单的物品拾取应用程序，展示了如何让机器人驶向仓库中的特定货架，要么拾取物品，要么让人员将物品放入篮子并将其送到目的地以供发货，使用导航到位姿功能。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo_inspection.py</span></code> - 一个简单的货架检查应用程序，展示了如何使用Waypoint Follower和任务执行器来拍照、RFID扫描等，以分析当前货架状态并定位仓库中的物品。</p></li>
 </ul>
 </div>
 </div>
