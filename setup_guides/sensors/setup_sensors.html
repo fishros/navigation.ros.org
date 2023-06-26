@@ -153,13 +153,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#simulating-an-odometry-system-using-gazebo">使用 Gazebo 模拟 Odometry 系统</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#setup-and-prerequisites">设置和先决条件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#adding-gazebo-plugins-to-a-urdf">向 URDF 添加 Gazebo 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#launch-and-build-files">Launch and Build Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#launch-and-build-files">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../odom/setup_odom.html#robot-localization-demo">Robot Localization Demo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#configuring-robot-localization">Configuring Robot Localization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id3">Launch and Build Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id3">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../odom/setup_odom.html#id4">构建、运行和验证</a></li>
 </ul>
 </li>
@@ -173,7 +173,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#simulating-sensors-using-gazebo">Simulating Sensors using Gazebo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#adding-gazebo-plugins-to-a-urdf">向 URDF 添加 Gazebo 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-and-build-files">Launch and Build Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-and-build-files">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
@@ -1131,7 +1131,7 @@
 <p>Similar to the lidar sensor, we create <code class="docutils literal notranslate"><span class="pre">camera_link</span></code> which will be referenced by the <code class="docutils literal notranslate"><span class="pre">gazebo_ros_camera</span></code> plugin as the sensor attachment location. We also create a <code class="docutils literal notranslate"><span class="pre">camera_depth_frame</span></code> that is attached to the <code class="docutils literal notranslate"><span class="pre">camera_link</span></code> and will be set as the <code class="docutils literal notranslate"><span class="pre">&lt;frame_name&gt;</span></code> of the depth camera plugin.  We also configure the plugin such that it will publish <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Image</span></code> and <code class="docutils literal notranslate"><span class="pre">sensor_msgs/PointCloud2</span></code> messages to <code class="docutils literal notranslate"><span class="pre">/depth_camera/image_raw</span></code> and  <code class="docutils literal notranslate"><span class="pre">/depth_camera/points</span></code> topics respectively. Lastly, we also set up other basic configuration properties for our depth camera.</p>
 </div>
 <div class="section" id="launch-and-build-files">
-<h3>Launch and Build Files<a class="headerlink" href="#launch-and-build-files" title="永久链接至标题"></a></h3>
+<h3>启动和构建文件<a class="headerlink" href="#launch-and-build-files" title="永久链接至标题"></a></h3>
 <p>To verify that the sensors are set up properly and that they can see objects in our environemnt, let us launch <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> in a Gazebo world with objects.
 Let us create a Gazebo world with a single cube and a single sphere that are within the range of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>'s sensors so we can verify if it can see the objects correctly.</p>
 <p>To create the world, create a directory named <code class="docutils literal notranslate"><span class="pre">world</span></code> at the root of your project and create a file named <code class="docutils literal notranslate"><span class="pre">my_world.sdf</span></code> inside the <code class="docutils literal notranslate"><span class="pre">world</span></code> folder . Then copy the contents of <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/world/my_world.sdf">world/my_world.sdf</a> and paste them inside <code class="docutils literal notranslate"><span class="pre">my_world.sdf</span></code>.</p>

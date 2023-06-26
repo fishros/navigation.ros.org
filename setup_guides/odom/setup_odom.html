@@ -153,13 +153,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#simulating-an-odometry-system-using-gazebo">使用 Gazebo 模拟 Odometry 系统</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#setup-and-prerequisites">设置和先决条件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-gazebo-plugins-to-a-urdf">向 URDF 添加 Gazebo 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#launch-and-build-files">Launch and Build Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-and-build-files">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#robot-localization-demo">Robot Localization Demo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#configuring-robot-localization">Configuring Robot Localization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Launch and Build Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">构建、运行和验证</a></li>
 </ul>
 </li>
@@ -173,7 +173,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sensors/setup_sensors.html#simulating-sensors-using-gazebo">Simulating Sensors using Gazebo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#adding-gazebo-plugins-to-a-urdf">向 URDF 添加 Gazebo 插件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#launch-and-build-files">Launch and Build Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#launch-and-build-files">启动和构建文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sensors/setup_sensors.html#build-run-and-verification">构建、运行和验证</a></li>
 </ul>
 </li>
@@ -1001,18 +1001,18 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-&lt;ros2-distro&gt;-gazebo-ros-pkgs
 </pre></div>
 </div>
-<p>You can test if you have successfully set up your ROS 2 and Gazebo environments by following the instructions <a class="reference external" href="http://gazebosim.org/tutorials?tut=ros2_installing&amp;cat=connect_ros#TestingGazeboandROS2integration">given here</a>.</p>
+<p>您可以按照此处的说明 <a href="#id5"><span class="problematic" id="id6">`（链接：&lt;http://gazebosim.org/tutorials?tut=ros2_installing&amp;cat=connect_ros#TestingGazeboandROS2integration&gt;`_</span></a>）测试您是否成功设置了ROS 2和Gazebo环境。</p>
 <p>请注意，我们使用 URDF 描述了 <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>。然而，Gazebo 使用 <a class="reference external" href="http://sdformat.org/">Simulation Description Format (SDF)</a> 来描述机器人在模拟环境中的情况。幸运的是，Gazebo 可以自动将兼容的 URDF 文件转换为 SDF。使 URDF 与 Gazebo 兼容的主要要求是在每个 <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> 元素中具有一个 <code class="docutils literal notranslate"><span class="pre">&lt;inertia&gt;</span></code> 元素。<code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> 的 URDF 文件已经满足了这个要求，因此它可以直接在 Gazebo 中使用。</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
-<p>For more information on how to use URDF in Gazebo, see <a class="reference external" href="http://gazebosim.org/tutorials/?tut=ros_urdf">Tutorial: Using a URDF in Gazebo</a>.</p>
+<p>有关如何在Gazebo中使用URDF的更多信息，请参阅 <a href="#id7"><span class="problematic" id="id8">`（链接：&lt;http://gazebosim.org/tutorials/?tut=ros_urdf&gt;`_</span></a>）教程。</p>
 </div>
 </div>
 <div class="section" id="adding-gazebo-plugins-to-a-urdf">
 <h3>向 URDF 添加 Gazebo 插件<a class="headerlink" href="#adding-gazebo-plugins-to-a-urdf" title="永久链接至标题"></a></h3>
-<p>We will now add the IMU sensor and the differential drive plugins of Gazebo to our URDF. For an overview of the different plugins available in Gazebo, have a look at <a class="reference external" href="http://gazebosim.org/tutorials?tut=ros_gzplugins">Tutorial: Using Gazebo plugins with ROS</a>.</p>
-<p>For our robot, we will be using the <a class="reference external" href="http://gazebosim.org/tutorials?tut=ros_gzplugins#IMUsensor(GazeboRosImuSensor)">GazeboRosImuSensor</a> which is a SensorPlugin. A SensorPlugin must be attached to a link, thus we will create an <code class="docutils literal notranslate"><span class="pre">imu_link</span></code> to which the IMU sensor will be attached. This link will be referenced under the <code class="docutils literal notranslate"><span class="pre">&lt;gazebo&gt;</span></code> element. Next, we will set <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> as the topic to which the IMU will be publishing its information, and we will comply with <a class="reference external" href="https://www.ros.org/reps/rep-0145.html">REP145</a> by setting <code class="docutils literal notranslate"><span class="pre">initalOrientationAsReference</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>. We will also add some noise to the sensor configuration using Gazebo's <a class="reference external" href="http://gazebosim.org/tutorials?tut=sensor_noise">sensor noise model</a>.</p>
-<p>Now, we will set up our IMU sensor plugin according to the description above by adding the following lines before the <code class="docutils literal notranslate"><span class="pre">&lt;/robot&gt;</span></code> line in our URDF:</p>
+<p>现在，我们将向URDF添加Gazebo的IMU传感器和差动驱动插件。要了解Gazebo中可用的不同插件的概述，请查看 <a href="#id9"><span class="problematic" id="id10">`（链接：&lt;http://gazebosim.org/tutorials?tut=ros_gzplugins&gt;`_</span></a>）教程。</p>
+<p>对于我们的机器人，我们将使用 <a class="reference external" href="http://gazebosim.org/tutorials?tut=ros_gzplugins#IMUsensor(GazeboRosImuSensor)">GazeboRosImuSensor</a>，它是一个SensorPlugin。SensorPlugin必须附加到一个链接上，因此我们将创建一个``imu_link``，将IMU传感器附加到该链接上。这个链接将在``&lt;gazebo&gt;``元素下引用。接下来，我们将设置``/demo/imu``作为IMU将发布其信息的主题，并且我们将根据 <a class="reference external" href="https://www.ros.org/reps/rep-0145.html">REP145</a> 设置``initalOrientationAsReference``为``false``。我们还将使用Gazebo的 <a class="reference external" href="http://gazebosim.org/tutorials?tut=sensor_noise">sensor noise model</a> 为传感器配置添加一些噪声。</p>
+<p>现在，我们将按照上述说明设置IMU传感器插件，将以下行添加到URDF中的``&lt;/robot&gt;``行之前：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">132</span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;imu_link&quot;</span><span class="nt">&gt;</span>
 <span class="linenos">133</span><span class="w">  </span><span class="nt">&lt;visual&gt;</span>
 <span class="linenos">134</span><span class="w">    </span><span class="nt">&lt;geometry&gt;</span>
@@ -1105,8 +1105,8 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 <span class="linenos">221</span><span class="nt">&lt;/gazebo&gt;</span>
 </pre></div>
 </div>
-<p>Now, let us add the differential drive ModelPlugin. We will configure the plugin such that <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> messages are published on the <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> topic. The joints of the left and right wheels will be set to the wheel joints of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>. The wheel separation and wheel diameter are set according to the values of the defined values of <code class="docutils literal notranslate"><span class="pre">wheel_ygap</span></code> and <code class="docutils literal notranslate"><span class="pre">wheel_radius</span></code> respectively.</p>
-<p>To include this plugin in our URDF, add the following lines after the <code class="docutils literal notranslate"><span class="pre">&lt;/gazebo&gt;</span></code> tag of the IMU plugin:</p>
+<p>现在，让我们添加差分驱动的ModelPlugin。我们将配置插件，以便在``/demo/odom``主题上发布``nav_msgs/Odometry``消息。左右轮的关节将设置为``sam_bot``的轮关节。轮子之间的距离和轮子的直径分别根据``wheel_ygap``和``wheel_radius``的定义值设置。</p>
+<p>要在URDF中包含此插件，请在IMU插件的``&lt;/gazebo&gt;``标签后添加以下行：</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">223</span><span class="nt">&lt;gazebo&gt;</span>
 <span class="linenos">224</span><span class="w">  </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&#39;diff_drive&#39;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&#39;libgazebo_ros_diff_drive.so&#39;</span><span class="nt">&gt;</span>
 <span class="linenos">225</span><span class="w">    </span><span class="nt">&lt;ros&gt;</span>
@@ -1138,8 +1138,8 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 </div>
 </div>
 <div class="section" id="launch-and-build-files">
-<h3>Launch and Build Files<a class="headerlink" href="#launch-and-build-files" title="永久链接至标题"></a></h3>
-<p>We will now edit our launch file, <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py">launch/display.launch.py</a>, to spawn <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> in Gazebo. Since we will be simulating our robot, we can remove the GUI for the joint state publisher by deleting the following lines inside the <code class="docutils literal notranslate"><span class="pre">generate_launch_description()</span></code>:</p>
+<h3>启动和构建文件<a class="headerlink" href="#launch-and-build-files" title="永久链接至标题"></a></h3>
+<p>现在，我们将编辑我们的启动文件 <a href="#id11"><span class="problematic" id="id12">`（链接：&lt;https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py&gt;`_</span></a>）以在Gazebo中生成``sam_bot``。由于我们将模拟我们的机器人，可以通过删除``generate_launch_description()``内部的以下行来移除关节状态发布器的GUI：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">joint_state_publisher_gui_node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>launch_ros.actions.Node<span class="o">(</span>
 <span class="w">  </span><span class="nv">package</span><span class="o">=</span><span class="s1">&#39;joint_state_publisher_gui&#39;</span>,
 <span class="w">  </span><span class="nv">executable</span><span class="o">=</span><span class="s1">&#39;joint_state_publisher_gui&#39;</span>,
@@ -1148,12 +1148,12 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 <span class="o">)</span>
 </pre></div>
 </div>
-<p>Remove the following <cite>gui</cite> param:</p>
+<p>移除以下的`gui`参数：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DeclareLaunchArgument<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;gui&#39;</span>,<span class="w"> </span><span class="nv">default_value</span><span class="o">=</span><span class="s1">&#39;True&#39;</span>,
 <span class="w">                      </span><span class="nv">description</span><span class="o">=</span><span class="s1">&#39;Flag to enable joint_state_publisher_gui&#39;</span><span class="o">)</span>
 </pre></div>
 </div>
-<p>Remove the condition from the <cite>joint_state_publisher_node</cite>:</p>
+<p>从`joint_state_publisher_node`中删除条件：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">joint_state_publisher_node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>launch_ros.actions.Node<span class="o">(</span>
 <span class="w">  </span><span class="nv">package</span><span class="o">=</span><span class="s1">&#39;joint_state_publisher&#39;</span>,
 <span class="w">  </span><span class="nv">executable</span><span class="o">=</span><span class="s1">&#39;joint_state_publisher&#39;</span>,
@@ -1162,15 +1162,15 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 <span class="o">)</span>
 </pre></div>
 </div>
-<p>Next, open <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/package.xml">package.xml</a> and delete the line:</p>
+<p>接下来，打开 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/package.xml">package.xml</a> 并删除这行：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&lt;exec_depend&gt;joint_state_publisher_gui&lt;/exec_depend&gt;
 </pre></div>
 </div>
-<p>To launch Gazebo, add the following before the <code class="docutils literal notranslate"><span class="pre">joint_state_publisher_node,</span></code> line</p>
+<p>要启动 Gazebo，请在 <code class="docutils literal notranslate"><span class="pre">joint_state_publisher_node</span></code> 行之前添加以下内容</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>launch.actions.ExecuteProcess<span class="o">(</span><span class="nv">cmd</span><span class="o">=[</span><span class="s1">&#39;gazebo&#39;</span>,<span class="w"> </span><span class="s1">&#39;--verbose&#39;</span>,<span class="w"> </span><span class="s1">&#39;-s&#39;</span>,<span class="w"> </span><span class="s1">&#39;libgazebo_ros_init.so&#39;</span>,<span class="w"> </span><span class="s1">&#39;-s&#39;</span>,<span class="w"> </span><span class="s1">&#39;libgazebo_ros_factory.so&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">output</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="o">)</span>,
 </pre></div>
 </div>
-<p>We will now add a node that spawns <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code> in Gazebo. Open <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py">launch/display.launch.py</a> again and paste the following lines before the <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">launch.LaunchDescription([</span></code> line.</p>
+<p>现在，我们将在Gazebo中添加一个节点，用于生成``sam_bot``。再次打开 <a class="reference external" href="https://github.com/ros-planning/navigation2_tutorials/blob/master/sam_bot_description/launch/display.launch.py">launch/display.launch.py</a> ，在``return launch.LaunchDescription([<a href="#id1"><span class="problematic" id="id2">``</span></a>行之前粘贴以下代码行。</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">spawn_entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>launch_ros.actions.Node<span class="o">(</span>
 <span class="w">  </span><span class="nv">package</span><span class="o">=</span><span class="s1">&#39;gazebo_ros&#39;</span>,
 <span class="w">  </span><span class="nv">executable</span><span class="o">=</span><span class="s1">&#39;spawn_entity.py&#39;</span>,
@@ -1179,7 +1179,7 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 <span class="o">)</span>
 </pre></div>
 </div>
-<p>Then add the line <code class="docutils literal notranslate"><span class="pre">spawn_entity,</span></code> before the <code class="docutils literal notranslate"><span class="pre">rviz_node</span></code> line, as shown below.</p>
+<p>然后在 <code class="docutils literal notranslate"><span class="pre">rviz_node</span></code> 行之前添加一行 <code class="docutils literal notranslate"><span class="pre">spawn_entity</span></code>，如下所示</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">      </span>robot_state_publisher_node,
 <span class="w">      </span>spawn_entity,
 <span class="w">      </span>rviz_node
@@ -1189,8 +1189,8 @@ geometry_msgs/TwistWithCovariance<span class="w"> </span>twist
 </div>
 <div class="section" id="build-run-and-verification">
 <h3>构建、运行和验证<a class="headerlink" href="#build-run-and-verification" title="永久链接至标题"></a></h3>
-<p>Let us run our package to check if the <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> and <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> topics are active in the system.</p>
-<p>Navigate to the root of the project and execute the following lines:</p>
+<p>让我们运行我们的包，检查系统中是否存在活动的``/demo/imu``和``/demo/odom``主题。</p>
+<p>导航到项目的根目录并执行以下命令</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>colcon<span class="w"> </span>build
 .<span class="w"> </span>install/setup.bash
 ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<span class="w"> </span>display.launch.py
@@ -1198,12 +1198,12 @@ ros2<span class="w"> </span>launch<span class="w"> </span>sam_bot_description<sp
 </div>
 <p>Gazebo should launch and you should see a 3D model of <code class="docutils literal notranslate"><span class="pre">sam_bot</span></code>:</p>
 <a class="reference internal image-reference" href="../../_images/gazebo_sam_bot.png"><img alt="../../_images/gazebo_sam_bot.png" class="align-center" src="../../_images/gazebo_sam_bot.png" style="width: 50%;" /></a>
-<p>To see the active topics in the system, open a new terminal and execute:</p>
+<p>要查看系统中的活动话题，请打开一个新的终端并执行</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>list
 </pre></div>
 </div>
 <p>You should see <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> and <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> in the list of topics.</p>
-<p>To see more information about the topics, execute:</p>
+<p>要查看有关话题的更多信息，请执行</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>info<span class="w"> </span>/demo/imu
 ros2<span class="w"> </span>topic<span class="w"> </span>info<span class="w"> </span>/demo/odom
 </pre></div>
@@ -1219,12 +1219,12 @@ Publisher<span class="w"> </span>count:<span class="w"> </span><span class="m">1
 Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
-<p>Observe that the <code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> topic publishes <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code> type messages while the <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> topic publishes <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> type messages. The information being published on these topics come from the gazebo simulation of the IMU sensor and the differential drive respectively. Also note that both topics currently have no subscribers. In the next section, we will create a <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> node that will subscribe to these two topics. It will then use the messages published on both topics to provide a fused, locally accurate and smooth odometry information for Nav2.</p>
+<p>注意，<code class="docutils literal notranslate"><span class="pre">/demo/imu</span></code> 话题发布的是 <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code> 类型的消息，而 <code class="docutils literal notranslate"><span class="pre">/demo/odom</span></code> 话题发布的是 <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code> 类型的消息。这些话题上发布的信息分别来自 IMU 传感器和差分驱动的 Gazebo 仿真。还请注意，这两个话题目前都没有订阅者。在下一节中，我们将创建一个 <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> 节点来订阅这两个话题。然后，它将使用这两个话题上发布的消息为 Nav2 提供融合的、本地准确且平滑的里程计信息。</p>
 </div>
 </div>
 <div class="section" id="robot-localization-demo">
 <h2>Robot Localization Demo<a class="headerlink" href="#robot-localization-demo" title="永久链接至标题"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package is used to provide a fused and locally accurate smooth odometry information from the data provided by <code class="docutils literal notranslate"><span class="pre">N</span></code> odometry sensor inputs. These information can be provided to the package through <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code>, <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code>, <code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseWithCovarianceStamped</span></code>, and <code class="docutils literal notranslate"><span class="pre">geometry_msgs/TwistWithCovarianceStamped</span></code> messages.</p>
+<p><code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> 包用于从 <code class="docutils literal notranslate"><span class="pre">N</span></code> 个里程计传感器输入的数据中提供融合和本地准确的平滑里程计信息。这些信息可以通过 <code class="docutils literal notranslate"><span class="pre">nav_msgs/Odometry</span></code>、<code class="docutils literal notranslate"><span class="pre">sensor_msgs/Imu</span></code>、<code class="docutils literal notranslate"><span class="pre">geometry_msgs/PoseWithCovarianceStamped</span></code> 和 <code class="docutils literal notranslate"><span class="pre">geometry_msgs/TwistWithCovarianceStamped</span></code> 消息提供给该包。</p>
 <p>A usual robot setup consists of at least the wheel encoders and IMU as its odometry sensor sources. When multiple sources are provided to <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code>, it is able to fuse the odometry information given by the sensors through the use of state estimation nodes. These nodes make use of either an Extended Kalman filter (<code class="docutils literal notranslate"><span class="pre">ekf_node</span></code>) or an Unscented Kalman Filter (<code class="docutils literal notranslate"><span class="pre">ukf_node</span></code>) to implement this fusion. In addition, the package also implements a <code class="docutils literal notranslate"><span class="pre">navsat_transform_node</span></code> which transforms geographic coordinates into the robot’s world frame when working with GPS.</p>
 <p>Fused sensor data is published by the <code class="docutils literal notranslate"><span class="pre">robot_localization</span></code> package through the <code class="docutils literal notranslate"><span class="pre">odometry/filtered</span></code> and the <code class="docutils literal notranslate"><span class="pre">accel/filtered</span></code> topics, if enabled in its configuration. In addition, it can also publish the <code class="docutils literal notranslate"><span class="pre">odom</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">base_link</span></code> transform on the <code class="docutils literal notranslate"><span class="pre">/tf</span></code> topic.</p>
 <div class="admonition seealso">
@@ -1304,7 +1304,7 @@ Subscription<span class="w"> </span>count:<span class="w"> </span><span class="m
 </div>
 </div>
 <div class="section" id="id3">
-<h3>Launch and Build Files<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<h3>启动和构建文件<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
 <p>Now, let us add the <code class="docutils literal notranslate"><span class="pre">ekf_node</span></code> into the launch file. Open <code class="docutils literal notranslate"><span class="pre">launch/display.launch.py</span></code> and paste the following lines before the <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">launch.LaunchDescription([</span></code> line.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">robot_localization_node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>launch_ros.actions.Node<span class="o">(</span>
 <span class="w">       </span><span class="nv">package</span><span class="o">=</span><span class="s1">&#39;robot_localization&#39;</span>,
