@@ -6665,7 +6665,7 @@ msgstr "``<体素图层>``. ``<数据源>``.inf_is_valid"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.marking"
-msgstr "``<voxel layer>``. ``<data source>``.marking"
+msgstr "``<体素层>``. ``<数据源>``.标记"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6675,7 +6675,7 @@ msgstr "``<体素图层>``. ``<数据源>``.clearing"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.obstacle_max_range"
-msgstr "``<voxel layer>``. ``<data source>``.obstacle_max_range"
+msgstr "``<体素层>``. ``<数据源>``.障碍物最大范围"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6685,7 +6685,7 @@ msgstr "``<体素图层>``. ``<数据源>``.obstacle_min_range"
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
 msgid "``<voxel layer>``. ``<data source>``.raytrace_max_range"
-msgstr "``<voxel layer>``. ``<data source>``.raytrace_max_range"
+msgstr "``<体素层>``. ``<数据源>``.光线追踪最大范围"
 
 
 #: ../../configuration/packages/costmap-plugins/voxel.rst
@@ -6695,7 +6695,7 @@ msgstr "``<体素图层>``. ``<数据源>``.raytrace_min_range"
 
 #: ../../configuration/packages/dwb-params/controller.rst:9 ../../configuration/packages/dwb-params/iterator.rst:9 ../../configuration/packages/dwb-params/kinematic.rst:9 ../../configuration/packages/dwb-params/visualization.rst:9 ../../configuration/packages/dwb-plugins/limited_accel_generator.rst:6 ../../configuration/packages/dwb-plugins/standard_traj_generator.rst:9 ../../configuration/packages/trajectory_critics/base_obstacle.rst:12 ../../configuration/packages/trajectory_critics/goal_align.rst:11 ../../configuration/packages/trajectory_critics/goal_dist.rst:11 ../../configuration/packages/trajectory_critics/obstacle_footprint.rst:11 ../../configuration/packages/trajectory_critics/oscillation.rst:11 ../../configuration/packages/trajectory_critics/prefer_forward.rst:11 ../../configuration/packages/trajectory_critics/rotate_to_goal.rst:11 ../../configuration/packages/trajectory_critics/twirling.rst:11
 msgid "``<dwb plugin>``: DWB plugin name defined in the **controller_plugin_ids** parameter in :ref:`configuring_controller_server`."
-msgstr "``<dwb plugin>``: DWB plugin name defined in the **controller_plugin_ids** parameter in :ref:`configuring_controller_server`."
+msgstr "``<DWB插件>``：在:ref:`配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
@@ -6705,12 +6705,12 @@ msgstr "``<dwb插件>``.critics"
 
 #: ../../configuration/packages/dwb-params/controller.rst:20
 msgid "List of critic plugins to use."
-msgstr "List of critic plugins to use."
+msgstr "要使用的评论家插件列表。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.default_critic_namespaces"
-msgstr "``<dwb plugin>``.default_critic_namespaces"
+msgstr "``<dwb插件>``.default_critic_namespaces"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:27
@@ -6720,62 +6720,62 @@ msgstr "[\"dwb_critics\"]"
 
 #: ../../configuration/packages/dwb-params/controller.rst:31
 msgid "Namespaces to load critics in."
-msgstr "Namespaces to load critics in."
+msgstr "加载评论者的命名空间。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.prune_plan"
-msgstr "``<dwb plugin>``.prune_plan"
+msgstr "``<DWB插件>``.prune_plan"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:42
 msgid "Whether to prune the path of old, passed points."
-msgstr "Whether to prune the path of old, passed points."
+msgstr "是否修剪旧的、通过的路径。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.shorten_transformed_plan"
-msgstr "``<dwb plugin>``.shorten_transformed_plan"
+msgstr "``<dwb插件>``.shorten_transformed_plan"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:53
 msgid "Determines whether we will pass the full plan on to the critics."
-msgstr "Determines whether we will pass the full plan on to the critics."
+msgstr "确定是否将完整计划传递给评论者。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.prune_distance"
-msgstr "``<dwb plugin>``.prune_distance"
+msgstr "``<dwb插件>``.prune_distance"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:64
 msgid "Distance (m) to prune backward until."
-msgstr "Distance (m) to prune backward until."
+msgstr "向后修剪的距离（米）。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.forward_prune_distance"
-msgstr "``<dwb plugin>``.forward_prune_distance"
+msgstr "``<dwb插件>``.forward_prune_distance"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:75
 msgid "Distance (m) to prune forward until. If set to ``-1``, it will search the full path for the closest point, in the case of no replanning."
-msgstr "Distance (m) to prune forward until. If set to ``-1``, it will search the full path for the closest point, in the case of no replanning."
+msgstr "向前修剪的距离（米）。如果设置为``-1``，则在无需重新规划的情况下，它将在整个路径中搜索最接近的点。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.debug_trajectory_details"
-msgstr "``<dwb plugin>``.debug_trajectory_details"
+msgstr "``<dwb插件>``.debug_trajectory_details"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:86
 msgid "Publish debug information (on what topic???)."
-msgstr "Publish debug information (on what topic???)."
+msgstr "发布调试信息（在哪个主题上？）。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
 msgid "``<dwb plugin>``.trajectory_generator_name"
-msgstr "``<dwb plugin>``.trajectory_generator_name"
+msgstr "``<dwb插件>``.trajectory_generator_name"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst:93
@@ -6785,7 +6785,7 @@ msgstr "\"dwb_plugins::StandardTrajectoryGenerator\""
 
 #: ../../configuration/packages/dwb-params/controller.rst:97
 msgid "Trajectory generator plugin name."
-msgstr "Trajectory generator plugin name."
+msgstr "轨迹生成器插件名称。"
 
 
 #: ../../configuration/packages/dwb-params/controller.rst
