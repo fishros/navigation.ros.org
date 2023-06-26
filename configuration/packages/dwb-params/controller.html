@@ -943,7 +943,7 @@
 <span id="id1"></span><h1>DWB控制器<a class="headerlink" href="#dwb-controller" title="永久链接至标题"></a></h1>
 <div class="section" id="parameters">
 <h2>参数<a class="headerlink" href="#parameters" title="永久链接至标题"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>: DWB plugin name defined in the <strong>controller_plugin_ids</strong> parameter in <a class="reference internal" href="../configuring-controller-server.html#configuring-controller-server"><span class="std std-ref">控制器服务器</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>：在:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>配置控制器服务器`的**controller_plugin_ids**参数中定义的DWB插件名称。</p>
 <dl class="field-list">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.critics</dt>
 <dd class="field-odd"><table class="docutils align-default">
@@ -961,11 +961,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>List of critic plugins to use.</p>
+<dt>描述</dt><dd><p>要使用的评论家插件列表。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.default_critic_namespaces</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.default_critic_namespaces</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -981,11 +981,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Namespaces to load critics in.</p>
+<dt>描述</dt><dd><p>加载评论者的命名空间。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.prune_plan</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;DWB插件&gt;</span></code>.prune_plan</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1001,11 +1001,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Whether to prune the path of old, passed points.</p>
+<dt>描述</dt><dd><p>是否修剪旧的、通过的路径。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.shorten_transformed_plan</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.shorten_transformed_plan</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1021,11 +1021,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Determines whether we will pass the full plan on to the critics.</p>
+<dt>描述</dt><dd><p>确定是否将完整计划传递给评论者。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.prune_distance</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.prune_distance</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1041,11 +1041,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance (m) to prune backward until.</p>
+<dt>描述</dt><dd><p>向后修剪的距离（米）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.forward_prune_distance</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.forward_prune_distance</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 46%" />
@@ -1061,11 +1061,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Distance (m) to prune forward until. If set to <code class="docutils literal notranslate"><span class="pre">-1</span></code>, it will search the full path for the closest point, in the case of no replanning.</p>
+<dt>描述</dt><dd><p>向前修剪的距离（米）。如果设置为``-1``，则在无需重新规划的情况下，它将在整个路径中搜索最接近的点。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.debug_trajectory_details</dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.debug_trajectory_details</dt>
 <dd class="field-odd"><table class="docutils align-default">
 <colgroup>
 <col style="width: 36%" />
@@ -1081,11 +1081,11 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Publish debug information (on what topic???).</p>
+<dt>描述</dt><dd><p>发布调试信息（在哪个主题上？）。</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb</span> <span class="pre">plugin&gt;</span></code>.trajectory_generator_name</dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">&lt;dwb插件&gt;</span></code>.trajectory_generator_name</dt>
 <dd class="field-even"><table class="docutils align-default">
 <colgroup>
 <col style="width: 13%" />
@@ -1101,7 +1101,7 @@
 </tbody>
 </table>
 <dl class="simple">
-<dt>描述</dt><dd><p>Trajectory generator plugin name.</p>
+<dt>描述</dt><dd><p>轨迹生成器插件名称。</p>
 </dd>
 </dl>
 </dd>
