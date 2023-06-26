@@ -667,7 +667,7 @@ msgstr "6. 语义集成"
 
 #: ../../2021summerOfCode/projects/semantics.rst:9
 msgid "This project is to create a semantics library and integrate it into the Nav2 system. The major aim is to enable a generic semantic representation format that navigation (and potentially other ROS projects) may use for representing their environment, objects within it, or points of interest."
-msgstr "This project is to create a semantics library and integrate it into the Nav2 system. The major aim is to enable a generic semantic representation format that navigation (and potentially other ROS projects) may use for representing their environment, objects within it, or points of interest."
+msgstr "该项目的目标是创建一个语义库并将其集成到Nav2系统中。主要目标是实现一个通用的语义表示格式，供导航（以及潜在的其他ROS项目）用于表示其环境、其中的对象或感兴趣的点。"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:11
@@ -677,7 +677,7 @@ msgstr "在创建通用表示后，您的项目将是在Nav2中使用此功能�
 
 #: ../../2021summerOfCode/projects/semantics.rst:13
 msgid "**Project difficulty: Hard**"
-msgstr "**Project difficulty: Hard**"
+msgstr "**项目难度：困难**"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:19
@@ -687,7 +687,7 @@ msgstr "**项目输出要求** - 在Nav2文档中添加通用语义标准 - 实�
 
 #: ../../2021summerOfCode/projects/semantics.rst:27
 msgid "C++, Python, ROS 2"
-msgstr "C++, Python, ROS 2"
+msgstr "C++，Python，ROS 2"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:28
@@ -697,7 +697,7 @@ msgstr "移动机器人导航或操作经验"
 
 #: ../../2021summerOfCode/projects/semantics.rst:29
 msgid "Perception, semantic information motivation, or similar."
-msgstr "Perception, semantic information motivation, or similar."
+msgstr "感知，语义信息动机或类似内容。"
 
 
 #: ../../2021summerOfCode/projects/semantics.rst:36
@@ -707,7 +707,7 @@ msgstr "`Github工单 <https://github.com/ros-planning/navigation2/issues/1595>`
 
 #: ../../2021summerOfCode/projects/semantics.rst:37
 msgid "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/2229>`_"
-msgstr "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/2229>`_"
+msgstr "`Github票务2 <https://github.com/ros-planning/navigation2/issues/2229>`_"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:6
@@ -717,37 +717,37 @@ msgstr "7. 减少ROS 2节点和确定性"
 
 #: ../../2021summerOfCode/projects/spinners.rst:10
 msgid "This project is admittedly abstract to explain to someone unfamiliar with the inner-details of ROS 2 and its layers. If you're interested in working on this, you will become one of the few that truly understand the inner workings of it and be a very marketable skill. We do not expect anyone applying for this project to have that knowledge beforehand and we will help you learn the necessary items."
-msgstr "This project is admittedly abstract to explain to someone unfamiliar with the inner-details of ROS 2 and its layers. If you're interested in working on this, you will become one of the few that truly understand the inner workings of it and be a very marketable skill. We do not expect anyone applying for this project to have that knowledge beforehand and we will help you learn the necessary items."
+msgstr "必须承认，对于不熟悉ROS 2及其层次结构的人来说，这个项目确实有些抽象。如果你对此感兴趣，你将成为为数不多真正了解其内部工作原理的人，并拥有非常有市场价值的技能。我们并不要求申请该项目的人事先具备这些知识，我们将帮助你学习必要的内容。"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:12
 msgid "ROS 2 architecturally was changed before Foxy in order to ensure that any single process containing multiple ROS 2 node objects will share the same DDS participant on the network. This is important due to the overhead that each additional DDS participant has on the system."
-msgstr "ROS 2 architecturally was changed before Foxy in order to ensure that any single process containing multiple ROS 2 node objects will share the same DDS participant on the network. This is important due to the overhead that each additional DDS participant has on the system."
+msgstr "在Foxy之前，ROS 2在架构上进行了更改，以确保任何包含多个ROS 2节点对象的单个进程将在网络上共享相同的DDS参与者。这是因为每个额外的DDS参与者对系统的开销很重要。"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:14
 msgid "In order for nav2 to leverage this the best, we need to adjust our usage of ROS 2 nodes and executors to further minimize the number of node objects in existance. In the early days of ROS 2 when Nav2 was being built, we were required to have many nodes in a single server in order to handle action requests and other callbacks. Now, we can make use of multi-threaded spinners, callback groups, and individual executors for specific tasks."
-msgstr "In order for nav2 to leverage this the best, we need to adjust our usage of ROS 2 nodes and executors to further minimize the number of node objects in existance. In the early days of ROS 2 when Nav2 was being built, we were required to have many nodes in a single server in order to handle action requests and other callbacks. Now, we can make use of multi-threaded spinners, callback groups, and individual executors for specific tasks."
+msgstr "为了让Nav2能够充分利用这一点，我们需要调整ROS 2节点和执行器的使用方式，进一步减少存在的节点对象数量。在ROS 2刚开始发展时，Nav2正在构建，我们需要在一个单一的服务器中拥有许多节点来处理动作请求和其他回调。现在，我们可以利用多线程的spinners、回调组和针对特定任务的独立执行器。"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:16
 msgid "This project will involve identifying all of the Node objects in the stack (control+F makes this easy) and work with mentors to ensure by the end of the summer each server contains only a single node. Additionally, the behavior tree plugins should be updated to leverage callback groups to ensure that any single BT node spinning to check if any new messages are on its callback will **only** trigger its own callback by the same mechanisms."
-msgstr "This project will involve identifying all of the Node objects in the stack (control+F makes this easy) and work with mentors to ensure by the end of the summer each server contains only a single node. Additionally, the behavior tree plugins should be updated to leverage callback groups to ensure that any single BT node spinning to check if any new messages are on its callback will **only** trigger its own callback by the same mechanisms."
+msgstr "该项目将涉及识别堆栈中的所有节点对象（使用Ctrl+F可以轻松完成此操作），并与导师合作，以确保在夏季结束时，每个服务器仅包含一个节点。此外，应更新行为树插件，以利用回调组，以确保任何单个BT节点在自己的回调中**仅仅**通过相同的机制触发其自身的回调，以检查是否有任何新消息。"
 
 
 #, python-format
 msgid "More details about this project can be supplied if interested, but the tickets linked below also provide more context. Trust me to say this is a very achievable goal over the course of the summer and will also let you look under the hood of both Nav2 and rclcpp, giving you valuable insight future in your career (and put you in the top 10% of ROS 2 developers that know it to this degree)."
-msgstr "More details about this project can be supplied if interested, but the tickets linked below also provide more context. Trust me to say this is a very achievable goal over the course of the summer and will also let you look under the hood of both Nav2 and rclcpp, giving you valuable insight future in your career (and put you in the top 10% of ROS 2 developers that know it to this degree)."
+msgstr "如果感兴趣，可以提供有关该项目的更多详细信息，但下面链接的票据也提供了更多背景。相信我说，这是一个非常可实现的目标，在整个夏季期间，它还将让您深入了解Nav2和rclcpp的内部工作，为您的职业生涯提供宝贵的洞察力（并使您成为了解ROS 2到这个程度的前10％开发人员）。"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:26
 msgid "**Project output requirements** - Remove excess ROS 2 nodes from stack and replace with executors and multi-threaded executors - Replace Behavior Tree node spinners with local executors to ensure deterministic execution & processing only callback groups of the current BT node - If time allots, create a single ``main()`` function Nav2 executable composing all Nav2 processes and benchmarking improvements in performance"
-msgstr "**Project output requirements** - Remove excess ROS 2 nodes from stack and replace with executors and multi-threaded executors - Replace Behavior Tree node spinners with local executors to ensure deterministic execution & processing only callback groups of the current BT node - If time allots, create a single ``main()`` function Nav2 executable composing all Nav2 processes and benchmarking improvements in performance"
+msgstr "**项目产出要求** - 从堆栈中删除多余的ROS 2节点，并替换为执行器和多线程执行器 - 将行为树节点旋转器替换为本地执行器，以确保确定性执行和处理当前BT节点的回调组 - 如果时间允许，在性能改进方面，创建一个单一的``main()``函数Nav2可执行文件，将所有Nav2进程组合在一起，并进行基准测试。"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:39
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/2251>`_"
-msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/2251>`_"
+msgstr "`Github票据 <https://github.com/ros-planning/navigation2/issues/2251>`_"
 
 
 #: ../../2021summerOfCode/projects/spinners.rst:40
@@ -757,37 +757,37 @@ msgstr "`Github ticket2 <https://github.com/ros-planning/navigation2/issues/816>
 
 #: ../../2021summerOfCode/projects/testing.rst:6
 msgid "2. Advanced Navigation Testing Framework"
-msgstr "2. Advanced Navigation Testing Framework"
+msgstr "2. 高级导航测试框架"
 
 
 #, python-format
 msgid "The ROS 2 Navigation Stack has had a focus on testing and reliability as a characteristic change from ROS 1 to ROS 2. We currently have a test coverage rate of 85% and do full system simulations in Continuous Integration (CI) to test the entire navigation system with a real robot completing real navigation tasks. Your task will be to increase the testing coverage rate to 90% (or +5% from your starting) and improve on the existing system tests to represent a more realistic environment. You will then work to make sure of that environment to actively block the robot from completing its task to simulate worst-case conditions."
-msgstr "The ROS 2 Navigation Stack has had a focus on testing and reliability as a characteristic change from ROS 1 to ROS 2. We currently have a test coverage rate of 85% and do full system simulations in Continuous Integration (CI) to test the entire navigation system with a real robot completing real navigation tasks. Your task will be to increase the testing coverage rate to 90% (or +5% from your starting) and improve on the existing system tests to represent a more realistic environment. You will then work to make sure of that environment to actively block the robot from completing its task to simulate worst-case conditions."
+msgstr "ROS 2导航堆栈在测试和可靠性方面与ROS 1相比具有特定变化。我们当前的测试覆盖率为85%，并在持续集成（CI）中进行完整的系统仿真，以测试整个导航系统是否能够使用真实机器人完成真实导航任务。您的任务是将测试覆盖率提高到90%（或相对于起始覆盖率增加5%），并改进现有的系统测试，以表示更加真实的环境。然后，您将努力确保该环境能够主动阻止机器人完成任务，以模拟最坏情况。"
 
 
 #, python-format
 msgid "Test line coverage of 90% or higher on the repository as reported by codecov (currently 85%)"
-msgstr "Test line coverage of 90% or higher on the repository as reported by codecov (currently 85%)"
+msgstr "通过codecov报告的代码行覆盖率达到90％或更高（当前为85％）"
 
 
 #: ../../2021summerOfCode/projects/testing.rst:21
 msgid "An improved simulation environment for a more realistic mobile robotics application"
-msgstr "An improved simulation environment for a more realistic mobile robotics application"
+msgstr "更逼真的移动机器人应用的改进仿真环境"
 
 
 #: ../../2021summerOfCode/projects/testing.rst:22
 msgid "Updated system tests to take advantage of that environment to fault or un-ideal cases of the stack"
-msgstr "Updated system tests to take advantage of that environment to fault or un-ideal cases of the stack"
+msgstr "更新系统测试以利用该环境对堆栈的故障或非理想情况进行测试"
 
 
 #: ../../2021summerOfCode/projects/testing.rst:26
 msgid "C++, Python3, gtest"
-msgstr "C++, Python3, gtest"
+msgstr "C++，Python3，gtest"
 
 
 #: ../../2021summerOfCode/projects/testing.rst:27
 msgid "Gazebo, recommended experience with Gazebo plugins"
-msgstr "Gazebo, recommended experience with Gazebo plugins"
+msgstr "Gazebo，建议具有Gazebo插件的经验"
 
 
 #: ../../2021summerOfCode/projects/testing.rst:28
@@ -797,7 +797,7 @@ msgstr "Recommended: Navigation experience"
 
 #: ../../2021summerOfCode/projects/testing.rst:35
 msgid "`Navigation2 Repo System Tests <https://github.com/ros-planning/navigation2/tree/main/nav2_system_tests>`_"
-msgstr "`Navigation2 Repo System Tests <https://github.com/ros-planning/navigation2/tree/main/nav2_system_tests>`_"
+msgstr "`Navigation2存储库系统测试 <https://github.com/ros-planning/navigation2/tree/main/nav2_system_tests>`_"
 
 
 #: ../../2021summerOfCode/projects/twist_n_config.rst:6
