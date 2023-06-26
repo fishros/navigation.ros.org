@@ -897,7 +897,7 @@ msgstr "使用包含多个节点的启动文件的工作方式有所不同，这
 
 #: ../../tutorials/docs/get_backtrace.rst:180
 msgid "As such, for this case, when you see a crash you'd like to investigate, its beneficial to separate this server from the others."
-msgstr "As such, for this case, when you see a crash you'd like to investigate, its beneficial to separate this server from the others."
+msgstr "因此，在这种情况下，当您遇到需要调查的崩溃时，最好将此服务器与其他服务器分开。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:182
@@ -907,7 +907,7 @@ msgstr "如果您感兴趣的服务器是从嵌套的启动文件（例如，一
 
 #: ../../tutorials/docs/get_backtrace.rst:184
 msgid "Comment out the launch file inclusion from the parent launch file"
-msgstr "Comment out the launch file inclusion from the parent launch file"
+msgstr "将父启动文件中的启动文件包含部分注释掉。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:186 ../../tutorials/docs/get_backtrace.rst:196
@@ -917,7 +917,7 @@ msgstr "使用``-g``标志为调试符号重新编译感兴趣的软件包。"
 
 #: ../../tutorials/docs/get_backtrace.rst:188 ../../tutorials/docs/get_backtrace.rst:198
 msgid "Launch the parent launch file in a terminal"
-msgstr "Launch the parent launch file in a terminal"
+msgstr "在终端中启动父启动文件。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:190
@@ -927,112 +927,112 @@ msgstr "在另一个终端中按照`从启动文件启动`_中的说明启动服
 
 #: ../../tutorials/docs/get_backtrace.rst:192
 msgid "Alternatively, if you server of interest is being launched in these files directly (e.g. you see a ``Node``, ``LifecycleNode``, or inside a ``ComponentContainer``), you will need to seperate this from the others:"
-msgstr "Alternatively, if you server of interest is being launched in these files directly (e.g. you see a ``Node``, ``LifecycleNode``, or inside a ``ComponentContainer``), you will need to seperate this from the others:"
+msgstr "或者，如果您感兴趣的服务器是直接在这些文件中启动的（例如，您看到一个``Node``、``LifecycleNode``或者在``ComponentContainer``内部），您需要将其与其他服务器分开："
 
 
 #: ../../tutorials/docs/get_backtrace.rst:194
 msgid "Comment out the node's inclusion from the parent launch file"
-msgstr "Comment out the node's inclusion from the parent launch file"
+msgstr "将节点在父启动文件中注释掉"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:200
 msgid "Launch the server's node in another terminal following the instructions in `From a Node`_."
-msgstr "Launch the server's node in another terminal following the instructions in `From a Node`_."
+msgstr "按照`从节点启动`_中的说明，在另一个终端中启动服务器的节点。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:203
 msgid "Note that in this case, you may need to remap or provide parameter files to this node if it was previously provided by the launch file. Using ``--ros-args`` you can give it the path to the new parameters file, remaps, or names. See `this ROS 2 tutorial <https://docs.ros.org/en/rolling/Guides/Node-arguments.html>`_ for the commandline arguments required."
-msgstr "Note that in this case, you may need to remap or provide parameter files to this node if it was previously provided by the launch file. Using ``--ros-args`` you can give it the path to the new parameters file, remaps, or names. See `this ROS 2 tutorial <https://docs.ros.org/en/rolling/Guides/Node-arguments.html>`_ for the commandline arguments required."
+msgstr "请注意，如果该节点以前是由启动文件提供的，您可能需要重新映射或提供参数文件给该节点。使用 ``--ros-args`` 您可以给它提供新参数文件、重映射或名称的路径。有关所需的命令行参数，请参阅 `ROS 2 教程 <https://docs.ros.org/en/rolling/Guides/Node-arguments.html>`_。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:205
 msgid "We understand this can be a pain, so it might encourage you to rather have each node possible as a separately included launch file to make debugging easier. An example set of arguments might be ``--ros-args -r __node:=<node_name> --params-file /absolute/path/to/params.yaml`` (as a template)."
-msgstr "We understand this can be a pain, so it might encourage you to rather have each node possible as a separately included launch file to make debugging easier. An example set of arguments might be ``--ros-args -r __node:=<node_name> --params-file /absolute/path/to/params.yaml`` (as a template)."
+msgstr "我们理解这可能会让您感到困扰，所以您可能更倾向于将每个可能的节点作为单独的启动文件进行包含，以便更容易进行调试。一个示例的参数集合可能是``--ros-args -r __node:=<node_name> --params-file /absolute/path/to/params.yaml``（作为模板）。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:207
 msgid "Once your server crashes, you'll see a prompt like below in the specific server's terminal. At this point you can now get a backtrace."
-msgstr "Once your server crashes, you'll see a prompt like below in the specific server's terminal. At this point you can now get a backtrace."
+msgstr "一旦服务器崩溃，您将在特定服务器的终端中看到如下提示。此时，您可以获取回溯信息。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:223 ../../tutorials/docs/get_profile.rst:106
 msgid "From Nav2 Bringup"
-msgstr "From Nav2 Bringup"
+msgstr "来自Nav2 Bringup"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:225
 msgid "To debug directly from the nav2 bringup launch files you may want to do the following:"
-msgstr "To debug directly from the nav2 bringup launch files you may want to do the following:"
+msgstr "要直接从 nav2 的启动文件中进行调试，您可以执行以下操作："
 
 
 #: ../../tutorials/docs/get_backtrace.rst:227
 msgid "Add ``prefix=['xterm -e gdb -ex run --args']`` to the non-composed node in the appropriate launch file."
-msgstr "Add ``prefix=['xterm -e gdb -ex run --args']`` to the non-composed node in the appropriate launch file."
+msgstr "在适当的启动文件中，将``prefix=['xterm -e gdb -ex run --args']``添加到非组合节点中。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:229
 msgid "Recompile the package of interest with ``-g`` flag for debug symbols."
-msgstr "Recompile the package of interest with ``-g`` flag for debug symbols."
+msgstr "使用 ``-g`` 标志重新编译要调试的软件包以获取调试符号。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:231
 msgid "Launch normally with ``ros2 launch nav2_bringup tb3_simulation_launch.py use_composition:=False``. A seperate xterm window will open with the proccess of intrest running in gdb."
-msgstr "Launch normally with ``ros2 launch nav2_bringup tb3_simulation_launch.py use_composition:=False``. A seperate xterm window will open with the proccess of intrest running in gdb."
+msgstr "使用``ros2 launch nav2_bringup tb3_simulation_launch.py use_composition:=False``正常启动。一个单独的 xterm 窗口将打开，其中运行着感兴趣的进程。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:234
 msgid "Turning off composition has serious performance impacts. If this is important to you please follow \"From Large Project\"."
-msgstr "Turning off composition has serious performance impacts. If this is important to you please follow \"From Large Project\"."
+msgstr "关闭组合会严重影响性能。如果这对您很重要，请参考\"从大型项目\"。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:236
 msgid "Once your server crashes, you'll see a prompt like below in the xterm window. At this point you can now get a backtrace."
-msgstr "Once your server crashes, you'll see a prompt like below in the xterm window. At this point you can now get a backtrace."
+msgstr "一旦服务器崩溃，您将在 xterm 窗口中看到如下提示。此时，您现在可以获取回溯。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:252
 msgid "Automatic backtrace on crash"
-msgstr "Automatic backtrace on crash"
+msgstr "崩溃时自动获取回溯信息"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:254
 msgid "The `backward-cpp <https://github.com/bombela/backward-cpp>`_ library provides beautiful stack traces, and the `backward_ros <https://github.com/pal-robotics/backward_ros/tree/foxy-devel>`_ wrapper simplifies its integration."
-msgstr "The `backward-cpp <https://github.com/bombela/backward-cpp>`_ library provides beautiful stack traces, and the `backward_ros <https://github.com/pal-robotics/backward_ros/tree/foxy-devel>`_ wrapper simplifies its integration."
+msgstr "``backward-cpp <https://github.com/bombela/backward-cpp>``库提供了美观的堆栈跟踪，而``backward_ros <https://github.com/pal-robotics/backward_ros/tree/foxy-devel>``包装器简化了其集成。"
 
 
 #: ../../tutorials/docs/get_backtrace.rst:256
 msgid "Just add it as a dependency and `find_package` it in your CMakeLists and the backward libraries will be injected in all your executables and libraries."
-msgstr "Just add it as a dependency and `find_package` it in your CMakeLists and the backward libraries will be injected in all your executables and libraries."
+msgstr "只需将其作为依赖项添加，并在您的CMakeLists中使用`find_package`，然后后向库将被注入到所有可执行文件和库中。"
 
 
 #: ../../tutorials/docs/get_profile.rst:4
 msgid "Profiling in ROS 2 / Nav2"
-msgstr "Profiling in ROS 2 / Nav2"
+msgstr "在 ROS 2 / Nav2 中进行性能分析"
 
 
 #: ../../tutorials/docs/get_profile.rst:9
 msgid "`Profile from a Node`_"
-msgstr "`Profile from a Node`_"
+msgstr "`来自节点的配置文件`_"
 
 
 #: ../../tutorials/docs/get_profile.rst:10
 msgid "`Profile from a Launch File`_"
-msgstr "`Profile from a Launch File`_"
+msgstr "从启动文件进行性能分析_"
 
 
 #: ../../tutorials/docs/get_profile.rst:16
 msgid "This document explains one method for profiling applications in ROS 2 / Nav2. The aim of profiling is to generate files that can be analyzed to see where compute time and resources are spent during the execution of a program. This can be useful to determine where the bottlenecks in your program exist and where things might be able to be improved."
-msgstr "This document explains one method for profiling applications in ROS 2 / Nav2. The aim of profiling is to generate files that can be analyzed to see where compute time and resources are spent during the execution of a program. This can be useful to determine where the bottlenecks in your program exist and where things might be able to be improved."
+msgstr "本文档介绍了在ROS 2 / Nav2中对应用程序进行分析的一种方法。分析的目的是生成可以分析的文件，以查看程序执行过程中计算时间和资源的使用情况。这对于确定程序中的瓶颈所在以及可能需要改进的地方非常有用。"
 
 
 #: ../../tutorials/docs/get_profile.rst:18
 msgid "The following steps show ROS 2 users how to modify the Nav2 stack to get profiling information about a particular server / algorithm when they encounter a situation they'd like to understand better. This tutorial applies to both simulated and physical robots."
-msgstr "The following steps show ROS 2 users how to modify the Nav2 stack to get profiling information about a particular server / algorithm when they encounter a situation they'd like to understand better. This tutorial applies to both simulated and physical robots."
+msgstr "以下步骤向 ROS 2 用户展示如何修改 Nav2 栈以获取关于特定服务器/算法的性能分析信息，以便更好地理解他们遇到的情况。本教程适用于仿真和物理机器人。"
 
 
 #: ../../tutorials/docs/get_profile.rst:23
 msgid "This tutorial makes use of two tools, callgrind from the ``Valgrind`` set of tools and ``kcachegrind``. Valgrind is used to get the profiling information about the program and kcachegrind is the visualization engine used to interprete this information to do useful work."
-msgstr "This tutorial makes use of two tools, callgrind from the ``Valgrind`` set of tools and ``kcachegrind``. Valgrind is used to get the profiling information about the program and kcachegrind is the visualization engine used to interprete this information to do useful work."
+msgstr "本教程使用了两个工具，即``Valgrind``工具集中的callgrind和``kcachegrind``。Valgrind用于获取程序的分析信息，而kcachegrind则是用于解释这些信息并进行有用工作的可视化引擎。"
 
 
 #: ../../tutorials/docs/get_profile.rst:25
@@ -1042,7 +1042,7 @@ msgstr "Thus, we must install them."
 
 #: ../../tutorials/docs/get_profile.rst:31
 msgid "More information can be found in the `Valgrind manual <https://valgrind.org/docs/manual/cl-manual.html>`_ including additional valgrind arguments that can be used to specify more information."
-msgstr "More information can be found in the `Valgrind manual <https://valgrind.org/docs/manual/cl-manual.html>`_ including additional valgrind arguments that can be used to specify more information."
+msgstr "有关更多信息，请参阅`Valgrind手册<https://valgrind.org/docs/manual/cl-manual.html>`_，其中包括可以用于指定更多信息的其他valgrind参数。"
 
 
 #: ../../tutorials/docs/get_profile.rst:33
@@ -1052,7 +1052,7 @@ msgstr "Generally speaking, to use valgrind we need to compile with debugging in
 
 #: ../../tutorials/docs/get_profile.rst:51
 msgid "Profile from a Node"
-msgstr "Profile from a Node"
+msgstr "来自节点的配置文件"
 
 
 #: ../../tutorials/docs/get_profile.rst:53
@@ -1062,7 +1062,7 @@ msgstr "As in our generic example, for a given node, we need to compile with deb
 
 #: ../../tutorials/docs/get_profile.rst:59
 msgid "Optionally, you may add the following line to the ``CMakeLists.txt`` of the package you're looking to profile. This may be preferable when you have a workspace with many packages but would like to only compile a subset with debug information using a single ``colcon build`` invokation."
-msgstr "Optionally, you may add the following line to the ``CMakeLists.txt`` of the package you're looking to profile. This may be preferable when you have a workspace with many packages but would like to only compile a subset with debug information using a single ``colcon build`` invokation."
+msgstr "可选地，您可以将以下行添加到要分析的软件包的``CMakeLists.txt``中。当您有一个包含许多软件包的工作空间，但只想使用单个``colcon build``调用编译带有调试信息的子集时，这可能更可取。"
 
 
 #: ../../tutorials/docs/get_profile.rst:61
