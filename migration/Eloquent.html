@@ -945,16 +945,11 @@
 <h2>常规<a class="headerlink" href="#general" title="永久链接至标题"></a></h2>
 <p>生命周期管理器被分成了两个独立的生命周期管理器，它们分别是``navigation_lifecycle_manager``和``localization_lifecycle_manager``。这样每个进程都有自己的管理器，允许用户在SLAM和定位之间切换而不影响导航。它还减少了``nav2_bringup``中的冗余代码。</p>
 <p>生命周期管理器现在还包含与每个生命周期服务器的``Bond``连接。这意味着如果一个服务器崩溃或退出，生命周期管理器将不断检查并将其生命周期节点过渡到安全状态。这在运行时充当看门狗，以补充生命周期管理器从活动状态向上和向下过渡的功能。有关详细信息，请参阅`此PR &lt;<a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1894">https://github.com/ros-planning/navigation2/pull/1894</a>&gt;`_。</p>
-<p>A fix to the BT navigator was added to remove a rare issue where it may crash due to asynchronous issues.
-As a result, a behavior tree is created for each navigation request rather than resetting an existing tree.
-The creation of this tree will add a small amount of latency.
-Proposals to reduce this latency will be considered before the next release.</p>
+<p>修复了BT导航器的一个问题，该问题可能由于异步问题而导致导航器崩溃。因此，每次导航请求都会创建一个行为树，而不是重置现有的树。创建该树会增加一小段延迟。在下一个版本发布之前，将考虑减少这种延迟的建议。</p>
 </div>
 <div class="section" id="server-updates">
 <h2>服务器更新<a class="headerlink" href="#server-updates" title="永久链接至标题"></a></h2>
-<p>All plugin servers (controller, planner, recovery) now supports the use of multiple plugins.
-This can be done by loading a map of plugins, mapping the name of the plugin to its intended use-case.
-Each server defines a parameter where the list of names for the plugins to be loaded can be defined.</p>
+<p>现在，所有插件服务器（控制器、规划器、恢复器）都支持使用多个插件。可以通过加载插件映射表，将插件的名称映射到其预期的用例来实现。每个服务器都定义了一个参数，可以在其中定义要加载的插件名称列表。</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 49%" />
@@ -962,7 +957,7 @@ Each server defines a parameter where the list of names for the plugins to be lo
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>服务器名称</p></th>
-<th class="head"><p>Plugin Parameter</p></th>
+<th class="head"><p>插件参数</p></th>
 </tr>
 </thead>
 <tbody>
@@ -978,17 +973,16 @@ Each server defines a parameter where the list of names for the plugins to be lo
 <tr class="row-odd"><td><p>规划器服务器</p></td>
 <td><p>规划器插件</p></td>
 </tr>
-<tr class="row-even"><td><p>Recovery Server</p></td>
+<tr class="row-even"><td><p>恢复服务器</p></td>
 <td><p>recovery_plugins</p></td>
 </tr>
-<tr class="row-odd"><td><p>Costmap Node</p></td>
+<tr class="row-odd"><td><p>成本地图节点</p></td>
 <td><p>plugins</p></td>
 </tr>
 </tbody>
 </table>
-<p>The type of plugin to be mapped to a particular name has to be defined using the <code class="docutils literal notranslate"><span class="pre">plugin</span></code> parameter in the plugin namespace for each name defined in the server plugin list.
-Each name in the plugin parameter list is expected to have the <code class="docutils literal notranslate"><span class="pre">plugin</span></code> parameter defined.</p>
-<p>An example: <code class="docutils literal notranslate"><span class="pre">controller_server</span></code> defines the parameter <code class="docutils literal notranslate"><span class="pre">controller_plugins</span></code> where a list of plugin names can be defined:</p>
+<p>将特定名称映射到特定插件的类型必须在每个服务器插件列表的插件命名空间中使用“plugin”参数进行定义。预期插件参数列表中的每个名称都应该有“plugin”参数定义。</p>
+<p>一个例子：<code class="docutils literal notranslate"><span class="pre">controller_server</span></code> 定义了参数``controller_plugins``，可以在其中定义插件名称的列表：</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_server</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">controller_plugins</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;FollowPath&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;DynamicFollowPath&quot;</span><span class="p p-Indicator">]</span>
@@ -1000,23 +994,13 @@ Each name in the plugin parameter list is expected to have the <code class="docu
 <span class="w">      </span><span class="nt">max_vel_x</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> controller is of type <code class="docutils literal notranslate"><span class="pre">dwb_local_planner/DWBLocalPlanner</span></code> and <code class="docutils literal notranslate"><span class="pre">DynamicFollowPath</span></code> of type <code class="docutils literal notranslate"><span class="pre">teb_local_planner/TEBLocalPlanner</span></code>.
-Each plugin will load the parameters in their namespace, e.g. <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code>, rather than globally in the server namespace.
-This will allow multiple plugins of the same type with different parameters and reduce conflicting parameter names.</p>
-<p>DWB Contains new parameters as an update relative to the ROS 1 updates, <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1501">see here for more information</a>.
-Additionally, the controller and planner interfaces were updated to include a <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">name</span></code> parameter on initialization.
-This was added to the interfaces to allow the plugins to know the namespace it should load its parameters in.
-E.g. for a controller to find the parameter <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code>, it must be given its name, <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> to get this parameter.
-All plugins will be expected to look up parameters in the namespace of its given name.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FollowPath</span></code> 控制器的类型为 <code class="docutils literal notranslate"><span class="pre">dwb_local_planner/DWBLocalPlanner</span></code>，而 <code class="docutils literal notranslate"><span class="pre">DynamicFollowPath</span></code> 的类型为 <code class="docutils literal notranslate"><span class="pre">teb_local_planner/TEBLocalPlanner</span></code>。每个插件都将在其命名空间中加载参数，例如 <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code>，而不是在服务器命名空间中全局加载。这将允许具有不同参数的多个相同类型的插件，并减少参数名称冲突。</p>
+<p>DWB 相对于 ROS 1 更新，新增了一些参数，详见 <a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1501">这里的更多信息</a>。此外，控制器和规划器接口在初始化时更新，包括一个 <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">name</span></code> 参数。这个参数被添加到接口中，以便插件知道应该在哪个命名空间中加载其参数。例如，要查找参数 <code class="docutils literal notranslate"><span class="pre">FollowPath.max_vel_x</span></code>，控制器必须给出它的名称 <code class="docutils literal notranslate"><span class="pre">FollowPath</span></code>。所有插件都应该在其给定名称的命名空间中查找参数。</p>
 </div>
 <div class="section" id="new-plugins">
 <h2>新插件<a class="headerlink" href="#new-plugins" title="永久链接至标题"></a></h2>
-<p>Many new behavior tree nodes were added.
-These behavior tree nodes are now BT plugins and dynamically loadable at run-time using behavior tree cpp v3.
-The default behavior trees have been upgraded to stop the recovery behaviours and trigger a replanning when the navigation goal is preempted.
-See <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> for a full listing, or <a class="reference internal" href="../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> for the current list of behavior tree plugins and their descriptions.
-These plugins are set as default in the <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> but may be overridden by the <code class="docutils literal notranslate"><span class="pre">bt_plugins</span></code> parameter to include your specific plugins.</p>
-<p>Original GitHub tickets:</p>
+<p>添加了许多新的行为树节点。这些行为树节点现在是行为树插件，可以在运行时使用行为树 cpp v3 进行动态加载。默认的行为树已经升级，停止了恢复行为，并在导航目标被中止时触发重新规划。请参阅 <code class="docutils literal notranslate"><span class="pre">nav2_behavior_tree</span></code> 获取完整列表，或者参阅 <a class="reference internal" href="../plugins/index.html#plugins"><span class="std std-ref">导航插件</span></a> 查看当前的行为树插件列表及其描述。这些插件在 <code class="docutils literal notranslate"><span class="pre">nav2_bt_navigator</span></code> 中设置为默认值，但可以通过 <code class="docutils literal notranslate"><span class="pre">bt_plugins</span></code> 参数覆盖以包含您特定的插件。</p>
+<p>原始的 GitHub 问题：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1699">DistanceController</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ros-planning/navigation2/pull/1744">SpeedController</a></p></li>
