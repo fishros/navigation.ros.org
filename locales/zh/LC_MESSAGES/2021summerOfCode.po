@@ -372,7 +372,7 @@ msgstr "如果时间允许，您还可以将此动态信息集成到路径规划
 
 #: ../../2021summerOfCode/projects/dynamic.rst:24
 msgid "**Project output requirements** - Integrations of 1 method of dynamic obstacle detection in ROS 2, using machine learning - Test these capabilities on real data or a live robot to demonstrate functionality - 85% test coverage or higher"
-msgstr "**Project output requirements** - Integrations of 1 method of dynamic obstacle detection in ROS 2, using machine learning - Test these capabilities on real data or a live robot to demonstrate functionality - 85% test coverage or higher"
+msgstr "**项目输出要求** - 在ROS 2中集成1种动态障碍物检测方法，使用机器学习 - 在真实数据或实际机器人上测试这些功能以证明其功能性 - 达到85％或更高的测试覆盖率"
 
 
 #: ../../2021summerOfCode/projects/dynamic.rst:31
@@ -382,77 +382,77 @@ msgstr "C++，Python，ROS"
 
 #: ../../2021summerOfCode/projects/dynamic.rst:33 ../../2021summerOfCode/projects/safety_node.rst:36
 msgid "Geometry and statistics"
-msgstr "Geometry and statistics"
+msgstr "几何和统计"
 
 
 #: ../../2021summerOfCode/projects/dynamic.rst:34
 msgid "Recommended: Gazebo simulation, machine learning, ROS navigation"
-msgstr "Recommended: Gazebo simulation, machine learning, ROS navigation"
+msgstr "推荐：Gazebo仿真，机器学习，ROS导航"
 
 
 #: ../../2021summerOfCode/projects/dynamic.rst:38
 msgid "`Starting project <https://github.com/ros-planning/navigation2_dynamic/>`_"
-msgstr "`Starting project <https://github.com/ros-planning/navigation2_dynamic/>`_"
+msgstr "`开始项目 <https://github.com/ros-planning/navigation2_dynamic/>`_"
 
 
 #: ../../2021summerOfCode/projects/dynamic.rst:41
 msgid "`Github ticket <https://github.com/ros-planning/navigation2/issues/1617>`_"
-msgstr "`Github ticket <https://github.com/ros-planning/navigation2/issues/1617>`_"
+msgstr "`Github问题单 <https://github.com/ros-planning/navigation2/issues/1617>`_"
 
 
 #: ../../2021summerOfCode/projects/dynamic.rst:43 ../../2021summerOfCode/projects/spinners.rst:42 ../../2021summerOfCode/projects/twist_n_config.rst:47
 msgid "`Some related works <https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf>`_"
-msgstr "`Some related works <https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf>`_"
+msgstr "`一些相关作品 <https://alyssapierson.files.wordpress.com/2018/05/pierson2018.pdf>`_"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:9
 msgid "3. Port Grid Maps to ROS 2 and Environmental Model"
-msgstr "3. Port Grid Maps to ROS 2 and Environmental Model"
+msgstr "3. 将Grid Maps移植到ROS 2和环境模型"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:11
 msgid "**Task description** Grid Maps was created by ETH Zurich and later transferred to ANYbotics. It is a universal grid map library for mobile robotic mapping that can be used as the basis of environmental models and various forms of grid maps available in ROS 1. This library is one of the top downloaded ROS packages. Your task will be to work with the community and the mentor to port grid_maps metapackage from ROS 1 to ROS 2 and help develop the next generation environment model in ROS 2 to replace costmap_2d."
-msgstr "**Task description** Grid Maps was created by ETH Zurich and later transferred to ANYbotics. It is a universal grid map library for mobile robotic mapping that can be used as the basis of environmental models and various forms of grid maps available in ROS 1. This library is one of the top downloaded ROS packages. Your task will be to work with the community and the mentor to port grid_maps metapackage from ROS 1 to ROS 2 and help develop the next generation environment model in ROS 2 to replace costmap_2d."
+msgstr "**任务描述** Grid Maps是由苏黎世联邦理工学院（ETH Zurich）创建并后来转移到ANYbotics的通用网格地图库，可用作环境模型和ROS 1中各种形式的网格地图的基础。该库是ROS包中下载次数最多的之一。您的任务将是与社区和导师合作，将grid_maps metapackage从ROS 1迁移到ROS 2，并帮助开发ROS 2中的下一代环境模型，以取代costmap_2d。"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:14
 msgid "This will involve porting code from ROS 1 to ROS 2, analyzing uses of the environmental model to define an abstract interface to allow replacement of costmap_2d with grid_map, and building up the basic grid-operations for costmaps. It is not expected to complete the full new model with sensor processing over the course of the summer. If completed early, you may be able to help design a gradient model to complement your implemented costmap model using grid_maps. This will allow robots to select a gradient or a costmap model on startup."
-msgstr "This will involve porting code from ROS 1 to ROS 2, analyzing uses of the environmental model to define an abstract interface to allow replacement of costmap_2d with grid_map, and building up the basic grid-operations for costmaps. It is not expected to complete the full new model with sensor processing over the course of the summer. If completed early, you may be able to help design a gradient model to complement your implemented costmap model using grid_maps. This will allow robots to select a gradient or a costmap model on startup."
+msgstr "这将涉及将代码从ROS 1移植到ROS 2，分析环境模型的使用情况，定义一个抽象接口，以允许用grid_map替换costmap_2d，并构建用于代价地图的基本网格操作。不希望在夏季完成完整的新模型和传感器处理。如果提前完成，您可以帮助设计一个梯度模型，以补充您实现的代价地图模型。这将允许机器人在启动时选择梯度或代价地图模型。"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:24
 msgid "Grid Maps ported to ROS 2 and merged into the main ROS 2 branch"
-msgstr "Grid Maps ported to ROS 2 and merged into the main ROS 2 branch"
+msgstr "Grid Maps迁移到ROS 2并合并到主要的ROS 2分支中"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:25
 msgid "Defined plugin interfaces to replace costmap 2D with grid maps"
-msgstr "Defined plugin interfaces to replace costmap 2D with grid maps"
+msgstr "定义用于用grid maps替换costmap 2D的插件接口"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:26
 msgid "Implementing low-level operations on top of grid_maps to replace the base costmap_2d object."
-msgstr "Implementing low-level operations on top of grid_maps to replace the base costmap_2d object."
+msgstr "在grid_maps上实现低级操作，以替换基本的costmap_2d对象。"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:27
 msgid "You will not be expected to reimplement the full sensor processing mechanics of costmap_2d."
-msgstr "You will not be expected to reimplement the full sensor processing mechanics of costmap_2d."
+msgstr "您不需要重新实现costmap_2d的完整传感器处理机制。"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:31
 msgid "C++ and Git"
-msgstr "C++ and Git"
+msgstr "C++ 和 Git"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:32
 msgid "ROS recommended ROS 2, but you can pick it up before starting"
-msgstr "ROS recommended ROS 2, but you can pick it up before starting"
+msgstr "ROS推荐ROS 2，但您可以在开始之前学习它。"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:33
 msgid "Coordinate transformations and basic geometry"
-msgstr "Coordinate transformations and basic geometry"
+msgstr "坐标转换和基本几何"
 
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:40
@@ -462,7 +462,7 @@ msgstr "`Original github issue 1 <https://github.com/ros-planning/navigation2/is
 
 #: ../../2021summerOfCode/projects/grid_maps.rst:41
 msgid "`Original github issue 2 <https://github.com/ros-planning/navigation2/issues/1517>`_"
-msgstr "`Original github issue 2 <https://github.com/ros-planning/navigation2/issues/1517>`_"
+msgstr "`原始 github 问题 2 <https://github.com/ros-planning/navigation2/issues/1517>`_"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:7
@@ -472,7 +472,7 @@ msgstr "6. 2D/3D Localization Improvements"
 
 #: ../../2021summerOfCode/projects/localization.rst:11
 msgid "The Navigation2 stack uses AMCL as its primary localization engine. Over the last 10 years, essentially no updates to AMCL has been made. This is due to the code base for this implementation of an Adaptive Monte Carlo Localizer is written in embedded C, not well structured, and very sensitive to changes. A-MCL implementations have been a hallmark of localization for over a decade but this particular implementation should be deprecated."
-msgstr "The Navigation2 stack uses AMCL as its primary localization engine. Over the last 10 years, essentially no updates to AMCL has been made. This is due to the code base for this implementation of an Adaptive Monte Carlo Localizer is written in embedded C, not well structured, and very sensitive to changes. A-MCL implementations have been a hallmark of localization for over a decade but this particular implementation should be deprecated."
+msgstr "Navigation2 堆栈使用 AMCL 作为其主要定位引擎。在过去的10年中，几乎没有对 AMCL 进行任何更新。这是由于此自适应蒙特卡罗定位器的实现代码是用嵌入式 C 编写的，结构不好，并且对变化非常敏感。A-MCL 实现已经是定位的标志性方法超过十年，但应该废弃这个特定的实现。"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:13
@@ -482,7 +482,7 @@ msgstr "Your target involves designing and creating a new localization engine fo
 
 #: ../../2021summerOfCode/projects/localization.rst:18
 msgid "The reason that specific method is left open-ended is to allow for creativity, novelty, or reimplementation of a what you feel is best. We have, however, analyzed other MCL variants as being good options. This may include reimplementing an A-MCL that is designed to be modified with modular components and support sampling from a 3D lidar. Another option is a NDT-MCL using NDT 2D/3D scan matching. Other options may be proposed and discussed with mentors during the application phase. The task involves 3D as well since there is no standard 3D localizer in ROS 2 yet and more and more robust 3D SLAM libraries have emerged over the last 2 years."
-msgstr "The reason that specific method is left open-ended is to allow for creativity, novelty, or reimplementation of a what you feel is best. We have, however, analyzed other MCL variants as being good options. This may include reimplementing an A-MCL that is designed to be modified with modular components and support sampling from a 3D lidar. Another option is a NDT-MCL using NDT 2D/3D scan matching. Other options may be proposed and discussed with mentors during the application phase. The task involves 3D as well since there is no standard 3D localizer in ROS 2 yet and more and more robust 3D SLAM libraries have emerged over the last 2 years."
+msgstr "保留该特定方法的原因是为了允许创造性、新颖性或重新实现您认为最好的方法。然而，我们已经分析了其他 MCL 变体作为好的选择。这可能包括重新实现一个设计用于可修改的模块化组件并支持从3D激光雷达采样的 A-MCL。另一个选择是使用 NDT 2D/3D 扫描匹配的 NDT-MCL。其他选项可以在申请阶段与导师提出和讨论。这个任务还涉及到3D，因为ROS 2中还没有标准的3D定位器，并且在过去的2年中出现了越来越多的强大的3D SLAM库。"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:20
@@ -492,7 +492,7 @@ msgstr "An optional but recommended feature of this work would be to also accept
 
 #, python-format
 msgid "**Project output requirements** - 2D and 3D localization system based on laser scanners - 65% or higher test coverage - Designed with modular components that can be reliably modified over time"
-msgstr "**Project output requirements** - 2D and 3D localization system based on laser scanners - 65% or higher test coverage - Designed with modular components that can be reliably modified over time"
+msgstr "**项目输出要求** - 基于激光扫描仪的2D和3D定位系统 - 65%或更高的测试覆盖率 - 设计有可靠地随时间修改的模块化组件"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:36
@@ -502,7 +502,7 @@ msgstr "C/C++"
 
 #: ../../2021summerOfCode/projects/localization.rst:37
 msgid "Localization, particle filter, or SLAM techniques"
-msgstr "Localization, particle filter, or SLAM techniques"
+msgstr "定位、粒子滤波或SLAM技术"
 
 
 #: ../../2021summerOfCode/projects/localization.rst:38
