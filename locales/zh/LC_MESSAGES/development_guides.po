@@ -172,7 +172,7 @@ msgstr "`安装开发工具和 ROS 工具 <https://docs.ros.org/en/rolling/Insta
 
 #: ../../development_guides/build_docs/index.rst:53
 msgid "Once your environment is setup, clone the repo, install all dependencies, and build the workspace:"
-msgstr "Once your environment is setup, clone the repo, install all dependencies, and build the workspace:"
+msgstr "一旦您的环境设置完成，克隆存储库，安装所有依赖项并构建工作空间："
 
 
 #: ../../development_guides/build_docs/index.rst:56
@@ -182,77 +182,77 @@ msgstr "Nav2 的分支命名方案按照 ROS 发行版进行组织，而 Rolling
 
 #: ../../development_guides/build_docs/index.rst:69 ../../development_guides/build_docs/index.rst:103
 msgid "You can then ``source ~/nav2_ws/install/setup.bash`` to get ready for demonstrations!"
-msgstr "You can then ``source ~/nav2_ws/install/setup.bash`` to get ready for demonstrations!"
+msgstr "然后您可以执行 ``source ~/nav2_ws/install/setup.bash`` 准备进行演示！"
 
 
 #: ../../development_guides/build_docs/index.rst:72
 msgid "For more examples on building Nav2 from released distribution binaries, checkout `distro.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile>`_."
-msgstr "For more examples on building Nav2 from released distribution binaries, checkout `distro.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile>`_."
+msgstr "要了解如何从发布的分发二进制文件构建Nav2的更多示例，请查看`distro.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/distro.Dockerfile>`_。"
 
 
 #: ../../development_guides/build_docs/index.rst:79
 msgid "Building Nav2 using rolling development source is similar to building Nav2 from released distribution binaries, where instead you build dependencies from source using the main development branches for all ROS based packages."
-msgstr "Building Nav2 using rolling development source is similar to building Nav2 from released distribution binaries, where instead you build dependencies from source using the main development branches for all ROS based packages."
+msgstr "使用滚动开发源构建Nav2类似于使用发布的分发二进制文件构建Nav2，不同之处在于使用所有基于ROS的软件包的主要开发分支从源代码构建依赖项。"
 
 
 #: ../../development_guides/build_docs/index.rst:82
 msgid "For more information on building ROS 2 from source, see the official documentation:"
-msgstr "For more information on building ROS 2 from source, see the official documentation:"
+msgstr "要了解如何从源代码构建ROS 2的更多信息，请参阅官方文档："
 
 
 #: ../../development_guides/build_docs/index.rst:84
 msgid "`ROS 2 Building from source <https://docs.ros.org/en/rolling/Installation.html#building-from-source>`_"
-msgstr "`ROS 2 Building from source <https://docs.ros.org/en/rolling/Installation.html#building-from-source>`_"
+msgstr "`ROS 2 从源代码构建 <https://docs.ros.org/en/rolling/Installation.html#building-from-source>`_"
 
 
 #: ../../development_guides/build_docs/index.rst:86
 msgid "Once your environment is setup, clone the repo, import all dependencies, and build the workspace:"
-msgstr "Once your environment is setup, clone the repo, import all dependencies, and build the workspace:"
+msgstr "完成环境设置后，克隆存储库，导入所有依赖项并构建工作空间："
 
 
 #: ../../development_guides/build_docs/index.rst:89
 msgid "Be sure to check that all dependencies you need are included and uncommented in the ``.repos`` file."
-msgstr "Be sure to check that all dependencies you need are included and uncommented in the ``.repos`` file."
+msgstr "请确保检查您需要的所有依赖项是否已在 ``.repos`` 文件中包含并取消注释。"
 
 
 #: ../../development_guides/build_docs/index.rst:106
 msgid "For more examples on building Nav2 from rolling development source, checkout `source.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile>`_."
-msgstr "For more examples on building Nav2 from rolling development source, checkout `source.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile>`_."
+msgstr "要了解如何从滚动开发源构建Nav2的更多示例，请查看`source.Dockerfile <https://github.com/ros-planning/navigation2/blob/main/tools/source.Dockerfile>`_。"
 
 
 #: ../../development_guides/build_docs/index.rst:113
 msgid "Building Nav2 using Docker container images provides a repeatable and reproducible environment to automate and self document the entire setup process. Instead of manually invoking the development tools as documented above, you can leverage the project's Dockerfiles to build and install Nav2 for various distributions."
-msgstr "Building Nav2 using Docker container images provides a repeatable and reproducible environment to automate and self document the entire setup process. Instead of manually invoking the development tools as documented above, you can leverage the project's Dockerfiles to build and install Nav2 for various distributions."
+msgstr "使用Docker容器镜像构建Nav2提供了可重复和可复制的环境，以自动化和自我记录整个设置过程。与上述文档中手动调用开发工具不同，您可以利用项目的Docker文件来构建和安装适用于各种分发版本的Nav2。"
 
 
 #: ../../development_guides/build_docs/index.rst:116
 msgid "For more information on installing Docker or leaning about Dockerfiles, see the official documentation:"
-msgstr "For more information on installing Docker or leaning about Dockerfiles, see the official documentation:"
+msgstr "要了解有关安装Docker或了解Docker文件的更多信息，请参阅官方文档："
 
 
 #: ../../development_guides/build_docs/index.rst:118
 msgid "`Docker Engine <https://docs.docker.com/engine/install>`_"
-msgstr "`Docker Engine <https://docs.docker.com/engine/install>`_"
+msgstr "`Docker 引擎 <https://docs.docker.com/engine/install>`_"
 
 
 #: ../../development_guides/build_docs/index.rst:119
 msgid "`Dockerfile reference <https://docs.docker.com/engine/reference/builder>`_"
-msgstr "`Dockerfile reference <https://docs.docker.com/engine/reference/builder>`_"
+msgstr "`Dockerfile参考 <https://docs.docker.com/engine/reference/builder>`_"
 
 
 #: ../../development_guides/build_docs/index.rst:121
 msgid "Once your system is setup, you can build the Nav2 Dockerfile from the root of the repo:"
-msgstr "Once your system is setup, you can build the Nav2 Dockerfile from the root of the repo:"
+msgstr "一旦您的系统设置完成，您可以从存储库的根目录中构建Nav2 Dockerfile："
 
 
 #: ../../development_guides/build_docs/index.rst:133
 msgid "The `docker build <https://docs.docker.com/engine/reference/commandline/build/>`_ command above creates a tagged image using the `Dockerfile` from the context specified using the path to the repo, where build-time variables are set using additional arguments, e.g. passing a set of `colcon mixins <https://github.com/colcon/colcon-mixin-repository>`_ to configure the workspace build. Check the ``ARG`` directives in the `Dockerfile` to discover all build-time variables available. The command also specifies an `external cache source <https://docs.docker.com/engine/reference/commandline/build/#cache-from>`_ to pull the latest cached image from Nav2's `Container Registry <https://github.com/ros-planning/navigation2/pkgs/container/navigation2>`_ to speed up the build process."
-msgstr "The `docker build <https://docs.docker.com/engine/reference/commandline/build/>`_ command above creates a tagged image using the `Dockerfile` from the context specified using the path to the repo, where build-time variables are set using additional arguments, e.g. passing a set of `colcon mixins <https://github.com/colcon/colcon-mixin-repository>`_ to configure the workspace build. Check the ``ARG`` directives in the `Dockerfile` to discover all build-time variables available. The command also specifies an `external cache source <https://docs.docker.com/engine/reference/commandline/build/#cache-from>`_ to pull the latest cached image from Nav2's `Container Registry <https://github.com/ros-planning/navigation2/pkgs/container/navigation2>`_ to speed up the build process."
+msgstr "上述`docker build <https://docs.docker.com/engine/reference/commandline/build/>`_命令使用来自指定路径到存储库的上下文的`Dockerfile`创建了一个带有标签的镜像，其中使用附加参数设置了构建时变量，例如通过传递一组`colcon mixins <https://github.com/colcon/colcon-mixin-repository>`_来配置工作空间构建。查看`Dockerfile`中的``ARG``指令以发现所有可用的构建时变量。该命令还指定了一个`外部缓存源 <https://docs.docker.com/engine/reference/commandline/build/#cache-from>`_，以从Nav2的`容器注册表 <https://github.com/ros-planning/navigation2/pkgs/container/navigation2>`_中拉取最新的缓存镜像以加快构建过程。"
 
 
 #: ../../development_guides/build_docs/index.rst:136
 msgid "The images cached from above are used for Nav2 CI, but can also be used with Nav2 :ref:`devcontainers`!"
-msgstr "The images cached from above are used for Nav2 CI, but can also be used with Nav2 :ref:`devcontainers`!"
+msgstr "上面缓存的镜像用于Nav2 CI，但也可以与Nav2的devcontainers一起使用！"
 
 
 #: ../../development_guides/build_docs/index.rst:141
@@ -262,7 +262,7 @@ msgstr "Generate Doxygen"
 
 #: ../../development_guides/build_docs/index.rst:143
 msgid "Run ``doxygen`` in the root of the Nav2 repository. It will generate a ``/doc/*`` directory containing the documentation. The documentation entrypoint in a browser is index.html."
-msgstr "Run ``doxygen`` in the root of the Nav2 repository. It will generate a ``/doc/*`` directory containing the documentation. The documentation entrypoint in a browser is index.html."
+msgstr "在Nav2存储库的根目录中运行``doxygen``。它将生成一个包含文档的``/doc/*``目录。文档的入口点在浏览器中是index.html。"
 
 
 #: ../../development_guides/build_docs/index.rst:150
@@ -282,7 +282,7 @@ msgstr "Dev Container Guide"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:4
 msgid "In this guide, we'll walk through the process of creating and using dev containers for the project. While included subsections will provide greater detail on the various aspects of the process, complete comprehension of the entire guide is not required to get started, but is recommended for those interested in how dev containers work, or how to customize and optimize them for their own personal workflows."
-msgstr "In this guide, we'll walk through the process of creating and using dev containers for the project. While included subsections will provide greater detail on the various aspects of the process, complete comprehension of the entire guide is not required to get started, but is recommended for those interested in how dev containers work, or how to customize and optimize them for their own personal workflows."
+msgstr "在本指南中，我们将逐步介绍为该项目创建和使用dev容器的过程。尽管包含的子部分将提供有关该过程各个方面的更详细信息，但并非必须完全理解整个指南即可开始使用，但对于那些对dev容器的工作原理、如何自定义和优化它们以适应自己的个人工作流程感兴趣的人来说，建议阅读完整的指南。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:6
@@ -292,7 +292,7 @@ msgstr "Creating Dev Containers"
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:8
 msgid "Before creating a dev container, you'll want to choose the exact configuration to use. By default the `.devcontainer/devcontainer.json` configuration is selected, however you can also choose any other `devcontainer.json` file in the `.devcontainer/` directory, where such configurations can be nested to provide greater customization: either by targeting different stages within different Dockerfiles, overriding any merged metadata or default properties, or inclusion of additional extensions and alternate commands."
-msgstr "Before creating a dev container, you'll want to choose the exact configuration to use. By default the `.devcontainer/devcontainer.json` configuration is selected, however you can also choose any other `devcontainer.json` file in the `.devcontainer/` directory, where such configurations can be nested to provide greater customization: either by targeting different stages within different Dockerfiles, overriding any merged metadata or default properties, or inclusion of additional extensions and alternate commands."
+msgstr "在创建dev容器之前，您需要选择要使用的确切配置。默认情况下选择`.devcontainer/devcontainer.json`配置，但您也可以选择`.devcontainer/`目录中的任何其他`devcontainer.json`文件，这样可以嵌套这样的配置以提供更大的自定义：可以通过针对不同的Dockerfile内的不同阶段，覆盖任何已合并的元数据或默认属性，或包含其他扩展和备用命令来进行自定义。"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:11
@@ -302,7 +302,7 @@ msgstr "The specification, reference, and schema for the `devcontainer.json` con
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:12
 msgid "[Specification](https://containers.dev/implementors/spec)"
-msgstr "[Specification](https://containers.dev/implementors/spec)"
+msgstr "[规范](https://containers.dev/implementors/spec)"
 
 
 #: ../../development_guides/devcontainer_docs/devcontainer_guide.md:13
